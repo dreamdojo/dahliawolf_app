@@ -1,4 +1,5 @@
 <?
+//comment
 session_start();
 define('IS_LOGGED_IN', !empty($_SESSION) && !empty($_SESSION['user']) && !empty($_SESSION['token']));
 
