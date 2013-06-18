@@ -1,0 +1,261 @@
+<?
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
+include 'config/mobile-detect.php';
+if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
+	$_SESSION['user'] = unserialize($_COOKIE["dahliaUser"]);
+	$_SESSION['token'] = $_COOKIE["token"];
+	header( 'Location: spine' );
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+    
+
+        <title>Dahlia Wolf</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=9;IE=8;IE=7;"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>	
+<meta name="description" content="Dahlia Wolf .">
+
+   
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<script src="http://www.thecools.com/js/cools-vars.js" type="text/javascript"></script>
+<script src="http://www.thecools.com/js/combined.js?id=coolweb_r-99.brands-profile-hotfix-Fri_f84832f9"></script>
+<script src="http://www.thecools.com/js/combined.js?id=coolweb_r-99.brands-profile-hotfix-Fri_36956cd9"></script>
+
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://www.dahliawolf.com/css/ieSUCKS.css" />
+<![endif]-->
+
+<!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="http://www.dahliawolf.com/css/ieSUCKS.css" />
+<![endif]-->
+
+<gigya:configurator></gigya:configurator>
+<link rel="stylesheet" href="http://www.dahliawolf.com/css/dahlia-home.css"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+<style type="text/javascript">
+				#content {
+					padding-top: 0 !important;
+				}
+			</style>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34564940-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </head>
+
+    <body style="margin:0;" class="layout-promo">
+        
+<script type="text/javascript">
+
+
+	if (typeof dataLayer == "object") {
+		dataLayer.push({'event': 'pageLoaded'});
+	}
+
+
+</script>
+
+        <script type="text/javascript">
+            (function() { var p = document.createElement('script'); p.type = 'text/javascript'; p.async = true; p.src = '//d2f7h8c8hc0u7y.cloudfront.net/performable/pax/4iYqdi.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p, s); })();
+            var _paq = _paq || [];
+            _paq.push(["identify", {
+                email: "",
+                name: ""
+            }]);
+        </script>
+
+        
+        <input type="hidden" name="contextUrl" value="" id="contextUrl" />
+        <div class="mainContainer" class="invisible">
+            <div id="content">
+                <img id='ie-img' src="http://www.dahliawolf.com/images/DW-slide-1.jpg" style="display:none;">
+    	<div class="promoPage" data-preventstoppropogation="true">
+            <div class="galleryContainer clearfix">
+            	<ul class="slideshowContainer" style="top:-16px;list-style-type: none;">
+                    <li class="slide1">
+                    	<span>
+                    	   <p></p>
+                    	</span>
+                    	<div>
+                        
+                    		<h2><font color="#000000">POLAR NIGHT JACKET</font></h2>
+                    		<h4><font color="#000000">Inspired by Member</font></h4>
+                    		<p><font color="#000000">MISS SWEET, Los Angeles</font></p>
+                    	</div>
+                    </li>
+                    <li class="slide2">
+						<span>
+							<p></p>
+						</span>
+                    	<div>
+                    		<h2><font color="#000000">ELEGANT AFFAIR TOP</font></h2>
+                    		<h4><font color="#000000">Inspired by Member</font></h4>
+                    		<p><font color="#000000">LOLA MUNDO, Salt Lake City</font></p>
+                    	</div>
+                    </li>
+					<li class="slide3">
+						<span><!--~--></span>
+                    	<div>
+                    		<h2>SOFT AND SUBTLE TOP</h2>
+                    		<h4>Inspired by Member</h4>
+                    		<p>JOLIE LOMBARD, New York City</p>
+                    	</div>
+                    </li>
+                
+                
+                
+                </ul>
+            </div>
+            
+            <style>
+				#login-two{ position:absolute; height:100%; width: 288px; display:none;margin-top: 133px;margin-left: 53px;}
+				#login-three{ position:absolute; height:100%; width: 288px; display:none;margin-top: 133px;margin-left: 53px;}
+				#login-two li{list-style:none; margin-bottom:10px; text-align: center}
+				#login-three li{list-style:none; margin-bottom:10px; text-align: center}
+				#sysForm .input_text{height: 30px;width: 240px;border-radius: 0px;font-size: 15px; padding-left: 4px;}
+				.link{color:#fff; text-decoration:underline; cursor:pointer;}
+				.blop{width: 100%;text-align: center;margin-left: 17px;font-size: 12px; font-family:Arial, Helvetica, sans-serif; padding-bottom: 20px;}
+				.blop-title{width: 100%;text-align: center;margin-left: 17px;font-size: 25px; font-family:Arial, Helvetica, sans-serif; padding-bottom: 5px;}
+				.error-msg{border: 1px solid #cd0a0a;background: #fbe7e7;color: #cd0a0a;font-size: 15px;text-align: center;border-radius: 6px;padding: 10px;margin-top: -20px;margin-left: 37px;margin-bottom: 10px;}
+            	<? if(!empty($_SESSION['errors'])): ?>
+					#login-one{display:none;}
+					#login-two{display:block;}
+				<? endif ?> 
+            
+            </style>
+            <div class="infoContainer clearfix">
+                <div id="login-two">
+                	<? if(!empty($_SESSION['errors'])): ?>
+                    	<? foreach($_SESSION['errors'] as $error): ?>
+                        	<div class="error-msg"><?= $error ?></div>
+						<? endforeach ?> 
+                        <? unset($_SESSION['errors']) ?>
+					<? endif ?>
+                    <div id="log-errors"></div>
+                    <div class="blop-title">LOG IN</div>
+                    <div class="blop"><span class="link" onClick="$('#login-two').hide(); $('#login-three').show();">Create an account</span> or login below</div>
+                    <div class="form-box">
+                    	<form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="action/login.php">
+                            <ul style="margin-bottom: -3px;">
+                            
+                   				<li>
+                                     <img onClick="document.location='social-login.php?social_network=facebook'" src="/images/signinfacebook2.png" style="width: 244px;">
+                                </li>
+                                <li>or login with email: </li>
+                                <li>
+                                    <input class="input_text" type="text" name="identity" id="sysForm_identity" value="" placeholder="Email">
+                                </li>
+                                <li>
+                                    <input class="input_text" type="password" name="credential" id="sysForm_credential" value="" placeholder="Password">
+                                    <span class="fff"></span>
+                                </li>  
+                                <li>
+                                    <input class="checkbox" id="l_remember_me" name="l_remember_me" type="checkbox" value="1" style="float:left;">
+                                    <span style="font-size: 14px;color: rgb(163, 163, 163);float: left;"> Remember me</span>
+                                </li>   
+                            </ul>
+                            <div class="non_inputs">
+                                <input type="image" src="http://www.dahliawolf.com/images/login.png" id="sysForm_submit" style="float: right;height: 30px;">
+                            </div>
+                             <input type="hidden" name="r" value="">
+                             <input type="hidden" name="sublog" value="1">
+                        </form>
+                    </div>
+                </div>
+                 <div id="login-three">
+                 <div class="blop-title">EMAIL SIGN UP</span></div>
+                	<div class="blop">Already a member? <span class="link" onClick="$('#login-three').hide(); $('#login-two').show();">Click here to login</span></div>
+                    <div class="form-box">
+                    	<form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="/action/signup.php">
+                            <ul style="margin-bottom: -3px;">
+                            	<li>
+                                    <input class="input_text" type="text" name="user_username" id="user_username" value="" max="30" placeholder="Username" />
+                                </li>
+                               
+                                <li>
+                                    <input class="input_text" type="text" name="user_email" id="user_email" value="" placeholder="Email" />
+                                </li>
+                                <li>
+                                    <input class="input_text" type="password" name="user_password" id="user_password" value="" placeholder="Password" />
+                                    <span class="fff"></span>
+                                </li>    
+                            </ul>
+                            <div class="non_inputs">
+                                <input type="image" src="http://www.dahliawolf.com/images/reg.png" id="sysForm_submit" style="float: right;height: 30px;">
+                            </div>
+                                <input type="hidden" name="r" value="" />
+     							<input type="hidden" name="jsub" value="1" />
+                        </form>
+                    </div>
+                </div>
+                    <div class="right loginModule"></div>
+                    <div id="login-one">
+                    <h1>YOU POST FASHION IMAGES <br />WE TURN YOUR IMAGE INTO CLOTHING.</h1>        
+                       <!-- <div class="social">
+                            <img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png">
+                            <div><a href="#" onClick="$('#login-one').hide();$('#login-three').show();">or sign up the old school way with email</a></div>
+                        </div>
+                        
+                        
+                        <div><p><iframe src="//www.facebook.com/plugins/facepile.php?href=http%3A%2F%2Fwww.facebook.com%2FNASTYGAL&amp;action&amp;size=small&amp;max_rows=1&amp;show_count=false&amp;width=300&amp;colorscheme=dark&amp;appId=133259003395199" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:330px; height: 55px; margin-top: 8px;margin-left: 49px;" allowTransparency="true"></iframe></div> -->
+                        
+                            <p class="text4">
+                                Scroll down to learn more
+                            </p>
+                            <p class="text2">
+                                Already a user? <span class="link" onClick="$('#login-one').hide();$('#login-two').show();"/>Login here</span>
+                            </p>
+                        </div>
+                	</div>
+            
+            
+            <div class="enter-button">
+                <div class="enter-text"><a href="http://www.dahliawolf.com/spine"><img src="http://www.dahliawolf.com/images/enter-icon.png"/></a>
+                	
+                        </div>
+                	</div>
+            
+            
+                    <div class="whyJoinContainer clearfix">
+                    	<div id="howitworks" class="whyJoinContainerContent">						
+						<h4><a href="#howitworks" rel="scroll" data-offset="150"><img src="http://www.dahliawolf.com/images/transparen-howitworks.png"></a></h4>
+						<div class="text2">
+						<!--<h4><video style="width:736px; height:393px;"id="dw-post-video" class="video-js vjs-default-skin" width="736" height="393" poster="http://www.dahliawolf.com/images/dw-post-poster.jpg" autoplay preload="auto" loop data-setup="{}">
+  							<source type="video/mp4" src="http://www.dahliawolf.com/images/workdamit-Clip1.mp4">
+  <source type="video/ogg" src="http://www.dahliawolf.com/images/workdamit_Clip1.ogv">
+						</video></h4>-->
+					</div>
+					<div class="text3">
+						
+						<h4></h4>
+					</div>
+            	</div>
+            </div>
+            <div class="signUpFacebook">
+            		<img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" />
+	        </div>
+            
+            </div></p>
+        </div>
+
+        <script type="text/javascript">
+        	$(".galleryContainer").promoSlider();
+			
+        </script>
+    
+            </div>
+        </div>
+    </body>
+</html>

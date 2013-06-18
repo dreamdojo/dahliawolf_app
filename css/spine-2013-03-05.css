@@ -1,0 +1,108 @@
+.spine cf:before,
+.spine .cf:after {
+    content: " ";
+    display: table;
+}
+.spine .cf:after {
+    clear: both;
+}
+.spine .cf {
+    *zoom: 1;
+}
+
+#spine {
+	margin: 50px auto;
+}
+.header + #spine,
+#postitdiv + #spine {
+	margin-top: 100px;
+}
+.spine a {
+	cursor: pointer;
+}
+.spine ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.spine img {
+	display: block;
+}
+.spine ul.images {
+	white-space: nowrap;
+}
+.spine ul.images li {
+	display: inline-block;
+	vertical-align: top;
+	
+	/*background: rgb(173, 173, 173);*/
+	
+	position: relative;
+	
+	border-color: rgb(173, 173, 173);
+	border-style: solid;
+	background: #000;
+}
+.spine ul.rows li:nth-child(even) ul.images li {
+	vertical-align: bottom;
+}
+.spine ul.images p {
+	position: absolute;
+	margin: 0;
+	/*bottom: 7px;*/
+	bottom: -17px;
+	font: 11px/100% Tahoma, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	
+	left: 0;
+}
+.spine ul.images .username {
+	font-weight: bold;
+}
+.spine ul.images .like {
+	left: auto;
+	/*bottom: -2px;*/
+	bottom: -26px;
+	right: 0;
+}
+.spine ul.images .like a {
+	display: inline-block;
+	background: url("../images/broken.png") no-repeat 0 0;
+	width: 26px;
+	height: 26px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	position: relative;
+	top: -4px;
+	
+	width: 20px;
+	height: 20px;
+	background-size: 20px 20px;
+}
+.spine ul.images .like a:hover,
+.spine ul.images a:hover img {
+	opacity: 0.33;
+}
+#modal {
+	position: fixed;
+	z-index: 103;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.75);
+	display: none;
+}
+#modal-content {
+	position: absolute;
+	left: 50%;
+	top: 100px;
+	background: #fff;
+	padding: 25px;
+	-moz-box-shadow:    0 0 5px 0 #ccc;
+	-webkit-box-shadow: 0 0 5px 0 #ccc;
+	box-shadow:         0 0 5px 0 #ccc;
+}

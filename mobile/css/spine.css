@@ -1,0 +1,137 @@
+.spine cf:before,
+.spine .cf:after {
+    content: " ";
+    display: table;
+}
+.spine .cf:after {
+    clear: both;
+}
+.spine .cf {
+    *zoom: 1;
+}
+
+.spine {
+	margin: 100px auto;
+	text-align: center;
+}
+.spine ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.spine ul.images {
+	font-size: 25px;
+	font-weight: bold;
+}
+.spine ul.images > li {
+	width: 480px;
+	margin: 0 auto;
+	position: relative;
+	width: 420px;
+	border-color: rgb(173, 173, 173);
+	border-style: solid;
+	border-width: 30px 30px 60px;
+}
+.spine ul.images + ul.images,
+.spine ul.images > li + li {
+	margin-top: 30px;
+}
+.spine a.image,
+.spine .image img {
+	display: block;
+	margin: 0 auto;
+	width: 420px;
+}
+.spine a.image {
+}
+.spine .image img {
+}
+.spine .image .wild-4 {
+	display: none;
+}
+.spine ul.images .username {
+	position: absolute;
+	bottom: -45px;
+	left: 0;
+	text-transform: uppercase;
+}
+.spine ul.images .like {
+	position: absolute;
+	left: auto;
+	right: 0;
+	bottom: -53px;
+}
+.spine ul.images .like span,
+.spine ul.images .like a {
+	vertical-align: top;
+}
+.spine ul.images .like a {
+	display: inline-block;
+	background: url("../../images/broken.png") no-repeat 0 0;
+	width: 26px;
+	height: 26px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	position: relative;
+	top: -5px;
+	
+	width: 40px;
+	height: 40px;
+	background-size: 40px 40px;
+}
+.spine ul.images .liked .like a {
+	background-image: url("../../images/heart.png");
+}
+
+.spine ul.share {
+	/*position: absolute;
+	bottom: -26px;
+	right: 35px;
+	top: 0;
+	right: -20px;*/
+	position: absolute;
+	left: auto;
+	right: 80px;
+	bottom: -49px;
+	overflow: hidden;
+}
+.spine ul.share li {
+	float: left;
+}
+.spine ul.share li + li {
+	margin-left: 2px;
+}
+.spine ul.share a {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 26px;
+	height: 26px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	width: 40px;
+	height: 40px;
+	background-size: 40px 40px;
+}
+.spine ul.share .facebook a {
+	background-image: url("../../skin/img/btn/facebook-dahlia-share.png");
+}
+.spine ul.share .facebook a:hover {
+	background-image: url("../../skin/img/btn/facebook-dahlia-share-color.png");
+}
+.spine ul.share .pinterest a {
+	background-image: url("../../skin/img/btn/pinterest-dahlia-share.png");
+}
+.spine ul.share .pinterest a:hover {
+	background-image: url("../../skin/img/btn/pinterest-dahlia-share-color.png");
+}
+.spine ul.share .twitter a {
+	background-size: 45px 32px;
+	background-image: url("../../skin/img/btn/twitter-dahlia-share.png");
+}
+.spine ul.share .twitter a:hover {
+	background-image: url("../../skin/img/btn/twitter-dahlia-share-color.png");
+}
