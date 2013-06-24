@@ -14,6 +14,7 @@ $data = commerce_api_request('product', $calls, true);
 
 $product = $data['data']['get_product_details']['data'];
 $inspirations = $product['product']['posts'];
+
 $left_col = array();
 $right_col = array();
 foreach($inspirations as  $i=>$prod){
@@ -127,6 +128,7 @@ $cheater = 50;
 </div>
 </div>
 <script>
+console.log(<? echo json_encode( $data ) ?>);
 var imgMoney = Object();
 imgMoney.images = Array();
 imgMoney.images = <? echo json_encode($images) ?>;

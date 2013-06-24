@@ -139,13 +139,13 @@ font-weight: normal;
 }
 
 .signuplater2 {
-	background: black;
-font-family: futura;
-font-size: 20px;
+background: black;
+font-family: helvetica;
+font-size: 17px;
 color: white;
-padding-top: 70px;
-font-weight: normal;
-margin-top: 100px;
+padding-top: 5px;
+font-weight: 100;
+margin-top: 50px;
 text-transform: uppercase;
 padding-bottom: 5px;
 text-align: right;
@@ -267,6 +267,6 @@ margin-left: 2px;" /></a></div> -->
 </body>
 </html>
 <script>
-homeWrecker.init(1800/* <- fade speed*/, 4000/* <- time between slides*/);
+homeWrecker.init(2800/* <- fade speed*/, 6000/* <- time between slides*/);
 
 </script>

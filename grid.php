@@ -9,7 +9,7 @@ include "header.php";
     						<span class=""><a class="sort-option <?= ($_GET['sort'] == 'hot' ? 'bold' : '') ?>" href="/grid?sort=hot"> hottest</a></span> /
                             <span class=""><a class="sort-option <?= ($_GET['sort'] == 'top' ? 'bold' : '') ?>" href="/grid?sort=top"> most popular</a></span>
                       
-                     <span style="padding-left:595px;">view: <span class=""><a class="sort-option <?= ($self == '/spine.php' ? 'bold' : '') ?>" href="/spine">artistic</a></span> /
+                     <span style="padding-left:560px;">view: <span class=""><a class="sort-option <?= ($self == '/spine.php' ? 'bold' : '') ?>" href="/spine">artistic</a></span> /
     						<span class=""><a class="sort-option <?= ($self == '/grid.php' ? 'bold' : '') ?>" href="/grid"> grid</a></span>      
 </div>
 

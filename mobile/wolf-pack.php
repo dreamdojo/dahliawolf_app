@@ -8,7 +8,7 @@ if($_GET['session_type'] == "web") {
 	include $_SERVER['DOCUMENT_ROOT'] . "/mobile/common/head.php";
 }
 ?>
-    <div class="activity-bar">WOLFPACK</div>
+    <div class="activity-bar">PACK LEADERS</div>
     <div class="feed-wrap">
 		<? if (!empty($_data['users'])): ?>
     		<? foreach ($_data['users'] as $i => $user): ?>

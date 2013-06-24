@@ -56,6 +56,7 @@ theGrid.getImages = function() {
 		
 		theGrid.showLoader();
 		$.getJSON(URL, function(data){
+			console.log(data);
 			theGrid.destroyLoader();
 			$.each(data, function(index, post){
 				theGrid.posts[post.posting_id] = new theGrid.post(post);

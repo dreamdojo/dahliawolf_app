@@ -21,6 +21,8 @@
 #viewToggle{height: 30px;width: 65px;position: absolute;right: 0px;top: 9px;margin-right: 20px; cursor:pointer;}
 .toggleViewGrid{ background-image:url(/images/view_toggle.png); background-size:100% 100%;}
 .toggleViewLine{ background-image:url(/images/view_toggle2.png); background-size:100% 100%;}
+#inspireBackButton{ position: absolute;left: 20px;height: 30px;width: 70px;margin-top: -3px;background-image: url(/images/inspireBackButton.png);background-size: 100% 100%;background-repeat: no-repeat; cursor:pointer;}
+#inspireBackButton:hover{ opacity:.7;}
 </style>
 
 
@@ -74,7 +76,6 @@
 			if(e.originalEvent.dataTransfer.files.length) {
 				e.preventDefault();
 				e.stopPropagation();
-				console.log('dropped');
 				imgUpload.files = e.originalEvent.dataTransfer.files;
 				imgUpload.submitImage( e.originalEvent.dataTransfer.files[0]);
 			}   
@@ -279,7 +280,7 @@
 	theBank.refreshPage = false;
 	theBank.topDistance = 170;
 	theBank.trainingTopDistance = 400;
-	theBank.dragndrop = '<div class="title-roll">Don\'t have images? Post from the DAHLIA WOLF IMAGE BANK';
+	theBank.dragndrop = '<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent">Don\'t have images? Post from the DAHLIA WOLF IMAGE BANK</span>';
 	theBank.dragndrop += '<div id="viewToggle" class="toggleViewLine"></div></div><div id="theUploadBuffer" class="first"></div>';
 	theBank.isAvailable = true;
 	theBank.slide = false;
@@ -302,6 +303,17 @@
 	theBank.finishPost = _finishPost;
 	theBank.activateDragndrop = _activateDragndrop;
 	theBank.killScroller = killScroller;
+	
+	theBank.goHome = function() {
+		theBank.backButton.addClass('hidden');
+		theBank.clearBankImages();
+		theBank.fillerUp();
+		theBank.setPostTitleContent('Post images from OUR Dahliawolf Image Bank');
+	}
+	
+	theBank.setPostTitleContent = function(str) {
+		$('#postTitleContent').html(str);
+	}
 	
 	theBank.sizeBankRoll = function() {
 		offzet = theBank.outlet.css('top').replace(/[^-\d\.]/g, '');
@@ -361,11 +373,15 @@
 				if(this.currentAjaxRequest){
 					this.killAjaxRequest();
 				}
+				theBank.showLoader();
 				theBank.currentAjaxRequest = $.ajax('https://api.instagram.com/v1/users/self/feed?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data){
 					theBank.currentAjaxRequest = null;
+					theBank.destroyLoader();
 					theBank.isAvailable = true;
 					theBank.killScroller();
 					theBank.clearBankImages();
+					theBank.setPostTitleContent('Post images from YOUR Instagram account');
+					theBank.backButton.removeClass('hidden');
 					$.each(data.data, function(index, img){
 						str = '<div class="bank-frame"><img class="b-roll-img" src="'+img.images.standard_resolution.url+'">';
 						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this);">';
@@ -386,11 +402,15 @@
 					this.killAjaxRequest();
 				}
 				theBank.isAvailable = false;
+				theBank.showLoader();
 				theBank.currentAjaxRequest = $.post('/get_feed_from_pinterest', { pinterest_user : userConfig.pinterest_username }).done(function(data){
 					theBank.currentAjaxRequest = null;
+					theBank.destroyLoader();
 					theBank.isAvailable = true;
 					theBank.killScroller();
 					theBank.clearBankImages();
+					theBank.setPostTitleContent('Post images from YOUR Pinterest account');
+					theBank.backButton.removeClass('hidden');
 					$.each(data.data, function(index, img){
 						str = '<div class="bank-frame"><img class="b-roll-img" src="'+img.images.standard_resolution.url+'">';
 						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this);">';
@@ -594,6 +614,8 @@
 					theBank.fillerUp();
 					theBank.initScroller();
 					theBank.activateDragndrop();
+					theBank.backButton = $('#inspireBackButton');
+					$('#inspireBackButton').bind('click', theBank.goHome);
 					if(thePost.trainingMode){
 						theLesson.changeTitle(theLesson.postTitle['step2']);
 						theLesson.changeContent(theLesson.postContent['step2']);

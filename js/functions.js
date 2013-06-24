@@ -104,6 +104,8 @@ function events() {
 						isSpineAvailable = true;
 						$('#theGridLoader').remove();
 						$('.spine .images:last').after(data);
+					} else {
+						$('#theGridLoader').remove();
 					}
 				});
 			}

@@ -17,7 +17,10 @@ function userProfile(posts, data) {
 	this.animationIndex = 7;
 	this.bindFrontEnd();
 	
-	setTimeout($.proxy(this.doUserPostBarMagic, this), 10000);
+	if(this.posts.length >= 6) {
+        setTimeout($.proxy(this.doUserPostBarMagic, this), 10000);
+    }
+
 }
 
 userProfile.prototype.doUserPostBarMagic = function() {
@@ -35,8 +38,8 @@ userProfile.prototype.doUserPostBarMagic = function() {
 			if(index == ($('.titlePostImage').length - 1) ) {
 				$('.titlePostImage').eq(0).remove();
 				$('.titlePostImage').css('position', 'static');
-				$('.hidden').fadeIn(300);
-				$('#userPostGallery').append('<img class="titlePostImage hidden" src="'+$this.posts[$this.animationIndex].image_url+'">');
+				$('#userPostGallery img').last().fadeIn(300);
+				$('#userPostGallery').append('<img class="titlePostImage" style="display:none;" src="'+$this.posts[$this.animationIndex].image_url+'">');
 				setTimeout($.proxy($this.doUserPostBarMagic, $this), 10000);
 			}
 		});
@@ -44,7 +47,7 @@ userProfile.prototype.doUserPostBarMagic = function() {
 }
 
 userProfile.prototype.bindFrontEnd = function() {
-	this.followButton = $('#profileStatFollow');
+	this.followButton = $('.followersLink');
 	this.followerCount = $('#followersCount');
 	this.followStatus = $('#followingStatus');
 	
@@ -56,12 +59,12 @@ userProfile.prototype.toggleFollow = function() {
 		if(this.data.is_followed) {
 			this.data.is_followed = false;
 			this.data.followers--;
-			this.followStatus.html('FOLLOW');
+			this.followStatus.html('Follow');
 			$.post('/action/unfollow.php', {user_id : this.data.user_id});
 		} else {
 			this.data.is_followed = true;
 			this.data.followers++;
-			this.followStatus.html('UNFOLLOW');
+			this.followStatus.html('Unfollow');
 			$.post('/action/follow.php', {user_id : this.data.user_id});
 		}
 		this.followerCount.html(this.data.followers);

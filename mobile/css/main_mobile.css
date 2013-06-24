@@ -12,7 +12,7 @@ li input{margin-bottom: 10px;}
 .pi-odd{margin-right:2%;}
 .pi-lb{position:absolute; width:50px; height:50px; bottom:0px; left:0px; background-color:#1e1e1e; background-size:100% 100%;}
 .lb-num{color: #fff;margin-top: 13px; text-align:center;}
-.activity-bar{background-color:#a53247;color:#fff;width:98%; margin:0px auto;margin-top: 5px;font-size: 1em;text-align: center;padding: 3px 0px; margin-bottom: 5px;}
+.activity-bar{background-color:#000;color:#fff;width:98%; margin:0px auto;margin-top: 5px;font-size: 1em;text-align: center;padding: 3px 0px; margin-bottom: 5px;}
 
 .prof-frame{width: 32%; border:#000 .2em solid;height: 21%;overflow: hidden;text-align: center;float:left;position: relative;}
 .prof-frame img{width:100%;}
@@ -87,7 +87,7 @@ border: 1px solid rgb(255, 171, 197);}
 #prof-social-share{float: left;margin-right: 15px;}
 .prof-name{font-size: 40px;text-transform: uppercase;}
 
-.hidden{display:none;}
+.hidden{display:none !important;}
 .sysBoardUnFollowAllButton{}
 .sysBoardUnFollowAllButton strong{color: rgb(236, 236, 236);;}
 .sysBoardFollowAllButton{}
@@ -113,7 +113,7 @@ border: 1px solid rgb(255, 171, 197);}
 .Right{}
 .help_text{font-size:10px !important;}
 #profileEdit{padding-bottom: 110px;padding-top:20px;}
-#profileEdit li{display: block;font-size:18px;color:#fff;}
+#profileEdit li{display: block;font-size:18px;color:#000;}
 #genderOptions{ height: 25px;width: 90%;}
 #genderOptions ul { border-top: none; }
 #genderOptions li { display: inline; width: auto; clear: none; padding: 4px 0 0 0; margin-right: 64px;float: left;}
@@ -158,5 +158,5 @@ border: 1px solid rgb(255, 171, 197);}
 .drop-shadow {
 -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(255,255,255,0.3),0px 1px 6px rgba(0,0,0,0.5);
 -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(255,255,255,0.3),0px 1px 6px rgba(0,0,0,0.5);
-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0px 1px 6px rgba(0,0,0,0.5);
+box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0px 1px 6px rgba(182, 181, 181, 0.5);
 }

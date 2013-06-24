@@ -18,7 +18,7 @@ header("Content-type: text/css");
 	margin: 15px auto;
 	
 	text-align: center;
-	
+	padding-bottom: 50px;
 	width: 0;
 }
 .header + .spine,
@@ -30,7 +30,13 @@ header("Content-type: text/css");
 }
 .spine a {
 	cursor: pointer;
+	color:white;
 }
+.spine a:hover {
+	cursor: pointer;
+	color:black;
+}
+
 .spine ul {
 	margin: 0;
 	padding: 0;
@@ -66,11 +72,10 @@ header("Content-type: text/css");
 }
 .spine ul.images p {
 	position: absolute;
-	margin: 0;
-	/*bottom: 7px;*/
-	bottom: -17px;
-	font: 11px/100% Tahoma, Arial, Helvetica, sans-serif;
-	text-transform: uppercase;
+margin: 0;
+bottom: -20px;
+font: 14px/100% Helvetica, sans-serif;
+text-transform: uppercase;
 }
 ul.share {
 	position: absolute;
@@ -224,11 +229,8 @@ $Spine->output_css();
 	position: absolute;
 	left: 50%;
 	top: 0;
-	background: #fff;
 	padding: 25px;
-	-moz-box-shadow:    0 0 5px 0 #ccc;
-	-webkit-box-shadow: 0 0 5px 0 #ccc;
-	box-shadow:         0 0 5px 0 #ccc;
+	
 }
 .modal .close {
 	width: 22px;
@@ -248,7 +250,7 @@ $Spine->output_css();
 .explore {
 	margin: 50px auto;
 	width: 600px;
-	font: 14px Tahoma, Arial, Helvetica, sans-serif;
+	font: 14px Helvetica, sans-serif;
 }
 .explore > p {
 	text-align: center;

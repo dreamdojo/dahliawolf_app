@@ -125,7 +125,7 @@
                         </div>
                         <?php if($img_url != "" && isset($img_url) ): ?>
                         <div class="avatar-frame">
-                        	<a href="/post/<?= $message['posting_id'] ?>"><img src="<?= $img_url ?>" /></a>
+                        	<a href="/post/<?= $message['posting_id'] ?>"><img src="<?= $img_url ?>&width=150" /></a>
                         </div>
                         <? endif ?>
                     </div>	

@@ -22,7 +22,7 @@ function postDetail(post){
 	this.currentSection = null;
 	this.menuHeight = 40;
 	this.bindFrontEnd();
-	this.adjustFrameSize();
+	//this.adjustFrameSize();
 }
 
 postDetail.prototype.bindFrontEnd = function() {
@@ -43,8 +43,13 @@ postDetail.prototype.bindFrontEnd = function() {
 	this.commentCount = $('#totalComment');
 	this.deetLoveButton = $('#deetLove');
 	this.commentBox = $('#postComment');
+	this.commentForm = $('#commentForm');
 	
-	$('#sendCommentButton').bind('tap', $.proxy(this.postComment, this));
+	$('#commentForm').submit( function(){
+		$('#sendCommentButton').click();
+		return false;
+	});
+	$('#sendCommentButton').bind('click', $.proxy(this.postComment, this));
 	$('#deetLove').bind('tap', $.proxy(this.togglePostLove, this));
 	$('#toggleLove').bind('tap', $.proxy(this.togglePostLove, this));
 	$('#doComments').bind('tap',{section : 'comment'} , $.proxy(this.launchSection, this));
@@ -53,10 +58,18 @@ postDetail.prototype.bindFrontEnd = function() {
 	$('#thePostImage').on('tap', $.proxy(this.launchFullScreen, this) );
 	$('#deetDone').on('click', $.proxy(this.exitFullScreen, this) );
 	$('#postDetails').on('tap', $.proxy(this.adjustFrameSize, this) );
+	$('#postComment').on('focus', this.onInputFocus);
+}
+
+postDetail.prototype.onInputFocus = function(e) {
+	if(!User.id){
+		e.preventDefault();
+		_userLogin.toggleWindow();
+	}
 }
 
 postDetail.prototype.adjustFrameSize = function() {
-	newHt = $(window).innerHeight() - 150;
+	newHt = $(window).innerHeight() - 155;
 	this.postHeightFrame.height(newHt);
 }
 
@@ -170,7 +183,8 @@ postDetail.prototype.togglePostLove = function() {
 			});
 		}
 	}else{
-		//Login Stuff
+		this.exitFullScreen();
+		_userLogin.toggleWindow();
 	}
 }
 
@@ -180,7 +194,7 @@ postDetail.prototype.postComment = function(){
 	if(comment && comment != '' && User.id){
 		$.post('/action/comment.php', {posting_id: this.data.posting_id, comment: comment, ajax : true}, function(data){
 			data = $.parseJSON(data);
-			str = '<div id="comment-'+data.data.comment_id+'" class="postComment hidden"><div class="commentAvatarFrame">';
+			str = '<div id="comment-'+data.data.comment_id+'" class="postComment" style=" display:none;"><div class="commentAvatarFrame">';
       		str += '<img src="http://www.dahliawolf.com/avatar.php?user_id='+User.id+'"></div>';
             str += '<div class="commentData"><span>'+User.name+': </span>'+comment+'</div></div>';
 			$this.View['comment'].prepend(str);
@@ -188,9 +202,11 @@ postDetail.prototype.postComment = function(){
 			$('#comment-'+data.data.comment_id).slideDown(300);
 			$this.totalComments++;
 			$this.commentCount.html($this.totalComments);
+			return false;
 		});
 	}else{
-		//Login
+		console.log('fail');
+		return false;
 	}
 }
 

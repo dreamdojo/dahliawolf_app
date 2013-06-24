@@ -93,7 +93,7 @@
 	.notification{float: left;width: 100%;height: 35px;font-size: .8em;background-color: white;margin-bottom: 1%;}
 	.open-me{float: left;width: 94%;height: 100%;}
 	.note-timestamp{float:right;padding-top: 10px;}
-	.note-content{float:left; width:80%; height:100%;overflow: hidden;margin-top: 3%;}
+	.note-content{float:left; width:80%; height:100%;overflow: hidden;margin-top: 3%; white-space:nowrap;}
 	.on{background-image: url(/images/new_msg_on.png);}
 	.off{background-image: url(/images/new_msg_off.png);}
 	.notification-light{background-repeat: no-repeat;background-size: 100% auto;float: left;height: 100%;width: 6%;position: relative;margin-top: 1%;}
@@ -153,7 +153,7 @@
                         </div>
                         <?php if($img_url != "" && isset($img_url) ): ?>
                         <div class="avatar-frame">
-                            <a href="/post/<?= $message['posting_id'] ?>"><img src="<?= $img_url ?>" /></a>
+                            <a href="/post/<?= $message['posting_id'] ?>"><img src="<?= $img_url ?>&width=50" /></a>
                         </div>
                         <? endif ?>
                     </div>	

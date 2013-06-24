@@ -150,7 +150,6 @@ class Spine {
                                 </div>
                 
                                 <img src="<?= $post['image_url'] ?>" class="zoom-in" onclick="product.show(<?= $post['product_id'] ?>)" />
-                                <div class="exp-price">$<?= money_format('%i', $post['price']) ?></div>
 								<div class="explore-prod-options-box">
                                         <? if($post['status'] == 'Live'): ?>
                                             <a href="<?= CR ?>/shop/product?id_product=<?= $post['product_id'] ?>">
@@ -170,10 +169,7 @@ class Spine {
 							</div>
 							<div class="info">
 								<p class="description"><?= $post['product_name'] ?></p>
-								<!--<p class="votes">
-									<span id="vote-count-<?= $post['posting_id'] ?>"><?= $post['votes'] ?></span>
-									<a href="<?= $vote_href ?>" rel="vote" data-undo_href="<?= $unvote_href ?>">Vote</a>
-								</p>-->
+								<div class="exp-price">$<?= money_format('%i', $post['price']) ?></div>
 							</div>
 						</li>
 						<?

@@ -2,10 +2,58 @@
 function userLogin () {
 	this.view = $('#loginPage');
 	this.displayError = $('#loginErrorCode');
+	this.signUpView = $('#signUpForm');
+	this.loginView = $('#loginForm');
+	this.toggleButton = $('#toggleLoginType');
+	this.loginMsg = $('#loginMsg');
+	this.fbHolder = $('.faceBookLoginPlace img');
 	
-	$('.login-place').bind('click', $.proxy(this.toggleWindow, this) );
+	$('.login-place').bind('tap', $.proxy(this.toggleWindow, this) );
+	$('#closeLoginPop').bind('tap', $.proxy(this.toggleWindow, this) );
+	$('#toggleLoginType').bind('tap', $.proxy(this.toggleLoginForm, this) );
 	$('#signUpForm').submit(this.submitNewUser);
+	$('#loginForm').submit(this.loginUser);
 }
+
+userLogin.prototype.toggleLoginForm = function() {
+	if( this.signUpView.hasClass('hidden') ){
+		this.signUpView.removeClass('hidden');
+		this.loginView.addClass('hidden');
+		this.toggleButton.html('Login');
+		this.loginMsg.html('or Register with email');
+		this.fbHolder.attr('src', '/skin/img/signinfacebook.png');
+	} else {
+		this.signUpView.addClass('hidden');
+		this.loginView.removeClass('hidden');
+		this.toggleButton.html('Register');
+		this.loginMsg.html('or Login with email');
+		this.fbHolder.attr('src', 'http://www.dahliawolf.com/images/signinfacebook2.png');
+	}
+}
+
+userLogin.prototype.loginUser = function(e) {
+    e.preventDefault();
+	$('#loginErrorCode').empty();
+	var formdata = new Array();
+	formdata = $(e.target).serializeArray();
+	
+	var username = formdata[0].value.trim();
+	var password = formdata[1].value.trim();
+	
+	$.post( $(e.target).attr('action'), {identity : username, credential : password, ajax : true}, function(data){
+		var result = $.parseJSON(data);
+		if (!result.success) {
+			var str = '';
+			$.each(result.errors, function(index, error){
+				str += error;
+			});
+			$('#loginErrorCode').html(str);
+		} else {
+			document.location.reload();
+		}
+	});
+}
+
 
 userLogin.prototype.submitNewUser = function(e) {
     e.preventDefault();
@@ -13,12 +61,18 @@ userLogin.prototype.submitNewUser = function(e) {
 	var formdata = new Array();
 	formdata = $(e.target).serializeArray();
 	
-	$.post( $(e.target).attr('action'), {user_username : formdata[0].value, user_email : formdata[1].value,  user_password : formdata[2].value, ajax : true}, function(data){
+	var username = formdata[0].value.trim();
+	var email = formdata[1].value.trim();
+	var password = formdata[2].value.trim();
+	
+	$.post( $(e.target).attr('action'), {user_username : username, user_email : email,  user_password : password, ajax : true}, function(data){
 		var result = $.parseJSON(data);
 		if (!result.success) {
+			var str = '';
 			$.each(result.errors, function(index, error){
-				$('#loginErrorCode').append(error);
+				str += error;
 			});
+			$('#loginErrorCode').html(str);
 		} else {
 			document.location.reload();
 		}
@@ -26,11 +80,13 @@ userLogin.prototype.submitNewUser = function(e) {
 }
 
 userLogin.prototype.toggleWindow = function() {
+	var $this = this
 	if(!this.view.is(':visible') ) {
-		this.view.show().animate({'bottom' : 0}, 400);
+		this.view.show().animate({'bottom' : 0 + '%'}, 400);
 	} else {
-		this.view.animate({'bottom' : '-'+100}, 400, function(){
+		this.view.animate({'bottom' : '-'+100+'%'}, 400, function(){
 			$(this).hide();
+			$this.displayError.empty();
 		});
 	}
 }
@@ -42,7 +98,7 @@ function m_post_image(id, description){// ************************* AJAX CALL TO
 			document.location = 'post-bank.php';
 		});
 	}else{
-		console.log('sumpin missing')
+		//if no id
 	}
 	return false;
 }
@@ -118,7 +174,6 @@ $(document).on('submit', '#m-comform', function(event) {
 			
 			$modal_content.load($modal_content.data('href') + '&posted=1');
 			
-			console.log(response);
 			update_user_points(response.data.points_earned);
 		}, 'json').done(function(){
 			location.reload();

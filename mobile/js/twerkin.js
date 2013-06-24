@@ -34,6 +34,18 @@ twerkin.bindGlorify = bindGlorify;
 twerkin.getCurrentImage = getCurrentImage;
 
 //********** MethodS *********
+twerkin.toggleFollow = function() {
+	is_following = $(this).data('is_following');
+	
+	if(is_following) {
+		$(this).data('is_following', false);
+		$(this).html('FOLLOW').removeClass('is_followed');
+	} else {
+		$(this).data('is_following', true);
+		$(this).html('UNFOLLOW').addClass('is_followed');
+	}
+}
+
 twerkin.toggleGlorifyFullScreen = function() {
 	if( $('#voteOptions').is(':visible') ){
 		$('#voteOptions').animate({top:'-'+60+'px'}, 200, function(){
@@ -53,7 +65,6 @@ function getCurrentImage(){
 }
 
 function bindGlorify(){
-	console.log('bindid');
 	$('#theGlory').bind('moveend', function(e){
 		if(e.distX > 0 && e.distX > 50){
 			glorifyCloseWithVote('yes');
@@ -118,7 +129,7 @@ function voteForImage(decision, id){
 			$.post('/action/dislike.php?posting_id='+id);
 		}
 	}else{
-		document.location = 'login.php';
+		_userLogin.toggleWindow();
 	}
 }
 
@@ -154,23 +165,29 @@ function turnonLight(ch){
 
 function getNewImage(id){
 	url = this.getMoreUrl+'?id='+id
-	url += '&viewer_user_id='+User.id;
+	if(User.id){
+		url += '&viewer_user_id='+User.id;
+	}
 	twerkin.available = false;
 	$.ajax({url: url}).done(function(data){
 		$('#swipe-me-'+data.current.next_posting_id).addClass('active').removeClass('next');
 		twerkin.checkforWhammy();
 		twerkin.available = true;
-		twerkin.addFrame(data.previous.posting_id, data.previous.image_url, data.previous.likes, data.previous.avatar, data.previous.username, data.previous.width, data.previous.height);	
+		twerkin.addFrame(data.previous.posting_id, data.previous.image_url, data.previous.likes, data.previous.avatar, data.previous.is_following, data.previous.username, data.previous.width, data.previous.height);	
+		twerkin.currentData = data.current;
 		twerkin.current = id;
 		twerkin.description = data.current.description;
 		twerkin.prev = data.previous.posting_id;
 		twerkin.bind();
+		twerkin.isFollowingText = $('.postFollowUser');
 		$('.stack').unbind('click');
 		$('.stack').bind('click', twerkin.glorify);
+		$('.postFollowUser').unbind('tap');
+		$('.postFollowUser').on('tap', twerkin.toggleFollow);
 		twerkin.count++;
 	});
 }
-function appendFrame(id, src, likes, avatard, boosername, w, h){
+function appendFrame(id, src, likes, avatard, is_following, boosername, w, h){
 	str = '<div class="outside-frame optimize-me next" id="swipe-me-'+id+'">';
     str += '<div id="vote-not-'+id+'" class="vote-pop vote-not"></div>';
 	str += '<div id="vote-hot-'+id+'"class="vote-pop vote-hot"></div>';
@@ -184,8 +201,10 @@ function appendFrame(id, src, likes, avatard, boosername, w, h){
     str += '<div class="postUserDeets">';
     str += '<div class="postUserName" onClick=\'goHere("profile.php?username='+boosername+'")\'>'+boosername+'</div>';
     str += '</div>';
-    str += '<div class="postFollowUser">FOLLOW</div>';
-    str += ' </div>';
+    if(is_following != 'undefined'){
+		str += '<div class="postFollowUser" data-is_following="'+(parseInt(is_following) ? true : false)+'">'+(parseInt(is_following) ? 'UN' : '')+'FOLLOW</div>';
+	}
+	str += ' </div>';
 	$('#screen-frame').prepend(str);
 }
 
@@ -231,7 +250,6 @@ function finishMove(dir){// commpletes animation and process's vote
 function animateMainImage(h, v){
 	theImage = twerkin.getCurrentImage();
 
-	console.log();
 	hOffset = ($(window).innerWidth() * .05) + 1; //higher number makes image go right
 	vOffset = (53 + parseFloat( $('#screen-frame').css('margin-top') ) );//higher number makes images go up
 	//vOffset = 68;
@@ -251,10 +269,12 @@ function t_init(script, current, prev){
 	this.screenSize = $(window).width();
 	this.hideRight = $(window).width();
 	this.hideLeft = -$(window).width();
+	this.isFollowingText = $('.postFollowUser');
 	this.bind();
 	
 	//Bind front end
 	$('.stack').on('click', twerkin.glorify);
+	$('.postFollowUser').on('tap', twerkin.toggleFollow);
 }
 
 function bind(){

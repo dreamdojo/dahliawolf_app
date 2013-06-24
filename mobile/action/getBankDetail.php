@@ -16,6 +16,7 @@
 		'posting_id' => $result['current']['previous_posting_id'],
 		'limit' => 1,
 	);
+	$params['viewer_user_id'] = $_GET['viewer_user_id'];
 	
 	$data = api_call('posting', 'get_post', $params, true);
 	$result['previous'] = $data['data'];

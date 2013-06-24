@@ -20,6 +20,7 @@ function postDetailGrid(id) {
 	
 	this.postContainer = $('#userPostGrid');
 	this.contentContainer = $('#modal-content');
+	this.titleContainer = $('#postGridTitle');
 	
 	this.init();
 }
@@ -47,6 +48,11 @@ postDetailGrid.prototype.bindScroller = function() {
 postDetailGrid.prototype.init = function() {
 	this.getPosts();
 	this.bindScroller();
+	this.setTitle();
+}
+
+postDetailGrid.prototype.setTitle = function() {
+	this.titleContainer.html('More posts by '+thePostDetail.data.username);
 }
 
 postDetailGrid.prototype.toggleLove = function() {

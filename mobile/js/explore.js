@@ -1,7 +1,14 @@
 // safari = 8
 //android = 50
 offzet = -50;
-if($(window).height() < 360){offzet = 8;}
+if($(window).height() == 460){
+	offzet = -45;
+} else if($(window).height() == 356) {
+	offzet = 8;
+} else {
+	offzet = 0;
+}
+
 $('.product-box').height(window.innerHeight + offzet);
 overlay = $('#blackOut');
 

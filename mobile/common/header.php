@@ -104,21 +104,27 @@ if($self == "/index.php" || $self == "/explore.php"){
 	#alert-box .mess{position: absolute;width: 100%;color: #fff;font-size: 1em;top: 71%;z-index: 100;}
 	#swipe-back{height:95%; top:5%; position:absolute; width:15%; right:-15%;width: 18%;right: -18%;}
 	#showActivity{position: absolute;right: 0px;height: 100%;width: 10%;top: 0px;background-image: url(/mobile/images/posty_avatar.png);background-repeat: no-repeat;background-size: auto 50%;margin-top: 9px;}
-	#loginPage{ position:fixed; width:100%; height:100%; background-color:#fff; left:0px; bottom:-100%; display:none;z-index: 100000000; text-align:center;}
+	
+	#loginPage{ position:fixed; width:100%; height:100%; background-color:#fff; left:0px; bottom:-100%; display:none;z-index: 99999999999; text-align:center;}
 	#loginPage input{min-width:0px;width: 100%;background-color: #fff;border-radius: .4em;font-size: 1em;-webkit-appearance:none;} 
 	.faceBookLoginPlace{width:80%;margin: 0px auto;padding-top: 10%;}
 	.faceBookLoginPlace img{width:100%;}
-	#loginErrorCode{ font-size:3em; margin-top:5%; color:red;}
+	#loginErrorCode{ font-size:1em; margin-top:5%; color:red; height:5px;}
+	#signUpForm li{padding: 5px 0 !important;}
+	#closeLoginPop{ position:absolute; right:1%; top:2px; font-size:2em;}
+	#loginForm{margin: 5px 0 !important;}
+	#toggleLoginType{position: absolute;right: 7%;bottom: 6%;color: rgb(100, 100, 100);font-size: 1.2em; font-family:Arial, Helvetica, sans-serif;}
 </style>
 
 <div id="loginPage">
- 	<div id="loginErrorCode"></div>
+ 	<div id="closeLoginPop">X</div>
+    <div id="loginErrorCode"></div>
     <div class="faceBookLoginPlace">
         <a href="/social-login.php?social_network=facebook">
             <img src="/skin/img/signinfacebook.png">
-        </a><p style="font-size: 17px;color: rgb(100, 100, 100);margin-top: 20px;">or sign up with email:<p />
+        </a><p id="loginMsg" style="font-size: 17px;color: rgb(100, 100, 100);margin-top: 20px;">or sign up with email:<p />
     </div>
-    <form id="signUpForm" method="POST" class="Form FancyForm AuthForm StaticForm" action="action/signup.php" style="margin-top:8px;">
+    <form id="signUpForm" method="POST" class="Form FancyForm AuthForm StaticForm hidden" action="action/signup.php" style="margin-top:8px;">
             <ul>
                <li>
                     <input class="input_text" type="text" name="user_username" id="sysForm_user_username" value="" placeholder="USERNAME" />
@@ -140,6 +146,32 @@ if($self == "/index.php" || $self == "/explore.php"){
                 <input type="hidden" name="session_type" value="<?= $_GET['session_type'] ?>" />
              <? endif ?>
         </form>
+        
+        <form id="loginForm" method="POST" class="Form StaticForm login-form" action="action/login.php">
+            <fieldset>
+                <ul class="fields">
+                    <li>
+                        <input class="input_text" type="text" name="identity" id="sysForm_identity" value="" placeholder="EMAIL" />
+                    </li>
+                    <li>
+                        <input class="input_text" type="password" name="credential" id="sysForm_credential" value="" placeholder="PASSWORD" />
+                    </li>
+                </ul>
+            </fieldset>
+            <div class="non_inputs"></div>
+                <input type="image" src="images/login-butt.jpg" id="sysForm_submit">
+            <div class="non_inputs">
+                <!--<a href="/mobile/signup.php?session_type=<?//= $_GET['session_type'] ?>" id="urlGetInvite" class="colorless">Sign up now!</a>-->
+                <!--<a href="/mobile/reset-password.php?session_type=<?// $_GET['session_type'] ?>" id="resetPassword" class="colorless">Forgot your password?</a>-->
+            </div>
+            <input type="hidden" id="l_remember_me" name="l_remember_me" type="checkbox" value="1">
+            <input type="hidden" name="r" value="" />
+            <input type="hidden" name="sublog" value="1" />
+            <? if (!empty($_GET['session_type'])) { ?>
+                <input type="hidden" name="session_type" value="<?= $_GET['session_type'] ?>" />
+            <? } ?>
+        </form>
+        <div id="toggleLoginType">Register</div>                    
 </div>
 
 <a name="top"></a>
@@ -160,7 +192,7 @@ background:url(/mobile/images/image-bank-graphic.png) no-repeat; background-posi
 #topInspireMenu{position:fixed; width:100%; height:40px; top:0px; background-color:#fcfcfc; display:none;z-index: 1000;}
 #inspireMenu{position:fixed; width:100%; height:60px; left:0px; top:40px; display:none; background-color:#8a8b8d;z-index: 1000;}
 .inspireMenu-option{width: 33.333333%; height:100%; float:left; position:relative;}
-#inspireDwolfBank{background:url(/mobile/images/menu-icon-dw.png) no-repeat; background-position: 50% 50%;background-size: auto 60%; background-color:#585858;}
+#inspireDwolfBank{background:url(/mobile/images/menu-icon-dw.png) no-repeat; background-position: 50% 50%;background-size: auto 60%; background-color:#fff;}
 #inspireCamera{background:url(/mobile/images/menu-icon-cam.png) no-repeat; background-position: 50% 50%;background-size: auto 60%; background-color:white; position:relative;}
 #inspireCameraRoll{background:url(/mobile/images/menu-icon-roll.png) no-repeat; background-position: 50% 50%;background-size: auto 60%; background-color:white;}
 .gridzy{float: left;width:48%;height: 200px;overflow: hidden;text-align: center; margin-left:1%; margin-right:1%; margin-top:5px; position:relative;}
@@ -169,13 +201,29 @@ background:url(/mobile/images/image-bank-graphic.png) no-repeat; background-posi
 .artzy img{max-width:100%;}
 .scrollable{overflow:scroll !important;}
 .unscrollable{overflow:hidden !important;}
-#closeInspirePage{position: relative;height: 80%;width: 20%;text-align: center;margin-top: 3px;float: left;background-image: url(/mobile/images/close_button.png);background-size: auto 100%;margin-left: 2%;background-repeat: no-repeat;}
+#closeInspirePage{position: relative;
+height: 60%;
+width: 25%;
+font-family: helvetica;
+text-align: center;
+margin-bottom: 1%;
+margin-top: 1%;
+margin-right: 2%;
+float: right;
+/*background-image: url(/mobile/images/close_button.png);
+background-size: auto 100%;
+background-repeat: no-repeat;*/
+font-size: 18px;
+color: rgb(179, 179, 179);
+font-weight: 100;
+border: 1px solid rgb(202, 202, 202);
+padding: 1%;}
 #inspectahPost{position:fixed; width:100%; height:100%; background-color:#000; z-index:10000000002; display:none; left:0px; top:0px;}
 #inspectahPost img{width: 96%;margin-top: 1%;margin-left: 2%;}
 #inspectahPost .butt{background-color: rgb(70, 70, 70);height: 20px;width: 20%;position: absolute;border: #FFF .4em solid;border-radius: .5em;top: 40px;text-align: center;opacity: .7;padding-top: 5px;color: #fff;}
 #closeInspection{left:5%;}
 #postImage{right:5%;}
-#gridToggle{float:right; height: 76%;margin-top: 3px;width: 6%; margin-right:4%;background:url(/mobile/images/insp-grid.png) no-repeat; background-size:auto 100%;}
+#gridToggle{float:left; height: 76%;margin-top: 1%;width: 10%; margin-right:4%;background:url(/mobile/images/insp-grid.png) no-repeat; background-size:auto 100%;margin-left: 2%;}
 .carot{background:url(/mobile/images/carot.png) no-repeat; background-size:100% 100%; position:absolute; top:100%;width: 30%;height: 20px;left: 35%;}
 .post-post{position: absolute;color: #303030;top: 30%;text-align: center;width: 100%;font-size: 2.8em;}
 .post-post span{font-size: .7em;}
@@ -188,8 +236,9 @@ background:url(/mobile/images/image-bank-graphic.png) no-repeat; background-posi
 </div>
 <div id="inspirePage">
 	<div id="topInspireMenu">
-    	<div id="closeInspirePage"></div>
         <div id="gridToggle"></div>
+    	<div id="closeInspirePage">CLOSE</div>
+
     </div>
     <div id="inspireMenu" class="drop-shadow">
     	<div id="inspireDwolfBank" class="inspireMenu-option"><div class="carot"></div></div>

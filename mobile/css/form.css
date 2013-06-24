@@ -16,7 +16,7 @@ fieldset {
 	padding: 10px 20px;
 }
 .Form.login-form .non_inputs {
-	margin-top: 20px;
+	margin-top: -3%;
 	font-size: 18px;
 }
 .Form.login-form .non_inputs a {
@@ -65,8 +65,8 @@ fieldset {
 .StaticForm {margin: 36px 0; font-size: 13px;}
   .StaticForm h3 {padding: 0 0 18px; font-size: 28px; line-height: 1.1em; font-weight: bold; color: #524d4d; text-shadow: 0 1px rgba(255,255,255,0.9); border-bottom: 3px double rgba(34,25,25,0.1);overflow: hidden;}
   .StaticForm h3 a {font-weight: 300;}
-  .StaticForm li {clear: both; margin: 0; padding: 15px 0; color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); border-top: 1px solid rgba(255,255,255,0.7); border-bottom: 1px solid rgba(34,25,25,0.1); width: 100%;} /* Float and Width for IE */
-  .StaticForm li:last-child {border-bottom: 3px double rgba(34,25,25,0.1);}
+  .StaticForm li {clear: both; margin: 0; /*padding: .5% 0 5% 0;*/ color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); /*border-top: 1px solid rgba(255,255,255,0.7); border-bottom: 1px solid rgba(34,25,25,0.1);*/ width: 100%;} /* Float and Width for IE */
+  .StaticForm li:last-child {/*border-bottom: 3px double rgba(34,25,25,0.1);*/}
   .StaticForm li:after {clear: both; display: block; height: 0; content: " "; visibility: hidden;}
   .StaticForm label {float: left; width: 180px; padding-top: 7px; vertical-align: top;}
   .StaticForm label.radio { padding-top: 24px; } /* If the list item holds a radio, it needs more spacing to be consistent */

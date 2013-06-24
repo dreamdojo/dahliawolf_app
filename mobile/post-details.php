@@ -24,8 +24,8 @@ $data_next['post'] = $data_next['data'];
 ?>
 <style>
 #screen-frame{ position:absolute; height: 70%; width:90%; left:5%; margin-top:2%;border: 1px solid rgb(209, 209, 209);}
-.outside-frame{ width: 100%;height: 100%;margin: 0px auto;  position:absolute;}
-.inside-frame{ width:100%; margin:0px auto; height:87%; overflow:hidden; background-image: url(images/loading3.gif);background-repeat:no-repeat;background-size: 50% auto;background-position: center; text-align:center;}
+.outside-frame{ width: 100%;height: 100%;margin: 0px auto;  position:absolute; background-color:#fff;}
+.inside-frame{ width:100%; margin:0px auto; height:87%; overflow:hidden; background-image: url(images/loading3.gif);background-repeat:no-repeat;background-size: 50% auto;background-position: center; text-align:center; background-color:#fff;}
 .post-deets{height:13%;width: 100%;padding-top: 1%;margin: 0px auto;background-color: white;}
 .deets-half{width: 49%;float: left;text-align: center; color:rgb(109, 109, 109); font-size: 1.4em; background-color:#f3f3f3; height:90%; overflow:hidden;}
 .hearts{margin-top:40%;}
@@ -69,21 +69,15 @@ $data_next['post'] = $data_next['data'];
 #left-border{position:absolute;height: 100%;left: -5%;bottom: 0px;width: 5%; z-index:1;}
 #bottom-border{position:absolute;bottom: -4.5%;left: -3.5%;width: 103.5%; z-index:1;}
 
-#voteOptions{position:absolute; width:100%; height:45px; background-color:white; opacity:.7; top:0px;}
-#voteOptionDone{background: url(/mobile/images/deetDone.png) no-repeat;background-size: auto 100%;height: 60%;margin-top: 13px;width: 30%;float: left;position: relative;margin-left: 4%;}
-#voteOptionDetail{height: 60%;margin-top: 13px;width: 30%;float: right;position: relative;margin-right: 4%;background: url(/mobile/images/deetPostDetails.png) no-repeat;background-size: auto 100%;background-position-x: 100%;}
+#voteOptions{position:absolute; width:100%; height:45px; background-color:white; opacity:.8; top:0px;}
+#voteOptionDone{background: url(/mobile/images/deetDone.png) no-repeat;background-size: auto 100%;height: 60%;margin-top: 10px;width: 30%;float: left;position: relative;margin-left: 4%;}
+#voteOptionDetail{height: 60%;margin-top: 10px;width: 30%;float: right;position: relative;margin-right: 4%;background: url(/mobile/images/deetPostDetails.png) no-repeat;background-size: auto 100%;background-position-x: 100%;}
 
 .postUserAvatarFrame{height: 85%; margin-top:2%; margin-left: 5.5px;width: 10%; overflow:hidden; float:left;}
 .postUserAvatarFrame img{width:100%;}
 .postUserDeets{float: left;height: 100%; margin-top:3%; font-size: 1.2em;margin-left: 2%;color: rgb(107, 107, 107);}
-.postFollowUser{float: right;
-background-color: rgb(255, 255, 255);
-padding: .5em 1em;
-color: rgb(255, 89, 89);
-margin-top: 2.4%;
-margin-right: 2%;
-font-size: .8em;
-border: 1px solid rgb(253, 167, 167);}
+.postFollowUser{float: right;background-color: rgb(255, 255, 255);padding: .5em 1em;color: rgb(255, 89, 89);margin-top: 2.4%;margin-right: 2%;font-size: .8em;border: 1px solid rgb(253, 167, 167);}
+.is_followed{color: #c2c2c2;border-color: #c2c2c2;opacity: .7;}
 </style>
 
 <? //var_dump($_data['post']); ?> 
@@ -121,8 +115,8 @@ border: 1px solid rgb(253, 167, 167);}
 
 <div id="screen-frame">
     
-    <img id="left-border" src="images/left-border.png" />
-   <!-- <img id="bottom-border" src="images/bottom-border.png" />   -->
+     <!-- <img id="left-border" src="images/left-border.png" />
+  <img id="bottom-border" src="images/bottom-border.png" />   -->
     
     <div class="outside-frame optimize-me active" id="swipe-me-<?= $_data['post']['posting_id'] ?>">
     	<div id="vote-not-<?= $_data['post']['posting_id'] ?>" class="vote-pop vote-not"></div>
@@ -138,7 +132,7 @@ border: 1px solid rgb(253, 167, 167);}
             <div class="postUserDeets">
             	<div clas="postUserName" onClick="goHere('profile.php?username=<?= $_data['post']['username'] ?>');" ><?= $_data['post']['username'] ?></div>
             </div>
-            <div class="postFollowUser">FOLLOW</div>
+            <? if(IS_LOGGED_IN): ?><div class="postFollowUser" data-is_following="<?= ($data_next['post']['is_following'] ? 'true' : 'false') ?>"><?= ($_data['post']['is_following'] ? 'UN' : '') ?>FOLLOW</div><? endif ?>
         </div>
     </div>
  
@@ -156,7 +150,7 @@ border: 1px solid rgb(253, 167, 167);}
             <div class="postUserDeets">
             	<div clas="postUserName" onClick="goHere('profile.php?username=<?= $data_next['post']['username'] ?>');"><?= $data_next['post']['username'] ?></div>
             </div>
-            <div class="postFollowUser">FOLLOW</div>
+            <? if(IS_LOGGED_IN): ?><div class="postFollowUser" data-is_following="<?= ($data_next['post']['is_following'] ? 'true' : 'false') ?>"><?= ($data_next['post']['is_following'] ? 'UN' : '') ?>FOLLOW</div><? endif ?>
         </div>
     </div>
 </div>

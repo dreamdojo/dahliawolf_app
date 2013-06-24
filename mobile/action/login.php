@@ -13,6 +13,7 @@ $params = array(
 	, 'password' => $_POST['credential']
 );
 $data = api_call('user', 'login', $params, true);
+$return_data = $data;
 
 // Failed login
 if (!empty($data['errors'])) {
@@ -50,16 +51,28 @@ else {
 	if (isset($_SESSION['redirect'])) {
 		$redirect = $_SESSION['redirect'];
 		unset($_SESSION['redirect']);
-		
-		redirect($redirect);
+		if( !isset($_POST['ajax']) ) {
+			redirect($redirect);
+			die();
+		} else {
+			echo json_encode($return_data);
+			die();
+		}
+	}
+	if( !isset($_POST['ajax']) ) {
+		redirect('/post-details.php?session_type=web');
+		die();
+	} else {
+		echo json_encode($return_data);
 		die();
 	}
-	redirect('/post-details.php?session_type=web');
-	die();
 }
 
-// If errors, send user back to login form
-if (!empty($_SESSION['errors'])) {
-	redirect($_SERVER['HTTP_REFERER']);
+if( !isset($_POST['ajax']) ) {
+	if (!empty($_SESSION['errors'])) {
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+} else {
+	echo json_encode($return_data);
 }
 ?>

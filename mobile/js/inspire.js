@@ -3,7 +3,9 @@ function inspectImage(obj) {
 	this.src = obj.find('img').attr('src');
 	this.id = obj.data('id');
 	this.view = $('#inspectahPost');
-	this.view.fadeIn(100);
+	this.view.fadeIn(100, function(){
+		inspirePage.view.addClass('hidden');
+	});
 	this.view.append('<img id="theInspected" src="'+this.src+'">');
 	this.buttonsShowing = true;
 	this.postButton = $('#postImage');
@@ -24,6 +26,7 @@ inspectImage.prototype.toggleButtons = function() {
 
 inspectImage.prototype.closeInspector = function(){
 	$this = this;
+	inspirePage.view.removeClass('hidden');
 	this.view.fadeOut(200, function(){
 		$('#theInspected').remove();
 		$('#theInspected').unbind('click');
@@ -166,17 +169,21 @@ inspire.prototype.displayImages = function(data) {
 
 inspire.prototype.postImage = function(id) {//Post Image
 	$this = this;
-	if(id && id > 0 && this.isPostingAvailable && User.id){
-		this.isPostingAvailable = false;
-		$('#post-'+id).unbind('doubletap');
-		$('#post-'+id).append('<div class="postedOverlay"></div>');
-		$.post('/action/post_feed_image.php', { id: id, description: 'Posted from Dahliawolf mobile' } ).done(function(data){
-			$('#post-'+id).find('.postedOverlay').bind('tap', function(){
-				goHere('postdetails.php?posting_id='+data.posting_id, false);
+	if(User.id) {
+		if(id && id > 0 && this.isPostingAvailable && User.id){
+			this.isPostingAvailable = false;
+			$('#post-'+id).unbind('doubletap');
+			$('#post-'+id).append('<div class="postedOverlay"></div>');
+			$.post('/action/post_feed_image.php', { id: id, description: 'Posted from Dahliawolf mobile' } ).done(function(data){
+				$('#post-'+id).find('.postedOverlay').bind('tap', function(){
+					goHere('postdetails.php?posting_id='+data.posting_id, false);
+				});
+				$('#post-'+id).append('<div onClick="goHere(\'postdetails.php?posting_id='+data.posting_id+'\', false);" class="post-post">POSTED<br><span>View Post</span></div>');
+				$this.isPostingAvailable = true;
 			});
-			$('#post-'+id).append('<div onClick="goHere(\'postdetails.php?posting_id='+data.posting_id+'\', false);" class="post-post">POSTED<br><span>View Post</span></div>');
-			$this.isPostingAvailable = true;
-		});
+		}
+	} else {
+		_userLogin.toggleWindow();
 	}
 }
 

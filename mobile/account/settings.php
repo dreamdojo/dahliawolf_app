@@ -13,7 +13,18 @@ if($_GET['session_type'] == "web") {
 .menu-container input{width:100% !important;position: relative;}
 .menu-container select{margin-bottom: 10px;width: 100%;height: 30px; margin-left:0px;}
 .menu-container textarea{width:100%;}
-.logout-button{padding: 1em;background-color:#a53247;text-align: center;width: 60%;border-radius: 1em;border: #000 thin solid;box-shadow: inset .0em .1em 1em .1em #000000;font-size: 1em;font-weight: bold;font-family: arial;margin: 0px auto;color: #fff;text-shadow: .14em .14em #000;margin-top: 12%;}
+.logout-button{padding: 1em;
+background-color: rgb(214, 214, 214);
+text-align: center;
+width: 90%;
+font-size: 1em;
+font-weight: bold;
+font-family: arial;
+margin: 0px auto;
+color: #000;
+margin-top: 20%;}
+.current_avatar_wrapper{width: 100%;overflow: hidden;}
+.current_avatar_wrapper img{width:100%;}
 </style>
 
 <div class="menu-container">
@@ -97,7 +108,7 @@ if($_GET['session_type'] == "web") {
 
             <li>
                 <div class="current_avatar_wrapper">
-                  	<img src="<?= $_data['user']['avatar'] ?>" class="current_avatar floatLeft" />
+                  	<img src="<?= $_data['user']['avatar'] ?>&width=400" class="current_avatar floatLeft" />
                 </div>
             </li>
             

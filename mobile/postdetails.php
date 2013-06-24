@@ -23,16 +23,16 @@
 ?>
 <style>
 #posterDetails{width: 96%;height: 50px;background-color: #FFF;margin-top: 5px;margin-left: 2%;}
-#postDetails{ width:96%; margin-left:2%; margin-top:2px; background-color:#FFF; height:300px;overflow: hidden;}
-#postFrame{ height: 75%; width:98%; margin-left:1%; padding-top:1%; overflow:hidden;}
+#postDetails{ width:96%; margin-left:2%; margin-top:2px; background-color:#FFF; height:100%;overflow: hidden; min-height:400px;}
+#postFrame{ height: 100%; width:98%; margin-left:1%; padding-top:1%; overflow:hidden;}
 #postFrame img{ width:100%;z-index: 1000000000;}
-#postOptions{ height:20%; margin-top:2%; width:102%; margin-left:1%;}
-.postOption{ float:left; width: 31.1%; height:100%; border:#c2c2c2 thin solid; margin-right:1%;}
+#postOptions{ height: 40px;width: 95%;left: 2%;bottom: 46px;background-color: #fff;position: fixed;padding-top: 5px; opacity:.6; padding-bottom:10px;}
+.postOption{ float:left; width: 32%; height:100%; margin-left: .9%;}
 .postOptionTitle{width:100%; height:70%; background-color:#fff;}
 .loved{ background-image:url(/mobile/images/loved.png);background-repeat: no-repeat;background-position: 50%;background-size: auto 100%; }
 .unloved{ background-image:url(/mobile/images/loveDetail.png);background-repeat: no-repeat;background-position: 50%;background-size: auto 100%; }
-.postOptionCount{width:100%; height:30%; background-color:#c2c2c2; color:#fff;}
-.postOptionCount p{font-size: 1.2em;font-weight: bold;text-align: center;padding-top: 1.5px;}
+.postOptionCount{width:100%; height:30%; /*background-color:#fff;*/ color:#000;}
+.postOptionCount p{font-size: 1.2em;font-weight: 100; font-family:helvetica; text-align: center;padding-top: 1px;}
 .posterAvatarFrame{ width:15%; overflow: hidden;height: 92%; margin-top:2px; margin-left:1%; float:left;}
 .posterAvatarFrame img{ width:100%;}
 .posterDeets{height:100%; float:left; margin-left:1%; margin-top:2px;}
@@ -90,32 +90,33 @@
         <div class="posterFollowButton">FOLLOW</div>
     </div>
     
+    <div id="postOptions">
+        <div class="postOption" id="toggleLove" data-liked="<?= ($data['is_liked'] ? 'true' : 'false') ?>">
+            <div id="likeTitle" class="postOptionTitle <?= ($data['is_liked'] ? 'loved' : 'unloved') ?>">
+            </div>
+            <div class="postOptionCount">
+                <p id="totalLikes">Love <?= $data['total_likes']?></p>
+            </div>
+        </div>
+        <div class="postOption" id="doComments">
+            <div id="commentTitle" class="postOptionTitle">
+            </div>
+            <div class="postOptionCount">
+                <p id="totalComment">Comment <?= count($data['comments'])?></p>
+            </div>
+        </div>
+        <div class="postOption" id="doShare">
+            <div id="shareTitle" class="postOptionTitle">
+            </div>
+            <div class="postOptionCount">
+                <p id="totalShares">Share 200</p>
+            </div>
+        </div>
+    </div>
+    
     <div id="postDetails">
         <div id="postFrame">
             <img id="thePostImage" src="<?= $data['image_url'] ?>">
-        </div>
-        <div id="postOptions">
-            <div class="postOption" id="toggleLove" data-liked="<?= ($data['is_liked'] ? 'true' : 'false') ?>">
-                <div id="likeTitle" class="postOptionTitle <?= ($data['is_liked'] ? 'loved' : 'unloved') ?>">
-                </div>
-                <div class="postOptionCount">
-                    <p id="totalLikes"><?= $data['total_likes']?></p>
-                </div>
-            </div>
-            <div class="postOption" id="doComments">
-                <div id="commentTitle" class="postOptionTitle">
-                </div>
-                <div class="postOptionCount">
-                    <p id="totalComment"><?= count($data['comments'])?></p>
-                </div>
-            </div>
-            <div class="postOption" id="doShare">
-                <div id="shareTitle" class="postOptionTitle">
-                </div>
-                <div class="postOptionCount">
-                    <p id="totalShares">200</p>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -153,14 +154,14 @@
 </div>
 
 <style>
-#postComments{ position:fixed; width:100%; height:100%; background-color:#c2c2c2; top:100%; left:0px; overflow: auto; display:none;z-index: 1000000001;}
+#postComments{ position:fixed; width:100%; height:100%; background-color:#c2c2c2; top:100%; left:0px; overflow: auto; display:none;z-index: 100000001;}
 .postComment{ background-color:#fff; margin-top:5px; width:96%; margin-left:2%; word-wrap:normal; font-size:.8em; color:#959595;min-height: 60px;float: left;padding-bottom: 5px;}
 .commentAvatarFrame{height:50px; width:10%; overflow:hidden; float:left;margin-top: 5px;margin-left: 5px;}
 .commentAvatarFrame img{width:100%;}
 .commentData{float: left;margin-top: 5px;margin-left: 5px;width: 85%;}
 .commentData span{color:#e18499;}
 
-#addCommentBox{position:fixed; width:100%; height:40px; background-color:#FFF; bottom:0px; left:-100%; display:none;z-index: 9999999999;}
+#addCommentBox{position:fixed; width:100%; height:40px; background-color:#FFF; bottom:0px; left:-100%; display:none;z-index: 100000002;}
 #addCommentBox p{font-size: 1.4em;text-align: center;padding-top: 10px;}
 .secretInput{position:absolute; height:100%; width: 82.5%; left:0px; top:0px; text-align: center;}
 #sendCommentButton{right: 0;width: 17%;height: 30px;text-align: center;color: #575757;position: absolute;top: 0;padding-top: 12px;border-left: #c2c2c2 thin solid;}
@@ -180,17 +181,21 @@
 </div>
 
 <div id="addCommentBox">
-    <input id="postComment" type="text" class="secretInput" placeholder="ADD COMMENT" />
+    <form id="commentForm" action="/action/comment.php">
+    	<input id="postComment" type="text" class="secretInput" <?= (IS_LOGGED_IN) ? '' : 'readonly' ?> placeholder="ADD COMMENT" />
+    </form>
     <div id="sendCommentButton">SEND</div>
 </div>
 
 <script>
-if($(window).height() < 360){
-	$('body').height(120+'%');
-	window.scrollTo(0, 0);
-}
 
 $(function(){
 	var thePost = new postDetail(<?= json_encode($data) ?>);
+	
+	if($(window).height() < 1060){
+		$('body').height(120+'%');
+		window.scrollTo(0, 0);
+	}
+
 });
 </script>
