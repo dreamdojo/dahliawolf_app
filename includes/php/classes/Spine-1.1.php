@@ -262,32 +262,32 @@ class Spine {
 					$like_href = 'javascript:new_loginscreen();';
 					$unlike_href = $like_href;
 				}
-				
+				//var_dump($image);
 				$profile_url = $this->user_profile_href($image['username']);
 				?><li class="posting-<?= $image['posting_id'] ?> image-<?= $mod ?><?= !empty($image['is_liked']) ? ' liked' : '' ?>" data-posting_id="<?= $image['posting_id'] ?>">
 					<? if(!empty($_SESSION['user']) && $image['user_id'] == $_SESSION['user']['user_id']): ?> <a href="/action/delete_post?posting_id=<?= $image['posting_id'] ?>"><div class="del-post">delete</div></a><? endif ?>
                     <div class="image">
 						<a href="<?= $details_url ?>" class="image color-<?= $i % 5 ?>" rel="modal">
-							<?
-							list($target_width, $target_height) = $this->image_dimensions[$mod];
-							
-							$target_ratio = $target_width / $target_height;
-							$ratio = $image['width'] / $image['height'];
-							
-							if ($target_ratio >= $ratio) {
-								$width = $target_width;
-								$height = ceil($image['height'] * ($target_width / $image['width']));
-							}
-							else {
-								$height = $target_height;
-								$width = ceil($image['width'] * ($target_height / $image['height']));
-							}
-							/*data-width="<?= $image['width'] ?>"*/
-							
-							if ($this->options['bare']) {
-								?>
-								<img src="<?= $image['url'] ?>" data-src="<?= $image['url'] ?>" alt="<?= $image['description'] ?>" />
-								<?
+                            <?
+                            list($target_width, $target_height) = $this->image_dimensions[$mod];
+
+                            $target_ratio = $target_width / $target_height;
+                            $ratio = $image['width'] / $image['height'];
+
+                            if ($target_ratio >= $ratio) {
+                                $width = $target_width;
+                                $height = ceil($image['height'] * ($target_width / $image['width']));
+                            } else {
+                                $height = $target_height;
+                                $width = ceil($image['width'] * ($target_height / $image['height']));
+                            }
+                            /*data-width="<?= $image['width'] ?>"*/
+
+                            if ($this->options['bare']) {
+                                ?>
+                                <img src="<?= $image['url'] ?>" data-src="<?= $image['url'] ?>"
+                                     alt="<?= $image['description'] ?>"/>
+                            <?
 							}
 							else {
 								?>
@@ -312,7 +312,7 @@ class Spine {
 
                                         <li class="facebook"><a href="#" onclick="facebookFeed('<?= $full_image_url ?>', 'http://www.dahliawolf.com/post/<?= $image['posting_id'] ?>', 'OMGeeezy this is the bombsteezy');">Facebook</a></li>
 
-                                        <li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&url=http://www.dahliawolf.com/post/<?= $image['posting_id'] ?>" target="_blank">Tweet</a></li>
+                                        <li class="twitter"> <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&url=http://www.dahliawolf.com/post/<?= $image['posting_id'] ?>" target="_blank">Tweet</a></li>
                                         
                                                                                                                        <li class="pinterest"><a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com&media=<?= $full_image_url ?>" class="pin-it-button" count-layout="horizontal" target="_blank">Pin It</a></li>
                                     </ul>         
@@ -320,11 +320,11 @@ class Spine {
                                 <p class="spine-comment"><?= $image['comments'] ?></p>                  
                             </div>
 					</div>
-					
-					<p class="username">
-                        <a href="<?= $profile_url ?>"><?= $image['username'] ?></a>
-                    </p>
-					
+
+                <p class="username">
+                    <a href="<?= $profile_url ?>" class="userHead" data-data='[{"name" : "<?=  $image['username'] ?>", "avatar" : "<?=  $image['avatar'] ?>&width=152", "id" : <?= $image['user_id'] ?>, "is_following" : 1}]'><?= $image['username'] ?></a>
+                </p>
+
 					<p class="like" style="bottom: -26px;">
 						<span class="like-count-<?= $image['posting_id'] ?>"><?= $image['total_likes'] ?></span>
 						<a href="<?= $like_href ?>" id="link-<?= $image['posting_id'] ?>" rel="like" data-undo_href="<?= $unlike_href ?>">Like</a>
