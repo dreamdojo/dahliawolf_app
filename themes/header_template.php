@@ -171,7 +171,7 @@ $(document).ready(function()
 		 }
 		 ?>
        </div>
-       <div id="tour-button">SHOW HELPER</div>
+       <div id="tour-button">MOOP HELPER</div>
    </div>
 </div>		
 </div>
