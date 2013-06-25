@@ -268,7 +268,7 @@ margin-left: 2px;" /></a></div> -->
 </html>
 <script>
     $(function(){
-    homeWrecker.init(2800/* <- fade speed*/, 6000/* <- time between slides*/);
+    homeWrecker.init(4800/* <- fade speed*/, 6000/* <- time between slides*/);
 });
 
 </script>
