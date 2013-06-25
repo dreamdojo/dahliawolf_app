@@ -227,11 +227,11 @@ margin-left: 2px;" /></a></div> -->
 
     
     <div class="slide">
-    	<img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-1.jpg" />
+    	<img class="zeImg" src="http://www.dahliawolf.com/images/DAHLIA_NEWSLIDE.jpg" />
         <div class="item-box black">
-        	<div class="item-title">FLORAL FROST JACKET</div>
+        	<div class="item-title">Coated in Tropicana Jacket</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">Heidi, Los Angeles</div>
+            <div class="inspira">StunnaLOOK, Los Angeles</div>
         </div>
     </div>
     <div class="slide" style="display:none">
