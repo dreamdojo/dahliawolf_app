@@ -92,6 +92,16 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .soc-img-frame{overflow: hidden; position:relative; width:186px; height: 177px; z-index:100000; float: left; border:3px solid #484848; margin-right: 5px;}
 .secret-box{position: relative;overflow: hidden;width: 200px;float: left;}
 .soc-img-frame:hover{border-color:#F00;}
+/*********** DAHLIA HEADS ******/
+#dahliaHead{width:150px; height:175px; position:fixed; background-color:#faf9f9; display:none; text-align:center; border:#dadbe1 1px solid; z-index: 10000;}
+#dahliaHeadAvatar{ margin:0px auto; width:70%; border-radius:85px; overflow:hidden; margin-top:10px; min-height:105px;border:#dadbe1 1px solid; box-shadow: #000 1px 5px 10px -3px;}
+#dahliaHeadAvatar img{ width:100%;}
+#dahliaHeadName{margin:0px auto; color:#fff; font-size:14px; margin-top:10px;}
+#dahliaHeadFollowToggle{padding:5px 10px; color:#000; margin:0px auto;width: 60%;margin-top: 12px; cursor:pointer;}
+#dahliaHeadFollowToggle:hover{opacity:.8;}
+.dahliaHeadFollow{ border:#f74d6d thin solid; color:#f74d6d !important;}
+.dahliaHeadUnFollow{ border:#c2c2c2 thin solid; color:#c2c2c2 !important;}
+.userHead:hover #dahliaHead{ display:block; }
 
 /*********** THE GRID ***********/
 #theGrid{position: relative;width: 1000px;margin: 0px auto;}
