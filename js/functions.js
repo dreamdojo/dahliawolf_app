@@ -1,22 +1,18 @@
-function dahliawolf() {
-    this.posts = new Object();
-}
-dahliawolf.prototype.addPost = function(post) {
-    if(post) {
-        this.posts.push(post);
-    }
-}
-
-theWolf = new dahliawolf();
-
 $(document).ready(function() {
 	$('body').addClass('loaded');
 	events();
 	
 	if (typeof user_id !== 'undefined') {
+		update_user_points();
+	
 		user_events();
 	}
 });
+
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
 
 (function($) {
     $.QueryString = (function(a) {
@@ -110,11 +106,9 @@ function events() {
 				globalSpineLoad = $.get(url, function(data) {
 					globalSpineLoad = null;
 					if (data) {
-                        isSpineAvailable = true;
+						isSpineAvailable = true;
 						$('#theGridLoader').remove();
 						$('.spine .images:last').after(data);
-					} else {
-						$('#theGridLoader').remove();
 					}
 				});
 			}
@@ -466,75 +460,49 @@ $(function(){
 	});
 });
 
-function dahliaHead(){
+function dahliaHeads() {
     $this = this;
+
     this.view = $('#dahliaHead');
-    this.avatar = $('#dahliaHeadAvatar img');
+    this.avatar = $('#dahliaHeadAvatarSrc');
     this.followButton = $('#dahliaHeadFollowToggle');
-    this.isOnDahliaHead = false;
-    this.fadeSpeed = 100;
-    this.mouseDelay = 150;
+    this.left = 0;
+    this.top = 0;
+    this.timer = null;
 
-
-    this.followButton.on('click', $.proxy(this.followToggle, this) );
-    $(document).on('mouseenter', '.userHead', $(this) , $.proxy(this.showMe, this) );
-    $(document).on('mouseleave', '.userHead', function(){
-        $this.timeOut = setTimeout( $.proxy($this.hideMe, $this), $this.mouseDelay);
-    });
-    $('#dahliaHead').on('mouseenter', $.proxy(this.toggleHeadHover, this) )
-    $('#dahliaHead').on('mouseleave', $.proxy(this.toggleHeadNotHover, this) );
-}
-
-dahliaHead.prototype.followToggle = function() {
-    if(this.is_following) {
-        this.is_following = false;
-        this.followButton.removeClass('dahliaHeadUnFollow').addClass('dahliaHeadFollow').html('FOLLOW');
-    } else {
-        this.is_following = true;
-        this.followButton.removeClass('dahliaHeadFollow').addClass('dahliaHeadUnFollow').html('UNFOLLOW');
-    }
-}
-
-dahliaHead.prototype.toggleHeadHover = function() {
-    this.isOnDahliaHead = true;
-}
-
-dahliaHead.prototype.toggleHeadNotHover = function() {
-    this.isOnDahliaHead = false;
-    this.view.fadeOut(this.fadeSpeed);
-}
-
-dahliaHead.prototype.showMe = function(e) {
-    var theLink = $(e.target);
-    if(theUser.id) {
-        var data = theLink.data('data')[0];
-        if( data.name && data.id && data.id != theUser.id && data.avatar && data.is_following != 'undefined' && this.view.is(':hidden') ) {
-            this.is_following = data.is_following;
-            var topHeight = ( (theLink.offset().top > 250) ? (theLink.offset().top - (this.view.height() + 5) ) : (theLink.offset().top + 20));
-
-            this.view.css({'left': ((theLink.offset().left - (this.view.width()/4) - 5) ), 'top' : topHeight });
-
-            if(data.is_following) {
-                this.followButton.html('UNFOLLOW').addClass('dahliaHeadUnFollow').removeClass('dahliaHeadFollow');
-                //ajax unfollow
-            } else {
-                this.followButton.html('FOLLOW').addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
-                //ajax follow
+    $(document).on('mouseenter', '.dahliaHead', function(){
+        $this.left = $(this).offset().left - ($this.view.width()/2);
+        $this.top = $(this).offset().top - $this.view.height();
+        api.getUserDetails( parseInt($(this).data('id')), $.proxy($this.showHead, $this) );
+    }).on('mouseleave', '.dahliaHead', function(){
+        $this.timer = setTimeout(function(){
+            if( $this.view.is(':visible')) {
+                $this.view.fadeOut(200);
             }
-            this.avatar.attr('src', data.avatar);
-            this.view.fadeIn(this.fadeSpeed);
-        } else {
-            this.view.fadeOut(this.fadeSpeed);
+        }, 300);
+    });
+
+    this.view.on('mouseenter', function(){
+        if($this.timer) {
+            clearTimeout($this.timer);
+            $this.timer = null;
         }
-    }
+    }).on('mouseleave', function(){
+        $this.view.fadeOut(200);
+    });
 }
-dahliaHead.prototype.hideMe = function() {
-    if(!this.isOnDahliaHead){
-        this.view.fadeOut(this.fadeSpeed);
-        this.isOnDahliaHead = false;
+
+dahliaHeads.prototype.showHead = function(data) {
+    this.avatar.attr('src', data.data.avatar);
+    this.followButton.html( parseInt(data.data.is_followed) ? 'Unfollow' : 'Follow');
+    if( parseInt(data.data.is_followed) ){
+       this.followButton.addClass('dahliaHeadUnFollow');
+    }else {
+        this.followButton.addClass('dahliaHeadFollow');
     }
+    this.view.css({'left' : this.left, 'top' : this.top}).show();
 }
 
 $(function(){
-    dahliaHeads = new dahliaHead();
+    dahliaHead = new dahliaHeads();
 });

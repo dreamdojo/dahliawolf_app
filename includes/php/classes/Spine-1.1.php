@@ -322,7 +322,7 @@ class Spine {
 					</div>
 
                 <p class="username">
-                    <a href="<?= $profile_url ?>" class="userHead" data-data='[{"name" : "<?=  $image['username'] ?>", "avatar" : "<?=  $image['avatar'] ?>&width=152", "id" : <?= $image['user_id'] ?>, "is_following" : 1}]'><?= $image['username'] ?></a>
+                    <a href="<?= $profile_url ?>" class="dahliaHead" data-id="<?= $image['user_id'] ?>" ><?= $image['username'] ?></a>
                 </p>
 
 					<p class="like" style="bottom: -26px;">
