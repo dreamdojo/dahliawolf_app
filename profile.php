@@ -51,6 +51,7 @@ border: rgb(94, 94, 94) 1px solid;}
 .statTitle{margin-top: 34px;text-align: center;color: rgb(99, 99, 99);font-size: 18px;font-family: helvetica;font-weight: 100;}
 .statPoints{margin-top: -11px;text-align: center;}
 .boutitboutit{color:#969696;font-size: 17px;padding-top: 13px;}
+.profileFollowing{color: #c2c2c2 !important; border: #c2c2c2 thin solid !important;}
 </style>
 <? //var_dump($_data['user']) ?>
 <div id="mainProfileColumn">
@@ -73,7 +74,7 @@ border: rgb(94, 94, 94) 1px solid;}
                     </div>
                 </div>
                 <ul class="userProfileDeetsList">
-                    <li class="profileUsername"><?= $_data['user']['username'] ?></li>
+                    <li class="profileUsername">@<?= $_data['user']['username'] ?></li>
                     <li class="profileLocation"><?= $_data['user']['location'] ?></li>
                     <li class="boutitboutit"><?= $_data['user']['about'] ?></li>
                     <? if(MY_PROFILE): ?> 
@@ -82,7 +83,7 @@ border: rgb(94, 94, 94) 1px solid;}
                 </ul>
                 <div id="userProfileDeetsRightCol">
                         <div class="followersLink" <?= (MY_PROFILE ? 'style="opacity:0;"' : '' ) ?> >
-                            <p id="followingStatus"><?= ($_data['user']['is_followed']  ? 'Following' : 'Follow+' ) ?></p>
+                            <p id="followingStatus" class="<?= ($_data['user']['is_followed']  ? 'profileFollowing' : '') ?>"><?= ($_data['user']['is_followed']  ? 'Following' : 'Follow+' ) ?></p>
                         </div>
                     
                     <ul class="userProfileStatList">
@@ -113,7 +114,7 @@ border: rgb(94, 94, 94) 1px solid;}
             </a>
         </ul>
         <div id="togglePostsLove">
-        	<a href="/<?= $_data['user']['username'] ?>"><div class="togglePostsButton <?= ( empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">POSTS</div></a>
+            <a href="/<?= $_data['user']['username'] ?>"><div class="togglePostsButton <?= ( empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">POSTS</div></a>
             <a href="/<?= $_data['user']['username'] ?>/loves"><div class="togglePostsButton <?= ( !empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">LOVES</div></a>
         </div>
         

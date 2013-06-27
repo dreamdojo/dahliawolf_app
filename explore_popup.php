@@ -18,11 +18,15 @@ $inspirations = $product['product']['posts'];
 $left_col = array();
 $right_col = array();
 foreach($inspirations as  $i=>$prod){
-	if(($i % 2) == 0){
-		$left_col[] = $prod; 
-	}else{
-		$right_col[] = $prod;
-	}
+    if($prod['username'] == $product['product']['username']){
+        array_unshift($left_col, $prod);
+    } else {
+        if(($i % 2) == 0){
+            $left_col[] = $prod;
+        }else{
+            $right_col[] = $prod;
+        }
+    }
 }
 foreach($product['files'] as $file){
 	$images[] = $file['product_file_id'];
@@ -82,7 +86,7 @@ $cheater = 50;
 				<? if($g == 0): ?>
                     <div id="winner-box">
                         <div class="avatar-box">
-                            <a href="/profile?username=<?= $prod['username'] ?>"><img src="<?= $prod['avatar'] ?>" /></a>
+                            <a href="/<?= $prod['username'] ?>"><img src="<?= $prod['avatar'] ?>" /></a>
                         </div>
                         <div class="winner-orange">
                             <p><span>WINNER</span> with <?= ($prod['total_likes']+$cheater+30) ?> votes</p>
@@ -97,7 +101,7 @@ $cheater = 50;
                             <img src="<?= $prod['avatar'] ?>" />
                         </div>
                         <div class="non-winner-name">
-                            <p><a href="/profile?username=<?= $prod['username'] ?>"><?= $prod['username'] ?></a></p>
+                            <p><a href="/<?= $prod['username'] ?>"><?= $prod['username'] ?></a></p>
                         </div>
                         <div class="non-winner-votes">
                             <p><?= ($prod['total_likes']+$cheater) ?> votes</p>
@@ -113,10 +117,10 @@ $cheater = 50;
             	<img class="inspiration-image" src="<?= $prod['source'].$prod['imagename'] ?>" />
                 <div class="winner-box">
                     <div class="avatar-box">
-                        <a href="/profile?username=<?= $prod['username'] ?>"><img src="<?= $prod['avatar'] ?>" /></a>
+                        <a href="/<?= $prod['username'] ?>"><img src="<?= $prod['avatar'] ?>" /></a>
                     </div>
                     <div class="non-winner-name">
-                        <p><a href="/profile?username=<?= $prod['username'] ?>"><?= $prod['username'] ?></a></p>
+                        <p><a href="/<?= $prod['username'] ?>"><?= $prod['username'] ?></a></p>
                     </div>
                     <div class="non-winner-votes">
                         <p><?= ($prod['total_likes']+$cheater) ?> votes</p>

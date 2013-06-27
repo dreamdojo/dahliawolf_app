@@ -59,12 +59,12 @@ userProfile.prototype.toggleFollow = function() {
 		if(this.data.is_followed) {
 			this.data.is_followed = false;
 			this.data.followers--;
-			this.followStatus.html('Follow');
+			this.followStatus.html('Follow').removeClass('profileFollowing');;
 			$.post('/action/unfollow.php', {user_id : this.data.user_id});
 		} else {
 			this.data.is_followed = true;
 			this.data.followers++;
-			this.followStatus.html('Unfollow');
+			this.followStatus.html('Following').addClass('profileFollowing');
 			$.post('/action/follow.php', {user_id : this.data.user_id});
 		}
 		this.followerCount.html(this.data.followers);

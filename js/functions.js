@@ -1,10 +1,19 @@
+function dahliawolf() {
+    this.posts = new Object();
+}
+dahliawolf.prototype.addPost = function(post) {
+    if(post) {
+        this.posts.push(post);
+    }
+}
+
+theWolf = new dahliawolf();
+
 $(document).ready(function() {
 	$('body').addClass('loaded');
 	events();
 	
 	if (typeof user_id !== 'undefined') {
-		update_user_points();
-	
 		user_events();
 	}
 });
@@ -101,7 +110,7 @@ function events() {
 				globalSpineLoad = $.get(url, function(data) {
 					globalSpineLoad = null;
 					if (data) {
-						isSpineAvailable = true;
+                        isSpineAvailable = true;
 						$('#theGridLoader').remove();
 						$('.spine .images:last').after(data);
 					} else {
@@ -385,14 +394,14 @@ function sendMessage(id){
 	FB.ui({
 		  method: 'send',
 		  name: 'Check mah swag',
-		  link: 'http://www.dahliawolf.com/post/'+id,
+		  link: 'http://www.dahliawolf.com/post/'+id
 	});
 }
 function sendMessageProduct(id){
 	FB.ui({
 		  method: 'send',
 		  name: 'Freshness alert',
-		  link: 'http://www.dahliawolf.com/shop/product.php?id_product='+id,
+		  link: 'http://www.dahliawolf.com/shop/product.php?id_product='+id
 	});
 }
 
@@ -499,11 +508,9 @@ dahliaHead.prototype.showMe = function(e) {
     var theLink = $(e.target);
     if(theUser.id) {
         var data = theLink.data('data')[0];
-        console.log( theLink.offset().top - $(document).scrollTop() );
-        if( data.name && data.id && data.avatar && data.is_following != 'undefined' && this.view.is(':hidden') ) {
-            console.log('yaya');
+        if( data.name && data.id && data.id != theUser.id && data.avatar && data.is_following != 'undefined' && this.view.is(':hidden') ) {
             this.is_following = data.is_following;
-            var topHeight = (( (theLink.offset().top > 250) ? (theLink.offset().top - (this.view.height() + 5) ) : (theLink.offset().top + 20)) - $(document).scrollTop());
+            var topHeight = ( (theLink.offset().top > 250) ? (theLink.offset().top - (this.view.height() + 5) ) : (theLink.offset().top + 20));
 
             this.view.css({'left': ((theLink.offset().left - (this.view.width()/4) - 5) ), 'top' : topHeight });
 

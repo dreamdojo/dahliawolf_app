@@ -88,7 +88,7 @@ partyLine.sendInvite['FACEBOOK'] = function(id){
         name: 'COME PLAY WITH ME',
 		picture: 'http://www.dahliawolf.com/images/logo_190x190.jpg',
 		description: partyLine.description,
-    	link: 'http://www.dahliawolf.com/index.html',
+    	link: 'http://www.dahliawolf.com/index.html'
 	});
 }
 
