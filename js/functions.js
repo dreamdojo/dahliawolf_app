@@ -506,5 +506,3 @@ dahliaHeads.prototype.showHead = function(data) {
 $(function(){
     dahliaHead = new dahliaHeads();
 });
-
-/*test
