@@ -79,8 +79,8 @@ dahliawolfApi.prototype.getPostDetails = function(id, callback) {
 dahliawolfApi.prototype.lovePost = function(id, callback) {//********** User Likes post
     if(theUser.id) {
         if(id) {
-            params = '&user_id='+id;
-            params += '&posting_id='+theUser.id;
+            params = '&user_id='+theUser.id;
+            params += '&posting_id='+id;
             params += '&like_type_id=1';
 
             this.callApi('posting', 'add_post_like', params, callback);
@@ -96,8 +96,8 @@ dahliawolfApi.prototype.lovePost = function(id, callback) {//********** User Lik
 dahliawolfApi.prototype.unlovePost = function(id, callback) {//****** User Unlikes post
     if(theUser.id) {
         if(id) {
-            params = '&user_id='+id;
-            params += '&posting_id='+theUser.id;
+            params = '&user_id='+theUser.id;
+            params += '&posting_id='+id;
             params += '&like_type_id=1';
 
             this.callApi('posting', 'delete_post_like', params, callback);
@@ -129,9 +129,8 @@ dahliawolfApi.prototype.getUserDetails = function(id, callback) {//********** Ge
 dahliawolfApi.prototype.followUser = function(id, callback) {//************** Follow user
     if(theUser.id) {
         if(id) {
-            params = '&follower_user_id='+id;
-            params += '&user_id='+theUser.id;
-
+            params = '&follower_user_id='+theUser.id;
+            params += '&user_id='+id;
             this.callApi('user', 'follow', params, callback);
 
         } else {
@@ -145,8 +144,8 @@ dahliawolfApi.prototype.followUser = function(id, callback) {//************** Fo
 dahliawolfApi.prototype.unfollowUser = function(id, callback) { //********  Unfollow user
     if(theUser.id) {
         if(id) {
-            params = '&follower_user_id='+id;
-            params += '&user_id='+theUser.id;
+            params = '&follower_user_id='+theUser.id;
+            params += '&user_id='+id;
 
             this.callApi('user', 'unfollow', params, callback);
 
