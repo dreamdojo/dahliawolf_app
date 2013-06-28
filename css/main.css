@@ -112,9 +112,13 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #theGrid .grid-like{background: url(/images/like.png) no-repeat center center;background-size: 100% 100%;}
 #theGrid .grid-unlike{background: url(/images/wild_like.png) no-repeat center center;background-size: 100% 100%;}
 #theGridLoader{height:100px; width:100%; text-align:center; }
-#theGridLoader img{margin-left: -82px;
-margin-top: 20px;
-}
+#theGridLoader img{margin-left: -82px;margin-top: 20px;}
+.gridPostDeets{background-color: #c2c2c2;height: 25px;width: 100%;position: absolute;bottom: 0px;}
+.gridUsername{padding-top: 3px;font-size: 14px;text-indent: 10px; float: left;}
+.gridLovesBox{float: right;font-size: 15px;padding-top: 1px;margin-right: 10px;}
+.gridLovesBox p{float: right;}
+.postGridLikeImage{background: url("/images/broken.png") no-repeat 0 0;height: 23px;width: 23px;background-size: 100% 100%;}
+.postGridLikeCount{font-size: 17px;margin-right: 4px;padding-top: 1px;}
 
 /************************ ACTIVITY ****************/
 #theShaft{width:1000px; margin:0px auto;margin-top: -6px;background-color: #111111;font-family: futura, arial;position: absolute;left: 50%;margin-left: -493px;position: absolute;height: auto;min-height: 100%;}

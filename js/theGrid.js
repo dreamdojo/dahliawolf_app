@@ -22,7 +22,7 @@ theGrid.sortTerm = null;
 theGrid.urls = [];
 theGrid.urls['like'] = '/action/like?posting_id=';
 theGrid.urls['unlike'] = '/action/unlike?posting_id=';
-theGrid.htText = 'style="min-height:100%; min-width:100%; width:auto; height:100%;"';
+theGrid.htText = 'style="min-height:100%; min-width:100%; width:auto;max-width: 100%;"';
 
 theGrid.showLoader = function() {
 	$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
@@ -56,7 +56,6 @@ theGrid.getImages = function() {
 		
 		theGrid.showLoader();
 		$.getJSON(URL, function(data){
-			console.log(data);
 			theGrid.destroyLoader();
 			$.each(data, function(index, post){
 				theGrid.posts[post.posting_id] = new theGrid.post(post);
@@ -91,11 +90,12 @@ theGrid.post = function(obj) {
 }
 
 theGrid.post.prototype.displayPost = function() {
-	str = '<div id=post-'+this.data.posting_id+' class="post-frame color-'+Math.floor(Math.random()*5)+'">';
+    str = '<div id=post-'+this.data.posting_id+' class="post-frame color-'+Math.floor(Math.random()*5)+'">';
 	str += '<div rel="grid-vote" class="vote-frame '+(parseInt(this.data.is_liked) ? 'grid-unlike' : 'grid-like')+'" data-id="'+this.data.posting_id+'" data-action="'+(parseInt(this.data.is_liked) ? 'unlike' : 'like')+'"></div>';
 	str += '<a href="/post-details?posting_id='+this.data.posting_id+'" class="image" rel="modal">';
-	str += '<img src="'+this.data.image_url+'" class="'+(theGrid.offset < theGrid.limit ? '' : 'lazy')+' zoom-in" data-src="'+this.data.image_url+'" '+(parseInt(this.data.width) >= parseInt(this.data.height) ? theGrid.htText : '')+'>';
+	str += '<img src="'+this.data.image_url+'" class="'+(theGrid.offset < theGrid.limit ? '' : 'lazy')+' zoom-in" data-src="'+this.data.image_url+'" '+(this.data.width >= this.data.height ? theGrid.htText : '')+'>';
 	str += '</a>';
+    str += '<div class="gridPostDeets"><div class="gridUsername dahliaHead" data-id="'+this.data.user_id+'"><a href="/'+this.data.username+'">'+this.data.username+'</a></div><div class="gridLovesBox"><p class="postGridLikeImage"></p><p class="postGridLikeCount">'+this.data.total_likes+'</p></div>';
 	str+= '</div>';
 	theGrid.container.append(str);
 }

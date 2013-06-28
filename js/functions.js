@@ -159,7 +159,6 @@ function user_events() {
     //delete post
     $('a[rel="delete"]').on('click', function(e) {
         e.preventDefault();
-        $(this).remove();
         id = parseInt($(this).data('id'));
         api.deletePost(id, function(){
             $('#post-'+id).css('opacity', .4);
