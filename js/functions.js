@@ -493,7 +493,7 @@ function dahliaHeads() {
 }
 
 dahliaHeads.prototype.showHead = function(data) {
-    this.avatar.attr('src', data.data.avatar);
+    this.avatar.attr('src', data.data.avatar+'&width=75');
     this.followButton.html( parseInt(data.data.is_followed) ? 'Unfollow' : 'Follow');
     if( parseInt(data.data.is_followed) ){
        this.followButton.addClass('dahliaHeadUnFollow');
