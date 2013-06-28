@@ -18,7 +18,7 @@ function dahliawolfApi() {
 
 dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
     if(api && apiFunction && params) {
-        theCallUrl = 'http://dev.dahliawolf.com/api/?api='+api+'&function='+apiFunction+params;
+        theCallUrl = '/api/?api='+api+'&function='+apiFunction+params;
         console.log(theCallUrl);
         $.ajax(theCallUrl).done(function(data){
             if(callback && typeof callback === 'function') {
