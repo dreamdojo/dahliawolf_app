@@ -12,7 +12,7 @@
  */
 
 function dahliawolfApi() {
-    this.apiUrl = "http://dev.dahliawolf.com/api/?";
+    this.apiUrl = "/api/?";
 
 }
 
