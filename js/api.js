@@ -76,7 +76,7 @@ dahliawolfApi.prototype.lovePost = function(id, callback) {//********** User Lik
             alert('NO ID');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }// LOVES A POST
 

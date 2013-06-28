@@ -156,6 +156,16 @@ function events() {
 }
 
 function user_events() {
+    //delete post
+    $('a[rel="delete"]').on('click', function(e) {
+        e.preventDefault();
+        $(this).remove();
+        id = parseInt($(this).data('id'));
+        api.deletePost(id, function(){
+            $('#post-'+id).css('opacity', .4);
+        });
+    });
+
 	// Follow
 	$('a[rel="follow"]').on('click', function() {
 		var $this = $(this);
@@ -475,7 +485,10 @@ function dahliaHeads() {
     $(document).on('mouseenter', '.dahliaHead', function(){
         $this.left = $(this).offset().left - ($this.view.width()/2);
         $this.top = $(this).offset().top - $this.view.height();
-        api.getUserDetails( parseInt($(this).data('id')), $.proxy($this.showHead, $this) );
+
+        if( parseInt($(this).data('id')) != theUser.id){
+            api.getUserDetails( parseInt($(this).data('id')), $.proxy($this.showHead, $this) );
+        }
     }).on('mouseleave', '.dahliaHead', function(){
         $this.timer = setTimeout(function(){
             if( $this.view.is(':visible')) {

@@ -264,8 +264,8 @@ class Spine {
 				}
 				//var_dump($image);
 				$profile_url = $this->user_profile_href($image['username']);
-				?><li class="posting-<?= $image['posting_id'] ?> image-<?= $mod ?><?= !empty($image['is_liked']) ? ' liked' : '' ?>" data-posting_id="<?= $image['posting_id'] ?>">
-					<? if(!empty($_SESSION['user']) && $image['user_id'] == $_SESSION['user']['user_id']): ?> <a href="/action/delete_post?posting_id=<?= $image['posting_id'] ?>"><div class="del-post">delete</div></a><? endif ?>
+				?><li id="post-<?= $image['posting_id'] ?>" class="posting-<?= $image['posting_id'] ?> image-<?= $mod ?><?= !empty($image['is_liked']) ? ' liked' : '' ?>" data-posting_id="<?= $image['posting_id'] ?>">
+					<? if(!empty($_SESSION['user']) && $image['user_id'] == $_SESSION['user']['user_id']): ?><a href="#" data-id="<?= $image['posting_id'] ?>" rel="delete"><div class="del-post" >delete</div></a><? endif ?>
                     <div class="image">
 						<a href="<?= $details_url ?>" class="image color-<?= $i % 5 ?>" rel="modal">
                             <?
