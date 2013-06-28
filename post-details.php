@@ -172,7 +172,7 @@ color: rgb(80, 80, 80);
         	<a href="/<?= $_data['post']['username'] ?>"><img src = "<?= $_data['post']['avatar'] ?>" /></a>
         </div>
         <ul class="deetsList">
-        	<li class="postDetailUsername name"><a class="userHead" data-data='[{"name" : "<?= $_data['post']['username'] ?>", "avatar" : "<?=  $_data['post']['avatar'] ?>&width=152", "id" : <?= $_data['post']['user_id'] ?>, "is_following" : 1}]' href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
+        	<li class="postDetailUsername name"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
             <li class="postDetailUserLocation"><?= $posterData['location'] ?></li>
            <li class="postDetailStat">RANK <?= $posterData['rank'] ?></li>
             <li class="postDetailStat"><a href="/<?= $_data['post']['username'] ?>/followers">FOLLOWERS</a> <span id="detailFollowingCount"><?= $posterData['followers'] ?></span></li>
@@ -211,7 +211,7 @@ color: rgb(80, 80, 80);
         	<a href="<?= $_data['post']['image_url'] ?>" target="_blank"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
         </div>
         
-        <div class="postOrigin"> Posted from <?= $_data['post']['domain'] ?> on <?= $created[0] ?></div>
+        <div class="postOrigin"> Posted from <a href="<?= $_data['post']['image_attribution_url'] ?>"><?= $_data['post']['image_attribution_domain'] ?></a> on <?= $created[0] ?></div>
        	
         <div class="socialCol">
         	<div class="postDetailCommentSection">
