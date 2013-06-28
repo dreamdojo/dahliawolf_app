@@ -11,9 +11,11 @@ dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
             if(callback && typeof callback === 'function') {
                 callback(data);
             }
+        }).fail(function(){
+            alert('oh no something broke');
         });
     }
-}
+}// MAIN API CALL
 
 dahliawolfApi.prototype.getFeedPosts = function(offset, limit, callback) {
     if(offset) {
@@ -30,7 +32,7 @@ dahliawolfApi.prototype.getFeedPosts = function(offset, limit, callback) {
     params += '&status=Approved';
 
     this.callApi('posting', 'all_posts', params, callback);
-}
+}// GETS FEED POSTS
 
 dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
     if(offset) {
@@ -43,7 +45,7 @@ dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
     }
     params += '&status=Approved';
     this.callApi('feed_image', 'get_feed_images', params, callback);
-}
+}// GETS IMAGES FOR THE BANK
 
 dahliawolfApi.prototype.getPostDetails = function(id, callback) {
     if(id) {
@@ -76,7 +78,7 @@ dahliawolfApi.prototype.lovePost = function(id, callback) {//********** User Lik
     } else {
         //login
     }
-}
+}// LOVES A POST
 
 dahliawolfApi.prototype.unlovePost = function(id, callback) {//****** User Unlikes post
     if(theUser.id) {
@@ -93,7 +95,7 @@ dahliawolfApi.prototype.unlovePost = function(id, callback) {//****** User Unlik
     } else {
         //login
     }
-}
+}// UNLOVES A POST
 
 dahliawolfApi.prototype.getUserDetails = function(id, callback) {//********** Get a users details
     if(id) {
@@ -109,7 +111,7 @@ dahliawolfApi.prototype.getUserDetails = function(id, callback) {//********** Ge
     } else {
        alert('NO ID');
     }
-}
+}// GETS A SPECIFIC USERS DEETS
 
 dahliawolfApi.prototype.followUser = function(id, callback) {//************** Follow user
     if(theUser.id) {
@@ -125,7 +127,7 @@ dahliawolfApi.prototype.followUser = function(id, callback) {//************** Fo
     } else {
         //login
     }
-}
+}// FOLLOW USER
 
 dahliawolfApi.prototype.unfollowUser = function(id, callback) { //********  Unfollow user
     if(theUser.id) {
@@ -141,7 +143,7 @@ dahliawolfApi.prototype.unfollowUser = function(id, callback) { //********  Unfo
     } else {
         //login
     }
-}
+}// UNFOLLOW USER
 
 dahliawolfApi.prototype.deletePost = function(id, callback) {
     if(theUser.id) {
@@ -157,11 +159,27 @@ dahliawolfApi.prototype.deletePost = function(id, callback) {
     } else {
         //login
     }
-}
+}//DELETE USER POST
+
+dahliawolfApi.prototype.getActivityLog = function(callback) {
+    if(theUser.id){
+        params = '&user_id='+theUser.id
+        params += '&api_website_id=2';
+    }
+    this.callApi('activity_log', 'get_grouped_log', params, callback);
+}//GETS ACTIVITY FEED
+
+dahliawolfApi.prototype.markActivityAsRead = function(id, callback) {
+    if(theUser.id) {
+        params = '&user_id='+theUser.id;
+        params += '&activity_log_id='+id;
+
+        this.callApi('activity_log', 'mark_read', params, callback);
+    } else {
+        //login
+    }
+}// Mark an activity as read
 
 $(function(){
     api = new dahliawolfApi();
-    api.getBankPosts(0, 12, function(data){
-       console.log(data);
-    });
 });

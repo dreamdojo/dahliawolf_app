@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	$('body').addClass('loaded');
 	events();
-	
+
 	if (typeof user_id !== 'undefined') {
 		update_user_points();
-	
+
 		user_events();
 	}
 });
@@ -34,7 +34,7 @@ function update_user_points(earned_points) {
 }
 function user_points_animation(earned_points) {
 	if (earned_points) {
-		$point_board = $('#point-board');	
+		$point_board = $('#point-board');
 		$point_board.addClass('updating');
 		setTimeout(function() {
 			$point_board.removeClass('updating');
@@ -80,23 +80,23 @@ function events() {
 		}, 500);
 		return false;
 	});
-	
+
 	// Spine load
 	var $spine = $('.spine');
 	if ($spine.length) {
 		var $window = $(window);
 		var $document = $(document);
-		
+
 		//var url = $spine.data('url') + window.location.search + (window.location.search? '&' : '?') + 'ajax=1';
 		var url = $spine.data('url');
-		
+
 		url += (window.location.search.length ? (url.indexOf('?') == -1 ? '?' : '&') : '') + window.location.search.substring(1);
 		url += (url.indexOf('?') == -1 ? '?' : '&') + 'ajax=1';
-		
+
 		if ($('body').hasClass('mobile')) {
 			url += '&bare=1';
 		}
-		
+
 		$window.scroll(function() {
 			if ($window.scrollTop() == $document.height() - $window.height() && isSpineAvailable) {
 				isSpineAvailable = false;
@@ -114,7 +114,7 @@ function events() {
 			}
 		});
 	}
-	
+
 	// Posting scroll events
 	var $scroll_src = $('#scroll-src');
 	if ($scroll_src.length) {
@@ -124,7 +124,7 @@ function events() {
 				refillImages(current_domain_keyword, current_user_id);
 			}
 		});
-		
+
 		// Hover scroll
 		function hover_scroll_right() {
 			$scroll_src.stop().animate({scrollLeft: '+=250'}, 1000, 'linear', hover_scroll_right);
@@ -135,20 +135,20 @@ function events() {
 		function hover_scroll_stop() {
 			$scroll_src.stop();
 		}
-		
+
 		$("#scroll-control .left-arrow").hover(function () {
 			hover_scroll_left();
 		},function () {
 			hover_scroll_stop();
 		});
-		
+
 		$("#scroll-control .right-arrow").hover(function () {
 			hover_scroll_right();
 		},function () {
 			hover_scroll_stop();
 		});
 	}
-	
+
 	// Shop image hover
 	$('.product .thumbnails a').on('mouseover', function(event) {
 		$(this).trigger('click');
@@ -159,35 +159,35 @@ function user_events() {
 	// Follow
 	$('a[rel="follow"]').on('click', function() {
 		var $this = $(this);
-		
+
 		$.get(this.href, function(data) {
 			// Toggle button state
 			var $button = $this.closest('.sysBoardFollowAllButton');
 			$button.hide();
 			$button.next('.sysBoardUnFollowAllButton').show();
-			
+
 			//update_user_points();
 		});
-	
+
 		return false;
 	});
-	
+
 	// Unfollow
 	$('a[rel="unfollow"]').on('click', function() {
 		var $this = $(this);
-		
+
 		$.get(this.href, function(data) {
 			// Toggle button state
 			var $button = $this.closest('.sysBoardUnFollowAllButton');
 			$button.hide();
 			$button.prev('.sysBoardFollowAllButton').show();
-			
+
 			//update_user_points();
 		});
-		
+
 		return false;
 	});
-	
+
 	// Like/unlike
 	$(document).on('click', 'a[rel="like"]', function() {
 		if (this.href) {
@@ -198,11 +198,11 @@ function user_events() {
 			}
 			var posting_id = $container.data('posting_id');
 			var $posting_containers = $('[data-posting_id="' + posting_id + '"]');
-			
+
 			if (!$container.hasClass('liked')) {
 				$.getJSON(this.href + '&ajax=1', function(data) {
 					$posting_containers.addClass('liked');
-					
+
 					update_user_points(data.data.points_earned);
 					update_num_post_likes(posting_id, '.like-count-' + posting_id);
 				});
@@ -211,16 +211,16 @@ function user_events() {
 				var undo_href = $this.data('undo_href');
 				$.get(undo_href + '&ajax=1', function(data) {
 					$posting_containers.removeClass('liked');
-					
+
 					update_user_points();
 					update_num_post_likes(posting_id, '.like-count-' + posting_id);
 				});
 			}
 		}
-		
+
 		return false;
 	});
-	
+
 	// Vote/unvote
 	$(document).on('click', 'a[rel="vote"]', function() {
 		if (this.href) {
@@ -228,16 +228,16 @@ function user_events() {
 			var $container = $this.closest('.vote-prod, ul.posts > li');
 			var posting_id = $container.data('posting_id');
 			var vote_period_id = $container.data('vote_period_id');
-			
+
 			var index = $container.index();
-			
+
 			if (!$container.hasClass('voted')) {
 				$.getJSON(this.href + '&ajax=1', function(data) {
 					$container.addClass('voted');
-					
+
 					update_user_points(data.data.points_earned);
 					update_num_post_votes(posting_id, vote_period_id, '#vote-count-' + posting_id);
-					
+
 					products[index].isliked = true;
 					$('#wild4').attr('src', '/skin/img/wild_like.png');
 				});
@@ -246,53 +246,53 @@ function user_events() {
 				var undo_href = $this.data('undo_href');
 				$.get(undo_href + '&ajax=1', function(data) {
 					$container.removeClass('voted');
-					
+
 					update_user_points();
 					update_num_post_votes(posting_id, vote_period_id, '#vote-count-' + posting_id);
-					
+
 					products[index].isliked = false;
 					$('#wild4').attr('src', '/skin/img/like.png');
 				});
 			}
 		}
-		
+
 		return false;
 	});
-	
+
 	// Comment
 	$(document).on('submit', '#comform', function(event) {
 		var $comment = $('#thecomment');
-		
+
 		// comment is required
 		if ($comment.val()) {
 			var $this = $(this);
 			var action = $this.attr('action');
 			var data = $this.serialize();
-			
+
 			data += '&ajax=1';
-			
+
 			$.post(action, data, function(response) {
 				response = $.parseJSON(response);
 				var $modal_content = $('#modal-content');
-				
+
 				$modal_content.load($modal_content.data('href') + '&posted=1');
-				
+
 				update_user_points(response.data.points_earned);
 			}, 'json');
 		}
-		
+
 		return false;
 	});
-	
+
 	// Product info accordion
 	$(document).on('click', 'dl.accordion dt', function(event) {
 		var $this = $(this);
 		var $dd = $this.next('dd');
-		
+
 		$this.toggleClass('expanded');
 		$dd.slideToggle();
 	});
-	
+
 	// Show CC Fields
 	$(document).on('change', 'input[name="payment_method_id"]', function(event) {
 		if (this.value == '1') { // Credit card
@@ -301,17 +301,17 @@ function user_events() {
 		else {
 			$('#credit_card_fields').hide();
 		}
-		
+
 	});
-	
+
 	// Show CC Fields
 	$(document).on('click', 'input[name="populate-shipping-from-billing"]', function(event) {
 		var saved_billing_select = $('select[name="billing_address_id"] option:selected');
-		
+
 		if(!this.checked) {
 			return;
 		}
-		
+
 		if (saved_billing_select.length > 0 && saved_billing_select.val() != '') {
 			$('input[name="shipping_first_name"]').val(saved_billing_select.data('first_name'));
 			$('input[name="shipping_last_name"]').val(saved_billing_select.data('last_name'));
@@ -332,9 +332,9 @@ function user_events() {
 			//$('input[name="shipping_address_2"]').val($('input[name="billing_country"]').val());
 			$('input[name="shipping_zip"]').val($('input[name="billing_zip"]').val());
 		}
-		
+
 	});
-	
+
 	// Show Billing Fields
 	$(document).on('change', 'select[name="billing_address_id"]', function(event) {
 		if (this.value == '') {
@@ -343,9 +343,9 @@ function user_events() {
 		else {
 			$('#billing-address-fields').hide();
 		}
-		
+
 	});
-	
+
 	// Show shipping Fields
 	$(document).on('change', 'select[name="shipping_address_id"]', function(event) {
 		if (this.value == '') {
@@ -354,9 +354,9 @@ function user_events() {
 		else {
 			$('#shipping-address-fields').hide();
 		}
-		
+
 	});
-	
+
 }
 
 function ATF(id,nhide,nshow) {
@@ -401,7 +401,7 @@ function sendMessageProduct(id){
 
 function toggleLoadingBar() {
 	loadingView = $('#loadingView');
-	
+
 	if( loadingView.is(':visible') ) {
 		loadingView.animate({bottom:-100}, 200, function(){
 			loadingView.hide();
@@ -426,10 +426,10 @@ $(function(){
 			}
 			var href = this.href + '&ajax=1';
 			$modal_content.data('href', href);
-			
+
 			$modal_content.load(href, function() {
 				var margin_left = -1 * Math.floor($modal_content.outerWidth() / 2);
-				
+
 				$modal.show(0, function() {
 					var margin_top = $(document).scrollTop() + 85;
 					var margin_left = -1 * Math.floor($modal_content.outerWidth() / 2);
@@ -440,11 +440,11 @@ $(function(){
 						, 'height' : modalHeight
 						, 'overflow' : 'auto'
 					});
-					
+
 					$modal.height($('body').height());
 				});
 			});
-			
+
 			return false;
 		}
 	});
@@ -470,6 +470,8 @@ function dahliaHeads() {
     this.top = 0;
     this.timer = null;
 
+    this.followButton.bind('click', $.proxy(this.toggleFollow, this) );
+
     $(document).on('mouseenter', '.dahliaHead', function(){
         $this.left = $(this).offset().left - ($this.view.width()/2);
         $this.top = $(this).offset().top - $this.view.height();
@@ -492,13 +494,27 @@ function dahliaHeads() {
     });
 }
 
+dahliaHeads.prototype.toggleFollow = function() {
+    if(this.data.is_followed) {
+        this.data.is_followed = false;
+        this.followButton.html('Follow').addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
+        api.unfollowUser(this.data.user_id);
+    } else {
+        this.data.is_followed = true;
+        this.followButton.html('Unfollow').removeClass('dahliaHeadFollow').addClass('dahliaHeadUnFollow');
+        api.followUser(this.data.user_id);
+    }
+}
+
 dahliaHeads.prototype.showHead = function(data) {
-    this.avatar.attr('src', data.data.avatar+'&width=75');
+    this.data = data.data;
+    this.data.is_followed = parseInt(this.data.is_followed);
+    this.avatar.attr({'src' : data.data.avatar+'&width=75', 'onclick' : "document.location='/"+this.data.username+"';"});
     this.followButton.html( parseInt(data.data.is_followed) ? 'Unfollow' : 'Follow');
-    if( parseInt(data.data.is_followed) ){
-       this.followButton.addClass('dahliaHeadUnFollow');
+    if( this.data.is_followed ){
+       this.followButton.addClass('dahliaHeadUnFollow').removeClass('dahliaHeadFollow');
     }else {
-        this.followButton.addClass('dahliaHeadFollow');
+        this.followButton.addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
     }
     this.view.css({'left' : this.left, 'top' : this.top}).show();
 }
