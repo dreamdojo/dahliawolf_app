@@ -36,7 +36,10 @@ function output_avatar($user_id, $width, $height = NULL) {
 	
 	$file = DR . '/uploads/avatars/nopic-desktop.gif';
 
-    $file = str_replace('dev', 'www', $file);
+   // $file = str_replace('dev', 'www', $file);
+    if(empty($user_id)){
+        var_dump($file);
+    }
 
 	if (is_numeric($user_id)) {
 		$file_path = DR . AVATARPATH . $user_id;

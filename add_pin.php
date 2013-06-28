@@ -23,17 +23,33 @@ if (IS_LOGGED_IN) {
 		// make api to add_post_image
 		$params = array(
 			'imagename' => $imagename
-			, 'domain' => mysql_real_escape_string( $_GET['domain'] )
-			, 'attribution_url' => mysql_real_escape_string( $_GET['sourceurl'] )
+			, 'domain' => urldecode($_GET['domain'])
+			, 'attribution_url' => urldecode($_GET['sourceurl'])
 			, 'source' => $source
 			, 'user_id' => $user_id
 			, 'description' => $_GET['description']
 			, 'dimensionsX' => $dimensions[0]
 			, 'dimensionsY' => $dimensions[1]
+
+
 		);
+
+        if(isset($_GET['t']))$params['t'] = true;
+
+        //var_dump($_GET);
+        //var_dump($params);
+
 		$data = api_call('posting', 'add_post_image', $params, true);
+
 		$data = json_decode($data);
-		//var_dump($data);
+        /*
+        //http://www.dahliawolf.com/add_pin?
+        url=http%3A//images02.nastygal.com/resources/nastygal/images/products/processed/27104.0.browse-m.jpg&
+        sourceurl=http%3A//www.nastygal.com/clothes/&
+        domain=www.nastygal.com&
+        description=posted from nasty gal&
+        title=Clothes%20at%20Nasty%20Gal
+        */
 	}
 }else{
 	echo 'YOU NEED TO LOGIN TO DAHLIAWOLF TO POST IMAGE';
