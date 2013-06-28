@@ -69,7 +69,7 @@ color: rgb(185, 185, 185);}
 .strange-clouds{opacity: 0.9;background-color: rgb(44, 44, 44); position:absolute; height:100%; width:100%; top:0px; left:0px;}
 .menu-form{list-style: none; -webkit-padding-start: 0px;}
 .form-box{ text-align:center;}
-.fb-login{width: 2329x;margin-top: 8%;}
+.fb-login{width: 232px;margin-top: 8%;}
 .menu-form li{font-size: 1.1em;margin-bottom: 2%;}
 .menu-form input{width: 225px;
 height: 25px;
@@ -227,11 +227,11 @@ margin-left: 2px;" /></a></div> -->
 
     
     <div class="slide">
-    	<img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-1.jpg" />
-        <div class="item-box black">
-        	<div class="item-title">FLORAL FROST JACKET</div>
+    	<img class="zeImg" src="http://www.dahliawolf.com/images/DAHLIA_NEWSLIDE.jpg" />
+        <div class="item-box white">
+        	<div class="item-title">Coated in Tropicana Jacket</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">Heidi, Los Angeles</div>
+            <div class="inspira">StunnaLOOK, Los Angeles</div>
         </div>
     </div>
     <div class="slide" style="display:none">
@@ -267,6 +267,8 @@ margin-left: 2px;" /></a></div> -->
 </body>
 </html>
 <script>
-homeWrecker.init(2800/* <- fade speed*/, 6000/* <- time between slides*/);
+    setTimeout(function(){
+    homeWrecker.init(4800/* <- fade speed*/, 6000/* <- time between slides*/);
+}, 2000) ;
 
 </script>
