@@ -469,6 +469,33 @@ $(function(){
 	});
 });
 
+
+function userCache() {
+    this.users = new Object();
+}
+
+userCache.prototype.addUser = function(user) {
+    if(user.user_id){
+        this.users[parseInt(user.user_id, 10)] = user;
+    } else {
+        alert('invalid user id');
+    }
+}
+
+userCache.prototype.checkForUser = function(id) {
+    if(typeof this.users[parseInt(id, 10)] !== 'undefined') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+userCache.prototype.getUser = function(id) {
+    if(typeof this.users[parseInt(id, 10)] !== 'undefined') {
+        return this.users[parseInt(id, 10)];
+    }
+}
+
 function dahliaHeads() {
     $this = this;
 
@@ -482,28 +509,32 @@ function dahliaHeads() {
     this.followButton.bind('click', $.proxy(this.toggleFollow, this) );
 
     $(document).on('mouseenter', '.dahliaHead', function(){
+        $this.clearDahliaTimer();
         $this.left = $(this).offset().left - ($this.view.width()/2);
         $this.top = $(this).offset().top - $this.view.height();
 
         if( parseInt($(this).data('id')) != theUser.id){
             api.getUserDetails( parseInt($(this).data('id')), $.proxy($this.showHead, $this) );
         }
-    }).on('mouseleave', '.dahliaHead', function(){
-        $this.timer = setTimeout(function(){
-            if( $this.view.is(':visible')) {
-                $this.view.fadeOut(200);
-            }
-        }, 300);
-    });
+    }).on('mouseleave', '.dahliaHead', $.proxy($this.setDahliaTimer, $this) );
 
-    this.view.on('mouseenter', function(){
-        if($this.timer) {
-            clearTimeout($this.timer);
-            $this.timer = null;
+    this.view.on('mouseenter', $.proxy($this.clearDahliaTimer, $this) ).on('mouseleave', $.proxy($this.setDahliaTimer, $this) );
+}
+
+dahliaHeads.prototype.setDahliaTimer = function() {
+    var $this = this;
+    this.timer = setTimeout(function(){
+        if( $this.view.is(':visible')) {
+            $this.view.fadeOut(200);
         }
-    }).on('mouseleave', function(){
-        $this.view.fadeOut(200);
-    });
+    }, 300);
+}
+
+dahliaHeads.prototype.clearDahliaTimer = function() {
+    if(this.timer) {
+        clearTimeout(this.timer);
+        this.timer = null;
+    }
 }
 
 dahliaHeads.prototype.toggleFollow = function() {
