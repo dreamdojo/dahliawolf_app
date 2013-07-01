@@ -90,7 +90,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 					<input type="text" name="quantity" value="1" />
 					<label>Select Size</label>
 					<?
-					if (!empty($_data['product']['combinations'])) {
+					//var_dump($data);
+                    if (!empty($_data['product']['combinations'])) {
 						?>
 						<ul class="options">
 							<?
@@ -119,7 +120,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 				
 				<dl class="additional-info accordion">
 					<dt>Description</dt>
-					<dd><?= $_data['product']['product']['description'] ?></dd>
+					<dd><?= $_data['product']['product']['design_description'] ?></dd>
 					<dt>Size &amp; Fit</dt>
 					<dd></dd>
 					<dt>Shipping &amp; Returns</dt>
