@@ -166,7 +166,7 @@ class Spine {
                                     </a>
                                 <? endif ?>
 								<div class="explore-prod-options-box">
-                                        <? if($post['status'] == 'Live'): ?>
+                                        <? if($post['status'] == 'Live' || $post['status'] == 'Pre Order'): ?>
                                             <a href="<?= CR ?>/shop/product?id_product=<?= $post['product_id'] ?>">
                                                 <div class="exp-buy-butt">
                                                     <p>BUY</p>
