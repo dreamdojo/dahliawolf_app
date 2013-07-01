@@ -1,4 +1,5 @@
-uploads/
-upload/
-postings/
+.idea/*
+uploads/*
+upload/*
+postings/*
 mobile/*
