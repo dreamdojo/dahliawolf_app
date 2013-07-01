@@ -50,7 +50,7 @@ border: rgb(94, 94, 94) 1px solid;}
 #profileStatShare{ background-image:url(/images/profile/D.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
 .statTitle{margin-top: 34px;text-align: center;color: rgb(99, 99, 99);font-size: 18px;font-family: helvetica;font-weight: 100;}
 .statPoints{margin-top: -11px;text-align: center;}
-.boutitboutit{color:#969696;font-size: 17px;padding-top: 13px;}
+.boutitboutit{color:#969696;font-size: 17px;}
 .profileFollowing{color: #c2c2c2 !important; border: #c2c2c2 thin solid !important;}
 </style>
 <? //var_dump($_data['user']) ?>
@@ -77,6 +77,7 @@ border: rgb(94, 94, 94) 1px solid;}
                     <li class="profileUsername">@<?= $_data['user']['username'] ?></li>
                     <li class="profileLocation"><?= $_data['user']['location'] ?></li>
                     <li class="boutitboutit"><?= $_data['user']['about'] ?></li>
+                    <li class="profileLocation"><a href="http://<?= $_data['user']['website'] ?>" target="_blank" style="font-weight: bold !important;"><?= $_data['user']['website'] ?></a></li>
                     <? if(MY_PROFILE): ?> 
                     	<li><a href="/account/settings"><span class="profileRed">Edit</span></a></li>
                     <? endif ?>
