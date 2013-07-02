@@ -22,7 +22,7 @@ include "header.php";
 
 <table>
 <tr >
-<td><img style="padding-left: 20px; padding-bottom: 30px;" src="http://www.dahliawolf.com/images/faq-most-asked.png" />
+<td>images inadsgjadsflkj<img style="padding-left: 20px; padding-bottom: 30px;" src="http://www.dahliawolf.com/images/faq-most-asked.png" />
 </td>
 </tr>
 </table>
