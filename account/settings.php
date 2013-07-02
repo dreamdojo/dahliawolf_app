@@ -94,6 +94,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
                 <label for="id_website">Website</label>
                 <div class="Right">
                     <input type="text" name="website" id="id_website" value="<?= $_data['user']['website'] ?>" />
+                    <span class="help_text">e.g. www.example.com</span>
                 </div>
             </li>
 
