@@ -97,17 +97,23 @@ var theUser = new Object();
 <? endif ?>
 
 <!-- Start of Woopra Code -->
-    function woopraReady(tracker) {
+
+    function woopraReady(tracker){
         tracker.setDomain('dahliawolf.com');
-        tracker.setIdleTimeout(1800000);
-        tracker.trackPageview({type:'pageview',url:window.location.pathname+window.location.search,title:document.title});
+        tracker.setIdleTimeout(300000);
+
+        tracker.addVisitorProperty('email', userConfig.email_address);
+        tracker.addVisitorProperty('name', userConfig.username);
+
+        tracker.track();
         return false;
     }
-    (function() {
-        var wsc = document.createElement('script');
-        wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
-        wsc.type = 'text/javascript';
-        wsc.async = true;
+
+    (function(){
+        var wsc=document.createElement('script');
+        wsc.type='text/javascript';
+        wsc.src=document.location.protocol+'//static.woopra.com/js/woopra.js';
+        wsc.async=true;
         var ssc = document.getElementsByTagName('script')[0];
         ssc.parentNode.insertBefore(wsc, ssc);
     })();
