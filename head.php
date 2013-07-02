@@ -97,7 +97,6 @@ var theUser = new Object();
 <? endif ?>
 
 <!-- Start of Woopra Code -->
-<script type="text/javascript">
     function woopraReady(tracker) {
         tracker.setDomain('dahliawolf.com');
         tracker.setIdleTimeout(1800000);
@@ -112,8 +111,7 @@ var theUser = new Object();
         var ssc = document.getElementsByTagName('script')[0];
         ssc.parentNode.insertBefore(wsc, ssc);
     })();
-</script>
-    <!-- End of Woopra Code -->
+<!-- End of Woopra Code -->
 
 $('.socialize').bind('click', pplFinder.start);
 </script>
