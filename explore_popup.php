@@ -132,7 +132,6 @@ $cheater = 50;
 </div>
 </div>
 <script>
-console.log(<? echo json_encode( $data ) ?>);
 var imgMoney = Object();
 imgMoney.images = Array();
 imgMoney.images = <? echo json_encode($images) ?>;
@@ -183,6 +182,7 @@ function getImgUrl(){
 function imgMoneyInit(){
 	imgMoney.arrow.bind('click', imgMoney.getNextImg);
 	imgMoney.activateButton.bind('click', imgMoney.toggleInspiration);
+    sendToAnal({name:'Viewing shop item <?= $product['product']['product_name'] ?>'});
 }
 
 imgMoney.init();
