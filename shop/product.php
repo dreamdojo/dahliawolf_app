@@ -42,9 +42,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
                         <p class="title"><img src="/mobile/images/wild-img.png" alt="Top Wild Member:" /></p>
                         
                         <div class="card">
-                            <p class="avatar"><img src="/avatar.php?user_id=<?= $_data['product']['product']['user_id'] ?>&amp;width=75" /></p>
-                            
-                            <p class="username"><?= $_data['product']['product']['username'] ?></p>
+                            <p class="avatar"><img src="<?= $_data['product']['product']['posts'][0]['avatar'] ?>&amp;width=75" /></p>
+
+                            <p class="username"><?= $_data['product']['product']['posts'][0]['username']?></p>
                             
                             <ul class="actions">
                             	<?
@@ -79,9 +79,11 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
                     <?
 				}
 				?>
-				
+
 				<h3 class="name"><?= $_data['product']['product']['product_name'] ?></h3>
-				<!--<p class="price"><del><span>$<?= $_data['product']['product']['price'] ?></span></del> <span class="sale">50% Off</span></p> //-->
+				<? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
+                    <p class="price"><del><span>$<?= number_format( ($_data['product']['product']['price'] * 2), 2, '.', ',') ?></span></del> <span class="sale">Pre Order 50% Off</span></p>
+                <? endif ?>
 				<p class="price"><span>$<?= number_format($_data['product']['product']['price'], 2, '.', ',') ?></span></p>
 				
 				<form action="/action/shop/add_item_to_cart.php" method="post">
