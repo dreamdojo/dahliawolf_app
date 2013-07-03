@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/explore_popup.php" afterPath="$PROJECT_DIR$/explore_popup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/theLesson.js" afterPath="$PROJECT_DIR$/js/theLesson.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372832493921" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372833167578" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372379568550" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372372874677" ignored="false" />
@@ -29,6 +29,7 @@
     <file path="/invite.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372369516577" ignored="false" />
     <file path="/invite-email.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372363821211" ignored="false" />
     <file path="/sendInviteEmails.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372369565761" ignored="false" />
+    <file path="/theLesson.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372833589936" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +54,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="explore_popup.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/explore_popup.php">
+      <file leaf-file-name="theLesson.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/theLesson.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="0" selection-start="7262" selection-end="7262" vertical-scroll-proportion="0.74050635">
-              <folding />
+            <state line="143" column="79" selection-start="6326" selection-end="6326" vertical-scroll-proportion="0.57125306">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/invite.php" />
         <option value="$PROJECT_DIR$/action/sendInviteEmails.php" />
         <option value="$PROJECT_DIR$/includes/php/classes/Spine.php" />
         <option value="$PROJECT_DIR$/includes/php/classes/Spine-1.1.php" />
@@ -131,6 +133,7 @@
         <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/post-details.php" />
         <option value="$PROJECT_DIR$/explore_popup.php" />
+        <option value="$PROJECT_DIR$/js/theLesson.js" />
       </list>
     </option>
   </component>
@@ -183,6 +186,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,7 +345,11 @@
       <created>1372832498135</created>
       <updated>1372832498135</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="lots of analyzing&#10;explore page">
+      <created>1372833170314</created>
+      <updated>1372833170314</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -400,7 +421,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lots of analyzing&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of analyzing&#10;explore page" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -426,16 +447,12 @@
     <MESSAGE value="user cache/upgrade dahliahead/ fixed postpopbug" />
     <MESSAGE value="woopra" />
     <MESSAGE value="lots of analyzing&#10;" />
+    <MESSAGE value="lots of analyzing&#10;explore page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="49" selection-start="6278" selection-end="6278" vertical-scroll-proportion="0.52188843" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/invite-email.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="110" selection-start="689" selection-end="730" vertical-scroll-proportion="-9.230769" />
@@ -523,6 +540,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="186" column="0" selection-start="7262" selection-end="7262" vertical-scroll-proportion="0.74050635">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/theLesson.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="79" selection-start="6326" selection-end="6326" vertical-scroll-proportion="0.57125306">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

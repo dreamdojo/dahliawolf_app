@@ -141,7 +141,8 @@ function theLessonCloseTourGuide(){// CLOSE THE TOUR GUIDE
 	sessionStorage.setItem("closedByUser", true);
 }
 function theLessonShowTourGuide(){//   OPENS THE TOUR GUIDE
-	if(theLesson.title[this.section]){//check to make sure there is info for page
+    sendToAnal({name:'Opened tour guide', section:theLesson.title[this.section]});
+    if(theLesson.title[this.section]){//check to make sure there is info for page
 		$(window).scrollTop(0);
 		if(!theBank.isOpen){
 			theLesson.changeTitle(theLesson.title[theLesson.section]);
