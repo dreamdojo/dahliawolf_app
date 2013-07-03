@@ -266,7 +266,7 @@ margin-left: 2px;" /></a></div> -->
     <div class="loggle-toggle2">
     	<div><img src="http://www.dahliawolf.com/images/how-dahliawolf-works.jpg" /></div>
     	<div><a href="http://www.dahliawolf.com/faqs"><img src="http://www.dahliawolf.com/images/how-dahliawolf-works-commission.jpg" /></a></div>
-    	<div class="video-design"><img style="margin-left:-80px;" src="http://www.dahliawolf.com/images/how-it-works-video.png" onclick="$(this).fadeOut(200);" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    	<div class="video-design"><img id="video-cover" style="margin-left:-80px;" src="http://www.dahliawolf.com/images/how-it-works-video.png" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
         <div><img style="margin-top:100px; margin-bottom: 30px;" src="http://www.dahliawolf.com/images/how-it-works-get-started.png" /></div>
         <div style="cursor:pointer;"><img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" ></div>
         <div class="signupemail2"><a href="http://www.dahliawolf.com/signup">SIGN UP THE OLD SCHOOL WAY WITH EMAIL</a></div>
@@ -284,6 +284,13 @@ setTimeout(function(){
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);
     $('#sysForm_Login').submit(loginObj.loginUser);
-})
+});
+
+$('#video-cover').on('click', function() {
+   console.log(this);
+    $(this).fadeOut(200);
+    sendToAnal({name:'Watching how it works video'});
+});
+
 
 </script>
