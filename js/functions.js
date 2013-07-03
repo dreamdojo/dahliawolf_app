@@ -620,4 +620,11 @@ dahliaHeads.prototype.showHead = function(data) {
 
 $(function(){
     dahliaHead = new dahliaHeads();
+    $('#section-inspire').onclick = function() {
+        woopraTracker.pushEvent({
+            name: 'Opened Inspire Page',
+            user: theUser.username,
+            song: 'Take Five'
+        });
+    };
 });
