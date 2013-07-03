@@ -106,7 +106,7 @@ dahliawolfApi.prototype.unlovePost = function(id, callback) {//****** User Unlik
             alert('NO ID');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }// UNLOVES A POST
 
@@ -137,7 +137,7 @@ dahliawolfApi.prototype.followUser = function(id, callback) {//************** Fo
             alert('NO ID TO FOLLOW');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }// FOLLOW USER
 
@@ -153,7 +153,7 @@ dahliawolfApi.prototype.unfollowUser = function(id, callback) { //********  Unfo
             alert('NO ID TO FOLLOW');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }// UNFOLLOW USER
 
@@ -169,7 +169,7 @@ dahliawolfApi.prototype.deletePost = function(id, callback) {
             alert('NO ID TO DELETE');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }//DELETE USER POST
 
@@ -188,7 +188,7 @@ dahliawolfApi.prototype.markActivityAsRead = function(id, callback) {
 
         this.callApi('activity_log', 'mark_read', params, callback);
     } else {
-        //login
+        new_loginscreen();
     }
 }// Mark an activity as read
 
