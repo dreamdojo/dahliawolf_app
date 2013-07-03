@@ -5,7 +5,7 @@ $self = $_SERVER['PHP_SELF'];
 $self = str_replace('/mobile', '', $self);
 
 function default_redirect() {
-	header ('Location: ' . HEADER_LOCATION_PREFIX . '/spine');
+	header ("Location: error_pages/404.html");
 	die();
 }
 
