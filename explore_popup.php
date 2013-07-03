@@ -182,7 +182,7 @@ function getImgUrl(){
 function imgMoneyInit(){
 	imgMoney.arrow.bind('click', imgMoney.getNextImg);
 	imgMoney.activateButton.bind('click', imgMoney.toggleInspiration);
-    sendToAnal({name:'Viewing shop item <?= $product['product']['product_name'] ?>'});
+    sendToAnal({name:'Viewing shop item', item:'<?= $product['product']['product_name'] ?>'});
 }
 
 imgMoney.init();
