@@ -469,6 +469,60 @@ $(function(){
 	});
 });
 
+function userLogin(){}
+
+userLogin.prototype.loginUser = function(e) {
+    e.preventDefault();
+    $('#loginErrorCode').empty();
+    var formdata = new Array();
+    formdata = $(e.target).serializeArray();
+
+    var username = formdata[0].value.trim();
+    var password = formdata[1].value.trim();
+
+    $.post( $(e.target).attr('action'), {identity : username, credential : password, ajax : true}, function(data){
+        var result = $.parseJSON(data);
+        if (!result.success) {
+            var str = '';
+            $.each(result.errors, function(index, error){
+                str += error;
+            });
+            alert(str);
+            //$('#loginErrorCode').html(str);
+        } else {
+            document.location.reload();
+        }
+    });
+}
+
+
+userLogin.prototype.submitNewUser = function(e) {
+    e.preventDefault();
+    $('#loginErrorCode').empty();
+    var formdata = new Array();
+    formdata = $(e.target).serializeArray();
+
+    var username = formdata[0].value.trim();
+    var email = formdata[1].value.trim();
+    var password = formdata[2].value.trim();
+
+    console.log(formdata);
+    $.post( $(e.target).attr('action'), {user_username : username, user_email : email,  user_password : password, ajax : true}, function(data){
+        var result = $.parseJSON(data);
+        if (!result.success) {
+            var str = '';
+            $.each(result.errors, function(index, error){
+                str += error;
+            });
+            alert(str);
+            //$('#loginErrorCode').html(str);
+        } else {
+            document.location.reload();
+        }
+    });
+}
+
+loginObj = new userLogin();
 
 function userCache() {
     this.users = new Object();
