@@ -92,6 +92,16 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .soc-img-frame{overflow: hidden; position:relative; width:186px; height: 177px; z-index:100000; float: left; border:3px solid #484848; margin-right: 5px;}
 .secret-box{position: relative;overflow: hidden;width: 200px;float: left;}
 .soc-img-frame:hover{border-color:#F00;}
+/*********** DAHLIA HEADS ******/
+#dahliaHead{width:150px; height:175px; position:absolute; background-color:#faf9f9; display:none; text-align:center; border:#dadbe1 1px solid; z-index: 10000;}
+#dahliaHeadAvatar{ margin:0px auto; width:70%; border-radius:85px; overflow:hidden; margin-top:10px; min-height:105px;border:#dadbe1 1px solid; box-shadow: #000 1px 5px 10px -3px;height: 105px;}
+#dahliaHeadAvatar img{ width:100%;}
+#dahliaHeadName{margin:0px auto; color:#fff; font-size:14px; margin-top:10px;}
+#dahliaHeadFollowToggle{padding:5px 10px; color:#000; margin:0px auto;width: 60%;margin-top: 12px; cursor:pointer;}
+#dahliaHeadFollowToggle:hover{opacity:.8;}
+.dahliaHeadFollow{ border:#f74d6d thin solid; color:#f74d6d !important;}
+.dahliaHeadUnFollow{ border:#c2c2c2 thin solid; color:#c2c2c2 !important;}
+.userHead:hover #dahliaHead{ display:block; }
 
 /*********** THE GRID ***********/
 #theGrid{position: relative;width: 1000px;margin: 0px auto;}
@@ -102,12 +112,18 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #theGrid .grid-like{background: url(/images/like.png) no-repeat center center;background-size: 100% 100%;}
 #theGrid .grid-unlike{background: url(/images/wild_like.png) no-repeat center center;background-size: 100% 100%;}
 #theGridLoader{height:100px; width:100%; text-align:center; }
-#theGridLoader img{margin-left: -82px;
-margin-top: 20px;
-}
+#theGridLoader img{margin-left: -82px;margin-top: 20px;}
+.gridPostDeets{background-color: #c2c2c2;height: 25px;width: 100%;position: absolute;bottom: 0px;}
+.gridUsername{padding-top: 3px;font-size: 14px;text-indent: 10px; float: left;}
+.gridLovesBox{float: right;font-size: 15px;padding-top: 1px;margin-right: 10px;}
+.gridLovesBox p{float: right;}
+.postGridLikeImage{height: 23px;width: 23px; float: right;}
+.postGridLikeCount{font-size: 17px;margin-right: 4px;padding-top: 1px;}
+.postGridLiked{background: url("/images/heart.png") no-repeat 0 0; background-size: 100% 100%;}
+.postGridUnLiked{background: url("/images/broken.png") no-repeat 0 0; background-size: 100% 100%;}
 
 /************************ ACTIVITY ****************/
-#theShaft{width:1000px; margin:0px auto;margin-top: -6px;background-color: #111111;font-family: futura, arial;position: absolute;left: 50%;margin-left: -493px;position: absolute;height: auto;}
+#theShaft{width:1000px; margin:0px auto;margin-top: -6px;background-color: #111111;font-family: futura, arial;position: absolute;left: 50%;margin-left: -493px;position: absolute;height: auto;min-height: 100%;}
 #theShaft #leftCol{background-color:#111111;width: 20%;float: left;padding-top: 20px;}
 #theShaft #mainCol{ background-color:#252525; width:80%; float:left;padding-top: 20px; height: 100%;}
 #theShaft .activity-menu{width: 100%;height: 60px;border-top: #252525 1px solid;text-align: left;color: #acacac;}
@@ -225,7 +241,7 @@ background-color: #fff;
 position: absolute;
 margin-left: 25%;
 z-index: 100;} 
-#inspiration{width:50%; float:left; background-color:white;min-height: 122%;position: absolute;margin-left: 25%; display:none;}
+#inspiration{width:50%; float:left; background-color:white;min-height: 122%;position: absolute;margin-left: 25%; display:none;padding-bottom: 50px;}
 #theMainProductImage{width: 100%;}
 .product-image-frame{width: 94%; margin: 10px auto; border: #c2c2c2 thin solid; position:relative;}
 .inspiration-image{width: 100%; }
@@ -692,13 +708,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .HeaderContents {
     margin: 0 auto; width:1000px;
 	text-transform:uppercase;
-	} 
-
-.HeaderContents a {
-	#fff;
-	
-
-} 
+	}
 
 .HeaderContents a:hover {
 	color: #a53247;

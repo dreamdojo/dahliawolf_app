@@ -211,7 +211,7 @@ color: rgb(80, 80, 80);
         	<a href="<?= $_data['post']['image_url'] ?>" target="_blank"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
         </div>
         
-        <div class="postOrigin"> Posted from <?= $_data['post']['domain'] ?> on <?= $created[0] ?></div>
+        <div class="postOrigin"> Posted from <a href="<?= $_data['post']['image_attribution_url'] ?>"><?= $_data['post']['image_attribution_domain'] ?></a> on <?= $created[0] ?></div>
        	
         <div class="socialCol">
         	<div class="postDetailCommentSection">

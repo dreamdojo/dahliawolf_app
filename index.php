@@ -29,6 +29,23 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+  <!-- Start of Woopra Code -->
+  function woopraReady(tracker) {
+      tracker.setDomain('dahliawolf.com');
+      tracker.setIdleTimeout(1800000);
+      tracker.trackPageview({type:'pageview',url:window.location.pathname+window.location.search,title:document.title});
+      return false;
+  }
+  (function() {
+      var wsc = document.createElement('script');
+      wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+      wsc.type = 'text/javascript';
+      wsc.async = true;
+      var ssc = document.getElementsByTagName('script')[0];
+      ssc.parentNode.insertBefore(wsc, ssc);
+  })();
+  <!-- End of Woopra Code -->
+
 </script>
 
 </head>

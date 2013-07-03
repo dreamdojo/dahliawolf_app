@@ -32,17 +32,25 @@ theGrid.destroyLoader = function() {
 }
 
 theGrid.likeAction = function(){
-	id = parseInt( $(this).data('id') );
-	action = $(this).data('action');
-	_this = $(this);
+	console.log('yooo');
+    id = parseInt( $(this).data('id') );
+    likeBox = $('#post-'+id).find('.postGridLikeCount');
+    likeImage = $('#post-'+id).find('.postGridLikeImage');
+    likeCount = parseInt( likeBox.html() );
+	_this = $('#post-'+id).find('.vote-frame');
 	if(id && id > 0 && theUser.id && theUser.id > 0){
-		url = theGrid.urls[action]+id;
 		if( $(_this).hasClass('grid-like') ){
+            api.lovePost(id);
 			$(_this).removeClass('grid-like').addClass('grid-unlike').data('action', 'unlike');
+            likeImage.removeClass('postGridUnLiked').addClass('postGridLiked');
+            likeCount++;
 		}else{
+            api.unlovePost(id);
+            likeImage.removeClass('postGridLiked').addClass('postGridUnLiked');
 			$(_this).removeClass('grid-unlike').addClass('grid-like').data('action', 'like');
+            likeCount--;
 		}
-		$.getJSON(url + '&ajax=1');
+        likeBox.html(likeCount);
 	}else{
 		new_loginscreen();
 	}
@@ -56,7 +64,6 @@ theGrid.getImages = function() {
 		
 		theGrid.showLoader();
 		$.getJSON(URL, function(data){
-			console.log(data);
 			theGrid.destroyLoader();
 			$.each(data, function(index, post){
 				theGrid.posts[post.posting_id] = new theGrid.post(post);
@@ -91,11 +98,13 @@ theGrid.post = function(obj) {
 }
 
 theGrid.post.prototype.displayPost = function() {
-	str = '<div id=post-'+this.data.posting_id+' class="post-frame color-'+Math.floor(Math.random()*5)+'">';
-	str += '<div rel="grid-vote" class="vote-frame '+(parseInt(this.data.is_liked) ? 'grid-unlike' : 'grid-like')+'" data-id="'+this.data.posting_id+'" data-action="'+(parseInt(this.data.is_liked) ? 'unlike' : 'like')+'"></div>';
+    str = '<div id=post-'+this.data.posting_id+' class="post-frame color-'+Math.floor(Math.random()*5)+'">';
+	str += '<div rel="grid-vote" class="vote-frame '+(parseInt(this.data.is_liked) ? 'grid-unlike' : 'grid-like')+'" data-id="'+this.data.posting_id+'"></div>';
 	str += '<a href="/post-details?posting_id='+this.data.posting_id+'" class="image" rel="modal">';
 	str += '<img src="'+this.data.image_url+'" class="'+(theGrid.offset < theGrid.limit ? '' : 'lazy')+' zoom-in" data-src="'+this.data.image_url+'" '+(this.data.width >= this.data.height ? theGrid.htText : '')+'>';
 	str += '</a>';
+    str += '<div class="gridPostDeets"><div class="gridUsername dahliaHead" data-id="'+this.data.user_id+'"><a href="/'+this.data.username+'">'+this.data.username+'</a></div>' +
+        '<div class="gridLovesBox"><div class="postGridLikeImage '+(parseInt(this.data.is_liked) ? 'postGridLiked' : 'postGridUnLiked')+'" rel="grid-vote" data-id="'+this.data.posting_id+'"></div><p class="postGridLikeCount">'+this.data.total_likes+'</p></div>';
 	str+= '</div>';
 	theGrid.container.append(str);
 }

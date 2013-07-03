@@ -76,6 +76,7 @@ if ($top_dir == 'shop') {
 <script src="/js/postDetail.js" type="text/javascript"></script>
 <script src="/js/postDetailPosts.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
+<script src="/js/api.js" type="text/javascript"></script>
 <script type="text/javascript">
 var theUser = new Object();
 <? if (IS_LOGGED_IN): ?>
@@ -94,6 +95,30 @@ var theUser = new Object();
 	theUser.username = false;
 	var userConfig = new Object();
 <? endif ?>
+
+<!-- Start of Woopra Code -->
+
+    function woopraReady(tracker){
+        tracker.setDomain('dahliawolf.com');
+        tracker.setIdleTimeout(300000);
+
+        tracker.addVisitorProperty('email', userConfig.email_address);
+        tracker.addVisitorProperty('name', userConfig.username);
+
+        tracker.track();
+        return false;
+    }
+
+    (function(){
+        var wsc=document.createElement('script');
+        wsc.type='text/javascript';
+        wsc.src=document.location.protocol+'//static.woopra.com/js/woopra.js';
+        wsc.async=true;
+        var ssc = document.getElementsByTagName('script')[0];
+        ssc.parentNode.insertBefore(wsc, ssc);
+    })();
+<!-- End of Woopra Code -->
+
 $('.socialize').bind('click', pplFinder.start);
 </script>
 </head>

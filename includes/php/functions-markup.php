@@ -35,7 +35,7 @@ function output_avatar($user_id, $width, $height = NULL) {
 	require DR . '/lib/php/resize-image.php';
 	
 	$file = DR . '/uploads/avatars/nopic-desktop.gif';
-	
+
 	if (is_numeric($user_id)) {
 		$file_path = DR . AVATARPATH . $user_id;
 		if (file_exists($file_path)) {

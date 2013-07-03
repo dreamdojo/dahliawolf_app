@@ -5,8 +5,8 @@
 	
 	$menu = array(	array('title' => 'FACEBOOK', 'img' => 'menu_fb.png'), 
 					array('title' => 'TWITTER', 'img' => 'menu_twitter.png'), 
-					array('title' => 'INSTAGRAM', 'img' => 'menu_google.png'), 
-					array('title' => 'CUSTOM', 'img' => 'menu_custom.png')
+					//array('title' => 'INSTAGRAM', 'img' => 'menu_google.png'),
+					array('title' => 'EMAIL', 'img' => 'menu_custom.png')
 				);
 	
 	$platform = ( !empty($_GET['platform']) ? $_GET['platform'] : 'none' );
@@ -88,7 +88,7 @@ partyLine.sendInvite['FACEBOOK'] = function(id){
         name: 'COME PLAY WITH ME',
 		picture: 'http://www.dahliawolf.com/images/logo_190x190.jpg',
 		description: partyLine.description,
-    	link: 'http://www.dahliawolf.com/index.html',
+    	link: 'http://www.dahliawolf.com/index.html'
 	});
 }
 
@@ -101,12 +101,41 @@ partyLine.sendInvite['TWITTER'] = function(id){
 	}
 }
 
+partyLine.sendInvite['EMAIL'] = function(){
+    var emails = $('#emailCollection').val().trim().split(",");
+    var mess = $('#personalMessage').val().trim();
+    var areEmailsValid = true;
+
+    $.each(emails, function(index, mail) {
+        if(!validateEmail(mail.trim())) {
+            alert(mail + ' is not a valid email');
+            areEmailsValid = false;
+        }
+    });
+
+    if(areEmailsValid && theUser.id){
+        if(emails != '') {
+            $.post('/action/sendInviteEmails.php', {emails : emails, message : mess, user_email : userConfig.email_address }, function(data){
+                $('#emailCollection').val('');
+                $('#personalMessage').val('');
+                alert('Invites Sent');
+                console.log(data);
+            });
+        } else {
+            alert('Please enter an email address');
+        }
+    }
+}
+
 partyLine.getUsers['GOOGLE'] = function(){
 	alert('Google Invite is not ready yet :)');
 }
 
-partyLine.getUsers['CUSTOM'] = function(){
-	alert('Custom invites is not ready yet');
+partyLine.getUsers['EMAIL'] = function(){
+	partyLine.userTank.load('/templates/invite-email.php', function() {
+        $('#emailSubmitButton').unbind();
+        $('#emailSubmitButton').on('click', partyLine.sendInvite['EMAIL']);
+    });
 }
 
 partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS

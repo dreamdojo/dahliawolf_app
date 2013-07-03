@@ -171,9 +171,14 @@ $(document).ready(function()
 		 }
 		 ?>
        </div>
-       <div id="tour-button">MOOP HELPER</div>
+       <div id="tour-button">SHOW HELPER</div>
    </div>
 </div>		
+</div>
+
+<div id="dahliaHead">
+    <a href=""><div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div></a>
+    <div id="dahliaHeadFollowToggle"></div>
 </div>
 
 <div id="theLesson">

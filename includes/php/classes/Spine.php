@@ -151,6 +151,8 @@ class Spine {
 							</div>
 							<div class="info">
 								<p class="description"><?= $post['description'] ?></p>
+								<p class="description"><?= $post['domain'] ?></p>
+								<p class="description"><?= $post['attribution_url'] ?></p>
 								<p class="votes">
 									<span id="vote-count-<?= $post['posting_id'] ?>"><?= $post['votes'] ?></span>
 									<a href="<?= $vote_href ?>" rel="vote" data-undo_href="<?= $unvote_href ?>">Vote</a>
