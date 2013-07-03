@@ -620,4 +620,10 @@ dahliaHeads.prototype.showHead = function(data) {
 
 $(function(){
     dahliaHead = new dahliaHeads();
+    $('#section-inspire').onclick = function() {
+        woopraTracker.pushEvent({
+            name: 'Inspire',
+            user: theUser.username
+        });
+    };
 });
