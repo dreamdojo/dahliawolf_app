@@ -521,7 +521,7 @@
 				theBank.height = theBank.height - $('#frame-'+id).height();
 				if(theBank.slide){$('#frame-'+id).slideUp(200);}
 				theBank.refreshPage = true;
-                sendToAnal({name:'Just posted post '+data.posting_id+' from the Dahliawolf bank'});
+                sendToAnal({name:'Just posted from the Dahliawolf bank', post: data.posting_id});
 			});
 		}
 		return false;
