@@ -25,7 +25,7 @@ dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
                 callback(data);
             }
         }).fail(function(){
-            alert('oh no something broke');
+            console.log('oh no something broke');
         });
     }
 }// MAIN API CALL
