@@ -98,10 +98,12 @@ font-size: .8em;}
 #sysForm_submit{float: right;margin-right: 24%;margin-top: -24px;}
 #register{display:none;}
 #login{ display:none;}
-.item-box{position: absolute;right: 0px;height: 100px;width: 300px;bottom: 10px;font-size: 1em;text-align: right;margin-right: 40px;margin-bottom: 30px;font-family: futura, sans-serif;font-weight: normal;}
+.item-box{position: absolute;right: 0px;height: 100px;width: 400px;bottom: 10px;font-size: 1em;text-align: right;margin-right: 40px;margin-bottom: 30px;font-family: futura, sans-serif;font-weight: normal;}
 .item-title{font-size: 1.5em;}
 .inspired-by{font-size: .8em;padding-bottom: 2px;}
 .inspira{font-size:1.4;}
+.inspira a{color:white; cursor: pointer;}
+.inspira a:hover{color: black;}
 .black{color:#000;}
 .white{color:#fff;}
 #how-it-works-section{position: absolute;top: 95%;width: 100%;height: 100%;font:Arial, Helvetica, sans-serif; background-color:white; left:0px;}
@@ -239,7 +241,7 @@ margin-left: 2px;" /></a></div> -->
         <div class="item-box white">
         	<div class="item-title">ART IN OUR BLOOD DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">artinourblood, San Jose</div>
+            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
         </div>
     </div>
     <div class="slide" style="display:none">
@@ -276,7 +278,7 @@ margin-left: 2px;" /></a></div> -->
 </html>
 <script>
 setTimeout(function(){
-    homeWrecker.init(4800/* <- fade speed*/, 6000/* <- time between slides*/);
+    homeWrecker.init(7800/* <- fade speed*/, 12000/* <- time between slides*/);
 }, 2000) ;
 
 $(function(){
