@@ -257,6 +257,13 @@ var thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
 <? endif ?>
 
 $('.socialize').bind('click', pplFinder.start);
+
+console.log('push to whoopa')
+tracker.pushEvent({
+    name: 'POSTED', // required
+    username: 'johnsmith',
+    company: 'Woopra, Inc.'
+});
 </script>
 
 <?
