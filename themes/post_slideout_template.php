@@ -51,6 +51,7 @@
 <script>
 	
 	function new_loginscreen(){
+        sendToAnal({name:'Hit login Wall'});
 		$('#mask').fadeIn(200, function(){
 			$('#sign-up-modal').show();
 			$('#mask').bind('click', close_new_loginscreen);
@@ -102,7 +103,8 @@
 	
 	function submitImage(file){
 		if(theUser.id && imgUpload.isAvailable){
-			imgUpload.isAvailable = false;
+            sendToAnal({name:'Uploaded an Image'});
+            imgUpload.isAvailable = false;
 
 			URL = 'action/post_image.php?ajax=true';
 			
@@ -512,13 +514,14 @@
 	
 	function bankPostImage(id, description){ //************ MAKE CALL TO POST IMAGE
 		if(id && id > 0 && theBank.isAvailable){
-			theBank.isAvailable = false;
+            theBank.isAvailable = false;
 			$.post('/action/post_feed_image.php', { id: id, description: description} ).done(function(data){
 				theBank.finishPost(id, data.posting_id);
 				theBank.isAvailable = true;
 				theBank.height = theBank.height - $('#frame-'+id).height();
 				if(theBank.slide){$('#frame-'+id).slideUp(200);}
 				theBank.refreshPage = true;
+                sendToAnal({name:'Just posted post '+data.posting_id+' from the Dahliawolf bank'});
 			});
 		}
 		return false;
@@ -620,6 +623,7 @@
 						theLesson.changeTitle(theLesson.postTitle['step2']);
 						theLesson.changeContent(theLesson.postContent['step2']);
 					}
+                    sendToAnal({name:'Just Opened the Bank'});
 				});
 			});
 		}

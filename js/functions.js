@@ -508,7 +508,6 @@ userLogin.prototype.submitNewUser = function(e) {
     var email = formdata[1].value.trim();
     var password = formdata[2].value.trim();
 
-    console.log(formdata);
     $.post( $(e.target).attr('action'), {user_username : username, user_email : email,  user_password : password, ajax : true}, function(data){
         var result = $.parseJSON(data);
         if (!result.success) {
@@ -621,3 +620,9 @@ dahliaHeads.prototype.showHead = function(data) {
 $(function(){
     dahliaHead = new dahliaHeads();
 });
+
+function sendToAnal(data){
+    if(data) {
+        woopraTracker.pushEvent(data);
+    }
+}

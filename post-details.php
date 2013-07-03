@@ -254,16 +254,10 @@ var thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
 
 <? if( isset($_GET['ajax']) ): ?>
 	var thePostGrid = new postDetailGrid();
+    sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
 <? endif ?>
 
 $('.socialize').bind('click', pplFinder.start);
-
-console.log('push to whoopa')
-tracker.pushEvent({
-    name: 'POSTED', // required
-    username: 'johnsmith',
-    company: 'Woopra, Inc.'
-});
 </script>
 
 <?
