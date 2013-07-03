@@ -235,7 +235,7 @@ margin-left: 2px;" /></a></div> -->
 
     
     <div class="slide">
-    	<img class="zeImg" src="http://www.dahliawolf.com/images/DW-slide-artinourblood.jpg" />
+    	<img class="zeImg" src="/images/DW-slide-artinourblood.jpg" />
         <div class="item-box white">
         	<div class="item-title">ART IN OUR BLOOD DRESS</div>
             <div class="inspired-by">Inspired by member</div>
@@ -243,7 +243,7 @@ margin-left: 2px;" /></a></div> -->
         </div>
     </div>
     <div class="slide" style="display:none">
-        <img class="zeImg" src="http://www.dahliawolf.com/images/DAHLIA_NEWSLIDE.jpg" />
+        <img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />
         <div class="item-box white">
             <div class="item-title">COATED IN TROPICANA JACKET</div>
             <div class="inspired-by">Inspired by member</div>
