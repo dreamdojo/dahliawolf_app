@@ -105,6 +105,11 @@ var theUser = new Object();
         tracker.addVisitorProperty('email', userConfig.email_address);
         tracker.addVisitorProperty('name', userConfig.username);
 
+        tracker.pushEvent({
+            name: 'Loadtime', // required
+            time: (window.performance.timing.loadEventEnd - window.performance.timing.navigationStart)
+        });
+
         tracker.track();
         return false;
     }
