@@ -97,18 +97,12 @@ var theUser = new Object();
 <? endif ?>
 
 <!-- Start of Woopra Code -->
-
     function woopraReady(tracker){
         tracker.setDomain('dahliawolf.com');
         tracker.setIdleTimeout(300000);
 
         tracker.addVisitorProperty('email', userConfig.email_address);
         tracker.addVisitorProperty('name', userConfig.username);
-
-        tracker.pushEvent({
-            name: 'Loadtime', // required
-            time: (window.performance.timing.loadEventEnd - window.performance.timing.navigationStart)
-        });
 
         tracker.track();
         return false;
