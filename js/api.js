@@ -61,22 +61,16 @@ dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
 }// GETS IMAGES FOR THE BANK
 
 dahliawolfApi.prototype.getPostDetails = function(id, callback) {
-    if(id) {
-        if(id === 'newest') {
-            id = '';
-        }
-        if(typeof id == 'number') {
-            params = '&posting_id='+id;
-        }
-        if(theUser.id) {
-            params += '&viewer_user_id='+theUser.id;
-        }
-
-        this.callApi('posting', 'get_post', params, callback);
-
-    } else {
-        alert('NO ID');
+    if(id === 'newest') {
+        id = '';
     }
+    if(id) {
+        params = '&posting_id='+id;
+    }
+    if(theUser.id) {
+        params += '&viewer_user_id='+theUser.id;
+    }
+    this.callApi('posting', 'get_post', params, callback);
 }// Get post details
 
 dahliawolfApi.prototype.lovePost = function(id, callback) {//********** User Likes post
