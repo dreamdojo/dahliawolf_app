@@ -65,7 +65,7 @@ dahliawolfApi.prototype.getPostDetails = function(id, callback) {
         if(id === 'newest') {
             id = '';
         }
-        if(id) {
+        if(typeof id == 'number') {
             params = '&posting_id='+id;
         }
         if(theUser.id) {
