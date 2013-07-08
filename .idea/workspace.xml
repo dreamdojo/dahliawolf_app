@@ -2,229 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/1Back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/1left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/1right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/DAHLIA_NEWSLIDE.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/DW-slide-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/DW-slide-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/DW-slide-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/DownArrowGray7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/FEEDBACK.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Splash-Enter.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Splash-Page-three.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Splash-Page-three.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/alien-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/alreadyamember.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/alreadycreative.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bank-instagram.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bank-pinterest.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/broken.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/buy_bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/cam-bam.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/cam-bam.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/choosetitle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/closepin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/closetxtbtn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/closewhite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/dahlia-contact.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/dahlia-wolf-welcome.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/divot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/dmnd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/dmnd_on.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/drag-drop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/dw-copyright.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/dw-post-poster.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/edit_prof.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/enter-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/f-share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/facebook-dahlia-share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/facebook-signup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/fake-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/faq-most-asked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/fb_connect.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/filterby.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/filterinstagram.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/filterpinterest.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/getstarted.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/gototop.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/heart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/helper-message.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/how-dahliawolf-works-commission.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/how-dahliawolf-works.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/how-it-works-get-started.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/how-it-works-video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/how_it_works_01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/howitworksbtn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/hp_overlay%20working.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/ico_alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/ico_info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/icon_comments.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/icon_followers.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/icon_likes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/icon_points.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/icon_posts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/icon_rank.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-28-50_front(1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-28-50_front.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-29-51_front(1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-29-51_front.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-30-09_front(1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-30-09_front.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-30-25_front(1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-30-25_front.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-31-58_front(1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-31-58_front.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-32-19_front(1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image2013-01-10-23-32-19_front.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/images.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/images/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/indicator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/inspireBackButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/inspire_title.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/instagram-off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/instagram-off1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/instagram-on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/instagram-on1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/land2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/land3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/land4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/legalDisclaimer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/lesson1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/lesson2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/lesson3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/like.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/loading-feed.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/loading3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/login.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/logintxt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/logo_120x60.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/logo_190x190.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/magnify.cur" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/menu_bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/menu_custom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/menu_fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/menu_google.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/menu_twitter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/minilogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/modal-popup-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/my-comp-butt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/new_msg_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/new_msg_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/next-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pi-tag.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pint-share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pint_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pint_sub.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pinterest-dahlia-share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pinterest-off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pinterest-on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pinterest.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pinterestGo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/popCountCircle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/popTitle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/post.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailFollowButton.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailFollowButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailIsFollowButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailsLeftArrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailsLoveButton.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailsLoveButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailsLoveButtonLoved.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailsLoveButtonLoved.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postDetailsRightArrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/post_help_pop.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/postings" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postit-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/postitbtn2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/posts_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/posts_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pre-order-placeholder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/profileFiller.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/rank.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/reg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/search.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/select-files.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/selectbg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signinemail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signinemail2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signinfacebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signinfacebook2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signininstagram.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signininstagram2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signintwitter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signintwitter2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/signup_title.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/slash.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/small_comment.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/small_followers.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/small_heart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/small_posts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/spine-comment-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/splash_post_design.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/t-share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_cart.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_checkout.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_follow.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_like.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_my_rewards.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_my_wishlist.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_share.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_unfollow.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/td_unlike.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/thanks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/the-process.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/thedot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/top_desings_close.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/transparen-howitworks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/twitter-dahlia-share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/uploading_3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/uploadmsg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/view_toggle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/view_toggle2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/viewallbtn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/vote-hover-red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/vote-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/vote-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/wel_stat_one.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/wel_stat_two.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/welcomeback.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/wild4_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/wild4_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/wild_hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/wild_like.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/x_light.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/header_template.php" afterPath="$PROJECT_DIR$/themes/header_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/pics/image.php" afterPath="$PROJECT_DIR$/import/pics/image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/import-likes.php" afterPath="$PROJECT_DIR$/import/import-likes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/import-member-avatars.php" afterPath="$PROJECT_DIR$/import/import-member-avatars.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/import-posts.php" afterPath="$PROJECT_DIR$/import/import-posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/update-posting-created.php" afterPath="$PROJECT_DIR$/import/update-posting-created.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/update-user-created.php" afterPath="$PROJECT_DIR$/import/update-user-created.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/theLesson.js" afterPath="$PROJECT_DIR$/js/theLesson.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372378419306" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372833167578" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372379568550" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372372874677" ignored="false" />
     <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372292643063" ignored="false" />
-    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372376150972" ignored="false" />
+    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372830727695" ignored="false" />
     <file path="/Spine-1.1.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372371217374" ignored="false" />
     <file path="/a.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184379967" ignored="false" />
     <file path="/a.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184397202" ignored="false" />
-    <file path="/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372270869978" ignored="false" />
+    <file path="/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372828284876" ignored="false" />
     <file path="/explore_popup.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372289763382" ignored="false" />
     <file path="/profile.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372358802379" ignored="false" />
     <file path="/userProfile.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372287370523" ignored="false" />
@@ -232,10 +25,11 @@
     <file path="/theGrid.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372290387376" ignored="false" />
     <file path="/api.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372376304511" ignored="false" />
     <file path="/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372349121703" ignored="false" />
-    <file path="/post_slideout_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372349915800" ignored="false" />
+    <file path="/post_slideout_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372831134507" ignored="false" />
     <file path="/invite.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372369516577" ignored="false" />
     <file path="/invite-email.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372363821211" ignored="false" />
     <file path="/sendInviteEmails.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372369565761" ignored="false" />
+    <file path="/theLesson.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372833589936" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,6 +51,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="dahliawolf_app" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="theLesson.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/theLesson.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="143" column="79" selection-start="6326" selection-end="6326" vertical-scroll-proportion="0.57125306">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -306,35 +115,34 @@
       <MyDateState />
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/post-details.php" />
-        <option value="$PROJECT_DIR$/explore_popup.php" />
-        <option value="$PROJECT_DIR$/explore.php" />
-        <option value="$PROJECT_DIR$/js/theGrid.js" />
-        <option value="$PROJECT_DIR$/head.php" />
-        <option value="$PROJECT_DIR$/themes/post_slideout_template.php" />
-        <option value="$PROJECT_DIR$/profile.php" />
-        <option value="$PROJECT_DIR$/templates/invite-email.php" />
-        <option value="$PROJECT_DIR$/invite.php" />
         <option value="$PROJECT_DIR$/action/sendInviteEmails.php" />
         <option value="$PROJECT_DIR$/includes/php/classes/Spine.php" />
         <option value="$PROJECT_DIR$/includes/php/classes/Spine-1.1.php" />
         <option value="$PROJECT_DIR$/themes/header_template.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/api.js" />
+        <option value="$PROJECT_DIR$/../Dahlia-DEV/post-details.php" />
+        <option value="$PROJECT_DIR$/../Dahlia-DEV/js/api.js" />
+        <option value="$PROJECT_DIR$/../Dahlia-DEV/js/functions.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/head.php" />
+        <option value="$PROJECT_DIR$/themes/post_slideout_template.php" />
         <option value="$PROJECT_DIR$/js/functions.js" />
+        <option value="$PROJECT_DIR$/post-details.php" />
+        <option value="$PROJECT_DIR$/explore_popup.php" />
+        <option value="$PROJECT_DIR$/js/theLesson.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="2560" />
-    <option name="height" value="1440" />
+    <option name="x" value="54" />
+    <option name="y" value="22" />
+    <option name="width" value="1787" />
+    <option name="height" value="975" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -362,6 +170,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -376,43 +185,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="true" />
     <property name="options.lastSelected" value="http.proxy" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="FullScreen" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FullScreen" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="Dahlia-DEV" serverId="13bc4cc8-7c2e-4fb3-a490-9db98243d32b" createEmptyFolders="true" autoUpload="true">
+  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="Dahlia-DEV" serverId="8b23f12c-8037-474f-a18a-db76c25da55f" createEmptyFolders="true" autoUpload="true">
     <servers>
-      <server id="13bc4cc8-7c2e-4fb3-a490-9db98243d32b">
+      <server id="8b23f12c-8037-474f-a18a-db76c25da55f">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </server>
-      <server id="aff0ef2f-532c-4d23-ae66-17513a5b567d">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
+      <server id="e18487a9-f106-4ed0-8985-776f0f16d8f9">
+        <serverdata />
       </server>
     </servers>
   </component>
@@ -510,27 +329,46 @@
       <created>1372378424699</created>
       <updated>1372378424699</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="user cache/upgrade dahliahead/ fixed postpopbug">
+      <created>1372494877405</created>
+      <updated>1372494877405</updated>
+    </task>
+    <task id="LOCAL-00015" summary="woopra">
+      <created>1372828317943</created>
+      <updated>1372828317943</updated>
+    </task>
+    <task id="LOCAL-00016" summary="lots of analyzing&#10;">
+      <created>1372832303119</created>
+      <updated>1372832303119</updated>
+    </task>
+    <task id="LOCAL-00017" summary="lots of analyzing&#10;">
+      <created>1372832498135</created>
+      <updated>1372832498135</updated>
+    </task>
+    <task id="LOCAL-00018" summary="lots of analyzing&#10;explore page">
+      <created>1372833170314</created>
+      <updated>1372833170314</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="false" />
+    <frame x="54" y="22" width="1787" height="975" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5275708" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32865497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5274854" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6709887" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20405728" sideWeight="0.6706408" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17346352" sideWeight="0.47251463" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29122806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25338107" sideWeight="0.6706408" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2992533" sideWeight="0.7076023" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -538,13 +376,14 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
@@ -582,7 +421,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding social pics and stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of analyzing&#10;explore page" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -605,129 +444,111 @@
     <MESSAGE value="More testing from mars" />
     <MESSAGE value="Chat heads and invite emails" />
     <MESSAGE value="Adding social pics and stuff" />
+    <MESSAGE value="user cache/upgrade dahliahead/ fixed postpopbug" />
+    <MESSAGE value="woopra" />
+    <MESSAGE value="lots of analyzing&#10;" />
+    <MESSAGE value="lots of analyzing&#10;explore page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="376" column="209" selection-start="12839" selection-end="12839" vertical-scroll-proportion="0.20600858">
-          <folding>
-            <marker date="1372349930000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1372349930000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/PinMeScript_v1.6.1/upload/invite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/PinMeScript_v1.6.1/upload/invite_friends.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/userProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.11627907">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1372287371000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="49" selection-start="6278" selection-end="6278" vertical-scroll-proportion="0.52188843">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="18" selection-start="4876" selection-end="4886" vertical-scroll-proportion="-25.576923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/invite-email.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="110" selection-start="689" selection-end="730" vertical-scroll-proportion="-9.230769">
-          <folding />
-        </state>
+        <state line="12" column="110" selection-start="689" selection-end="730" vertical-scroll-proportion="-9.230769" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/action/sendInviteEmails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="148" selection-start="346" selection-end="346" vertical-scroll-proportion="0.1188455">
-          <folding />
-        </state>
+        <state line="7" column="148" selection-start="346" selection-end="346" vertical-scroll-proportion="0.1188455" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invite.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="95" selection-start="3747" selection-end="3757" vertical-scroll-proportion="0.45840406">
-          <folding />
-        </state>
+        <state line="117" column="95" selection-start="3747" selection-end="3757" vertical-scroll-proportion="0.45840406" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/php/classes/Spine.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="39" selection-start="6271" selection-end="6278" vertical-scroll-proportion="-0.024844721">
-          <folding />
-        </state>
+        <state line="227" column="39" selection-start="6271" selection-end="6278" vertical-scroll-proportion="-0.024844721" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/php/classes/Spine-1.1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="290" column="29" selection-start="11229" selection-end="11229" vertical-scroll-proportion="-0.53846157">
-          <folding>
-            <element signature="e#11479#11607#0" expanded="true" />
-            <element signature="e#13672#13694#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="290" column="29" selection-start="11229" selection-end="11229" vertical-scroll-proportion="-0.53846157" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/header_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="51" selection-start="6914" selection-end="6933" vertical-scroll-proportion="1.0564226">
-          <folding />
-        </state>
+        <state line="179" column="51" selection-start="6914" selection-end="6933" vertical-scroll-proportion="1.0564226" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/php/initial-calls.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="41" selection-start="2260" selection-end="2274" vertical-scroll-proportion="0.3002364">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="11" selection-start="794" selection-end="794" vertical-scroll-proportion="0.5504587">
-          <folding />
-        </state>
+        <state line="86" column="41" selection-start="2260" selection-end="2274" vertical-scroll-proportion="0.3002364" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="17" selection-start="6799" selection-end="6815" vertical-scroll-proportion="0.65192086">
+        <state line="101" column="17" selection-start="6799" selection-end="6815" vertical-scroll-proportion="0.65192086" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="79" selection-start="729" selection-end="729" vertical-scroll-proportion="0.12696493" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="280" column="79" selection-start="12766" selection-end="12766" vertical-scroll-proportion="0.73417723">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="47" selection-start="4361" selection-end="4361" vertical-scroll-proportion="1.556962">
+          <folding>
+            <marker date="1372831555000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1372831555000" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post-details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="254" column="33" selection-start="13312" selection-end="13312" vertical-scroll-proportion="0.65822786">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="425" column="13" selection-start="12042" selection-end="12042" vertical-scroll-proportion="0.9314421">
+        <state line="509" column="0" selection-start="14291" selection-end="14291" vertical-scroll-proportion="1.7923833">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="27" selection-start="4845" selection-end="4845" vertical-scroll-proportion="0.088607594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/explore_popup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="186" column="0" selection-start="7262" selection-end="7262" vertical-scroll-proportion="0.74050635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/theLesson.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="79" selection-start="6326" selection-end="6326" vertical-scroll-proportion="0.57125306">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

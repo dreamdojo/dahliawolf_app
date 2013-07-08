@@ -90,7 +90,13 @@ class Spine {
 		
 		$is_partial = empty($class);
 		?>
-		<div class="explore">
+        <style>
+            .explore-prod-presale-box{position: absolute; width: 80px; height: 100px; right: 0px; bottom: 0px; background-color: #e6768e; color: #fff; line-height: 18px; text-align: center;}
+            .explore-prod-presale-box div:nth-child(1){padding-top: 21px;}
+            .explore-prod-presale-box div:nth-child(2){font-weight: bolder;}
+            .explore-prod-presale-box div:nth-child(3){font-size: 11px;}
+        </style>
+        <div class="explore">
 			<?
 			if (empty($posts)) {
 				if (!$is_partial) {
@@ -150,8 +156,17 @@ class Spine {
                                 </div>
                 
                                 <img src="<?= $post['image_url'] ?>" class="zoom-in" onclick="product.show(<?= $post['product_id'] ?>)" />
+                                <? if($post['status'] === 'Pre Order'): ?>
+                                    <a href="<?= CR ?>/shop/product?id_product=<?= $post['product_id'] ?>">
+                                    <div class="explore-prod-presale-box">
+                                        <div>Pre-Sale</div>
+                                        <div>50% OFF</div>
+                                        <div>Exp. July 31st</div>
+                                    </div>
+                                    </a>
+                                <? endif ?>
 								<div class="explore-prod-options-box">
-                                        <? if($post['status'] == 'Live'): ?>
+                                        <? if($post['status'] == 'Live' || $post['status'] == 'Pre Order'): ?>
                                             <a href="<?= CR ?>/shop/product?id_product=<?= $post['product_id'] ?>">
                                                 <div class="exp-buy-butt">
                                                     <p>BUY</p>
@@ -169,7 +184,7 @@ class Spine {
 							</div>
 							<div class="info">
 								<p class="description"><?= $post['product_name'] ?></p>
-								<div class="exp-price">$<?= money_format('%i', $post['price']) ?></div>
+								<div class="exp-price" <?= ($post['status'] == 'Pre Order' ? 'style="text-decoration: line-through;"' : '') ?> >$<?= ( $post['status'] == 'Pre Order' ? money_format('%i', $post['price']*2) : money_format('%i', $post['price']) ) ?></div>
 							</div>
 						</li>
 						<?
