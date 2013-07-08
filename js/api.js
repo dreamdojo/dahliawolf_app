@@ -62,7 +62,10 @@ dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
 
 dahliawolfApi.prototype.getPostDetails = function(id, callback) {
     if(id) {
-        if(theUser.id) {
+        if(id === 'newest') {
+            id = '';
+        }
+        if(id) {
             params = '&posting_id='+id;
         }
         if(theUser.id) {

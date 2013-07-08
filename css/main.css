@@ -130,7 +130,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #theShaft .activity-menu span{color:#882a3b !important; padding-left: 5px;}
 #theShaft .activity-menu-icon{width:60px; height:100%; background-repeat:no-repeat; background-size:cover; float:left; margin-left: -10px;}
 #theShaft .activity-menu-title{ color:#acacac;font-size: 14px;margin-top: 21px;margin-left: 60px;}
-.new-bubs{background-image: url(/images/indicator.png); background-size: cover; color:#fff; text-align:center; float:right;height: 45px;width: 45px;margin-top: -14px;}
+.new-bubs{background-image: url(/images/indicator.png); background-size: cover; color:#fff; text-align:center; float:right;height: 45px;width: 44px;margin-top: -14px;}
 .new-bubs p{line-height: 44px !important; font-size:12px; padding-right:2px}
 #theShaft .notification{ background-color:#363636; width:100%; color:#767676;height: 35px;font-size: 14px; margin-top:2px; cursor:pointer; position:relative; float:left;}
 #theShaft .notification-title{ background-color:#212121; width:100%; color:#909090;height: 40px;font-size: 14px; font-weight:bold; margin-top:2px; cursor:pointer; position:relative; float:left;}
