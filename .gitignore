@@ -5,3 +5,5 @@ uploads/*
 upload/*
 postings/*
 mobile/*
+
+.idea/workspace.xml
