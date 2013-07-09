@@ -61,17 +61,14 @@ dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
 }// GETS IMAGES FOR THE BANK
 
 dahliawolfApi.prototype.getPostDetails = function(id, callback) {
-    console.log(id);
     if(id === 'newest') {
         params = '&posting_id=';
     } else if(id) {
         params = '&posting_id='+id;
     }
-    console.log(id);
     if(theUser.id) {
         params += '&viewer_user_id='+theUser.id;
     }
-    console.log('hi');
     this.callApi('posting', 'get_post', params, callback);
 }// Get post details
 
