@@ -1,5 +1,7 @@
-.idea/
-uploads/
-upload/
-postings/
-mobile/
+.DS_Store
+.idea/*
+.idea/workspace.xml
+uploads/*
+upload/*
+postings/*
+mobile/*
