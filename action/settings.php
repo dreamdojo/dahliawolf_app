@@ -18,10 +18,10 @@ if (!empty($_FILES['avatar']['name'])) {
 	else {
 		$destination = $path . $_SESSION['user']['user_id'];
 		if (file_exists(destination)) {
-			unlink($destination);	
+			unlink($destination);
 		}
 		rename($uploadResults[0], $destination);
-		
+
 		$avatar_destination = AVATARFILE . $_SESSION['user']['user_id'];
 	}
 }
@@ -55,7 +55,7 @@ else {
 			$_SESSION['user'][$key] = $_POST[$key];
 		}
 	}
-	
+
 	// Save to local db
 	$user_params = array(
 		'user_id' => $_SESSION['user']['user_id']
@@ -68,20 +68,21 @@ else {
 		, 'about' => $_POST['about']
 		, 'location' => $_POST['location']
 		, 'website' => $_POST['website']
-		
+
 		, 'facebook_post' => $_POST['facebook_post']
 		, 'instagram_import' => $_POST['instagram_import']
 		, 'instagram_username' => $_POST['instagram_username']
 		, 'pinterest_username' => $_POST['pinterest_username']
-		, 'comment_notifications' => $_POST['comment_notifications']
-		, 'like_notifications' => $_POST['like_notifications']
+		//, 'comment_notifications' => $_POST['comment_notifications']
+		//, 'like_notifications' => $_POST['like_notifications']
+		, 'notification_interval' => $_POST['notification_interval']
 	);
 	if (!empty($avatar_destination)) {
 		$user_params['avatar'] = $avatar_destination;
 	}
-	
+
 	$data = api_call('user', 'update_user', $user_params);
-	
+
 	$_SESSION['success'] = 'Account settings have been updated.';
 }
 
