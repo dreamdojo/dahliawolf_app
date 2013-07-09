@@ -17,6 +17,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <title>Dahliawolf</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/homes.js"></script>
+<script src="/js/functions.js" type="text/javascript"></script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -28,6 +29,23 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+  <!-- Start of Woopra Code -->
+  function woopraReady(tracker) {
+      tracker.setDomain('dahliawolf.com');
+      tracker.setIdleTimeout(1800000);
+      tracker.trackPageview({type:'pageview',url:window.location.pathname+window.location.search,title:document.title});
+      return false;
+  }
+  (function() {
+      var wsc = document.createElement('script');
+      wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+      wsc.type = 'text/javascript';
+      wsc.async = true;
+      var ssc = document.getElementsByTagName('script')[0];
+      ssc.parentNode.insertBefore(wsc, ssc);
+  })();
+  <!-- End of Woopra Code -->
 
 </script>
 
@@ -80,20 +98,12 @@ font-size: .8em;}
 #sysForm_submit{float: right;margin-right: 24%;margin-top: -24px;}
 #register{display:none;}
 #login{ display:none;}
-.item-box{position: absolute;
-right: 0px;
-height: 100px;
-width: 300px;
-bottom: 10px;
-font-size: 1em;
-text-align: right;
-margin-right: 40px;
-margin-bottom: 30px;
-font-family: futura, sans-serif;
-font-weight: normal;}
+.item-box{position: absolute;right: 0px;height: 100px;width: 400px;bottom: 10px;font-size: 1em;text-align: right;margin-right: 40px;margin-bottom: 30px;font-family: futura, sans-serif;font-weight: normal;}
 .item-title{font-size: 1.5em;}
 .inspired-by{font-size: .8em;padding-bottom: 2px;}
 .inspira{font-size:1.4;}
+.inspira a{color:white; cursor: pointer;}
+.inspira a:hover{color: black;}
 .black{color:#000;}
 .white{color:#fff;}
 #how-it-works-section{position: absolute;top: 95%;width: 100%;height: 100%;font:Arial, Helvetica, sans-serif; background-color:white; left:0px;}
@@ -179,7 +189,7 @@ color: #a53247;
         </div>
         <div class="box-section form-box" id="login">
         	<img class="fb-login loggle-toggle" onClick="document.location='social-login.php?social_network=facebook'" src="/images/signinfacebook2.png" >
-            <form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="action/login.php">
+            <form id="sysForm_Login" method="POST" class="Form FancyForm AuthForm" action="/mobile/action/login.php">
                 <ul class="menu-form">
                     <li>or login with email: </li>
                     <li><input class="input_text" type="text" name="identity" id="sysForm_identity" value="" placeholder="Email"></li>
@@ -197,7 +207,7 @@ color: #a53247;
         </div>
         <div class="box-section form-box" id="register">
         	<img class="fb-login loggle-toggle" onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" >
-            <form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="/action/signup.php">
+            <form id="sysForm_Register" method="POST" class="Form FancyForm AuthForm" action="/mobile/action/signup.php">
                 <ul class="menu-form">
                     <li>or signup with email: </li>
                     <li><input class="input_text" type="text" name="user_username" id="user_username" value="" max="30" placeholder="Username" /></li>
@@ -227,27 +237,27 @@ margin-left: 2px;" /></a></div> -->
 
     
     <div class="slide">
-    	<img class="zeImg" src="http://www.dahliawolf.com/images/DAHLIA_NEWSLIDE.jpg" />
+    	<img class="zeImg" src="/images/DW-slide-artinourblood.jpg" />
         <div class="item-box white">
-        	<div class="item-title">Coated in Tropicana Jacket</div>
+        	<div class="item-title">ART IN OUR BLOOD DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">StunnaLOOK, Los Angeles</div>
+            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
         </div>
     </div>
     <div class="slide" style="display:none">
-    	<img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-2.jpg" />
+        <img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />
+        <div class="item-box white">
+            <div class="item-title">COATED IN TROPICANA JACKET</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira">StunnaLOOK, London</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none">
+        <img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-2.jpg" />
         <div class="item-box black">
-        	<div class="item-title">ELEGANT AFFAIR TOP</div>
+            <div class="item-title">SIMPLE AFFAIR TOP</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Jessica, New York</div>
-        </div>
-    </div>
-    <div class="slide" style="display:none">
-    	<img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-3.jpg" />
-        <div class="item-box white">
-        	<div class="item-title">MODERN NATIVE DRESS</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">Parker, Alabama</div>
         </div>
     </div>
 </div>
@@ -256,7 +266,7 @@ margin-left: 2px;" /></a></div> -->
     <div class="loggle-toggle2">
     	<div><img src="http://www.dahliawolf.com/images/how-dahliawolf-works.jpg" /></div>
     	<div><a href="http://www.dahliawolf.com/faqs"><img src="http://www.dahliawolf.com/images/how-dahliawolf-works-commission.jpg" /></a></div>
-    	<div class="video-design"><img style="margin-left:-80px;" src="http://www.dahliawolf.com/images/how-it-works-video.png" onclick="$(this).fadeOut(200);" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    	<div class="video-design"><img id="video-cover" style="margin-left:-80px;" src="http://www.dahliawolf.com/images/how-it-works-video.png" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
         <div><img style="margin-top:100px; margin-bottom: 30px;" src="http://www.dahliawolf.com/images/how-it-works-get-started.png" /></div>
         <div style="cursor:pointer;"><img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" ></div>
         <div class="signupemail2"><a href="http://www.dahliawolf.com/signup">SIGN UP THE OLD SCHOOL WAY WITH EMAIL</a></div>
@@ -267,8 +277,20 @@ margin-left: 2px;" /></a></div> -->
 </body>
 </html>
 <script>
-    setTimeout(function(){
-    homeWrecker.init(4800/* <- fade speed*/, 6000/* <- time between slides*/);
+setTimeout(function(){
+    homeWrecker.init(7800/* <- fade speed*/, 12000/* <- time between slides*/);
 }, 2000) ;
+
+$(function(){
+    $('#sysForm_Register').submit(loginObj.submitNewUser);
+    $('#sysForm_Login').submit(loginObj.loginUser);
+});
+
+$('#video-cover').on('click', function() {
+   console.log(this);
+    $(this).fadeOut(200);
+    sendToAnal({name:'Watching how it works video'});
+});
+
 
 </script>

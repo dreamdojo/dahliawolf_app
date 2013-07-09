@@ -25,7 +25,7 @@ dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
                 callback(data);
             }
         }).fail(function(){
-            alert('oh no something broke');
+            console.log('oh no something broke');
         });
     }
 }// MAIN API CALL
@@ -61,19 +61,15 @@ dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
 }// GETS IMAGES FOR THE BANK
 
 dahliawolfApi.prototype.getPostDetails = function(id, callback) {
-    if(id) {
-        if(theUser.id) {
-            params = '&posting_id='+id;
-        }
-        if(theUser.id) {
-            params += '&viewer_user_id='+theUser.id;
-        }
-
-        this.callApi('posting', 'get_post', params, callback);
-
-    } else {
-        alert('NO ID');
+    if(id === 'newest') {
+        params = '&posting_id=';
+    } else if(id) {
+        params = '&posting_id='+id;
     }
+    if(theUser.id) {
+        params += '&viewer_user_id='+theUser.id;
+    }
+    this.callApi('posting', 'get_post', params, callback);
 }// Get post details
 
 dahliawolfApi.prototype.lovePost = function(id, callback) {//********** User Likes post
@@ -106,7 +102,7 @@ dahliawolfApi.prototype.unlovePost = function(id, callback) {//****** User Unlik
             alert('NO ID');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }// UNLOVES A POST
 
@@ -137,7 +133,7 @@ dahliawolfApi.prototype.followUser = function(id, callback) {//************** Fo
             alert('NO ID TO FOLLOW');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }// FOLLOW USER
 
@@ -153,7 +149,7 @@ dahliawolfApi.prototype.unfollowUser = function(id, callback) { //********  Unfo
             alert('NO ID TO FOLLOW');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }// UNFOLLOW USER
 
@@ -169,7 +165,7 @@ dahliawolfApi.prototype.deletePost = function(id, callback) {
             alert('NO ID TO DELETE');
         }
     } else {
-        //login
+        new_loginscreen();
     }
 }//DELETE USER POST
 
@@ -188,7 +184,7 @@ dahliawolfApi.prototype.markActivityAsRead = function(id, callback) {
 
         this.callApi('activity_log', 'mark_read', params, callback);
     } else {
-        //login
+        new_loginscreen();
     }
 }// Mark an activity as read
 

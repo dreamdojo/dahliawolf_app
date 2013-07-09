@@ -254,6 +254,7 @@ var thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
 
 <? if( isset($_GET['ajax']) ): ?>
 	var thePostGrid = new postDetailGrid();
+    sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
 <? endif ?>
 
 $('.socialize').bind('click', pplFinder.start);

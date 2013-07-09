@@ -303,8 +303,7 @@ ul.products .price {
 	display: block;
 }
 .product .info .user .username {
-	margin: 24px 0 5px;
-	font-size: 25px;
+	font-size: 15px;
 	line-height: 100%;
 	text-transform: uppercase;
 	width: 200px;
