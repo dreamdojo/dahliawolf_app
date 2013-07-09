@@ -76,6 +76,7 @@ function get_cart() {
 				)	
 			);
 			$data = commerce_api_request('cart', $calls, true);
+			
 			if (!empty($data['errors']) || !empty($data['data']['save_cookie_cart_to_db']['errors'])) {
 				$_SESSION['errors'] = !empty($data['errors']) ? $data['errors'] : $data['data']['save_cookie_cart_to_db']['errors'];
 			}

@@ -306,7 +306,7 @@ function user_events() {
 
 	// Show CC Fields
 	$(document).on('change', 'input[name="payment_method_id"]', function(event) {
-		if (this.value == '1') { // Credit card
+		if ($(this).data('show_cc_fields') == '1') { // Credit card
 			$('#credit_card_fields').show();
 		}
 		else {

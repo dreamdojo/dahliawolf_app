@@ -305,9 +305,10 @@ $is_review = !empty($is_review) ? true : false;
                 <?
                 foreach ($_data['payment_methods'] as $i => $payment_method) {
                     $checked = (!empty($_SESSION['checkout_payment_method_id']) && $_SESSION['checkout_payment_method_id'] == $payment_method['payment_method_id'])? ' checked="checked"' : '';
+					$cc_fields = ($payment_method['name'] == 'Credit Card') ? '1' : '0';
                     ?>
                     <li>
-                        <input type="radio" id="payment_method_id-<?= $i ?>" name="payment_method_id" value="<?= $payment_method['payment_method_id'] ?>"<?= $checked ?> />
+                        <input type="radio" id="payment_method_id-<?= $i ?>" name="payment_method_id" value="<?= $payment_method['payment_method_id'] ?>"<?= $checked ?> data-show_cc_fields="<?= $cc_fields ?>" />
                         <label for="payment_method_id-<?= $i ?>"><?= $payment_method['name'] ?></label>
                     </li>
                     <?
@@ -398,7 +399,7 @@ $is_review = !empty($is_review) ? true : false;
 					}
 				}
 				
-				if ($is_review) {
+				//if ($is_review) {
 					if (!empty($_data['cart']['cart']['carrier'])) {
   						?>
       					<tr class="shipping">
@@ -408,7 +409,7 @@ $is_review = !empty($is_review) ? true : false;
         				<?
 					}
 					
-				}
+				//}
 				
 				?>
 				<tr class="tax">
@@ -416,7 +417,7 @@ $is_review = !empty($is_review) ? true : false;
 					<td>$<?= !empty($_data['cart']) ? number_format(($_data['cart']['cart']['totals']['product_tax'] + $_data['cart']['cart']['totals']['discount_tax'] + $_data['cart']['cart']['totals']['shipping_tax'] + $_data['cart']['cart']['totals']['wrapping_tax']), 2, '.', ',') : '0.00' ?></td>
 				</tr>
 				<?
-				if ($is_review && !empty($_data['cart']['cart']['carrier'])) {
+				if (!empty($_data['cart']['cart']['carrier'])) {
 					?>
 	 				<tr class="tax">
 						<th scope="row">Shipping Tax</th>
