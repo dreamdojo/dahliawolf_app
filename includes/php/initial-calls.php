@@ -74,6 +74,10 @@ if ($self == '/spine.php' || $self == '/spine-chunk.php'  || $self == '/post-fee
 				$params['like_day_threshold'] = '30';
 			}
 		}
+		else if ($_GET['sort'] == 'following' && !empty($_SESSION['user'])) {
+			$params['filter_by'] = 'following';
+			$params['follower_user_id'] = $_SESSION['user']['user_id'];
+		}
 	}
 	// Search
 	if (!empty($_GET['q'])) {

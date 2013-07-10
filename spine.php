@@ -11,8 +11,16 @@ $Spine = new Spine();
 	sort inspirations by: 	<span class=""><a class="sort-option <?= ($_GET['sort'] == 'new' || empty($_GET['sort']) ? 'bold' : '') ?>" href="/spine?sort=new">newest</a></span> /
     						<span class=""><a class="sort-option <?= ($_GET['sort'] == 'hot' ? 'bold' : '') ?>" href="/spine?sort=hot"> hottest</a></span> /
                             <span class=""><a class="sort-option <?= ($_GET['sort'] == 'top' ? 'bold' : '') ?>" href="/spine?sort=top"> most popular</a></span>
-                            <span style="padding-left:560px;">view: <span class=""><a class="sort-option <?= ($self == '/spine.php' ? 'bold' : '') ?>" href="/spine">artistic</a></span> /
-    						<span class=""><a class="sort-option <?= ($self == '/grid.php' ? 'bold' : '') ?>" href="/grid"> grid</a></span>      
+                            <?
+                            if (IS_LOGGED_IN) {
+                            	?> /
+                            <span class=""><a class="sort-option <?= ($_GET['sort'] == 'following' ? 'bold' : '') ?>" href="/spine?sort=following"> following</a></span>
+                            	<?
+							}
+							?>
+
+                            <span style="float: right;">view: <span class=""><a class="sort-option <?= ($self == '/spine.php' ? 'bold' : '') ?>" href="/spine">artistic</a></span> /
+    						<span class=""><a class="sort-option <?= ($self == '/grid.php' ? 'bold' : '') ?>" href="/grid"> grid</a></span>
 </span>
 </div>
 <?
