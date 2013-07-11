@@ -1,6 +1,12 @@
 <?
 $pageTitle = "Profile";
 include "head.php";
+
+if(!$_data['user']['user_id']) {
+    $_SESSION['errors'][0] = 'You have wandered off the beaten path :(';
+    include "header.php";
+    die();
+}
 include "header.php";
 
 require DR . '/includes/php/classes/Product_Listing.php';
