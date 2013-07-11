@@ -348,11 +348,11 @@
         });
 	}
 	
-	theBank.postNonBankImage = function(img) {
+	theBank.postNonBankImage = function(img, img_domain, img_attribution_url) {
 		img = $(img);
 		imageUrl = img.data('url');
 		if(theUser.id && theUser.id > 0 && imageUrl && imageUrl != '' ) {
-			$.post('/action/uploadPost.php', {image_src : imageUrl, description: 'pinterest'}).done(function(data){
+            $.post('/action/uploadPost.php', {image_src : imageUrl, description: 'pinterest', domain:img_domain, sourceurl : img_attribution_url}).done(function(data){
 				data = $.parseJSON(data);
 				data = data.data;
 				str = '<div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
@@ -386,7 +386,7 @@
 					theBank.backButton.removeClass('hidden');
 					$.each(data.data, function(index, img){
 						str = '<div class="bank-frame"><img class="b-roll-img" src="'+img.images.standard_resolution.url+'">';
-						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this);">';
+						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Instagram\', \'www.instagram.com\');">';
 						str += '</div>';
 						theBank.outlet.append(str);
 					});
@@ -415,7 +415,7 @@
 					theBank.backButton.removeClass('hidden');
 					$.each(data.data, function(index, img){
 						str = '<div class="bank-frame"><img class="b-roll-img" src="'+img.images.standard_resolution.url+'">';
-						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this);">';
+						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Pinterest\', \'www.pinterest.com\');">';
 						str += '</div>';
 						theBank.outlet.append(str);
 					});
