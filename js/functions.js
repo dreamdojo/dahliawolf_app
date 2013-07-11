@@ -483,6 +483,7 @@ userLogin.prototype.loginUser = function(e) {
     var password = formdata[1].value.trim();
 
     $.post( $(e.target).attr('action'), {identity : username, credential : password, ajax : true}, function(data){
+        console.log(data);
         var result = $.parseJSON(data);
         if (!result.success) {
             var str = '';
