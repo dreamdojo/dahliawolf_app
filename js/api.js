@@ -60,6 +60,16 @@ dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
     this.callApi('feed_image', 'get_feed_images', params, callback);
 }// GETS IMAGES FOR THE BANK
 
+dahliawolfApi.prototype.getVotePosts = function(callback) {
+    var params = '';
+
+    if(theUser.id) {
+        params += '&viewer_user_id='+theUser.id;
+    }
+
+    this.callApi('posting', 'get_vote_posts', params, callback);
+}// GETS PRODUCTS FOR EXPLORE PAGE
+
 dahliawolfApi.prototype.getPostDetails = function(id, callback) {
     if(id === 'newest') {
         params = '&posting_id=';
