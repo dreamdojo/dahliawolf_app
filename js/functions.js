@@ -425,6 +425,14 @@ function toggleLoadingBar() {
 }
 
 $(function(){
+    $('.user-message-close').bind('click', function(){
+        $(this).parent().slideUp(200, function() {
+            $(this).remove();
+        });
+    });
+});//closes user messages after being clicked on
+
+$(function(){
 	var $modal = $('#modal');
 	var $modal_content = $('#modal-content');
 	$(document).on('click', 'a[rel~="modal"]', function(event) {
