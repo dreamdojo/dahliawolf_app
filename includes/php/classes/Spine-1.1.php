@@ -232,7 +232,8 @@ class Spine {
 			}
 			$num_images = count($images);
 			foreach ($images as $i => $image) {
-				$mod = $i % self::$spine_limit;
+			//var_dump($image);
+            $mod = $i % self::$spine_limit;
 				
 				//if (in_array($mod, array_keys($this->spine_chunk_breaks))) {
 				if (!empty($this->spine_chunk_breaks[$mod])) {
@@ -312,7 +313,11 @@ class Spine {
 							?>
 						</a>
 						
-						<p class="wild-4">
+						<? if($image['is_winner']): ?>
+                            <p class="winner-tag">WINNER</p>
+                        <? endif ?>
+
+                        <p class="wild-4">
 							<? if (!IS_LOGGED_IN): ?>
                             	<a href="#" onclick="javascript:new_loginscreen();">LOVE</a>
                             <? else: ?>
