@@ -492,7 +492,7 @@ userLogin.prototype.loginUser = function(e) {
             alert(str);
             //$('#loginErrorCode').html(str);
         } else {
-            document.location.reload();
+            document.location = '/spine';
         }
     });
 }
@@ -518,7 +518,7 @@ userLogin.prototype.submitNewUser = function(e) {
             alert(str);
             //$('#loginErrorCode').html(str);
         } else {
-            document.location.reload();
+            document.location = '/spine';
         }
     });
 }
