@@ -490,7 +490,7 @@ userLogin.prototype.loginUser = function(e) {
                 str += error;
             });
             alert(str);
-            //$('#loginErrorCode').html(str);
+            sendToAnal({name:'Failed to Login', errorCode: str});
         } else {
             document.location = '/spine';
         }
@@ -515,6 +515,7 @@ userLogin.prototype.submitNewUser = function(e) {
             $.each(result.errors, function(index, error){
                 str += error;
             });
+            sendToAnal({name:'Failed to Register', errorCode: str});
             alert(str);
             //$('#loginErrorCode').html(str);
         } else {
