@@ -351,7 +351,8 @@
 	theBank.postNonBankImage = function(img, img_domain, img_attribution_url) {
 		img = $(img);
 		imageUrl = img.data('url');
-		if(theUser.id && theUser.id > 0 && imageUrl && imageUrl != '' ) {
+		if(theUser.id && theUser.id > 0 && imageUrl && imageUrl != '' && img_attribution_url && img_domain ) {
+            var img_attribution_url = 'http://'+img_attribution_url;
             $.post('/action/uploadPost.php', {image_src : imageUrl, description: 'pinterest', domain:img_domain, sourceurl : img_attribution_url}).done(function(data){
 				data = $.parseJSON(data);
 				data = data.data;
