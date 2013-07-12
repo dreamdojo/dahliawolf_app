@@ -522,7 +522,11 @@ userLogin.prototype.submitNewUser = function(e) {
         if (!result.success) {
             var str = '';
             $.each(result.errors, function(index, error){
-                str += error;
+                if(typeof error === 'string') {
+                    str += error;
+                } else {
+                    str += 'Password: '+error.password.errors[0];
+                }
             });
             sendToAnal({name:'Failed to Register', errorCode: str});
             alert(str);
