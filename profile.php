@@ -12,6 +12,9 @@ include "header.php";
 require DR . '/includes/php/classes/Product_Listing.php';
 
 define('MY_PROFILE', (!empty($_SESSION['user']) && $_SESSION['user']['user_id'] == $_data['user']['user_id'] ? true : false) );
+
+$feedType = ($_data['view'] == 'wild-4s' ? 'loves' : 'posts');
+
 ?>
 <style>
 #mainProfileColumn{width:1000px; margin:0px auto; margin-top: 110px; background-color:#f7f7f7; overflow:hidden; /*border:#e9e9e9 2px solid;*/ font-family:Helvetica, sans-serif;}
@@ -19,7 +22,7 @@ define('MY_PROFILE', (!empty($_SESSION['user']) && $_SESSION['user']['user_id'] 
 #userPostGallery img{height:100%; float:left;}
 #userProfileDeets{height:140px; width: 98.5%;margin-left: .75%; background-color:#fff; position: relative;}
 #userProfileDeetsOverlay{width:100%; height: 129%; bottom:0px; position:absolute;}
-#userProfileMenuBar{ margin-top: 10px;height: 47px;width: 98.5%;margin-left: .75%;background-color: #fff;}
+#userProfileMenuBar{ margin-top: 10px;height: 47px;width: 98.5%;margin-left: .75%;background-color: #fff;margin-bottom: 10px;}
 #profilePostBin{}
 .userProfileAvatarHome{width: 140px; height:100%; float:left;padding-top: 10px;margin-left: 10px;}
 .userProfileAvatarFrame{overflow: hidden;border-radius: 110px;border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;max-height: 150px;}
@@ -60,6 +63,7 @@ border: rgb(94, 94, 94) 1px solid;}
 .profileFollowing{color: #c2c2c2 !important; border: #c2c2c2 thin solid !important;}
 </style>
 <? //var_dump($_data['user']) ?>
+
 <div id="mainProfileColumn">
 	<div id="userPostGallery">
     	<? if(count($_data['posts']) >= 6): ?>
@@ -126,21 +130,25 @@ border: rgb(94, 94, 94) 1px solid;}
         </div>
         
     </div>
-    
+
+
+    <div id="userPostGrid"></div>
+    <!--
     <div class="ColumnContainer" style="background-color: white; margin-top: 10px; padding-top: 10px;">
 	    <?
 	    if (!empty($_data['posts'])) {
 	    	//require $_SERVER['DOCUMENT_ROOT'] . '/includes/php/classes/Spine.php';
-			$Spine = new Spine();
+			//$Spine = new Spine();
 			//$Spine->output($_data['posts'], 'spine');
-			$Spine->output($_data['posts'], 'spine', '/spine-chunk.php?username=' . $_data['user']['username']);
+			//$Spine->output($_data['posts'], 'spine', '/spine-chunk.php?username=' . $_data['user']['username']);
 		}
 	    ?>
-    </div>
+    </div>-->
     
 </div>	
 <script>
 	theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
+    var thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= $feedType ?>" );
 </script> 
 <?
 include "footer.php";
