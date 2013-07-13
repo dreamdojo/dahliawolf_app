@@ -237,27 +237,27 @@ margin-left: 2px;" /></a></div> -->
 
     
     <div class="slide">
-    	<img class="zeImg" src="/images/DW-slide-artinourblood.jpg" />
+    	<img class="zeImg" src="http://www.dahliawolf.com/images/DAHLIA_NEWSLIDE.jpg" />
         <div class="item-box white">
-        	<div class="item-title">ART IN OUR BLOOD DRESS</div>
+        	<div class="item-title">Coated in Tropicana Jacket</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
+            <div class="inspira">StunnaLOOK, Los Angeles</div>
         </div>
     </div>
     <div class="slide" style="display:none">
-        <img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />
-        <div class="item-box white">
-            <div class="item-title">COATED IN TROPICANA JACKET</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">StunnaLOOK, London</div>
-        </div>
-    </div>
-    <div class="slide" style="display:none">
-        <img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-2.jpg" />
+    	<img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-2.jpg" />
         <div class="item-box black">
-            <div class="item-title">SIMPLE AFFAIR TOP</div>
+        	<div class="item-title">ELEGANT AFFAIR TOP</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Jessica, New York</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none">
+    	<img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-3.jpg" />
+        <div class="item-box white">
+        	<div class="item-title">MODERN NATIVE DRESS</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira">Parker, Alabama</div>
         </div>
     </div>
 </div>
@@ -266,7 +266,7 @@ margin-left: 2px;" /></a></div> -->
     <div class="loggle-toggle2">
     	<div><img src="http://www.dahliawolf.com/images/how-dahliawolf-works.jpg" /></div>
     	<div><a href="http://www.dahliawolf.com/faqs"><img src="http://www.dahliawolf.com/images/how-dahliawolf-works-commission.jpg" /></a></div>
-    	<div class="video-design"><img id="video-cover" style="margin-left:-80px;" src="http://www.dahliawolf.com/images/how-it-works-video.png" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    	<div class="video-design"><img style="margin-left:-80px;" src="http://www.dahliawolf.com/images/how-it-works-video.png" onclick="$(this).fadeOut(200);" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
         <div><img style="margin-top:100px; margin-bottom: 30px;" src="http://www.dahliawolf.com/images/how-it-works-get-started.png" /></div>
         <div style="cursor:pointer;"><img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" ></div>
         <div class="signupemail2"><a href="http://www.dahliawolf.com/signup">SIGN UP THE OLD SCHOOL WAY WITH EMAIL</a></div>
@@ -278,19 +278,12 @@ margin-left: 2px;" /></a></div> -->
 </html>
 <script>
 setTimeout(function(){
-    homeWrecker.init(7800/* <- fade speed*/, 12000/* <- time between slides*/);
+    homeWrecker.init(4800/* <- fade speed*/, 6000/* <- time between slides*/);
 }, 2000) ;
 
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);
     $('#sysForm_Login').submit(loginObj.loginUser);
-});
-
-$('#video-cover').on('click', function() {
-   console.log(this);
-    $(this).fadeOut(200);
-    sendToAnal({name:'Watching how it works video'});
-});
-
+})
 
 </script>

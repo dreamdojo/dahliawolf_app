@@ -21,7 +21,11 @@
 			$params['viewer_user_id'] = $_SESSION['user']['user_id'];
 		}
 		
-		$posts_data = api_call('posting', 'all_posts', $params, true);
+		if($_POST['feed'] == 'loves') {
+            $posts_data = api_call('posting', 'get_liked_posts', $params, true);
+        } else {
+            $posts_data = api_call('posting', 'all_posts', $params, true);
+        }
 		
 		header('Content-Type: application/json');
 		

@@ -410,6 +410,7 @@ ul.products .price {
 	line-height: 45px;
 	font-weight: normal;
 	text-transform: uppercase;
+    width: 230px;
 }
 .product .info .button a:hover {
 	background-color: #c96161;

@@ -17,8 +17,8 @@ function dahliawolfApi() {
 }
 
 dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
-    if(api && apiFunction && params) {
-        theCallUrl = '/api/?api='+api+'&function='+apiFunction+params;
+    if(api && apiFunction) {
+        var theCallUrl = '/api/?api='+api+'&function='+apiFunction+params;
         console.log(theCallUrl);
         $.ajax(theCallUrl).done(function(data){
             if(callback && typeof callback === 'function') {
@@ -32,9 +32,9 @@ dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
 
 dahliawolfApi.prototype.getFeedPosts = function(offset, limit, callback) {
     if(offset) {
-        params = '&offset='+offset;
+        var params = '&offset='+offset;
     } else {
-        params = '&offset=0';
+        var params = '&offset=0';
     }
     if(limit) {
         params += '&limit='+limit;
@@ -49,7 +49,7 @@ dahliawolfApi.prototype.getFeedPosts = function(offset, limit, callback) {
 
 dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
     if(offset) {
-        params = '&offset='+offset;
+        var params = '&offset='+offset;
     } else {
         params = '&offset=0';
     }
@@ -60,9 +60,19 @@ dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
     this.callApi('feed_image', 'get_feed_images', params, callback);
 }// GETS IMAGES FOR THE BANK
 
+dahliawolfApi.prototype.getVotePosts = function(callback) {
+    var params = '';
+
+    if(theUser.id) {
+        params += '&viewer_user_id='+theUser.id;
+    }
+
+    this.callApi('posting', 'get_vote_posts', params, callback);
+}// GETS PRODUCTS FOR EXPLORE PAGE
+
 dahliawolfApi.prototype.getPostDetails = function(id, callback) {
     if(id === 'newest') {
-        params = '&posting_id=';
+        var params = '&posting_id=';
     } else if(id) {
         params = '&posting_id='+id;
     }
@@ -75,7 +85,7 @@ dahliawolfApi.prototype.getPostDetails = function(id, callback) {
 dahliawolfApi.prototype.lovePost = function(id, callback) {//********** User Likes post
     if(theUser.id) {
         if(id) {
-            params = '&user_id='+theUser.id;
+            var params = '&user_id='+theUser.id;
             params += '&posting_id='+id;
             params += '&like_type_id=1';
 
@@ -92,7 +102,7 @@ dahliawolfApi.prototype.lovePost = function(id, callback) {//********** User Lik
 dahliawolfApi.prototype.unlovePost = function(id, callback) {//****** User Unlikes post
     if(theUser.id) {
         if(id) {
-            params = '&user_id='+theUser.id;
+            var params = '&user_id='+theUser.id;
             params += '&posting_id='+id;
             params += '&like_type_id=1';
 
@@ -109,7 +119,7 @@ dahliawolfApi.prototype.unlovePost = function(id, callback) {//****** User Unlik
 dahliawolfApi.prototype.getUserDetails = function(id, callback) {//********** Get a users details
     if(id) {
         if(id) {
-            params = '&user_id='+id;
+            var params = '&user_id='+id;
         }
         if(theUser.id) {
             params += '&viewer_user_id='+theUser.id;
@@ -125,7 +135,7 @@ dahliawolfApi.prototype.getUserDetails = function(id, callback) {//********** Ge
 dahliawolfApi.prototype.followUser = function(id, callback) {//************** Follow user
     if(theUser.id) {
         if(id) {
-            params = '&follower_user_id='+theUser.id;
+            var params = '&follower_user_id='+theUser.id;
             params += '&user_id='+id;
             this.callApi('user', 'follow', params, callback);
 
@@ -140,7 +150,7 @@ dahliawolfApi.prototype.followUser = function(id, callback) {//************** Fo
 dahliawolfApi.prototype.unfollowUser = function(id, callback) { //********  Unfollow user
     if(theUser.id) {
         if(id) {
-            params = '&follower_user_id='+theUser.id;
+            var params = '&follower_user_id='+theUser.id;
             params += '&user_id='+id;
 
             this.callApi('user', 'unfollow', params, callback);
@@ -156,7 +166,7 @@ dahliawolfApi.prototype.unfollowUser = function(id, callback) { //********  Unfo
 dahliawolfApi.prototype.deletePost = function(id, callback) {
     if(theUser.id) {
         if(id) {
-            params = '&posting_id='+id;
+            var params = '&posting_id='+id;
             params += '&user_id='+theUser.id;
 
             this.callApi('posting', 'delete_post', params, callback);
@@ -171,7 +181,7 @@ dahliawolfApi.prototype.deletePost = function(id, callback) {
 
 dahliawolfApi.prototype.getActivityLog = function(callback) {
     if(theUser.id){
-        params = '&user_id='+theUser.id
+        var params = '&user_id='+theUser.id
         params += '&api_website_id=2';
     }
     this.callApi('activity_log', 'get_grouped_log', params, callback);
@@ -179,7 +189,7 @@ dahliawolfApi.prototype.getActivityLog = function(callback) {
 
 dahliawolfApi.prototype.markActivityAsRead = function(id, callback) {
     if(theUser.id) {
-        params = '&user_id='+theUser.id;
+        var params = '&user_id='+theUser.id;
         params += '&activity_log_id='+id;
 
         this.callApi('activity_log', 'mark_read', params, callback);

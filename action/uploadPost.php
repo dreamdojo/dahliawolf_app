@@ -26,6 +26,8 @@ if (IS_LOGGED_IN) {
 			, 'source' => $source
 			, 'user_id' => $user_id
 			, 'description' => $_POST['description']
+            , 'domain' => $_POST['domain']
+            , 'attribution_url' => $_POST['sourceurl']
 			, 'dimensionsX' => $dimensions[0]
 			, 'dimensionsY' => $dimensions[1]
 		);

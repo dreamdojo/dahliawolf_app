@@ -24,6 +24,7 @@ a {
 	background-position: 10px center;
 	background-repeat: no-repeat;
 	min-height: 39px;
+    position: relative;
 }
 .header + .user-message {
 	margin-top: 100px;

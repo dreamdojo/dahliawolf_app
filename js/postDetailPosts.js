@@ -10,16 +10,18 @@
 (_______)(_______/(_______)|/       |/       |/   \__/(_______/   \_/   
                                                                         
 																		*/
-function postDetailGrid(id) {
+function postDetailGrid(id, parentContainer, profile, feedType) {
 	this.offset = 0;
 	this.limit = 12;
 	this.posterId = id;
 	this.refillAvailable = true;
-	this.htText = 'style="min-height:100%; max-width: 100%; width:auto;"';
+	this.htText = 'style="min-height:100%; width:auto;"';
 	this.finished = false;
+    this.profile = profile;
+    this.feedType = feedType;
 	
 	this.postContainer = $('#userPostGrid');
-	this.contentContainer = $('#modal-content');
+	this.contentContainer = parentContainer;
 	this.titleContainer = $('#postGridTitle');
 	
 	this.init();
@@ -36,19 +38,31 @@ postDetailGrid.prototype.destroyLoader = function() {
 
 
 postDetailGrid.prototype.bindScroller = function() {
-	$this = this;
-	obj = obj = document.getElementById('modal-content');
-	this.contentContainer.bind('scroll', function() {
-		if(obj.scrollTop >= (obj.scrollHeight - obj.offsetHeight - 300)){
-			$this.getPosts();
-		}
-	});
+	var $this = this;
+
+    if(this.profile) {
+        this.contentContainer.bind('scroll', function() {
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                $this.getPosts();
+            }
+        });
+    } else {
+        this.contentContainer.bind('scroll', function() {
+            var obj = document.getElementById('modal-content');
+
+            if(obj.scrollTop >= (obj.scrollHeight - obj.offsetHeight - 200)){
+                $this.getPosts();
+            }
+        });
+    }
 }
 
 postDetailGrid.prototype.init = function() {
 	this.getPosts();
 	this.bindScroller();
-	this.setTitle();
+	if(!this.profile) {
+        this.setTitle();
+    }
 }
 
 postDetailGrid.prototype.setTitle = function() {
@@ -56,8 +70,8 @@ postDetailGrid.prototype.setTitle = function() {
 }
 
 postDetailGrid.prototype.toggleLove = function() {
-	loved = $(this).data('isloved');
-	id = $(this).data('id');
+	var loved = $(this).data('isloved');
+	var id = $(this).data('id');
 	if(theUser.id) {	
 		if(id && id > 0) {
 			if(loved){
@@ -81,17 +95,17 @@ postDetailGrid.prototype.resetBindings = function() {
 }
 
 postDetailGrid.prototype.getPosts = function() {
-	$this = this;
+	var $this = this;
 	if(this.refillAvailable && !this.finished && (this.offset % this.limit) == 0){
 		this.refillAvailable = false;
 		this.showLoader();
-		$.post('/action/getPostsByUser', {post_user_id : thePostDetail.data.user_id, offset : this.offset, limit: this.limit}).done(function(data) {
+		$.post('/action/getPostsByUser', {post_user_id : $this.posterId, feed : $this.feedType, offset : this.offset, limit: this.limit}).done(function(data) {
 			$this.destroyLoader();
 			$.each(data.data, function(index, post){
 				str = '<div class="userGridPostFrame">';
 				str += '<div class="popGridLove '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'"></div>';
 				str += '<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+index % 5+'" rel="modal">';
-				str += '<img src = "'+post.image_url+'" class="lazy zoom-in" data-src="'+post.image_url+'" '+(post.width >= post.height ? $this.htText : '')+'>';
+				str += '<img src = "'+post.image_url+'" class="lazy zoom-in" data-src="'+post.image_url+'" '+(parseInt(post.width) >= parseInt(post.height) ? $this.htText : '')+'>';
 				str += '</a></div>';
 				
 				$this.postContainer.append(str);
