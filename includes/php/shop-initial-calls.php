@@ -1,6 +1,8 @@
 <?
 $self = $_SERVER['PHP_SELF'];
-
+if (isset($_GET['b'])) {
+	print_r($_SESSION);
+}
 // Mobile should use same logic per page
 $self = str_replace('/mobile', '', $self);
 

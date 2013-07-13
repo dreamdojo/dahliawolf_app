@@ -51,7 +51,7 @@ else {
 			$calls['add_db_cart_discount']['id_cart'] = $_SESSION['id_cart'];
 		}
 		
-		$data = commerce_api_request('cart', $calls, true);
+		$data = commerce_api_request('cart', $calls, false);
 		
 		if (!empty($data['errors']) || !empty($data['data']['add_db_cart_discount']['errors'])) {
 			$_SESSION['errors'] = !empty($_SESSION['errors']) ? array_merge($_SESSION['errors'], api_errors_to_array($data, 'add_db_cart_discount')) : api_errors_to_array($data, 'add_db_cart_discount');

@@ -308,9 +308,24 @@ function user_events() {
 	$(document).on('change', 'input[name="payment_method_id"]', function(event) {
 		if ($(this).data('show_cc_fields') == '1') { // Credit card
 			$('#credit_card_fields').show();
+			$('table.totals').show();
+			$('p.checkout').show();
 		}
 		else {
 			$('#credit_card_fields').hide();
+		}
+		
+		if ($(this).data('show_set_paypal') == '1') { // PayPal
+			$('#set_paypal').show();
+			
+			if ($('#set_paypal').length > 0) {
+				$('table.totals').hide();
+				$('p.checkout').hide();
+			}
+			
+		}
+		else {
+			$('#set_paypal').hide();
 		}
 
 	});

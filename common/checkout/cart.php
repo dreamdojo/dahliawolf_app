@@ -45,7 +45,7 @@ $is_review = !empty($is_review) ? true : false;
 					$product_name			= $cart_value['product_info']['product_name'];
 					$product_image			= '';
 					$quantity 				= $cart_value['quantity'];
-					$price 					= $cart_value['product_info']['price'];
+					$price 					= ($cart_value['product_info']['on_sale'] == '1') ? $cart_value['product_info']['sale_price'] : $cart_value['product_info']['price'];
 					$total_price 			= $price * $quantity;
 					$product_tax			= !empty($cart_value['tax_info']) ? $cart_value['tax_info']['total_amount'] : 0;
 					$sales_tax				= $sales_tax + $product_tax;
@@ -293,6 +293,8 @@ $is_review = !empty($is_review) ? true : false;
     
      <?
 	if ($is_review) {
+		$cc_payment = false;
+		$paypal_payment = false;
 		?>
         <form action="/action/shop/place_order.php" id="place_order_form" class="Form StaticForm payment" method="post">
         <input type="hidden" name="amount" value="<?= $_data['cart']['cart']['totals']['grand_total'] ?>" />
@@ -306,9 +308,16 @@ $is_review = !empty($is_review) ? true : false;
                 foreach ($_data['payment_methods'] as $i => $payment_method) {
                     $checked = (!empty($_SESSION['checkout_payment_method_id']) && $_SESSION['checkout_payment_method_id'] == $payment_method['payment_method_id'])? ' checked="checked"' : '';
 					$cc_fields = ($payment_method['name'] == 'Credit Card') ? '1' : '0';
+					$set_paypal = ($payment_method['name'] == 'PayPal') ? '1' : '0';
+					if (!empty($checked) && $payment_method['name'] == 'Credit Card') {
+						$cc_payment = true;
+					}
+					else if (!empty($checked) && $payment_method['name'] == 'PayPal') {
+						$paypal_payment = true;
+					}
                     ?>
                     <li>
-                        <input type="radio" id="payment_method_id-<?= $i ?>" name="payment_method_id" value="<?= $payment_method['payment_method_id'] ?>"<?= $checked ?> data-show_cc_fields="<?= $cc_fields ?>" />
+                        <input type="radio" id="payment_method_id-<?= $i ?>" name="payment_method_id" value="<?= $payment_method['payment_method_id'] ?>"<?= $checked ?> data-show_cc_fields="<?= $cc_fields ?>" data-show_set_paypal="<?= $set_paypal ?>" />
                         <label for="payment_method_id-<?= $i ?>"><?= $payment_method['name'] ?></label>
                     </li>
                     <?
@@ -319,8 +328,17 @@ $is_review = !empty($is_review) ? true : false;
             }
             ?>
         </fieldset>
-        
-        <fieldset id="credit_card_fields" style="<?= (empty($_SESSION['checkout_payment_method_id']) || $_SESSION['checkout_payment_method_id'] == '1') ? '' : 'display:none"' ?>">
+        <?
+		if (empty($_data['cart']['cart']['paypal_token'])) {
+			?>
+            <div style="<?= $paypal_payment ? '' : 'display:none;' ?>" id="set_paypal">
+                <p>In order to use PayPal, we must direct you to their website to log in. Once logged in, you will be returned to confirm your order.</p>
+                <p><a href="/common/checkout/paypal-express-checkout/set">Continue</a></p>
+            </div>
+            <?
+		}
+		?>
+        <fieldset id="credit_card_fields" style="<?= empty($_SESSION['checkout_payment_method_id']) || $cc_payment ? '' : 'display:none;' ?>">
             <ul class="fields">
                 <li>
                     <label for="cc_name">Name on Card <em>*</em></label>
@@ -366,7 +384,7 @@ $is_review = !empty($is_review) ? true : false;
 	}
 	?>
     
-		<table class="totals">
+		<table class="totals" style="<?= $paypal_payment && empty($_data['cart']['cart']['paypal_token']) ? 'display: none;' : '' ?>">
 			<tfoot>
 				<tr>
 					<th scope="row">Grand Total</th>
@@ -392,7 +410,18 @@ $is_review = !empty($is_review) ? true : false;
 					foreach($_data['cart']['discounts'] as $discount) {
 						?>
 						<tr class="discounts">
-							<th scope="row">Discount (<?= $discount['name'] ?> - <?= ($discount['is_amount_discount'] == '1') ? '$' . number_format($discount['reduction_amount'], 2, '.', ',') : number_format($discount['reduction_percent'], 0, '.', ',') . '%' ?> off) <a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a></th>
+							<th scope="row">Discount (<?= $discount['name'] ?> - <?= ($discount['is_amount_discount'] == '1') ? '$' . number_format($discount['reduction_amount'], 2, '.', ',') : number_format($discount['reduction_percent'], 0, '.', ',') . '%' ?> off) 
+                            
+                            <?
+							if (!$is_review) {
+								?>
+                            	<a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
+                                <?
+							}
+							?>
+                            
+                            
+                            </th>
 							<td>- $<?= number_format($discount['discount_amount'], 2, '.', ',') ?></td>
 						</tr>
 						<?
@@ -437,7 +466,7 @@ $is_review = !empty($is_review) ? true : false;
 		}
 		else {
 			?>
-			<p class="button checkout"><a onclick="$('#place_order_form').submit()">Place Order</a></p>
+			<p class="button checkout" style="<?= $paypal_payment && empty($_data['cart']['cart']['paypal_token']) ? 'display: none;' : '' ?>"><a onclick="$('#place_order_form').submit()">Place Order</a></p>
             </form>
 			<?
 		}

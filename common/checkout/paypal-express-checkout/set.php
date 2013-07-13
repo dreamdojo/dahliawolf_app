@@ -1,8 +1,7 @@
-<?
+<?php
 require $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/includes/php/classes/PayPalExpressCheckout.php';
 
-
-unset_action_session_keys();
 
 if (empty($_SESSION['user']['user_id'])) {
 	$_SESSION['errors'] = array('Your session has expired. Please login to continue.');
@@ -34,47 +33,36 @@ else if (empty($_SESSION['checkout_payment_method_id'])) {
  	redirect('/shop/checkout.php?step=confirmation');
 	exit();
 }
-$_SESSION['checkout_payment_method_id'] = $_POST['payment_method_id'];
-$payment_info = array(
-	'amount' => $_POST['amount']
-	, 'payment_method_id' => $_POST['payment_method_id'] // $_SESSION['checkout_payment_method_id']
-	, 'cc_name' => $_POST['cc_name']
-	, 'cc_number' => $_POST['cc_number']
-	, 'cc_exp_month' => $_POST['cc_exp_month']
-	, 'cc_exp_year' => $_POST['cc_exp_year']
-	, 'cc_cvv' => $_POST['cc_cvv']
-	, 'description' => 'Purchase from ' . $_SERVER['HTTP_HOST']
-);
+
+$returnUrl = 'http://dw.zyonnetworks.com/action/shop/paypal-express-checkout/return';
+$cancelUrl = 'http://dw.zyonnetworks.com/login.php';
 
 $calls = array(	
-	'place_order' => array(
+	'begin_paypal_purchase' => array(
 		'user_id' => $_SESSION['user']['user_id']
+		, 'id_cart' => $_SESSION['id_cart']
 		, 'id_shop' => SHOP_ID
 		, 'id_lang' => LANG_ID
-		, 'id_cart' => $_SESSION['id_cart']
+		, 'return_url' => $returnUrl
+		, 'cancel_url' => $cancelUrl
+		, 'item_name' => 'DahliaWolf Purchase'
+		, 'item_description' => 'Clothing & Accessories'
 		, 'shipping_address_id' => $_SESSION['checkout_shipping_address_id']
-		, 'billing_address_id' => $_SESSION['checkout_billing_address_id']
 		, 'id_delivery' => $_SESSION['checkout_id_delivery']
-		, 'payment_info' => $payment_info
 	)	
 );
 
-$data = commerce_api_request('orders', $calls, true); 
+$data = commerce_api_request('cart', $calls, true);
+$api_errors = api_errors_to_array($data);
 
-if (!empty($data['errors']) || !empty($data['data']['place_order']['errors'])) {
-	$_SESSION['errors'] = api_errors_to_array($data, 'place_order');
+if (!empty($api_errors)) {
+	$_SESSION['errors'] = $api_errors;
 	redirect($_SERVER['HTTP_REFERER']);
 	die();
 }
 
-//charge payment_type_id
-//place order
-//pay out commissions to affiliate
-// Clear cookie and cart session data
-setcookie(SITENAME_PREFIX . "[cart]", '', time() + 1209600, '/');
-unset($_SESSION['id_cart'], $_SESSION['checkout_billing_address_id'], $_SESSION['checkout_shipping_address_id'], $_SESSION['checkout_id_delivery'], $_SESSION['checkout_payment_method_id']);
+$_SESSION['checkout_payment_method_id'] = $data['data']['begin_paypal_purchase']['data']['payment_method_id'];
 
-redirect('/shop/my-orders.php');
-
+header('Location: ' .  $data['data']['begin_paypal_purchase']['data']['redirect_uri']);
 die();
 ?>

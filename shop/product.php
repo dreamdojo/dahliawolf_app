@@ -84,7 +84,14 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 				<? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
                     <p class="price"><del><span>$<?= number_format( ($_data['product']['product']['price'] * 2), 2, '.', ',') ?></span></del> <span class="sale">Pre Order 50% Off</span></p>
                 <? endif ?>
-				<p class="price"><span>$<?= number_format($_data['product']['product']['price'], 2, '.', ',') ?></span></p>
+				<p class="price"<?= $_data['product']['product']['on_sale'] == '1' ? ' style="text-decoration: line-through;"' : '' ?>><span>$<?= number_format($_data['product']['product']['price'], 2, '.', ',') ?></span></p>
+                <?
+				if ($_data['product']['product']['on_sale'] == '1') {
+					?>
+					<p class="sale-price">$<?= number_format($_data['product']['product']['sale_price'], 2, '.', ',') ?></p>
+					<?
+				}
+				?>
 				
 				<form action="/action/shop/add_item_to_cart.php" method="post">
 					<input type="hidden" name="id_product" value="<?= $_data['product']['product']['id_product'] ?>" >

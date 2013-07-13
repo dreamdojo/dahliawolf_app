@@ -41,8 +41,15 @@ class Product_Listing {
 						?>
 						<div class="info">
 							<h3 class="name"><a href="<?= $product_url ?>"><?= $product['product_name'] ?></a></h3>
-							<p class="price">$<?= number_format($product['price'], 2, '.', ',') ?></p>
+							<p class="price"<?= $product['on_sale'] == '1' ? ' style="text-decoration: line-through;"' : '' ?>>$<?= number_format($product['price'], 2, '.', ',') ?></p>
+                            
 							<?
+							if ($product['on_sale'] == '1') {
+								?>
+								<p class="sale-price">$<?= number_format($product['sale_price'], 2, '.', ',') ?></p>
+								<?
+							}
+							
 							if (!empty($product['username'])) {
 								?>
 								<p class="user"><?= $product['username'] ?></p>

@@ -2,9 +2,7 @@
 require 'config/config.php';
 require 'config/mobile-detect.php';
 require 'includes/php/initial-calls.php';
-if (isset($_SESSION) && isset($_GET['s'])) {
-	print_r($_SESSION);
-}
+
 $path_parts = explode('/', $_SERVER['REQUEST_URI']);
 $top_dir = $path_parts[1];
 
