@@ -17,8 +17,6 @@ $Spine->output_explore($_data['posts']);
 <?php include "footer.php" ?>
 <script>
 
-    console.log(<? echo json_encode( $_data['posts'] ) ?>);
-
 $('.image').hover(function(){
 	$(this).find('.explore-prod-options-box').fadeToggle(1);
 },
