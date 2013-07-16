@@ -177,7 +177,7 @@ $(document).ready(function()
 </div>
 
 <div id="dahliaHead">
-    <a href=""><div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div></a>
+    <div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div>
     <div id="dahliaHeadFollowToggle"></div>
 </div>
 

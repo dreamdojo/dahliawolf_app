@@ -169,14 +169,14 @@ class Spine {
                                         <? if($post['status'] == 'Live' || $post['status'] == 'Pre Order'): ?>
                                             <a href="<?= CR ?>/shop/product?id_product=<?= $post['product_id'] ?>">
                                                 <div class="exp-buy-butt">
-                                                    <p><?= ($post['status'] == 'Pre Order' ? 'PRE-ORDER' : 'BUY') ?></p>
+                                                    <p style="width: 100%; text-align: center;" ><?= ($post['status'] == 'Pre Order' ? 'PRE-ORDER' : 'BUY') ?></p>
                                                 </div>
                                             </a>
                                         <? endif ?>
                                          <? if($post['status'] == 'Coming Soon' || $post['status'] == 'Live' || $post['status'] == 'Pre Order'): ?>
                                             <a href="/action/shop/add_item_to_wishlist.php?id_product=<?= $post['product_id'] ?>">
                                                 <div class="exp-wl-butt<?= ($post['status'] != "Live" ? ' center-butt' : '') ?>" style="<?= ($post['status'] == 'Pre Order' ? 'margin-left: -160px;' : '') ?>">
-                                                    <p>WISHLIST</p>
+                                                    <p>WISHLIST </p><div class="wishlist_count_box"><?= $post['wishlist_count'] ?></div>
                                                 </div>
                                             </a>
                                          <? endif ?>
@@ -274,7 +274,6 @@ class Spine {
 				$unlike_href = !empty($_SESSION['user']) ? '/action/unlike?posting_id=' . $image['posting_id'] : '';
 				
 				if (!IS_LOGGED_IN) {
-					//$like_href = 'javascript:loginscreen(\'login\');';
 					$like_href = 'javascript:new_loginscreen();';
 					$unlike_href = $like_href;
 				}

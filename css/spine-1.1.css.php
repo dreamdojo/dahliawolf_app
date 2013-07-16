@@ -322,6 +322,7 @@ $Spine->output_css();
 }
 .explore .posts .image p {
 	display: none;
+    float:left;
 }
 .explore .posts li .image:hover p {
 	display: block;
