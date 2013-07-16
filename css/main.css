@@ -288,23 +288,17 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .exp-buy-butt{float: left;height: 50%; background-color:#de899d;width: 165px;opacity: .9;}
 .exp-buy-butt:hover{opacity:.7;}
 
-.exp-wl-butt{width: 180px;float: left;background-color: #6e6e6e;height: 50%;margin-left: 30px;opacity: .8; padding-left: 10px;}
+.exp-wl-butt{width: 180px;float: left;background-color: #6e6e6e;height: 50%;margin-left: 30px;opacity: .8; padding-left: 10px; overflow: hidden;}
 .exp-wl-butt:hover{opacity:1;}
 .explore-prod-options-box p{margin-top: 13px !important;color: #fff;font-size: 27px;text-align: center; font-weight:100;}
 .view-insp{margin-top: 11px;margin-left: 35px; color:#000; cursor:pointer;}
 .center-butt{ position:relative; left:50%; margin-left:-82px;}
 .exp-price{position: absolute;font-size: 16px;right: 0px;top: -7px;opacity: .9;color: rgb(68, 68, 68);background-color: #fff;padding: 7px 11px;}
 .share{position: absolute;top: 0;background: #373737;display: none;margin-top: 46px;color: #fff !important;}
-.wishlist_count_box{float: left;padding-top: 12px;font-size: 30px;background-color: #363636;color: #fff;padding-bottom: 13px;width: 53px;text-align: center;margin-left: 5px;}
+.wishlist_count_box{float: left;padding-top: 14px;font-size: 30px;background-color: #363636;color: #fff;padding-bottom: 15px;width: 53px;text-align: center;margin-left: 5px;}
 
 /******************** EXPLORE POP UP *****************/
-#product-details{width: 50%;
-height: 100%;
-float: left;
-background-color: #fff;
-position: absolute;
-margin-left: 25%;
-z-index: 100;}
+#product-details{width: 50%;height: 100%;float: left;background-color: #fff;position: absolute;margin-left: 25%;z-index: 100;}
 #inspiration{width:50%; float:left; background-color:white;min-height: 122%;position: absolute;margin-left: 25%; display:none;padding-bottom: 50px;}
 #theMainProductImage{width: 100%;}
 .product-image-frame{width: 94%; margin: 10px auto; border: #c2c2c2 thin solid; position:relative;}
