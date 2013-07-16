@@ -24,13 +24,14 @@ dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
             if(callback && typeof callback === 'function') {
                 callback(data);
             }
+            return data;
         }).fail(function(){
             console.log('oh no something broke');
         });
     }
 }// MAIN API CALL
 
-dahliawolfApi.prototype.getFeedPosts = function(offset, limit, callback) {
+dahliawolfApi.prototype.getFeedPosts = function(offset, limit, sort, callback) {
     if(offset) {
         var params = '&offset='+offset;
     } else {
@@ -38,6 +39,9 @@ dahliawolfApi.prototype.getFeedPosts = function(offset, limit, callback) {
     }
     if(limit) {
         params += '&limit='+limit;
+    }
+    if(sort) {
+        params += '&sort='+sort;
     }
     if(theUser.id) {
         params += '&viewer_user_id='+theUser.id;
