@@ -636,7 +636,7 @@ dahliaHeads.prototype.toggleFollow = function() {
 dahliaHeads.prototype.showHead = function(data) {
     this.data = data.data;
     this.data.is_followed = parseInt(this.data.is_followed);
-    this.avatar.attr('src' , data.data.avatar+'&width=75');
+    this.avatar.attr({'src' : data.data.avatar+'&width=75', 'onclick' : 'document.location="/'+data.data.username+'";'});
     this.followButton.html( parseInt(data.data.is_followed) ? 'Unfollow' : 'Follow');
     if( this.data.is_followed ){
        this.followButton.addClass('dahliaHeadUnFollow').removeClass('dahliaHeadFollow');
