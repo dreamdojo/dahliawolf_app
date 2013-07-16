@@ -67,7 +67,7 @@ dahliawolfApi.prototype.getVotePosts = function(callback) {
         params += '&viewer_user_id='+theUser.id;
     }
 
-    this.callApi('posting', 'get_vote_posts', params, callback);
+        this.callApi('posting', 'get_vote_posts', params, callback);
 }// GETS PRODUCTS FOR EXPLORE PAGE
 
 dahliawolfApi.prototype.getPostDetails = function(id, callback) {
