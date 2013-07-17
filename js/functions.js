@@ -541,7 +541,7 @@ userLogin.prototype.submitNewUser = function(e) {
             $.each(result.errors, function(index, error){
                 if(typeof error === 'string') {
                     str += error;
-                } else {
+                } else if(error.password) {
                     str += 'Password: '+error.password.errors[0];
                 }
             });
