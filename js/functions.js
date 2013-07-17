@@ -533,6 +533,7 @@ userLogin.prototype.submitNewUser = function(e) {
     var password = formdata[2].value.trim();
 
     $.post( $(e.target).attr('action'), {user_username : username, user_email : email,  user_password : password, ajax : true}, function(data){
+        console.log(data);
         var result = $.parseJSON(data);
         console.log(result);
         if (!result.success) {
