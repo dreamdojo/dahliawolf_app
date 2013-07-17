@@ -19,36 +19,35 @@ function dahliawolfApi() {
 dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
     if(api && apiFunction) {
         var theCallUrl = '/api/?api='+api+'&function='+apiFunction+params;
-        console.log(theCallUrl);
-        $.ajax(theCallUrl).done(function(data){
+        var xhr = $.ajax(theCallUrl).done(function(data){
             if(callback && typeof callback === 'function') {
                 callback(data);
             }
-            return data;
         }).fail(function(){
             console.log('oh no something broke');
         });
+        return xhr;
     }
 }// MAIN API CALL
 
-dahliawolfApi.prototype.getFeedPosts = function(offset, limit, sort, callback) {
-    if(offset) {
-        var params = '&offset='+offset;
+dahliawolfApi.prototype.getFeedPosts = function(data) {
+    if(data.offset) {
+        var params = '&offset='+data.offset;
     } else {
         var params = '&offset=0';
     }
-    if(limit) {
-        params += '&limit='+limit;
+    if(data.limit) {
+        params += '&limit='+data.limit;
     }
-    if(sort) {
-        params += '&sort='+sort;
+    if(data.sort) {
+        params += '&sort='+data.sort;
     }
     if(theUser.id) {
         params += '&viewer_user_id='+theUser.id;
     }
     params += '&status=Approved';
 
-    this.callApi('posting', 'all_posts', params, callback);
+    this.callApi('posting', 'all_posts', params, data.callback);
 }// GETS FEED POSTS
 
 dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
@@ -61,7 +60,7 @@ dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
         params += '&limit='+limit;
     }
     params += '&status=Approved';
-    this.callApi('feed_image', 'get_feed_images', params, callback);
+    return this.callApi('feed_image', 'get_feed_images', params, callback);
 }// GETS IMAGES FOR THE BANK
 
 dahliawolfApi.prototype.getVotePosts = function(callback) {
