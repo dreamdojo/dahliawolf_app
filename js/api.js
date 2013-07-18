@@ -19,6 +19,7 @@ function dahliawolfApi() {
 dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
     if(api && apiFunction) {
         var theCallUrl = '/api/?api='+api+'&function='+apiFunction+params;
+        console.log(theCallUrl);
         var xhr = $.ajax(theCallUrl).done(function(data){
             if(callback && typeof callback === 'function') {
                 callback(data);
@@ -31,6 +32,8 @@ dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
 }// MAIN API CALL
 
 dahliawolfApi.prototype.getFeedPosts = function(data) {
+    var api_function = 'all_posts';
+
     if(data.offset) {
         var params = '&offset='+data.offset;
     } else {
@@ -39,15 +42,29 @@ dahliawolfApi.prototype.getFeedPosts = function(data) {
     if(data.limit) {
         params += '&limit='+data.limit;
     }
+    if(data.username) {
+        params += '&username='+data.username;
+    }
+    if(data.view && data.view === 'wild-4s') {
+        api_function = 'get_liked_posts';
+    }
+
     if(data.sort) {
         params += '&sort='+data.sort;
+        if(data.sort == 'following') {
+            params += '&filter_by=following';
+        }
+        if(data.sort == 'hot') {
+            params += '&order_by=total_likes';
+            params += '&like_day_threshold=30';
+        }
     }
     if(theUser.id) {
         params += '&viewer_user_id='+theUser.id;
     }
     params += '&status=Approved';
 
-    this.callApi('posting', 'all_posts', params, data.callback);
+    this.callApi('posting', api_function, params, data.callback);
 }// GETS FEED POSTS
 
 dahliawolfApi.prototype.getBankPosts = function(offset, limit, callback) {
