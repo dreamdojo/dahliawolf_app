@@ -226,7 +226,7 @@ dahliawolfApi.prototype.addItemToWishlist = function(data) {
             console.log($.parseJSON(retData) );
         });
     } else {
-        //new_loginscreen();
+        new_loginscreen();
     }
 }
 
