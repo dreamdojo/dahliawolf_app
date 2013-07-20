@@ -81,6 +81,11 @@ function events() {
 		return false;
 	});
 
+    $(document).on('click', 'a[rel="addWishlist"]', function(event) {
+        event.preventDefault();
+        api.addItemToWishlist({call : this.href, obj : this});
+    });
+
 	// Spine load
 	var $spine = $('.spine');
 	if ($spine.length) {

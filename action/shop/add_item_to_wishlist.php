@@ -23,11 +23,15 @@ $calls = array(
 		$_SESSION['errors'] = api_errors_to_array($data, 'add_wishlist');
 	}
 
-if (!empty($_SESSION['errors'])) {
-	redirect($_SERVER['HTTP_REFERER']);
-}
-else {
-	redirect('/shop/my-wishlist.php');
+if(!$_GET['ajax']) {
+    if (!empty($_SESSION['errors'])) {
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+    else {
+        redirect('/shop/my-wishlist.php');
+    }
+} else {
+    echo json_encode($data);
 }
 die();
 ?>

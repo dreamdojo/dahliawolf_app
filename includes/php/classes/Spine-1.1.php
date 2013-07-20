@@ -174,7 +174,7 @@ class Spine {
                                             </a>
                                         <? endif ?>
                                          <? if($post['status'] == 'Coming Soon' || $post['status'] == 'Live' || $post['status'] == 'Pre Order'): ?>
-                                            <a href="/action/shop/add_item_to_wishlist.php?id_product=<?= $post['product_id'] ?>">
+                                            <a href="/action/shop/add_item_to_wishlist.php?id_product=<?= $post['product_id'] ?>&ajax=true" rel="addWishlist">
                                                 <div class="exp-wl-butt<?= ($post['status'] != "Live" ? ' center-butt' : '') ?>" style="<?= ($post['status'] == 'Pre Order' ? 'margin-left: -160px;' : '') ?>">
                                                     <p>WISHLIST </p><div class="wishlist_count_box"><?= $post['wishlist_count'] ?></div>
                                                 </div>

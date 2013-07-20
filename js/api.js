@@ -218,6 +218,18 @@ dahliawolfApi.prototype.markActivityAsRead = function(id, callback) {
     }
 }// Mark an activity as read
 
+dahliawolfApi.prototype.addItemToWishlist = function(data) {
+    if(theUser.id) {
+        var count = parseInt( $(data.obj).find('.wishlist_count_box').html() ) + 1;
+        $(data.obj).find('.wishlist_count_box').html( count );
+        $.ajax(data.call).done(function(retData) {
+            console.log($.parseJSON(retData) );
+        });
+    } else {
+        //new_loginscreen();
+    }
+}
+
 $(function(){
     api = new dahliawolfApi();
 });
