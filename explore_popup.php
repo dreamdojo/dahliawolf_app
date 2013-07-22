@@ -135,6 +135,7 @@ $cheater = 50;
 var imgMoney = Object();
 imgMoney.images = Array();
 imgMoney.images = <? echo json_encode($images) ?>;
+imgMoney.product = <? echo json_encode($product['product']) ?>;
 imgMoney.imgUrl = "http://content.dahliawolf.com/shop/product/image.php?file_id=";
 imgMoney.index = 0;
 imgMoney.outlet = $('#theMainProductImage');
@@ -180,6 +181,7 @@ function getImgUrl(){
 }
 
 function imgMoneyInit(){
+    window.history.replaceState( {} , 'Post Detail', '/shop/'+imgMoney.product.id_product );
 	imgMoney.arrow.bind('click', imgMoney.getNextImg);
 	imgMoney.activateButton.bind('click', imgMoney.toggleInspiration);
     sendToAnal({name:'Viewing shop item', item:'<?= $product['product']['product_name'] ?>'});

@@ -26,7 +26,7 @@ function(){
 
 var product = new Object();
 product.openProduct = "<?= (!empty($_GET['product_id']) ? $_GET['product_id'] : '' )?>";
-product.script = 'explore_popup.php';
+product.script = '/explore_popup.php';
 product.isOpen = false;
 product.overlay = $('#product-overlay');
 product.popup = $('#product-popup');
