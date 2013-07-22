@@ -174,6 +174,7 @@ class Spine {
                                             </a>
                                         <? else: ?>
                                             <div class="exp-buy-butt" style="background-color: #c2c2c2">
+                                                <div class="fakey-buy">BUY</div>
                                                 <p class="coming-soon" >Coming Soon</p>
                                             </div>
                                         <? endif ?>
