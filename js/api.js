@@ -12,7 +12,7 @@
  */
 
 function dahliawolfApi() {
-    this.apiUrl = "/api/?";
+    this.apiUrl = "/api/?"; 
 
 }
 
@@ -220,10 +220,16 @@ dahliawolfApi.prototype.markActivityAsRead = function(id, callback) {
 
 dahliawolfApi.prototype.addItemToWishlist = function(data) {
     if(theUser.id) {
-        var count = parseInt( $(data.obj).find('.wishlist_count_box').html() ) + 1;
-        $(data.obj).find('.wishlist_count_box').html( count );
         $.ajax(data.call).done(function(retData) {
-            console.log($.parseJSON(retData) );
+            var retData = $.parseJSON(retData);
+            if(retData.data.add_wishlist.errors && retData.data.add_wishlist.errors.length) {
+                alert(retData.data.add_wishlist.errors[0]);
+            } else {
+                var count = parseInt( $(data.obj).find('.wishlist_count_box').html() ) + 1;
+                $(data.obj).find('.wishlist_count_box').html( count );
+                $(data.obj).find('p').html('Added to Wishlist').addClass('already-in-wishlist');
+                //$(data.obj).find('.exp-wl-butt').prepend('<p class="already-in-wishlist">Added to Wishlist</p>');
+            }
         });
     } else {
         new_loginscreen();

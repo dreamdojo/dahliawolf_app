@@ -157,7 +157,7 @@ class Spine {
                 
                                 <img src="<?= $post['image_url'] ?>" class="zoom-in" onclick="product.show(<?= $post['product_id'] ?>)" />
                                 <? if($post['status'] === 'Pre Order'): ?>
-                                    <a href="<?= CR ?>/shop/product?id_product=<?= $post['product_id'] ?>">
+                                    <a href="<?= CR ?>/shop/<?= $post['product_id'] ?>">
                                     <div class="explore-prod-presale-box">
                                         <div>Pre-Sale</div>
                                         <div>50% OFF</div>
@@ -167,16 +167,25 @@ class Spine {
                                 <? endif ?>
 								<div class="explore-prod-options-box">
                                         <? if($post['status'] == 'Live' || $post['status'] == 'Pre Order'): ?>
-                                            <a href="<?= CR ?>/shop/product?id_product=<?= $post['product_id'] ?>">
+                                            <a href="<?= CR ?>/shop/<?= $post['product_id'] ?>">
                                                 <div class="exp-buy-butt">
                                                     <p style="width: 100%; text-align: center;" ><?= ($post['status'] == 'Pre Order' ? 'PRE-ORDER' : 'BUY') ?></p>
                                                 </div>
                                             </a>
+                                        <? else: ?>
+                                            <div class="exp-buy-butt" style="background-color: #c2c2c2">
+                                                <p class="coming-soon" >Coming Soon</p>
+                                            </div>
                                         <? endif ?>
                                          <? if($post['status'] == 'Coming Soon' || $post['status'] == 'Live' || $post['status'] == 'Pre Order'): ?>
                                             <a href="/action/shop/add_item_to_wishlist.php?id_product=<?= $post['product_id'] ?>&ajax=true" rel="addWishlist">
-                                                <div class="exp-wl-butt<?= ($post['status'] != "Live" ? ' center-butt' : '') ?>" style="<?= ($post['status'] == 'Pre Order' ? 'margin-left: -160px;' : '') ?>">
-                                                    <p>WISHLIST </p><div class="wishlist_count_box"><?= $post['wishlist_count'] ?></div>
+                                                <div class="exp-wl-butt">
+                                                    <? if( isset($post['in_wishlist']) && $post['in_wishlist'] ): ?>
+                                                        <p class="already-in-wishlist">Added to Wishlist</p>
+                                                    <? else: ?>
+                                                        <p><span style="padding-bottom: 1px;">+</span>WISHLIST </p>
+                                                    <? endif ?>
+                                                    <div class="wishlist_count_box"><?= $post['wishlist_count'] ?></div>
                                                 </div>
                                             </a>
                                          <? endif ?>

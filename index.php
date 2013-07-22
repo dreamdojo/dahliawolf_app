@@ -52,6 +52,26 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 </head>
 
 <style>
+    /* RESET
+--------------------------------------------------------------------------------------- */
+html{background: #fff;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin: 0;padding: 0;}
+table{border-collapse:collapse;border-spacing: 0;}
+img{border: 0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+q:before,q:after{content:'';}
+abbr,acronym {border: 0;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;overflow:hidden;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit; resize: none;outline:none;}
+legend{color:#000;}
+body {font-family:Tahoma,arial,sans-serif;font-size:10px;color:#211922;min-width: 980px; margin-top: 90px;}
+table{font-size:inherit;}
+pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
+.zoom-in{cursor: -webkit-zoom-in;cursor: -moz-zoom-in;cursor: zoom-in;}
+.zoom-out{cursor: -webkit-zoom-out;cursor: -moz-zoom-out;cursor: zoom-out;}
+
 #slideshow-frame{width: 100%;height: 100%;position: absolute;left: 0px;top: 0px;overflow: hidden;}
 .slide{ height:100%; width:100%; position:absolute; left:0px; top:0px; }
 .slide img{min-width:100%; min-height:100%; }
@@ -99,9 +119,9 @@ font-size: .8em;}
 #register{display:none;}
 #login{ display:none;}
 .item-box{position: absolute;right: 0px;height: 100px;width: 400px;bottom: 10px;font-size: 1em;text-align: right;margin-right: 40px;margin-bottom: 30px;font-family: futura, sans-serif;font-weight: normal;}
-.item-title{font-size: 1.5em;}
-.inspired-by{font-size: .8em;padding-bottom: 2px;}
-.inspira{font-size:1.4;}
+.item-title{font-size: 1.9em;}
+.inspired-by{font-size: 1.4em;padding-bottom: 2px;}
+.inspira{font-size:1.2em;}
 .inspira a{color:white; cursor: pointer;}
 .inspira a:hover{color: black;}
 .black{color:#000;}
@@ -112,7 +132,7 @@ font-size: .8em;}
 .post-design{text-align: center; position:relative;}
 .post-design img{width:70%;margin-top: 10px;position: absolute;left: 200px;top: -14px;}
 .video-design{text-align: center; position:relative;margin-top: 80px;}
-.video-design img{position: absolute; cursor:pointer;}
+.video-design img{position: absolute; cursor:pointer;margin-left: -493px;left: 50%;}
 #how-it-works-section .fb{text-align:center;}
 #how-it-works-section .fb img{padding: 50px 0px 10px 0px;}
 .tre-bar img{width:100%;}
@@ -266,7 +286,7 @@ margin-left: 2px;" /></a></div> -->
     <div class="loggle-toggle2">
     	<div><img src="http://www.dahliawolf.com/images/how-dahliawolf-works.jpg" /></div>
     	<div><a href="http://www.dahliawolf.com/faqs"><img src="http://www.dahliawolf.com/images/how-dahliawolf-works-commission.jpg" /></a></div>
-    	<div class="video-design"><img style="margin-left:-80px;" src="http://www.dahliawolf.com/images/how-it-works-video.png" onclick="$(this).fadeOut(200);" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    	<div class="video-design"><img src="http://www.dahliawolf.com/images/how-it-works-video.png" onclick="$(this).fadeOut(200);" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
         <div><img style="margin-top:100px; margin-bottom: 30px;" src="http://www.dahliawolf.com/images/how-it-works-get-started.png" /></div>
         <div style="cursor:pointer;"><img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" ></div>
         <div class="signupemail2"><a href="http://www.dahliawolf.com/signup">SIGN UP THE OLD SCHOOL WAY WITH EMAIL</a></div>

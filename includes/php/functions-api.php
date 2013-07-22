@@ -24,7 +24,7 @@ function api_request($service, $calls, $return_array = false) {
 
 function api_call($endpoint, $function, $parameters = NULL, $return_array = false) {
 	$query_string = empty($parameters) ? '' : http_build_query($parameters);
-	$url = 'http://api.dahliawolf.com/api.php?api=' . $endpoint . '&function=' . $function . '&' . $query_string;
+	$url = 'http://dev.api.dahliawolf.com/api.php?api=' . $endpoint . '&function=' . $function . '&' . $query_string;
 	
 	$ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);

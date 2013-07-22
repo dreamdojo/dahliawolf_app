@@ -19,7 +19,7 @@ $calls = array(
 
 	$data = commerce_api_request('wishlist', $calls, true);
 	
-	if (!empty($data['errors']) || !empty($data['data']['add_wishlist']['errors'])) {
+	if (!empty($data['errors']) || !empty($data['data']['add_wishlist']['errors']) && !isset($_GET['ajax'])) {
 		$_SESSION['errors'] = api_errors_to_array($data, 'add_wishlist');
 	}
 
