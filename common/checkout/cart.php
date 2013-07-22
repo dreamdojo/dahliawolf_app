@@ -137,7 +137,8 @@ $is_review = !empty($is_review) ? true : false;
 		<?
 		if (!$is_review) {
 			?>
-			<div class="discount-codes box rewards-box-spend-minicart discount">
+			<? /*
+            <div class="discount-codes box rewards-box-spend-minicart discount">
 				<div class="rewards-box-spend-header">
 					<h3>Spend your points</h3>
 				</div>
@@ -145,18 +146,18 @@ $is_review = !empty($is_review) ? true : false;
 					<!-- Cart Slider -->
 					<h5 class="minicart-slider-header">Choose how many points to spend: </h5>
 						<div class="cartSlider">
-				
+
 							<script type="text/javascript">
-							
+
 							// Other PHP content ///////////////
 							var currency_map  = {"1":""};
-							
+
 							function feignPriceChange() {
-							
+
 							}
-							
+
 							</script>
-	
+
 						<div class="slider" onmouseup="sliderNotSliding()">
 							<table cellspacing="0" cellpadding="0">
 								<tbody>
@@ -180,39 +181,39 @@ $is_review = !empty($is_review) ? true : false;
 							<div id="sliderCaption" class="cartSlider_caption">You Will Spend: 0 Points</div>
 							<input type="hidden" name="redemption_uses" id="redemption_rule_uses" value="0">
 						</div>
-	
+
 						<script type="text/javascript">
 						/*document.observe("dom:loaded", function() {
 							var min_spendable = 0;
 							var max_spendable = 5590;
 							var step = 10;
 							var current_value = 0;
-							
+
 							rSlider = new RedemptionSlider('sliderHandle', 'sliderRail', 'sliderCaption', 'redemption_rule_uses');
 							rSlider.regenerateSlider(min_spendable, max_spendable, step, current_value);//min, max, step, initial_value
 							rSlider.setExternalValue(current_value);
-						});*/
-						
+						});*//*
+
 						// Functions for changing the cursor on the slider
 						function sliderSliding() {
-							$('sliderRail').addClassName('sliderRail-sliding'); 
+							$('sliderRail').addClassName('sliderRail-sliding');
 							$('sliderHandle').addClassName('sliderHandle-sliding');
 						}
-						
+
 						function sliderNotSliding() {
-							$('sliderRail').removeClassName('sliderRail-sliding'); 
+							$('sliderRail').removeClassName('sliderRail-sliding');
 							$('sliderHandle').removeClassName('sliderHandle-sliding');
 						}
 						</script>
 					</div>
 					<input type="checkbox" name="use_all_points" id="use_all_points" onclick="toggleUseAllPoints(this.checked)">&nbsp;
 					<label for="use_all_points">Maximize my discount with points</label>
-				
+
 					<!-- All other rules -->
 		   			<div class="more-ways-to-spend  more-ways-to-spend-also">
 						<h4 class="more-ways-to-spend-header">More ways to spend points: </h4>
 						<!-- Applied Rule Listing -->
-															
+
 						<!-- Applicable Rule Listing -->
 						<div class="cart_redemption_item">
 							<input type="checkbox" name="applicable_cart_rule[]" id="applicable_cart_rule[]" value="57" onclick="toggleCartRule(this)">&nbsp;
@@ -225,7 +226,7 @@ $is_review = !empty($is_review) ? true : false;
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="codes">
 				<h4>Discount Codes</h4>
 				<form class="discount-code" action="/action/shop/add_discount.php" method="post">
@@ -236,7 +237,8 @@ $is_review = !empty($is_review) ? true : false;
 					</fieldset>
 				</form>
 			</div>
-			<?
+			*/?>
+            <?
 		}
 		else {
 			?>
