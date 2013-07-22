@@ -24,7 +24,7 @@
 	$created = explode(' ', $_data['post']['created']);
 ?>
 
-<? var_dump($_data['post']); ?>
+<? //var_dump($_data['post']); ?>
 <style>
 
 </style>
