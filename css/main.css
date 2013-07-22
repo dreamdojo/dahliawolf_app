@@ -296,7 +296,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .center-butt{ position:relative; left:50%; margin-left:-82px;}
 .exp-price{position: absolute;font-size: 16px;right: 0px;top: -7px;opacity: .9;color: rgb(68, 68, 68);background-color: #fff;padding: 7px 11px;}
 .share{position: absolute;top: 0;background: #373737;display: none;margin-top: 46px;color: #fff !important;}
-.wishlist_count_box{float: left;padding-top: 14px;font-size: 25px;background-color: #363636;color: #fff;padding-bottom: 15px;width: 53px;text-align: center;margin-left: 5px;}
+.wishlist_count_box{float: left;padding-top: 14px;font-size: 25px;background-color: #363636;color: #fff;padding-bottom: 20px;width: 61px;text-align: center;margin-left: 5px;}
 .already-in-wishlist{ height: 100%; background-color: #f4a5b4;line-height: 56px;margin-left: -10px !important;margin-top: 0px !important;font-size: 17px;width: 74%;float: left;position: relative; color: #fff;}
 .coming-soon{background-color: #f3f3f3;color: #4f4f4f !important;font-size: 25px !important;width: 100%; text-align: center;}
 
