@@ -12,6 +12,7 @@ function default_redirect() {
 $_data = array();
 //$_data['spine_version'] = isset($_GET['t']) ? '-1.1' : '';
 $_data['spine_version'] = '-1.1';
+$_data['cart'] = get_cart();
 
 if (IS_LOGGED_IN) {
 	http://api.dahliawolf.com/api.php?api=activity_log&user_id=658&function=get_num_grouped_unread

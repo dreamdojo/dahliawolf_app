@@ -17,8 +17,6 @@ $Spine->output_explore($_data['posts']);
 <?php include "footer.php" ?>
 <script>
 
-    console.log(<? echo json_encode( $_data['posts'] ) ?>);
-
 $('.image').hover(function(){
 	$(this).find('.explore-prod-options-box').fadeToggle(1);
 },
@@ -28,7 +26,7 @@ function(){
 
 var product = new Object();
 product.openProduct = "<?= (!empty($_GET['product_id']) ? $_GET['product_id'] : '' )?>";
-product.script = 'explore_popup.php';
+product.script = '/explore_popup.php';
 product.isOpen = false;
 product.overlay = $('#product-overlay');
 product.popup = $('#product-popup');

@@ -78,7 +78,10 @@
     </div>
     <div id="postDetailMainRow">
     	<div class="postImageFrame">
-        	<a href="<?= $_data['post']['image_url'] ?>" target="_blank"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
+        	<? if($_data['post']['is_winner']): ?>
+                <div class="is_winner_box">WINNER <a href="/shop/<?= $_data['post']['product_id'] ?>">view item</a></div>
+            <? endif ?>
+            <a href="<?= $_data['post']['image_url'] ?>" target="_blank"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
         </div>
         
         <div class="postOrigin"> Posted from <a href="<?= $_data['post']['image_attribution_url'] ?>" target="_blank"><?= $_data['post']['image_attribution_domain'] ?></a> on <?= $created[0] ?></div>

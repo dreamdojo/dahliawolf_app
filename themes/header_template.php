@@ -117,9 +117,8 @@ $(document).ready(function()
 	                    		'Profile' 		=> '/' . $_SESSION['user']['username']
 	                    		, 'Activity' 	=> '/activity'
 								, 'Invite' 	=> '/invite'
-	                    		, 'Posts' 		=> '/'.$_SESSION['user']['username'].'/inspirations'
-	                    		, 'Loved' 		=> '/'.$_SESSION['user']['username'].'/loves'
-	                    		, 'Runway' 		=> '/my-runway?username='.$_SESSION['user']['username']
+	                    		, 'Showroom' 		=> '/my-runway?username='.$_SESSION['user']['username']
+                                , 'Cart'.' $'.money_format('%i', $_data['cart']['cart']['totals']['grand_total']) => '/shop/checkout'
 	                    		, 'Wishlist' 	=> '/shop/my-wishlist'
 	                    	)
 							, array(
@@ -177,7 +176,7 @@ $(document).ready(function()
 </div>
 
 <div id="dahliaHead">
-    <a href=""><div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div></a>
+    <div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div>
     <div id="dahliaHeadFollowToggle"></div>
 </div>
 

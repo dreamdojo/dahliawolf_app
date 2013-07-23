@@ -19,15 +19,19 @@ $calls = array(
 
 	$data = commerce_api_request('wishlist', $calls, true);
 	
-	if (!empty($data['errors']) || !empty($data['data']['add_wishlist']['errors'])) {
+	if (!empty($data['errors']) || !empty($data['data']['add_wishlist']['errors']) && !isset($_GET['ajax'])) {
 		$_SESSION['errors'] = api_errors_to_array($data, 'add_wishlist');
 	}
 
-if (!empty($_SESSION['errors'])) {
-	redirect($_SERVER['HTTP_REFERER']);
-}
-else {
-	redirect('/shop/my-wishlist.php');
+if(!$_GET['ajax']) {
+    if (!empty($_SESSION['errors'])) {
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+    else {
+        redirect('/shop/my-wishlist.php');
+    }
+} else {
+    echo json_encode($data);
 }
 die();
 ?>
