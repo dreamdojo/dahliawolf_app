@@ -82,7 +82,7 @@ function output_orders($orders) {
 					<tr>
 						<td class="order-number"><a href="<?= HEADER_LOCATION_PREFIX ?>/shop/order-details.php?id_order=<?= $order['id_order'] ?>"><?= $order['id_order'] ?></a></td>
 						<td class="date"><a href="<?= HEADER_LOCATION_PREFIX ?>/shop/order-details.php?id_order=<?= $order['id_order'] ?>"><?= date('m/d/Y g:i a', strtotime($order['date_add'])) ?></a></td>
-						<td class="amount monetary"><a href="<?= HEADER_LOCATION_PREFIX ?>/shop/order-details.php?id_order=<?= $order['id_order'] ?>">$<?= number_format($order['total_paid'], 2) ?></a></td>
+						<td class="amount monetary"><a href="<?= HEADER_LOCATION_PREFIX ?>/shop/order-details.php?id_order=<?= $order['id_order'] ?>">$<?= number_format($order['total'], 2) ?></a></td>
 					</tr>
 					<? 
 				}
