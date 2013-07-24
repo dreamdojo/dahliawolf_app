@@ -10,7 +10,9 @@ else if (empty($_SESSION['user'])) {
 	redirect('/login.php');
 }
 
+/*
 unset_action_session_keys();
+*/
 
 // save addresses
 if (is_numeric($_POST['billing_address_id'])) {
