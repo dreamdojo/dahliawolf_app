@@ -15,11 +15,13 @@ $data = commerce_api_request('product', $calls, true);
 $product = $data['data']['get_product_details']['data'];
 $inspirations = $product['product']['posts'];
 
+$inspirations = array_reverse($inspirations);
+
 $left_col = array();
 $right_col = array();
 foreach($inspirations as  $i=>$prod){
     if($prod['username'] == $product['product']['username']){
-        array_unshift($left_col, $prod);
+        //array_unshift($left_col, $prod);
     } else {
         if(($i % 2) == 0){
             $left_col[] = $prod;
@@ -28,13 +30,14 @@ foreach($inspirations as  $i=>$prod){
         }
     }
 }
+
 foreach($product['files'] as $file){
 	$images[] = $file['product_file_id'];
 }
 $cheater = 50;
 ?>
 
-<?  //var_dump($data) ?>
+<script>console.log(<?=  json_encode($data) ?>);</script>
 <div id="thewrap">
 <div id="product-details">
     <div id="pull-me">VIEW INSPIRATION</div>
