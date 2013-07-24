@@ -99,7 +99,7 @@ function get_cart() {
 			if (!empty($_SESSION['checkout_shipping_address_id'])) {
 				$calls['get_cart_from_db']['shipping_address_id'] = $_SESSION['checkout_shipping_address_id'];
 			}
-			
+
 			// Shipping method
 			if (!empty($_SESSION['checkout_id_delivery'])) {
 				$calls['get_cart_from_db']['id_delivery'] = $_SESSION['checkout_id_delivery'];
