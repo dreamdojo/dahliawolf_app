@@ -70,11 +70,25 @@ else {
 
 $_SESSION['checkout_shipping_address_id'] = $shipping_address_id;
 
-if (!empty($_SESSION['errors'])) {
-	redirect($_SERVER['HTTP_REFERER']);
+if( !isset($_POST['ajax']) ) {
+    if (!empty($_SESSION['errors'])) {
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+    else {
+        redirect('/shop/checkout.php?step=shipping');
+    }
+    die();
+} else {
+    if (!empty($_SESSION['errors'])) {
+        echo json_encode( $_SESSION['errors'] );
+    }
+    else {
+        if (is_numeric($_POST['billing_address_id'])) {
+            echo $billing_address_id;
+        } else {
+            echo json_encode($data);
+        }
+    }
+    die();
 }
-else {
-	redirect('/shop/checkout.php?step=shipping');
-}
-die();
 ?>
