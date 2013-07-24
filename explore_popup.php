@@ -21,7 +21,7 @@ $left_col = array();
 $right_col = array();
 foreach($inspirations as  $i=>$prod){
     if($prod['username'] == $product['product']['username']){
-        //array_unshift($left_col, $prod);
+        array_unshift($left_col, $prod);
     } else {
         if(($i % 2) == 0){
             $left_col[] = $prod;
@@ -42,7 +42,7 @@ $cheater = 50;
 <div id="product-details">
     <div id="pull-me">VIEW INSPIRATION</div>
     <div class="product-image-frame">
-    	<img id="theMainArrow" src="images/next-arrow.png" />
+    	<img id="theMainArrow" src="/images/next-arrow.png" />
     	<img id="theMainProductImage" src="<?= $image_url = CDN_IMAGE_SCRIPT . $product['files'][0]['product_file_id'] ?>" />
         <div id="share-menu">
             <ul>
@@ -56,7 +56,7 @@ $cheater = 50;
             </ul>
         </div>
         <div id="product-options">
-            <img id="share-img" src="images/share.png" />
+            <img id="share-img" src="/images/share.png" />
             <? if($product['product']['status'] == 'Live'): ?>
                 <a href="/shop/<?= $product['product']['id_product'] ?>"><div class="buy-butt">BUY</div></a>
             <? endif ?>
