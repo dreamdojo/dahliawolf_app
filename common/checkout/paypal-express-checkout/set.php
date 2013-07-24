@@ -53,6 +53,7 @@ $calls = array(
 );
 
 $data = commerce_api_request('cart', $calls, true);
+
 $api_errors = api_errors_to_array($data);
 
 if (!empty($api_errors)) {

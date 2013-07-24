@@ -81,6 +81,11 @@ function events() {
 		return false;
 	});
 
+    $(document).on('click', 'a[rel="addWishlist"]', function(event) {
+        event.preventDefault();
+        api.addItemToWishlist({call : this.href, obj : this});
+    });
+
 	// Spine load
 	var $spine = $('.spine');
 	if ($spine.length) {
@@ -533,13 +538,15 @@ userLogin.prototype.submitNewUser = function(e) {
     var password = formdata[2].value.trim();
 
     $.post( $(e.target).attr('action'), {user_username : username, user_email : email,  user_password : password, ajax : true}, function(data){
+        console.log(data);
         var result = $.parseJSON(data);
+        console.log(result);
         if (!result.success) {
             var str = '';
             $.each(result.errors, function(index, error){
                 if(typeof error === 'string') {
                     str += error;
-                } else {
+                } else if(error.password) {
                     str += 'Password: '+error.password.errors[0];
                 }
             });

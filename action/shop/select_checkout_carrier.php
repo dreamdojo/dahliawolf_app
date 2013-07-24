@@ -13,11 +13,19 @@ else if (empty($_SESSION['checkout_billing_address_id'])) {
 else { // Set session delivery id
 	
 	$_SESSION['checkout_id_delivery'] = $_POST['id_delivery'];
-	
-	redirect('/shop/checkout.php?step=confirmation');
+
+    if( !isset($_POST['ajax']) ) {
+        redirect('/shop/checkout.php?step=confirmation');
+    } else {
+        echo $_SESSION['checkout_id_delivery'];
+    }
 	exit();
 }
 
-redirect($_SERVER['HTTP_REFERER']);
-exit();
+if( !isset($_POST['ajax']) ) {
+    redirect($_SERVER['HTTP_REFERER']);
+    exit();
+} else {
+    echo $_SESSION['checkout_id_delivery'];
+}
 ?>

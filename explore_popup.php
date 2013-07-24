@@ -55,7 +55,10 @@ $cheater = 50;
         <div id="product-options">
             <img id="share-img" src="images/share.png" />
             <? if($product['product']['status'] == 'Live'): ?>
-                <a href="/shop/product.php?id_product=<?= $product['product']['id_product'] ?>"><div class="buy-butt">BUY</div></a>
+                <a href="/shop/<?= $product['product']['id_product'] ?>"><div class="buy-butt">BUY</div></a>
+            <? endif ?>
+            <? if($product['product']['status'] == 'Pre Order'): ?>
+                <a href="/shop/<?= $product['product']['id_product'] ?>"><div class="buy-butt">Pre-Order</div></a>
             <? endif ?>
             <? if($product['product']['status'] == 'Coming Soon' || $product['product']['status'] == 'Live' || $product['product']['status'] == 'Pre Order'): ?>
                 <a href="/action/shop/add_item_to_wishlist.php?id_product=<?= $product['product']['id_product'] ?>"><div class="wl-butt">WISHLIST</div></a>
@@ -135,6 +138,7 @@ $cheater = 50;
 var imgMoney = Object();
 imgMoney.images = Array();
 imgMoney.images = <? echo json_encode($images) ?>;
+imgMoney.product = <? echo json_encode($product['product']) ?>;
 imgMoney.imgUrl = "http://content.dahliawolf.com/shop/product/image.php?file_id=";
 imgMoney.index = 0;
 imgMoney.outlet = $('#theMainProductImage');
@@ -180,6 +184,7 @@ function getImgUrl(){
 }
 
 function imgMoneyInit(){
+    window.history.replaceState( {} , 'Post Detail', '/shop/'+imgMoney.product.id_product );
 	imgMoney.arrow.bind('click', imgMoney.getNextImg);
 	imgMoney.activateButton.bind('click', imgMoney.toggleInspiration);
     sendToAnal({name:'Viewing shop item', item:'<?= $product['product']['product_name'] ?>'});

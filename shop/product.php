@@ -83,8 +83,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 				<h3 class="name"><?= $_data['product']['product']['product_name'] ?></h3>
 				<? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
                     <p class="price"><del><span>$<?= number_format( ($_data['product']['product']['price'] * 2), 2, '.', ',') ?></span></del> <span class="sale">Pre Order 50% Off</span></p>
+                <? else: ?>
+                    <p class="price"<?= $_data['product']['product']['on_sale'] == '1' ? ' style="text-decoration: line-through;"' : '' ?>><span>$<?= number_format($_data['product']['product']['price'], 2, '.', ',') ?></span></p>
                 <? endif ?>
-				<p class="price"<?= $_data['product']['product']['on_sale'] == '1' ? ' style="text-decoration: line-through;"' : '' ?>><span>$<?= number_format($_data['product']['product']['price'], 2, '.', ',') ?></span></p>
+
                 <?
 				if ($_data['product']['product']['on_sale'] == '1') {
 					?>
@@ -131,7 +133,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 					<dt>Description</dt>
 					<dd><?= $_data['product']['product']['design_description'] ?></dd>
 					<dt>Size &amp; Fit</dt>
-					<dd></dd>
+					<dd><img class="sizeAndFit"src=/images/dahliawolf_sizechart.jpg></dd>
 					<dt>Shipping &amp; Returns</dt>
 					<dd></dd>
 					<dt>Fabric</dt>

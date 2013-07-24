@@ -314,6 +314,7 @@ $Spine->output_css();
 	display: block;
 	margin: 0 auto;
 	width: 420px;
+    min-height: 400px;
 }
 .explore .posts .image:hover img {
 }

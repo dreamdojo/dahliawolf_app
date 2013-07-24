@@ -46,7 +46,7 @@ $payment_info = array(
 	, 'description' => 'Purchase from ' . $_SERVER['HTTP_HOST']
 );
 
-$calls = array(	
+$calls = array(
 	'place_order' => array(
 		'user_id' => $_SESSION['user']['user_id']
 		, 'id_shop' => SHOP_ID
@@ -56,10 +56,10 @@ $calls = array(
 		, 'billing_address_id' => $_SESSION['checkout_billing_address_id']
 		, 'id_delivery' => $_SESSION['checkout_id_delivery']
 		, 'payment_info' => $payment_info
-	)	
+	)
 );
 
-$data = commerce_api_request('orders', $calls, true); 
+$data = commerce_api_request('orders', $calls, true);
 
 if (!empty($data['errors']) || !empty($data['data']['place_order']['errors'])) {
 	$_SESSION['errors'] = api_errors_to_array($data, 'place_order');
@@ -75,6 +75,5 @@ setcookie(SITENAME_PREFIX . "[cart]", '', time() + 1209600, '/');
 unset($_SESSION['id_cart'], $_SESSION['checkout_billing_address_id'], $_SESSION['checkout_shipping_address_id'], $_SESSION['checkout_id_delivery'], $_SESSION['checkout_payment_method_id']);
 
 redirect('/shop/my-orders.php');
-
 die();
 ?>
