@@ -266,7 +266,7 @@ margin-left: 2px;" /></a></div> -->
         </div>
     </div>
 <div class="slide">
-    <img class="zeImg" src="/images/DW-slide-artinourblood.jpg" />
+    <img class="zeImg" src="/images/slider/artinourblood.jpeg" />
     <div class="item-box white">
         <div class="item-title">ART IN OUR BLOOD DRESS</div>
         <div class="inspired-by">Inspired by member</div>
