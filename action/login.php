@@ -9,8 +9,8 @@ if (empty($_POST)) {
 unset_action_session_keys();
 
 $params = array(
-	'email' => $_POST['identity']
-	, 'password' => $_POST['credential']
+	'email' => $_POST['identity'],
+	'password' => $_POST['credential']
 );
 $data = api_call('user', 'login', $params, true);
 

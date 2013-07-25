@@ -15,6 +15,8 @@ $data = commerce_api_request('product', $calls, true);
 $product = $data['data']['get_product_details']['data'];
 $inspirations = $product['product']['posts'];
 
+$inspirations = array_reverse($inspirations);
+
 $left_col = array();
 $right_col = array();
 foreach($inspirations as  $i=>$prod){
@@ -28,18 +30,19 @@ foreach($inspirations as  $i=>$prod){
         }
     }
 }
+
 foreach($product['files'] as $file){
 	$images[] = $file['product_file_id'];
 }
 $cheater = 50;
 ?>
 
-<?  //var_dump($data) ?>
+<script>console.log(<?=  json_encode($data) ?>);</script>
 <div id="thewrap">
 <div id="product-details">
     <div id="pull-me">VIEW INSPIRATION</div>
     <div class="product-image-frame">
-    	<img id="theMainArrow" src="images/next-arrow.png" />
+    	<img id="theMainArrow" src="/images/next-arrow.png" />
     	<img id="theMainProductImage" src="<?= $image_url = CDN_IMAGE_SCRIPT . $product['files'][0]['product_file_id'] ?>" />
         <div id="share-menu">
             <ul>
@@ -53,7 +56,7 @@ $cheater = 50;
             </ul>
         </div>
         <div id="product-options">
-            <img id="share-img" src="images/share.png" />
+            <img id="share-img" src="/images/share.png" />
             <? if($product['product']['status'] == 'Live'): ?>
                 <a href="/shop/<?= $product['product']['id_product'] ?>"><div class="buy-butt">BUY</div></a>
             <? endif ?>
