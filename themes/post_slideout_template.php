@@ -602,8 +602,7 @@
 	
 	function openShop(){
 		if(thePost.isOpen){
-            theBank.fillerUp();
-            thePost.fork.animate({top: theBank.topDistance}, 200, function(){
+			thePost.fork.animate({top: theBank.topDistance}, 200, function(){
 				$('#bankOptions').slideDown(100);
 				thePost.fork.animate({'top' : 170}, 100, function(){
 					thePost.fork.fadeOut(200);
@@ -616,6 +615,7 @@
 					theBank.outlet.append(theBank.dragndrop);
 					$('#viewToggle').bind('click', theBank.toggleGridMode);
 					theBank.outlet.show();
+					theBank.fillerUp();
 					theBank.initScroller();
 					theBank.activateDragndrop();
 					theBank.backButton = $('#inspireBackButton');
