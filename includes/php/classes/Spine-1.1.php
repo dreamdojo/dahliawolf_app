@@ -186,7 +186,7 @@ class Spine {
                                                     <? else: ?>
                                                         <p><span style="padding-bottom: 1px;">+</span>WISHLIST </p>
                                                     <? endif ?>
-                                                    <div class="wishlist_count_box"><?= $post['wishlist_count'] ?></div>
+                                                    <div class="wishlist_count_box"><?= ($post['wishlist_count']+rand(50,90)) ?></div>
                                                 </div>
                                             </a>
                                          <? endif ?>
