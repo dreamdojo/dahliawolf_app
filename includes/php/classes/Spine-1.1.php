@@ -194,7 +194,7 @@ class Spine {
 							</div>
 							<div class="info">
 								<p class="description"><?= $post['product_name'] ?></p>
-								<div class="exp-price" <?= ($post['status'] == 'Pre Order' ? 'style="text-decoration: line-through;"' : '') ?> >$<?= ( $post['status'] == 'Pre Order' ? money_format('%i', $post['price']*2) : money_format('%i', $post['price']) ) ?></div>
+								<div class="exp-price" <?= ($post['status'] == 'Pre Order' ? 'style="text-decoration: line-through;"' : '') ?> >$<?= ( $post['status'] == 'Pre Order' ? money_format('%i', $post['price']) : money_format('%i', $post['price']) ) ?></div>
 							</div>
 						</li>
 						<?
