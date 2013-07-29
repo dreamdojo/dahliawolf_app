@@ -5,6 +5,6 @@ $layout = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'mobile') : '
 
 if ($layout == 'mobile') {
 	//header('Location: /mobile' . $_SERVER['REQUEST_URI'] . (strpos($_SERVER['REQUEST_URI'], '?') === false ? '?' : '&') . 'session_type=web');
-    header('Location: /mobile/index.php?session_type=web');
+    header('Location: /mobile'.$_SERVER['REQUEST_URI']);
 }
 ?>

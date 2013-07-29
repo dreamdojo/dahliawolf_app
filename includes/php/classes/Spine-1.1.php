@@ -91,10 +91,11 @@ class Spine {
 		$is_partial = empty($class);
 		?>
         <style>
-            .explore-prod-presale-box{position: absolute; width: 80px; height: 100px; right: 0px; bottom: 0px; background-color: #e6768e; color: #fff; line-height: 18px; text-align: center;}
-            .explore-prod-presale-box div:nth-child(1){padding-top: 21px;}
-            .explore-prod-presale-box div:nth-child(2){font-weight: bolder;}
+            .explore-prod-presale-box{position: absolute;width: 140px;height: 140px;right: -60px;top: -60px;background-color: #e6768e;color: #fff;line-height: 18px;text-align: center;border-radius: 75px;font-size: 16px;}
+            .explore-prod-presale-box div:nth-child(1){padding-top: 35px;}
+            .explore-prod-presale-box div:nth-child(2){font-weight: 800;font-size: 20px;line-height: 26px;}
             .explore-prod-presale-box div:nth-child(3){font-size: 11px;}
+            .explore-prod-presale-box div:nth-child(4){font-size: 13px;}
         </style>
         <div class="explore">
 			<?
@@ -159,9 +160,16 @@ class Spine {
                                 <? if($post['status'] === 'Pre Order'): ?>
                                     <a href="<?= CR ?>/shop/<?= $post['product_id'] ?>">
                                     <div class="explore-prod-presale-box">
-                                        <div>Pre-Sale</div>
+                                        <div>Pre-Order</div>
                                         <div>50% OFF</div>
-                                        <div>Exp. July 31st</div>
+                                        <div>Exp. <?= $post['commission_from_date'] ?></div>
+                                        <div>
+                                            <?
+                                                $days = floor(( strtotime( $post['commission_from_date'] ) - time()) / (60*60*24));
+                                                $hours = floor( ((strtotime($post['commission_from_date']) - time()) / (60*60)) - ($days*24) );
+                                                echo $days . 'DAY'.( $days != 1 ? 'S' : '' ).':'.$hours. 'HRS';
+                                            ?>
+                                        </div>
                                     </div>
                                     </a>
                                 <? endif ?>
