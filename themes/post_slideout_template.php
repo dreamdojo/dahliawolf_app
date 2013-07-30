@@ -4,8 +4,9 @@
 .bankPosted{position: absolute;top: 27%;width: 100%;font-family: futura, Arial, Helvetica, sans-serif; margin-left: 12px;}
 .bankInnerPosted{font-size: 40px;margin-bottom: -10px; }
 .bankshare{font-size: 20px;margin-top: 30px;}
-.bankExplain{position: absolute;bottom: 30px;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
-.banklink{text-decoration:underline; font-size: 16px;}
+.bankExplain{position: absolute;top: 42%;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
+.banklink{ font-size: 16px;margin-top: 10px;}
+.banklink a{color: #fff;background-color: #ff406d;padding: 4px 32px;margin-top: 0px;}
 .upload{ background-color:#cbcbcb; width:100%; height: 40px;height: 60px;margin-top: 5px;}
 .upload-percent-container{width: 94%;height: 50%;background-color: #c2c2c2;float: left;margin-left: 20px;margin-top: 10px;}
 .upload-percent-bar{height: 100%;background-color:#a63247;width: 0%;}
@@ -23,6 +24,7 @@
 .toggleViewLine{ background-image:url(/images/view_toggle2.png); background-size:100% 100%;}
 #inspireBackButton{ position: absolute;left: 20px;height: 30px;width: 70px;margin-top: -3px;background-image: url(/images/inspireBackButton.png);background-size: 100% 100%;background-repeat: no-repeat; cursor:pointer;}
 #inspireBackButton:hover{ opacity:.7;}
+.bankExplain a{color:#ff406d;}
 </style>
 
 
@@ -602,7 +604,9 @@
 	
 	function openShop(){
 		if(thePost.isOpen){
-			thePost.fork.animate({top: theBank.topDistance}, 200, function(){
+            theBank.outlet.append(theBank.dragndrop);
+            theBank.fillerUp();
+            thePost.fork.animate({top: theBank.topDistance}, 200, function(){
 				$('#bankOptions').slideDown(100);
 				thePost.fork.animate({'top' : 170}, 100, function(){
 					thePost.fork.fadeOut(200);
@@ -612,10 +616,8 @@
 					});
 					theBank.sizeBankRoll();
 					theBank.bindResize();
-					theBank.outlet.append(theBank.dragndrop);
 					$('#viewToggle').bind('click', theBank.toggleGridMode);
 					theBank.outlet.show();
-					theBank.fillerUp();
 					theBank.initScroller();
 					theBank.activateDragndrop();
 					theBank.backButton = $('#inspireBackButton');

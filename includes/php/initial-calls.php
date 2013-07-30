@@ -15,7 +15,7 @@ $_data['spine_version'] = '-1.1';
 $_data['cart'] = get_cart();
 
 if (IS_LOGGED_IN) {
-	http://api.dahliawolf.com/api.php?api=activity_log&user_id=658&function=get_num_grouped_unread
+	//http://api.dahliawolf.com/api.php?api=activity_log&user_id=658&function=get_num_grouped_unread
 	$params = array(
 		'user_id' => $_SESSION['user']['user_id'],
 	);
