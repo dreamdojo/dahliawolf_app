@@ -265,14 +265,22 @@ margin-left: 2px;" /></a></div> -->
             <div class="inspira">StunnaLOOK, Los Angeles</div>
         </div>
     </div>
-<div class="slide">
-    <img class="zeImg" src="/images/slider/artinourblood.jpeg" />
-    <div class="item-box white">
-        <div class="item-title">ART IN OUR BLOOD DRESS</div>
-        <div class="inspired-by">Inspired by member</div>
-        <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
+    <div class="slide">
+        <img class="zeImg" src="/images/slider/artinourblood.jpeg" />
+        <div class="item-box white">
+            <div class="item-title">ART IN OUR BLOOD DRESS</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
+        </div>
+        </div>
+    <div class="slide">
+        <img class="zeImg" src="/images/slider/rubilove.jpg" />
+        <div class="item-box white">
+            <div class="item-title">RubiLove Kimono</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City</div>
+        </div>
     </div>
-</div>
     <div class="slide" style="display:none">
     	<img class="zeImg" src="/images/slider/blazer.jpeg" />
         <div class="item-box white">
@@ -307,8 +315,8 @@ margin-left: 2px;" /></a></div> -->
 </html>
 <script>
 setTimeout(function(){
-    homeWrecker.init(4800/* <- fade speed*/, 6000/* <- time between slides*/);
-}, 2000) ;
+    homeWrecker.init(2800/* <- fade speed*/, 4000/* <- time between slides*/);
+}, 1000) ;
 
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);
