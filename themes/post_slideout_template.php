@@ -1,10 +1,10 @@
 
 <style>
 .bank-frame{position:relative;}
-.bankPosted{position: absolute;top: 27%;width: 100%;font-family: futura, Arial, Helvetica, sans-serif; margin-left: 12px;}
+.bankPosted{position: relative;top: 27%;width: 100%;font-family: futura, Arial, Helvetica, sans-serif; margin-left: 12px;}
 .bankInnerPosted{font-size: 40px;margin-bottom: -10px; }
 .bankshare{font-size: 20px;margin-top: 30px;}
-.bankExplain{position: absolute;top: 42%;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
+.bankExplain{position: relative;top: 42%;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
 .banklink{ font-size: 16px;margin-top: 10px;}
 .banklink a{color: #fff;background-color: #ff406d;padding: 4px 32px;margin-top: 0px;}
 .upload{ background-color:#cbcbcb; width:100%; height: 40px;height: 60px;margin-top: 5px;}
@@ -25,6 +25,7 @@
 #inspireBackButton{ position: absolute;left: 20px;height: 30px;width: 70px;margin-top: -3px;background-image: url(/images/inspireBackButton.png);background-size: 100% 100%;background-repeat: no-repeat; cursor:pointer;}
 #inspireBackButton:hover{ opacity:.7;}
 .bankExplain a{color:#ff406d;}
+.postPostingWrap{position: absolute;width: 100%;text-align: center;top: 25%;}
 </style>
 
 
@@ -358,10 +359,10 @@
             $.post('/action/uploadPost.php', {image_src : imageUrl, description: 'pinterest', domain:img_domain, sourceurl : img_attribution_url}).done(function(data){
 				data = $.parseJSON(data);
 				data = data.data;
-				str = '<div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
+				str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
 				str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">';
 				str += 'profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')"><img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#">';
-				str += '<img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div>';
+				str += '<img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
 				img.after(str);
 				img.siblings('img').css('opacity', .6);
 				img.remove();
@@ -472,8 +473,8 @@
 	}
 	
 	function _finishPost(old_id, new_id){
-		str = '<div class = "bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+new_id+'">VIEW POST</a></p></div>';
-		str += '<div class = "bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+new_id+')"><img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#" ><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div>';	
+		str = '<div class="postPostingWrap"><div class = "bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+new_id+'">VIEW POST</a></p></div>';
+		str += '<div class = "bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+new_id+')"><img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#" ><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
 		$('#tag-'+old_id).remove();
 		$('#post-image-'+old_id).css('opacity', .3);
 		$('#frame-'+old_id).append(str);
