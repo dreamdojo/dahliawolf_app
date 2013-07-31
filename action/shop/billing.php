@@ -17,6 +17,9 @@ if (is_numeric($_POST['billing_address_id'])) {
 	$billing_address_id = $_POST['billing_address_id'];
 }
 else {
+	//$billing_state = !empty($_POST['billing_state']) ? $_POST['billing_state'] : $_POST['billing_province'];
+	$billing_state = $_POST['billing_state'];
+
 	$calls = array(
 		'create_billing_address' => array(
 			'user_id' => $_SESSION['user']['user_id']
@@ -27,15 +30,15 @@ else {
 			, 'street_2' => $_POST['billing_address_2']
 			, 'city' => $_POST['billing_city']
 			, 'zip' => $_POST['billing_zip']
-			, 'state' => $_POST['billing_state']
-			, 'country' => 'US'//$_POST['billing_country']
+			, 'state' => $billing_state
+			, 'country' => $_POST['billing_country']
 		)
 	);
 	$data = api_request('address', $calls, true);
 	if (!empty($data['errors']) || !empty($data['data']['create_billing_address']['errors'])) {
 		$_SESSION['errors'] = api_errors_to_array($data, 'create_billing_address');
 	}
-	
+
 	$billing_address_id = $data['data']['create_billing_address']['data']['address_id'];
 }
 
@@ -46,6 +49,9 @@ if (is_numeric($_POST['shipping_address_id'])) {
 	$shipping_address_id = $_POST['shipping_address_id'];
 }
 else {
+	//$shipping_state = !empty($_POST['shipping_state']) ? $_POST['shipping_state'] : $_POST['shipping_province'];
+	$shipping_state = $_POST['shipping_state'];
+
 	$calls = array(
 		'create_shipping_address' => array(
 			'user_id' => $_SESSION['user']['user_id']
@@ -56,15 +62,15 @@ else {
 			, 'street_2' => $_POST['shipping_address_2']
 			, 'city' => $_POST['shipping_city']
 			, 'zip' => $_POST['shipping_zip']
-			, 'state' => $_POST['shipping_state']
-			, 'country' => 'US'
+			, 'state' => $shipping_state
+			, 'country' => $_POST['shipping_country']
 		)
 	);
 	$data = api_request('address', $calls, true);
 	if (!empty($data['errors']) || !empty($data['data']['create_shipping_address']['errors'])) {
 		$_SESSION['errors'] = api_errors_to_array($data, 'create_shipping_address');
 	}
-	
+
 	$shipping_address_id = $data['data']['create_shipping_address']['data']['address_id'];
 }
 

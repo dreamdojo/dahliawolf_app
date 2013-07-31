@@ -71,6 +71,7 @@ if (!empty($data['errors']) || !empty($data['data']['place_order']['errors'])) {
 //place order
 //pay out commissions to affiliate
 // Clear cookie and cart session data
+
 setcookie(SITENAME_PREFIX . "[cart]", '', time() + 1209600, '/');
 unset($_SESSION['id_cart'], $_SESSION['checkout_billing_address_id'], $_SESSION['checkout_shipping_address_id'], $_SESSION['checkout_id_delivery'], $_SESSION['checkout_payment_method_id']);
 

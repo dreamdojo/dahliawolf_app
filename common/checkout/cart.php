@@ -32,14 +32,14 @@ $is_review = !empty($is_review) ? true : false;
 			if (!empty($_data['cart']) && !empty($_data['cart']['products'])) {
 				$width = 74;
 				$height = 111;
-				
+
 				$sales_tax = 0;
 				$affiliate_discount = 0;
 				$coupon_discount = 0;
 				$total_weight = 0;
 				$sub_total = 0;
 				$grand_total = 0;
-				foreach ($_data['cart']['products'] as $i => $cart_value) { 
+				foreach ($_data['cart']['products'] as $i => $cart_value) {
   					$id_product 			= $cart_value['id_product'];
 					$id_product_attribute 	= $cart_value['id_product_attribute'];
 					$product_name			= $cart_value['product_info']['product_name'];
@@ -51,11 +51,11 @@ $is_review = !empty($is_review) ? true : false;
 					$sales_tax				= $sales_tax + $product_tax;
 					$affiliate_discount		= $affiliate_discount;
 					$coupon_discount		= $coupon_discount;
-					
+
 					$total_weight			= $total_weight + $cart_value['product_info']['weight'];
   					$sub_total				= $sub_total + $total_price;
   					$grand_total			= $grand_total + $total_price + $product_tax;
-					
+
 					$image_url = cdn_product_image($cart_value['product_info']['product_file_id'], $width, $height);
   					?>
   					<tr>
@@ -84,7 +84,7 @@ $is_review = !empty($is_review) ? true : false;
           				?>
 					</td>
 					<td class="price monetary">
-						$<?= number_format($price, 2, '.', ',') ?> 
+						$<?= number_format($price, 2, '.', ',') ?>
 					</td>
 					<td class="quantity">
 						<?
@@ -115,10 +115,10 @@ $is_review = !empty($is_review) ? true : false;
 					}
 					?>
 				</tr>
-  					<? 
+  					<?
 				}
 			}
-			
+
 			?>
 		</tbody>
 	</table>
@@ -133,7 +133,7 @@ $is_review = !empty($is_review) ? true : false;
 </div>
 <div class="checkout-footer">
 	<div class="discounts">
-		
+
 		<?
 		if (!$is_review) {
 			?>
@@ -258,7 +258,7 @@ $is_review = !empty($is_review) ? true : false;
                     </p>
                     <?
                 }
-               
+
                 if (!empty($_data['shipping_address'])) {
                     ?>
                     <h3>Shipping Address</h3>
@@ -273,7 +273,7 @@ $is_review = !empty($is_review) ? true : false;
                     </p>
                     <?
                 }
-               
+
 				if (!empty($_data['cart']['cart']['carrier'])) {
                     ?>
                     <h3>Shipping Method</h3>
@@ -289,10 +289,10 @@ $is_review = !empty($is_review) ? true : false;
 		}
 		?>
 	</div>
-   
-    
+
+
 	<div class="totals">
-    
+
      <?
 	if ($is_review) {
 		$cc_payment = false;
@@ -385,7 +385,7 @@ $is_review = !empty($is_review) ? true : false;
         <?
 	}
 	?>
-    
+
 		<table class="totals" style="<?= $paypal_payment && empty($_data['cart']['cart']['paypal_token']) ? 'display: none;' : '' ?>">
 			<tfoot>
 				<tr>
@@ -400,36 +400,39 @@ $is_review = !empty($is_review) ? true : false;
 				</tr>
 				<tr class="points spend">
 					<th scope="row">You Will Earn:</th>
-					<td>490 Points</td>
+					<td> Points</td>
+					<?
+					//$_data['buy_points_amount'] *
+					?>
 				</tr>
 				<tr class="subtotal">
 					<th scope="row">Subtotal</th>
 					<td>$<?= !empty($_data['cart']) ? number_format($_data['cart']['cart']['totals']['products'], 2, '.', ',') : '0.00' ?></td>
 				</tr>
 				<?
-				
+
 				if (!empty($_data['cart']['discounts'])) {
 					foreach($_data['cart']['discounts'] as $discount) {
 						?>
 						<tr class="discounts">
-							<th scope="row">Discount (<?= $discount['name'] ?> - <?= ($discount['is_amount_discount'] == '1') ? '$' . number_format($discount['reduction_amount'], 2, '.', ',') : number_format($discount['reduction_percent'], 0, '.', ',') . '%' ?> off) 
-                            
-                            <?
-							if (!$is_review) {
+							<th scope="row">
+
+	                            <?
+								if (!$is_review) {
+									?>
+	                            	<a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
+	                                <?
+								}
 								?>
-                            	<a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
-                                <?
-							}
-							?>
-                            
-                            
+								Discount (<?= $discount['name'] ?> - <?= ($discount['is_amount_discount'] == '1') ? '$' . number_format($discount['reduction_amount'], 2, '.', ',') : number_format($discount['reduction_percent'], 0, '.', ',') . '%' ?> off)
+
                             </th>
 							<td>- $<?= number_format($discount['discount_amount'], 2, '.', ',') ?></td>
 						</tr>
 						<?
 					}
 				}
-				
+
 				//if ($is_review) {
 					if (!empty($_data['cart']['cart']['carrier'])) {
   						?>
@@ -439,9 +442,9 @@ $is_review = !empty($is_review) ? true : false;
         				</tr>
         				<?
 					}
-					
+
 				//}
-				
+
 				?>
 				<tr class="tax">
 					<th scope="row">Tax</th>
@@ -459,7 +462,7 @@ $is_review = !empty($is_review) ? true : false;
 				?>
 			</tbody>
 		</table>
-		
+
 		<?
 		if (!$is_review) {
 			?>

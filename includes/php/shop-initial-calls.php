@@ -8,28 +8,30 @@ $_data = array();
 
 // Get Cart
 $_data['cart'] = get_cart();
-
+if (isset($_GET['t'])) {
+	echo'<pre>';print_r($_data['cart']);die();
+}
 
 // Get Categories
 $calls = array(
 	'get_shop_categories' => array(
 		'id_shop' 		=> SHOP_ID
 		, 'id_lang' 	=> LANG_ID
-		
-	)	
+
+	)
 );
 $data = commerce_api_request('category', $calls, true);
 $_data['categories'] = $data['data']['get_shop_categories']['data'];
 
 if ($self == '/shop/index.php') {
-	
+
 	if (!empty($_GET['id_category'])) {
 		$calls = array(
 			'get_category' => array(
 				'id_shop' 		=> SHOP_ID
 				, 'id_lang' 	=> LANG_ID
 				, 'id_category'	=> $_GET['id_category']
-			)	
+			)
 			, 'get_products_in_category' => array(
 				'id_shop' 		=> SHOP_ID
 				, 'id_lang' 	=> LANG_ID
@@ -38,7 +40,7 @@ if ($self == '/shop/index.php') {
 			)
 		);
 		$data = commerce_api_request('category', $calls, true);
-		
+
 		if (!empty($data['errors']) || !empty($data['data']['get_category']['errors'])) {
 			$_SESSION['errors'] = api_errors_to_array($data, 'get_category');
 		}
@@ -58,9 +60,9 @@ if ($self == '/shop/index.php') {
 				, 'user_id' => !empty($_GET['user_id']) ? $_GET['user_id'] : NULL
 			)
 		);
-		
+
 		$data = commerce_api_request('product', $calls, true);
-		
+
 		if (!empty($data['errors']) || !empty($data['data']['get_products']['errors'])) {
 			$_SESSION['errors'] = api_errors_to_array($data, 'get_products');
 		}
@@ -79,14 +81,14 @@ else if ($self == '/shop/my-wishlist.php') {
 			)
 		);
 		$wl_data = commerce_api_request('wishlist', $wl_calls, true);
-		
+
 	}
 }
 else if ($self == '/shop/product.php') {
 	if (empty($_GET['id_product'])) {
 		redirect('/shop');
 	}
-	
+
 	if(!empty($_SESSION['user'])) {
 		$wl_calls = array(
 			'does_product_exist_in_wishlist' => array(
@@ -99,7 +101,7 @@ else if ($self == '/shop/product.php') {
 		$wl_data = commerce_api_request('wishlist', $wl_calls, true);
 		$_data['show_add_to_wishlist'] = empty($wl_data['data']['does_product_exist_in_wishlist']['data']) ? true : false;
 	} else $_data['show_add_to_wishlist'] =  false;
-	
+
 	$calls = array(
 		'get_product_details' => array(
 			'id_product' => $_GET['id_product']
@@ -108,16 +110,17 @@ else if ($self == '/shop/product.php') {
 			, 'user_id' => !empty($_GET['user_id']) ? $_GET['user_id'] : NULL
 		)
 	);
-	
+
 	$data = commerce_api_request('product', $calls, true);
-	
+	//echo'<pre>';print_r($data);die();
+
 	// Failed
 	if (!empty($data['errors']) || !empty($data['data']['get_product_details']['errors'])) {
 		$_SESSION['errors'] = api_errors_to_array($data, 'get_product_details');
 	}
 	else {
 		$_data['product'] = $data['data']['get_product_details']['data'];
-		
+
 		if (empty($_data['product']) || empty($_data['product']['product'])) {
 			$_SESSION['errors'] = array('Product not found');
 		}
@@ -128,7 +131,7 @@ else if ($self == '/shop/checkout.php') {
 	if (empty($_SESSION['checkout_id_delivery']) && !empty($_data['cart']['cart']['carrier'])) {
 		$_SESSION['checkout_id_delivery'] = $_data['cart']['cart']['carrier']['id_delivery'];
 	}
-	
+
 	if (!empty($_GET['step']) && ($_GET['step'] == 'billing' || $_GET['step'] == 'shipping' || $_GET['step'] == 'payment' || $_GET['step'] == 'confirmation')) {
 		if (empty($_SESSION['user'])) {
 			$_SESSION['errors'] = array('Your session has expired. Please login to continue.');
@@ -141,7 +144,7 @@ else if ($self == '/shop/checkout.php') {
 			die();
 		}
 	}
-	
+
 	if (!empty($_GET['step']) && $_GET['step'] == 'billing') {
 		$calls = array(
 			'get_user_billing_addresses' => array(
@@ -154,7 +157,7 @@ else if ($self == '/shop/checkout.php') {
 			, 'get_states' => NULL
 		);
 		$data = api_request('address', $calls, true);
-		
+
 		if (!empty($data['errors']) || !empty($data['data']['get_user_billing_addresses']['errors'])) {
 			$_SESSION['errors'] = api_errors_to_array($data, 'get_user_billing_addresses');
 		}
@@ -169,9 +172,20 @@ else if ($self == '/shop/checkout.php') {
 			$_data['shipping_addresses'] = $data['data']['get_user_shipping_addresses']['data'];
 		}
 
+		// Countries & default states
+		$calls = array(
+			'get_countries' => array(
+				'id_lang' => ID_LANG
+			)
+			, 'get_states' => array(
+				'id_country' => ID_COUNTRY
+			)
+		);
+		$data = commerce_api_request('address', $calls, true);
+
 		$_data['states'] = $data['data']['get_states']['data'];
 		$_data['countries'] = $data['data']['get_countries']['data'];
-		
+
 	}
 	else if (!empty($_GET['step']) && $_GET['step'] == 'confirmation') {
 		if (empty($_SESSION['checkout_billing_address_id'])) {
@@ -189,7 +203,7 @@ else if ($self == '/shop/checkout.php') {
 			redirect('/shop/checkout.php?step=shipping');
 			die();
 		}
-		
+
 		// Get user shipping address and states/countries
 		$calls = array(
 			'get_user_address' => array(
@@ -200,10 +214,10 @@ else if ($self == '/shop/checkout.php') {
 			, 'get_states' => NULL
 		);
 		$data = api_request('address', $calls, true);
-		
+
 		$_data['states'] = $data['data']['get_states']['data'];
 		$_data['countries'] = $data['data']['get_countries']['data'];
-		
+
 		// Failed
 		if (!empty($data['errors']) || !empty($data['data']['get_user_address']['errors'])) {
 			$_SESSION['errors'] = api_errors_to_array($data, 'get_user_address');
@@ -211,7 +225,7 @@ else if ($self == '/shop/checkout.php') {
 		else {
 			$_data['shipping_address'] = $data['data']['get_user_address']['data'];
 		}
-		
+
 		// Get user billing address
 		$calls = array(
 			'get_user_address' => array(
@@ -220,7 +234,7 @@ else if ($self == '/shop/checkout.php') {
 			)
 		);
 		$data = api_request('address', $calls, true);
-		
+
 		// Failed
 		if (!empty($data['errors']) || !empty($data['data']['get_user_address']['errors'])) {
 			$_SESSION['errors'] = api_errors_to_array($data, 'get_user_address');
@@ -228,7 +242,7 @@ else if ($self == '/shop/checkout.php') {
 		else {
 			$_data['billing_address'] = $data['data']['get_user_address']['data'];
 		}
-		
+
 		// Get payment methods
 		$calls = array(
 			'get_payment_methods' => NULL
@@ -236,22 +250,22 @@ else if ($self == '/shop/checkout.php') {
 			, 'get_years' => NULL
 		);
 		$data = api_request('payment', $calls, true);
-		
+
 		if (!empty($data['errors']) || !empty($data['data']['get_payment_methods']['errors'])) {
 			$_SESSION['errors'] = api_errors_to_array($data, 'get_payment_methods');
 		}
 		else {
 			$_data['payment_methods'] = $data['data']['get_payment_methods']['data'];
 			// Set default payment method id
-			if (empty($_SESSION['checkout_payment_method_id']) && !empty($_data['payment_methods'])) { 
+			if (empty($_SESSION['checkout_payment_method_id']) && !empty($_data['payment_methods'])) {
 				$_SESSION['checkout_payment_method_id'] = $_data['payment_methods'][0]['payment_method_id'];
 			}
 		}
-		
+
 		$_data['months'] = $data['data']['get_months']['data'];
-		
+
 		$_data['years'] = $data['data']['get_years']['data'];
-		
+
 	}
 }
 else if ($self == '/shop/my-orders.php') {
@@ -260,7 +274,7 @@ else if ($self == '/shop/my-orders.php') {
 		redirect('/login.php');
 		die();
 	}
-		
+
 	$calls = array(
 		'get_user_orders' => array(
 			'user_id'		=> $_SESSION['user']['user_id']
@@ -301,7 +315,7 @@ else if ($self == '/shop/order-details.php') {
 		else {
 			$_data['order'] = $data['data']['get_user_order_details']['data'];
 		}
-		
+
 	}
 }
 
