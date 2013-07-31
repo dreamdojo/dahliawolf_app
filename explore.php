@@ -42,6 +42,7 @@ product.resizer = function() {
 //FUNCTIONS
 function hideProduct(){
 	product.popup.slideUp(200, function(){
+        window.history.replaceState( {} , 'Post Detail', '/explore' );
 		product.overlay.fadeOut(200);
         $(window).off('resize', product.resizer);
 		$('body').css('overflow', 'visible');

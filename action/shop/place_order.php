@@ -34,7 +34,7 @@ else if (empty($_SESSION['checkout_payment_method_id'])) {
  	redirect('/shop/checkout.php?step=confirmation');
 	exit();
 }
-$_SESSION['checkout_payment_method_id'] = $_POST['payment_method_id'];
+
 $payment_info = array(
 	'amount' => $_POST['amount']
 	, 'payment_method_id' => $_POST['payment_method_id'] // $_SESSION['checkout_payment_method_id']
@@ -61,10 +61,15 @@ $calls = array(
 
 $data = commerce_api_request('orders', $calls, true);
 
+
 if (!empty($data['errors']) || !empty($data['data']['place_order']['errors'])) {
-	$_SESSION['errors'] = api_errors_to_array($data, 'place_order');
-	redirect($_SERVER['HTTP_REFERER']);
-	die();
+    $_SESSION['errors'] = api_errors_to_array($data, 'place_order');
+    if( !isset($_POST['ajax']) ) {
+        redirect($_SERVER['HTTP_REFERER']);
+    } else {
+        echo json_encode($data);
+    }
+    die();
 }
 
 //charge payment_type_id
@@ -75,6 +80,10 @@ if (!empty($data['errors']) || !empty($data['data']['place_order']['errors'])) {
 setcookie(SITENAME_PREFIX . "[cart]", '', time() + 1209600, '/');
 unset($_SESSION['id_cart'], $_SESSION['checkout_billing_address_id'], $_SESSION['checkout_shipping_address_id'], $_SESSION['checkout_id_delivery'], $_SESSION['checkout_payment_method_id']);
 
-redirect('/shop/my-orders.php');
-die();
+if( !isset($_POST['ajax']) ) {
+    redirect('/shop/my-orders.php');
+    die();
+} else {
+    echo json_encode($data);
+}
 ?>
