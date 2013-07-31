@@ -8,9 +8,6 @@ $_data = array();
 
 // Get Cart
 $_data['cart'] = get_cart();
-if (isset($_GET['t'])) {
-	echo'<pre>';print_r($_data['cart']);die();
-}
 
 // Get Categories
 $calls = array(
@@ -112,7 +109,6 @@ else if ($self == '/shop/product.php') {
 	);
 
 	$data = commerce_api_request('product', $calls, true);
-	//echo'<pre>';print_r($data);die();
 
 	// Failed
 	if (!empty($data['errors']) || !empty($data['data']['get_product_details']['errors'])) {

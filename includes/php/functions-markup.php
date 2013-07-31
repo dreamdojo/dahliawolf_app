@@ -245,13 +245,17 @@ function output_order_details($order) {
 						</tr>
 					</tfoot>
 					<tbody>
+						<?
+						/*
 						<tr class="points spend">
 							<th scope="row">Points Spent:</th>
-							<td></td>
+							<td> Points</td>
 						</tr>
+						*/
+						?>
 						<tr class="points spend">
 							<th scope="row">Points Earned:</th>
-							<td></td>
+							<td><?= $order['points']['earned']['points'] ?> Points</td>
 						</tr>
 						<tr class="subtotal">
 							<th scope="row">Subtotal</th>

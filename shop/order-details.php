@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 	include $_SERVER['DOCUMENT_ROOT'] . "/common/cart-summary.php";
 	?>
 
-	<h2>Order #<?= !empty($_data['order']) ? $_data['order']['id_order'] : '' ?></h2>
+	<h2>Order #<?= !empty($_data['order']) ? $_data['order']['id_order'] : '' ?> <span style="font-weight: normal;">(<?= $_data['order']['payment_status'] ?>)</span></h2>
 	<?
 	output_order_details($_data['order']);
 	?>

@@ -135,6 +135,38 @@ $is_review = !empty($is_review) ? true : false;
 	<div class="discounts">
 
 		<?
+		/*if (!$is_review) {
+			if (!empty($_data['cart']['points']['levels'])) {
+				?>
+				<form action="<?= CR ?>/action/shop/set_user_cart_rule.php" method="post">
+					<h3>Spend Your Points</h3>
+					<input type="hidden" name="id_cart" value="<?= $_data['cart']['cart']['id_cart'] ?>" />
+					<ul class="levels">
+						<?
+						foreach ($_data['cart']['points']['levels'] as $level) {
+							$id = 'discount-' . $level['commerce_id_cart_rule'];
+							$checked = $level['commerce_id_cart_rule'] == $_data['cart']['cart']['user_id_cart_rule'];
+							?>
+							<li>
+								<input type="checkbox" id="<?= $id ?>" name="id_cart_rule" value="<?= $level['commerce_id_cart_rule'] ?>"<?= $checked ? ' checked="checked"' : '' ?> />
+								<label for="<?= $id ?>"><?= number_format($level['points'], 0) ?>pts for <?= number_format($level['reduction_percent'], 0) ?>% off entire order</label>
+							</li>
+							<?
+						}
+						?>
+					</ul>
+				</form>
+				<script type="text/javascript">
+					$('ul.levels').on('click', 'input[type="checkbox"]', function(event) {
+						$(event.delegateTarget).find('input[type="checkbox"]').not(this).attr('checked', false);
+
+						$(this).closest('form').submit();
+					});
+				</script>
+				<?
+			}
+		}*/
+
 		if (!$is_review) {
 			?>
 			<? /*
@@ -394,13 +426,17 @@ $is_review = !empty($is_review) ? true : false;
 				</tr>
 			</tfoot>
 			<tbody>
+				<?
+				/*
 				<tr class="points spend">
 					<th scope="row">You Will Spend:</th>
-					<td>No Points</td>
+					<td><?= !empty($_data['cart']['cart']['points']) ? number_format($_data['cart']['cart']['points'], 0) : 'No' ?> Points</td>
 				</tr>
+				*/
+				?>
 				<tr class="points spend">
 					<th scope="row">You Will Earn:</th>
-					<td> Points</td>
+					<td><?= number_format($_data['cart']['points']['will_earn'], 0) ?> Points</td>
 					<?
 					//$_data['buy_points_amount'] *
 					?>
