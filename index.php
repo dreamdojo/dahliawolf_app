@@ -226,8 +226,8 @@ color: #a53247;
                 <div class='rememba'>
                     <input class="checkbox" id="l_remember_me" name="l_remember_me" type="checkbox" value="1">
                     <span>Remember me</span>
+                    <input type="image" style="margin-left: 20px;" src="http://www.dahliawolf.com/images/reg.png" id="sysForm_submit">
                  </div>
-                 <input type="image" src="http://www.dahliawolf.com/images/reg.png" id="sysForm_submit">
                  <input type="hidden" name="r" value="">
                  <input type="hidden" name="sublog" value="1">
                  <input type="hidden" name="jsub" value="1" />
