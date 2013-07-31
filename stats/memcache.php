@@ -23,7 +23,8 @@ function getMemcacheKeys() {
             foreach($cdump AS $keys => $arrVal) {
                 if (!is_array($arrVal)) continue;
                 foreach($arrVal AS $k => $v) {
-                    echo $k .'<br>';
+                    $val = $memcache->get($k);
+                    echo "$k => \n" . var_export($val, true) .'<br>';
                 }
             }
         }
