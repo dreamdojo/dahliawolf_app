@@ -319,15 +319,15 @@ function user_events() {
 		else {
 			$('#credit_card_fields').hide();
 		}
-		
+
 		if ($(this).data('show_set_paypal') == '1') { // PayPal
 			$('#set_paypal').show();
-			
+
 			if ($('#set_paypal').length > 0) {
 				$('table.totals').hide();
 				$('p.checkout').hide();
 			}
-			
+
 		}
 		else {
 			$('#set_paypal').hide();
@@ -350,7 +350,8 @@ function user_events() {
 			$('input[name="shipping_address_2"]').val(saved_billing_select.data('address_2'));
 			$('input[name="shipping_city"]').val(saved_billing_select.data('city'));
 			$('select[name="shipping_state"]').val(saved_billing_select.data('state'));
-			//$('input[name="shipping_address_2"]').val(saved_billing_select.data('country'));
+			//$('input[name="shipping_province"]').val(saved_billing_select.data('state'));
+			$('select[name="shipping_country"]').val(saved_billing_select.data('country')).trigger('change');
 			$('input[name="shipping_zip"]').val(saved_billing_select.data('zip'));
 		}
 		else {
@@ -360,8 +361,18 @@ function user_events() {
 			$('input[name="shipping_address_2"]').val($('input[name="billing_address_2"]').val());
 			$('input[name="shipping_city"]').val($('input[name="billing_city"]').val());
 			$('select[name="shipping_state"]').val($('select[name="billing_state"]').val());
-			//$('input[name="shipping_address_2"]').val($('input[name="billing_country"]').val());
+			//$('input[name="shipping_province"]').val($('input[name="billing_province"]').val());
+			$('select[name="shipping_country"]').val($('select[name="billing_country"]').val()).trigger('change');
 			$('input[name="shipping_zip"]').val($('input[name="billing_zip"]').val());
+
+			/*if ($('select[name="billing_state"]').is(':visible')) {
+				$('input[name="shipping_province"]').hide();
+				$('select[name="shipping_state"]').show();
+			}
+			else {
+				$('select[name="shipping_state"]').hide();
+				$('input[name="shipping_province"]').show();
+			}*/
 		}
 
 	});
@@ -386,6 +397,31 @@ function user_events() {
 			$('#shipping-address-fields').hide();
 		}
 
+	});
+
+	// Billing/Shipping dynamic country states/provinces
+	$('form.billing select.country').on('change', function() {
+		var $this = $(this);
+		var $fieldset = $this.closest('fieldset');
+		var $state_select = $fieldset.find('select.state');
+		var $province_input = $fieldset.find('input.province');
+
+		var iso_code = $this.val();
+		var states = $.getJSON('/json/get_states_by_country_iso_code.php', {iso_code: iso_code}, function(data) {
+			html = '<option value="">State/Province&hellip;</option>';
+			if (data.length) {
+				$.each(data, function(i, state) {
+					html += '<option value="' + state.iso_code + '">' + state.name + '</option>';
+				});
+				//$province_input.hide();
+				//$state_select.show();
+			}
+			else {
+				//$state_select.hide();
+				//$province_input.show();
+			}
+			$state_select.html(html);
+		});
 	});
 
 }

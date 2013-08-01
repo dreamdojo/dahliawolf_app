@@ -243,8 +243,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #bank-roll{width:1000px; background-color:#ebebeb; left:50%; margin-left:-500px; top:171px; display:none; position:fixed; height:100%;z-index: 100; text-align:center; overflow:scroll;}
 .b-roll-img{margin-top: 25px; margin-left: 20px;}
 #bank-overlay{ position:fixed; top:0px; left:0px; width:100%; height:100%; overflow:hidden; z-index:99; background-color: #fff; opacity: 1; display:none; }
-.tag{margin-left: -149px; margin-bottom: 10%; cursor:pointer;}
-.tag:hover{opacity:.8;}
+.tag{margin-left: -110px; margin-bottom: 10%; cursor:pointer;top: 35px;position: absolute; opacity: .8; height: 100px;}
+.tag:hover{opacity:1;}
 #post-me{position:fixed; z-index:10000; width:800px; left:50%; margin-left:-400px; background-color:#000; display:none; z-index:1000000000;}
 .uploader-frame{width:60%; max-height:600px; overflow:hidden; margin: 0px auto; margin-top: 50px;}
 #user-uploaded-img{width:100%;}
@@ -2149,7 +2149,7 @@ div.sysPopupAlert {font-size: 16px; text-align: center; padding: 20px; padding-t
 .sysFormFieldError_descr .error-field {margin: 0px 0px 10px 0px;}
 .sysCheckedImgs .sysUploadPinCreateLoading {position: absolute; left:0px;bottom: 2px;}
 
-.auth_text {width: 650px;margin:0 auto 30px;text-align: center; font-size: 18px;color:#8C7E7E; padding-top:50px;}
+.auth_text {text-align: center; font-size: 18px; position: relative; padding-top:17px;-webkit-margin-after: 0px;}
 
 .official,.ProfileSidebar .official {
 	background: transparent url(/img/VRF_24x24.png) 0% 3px no-repeat;

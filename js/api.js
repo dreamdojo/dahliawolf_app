@@ -136,6 +136,22 @@ dahliawolfApi.prototype.unlovePost = function(id, callback) {//****** User Unlik
     }
 }// UNLOVES A POST
 
+dahliawolfApi.prototype.add_post_dislike = function(id, callback) {
+    if(theUser.id) {
+        if(id) {
+            var params = '&user_id='+theUser.id;
+            params += '&posting_id='+id;
+
+            this.callApi('posting', 'add_post_dislike', params, callback);
+
+        } else {
+            alert('NO ID');
+        }
+    } else {
+        new_loginscreen();
+    }
+}
+
 dahliawolfApi.prototype.getUserDetails = function(id, callback) {//********** Get a users details
     if(id) {
         if(id) {

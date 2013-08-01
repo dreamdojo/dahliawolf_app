@@ -71,6 +71,8 @@ table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 .zoom-in{cursor: -webkit-zoom-in;cursor: -moz-zoom-in;cursor: zoom-in;}
 .zoom-out{cursor: -webkit-zoom-out;cursor: -moz-zoom-out;cursor: zoom-out;}
+a{color: #fff;}
+a:hover{color: red;}
 
 #slideshow-frame{width: 100%;height: 100%;position: absolute;left: 0px;top: 0px;overflow: hidden;}
 .slide{ height:100%; width:100%; position:absolute; left:0px; top:0px; }
@@ -78,23 +80,8 @@ pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 .theBox{width: 500px;height: 485px;border-radius: 3px;position: absolute;top: 41px;left: 60px;z-index: 1;font-size: 13px;color: #C5C9CC;box-shadow: 0 0 3px #1A1A1A; min-height: 300px; min-width:250px;  max-width:450px; overflow: hidden; font:Arial, Helvetica, sans-serif;}
 .theBox .header{position: relative;margin-left: 15%;z-index: 1;margin-top: 6%;}
 .box-section{width: 100%;height: 71%; position:absolute;}
-.pitch{color: #fff;
-width: 95%;
-margin-left: 2.5%;
-font-size: 1.9em;
-text-align: center;
-margin-top: 9%;
-font-family: Geneva, sans-serif;}
-.find-out-more{color: rgb(151, 151, 151);
-border: rgb(126, 126, 126) 1px solid;
-margin: 0 auto;
-width: 52%;
-font-size: .9em;
-padding: .5em 1.1em;
-text-align: center;
-margin-top: 4%;
-cursor: pointer;
-margin-bottom: 3%;
+.pitch{color: #fff;width: 95%;margin-left: 2.5%;font-size: 1.9em;text-align: center;margin-top: 9%;font-family: Geneva, sans-serif;}
+.find-out-more{color: rgb(151, 151, 151);border: rgb(126, 126, 126) 1px solid;margin: 0 auto;width: 52%;font-size: .9em;padding: .5em 1.1em;text-align: center;margin-top: 4%;cursor: pointer;margin-bottom: 3%;
 font-family: futura, Arial, Helvetica, sans-serif;}
 .enter-butt{width: 60%;margin-left: 25%;margin-top: 15%;}
 .already-user{text-align: center;margin-top:2%;font-size: .9em; font-family:Arial, Helvetica, sans-serif;}
@@ -114,8 +101,8 @@ height: 25px;
 border-radius: 0px;
 text-indent: 5px;
 font-size: .8em;}
-.rememba{text-align: left;margin-left: 24%;font-size: 1.1em;}
-#sysForm_submit{float: right;margin-right: 24%;margin-top: -24px;}
+.rememba{text-align: left;margin-left: 24%;font-size: 1.1em; width: 232px;}
+#sysForm_submit{margin-left: 63px;margin-top: 5px;position: absolute;}
 #register{display:none;}
 #login{ display:none;}
 .item-box{position: absolute;right: 0px;height: 100px;width: 400px;bottom: 10px;font-size: 1em;text-align: right;margin-right: 40px;margin-bottom: 30px;font-family: futura, sans-serif;font-weight: normal;}
@@ -192,6 +179,7 @@ cursor:pointer;
 .signuplater2  a:hover{
 color: #a53247;
 }
+.forgotsy{font-size: 10px;float: right;line-height: 19px;}
 
 </style>
 
@@ -217,7 +205,8 @@ color: #a53247;
                 </ul>
                 <div class='rememba'>
                     <input class="checkbox" id="l_remember_me" name="l_remember_me" type="checkbox" value="1">
-                    <span> Remember me</span>
+                    <span>Remember me</span>
+                    <a href="/reset-password-link"><span class="forgotsy">Forgot your password?</span></a>
                  </div>
                  <input type="image" src="http://www.dahliawolf.com/images/login.png" id="sysForm_submit">
                  <input type="hidden" name="r" value="">
@@ -236,9 +225,9 @@ color: #a53247;
                 </ul>
                 <div class='rememba'>
                     <input class="checkbox" id="l_remember_me" name="l_remember_me" type="checkbox" value="1">
-                    <span> Remember me</span>
+                    <span>Remember me</span>
+                    <input type="image" style="margin-left: 20px;" src="http://www.dahliawolf.com/images/reg.png" id="sysForm_submit">
                  </div>
-                 <input type="image" src="http://www.dahliawolf.com/images/reg.png" id="sysForm_submit">
                  <input type="hidden" name="r" value="">
                  <input type="hidden" name="sublog" value="1">
                  <input type="hidden" name="jsub" value="1" />
@@ -254,39 +243,44 @@ margin-top: 9px;
 margin-left: 2px;" /></a></div> -->
 
 </div>
-
-
-
     <div class="slide">
-    	<img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />
+        <img class="zeImg" src="/images/slider/slides/dw1.jpg" />
         <div class="item-box white">
-        	<div class="item-title">Coated in Tropicana Jacket</div>
+            <div class="item-title"><a href="/shop/127"/>FIRST LOVE DRESS</a></div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">StunnaLOOK, Los Angeles</div>
-        </div>
-    </div>
-<div class="slide">
-    <img class="zeImg" src="/images/DW-slide-artinourblood.jpg" />
-    <div class="item-box white">
-        <div class="item-title">ART IN OUR BLOOD DRESS</div>
-        <div class="inspired-by">Inspired by member</div>
-        <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
-    </div>
-</div>
-    <div class="slide" style="display:none">
-    	<img class="zeImg" src="/images/slider/blazer.jpeg" />
-        <div class="item-box white">
-        	<div class="item-title">WHITE NITE BLAZER</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">Jessica, New York</div>
+            <div class="inspira"><a href="/helielyb"/>helielyb</a>, Temecula CA</div>
         </div>
     </div>
     <div class="slide" style="display:none">
-    	<img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-3.jpg" />
+        <img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />
         <div class="item-box white">
-        	<div class="item-title">MODERN NATIVE DRESS</div>
+            <div class="item-title"><a href="/shop/107"/>COATED IN TROPICANA JACKET</a></div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">Parker, Alabama</div>
+            <div class="inspira">StunnaLOOK, Los Angeles CA</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none">
+        <img class="zeImg" src="/images/slider/artinourblood.jpeg" />
+        <div class="item-box white">
+            <div class="item-title"><a href="/shop/123"/>ART IN OUR BLOOD DRESS</a></div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose CA</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none">
+        <img class="zeImg" src="/images/slider/rubilove.jpg" />
+        <div class="item-box white">
+            <div class="item-title"><a href="/shop/126"/>RUBILOVE KIMONO</a></div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City CA</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none">
+        <img class="zeImg" src="/images/slider/blazer.jpeg" />
+        <div class="item-box white">
+            <div class="item-title"><a href="/shop/126"/>WHITE NITE BLAZER</a></div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira">FashionJunkie, Temecula CA</div>
         </div>
     </div>
 </div>
@@ -307,8 +301,8 @@ margin-left: 2px;" /></a></div> -->
 </html>
 <script>
 setTimeout(function(){
-    homeWrecker.init(4800/* <- fade speed*/, 6000/* <- time between slides*/);
-}, 2000) ;
+    homeWrecker.init(2800/* <- fade speed*/, 4000/* <- time between slides*/);
+}, 1000) ;
 
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);

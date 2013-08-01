@@ -1,11 +1,12 @@
 
 <style>
 .bank-frame{position:relative;}
-.bankPosted{position: absolute;top: 27%;width: 100%;font-family: futura, Arial, Helvetica, sans-serif; margin-left: 12px;}
+.bankPosted{position: relative;top: 27%;width: 100%;font-family: futura, Arial, Helvetica, sans-serif; margin-left: 12px;}
 .bankInnerPosted{font-size: 40px;margin-bottom: -10px; }
 .bankshare{font-size: 20px;margin-top: 30px;}
-.bankExplain{position: absolute;bottom: 30px;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
-.banklink{text-decoration:underline; font-size: 16px;}
+.bankExplain{position: relative;top: 42%;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
+.banklink{ font-size: 16px;margin-top: 10px;}
+.banklink a{color: #fff;background-color: #ff406d;padding: 4px 32px;margin-top: 0px;}
 .upload{ background-color:#cbcbcb; width:100%; height: 40px;height: 60px;margin-top: 5px;}
 .upload-percent-container{width: 94%;height: 50%;background-color: #c2c2c2;float: left;margin-left: 20px;margin-top: 10px;}
 .upload-percent-bar{height: 100%;background-color:#a63247;width: 0%;}
@@ -15,14 +16,16 @@
 .bar-frame{height: 45px;background-color: #fff;float: left;width: 750px;margin-top: 6px;margin-left: 10px;}
 .title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px; font-family:Arial, Helvetica, sans-serif;position: fixed;width: 975px;z-index: 1; font-weight:bold;}
 .gridzy{height: 350px;width: 325px;overflow: hidden;float: left;}
-.gridzy .b-roll-img{height:100%;}
-.gridzy .tag{height: 50px; margin-left: -127px;position: absolute;top: 70%;left: 95%;}
+.gridzy .b-roll-img{min-height: 100%;width: 100%;}
+.gridzy .tag{height: 60px; margin-left: -55px;position: absolute;top: 35px; left: 95%;}
 .first{ margin-top:55px;}
 #viewToggle{height: 30px;width: 65px;position: absolute;right: 0px;top: 9px;margin-right: 20px; cursor:pointer;}
 .toggleViewGrid{ background-image:url(/images/view_toggle.png); background-size:100% 100%;}
 .toggleViewLine{ background-image:url(/images/view_toggle2.png); background-size:100% 100%;}
 #inspireBackButton{ position: absolute;left: 20px;height: 30px;width: 70px;margin-top: -3px;background-image: url(/images/inspireBackButton.png);background-size: 100% 100%;background-repeat: no-repeat; cursor:pointer;}
 #inspireBackButton:hover{ opacity:.7;}
+.bankExplain a{color:#ff406d;}
+.postPostingWrap{position: absolute;width: 100%;text-align: center;top: 25%;}
 </style>
 
 
@@ -356,10 +359,10 @@
             $.post('/action/uploadPost.php', {image_src : imageUrl, description: 'pinterest', domain:img_domain, sourceurl : img_attribution_url}).done(function(data){
 				data = $.parseJSON(data);
 				data = data.data;
-				str = '<div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
+				str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
 				str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">';
 				str += 'profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')"><img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#">';
-				str += '<img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div>';
+				str += '<img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
 				img.after(str);
 				img.siblings('img').css('opacity', .6);
 				img.remove();
@@ -387,7 +390,7 @@
 					theBank.backButton.removeClass('hidden');
 					$.each(data.data, function(index, img){
 						str = '<div class="bank-frame"><img class="b-roll-img" src="'+img.images.standard_resolution.url+'">';
-						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Instagram\', \'www.instagram.com\');">';
+						str += '<img class="tag" src="/images/pi-tag.png" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Instagram\', \'www.instagram.com\');">';
 						str += '</div>';
 						theBank.outlet.append(str);
 					});
@@ -416,7 +419,7 @@
 					theBank.backButton.removeClass('hidden');
 					$.each(data.data, function(index, img){
 						str = '<div class="bank-frame"><img class="b-roll-img" src="'+img.images.standard_resolution.url+'">';
-						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Pinterest\', \'www.pinterest.com\');">';
+						str += '<img class="tag" src="/images/pi-tag.png" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Pinterest\', \'www.pinterest.com\');">';
 						str += '</div>';
 						theBank.outlet.append(str);
 					});
@@ -470,8 +473,8 @@
 	}
 	
 	function _finishPost(old_id, new_id){
-		str = '<div class = "bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+new_id+'">VIEW POST</a></p></div>';
-		str += '<div class = "bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+new_id+')"><img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#" ><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div>';	
+		str = '<div class="postPostingWrap"><div class = "bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+new_id+'">VIEW POST</a></p></div>';
+		str += '<div class = "bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+new_id+')"><img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#" ><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
 		$('#tag-'+old_id).remove();
 		$('#post-image-'+old_id).css('opacity', .3);
 		$('#frame-'+old_id).append(str);
@@ -529,7 +532,7 @@
 	}
 	
 	function showTag(id){
-		$('#tag-'+id).css('opacity', 1);
+		//$('#tag-'+id).css('opacity', 1);
 	}
 	
 	function hideTag(id){
@@ -602,7 +605,9 @@
 	
 	function openShop(){
 		if(thePost.isOpen){
-			thePost.fork.animate({top: theBank.topDistance}, 200, function(){
+            theBank.outlet.append(theBank.dragndrop);
+            theBank.fillerUp();
+            thePost.fork.animate({top: theBank.topDistance}, 200, function(){
 				$('#bankOptions').slideDown(100);
 				thePost.fork.animate({'top' : 170}, 100, function(){
 					thePost.fork.fadeOut(200);
@@ -612,10 +617,8 @@
 					});
 					theBank.sizeBankRoll();
 					theBank.bindResize();
-					theBank.outlet.append(theBank.dragndrop);
 					$('#viewToggle').bind('click', theBank.toggleGridMode);
 					theBank.outlet.show();
-					theBank.fillerUp();
 					theBank.initScroller();
 					theBank.activateDragndrop();
 					theBank.backButton = $('#inspireBackButton');
