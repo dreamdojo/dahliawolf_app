@@ -180,7 +180,7 @@ $(document).ready(function()
     <div id="dahliaHeadFollowToggle"></div>
 </div>
 
-<div id="theLesson">
+<div id="theLesson" class="lessonBox">
 	<div id="lessonCloser"><a href="#">HIDE HELPER</a></div>
     <div id="lesson-title" class="lesson-section"></div>
     <div class="lesson-line"></div>
