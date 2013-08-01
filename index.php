@@ -244,7 +244,7 @@ margin-left: 2px;" /></a></div> -->
 
 </div>
     <div class="slide">
-        <img class="zeImg" src="/images/helielyb.jpg" />
+        <img class="zeImg" src="http://www.dev.dahliawolf.com/images/slider/helielyb.jpg" />
         <div class="item-box white">
             <div class="item-title"><a href="/shop/127"/>FIRST LOVE DRESS</a></div>
             <div class="inspired-by">Inspired by member</div>
