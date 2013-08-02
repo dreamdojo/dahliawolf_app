@@ -284,7 +284,7 @@
 	theBank.isOpen = false;
 	theBank.refreshPage = false;
 	theBank.topDistance = 170;
-	theBank.trainingTopDistance = 380;
+	theBank.trainingTopDistance = 390;
 	theBank.dragndrop = '<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent">Don\'t have images? Post from the DAHLIA WOLF IMAGE BANK</span>';
 	theBank.dragndrop += '<div id="viewToggle" class="toggleViewLine"></div></div><div id="theUploadBuffer" class="first"></div>';
 	theBank.isAvailable = true;

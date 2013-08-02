@@ -208,6 +208,9 @@ $(document).ready(function()
 #thePinterestName{height: 75%;margin-top: 2%;margin-left: 2%;width: 75%;font-size: 14px;text-indent: 3px; float:left;}
 #goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
 </style>
+
+
+
 <div id="bankOptions" class="drop-shadow">
 	<div id="bankCenter">
     	<div class="bankSection">
