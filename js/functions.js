@@ -592,7 +592,8 @@ userLogin.prototype.submitNewUser = function(e) {
             //$('#loginErrorCode').html(str);
         } else {
             sendToAnal({name:'Successfully Registered'});
-            document.location = '/get_started';
+            //document.location = '/get_started';\
+            document.location = '/spine';
         }
     });
 }
