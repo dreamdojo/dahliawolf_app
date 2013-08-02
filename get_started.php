@@ -4,9 +4,10 @@
     include "post_slideout.php";
 
     $params = array(
-        'limit' => 10
+        'username' => $_SESSION['user']['username']
     );
-    $data = api_call('user', 'get_top_ranked', $params, true);
+
+    $data = api_call('user', 'get_following', $params, true);
     $_data['users'] = $data['data'];
 ?>
 
@@ -169,7 +170,7 @@ getStarted.prototype.makeItRain = function() {
     var leftTemps = [0, 200, 400, 600, 800];
 
     $.each(this.usersToFollow, function(index, user) {
-        var str = '<div class="userDrop" style="left:'+leftTemps[index % _this.usersPerRow]+'px"><div class="dropAvatarFrame"><img src="'+user.avatar+'&width=100"></div><div class="dropUsername">'+user.username+'</div><div class="dropToggleFollow isDropFollowing">FOLLOWING</div></div>';
+        var str = '<div class="userDrop" style="left:'+leftTemps[index % _this.usersPerRow]+'px"><div class="dropAvatarFrame"><img src="'+user.avatar+'&width=100"></div><div class="dropUsername">'+user.username+'</div><div class="dropToggleFollow isDropFollowing" data-id="'+user.user_id+'">FOLLOWING</div></div>';
         _this.$rainGutter.append(str);
     });
 
@@ -196,11 +197,14 @@ getStarted.prototype.showEnterButton = function() {
 getStarted.prototype.toggleFollow = function() {
     var $button = $(this);
     var is_following = $button.hasClass('isDropFollowing');
+    var id = Number( $button.data('id') );
 
     if(is_following) {
         $button.removeClass('isDropFollowing').html('FOLLOW');
+        api.followUser(id);
     } else {
         $button.addClass('isDropFollowing').html('FOLLOWING');
+        api.unfollowUser(id);
     }
 }
 

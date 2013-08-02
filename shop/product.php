@@ -82,7 +82,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
 				<h3 class="name"><?= $_data['product']['product']['product_name'] ?></h3>
 				<? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
-                    <p class="price"><del><span>$<?= number_format( ($_data['product']['product']['price'] * 2), 2, '.', ',') ?></span></del> <span class="sale">Pre Order 50% Off</span></p>
+                    <p class="price"><del><span>$<?= number_format( ($_data['product']['product']['price']), 2, '.', ',') ?></span></del> <span class="sale">Pre Order 50% Off</span></p>
                 <? else: ?>
                     <p class="price"<?= $_data['product']['product']['on_sale'] == '1' ? ' style="text-decoration: line-through;"' : '' ?>><span>$<?= number_format($_data['product']['product']['price'], 2, '.', ',') ?></span></p>
                 <? endif ?>

@@ -17,7 +17,6 @@ function postDetail(data){
 	this.data.total_likes = parseInt(this.data.total_likes);
 	this.bindFrontend();
 	window.history.replaceState( {} , 'Post Detail', '/post/'+data.posting_id );
-	$('body').css('overflow', 'hidden');
 }
 
 postDetail.prototype.bindFrontend = function(){
