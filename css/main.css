@@ -213,7 +213,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .userGridPostFrame img{ width:100%;}
 .myLittleSecret{position:absolute; height:100%; right:0px; width:20px; background-color:#fff;}
 .userGridPostFrame:hover .popGridLove{ display:block; }
-.popGridLove{ position: absolute;height: 100px;width: 100px;left: 50%;margin-left: -50px;top: 50%;margin-top: -50px; display:none;}
+.popGridLove{ position: absolute;height: 100px;width: 100px;left: 50%;margin-left: -50px;top: 50%;margin-top: -50px; display:none; cursor: pointer;}
 .popGridnotLoved{background: url("/images/like.png") no-repeat center center; background-size: 100%;}
 .popGridisLoved{background: url("/images/wild_like.png") no-repeat center center; background-size: 100%;}
 #postGridTitle{font-size: 20px;margin-top: 20px;margin-bottom: 10px;font-family: helvetica;font-weight: 100;text-align: center;color: rgb(80, 80, 80);}
