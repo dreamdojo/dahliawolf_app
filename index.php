@@ -1,4 +1,9 @@
 <?
+/*
+ini_set("memcache.compress_threshold",4294967296);
+ob_start();
+*/
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
 include 'config/mobile-detect.php';
 if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
@@ -313,3 +318,20 @@ $(function(){
 })
 
 </script>
+
+<?php
+/*
+$buffer = ob_get_contents();
+ob_end_clean();
+$memcache_obj = memcache_connect("localhost", 11211);
+//memcache_add($memcache_obj, "{$_SERVER['SERVER_NAME']}_{$_SERVER['REQUEST_URI']}" , $buffer, 0);
+
+$memcache = new Memcache();
+$memcache->connect('127.0.0.1', 11211);
+$memcache->add("{$_SERVER['SERVER_NAME']}_{$_SERVER['REQUEST_URI']}", $buffer, false, 60*60);
+
+
+echo $buffer;
+*/
+
+?>
