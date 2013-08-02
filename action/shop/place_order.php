@@ -46,7 +46,7 @@ $payment_info = array(
 	, 'description' => 'Purchase from ' . $_SERVER['HTTP_HOST']
 );
 
-$calls = array(	
+$calls = array(
 	'place_order' => array(
 		'user_id' => $_SESSION['user']['user_id']
 		, 'id_shop' => SHOP_ID
@@ -56,10 +56,10 @@ $calls = array(
 		, 'billing_address_id' => $_SESSION['checkout_billing_address_id']
 		, 'id_delivery' => $_SESSION['checkout_id_delivery']
 		, 'payment_info' => $payment_info
-	)	
+	)
 );
 
-$data = commerce_api_request('orders', $calls, true); 
+$data = commerce_api_request('orders', $calls, true);
 
 
 if (!empty($data['errors']) || !empty($data['data']['place_order']['errors'])) {
@@ -71,17 +71,19 @@ if (!empty($data['errors']) || !empty($data['data']['place_order']['errors'])) {
     }
     die();
 }
-    //charge payment_type_id
-    //place order
-    //pay out commissions to affiliate
-    // Clear cookie and cart session data
-    setcookie(SITENAME_PREFIX . "[cart]", '', time() + 1209600, '/');
-    unset($_SESSION['id_cart'], $_SESSION['checkout_billing_address_id'], $_SESSION['checkout_shipping_address_id'], $_SESSION['checkout_id_delivery'], $_SESSION['checkout_payment_method_id']);
 
-    if( !isset($_POST['ajax']) ) {
-        redirect('/shop/my-orders.php');
-        die();
-    } else {
-        echo json_encode($data);
-    }
+//charge payment_type_id
+//place order
+//pay out commissions to affiliate
+// Clear cookie and cart session data
+
+setcookie(SITENAME_PREFIX . "[cart]", '', time() + 1209600, '/');
+unset($_SESSION['id_cart'], $_SESSION['checkout_billing_address_id'], $_SESSION['checkout_shipping_address_id'], $_SESSION['checkout_id_delivery'], $_SESSION['checkout_payment_method_id']);
+
+if( !isset($_POST['ajax']) ) {
+    redirect('/shop/my-orders.php');
+    die();
+} else {
+    echo json_encode($data);
+}
 ?>

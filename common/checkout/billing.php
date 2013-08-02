@@ -52,13 +52,27 @@
 				<input type="text" id="billing-city" name="billing_city" />
 			</li>
 			<li>
-				<label for="billing-state">State<em>*</em></label>
-				<select id="billing-state" name="billing_state">
-                	<option value="">State&hellip;</option>
+				<label for="billing-state">State/Province<em>*</em></label>
+				<select id="billing-state" name="billing_state" class="state">
+                	<option value="">State/Province&hellip;</option>
 					<?
 					foreach ($_data['states'] as $state) {
 						?>
-						<option value="<?= $state['code'] ?>"><?= $state['name'] ?></option>
+						<option value="<?= $state['iso_code'] ?>"><?= $state['name'] ?></option>
+						<?
+					}
+					?>
+				</select>
+				<input type="text" name="billing_province" class="province" style="display: none;" />
+			</li>
+			<li>
+				<label for="billing-country">Country <em>*</em></label>
+				<select id="billing-country" name="billing_country" class="country">
+                	<option value="">Country&hellip;</option>
+					<?
+					foreach ($_data['countries'] as $country) {
+						?>
+						<option value="<?= $country['iso_code'] ?>"><?= $country['name'] ?></option>
 						<?
 					}
 					?>
@@ -70,13 +84,7 @@
 			</li>
 			<?
 			/*
-			<li>
-				<label for="billing-country">Country <em>*</em></label>
-				<select id="billing-country" name="billing_country">
-					
-				</select>
-			</li>
-			
+
 			<li>
 				<label for="billing-phone">Telephone <em>*</em></label>
 				<input type="text" id="billing-phone" name="billing_phone" />
@@ -88,7 +96,7 @@
     <h3>Shipping Address</h3>
 	<?
 	$saved_shipping_selected = false;
-	
+
 	if (!empty($_data['shipping_addresses'])) {
 		?>
 		<fieldset>
@@ -116,9 +124,9 @@
 		<?
 	}
 	?>
-	
+
 	<fieldset id="shipping-address-fields"<?= $saved_shipping_selected ? ' style="display:none"' : '' ?>>
-    	
+
 		<ul class="fields">
         	<li>
             	<input type="checkbox" name="populate-shipping-from-billing" id="populate-shipping-from-billing" />
@@ -145,13 +153,27 @@
 				<input type="text" id="shipping-city" name="shipping_city" />
 			</li>
 			<li>
-				<label for="shipping-state">State<em>*</em></label>
-				<select id="shipping-state" name="shipping_state">
-                	<option value="">State&hellip;</option>
+				<label for="shipping-state">State/Province<em>*</em></label>
+				<select id="shipping-state" name="shipping_state" class="state">
+                	<option value="">State/Province&hellip;</option>
 					<?
 					foreach ($_data['states'] as $state) {
 						?>
-						<option value="<?= $state['code'] ?>"><?= $state['name'] ?></option>
+						<option value="<?= $state['iso_code'] ?>"><?= $state['name'] ?></option>
+						<?
+					}
+					?>
+				</select>
+				<input type="text" name="shipping_province" class="province" style="display: none;" />
+			</li>
+			<li>
+				<label for="shipping-country">Country <em>*</em></label>
+				<select id="shipping-country" name="shipping_country" class="country">
+                	<option value="">Country&hellip;</option>
+					<?
+					foreach ($_data['countries'] as $country) {
+						?>
+						<option value="<?= $country['iso_code'] ?>"><?= $country['name'] ?></option>
 						<?
 					}
 					?>
@@ -164,20 +186,13 @@
 			<?
 			/*
 			<li>
-				<label for="shipping-country">Country <em>*</em></label>
-				<select id="shipping-country" name="shipping_country">
-					
-				</select>
-			</li>
-			
-			<li>
 				<label for="shipping-phone">Telephone <em>*</em></label>
 				<input type="text" id="shipping-phone" name="shipping_phone" />
 			</li>*/
 			?>
 		</ul>
 	</fieldset>
-	
+
 	<fieldset>
 		<input type="submit" value="Next Step &gt" />
 	</fieldset>

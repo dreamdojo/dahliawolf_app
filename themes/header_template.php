@@ -88,8 +88,8 @@ $(document).ready(function()
             <div class="marginmiddlebutton4 marginmiddlebutton">
             	<a id="section-shop" href="/explore" class="<?= ($self == '/explore.php' ? 'color-me-red' : '') ?>">SHOP</a>
             </div>
-            
-        
+
+
             <div style="clear:both"></div>
         </div>
         <div id="user-nav">
@@ -106,7 +106,7 @@ $(document).ready(function()
 	        					<input style="width: 65%; background-color: rgb(0, 0, 0); border: 2px solid rgb(170, 170, 170); margin-left: 2px; padding-left: 2px; padding-top: 2px; color: rgb(135, 135, 135) !important; text-transform: uppercase !important;" type="text" value="" size="10" name="q" id="query" is_empty="yes" class="ui-autocomplete-input" inited="inited">
 	        					<button class="lg" style="width:20%; padding: 4px;" id="query_button" type="submit"><img alt="Search" src="<?= CR ?>/images/search.gif"></button>
 	        				</form>
-	       					
+
 	        				<script type="text/javascript">
 	        					//$('.sysFullTSForm INPUT[name="q"]').emptyVal({text: "Search"})
 	        				</script>
@@ -118,7 +118,7 @@ $(document).ready(function()
 	                    		, 'Activity' 	=> '/activity'
 								, 'Invite' 	=> '/invite'
 	                    		, 'Showroom' 		=> '/my-runway?username='.$_SESSION['user']['username']
-                                , 'Cart'.' $'.money_format('%i', $_data['cart']['cart']['totals']['grand_total']) => '/shop/checkout'
+                                , 'Cart'.' $'.money_format('%i', isset($_data['cart']) && isset($_data['cart']['cart']) ? $_data['cart']['cart']['totals']['grand_total'] : 0) => '/shop/checkout'
 	                    		, 'Wishlist' 	=> '/shop/my-wishlist'
 	                    	)
 							, array(
@@ -129,10 +129,10 @@ $(document).ready(function()
 								, 'Orders' => '/shop/my-orders'
 								, 'Logout' => '/action/logout'
                     		)
-						
+
 							, array(
 								'Pack Leaders' => '/wolf-pack'
-	
+
                     		)
 						);
 						foreach ($account_navs as $i => $group) {
@@ -147,7 +147,7 @@ $(document).ready(function()
                     	?>
                     </ul>
                 </li>
-        
+
                 <?php else: ?>
                 <li class="Navigation2">
                     <a href="javascript:;" onClick="loginscreen('signup')">Signup</a>
@@ -172,7 +172,7 @@ $(document).ready(function()
        </div>
        <div id="tour-button">SHOW HELPER</div>
    </div>
-</div>		
+</div>
 </div>
 
 <div id="dahliaHead">
@@ -180,7 +180,7 @@ $(document).ready(function()
     <div id="dahliaHeadFollowToggle"></div>
 </div>
 
-<div id="theLesson">
+<div id="theLesson" class="lessonBox">
 	<div id="lessonCloser"><a href="#">HIDE HELPER</a></div>
     <div id="lesson-title" class="lesson-section"></div>
     <div class="lesson-line"></div>
@@ -216,7 +216,7 @@ $(document).ready(function()
         </div>
         <div class="bankSection">
         	<div id="dndeezy">
-            	<p>Drag n Drop File Here</p>	
+            	<p>Drag n Drop File Here</p>
             </div>
         </div>
         <div id="importFromPinterest" class="bankSection cursor">

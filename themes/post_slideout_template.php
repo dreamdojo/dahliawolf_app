@@ -16,8 +16,8 @@
 .bar-frame{height: 45px;background-color: #fff;float: left;width: 750px;margin-top: 6px;margin-left: 10px;}
 .title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px; font-family:Arial, Helvetica, sans-serif;position: fixed;width: 975px;z-index: 1; font-weight:bold;}
 .gridzy{height: 350px;width: 325px;overflow: hidden;float: left;}
-.gridzy .b-roll-img{height:100%;}
-.gridzy .tag{height: 50px; margin-left: -127px;position: absolute;top: 70%;left: 95%;}
+.gridzy .b-roll-img{min-height: 100%;width: 100%;}
+.gridzy .tag{height: 60px; margin-left: -55px;position: absolute;top: 35px; left: 95%;}
 .first{ margin-top:55px;}
 #viewToggle{height: 30px;width: 65px;position: absolute;right: 0px;top: 9px;margin-right: 20px; cursor:pointer;}
 .toggleViewGrid{ background-image:url(/images/view_toggle.png); background-size:100% 100%;}
@@ -284,7 +284,7 @@
 	theBank.isOpen = false;
 	theBank.refreshPage = false;
 	theBank.topDistance = 170;
-	theBank.trainingTopDistance = 400;
+	theBank.trainingTopDistance = 380;
 	theBank.dragndrop = '<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent">Don\'t have images? Post from the DAHLIA WOLF IMAGE BANK</span>';
 	theBank.dragndrop += '<div id="viewToggle" class="toggleViewLine"></div></div><div id="theUploadBuffer" class="first"></div>';
 	theBank.isAvailable = true;
@@ -390,7 +390,7 @@
 					theBank.backButton.removeClass('hidden');
 					$.each(data.data, function(index, img){
 						str = '<div class="bank-frame"><img class="b-roll-img" src="'+img.images.standard_resolution.url+'">';
-						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Instagram\', \'www.instagram.com\');">';
+						str += '<img class="tag" src="/images/pi-tag.png" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Instagram\', \'www.instagram.com\');">';
 						str += '</div>';
 						theBank.outlet.append(str);
 					});
@@ -419,7 +419,7 @@
 					theBank.backButton.removeClass('hidden');
 					$.each(data.data, function(index, img){
 						str = '<div class="bank-frame"><img class="b-roll-img" src="'+img.images.standard_resolution.url+'">';
-						str += '<img class="tag" src="/images/pi-tag.png" style="opacity: 1;" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Pinterest\', \'www.pinterest.com\');">';
+						str += '<img class="tag" src="/images/pi-tag.png" data-url="'+img.images.standard_resolution.url+'" onClick="theBank.postNonBankImage(this, \'Pinterest\', \'www.pinterest.com\');">';
 						str += '</div>';
 						theBank.outlet.append(str);
 					});
@@ -532,7 +532,7 @@
 	}
 	
 	function showTag(id){
-		$('#tag-'+id).css('opacity', 1);
+		//$('#tag-'+id).css('opacity', 1);
 	}
 	
 	function hideTag(id){

@@ -90,7 +90,7 @@ function theLessonInit(str){
 	theLesson.titleDisplay = $('#lesson-title');
 	theLesson.contentDisplay = $('#lesson-content');
 	theLesson.toggleButtonDisplay = $('#tour-button'); 
-	theLessonCheckIfClosedByUser();
+	theLesson.checkIfClosedByUser();
 	theLesson.setSection(str);
 	/*theLesson.checkFloat();
 	$(window).scroll(function(){
