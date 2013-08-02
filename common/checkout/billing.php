@@ -46,7 +46,7 @@
                     <?
                     foreach ($_data['countries'] as $country) {
                         ?>
-                        <option value="<?= $country['iso_code'] ?>"><?= $country['name'] ?></option>
+                            <option value="<?= $country['iso_code'] ?>"><?= $country['name'] ?></option>
                         <?
                     }
                     ?>
@@ -141,6 +141,21 @@
 				<label for="shipping-last-name">Last Name <em>*</em></label>
 				<input type="text" id="shipping-last-name" name="shipping_last_name" />
 			</li>
+
+            <li>
+                <label for="shipping-country">Country <em>*</em></label>
+                <select id="shipping-country" name="shipping_country" class="country">
+                    <option value="">Country&hellip;</option>
+                    <?
+                    foreach ($_data['countries'] as $country) {
+                        ?>
+                        <option value="<?= $country['iso_code'] ?>"><?= $country['name'] ?></option>
+                        <?
+                    }
+                    ?>
+                </select>
+            </li>
+
 			<li>
 				<label for="shipping-address">Address <em>*</em></label>
 				<input type="text" id="shipping-address" name="shipping_address" />
@@ -167,20 +182,7 @@
 				</select>
 				<input type="text" name="shipping_province" class="province" style="display: none;" />
 			</li>
-			<li>
-				<label for="shipping-country">Country <em>*</em></label>
-				<select id="shipping-country" name="shipping_country" class="country">
-                	<option value="">Country&hellip;</option>
-					<?
-					foreach ($_data['countries'] as $country) {
-						?>
-						<option value="<?= $country['iso_code'] ?>"><?= $country['name'] ?></option>
-						<?
-					}
-					?>
-				</select>
-			</li>
-			<li>
+
 				<label for="shipping-zip">Zip/Postal Code <em>*</em></label>
 				<input type="text" id="shipping-zip" name="shipping_zip" />
 			</li>

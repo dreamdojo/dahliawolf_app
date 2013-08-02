@@ -419,6 +419,7 @@ function user_events() {
 			else {
 				//$state_select.hide();
 				//$province_input.show();
+                html += '<option value="N/A" selected="selected">' + 'not applicable' + '</option>';
 			}
 			$state_select.html(html);
 		});
