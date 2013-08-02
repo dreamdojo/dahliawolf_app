@@ -182,6 +182,8 @@ else if ($self == '/shop/checkout.php') {
 		);
 		$data = commerce_api_request('address', $calls, true);
 
+        //echo sprintf("<pre>%s</pre>", var_export($data, true));
+
 		$_data['states'] = $data['data']['get_states']['data'];
 		$_data['countries'] = $data['data']['get_countries']['data'];
 

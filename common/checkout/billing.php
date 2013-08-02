@@ -39,6 +39,19 @@
 				<label for="billing-last-name">Last Name <em>*</em></label>
 				<input type="text" id="billing-last-name" name="billing_last_name" />
 			</li>
+            <li>
+                <label for="billing-country">Country <em>*</em></label>
+                <select id="billing-country" name="billing_country" class="country">
+                    <option value="">Country&hellip;</option>
+                    <?
+                    foreach ($_data['countries'] as $country) {
+                        ?>
+                        <option value="<?= $country['iso_code'] ?>"><?= $country['name'] ?></option>
+                        <?
+                    }
+                    ?>
+                </select>
+            </li>
 			<li>
 				<label for="billing-address">Address <em>*</em></label>
 				<input type="text" id="billing-address" name="billing_address" />
@@ -65,19 +78,7 @@
 				</select>
 				<input type="text" name="billing_province" class="province" style="display: none;" />
 			</li>
-			<li>
-				<label for="billing-country">Country <em>*</em></label>
-				<select id="billing-country" name="billing_country" class="country">
-                	<option value="">Country&hellip;</option>
-					<?
-					foreach ($_data['countries'] as $country) {
-						?>
-						<option value="<?= $country['iso_code'] ?>"><?= $country['name'] ?></option>
-						<?
-					}
-					?>
-				</select>
-			</li>
+
 			<li>
 				<label for="billing-zip">Zip/Postal Code <em>*</em></label>
 				<input type="text" id="billing-zip" name="billing_zip" />
