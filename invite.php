@@ -231,7 +231,7 @@ $(function(){
         setTimeout( function() {
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
-                    $('#menu-facebook').click();
+                    $('#menu-FACEBOOK').click();
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook,
                     // but has not authenticated your app
