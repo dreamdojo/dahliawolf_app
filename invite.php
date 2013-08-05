@@ -239,7 +239,7 @@ $(function(){
                     // the user isn't logged in to Facebook.
                 }
             });
-        }, 200);
+        }, 1000);
     }
 });
 </script>
