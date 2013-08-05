@@ -13,7 +13,7 @@
 var _token = location.hash.split('=')[1];
 $.post('/action/setInstagramToken.php', {token: _token}).done(function(){
 	opener.userConfig.instagramToken = _token;
-    theBank.getImagesFromInstagram();
+    opener.theBank.getImagesFromInstagram();
     close();
 	//document.location = '/spine';
 });
