@@ -35,7 +35,12 @@
     .isDropFollowing{color: #A8A8A8; border: #A8A8A8 thin solid;}
     .enterSiteButton{background-color: #000; color: #fff; display: none; position: absolute;bottom: 70px;left: 50%;margin-left: -62px;font-size: 18px;padding: 7px 18px;}
     .enterSiteButton:hover{opacity:.7;}
+    #headerBlock{background: #FFF; position: relative; z-index: 102; height: 60px; padding-top: 24px; position: fixed; top: 0px; width: 100%; opacity: .85;}
+    #skipButton{position: absolute; width: 1000px; left: 50%; margin-left: -500px; bottom: 10px; text-align: right;}
+    #skipButton p{font-size: 16px;background-color: #fff;padding: 4px 20px;border: #000 thin solid;float: right;}
 </style>
+
+<div id="headerBlock"></div>
 
 <div id="trainingDay" class="lessonBox">
     <div class="trainingContent">
@@ -58,7 +63,7 @@
             <li>5</li>
         </ul>
     </div>
-
+    <div id="skipButton"><a href="/spine"><p>SKIP</p></a></div>
 </div>
 
 <div id="rainGutter"></div>
@@ -212,6 +217,11 @@ getStarted.prototype.toggleFollow = function() {
 $(function() {
     startingGuide = new getStarted();
     startingGuide.setUsersToFollow(<?= json_encode($_data['users']) ?>);
+    $('.header').on('click', 'a', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('Press the red "GET STARTED" button to well, get started:)');
+    })
 });
 
 
