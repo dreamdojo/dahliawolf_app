@@ -381,7 +381,7 @@
 					this.killAjaxRequest();
 				}
 				theBank.showLoader();
-				theBank.currentAjaxRequest = $.ajax('https://api.instagram.com/v1/users/self/feed?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data){
+				theBank.currentAjaxRequest = $.ajax('https://api.instagram.com/v1/users/media/recent?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data){
                     theBank.currentAjaxRequest = null;
 					theBank.destroyLoader();
 					theBank.isAvailable = true;
@@ -402,10 +402,9 @@
             if( $('#sparticus').length < 1 ) {
                 window.open(
                     "https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token",
-                    'blop',
+                    'Log into Instagram',
                     'width=500, height=500'
                 );
-                //$('body').append('<iframe id="sparticus" src="https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token"></div>');
             }
 		}
 	}

@@ -15,6 +15,5 @@ $.post('/action/setInstagramToken.php', {token: _token}).done(function(){
 	opener.userConfig.instagramToken = _token;
     opener.theBank.getImagesFromInstagram();
     close();
-	//document.location = '/spine';
 });
 </script>
