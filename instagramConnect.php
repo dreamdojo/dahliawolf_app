@@ -11,9 +11,11 @@
 </html>
 <script>
 var _token = location.hash.split('=')[1];
+
+opener.userConfig.instagramToken = _token;
+opener.theBank.getImagesFromInstagram();
+
 $.post('/action/setInstagramToken.php', {token: _token}).done(function(){
-	opener.userConfig.instagramToken = _token;
-    opener.theBank.getImagesFromInstagram();
     close();
 });
 </script>

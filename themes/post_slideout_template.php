@@ -381,7 +381,7 @@
 					this.killAjaxRequest();
 				}
 				theBank.showLoader();
-				theBank.currentAjaxRequest = $.ajax('https://api.instagram.com/v1/users/media/recent?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data){
+				theBank.currentAjaxRequest = $.ajax('https://api.instagram.com/v1/users/self/media/recent?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data){
                     theBank.currentAjaxRequest = null;
 					theBank.destroyLoader();
 					theBank.isAvailable = true;
