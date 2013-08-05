@@ -2,7 +2,6 @@
 $pageTitle = "Post";
 include "head.php";
 include "header.php";
-include "post_slideout.php";
 
 //require 'includes/php/classes/Spine' . $_data['spine_version'] . '.php';
 $Spine = new Spine();

@@ -17,7 +17,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width =1441, initial-scale = 0">
+<meta name = "viewport" content = "width = 1100, initial-scale = .73, user-scalable = no">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <title>Dahliawolf</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
@@ -248,44 +248,47 @@ margin-top: 9px;
 margin-left: 2px;" /></a></div> -->
 
 </div>
+
+
+
     <div class="slide">
-        <img class="zeImg" src="/images/slider/slides/dw1.jpg" />
+    	<img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/127"/>FIRST LOVE DRESS</a></div>
+        	<div class="item-title">Coated in Tropicana Jacket</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/helielyb"/>helielyb</a>, Temecula CA</div>
+            <div class="inspira">StunnaLOOK, Los Angeles</div>
         </div>
     </div>
-    <div class="slide" style="display:none">
-        <img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />
-        <div class="item-box white">
-            <div class="item-title"><a href="/shop/107"/>COATED IN TROPICANA JACKET</a></div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">StunnaLOOK, Los Angeles CA</div>
-        </div>
-    </div>
-    <div class="slide" style="display:none">
+    <div class="slide">
         <img class="zeImg" src="/images/slider/artinourblood.jpeg" />
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/123"/>ART IN OUR BLOOD DRESS</a></div>
+            <div class="item-title">ART IN OUR BLOOD DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose CA</div>
+            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
         </div>
-    </div>
-    <div class="slide" style="display:none">
+        </div>
+    <div class="slide">
         <img class="zeImg" src="/images/slider/rubilove.jpg" />
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/126"/>RUBILOVE KIMONO</a></div>
+            <div class="item-title">RubiLove Kimono</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City CA</div>
+            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City</div>
         </div>
     </div>
     <div class="slide" style="display:none">
-        <img class="zeImg" src="/images/slider/blazer.jpeg" />
+    	<img class="zeImg" src="/images/slider/blazer.jpeg" />
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/126"/>WHITE NITE BLAZER</a></div>
+        	<div class="item-title">WHITE NITE BLAZER</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">FashionJunkie, Temecula CA</div>
+            <div class="inspira">Jessica, New York</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none">
+    	<img class="zeImg" src="http://content.dahliawolf.com/home/DW-slide-3.jpg" />
+        <div class="item-box white">
+        	<div class="item-title">MODERN NATIVE DRESS</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira">Parker, Alabama</div>
         </div>
     </div>
 </div>

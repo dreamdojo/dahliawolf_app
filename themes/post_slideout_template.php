@@ -26,6 +26,7 @@
 #inspireBackButton:hover{ opacity:.7;}
 .bankExplain a{color:#ff406d;}
 .postPostingWrap{position: absolute;width: 100%;text-align: center;top: 25%;}
+#sparticus{ position: fixed; height: 500px; width: 300px;}
 </style>
 
 
@@ -397,7 +398,15 @@
 				});
 			}
 		} else {
-			document.location = 'https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token';
+			//document.location = 'https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token';
+            if( $('#sparticus').length < 1 ) {
+                window.open(
+                    "https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token",
+                    'blop',
+                    'width=500, height=500'
+                );
+                //$('body').append('<iframe id="sparticus" src="https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token"></div>');
+            }
 		}
 	}
 	

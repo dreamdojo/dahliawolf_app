@@ -23,7 +23,7 @@ if ($top_dir == 'shop') {
 <meta name="description" content="Dahlia Wolf - Dahlia Wolf">
 <meta name="keywords" content="Dahlia Wolf,Dahlia Wolf">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<meta name="viewport" content="width = 1200, initial-scale = .7">
+<meta name = "viewport" content = "width = 1100, initial-scale = .73, user-scalable = no">
 <meta property="fb:app_id" content="552515884776900" />
 <meta property="og:site_name" content="Dahlia Wolf">
 <meta property="og:description" content="You post fashion images we turn them into clothing." />
