@@ -78,7 +78,7 @@ a{color: #fff;}
 a:hover{color: red;}
 
 #slideshow-frame{width: 100%;height: 100%;position: absolute;left: 0px;top: 0px;overflow: hidden;}
-.slide{ height:100%; width:100%; position:absolute; left:0px; top:0px;background-size: auto 100%;background-repeat: no-repeat;background-position: center;}
+.slide{ height:100%; width:100%; position:absolute; left:0px; top:0px;background-size: auto 100%;background-repeat: no-repeat;background-position: center; background-size: cover;}
 .slide img{min-width:100%; min-height:100%; }
 .theBox{width: 500px;height: 485px;border-radius: 3px;position: absolute;top: 41px;left: 60px;z-index: 1;font-size: 13px;color: #C5C9CC;box-shadow: 0 0 3px #1A1A1A; min-height: 300px; min-width:250px;  max-width:450px; overflow: hidden; font:Arial, Helvetica, sans-serif;}
 .theBox .header{position: relative;margin-left: 15%;z-index: 1;margin-top: 6%;}
@@ -129,8 +129,8 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 .forgotsy{font-size: 10px;float: right;line-height: 19px;}
 .aRow img{width: 100%;}
 
-@media (min-width: 900px) {
-    .slide{background-size: 100% auto;}
+@media (min-width: 1440px) {
+    /*.slide{background-size: 100% auto;}*/
 }
 
 </style>
