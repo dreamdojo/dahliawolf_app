@@ -7,11 +7,11 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375337392178" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375766109693" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373655286145" ignored="false" />
-    <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
-    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374534951836" ignored="false" />
+    <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375339387529" ignored="false" />
+    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375339357762" ignored="false" />
     <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374280859272" ignored="false" />
     <file path="/Spine-1.1.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374534549200" ignored="false" />
     <file path="/a.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184379967" ignored="false" />
@@ -68,6 +68,8 @@
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/dahliawolf.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374738504957" ignored="false" />
     <file path="/dahliawolf.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374732408234" ignored="false" />
     <file path="/settings.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374733829625" ignored="false" />
+    <file path="/get_started.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375343263750" ignored="false" />
+    <file path="/theLesson.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375338150162" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +93,64 @@
     <favorites_list name="dahliawolf_app" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="post_slideout_template.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="695" column="31" selection-start="24409" selection-end="24425" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_started.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/get_started.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="70" selection-start="998" selection-end="998" vertical-scroll-proportion="0.33333334">
+              <folding>
+                <marker date="1375343269000" expanded="true" signature="1549:1636" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header_template.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/header_template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="182" column="0" selection-start="6970" selection-end="7008" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theLesson.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/theLesson.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="159" column="42" selection-start="6802" selection-end="6836" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1809" column="12" selection-start="99388" selection-end="99391" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spine.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spine.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="29" selection-start="1563" selection-end="1592" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -145,10 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/themes/header_template.php" />
-        <option value="$PROJECT_DIR$/explore_popup.php" />
-        <option value="$PROJECT_DIR$/explore.php" />
-        <option value="$PROJECT_DIR$/post-details.php" />
         <option value="$PROJECT_DIR$/includes/php/functions-api.php" />
         <option value="$PROJECT_DIR$/css/shop.css" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -157,17 +212,21 @@
         <option value="$PROJECT_DIR$/shop/product.php" />
         <option value="$PROJECT_DIR$/js/api.js" />
         <option value="$PROJECT_DIR$/includes/php/classes/Spine-1.1.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/common/checkout/cart.php" />
         <option value="$PROJECT_DIR$/action/shop/place_order.php" />
         <option value="$PROJECT_DIR$/config/mobile-detect.php" />
+        <option value="$PROJECT_DIR$/js/theLesson.js" />
+        <option value="$PROJECT_DIR$/themes/header_template.php" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/themes/post_slideout_template.php" />
+        <option value="$PROJECT_DIR$/get_started.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="187" />
-    <option name="y" value="115" />
+    <option name="x" value="130" />
+    <option name="y" value="42" />
     <option name="width" value="1646" />
     <option name="height" value="894" />
   </component>
@@ -185,7 +244,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -196,7 +255,21 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope">
+        <subPane subId="All" />
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -388,24 +461,28 @@
       <created>1374535081349</created>
       <updated>1374535081349</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="NEW MEMBER INTRO">
+      <created>1375343332671</created>
+      <updated>1375343332671</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="187" y="115" width="1646" height="894" extended-state="0" />
+    <frame x="130" y="42" width="1646" height="894" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5258398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5258398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6709887" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15375" sideWeight="0.4741602" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25875" sideWeight="0.67183465" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15375" sideWeight="0.67183465" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25875" sideWeight="0.4741602" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35064936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3501292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32816538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -460,7 +537,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="ooom blop" />
+    <option name="LAST_COMMIT_MESSAGE" value="NEW MEMBER INTRO" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -495,46 +572,12 @@
     <MESSAGE value="much little things" />
     <MESSAGE value="shoop" />
     <MESSAGE value="ooom blop" />
+    <MESSAGE value="NEW MEMBER INTRO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/shop.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="411" column="25" selection-start="7148" selection-end="7148" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="31" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/php/Mobile_Detect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="142" selection-start="10402" selection-end="10402" vertical-scroll-proportion="-9.125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/shop/add_item_to_wishlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="4" selection-start="388" selection-end="388" vertical-scroll-proportion="0.31678987" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/spine-1.1.css.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="316" column="22" selection-start="6299" selection-end="6299" vertical-scroll-proportion="0.369379" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/php/functions-api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="117" selection-start="755" selection-end="755" vertical-scroll-proportion="0.015839493" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="127" selection-start="24498" selection-end="24498" vertical-scroll-proportion="0.65762" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop/product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="42" selection-start="2677" selection-end="2677" vertical-scroll-proportion="0.30942184" />
@@ -578,6 +621,55 @@
     <entry file="file://$PROJECT_DIR$/action/shop/place_order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.6703297" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="33.125" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="29" selection-start="1563" selection-end="1592" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/theLesson.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="42" selection-start="6802" selection-end="6836" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/header_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="0" selection-start="6970" selection-end="7008" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="695" column="31" selection-start="24409" selection-end="24425" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1809" column="12" selection-start="99388" selection-end="99391" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_started.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="70" selection-start="998" selection-end="998" vertical-scroll-proportion="0.33333334">
+          <folding>
+            <marker date="1375343269000" expanded="true" signature="1549:1636" placeholder="..." />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
