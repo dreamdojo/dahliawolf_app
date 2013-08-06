@@ -24,7 +24,12 @@ function api_request($service, $calls, $return_array = false) {
 
 function api_call($endpoint, $function, $parameters = NULL, $return_array = false) {
 	$query_string = empty($parameters) ? '' : http_build_query($parameters);
-	$url = 'http://dev.api.dahliawolf.com/api.php?api=' . $endpoint . '&function=' . $function . '&' . $query_string;
+
+    $domain = "api.dahliawolf.com";
+
+    if( strpos($_SERVER['SERVER_NAME'], 'dev') > -1) $domain = "dev.api.dahliawolf.com";
+
+	$url = "http://{$domain}/api.php?api=" . $endpoint . '&function=' . $function . '&' . $query_string;
 	
 	$ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
