@@ -24,6 +24,7 @@ if (!empty($_GET['authen'])) {
 			$_SESSION['guide_post'] = true;
 			$_SESSION['guide_shop'] = true;
 			$_SESSION['guide_vote'] = true;
+            header('location: ' . CR . '/mobile/dahliawolf');
 		}
 		header('location: ' . CR . '/get_started');
 	}
