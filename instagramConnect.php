@@ -10,7 +10,12 @@
 </body>
 </html>
 <script>
-$.post('/action/setInstagramToken.php', {token: location.hash.split('=')[1]}).done(function(){
-	document.location = '/spine';
+var _token = location.hash.split('=')[1];
+
+opener.userConfig.instagramToken = _token;
+opener.theBank.getImagesFromInstagram();
+
+$.post('/action/setInstagramToken.php', {token: _token}).done(function(){
+    close();
 });
 </script>

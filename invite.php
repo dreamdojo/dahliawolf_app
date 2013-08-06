@@ -142,6 +142,7 @@ partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
 	FB.api('/me/friends', function(response) {
         if(response.data) {
 			$.each(response.data,function(index,friend) {
+                console.log(friend);
                 partyLine.users[index] = new partyLine.user(friend.name, friend.id, 'http://graph.facebook.com/'+friend.id+'/picture?type=large', 'FACEBOOK');
             });
 			partyLine.displayUsers();
@@ -227,6 +228,19 @@ $(function(){
 	
 	if(openPlatform != 'none'){
 		$('#menu-'+openPlatform).click();
-	}
+	} else {
+        setTimeout( function() {
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    $('#menu-FACEBOOK').click();
+                } else if (response.status === 'not_authorized') {
+                    // the user is logged in to Facebook,
+                    // but has not authenticated your app
+                } else {
+                    // the user isn't logged in to Facebook.
+                }
+            });
+        }, 1000);
+    }
 });
 </script>

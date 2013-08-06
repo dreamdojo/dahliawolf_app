@@ -25,7 +25,7 @@ if (!empty($_GET['authen'])) {
 			$_SESSION['guide_shop'] = true;
 			$_SESSION['guide_vote'] = true;
 		}
-		header('location: ' . CR . '/spine');
+		header('location: ' . CR . '/get_started');
 	}
 	// Else regular login
 	else {

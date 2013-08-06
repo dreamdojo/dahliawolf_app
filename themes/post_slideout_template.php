@@ -26,6 +26,7 @@
 #inspireBackButton:hover{ opacity:.7;}
 .bankExplain a{color:#ff406d;}
 .postPostingWrap{position: absolute;width: 100%;text-align: center;top: 25%;}
+#sparticus{ position: fixed; height: 500px; width: 300px;}
 </style>
 
 
@@ -284,7 +285,7 @@
 	theBank.isOpen = false;
 	theBank.refreshPage = false;
 	theBank.topDistance = 170;
-	theBank.trainingTopDistance = 380;
+	theBank.trainingTopDistance = 390;
 	theBank.dragndrop = '<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent">Don\'t have images? Post from the DAHLIA WOLF IMAGE BANK</span>';
 	theBank.dragndrop += '<div id="viewToggle" class="toggleViewLine"></div></div><div id="theUploadBuffer" class="first"></div>';
 	theBank.isAvailable = true;
@@ -380,7 +381,7 @@
 					this.killAjaxRequest();
 				}
 				theBank.showLoader();
-				theBank.currentAjaxRequest = $.ajax('https://api.instagram.com/v1/users/self/feed?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data){
+				theBank.currentAjaxRequest = $.ajax('https://api.instagram.com/v1/users/self/media/recent?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data){
                     theBank.currentAjaxRequest = null;
 					theBank.destroyLoader();
 					theBank.isAvailable = true;
@@ -397,7 +398,14 @@
 				});
 			}
 		} else {
-			document.location = 'https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token';
+			//document.location = 'https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token';
+            if( $('#sparticus').length < 1 ) {
+                window.open(
+                    "https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token",
+                    'Log into Instagram',
+                    'width=500, height=500'
+                );
+            }
 		}
 	}
 	
