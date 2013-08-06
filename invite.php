@@ -142,6 +142,7 @@ partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
 	FB.api('/me/friends', function(response) {
         if(response.data) {
 			$.each(response.data,function(index,friend) {
+                console.log(friend);
                 partyLine.users[index] = new partyLine.user(friend.name, friend.id, 'http://graph.facebook.com/'+friend.id+'/picture?type=large', 'FACEBOOK');
             });
 			partyLine.displayUsers();
