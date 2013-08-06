@@ -1,6 +1,6 @@
 
 <style>
-.bank-frame{position:relative;}
+.bank-frame{position:relative;min-height: 200px;}
 .bankPosted{position: relative;top: 27%;width: 100%;font-family: futura, Arial, Helvetica, sans-serif; margin-left: 12px;}
 .bankInnerPosted{font-size: 40px;margin-bottom: -10px; }
 .bankshare{font-size: 20px;margin-top: 30px;}
@@ -398,14 +398,11 @@
 				});
 			}
 		} else {
-			//document.location = 'https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token';
-            if( $('#sparticus').length < 1 ) {
-                window.open(
-                    "https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token",
-                    'Log into Instagram',
-                    'width=500, height=500'
-                );
-            }
+            window.open(
+                "https://api.instagram.com/oauth/authorize/?client_id=65e8ae62e2af4d118bf0f8b2227381f1&redirect_uri=http://www.dahliawolf.com/instagramConnect&response_type=token",
+                'Log into Instagram',
+                'width=500, height=500'
+            );
 		}
 	}
 	

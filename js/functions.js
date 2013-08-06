@@ -641,9 +641,10 @@ function dahliaHeads() {
         $this.clearDahliaTimer();
         $this.left = $(this).offset().left - ($this.view.width()/2);
         $this.top = $(this).offset().top - $this.view.height();
+        var id = Number( $(this).data('id') );
 
-        if( parseInt($(this).data('id')) != theUser.id){
-            api.getUserDetails( parseInt($(this).data('id')), $.proxy($this.showHead, $this) );
+        if( id != theUser.id){
+            api.getUserDetails( id, $.proxy($this.showHead, $this) );
         }
     }).on('mouseleave', '.dahliaHead', $.proxy($this.setDahliaTimer, $this) );
 
@@ -693,6 +694,7 @@ dahliaHeads.prototype.showHead = function(data) {
 
 $(function(){
     dahliaHead = new dahliaHeads();
+    dahliaUserCache = new userCache();
 });
 
 function sendToAnal(data){
