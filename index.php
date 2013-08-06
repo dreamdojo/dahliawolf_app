@@ -188,43 +188,45 @@ font-family: futura, Arial, Helvetica, sans-serif;}
     </div>
 </div>
 
-
 <div id="slideshow-frame">
-    <div class="slide" style="background-image: url(/images/DAHLIA_NEWSLIDE.jpg);">
-    	<!--<img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />-->
+    <div class="slide" style="background-image: url(/images/slider/neon-jacket.jpg);">
         <div class="item-box white">
-        	<div class="item-title">Coated in Tropicana Jacket</div>
+            <div class="item-title">NIGHT NEON JACKET</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">StunnaLOOK, Los Angeles</div>
+            <div class="inspira"><a href="/saharablaise">SaharaBlaise</a>, Los Angeles</div>
         </div>
     </div>
     <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
-        <!--<img class="zeImg" src="/images/slider/artinourblood.jpeg" />-->
         <div class="item-box white">
             <div class="item-title">ART IN OUR BLOOD DRESS</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
         </div>
-        </div>
-    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
-        <!--<img class="zeImg" src="/images/slider/rubilove.jpg" />-->
+    </div>
+    <div class="slide" style="display:none; background-image: url(/images/DAHLIA_NEWSLIDE.jpg);">
         <div class="item-box white">
-            <div class="item-title">RubiLove Kimono</div>
+            <div class="item-title">COATED IN TROPICANA JACKET</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira"><a href="/StunnaLOOK">StunnaLOOK</a>, Los Angeles</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
+        <div class="item-box white">
+            <div class="item-title">RUBILOVE KIMONO</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City</div>
         </div>
     </div>
-    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
-    	<!--<img class="zeImg" src="/images/slider/blazer.jpeg" />-->
+    <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpeg);">
         <div class="item-box white">
-        	<div class="item-title">WHITE NITE BLAZER</div>
+            <div class="item-title">WHITE NITE BLAZER</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Jessica, New York</div>
         </div>
     </div>
     <div class="slide" style="display:none;  background-image: url(http://content.dahliawolf.com/home/DW-slide-3.jpg);">
         <div class="item-box white">
-        	<div class="item-title">MODERN NATIVE DRESS</div>
+            <div class="item-title">MODERN NATIVE DRESS</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Parker, Alabama</div>
         </div>
@@ -254,7 +256,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 <script>
 setTimeout(function(){
     homeWrecker.init(2800/* <- fade speed*/, 4000/* <- time between slides*/);
-}, 1000) ;
+}, 4000) ;
 
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);
