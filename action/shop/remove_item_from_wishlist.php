@@ -24,17 +24,20 @@ $calls = array(
 
 $data = commerce_api_request('wishlist', $calls, true);
 
-if (!empty($data['errors']) || !empty($data['data']['delete_from_wishlist']['errors'])) {
-	$_SESSION['errors'] = api_errors_to_array($data, 'delete_from_wishlist');
+if(!$_GET['ajax']) {
+    if (!empty($data['errors']) || !empty($data['data']['delete_from_wishlist']['errors'])) {
+        $_SESSION['errors'] = api_errors_to_array($data, 'delete_from_wishlist');
+    }
+
+    if (!empty($_SESSION['errors'])) {
+        redirect($_SERVER['HTTP_REFERER']);
+    } else {
+        $_SESSION['success'] = 'Item removed from wishlist.';
+        redirect('/shop/my-wishlist.php');
+    }
+} else {
+    echo json_encode($data);
 }
 
-if (!empty($_SESSION['errors'])) {
-	redirect($_SERVER['HTTP_REFERER']);
-}
-else {
-	$_SESSION['success'] = 'Item removed from wishlist.';
-	
-	redirect('/shop/my-wishlist.php');
-}
 die();
 ?>

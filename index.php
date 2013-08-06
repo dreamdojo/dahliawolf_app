@@ -217,7 +217,11 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City</div>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpeg);">
+=======
+    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
+>>>>>>> c34fe5f3677a344b612d7e1aba84544399bbae82
         <div class="item-box white">
             <div class="item-title">WHITE NITE BLAZER</div>
             <div class="inspired-by">Inspired by member</div>
