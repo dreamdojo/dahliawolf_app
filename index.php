@@ -217,7 +217,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City</div>
         </div>
     </div>
-    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
+    <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpeg);">
         <div class="item-box white">
             <div class="item-title">WHITE NITE BLAZER</div>
             <div class="inspired-by">Inspired by member</div>
@@ -256,7 +256,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 <script>
 setTimeout(function(){
     homeWrecker.init(2800/* <- fade speed*/, 4000/* <- time between slides*/);
-}, 1000) ;
+}, 5000) ;
 
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);
