@@ -8,7 +8,7 @@
 .banklink{ font-size: 16px;margin-top: 10px;}
 .banklink a{color: #fff;background-color: #ff406d;padding: 4px 32px;margin-top: 0px;}
 #thePercentageContainer{position: absolute;height: 100%;top: 0px;background-color: #c2c2c2;left: 0px;width: 100%;}
-#thePercentageBar{position: absolute;height: 100%;background-color: #FA9B9B;width: 100%;top: 0px;}
+#thePercentageBar{position: absolute;height: 100%;background-color: #FA9B9B;width: 100%;top: 0px; width: 0%;}
 #PercentageCounter{position: absolute; width: 100px; left: 50%; margin-left: -50px;font-size: 27px;line-height: 55px;color: #fff; z-index: 1;}
 #PercentageCounter p{margin-bottom: 0px;height: 60px;}
 #closeUpload{position: absolute;top: 7px;background-color: #000;color: #fff;right: 10px;font-size: 20px;border: #fff 3px solid;z-index: 10;padding: 8px 15px;border-radius: 42px;z-index: 1; cursor: pointer;}

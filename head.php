@@ -1,4 +1,9 @@
 <?
+if(isset($_COOKIE["dahliaUser"]) && !isset($_SESSION['user']) ){
+    $_SESSION['user'] = unserialize($_COOKIE["dahliaUser"]);
+    $_SESSION['token'] = $_COOKIE["token"];
+}
+
 require 'config/config.php';
 require 'config/mobile-detect.php';
 require 'includes/php/initial-calls.php';
