@@ -677,7 +677,6 @@ dahliaHeads.prototype.toggleFollow = function() {
     if( dahliaUserCache.checkForUser(this.data.user_id) ) {
         is_cached = true;
     }
-    console.log('cached '+this.data.user_id+': '+is_cached);
 
     if(this.data.is_followed) {
         this.data.is_followed = false;
