@@ -37,16 +37,25 @@ if (!empty($_FILES)) {
 			
 			// Store image dimensions
 			$dimensions = getimagesize($_SERVER['DOCUMENT_ROOT'] . $save_path . $filename);
-			$imgParams['dimensionsX'] = $dimensions[0];
-			$imgParams['dimensionsY'] = $dimensions[1];
-			
-			//
-			$data = api_call('posting', 'add_post_image', $imgParams);
-			//header('Content-Type: application/json');
-			echo serialize($data);
-		}
+            if( $dimensions[0] > 300 && $dimensions[1] > 300 ) {
+                $imgParams['dimensionsX'] = $dimensions[0];
+                $imgParams['dimensionsY'] = $dimensions[1];
+
+                //
+                $data = api_call('posting', 'add_post_image', $imgParams);
+            }
+            else {
+                $data = '{"success": false, "errors" : "IMAGE SIZE IS TOO SMALL"}';
+            }
+		} else {
+            $data = '{"success": false, "errors" : "INVALID FILE TYPE"}';
+        }
 	}
+} else {
+    $data = '{"success": false, "errors" : "NO FILE SELECTED"}';
 }
+
+echo $data;
 
 if( empty($_GET['ajax']) ) {
 	redirect($_SERVER['HTTP_REFERER']);
