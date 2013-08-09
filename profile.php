@@ -84,7 +84,7 @@ border: rgb(94, 94, 94) 1px solid;}
                     </div>
                 </div>
                 <ul class="userProfileDeetsList">
-                    <li class="profileUsername">@<?= $_data['user']['username'] ?></li>
+                    <li class="profileUsername"><a href="<?= $_data['user']['user_id'] ?>" rel="message">@<?= $_data['user']['username'] ?></a></li>
                     <li class="profileLocation"><?= $_data['user']['location'] ?></li>
                     <li class="boutitboutit"><?= $_data['user']['about'] ?></li>
                     <li class="profileLocation"><a href="http://<?= $_data['user']['website'] ?>" target="_blank" style="font-weight: bold !important;"><?= $_data['user']['website'] ?></a></li>

@@ -76,6 +76,7 @@ if ($top_dir == 'shop') {
 <script src="/js/lazyload.js" type="text/javascript"></script>
 <script src="/js/theLesson.js" type="text/javascript"></script>
 <script src="/js/theGrid.js" type="text/javascript"></script>
+<script src="/js/directMessager.js" type="text/javascript"></script>
 <script src="/js/postDetail.js" type="text/javascript"></script>
 <script src="/js/postDetailPosts.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>

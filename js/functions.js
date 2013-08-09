@@ -81,6 +81,11 @@ function events() {
 		return false;
 	});
 
+    $(document).on('click', 'a[rel="message"]', function(e) {
+        e.preventDefault();
+        dahliaMessenger.newMessage( $(this).html() );
+    });
+
     $(document).on('click', 'a[rel="addWishlist"]', function(event) {
         event.preventDefault();
         api.addItemToWishlist({call : this.href, obj : this});
