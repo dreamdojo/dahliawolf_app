@@ -140,7 +140,6 @@
 
 	var thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
     sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
-    $('.socialize').bind('click', pplFinder.start);
 
     <? if(isset($_GET['ajax'])): ?>
         $('body').css('overflow', 'hidden');

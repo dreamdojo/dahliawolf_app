@@ -27,7 +27,7 @@ function ppf_takeControl(){
 }
 
 function ppf_closeMe(){
-	this.pplBox.hide();
+    $('#pplContainer').hide();
 	friendStack.index = 0;	
 	pplFinder.input.unbind('keydown');
 }
@@ -117,16 +117,23 @@ function fs_FindNew(){
 function fs_controlBox(){
 	friendStack.init();
 	pplFinder.input.unbind('keydown').bind('keydown', function(x){
-		if(x.keyCode == 40){
+		if(x.keyCode == 40){//down key
 			x.preventDefault();
 			friendStack.moveDown();	
-		}else if(x.keyCode == 38){
+		} else if(x.keyCode == 8) {//backspace
+            if(pplFinder.input.val().slice(-1) === '@') {
+                friendStack.closeMe();
+            } else {
+                //re-evaluate
+            }
+            console.log( pplFinder.input.val().slice(-1) );
+        } else if(x.keyCode == 38){//up key
 			x.preventDefault();
 			friendStack.moveUp();	
-		}else if(x.keyCode == 13){
+		} else if(x.keyCode == 13){//enter key
 			x.preventDefault();
 			friendStack.useName();	
-		}else if(x.keyCode == 32){
+		} else if(x.keyCode == 32){//escape
 			friendStack.closeMe();
 		}
 		if(x.keyCode > 60){
