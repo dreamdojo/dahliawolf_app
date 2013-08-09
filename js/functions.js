@@ -81,6 +81,11 @@ function events() {
 		return false;
 	});
 
+    $(document).on('click', 'a[rel="message"]', function(e) {
+        e.preventDefault();
+        dahliaMessenger.newMessage( $(this).html() );
+    });
+
     $(document).on('click', 'a[rel="addWishlist"]', function(event) {
         event.preventDefault();
         api.addItemToWishlist({call : this.href, obj : this});
@@ -203,6 +208,9 @@ function user_events() {
 
 		return false;
 	});
+
+    $(document).on('focus', '.socialize',  pplFinder.start);
+    $(document).on('blur', '.socialize',  pplFinder.closeMe);
 
 	// Like/unlike
 	$(document).on('click', 'a[rel="like"]', function() {
@@ -722,3 +730,9 @@ function sendToAnal(data){
         woopraTracker.pushEvent(data);
     }
 }
+
+Array.prototype.remove = function(from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+};

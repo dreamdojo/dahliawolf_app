@@ -7,12 +7,13 @@
 .bankExplain{position: relative;top: 42%;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
 .banklink{ font-size: 16px;margin-top: 10px;}
 .banklink a{color: #fff;background-color: #ff406d;padding: 4px 32px;margin-top: 0px;}
-.upload{ background-color:#cbcbcb; width:100%; height: 40px;height: 60px;margin-top: 5px;}
-.upload-percent-container{width: 94%;height: 50%;background-color: #c2c2c2;float: left;margin-left: 20px;margin-top: 10px;}
-.upload-percent-bar{height: 100%;background-color:#a63247;width: 0%;}
-.uploadPreview-frame{width: 50px;height: 50px;overflow: hidden;float: left;margin-left: 15px;margin-top: 5px;}
+#thePercentageContainer{position: absolute;height: 100%;top: 0px;background-color: #c2c2c2;left: 0px;width: 100%;}
+#thePercentageBar{position: absolute;height: 100%;background-color: #FA9B9B;width: 100%;top: 0px; width: 0%;}
+#PercentageCounter{position: absolute; width: 100px; left: 50%; margin-left: -50px;font-size: 27px;line-height: 55px;color: #fff; z-index: 1;}
+#PercentageCounter p{margin-bottom: 0px;height: 60px;}
+#closeUpload{position: absolute;top: 7px;background-color: #000;color: #fff;right: 10px;font-size: 20px;border: #fff 3px solid;z-index: 10;padding: 8px 15px;border-radius: 42px;z-index: 1; cursor: pointer;}
 .uploadPreview-frame img{ width:100%;}
-.view-upload-button{float: left;background-color: #a63247;padding: 13.5px 25px;font-size: 15px;margin-top: 6px;color: #fff;}
+.view-upload-button{float: left;background-color: #ff416d;font-size: 15px;color: #fff;height: 21px;margin-top: -24px;line-height: 20px;padding: 0px 10px;}
 .bar-frame{height: 45px;background-color: #fff;float: left;width: 750px;margin-top: 6px;margin-left: 10px;}
 .title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px; font-family:Arial, Helvetica, sans-serif;position: fixed;width: 975px;z-index: 1; font-weight:bold;}
 .gridzy{height: 350px;width: 325px;overflow: hidden;float: left;}
@@ -104,9 +105,26 @@
 	imgUpload.submitImage = submitImage;
 	
 	imgUpload.uploadButton.bind('click', imgUpload.userUpload);
+
+    imgUpload.checkFile = function(file) {
+        var ext = file.name.split('.').pop().toLowerCase();
+
+        if(ext !== 'jpg' && ext !== 'gif' && ext !== 'png' && ext !== 'jpeg' ) {
+            alert('Invalid File Type');
+            return false;
+        } else if(file.size < 1000) {
+            alert('File is too small');
+            return false;
+        } else if(file.size > 5000000);
+        return true;
+    }
 	
 	function submitImage(file){
-		if(theUser.id && imgUpload.isAvailable){
+		if( !imgUpload.checkFile(file) ) {
+            return 0;
+        }
+
+        if(theUser.id && imgUpload.isAvailable){
             sendToAnal({name:'Uploaded an Image'});
             imgUpload.isAvailable = false;
 
@@ -133,35 +151,40 @@
 			new_loginscreen();
 		}
 	}
+
+    imgUpload.closeUpload = function() {
+        imgUpload.container.fadeOut(200, function() {
+            imgUpload.container.remove();
+        });
+    }
 	
 	function transferStart(e){
-		this.showPreview();
-		imgUpload.container = $('#theUploadBuffer');
-		str = '<div class="upload" id="upload-'+imgUpload.index+'">';
-			str+='<div class="uploadPreview-frame"><img id="uploadPreview-'+imgUpload.index+'" src=""></div>';
-			str+='<div class="bar-frame">';
-			str+= '<div class="upload-percent-container">';
-				str += '<div class="upload-percent-bar" id="upload-percent-bar-'+imgUpload.index+'"></div>';
-			str+= '</div>';
-			str+='</div>';
-		str+='</div>';
-		imgUpload.container.after(str);
+		//this.showPreview();
+		imgUpload.container = $('<div id="thePercentageContainer"></div>').appendTo('#bankOptions');
+        imgUpload.container.append('<div id="PercentageCounter"><div>').append('<div id="thePercentageBar"></div>').append('<div id="closeUpload">X</div>');
+        $('#closeUpload').bind('click', imgUpload.closeUpload);
 	}
 	function transferUpdate(e){
-		$('#upload-percent-bar-'+imgUpload.index).css('width', ((e.loaded/e.total)*100)+'%' );
+		$('#thePercentageBar').animate({'width': ((e.loaded/e.total)*100)+'%'}, 50 );
+        $('#PercentageCounter').html( Math.ceil( ((e.loaded/e.total)*100) ) +'%' );
 	}
 	function transferComplete(){
 		if( this.readyState == 4){
-			theBank.refreshPage = true;
-			$('#upload-percent-bar-'+imgUpload.index).css('width', 100+'%' );
-			obj = this.responseText.split('"');
-			$('#upload-'+imgUpload.index).append('<a href="/post/'+obj[8]+'"><div class="view-upload-button">VIEW POST</div></a>');
-			user_points_animation(20);
-			imgUpload.index++;
+            var data = $.parseJSON(this.responseText);
+            if(data.success) {
+                theBank.refreshPage = true;
+                var id = data.data.posting_id;
+                $('#thePercentageBar').remove();
+                $('#PercentageCounter').html('<a href="/post/'+id+'"><p>POSTED</p><div class="view-upload-button">VIEW POST</div></a>');
+                user_points_animation(20);
+                if(!theBank.isOpen) {
+                    imgUpload.closeUpload();
+                }
+            } else {
+                imgUpload.closeUpload();
+                alert(data.errors);
+            }
 			imgUpload.isAvailable = true;
-			/*if( imgUpload.files[imgUpload.index] ){
-				//imgUpload.submitImage(imgUpload.files[imgUpload.index], imgUpload.index);
-			}*/
 		}
 	}
 	

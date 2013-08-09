@@ -25,7 +25,7 @@ if (IS_LOGGED_IN) {
 	$friends = array();
 	$params = array(
 		'username' => $_SESSION['user']['username'],
-		//'viewer_user_id' => $_SESSION['user']['user_id']
+		'viewer_user_id' => $_SESSION['user']['user_id']
 	);
 
 	$data = api_call('user', 'get_following', $params, true);
