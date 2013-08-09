@@ -24,8 +24,9 @@ if (!empty($_GET['authen'])) {
 			$_SESSION['guide_post'] = true;
 			$_SESSION['guide_shop'] = true;
 			$_SESSION['guide_vote'] = true;
+            header('location: ' . CR . '/mobile/dahliawolf');
 		}
-		header('location: ' . CR . '/spine');
+		header('location: ' . CR . '/get_started');
 	}
 	// Else regular login
 	else {
@@ -43,6 +44,8 @@ if (empty($_GET['social_network'])) {
 $redirect_url = 'http://' . $_SERVER['SERVER_NAME'] . CR . $_SERVER['PHP_SELF'];
 $logout_redirect_url = 'http://' . $_SERVER['SERVER_NAME'] . CR;
 
-header('Location: http://api.dahliawolf.com/social-login.php?redirect_url=' . $redirect_url . '&logout_redirect_url=' . $logout_redirect_url . '&api_website_id=' . API_WEBSITE_ID . '&social_network=' . $_GET['social_network']);
+$api_domain = strpos($_SERVER['SERVER_NAME'], 'dev')>-1? "dev.api.dahliawolf.com" : "api.dahliawolf.com";
+
+header("Location: http://{$api_domain}/social-login.php?redirect_url=" . $redirect_url . '&logout_redirect_url=' . $logout_redirect_url . '&api_website_id=' . API_WEBSITE_ID . '&social_network=' . $_GET['social_network']);
 die();
 ?>

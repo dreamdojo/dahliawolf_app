@@ -81,6 +81,11 @@ function events() {
 		return false;
 	});
 
+    $(document).on('click', 'a[rel="message"]', function(e) {
+        e.preventDefault();
+        dahliaMessenger.newMessage( $(this).html() );
+    });
+
     $(document).on('click', 'a[rel="addWishlist"]', function(event) {
         event.preventDefault();
         api.addItemToWishlist({call : this.href, obj : this});
@@ -419,6 +424,7 @@ function user_events() {
 			else {
 				//$state_select.hide();
 				//$province_input.show();
+                html += '<option value="N/A" selected="selected">' + 'not applicable' + '</option>';
 			}
 			$state_select.html(html);
 		});
@@ -590,7 +596,8 @@ userLogin.prototype.submitNewUser = function(e) {
             alert(str);
             //$('#loginErrorCode').html(str);
         } else {
-            document.location = '/spine';
+            sendToAnal({name:'Successfully Registered'});
+            document.location = '/get_started';
         }
     });
 }
@@ -639,9 +646,14 @@ function dahliaHeads() {
         $this.clearDahliaTimer();
         $this.left = $(this).offset().left - ($this.view.width()/2);
         $this.top = $(this).offset().top - $this.view.height();
+        var id = Number( $(this).data('id') );
 
-        if( parseInt($(this).data('id')) != theUser.id){
-            api.getUserDetails( parseInt($(this).data('id')), $.proxy($this.showHead, $this) );
+        if( id != theUser.id){
+            if( dahliaUserCache.checkForUser(id) ) {
+                $this.showHead({ data : dahliaUserCache.getUser(id) });
+            } else {
+                api.getUserDetails( id, $.proxy($this.showHead, $this) );
+            }
         }
     }).on('mouseleave', '.dahliaHead', $.proxy($this.setDahliaTimer, $this) );
 
@@ -665,22 +677,38 @@ dahliaHeads.prototype.clearDahliaTimer = function() {
 }
 
 dahliaHeads.prototype.toggleFollow = function() {
+    var is_cached = false;
+
+    if( dahliaUserCache.checkForUser(this.data.user_id) ) {
+        is_cached = true;
+    }
+
     if(this.data.is_followed) {
         this.data.is_followed = false;
         this.followButton.html('Follow').addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
         api.unfollowUser(this.data.user_id);
+        if(is_cached) {
+            dahliaUserCache.users[this.data.user_id].is_followed = false;
+            console.log(dahliaUserCache.users[this.data.user_id].is_followed)
+        }
     } else {
         this.data.is_followed = true;
         this.followButton.html('Unfollow').removeClass('dahliaHeadFollow').addClass('dahliaHeadUnFollow');
         api.followUser(this.data.user_id);
+        if(is_cached) {
+            dahliaUserCache.users[this.data.user_id].is_followed = true;
+            console.log(dahliaUserCache.users[this.data.user_id].is_followed);
+        }
     }
 }
 
 dahliaHeads.prototype.showHead = function(data) {
     this.data = data.data;
-    this.data.is_followed = parseInt(this.data.is_followed);
+    this.data.is_followed = Number(this.data.is_followed);
+    dahliaUserCache.addUser(this.data);
+
     this.avatar.attr({'src' : data.data.avatar+'&width=75', 'onclick' : 'document.location="/'+data.data.username+'";'});
-    this.followButton.html( parseInt(data.data.is_followed) ? 'Unfollow' : 'Follow');
+    this.followButton.html( Number(data.data.is_followed) ? 'Unfollow' : 'Follow');
     if( this.data.is_followed ){
        this.followButton.addClass('dahliaHeadUnFollow').removeClass('dahliaHeadFollow');
     }else {
@@ -691,6 +719,7 @@ dahliaHeads.prototype.showHead = function(data) {
 
 $(function(){
     dahliaHead = new dahliaHeads();
+    dahliaUserCache = new userCache();
 });
 
 function sendToAnal(data){

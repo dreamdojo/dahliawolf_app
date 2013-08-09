@@ -168,19 +168,31 @@ else if ($self == '/shop/checkout.php') {
 			$_data['shipping_addresses'] = $data['data']['get_user_shipping_addresses']['data'];
 		}
 
+        $id_lang =  defined('ID_LANG') ? ID_LANG : 1;
+        $id_country =  defined('ID_COUNTRY') ? ID_COUNTRY : 3;
+
 		// Countries & default states
 		$calls = array(
 			'get_countries' => array(
-				'id_lang' => ID_LANG
+				'id_lang' => $id_lang
 			)
 			, 'get_states' => array(
-				'id_country' => ID_COUNTRY
+				'id_country' => $id_country
 			)
 		);
 		$data = commerce_api_request('address', $calls, true);
 
+
+        //echo sprintf("<pre>%s</pre>", var_export($data, true));
+
 		$_data['states'] = $data['data']['get_states']['data'];
 		$_data['countries'] = $data['data']['get_countries']['data'];
+
+
+        foreach($_data['countries'] as $country)
+        {
+            if( $country['iso_code'] == 'US') array_unshift($_data['countries'], $country);
+        }
 
 	}
 	else if (!empty($_GET['step']) && $_GET['step'] == 'confirmation') {
