@@ -1,4 +1,9 @@
 <?
+if(isset($_COOKIE["dahliaUser"]) && !isset($_SESSION['user']) ){
+    $_SESSION['user'] = unserialize($_COOKIE["dahliaUser"]);
+    $_SESSION['token'] = $_COOKIE["token"];
+}
+
 require 'config/config.php';
 require 'config/mobile-detect.php';
 require 'includes/php/initial-calls.php';
@@ -23,7 +28,7 @@ if ($top_dir == 'shop') {
 <meta name="description" content="Dahlia Wolf - Dahlia Wolf">
 <meta name="keywords" content="Dahlia Wolf,Dahlia Wolf">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<meta name="viewport" content="width = 1200, initial-scale = .7">
+<meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <meta property="fb:app_id" content="552515884776900" />
 <meta property="og:site_name" content="Dahlia Wolf">
 <meta property="og:description" content="You post fashion images we turn them into clothing." />
@@ -71,6 +76,7 @@ if ($top_dir == 'shop') {
 <script src="/js/lazyload.js" type="text/javascript"></script>
 <script src="/js/theLesson.js" type="text/javascript"></script>
 <script src="/js/theGrid.js" type="text/javascript"></script>
+<script src="/js/directMessager.js" type="text/javascript"></script>
 <script src="/js/postDetail.js" type="text/javascript"></script>
 <script src="/js/postDetailPosts.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
@@ -101,7 +107,7 @@ var theUser = new Object();
 
     woopra.config({
         domain: 'dahliawolf.com',
-        idle_timeout: 1800000,
+        idle_timeout: 1800000
     });
     woopra.track('pv', {
         url: window.location.pathname+window.location.search,

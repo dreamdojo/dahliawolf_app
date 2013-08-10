@@ -89,6 +89,7 @@ postDetail.prototype.toggleLove = function() {
 			this.loveButton.addClass('pd-unLoved').removeClass('pd-Loved');
 			this.data.is_liked = 0;
 			this.data.total_likes--;
+            $('#totalVotesNeed').html( Number( $('#totalVotesNeed').html() ) + 1 );
 			$.post('/action/unlike?posting_id='+this.data.posting_id).done(function(){
 				
 			});
@@ -96,6 +97,7 @@ postDetail.prototype.toggleLove = function() {
 			this.loveButton.removeClass('pd-unLoved').addClass('pd-Loved');
 			this.data.is_liked = 1;
 			this.data.total_likes++;
+            $('#totalVotesNeed').html( Number( $('#totalVotesNeed').html() ) - 1 );
 			$.post('/action/like?posting_id='+this.data.posting_id).done(function(){
 			
 			});

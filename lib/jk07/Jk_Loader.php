@@ -20,6 +20,11 @@ class Jk_Loader
         self::setAppRoot(APP_PATH);
     }
 
+    public static function addLoadSource($dir)
+    {
+        self::$include_dirs[] = $dir;
+    }
+
     public static function setAppRoot($dir)
     {
         if(file_exists($dir)) self::$app_root = $dir;

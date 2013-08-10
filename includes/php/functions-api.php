@@ -1,5 +1,6 @@
 <?
-function api_request($service, $calls, $return_array = false) {
+function api_request($service, $calls, $return_array = false)
+{
 	if (!class_exists('API', false)) {
 		require $_SERVER['DOCUMENT_ROOT'] . '/lib/php/API.php';
 	}
@@ -23,9 +24,13 @@ function api_request($service, $calls, $return_array = false) {
 }
 
 function api_call($endpoint, $function, $parameters = NULL, $return_array = false) {
+
 	$query_string = empty($parameters) ? '' : http_build_query($parameters);
-	$url = 'http://dev.api.dahliawolf.com/api.php?api=' . $endpoint . '&function=' . $function . '&' . $query_string;
-	
+
+    $api_domain = strpos($_SERVER['SERVER_NAME'], 'dev')>-1? "dev.api.dahliawolf.com" : "api.dahliawolf.com";
+
+	$url = "http://{$api_domain}/api.php?api=" . $endpoint . '&function=' . $function . '&' . $query_string;
+
 	$ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_POST, 1);
@@ -49,27 +54,6 @@ function api_errors_to_array($result, $api_call) {
 	$errors = array();
 	
 	if (!empty($result['errors'])) {
-		$the_errors = $result['errors'];
-	}
-	else if (!empty($result['data'][$api_call]['errors'])) {
-		$the_errors = $result['data'][$api_call]['errors'];
-	}
-	
-	foreach ($the_errors as $index => $error) {
-		if ($index === 'input_validation') {
-			foreach ($error as $field => $info) {
-				array_push($errors, $info['label'] . ' ' . (implode(' and ', $info['errors'])) . '.');
-			}
-		}
-		else {
-			array_push($errors, $error);
-		}
-	}
-
-	return $errors;
-	/*$errors = array();
-	
-	if (!empty($result['errors'])) {
 		$errors = $result['errors'];
 	}
 	else if (!empty($result['data'][$api_call]['errors'])) {
@@ -85,7 +69,6 @@ function api_errors_to_array($result, $api_call) {
 		}
 	}
 	return $errors;
-	*/
 }
 
 function commerce_api_request($service, $calls, $return_array = false) { 
@@ -111,5 +94,4 @@ function commerce_api_request($service, $calls, $return_array = false) {
 	echo $result;
 	return;
 }
-
 ?>

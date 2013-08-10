@@ -17,7 +17,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width =1441, initial-scale = 0">
+<meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <title>Dahliawolf</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
@@ -50,15 +50,13 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
       var ssc = document.getElementsByTagName('script')[0];
       ssc.parentNode.insertBefore(wsc, ssc);
   })();
-  <!-- End of Woopra Code -->
+<!-- End of Woopra Code -->
 
 </script>
 
 </head>
 
 <style>
-    /* RESET
---------------------------------------------------------------------------------------- */
 html{background: #fff;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin: 0;padding: 0;}
 table{border-collapse:collapse;border-spacing: 0;}
@@ -80,7 +78,7 @@ a{color: #fff;}
 a:hover{color: red;}
 
 #slideshow-frame{width: 100%;height: 100%;position: absolute;left: 0px;top: 0px;overflow: hidden;}
-.slide{ height:100%; width:100%; position:absolute; left:0px; top:0px; }
+.slide{ height:100%; width:100%; position:absolute; left:0px; top:0px;background-size: auto 100%;background-repeat: no-repeat;background-position: center; background-size: cover;}
 .slide img{min-width:100%; min-height:100%; }
 .theBox{width: 500px;height: 485px;border-radius: 3px;position: absolute;top: 41px;left: 60px;z-index: 1;font-size: 13px;color: #C5C9CC;box-shadow: 0 0 3px #1A1A1A; min-height: 300px; min-width:250px;  max-width:450px; overflow: hidden; font:Arial, Helvetica, sans-serif;}
 .theBox .header{position: relative;margin-left: 15%;z-index: 1;margin-top: 6%;}
@@ -90,22 +88,13 @@ a:hover{color: red;}
 font-family: futura, Arial, Helvetica, sans-serif;}
 .enter-butt{width: 60%;margin-left: 25%;margin-top: 15%;}
 .already-user{text-align: center;margin-top:2%;font-size: .9em; font-family:Arial, Helvetica, sans-serif;}
-.already-user-also{text-align: center;
-padding-top: 7px;
-font-size: 1em;
-margin-top: 15%;
-font-family: Arial, Helvetica, sans-serif;
-color: rgb(185, 185, 185);}
+.already-user-also{text-align: center;padding-top: 7px;font-size: 1em;margin-top: 15%;font-family: Arial, Helvetica, sans-serif;color: rgb(185, 185, 185);}
 .strange-clouds{opacity: 0.9;background-color: rgb(44, 44, 44); position:absolute; height:100%; width:100%; top:0px; left:0px;}
 .menu-form{list-style: none; -webkit-padding-start: 0px;}
 .form-box{ text-align:center;}
 .fb-login{width: 232px;margin-top: 8%;}
 .menu-form li{font-size: 1.1em;margin-bottom: 2%;}
-.menu-form input{width: 225px;
-height: 25px;
-border-radius: 0px;
-text-indent: 5px;
-font-size: .8em;}
+.menu-form input{width: 225px;height: 25px;border-radius: 0px;text-indent: 5px;font-size: .8em;}
 .rememba{text-align: left;margin-left: 24%;font-size: 1.1em; width: 232px;}
 #sysForm_submit{margin-left: 63px;margin-top: 5px;position: absolute;}
 #register{display:none;}
@@ -130,66 +119,23 @@ font-size: .8em;}
 .tre-bar img{width:100%;}
 .loggle-toggle{cursor:pointer; font-weight:bold; text-align: center;}
 .loggle-toggle2{font-weight:bold; text-align: center;}
-.signuplater {
-width: 500px;
-height: 80px;
-border-radius: 3px;
-position: absolute;
-top: 540px;
-left: 60px;
-z-index: 1;
-background-color: rgb(63, 63, 63);
-color: #fff;
-font-size: 13px;
-color: #C5C9CC;
-box-shadow: 0 0 3px #1A1A1A;
-min-height: 50px;
-min-width: 250px;
-max-width: 450px;
-opacity: .9;
-overflow: hidden;
-font: Arial, Helvetica, sans-serif;
-}
-.signupemail2 {margin: 10px;
-font-family: arial;
-font-size: 10px;
-font-weight: normal;
-}
-.signupemail2 a {color: rgb(121, 121, 121);text-decoration: none;
-}
-.signupemail2 a:hover {color: #a53247;font-weight: bold;
-}
-
-.signuplater2 {
-background: black;
-font-family: helvetica;
-font-size: 17px;
-color: white;
-padding-top: 5px;
-font-weight: 100;
-margin-top: 50px;
-text-transform: uppercase;
-padding-bottom: 5px;
-text-align: right;
-padding-right: 20px;
-
-
-}
-.signuplater2  a{
-font-size: 40px;
-color: white;
-text-decoration:none;
-cursor:pointer;
-}
-.signuplater2  a:hover{
-color: #a53247;
-}
+.signuplater {width: 500px;height: 80px;border-radius: 3px;position: absolute;top: 540px;left: 60px;z-index: 1;background-color: rgb(63, 63, 63);color: #fff;font-size: 13px;color: #C5C9CC;box-shadow: 0 0 3px #1A1A1A;min-height: 50px;min-width: 250px;max-width: 450px;opacity: .9;overflow: hidden;font: Arial, Helvetica, sans-serif;}
+.signupemail2 {margin: 10px;font-family: arial;font-size: 10px;font-weight: normal;}
+.signupemail2 a {color: rgb(121, 121, 121);text-decoration: none;}
+.signupemail2 a:hover {color: #a53247;font-weight: bold;}
+.signuplater2 {background: black;font-family: helvetica;font-size: 17px;color: white;padding-top: 5px;font-weight: 100;margin-top: 50px;text-transform: uppercase;padding-bottom: 5px;text-align: right;padding-right: 20px;}
+.signuplater2  a{font-size: 40px;color: white;text-decoration:none;cursor:pointer;}
+.signuplater2  a:hover{color: #a53247;}
 .forgotsy{font-size: 10px;float: right;line-height: 19px;}
+.aRow img{width: 100%;}
+
+@media (min-width: 1440px) {
+    /*.slide{background-size: 100% auto;}*/
+}
 
 </style>
 
 <body>
-<div id="slideshow-frame">
 	<div class="theBox">
     	<img class="header loggle-toggle" src="http://content.dahliawolf.com/home/dahlia-wolf-logo.png" onclick="homeWrecker.showBox('home');" />
         <div class="strange-clouds"></div>
@@ -239,61 +185,64 @@ color: #a53247;
             </form>
             <div class="already-user-also" style="margin-top: 6%;">Already a member? <span class="loggle-toggle" onclick="homeWrecker.showBox('login');">LOGIN</div>          
         </div>
-       
-        
     </div>
-    
-   <!-- <div class="signuplater">        <a href="http://www.dahliawolf.com/spine"><img src="http://www.dahliawolf.com/images/enter-icon.png" style="width: 450px;
-margin-top: 9px;
-margin-left: 2px;" /></a></div> -->
-
 </div>
-    <div class="slide">
-        <img class="zeImg" src="/images/slider/slides/dw1.jpg" />
+
+<div id="slideshow-frame">
+    <div class="slide" style="background-image: url(/images/slider/neon-jacket.jpg);">
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/127"/>FIRST LOVE DRESS</a></div>
+            <div class="item-title">NIGHT NEON JACKET</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/helielyb"/>helielyb</a>, Temecula CA</div>
+            <div class="inspira"><a href="/saharablaise">SaharaBlaise</a>, Los Angeles</div>
         </div>
     </div>
-    <div class="slide" style="display:none">
-        <img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />
+    <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/107"/>COATED IN TROPICANA JACKET</a></div>
+            <div class="item-title">ART IN OUR BLOOD DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">StunnaLOOK, Los Angeles CA</div>
+            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
         </div>
     </div>
-    <div class="slide" style="display:none">
-        <img class="zeImg" src="/images/slider/artinourblood.jpeg" />
+    <div class="slide" style="display:none; background-image: url(/images/DAHLIA_NEWSLIDE.jpg);">
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/123"/>ART IN OUR BLOOD DRESS</a></div>
+            <div class="item-title">COATED IN TROPICANA JACKET</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose CA</div>
+            <div class="inspira"><a href="/StunnaLOOK">StunnaLOOK</a>, Los Angeles</div>
         </div>
     </div>
-    <div class="slide" style="display:none">
-        <img class="zeImg" src="/images/slider/rubilove.jpg" />
+    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/126"/>RUBILOVE KIMONO</a></div>
+            <div class="item-title">RUBILOVE KIMONO</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City CA</div>
+            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City</div>
         </div>
     </div>
-    <div class="slide" style="display:none">
-        <img class="zeImg" src="/images/slider/blazer.jpeg" />
+    <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpeg);">
         <div class="item-box white">
-            <div class="item-title"><a href="/shop/126"/>WHITE NITE BLAZER</a></div>
+            <div class="item-title">WHITE NITE BLAZER</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">FashionJunkie, Temecula CA</div>
+            <div class="inspira">Jessica, New York</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none;  background-image: url(http://content.dahliawolf.com/home/DW-slide-3.jpg);">
+        <div class="item-box white">
+            <div class="item-title">MODERN NATIVE DRESS</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira">Parker, Alabama</div>
         </div>
     </div>
 </div>
 
 <div id="how-it-works-section">
     <div class="loggle-toggle2">
-    	<div><img src="http://www.dahliawolf.com/images/how-dahliawolf-works.jpg" /></div>
-    	<div><a href="http://www.dahliawolf.com/faqs"><img src="http://www.dahliawolf.com/images/how-dahliawolf-works-commission.jpg" /></a></div>
+    	<div class="aRow">
+            <img src="http://www.dahliawolf.com/images/how-dahliawolf-works.jpg" />
+        </div>
+    	<div class="aRow">
+            <a href="http://www.dahliawolf.com/faqs">
+                <img src="http://www.dahliawolf.com/images/how-dahliawolf-works-commission.jpg" />
+            </a>
+        </div>
     	<div class="video-design"><img src="http://www.dahliawolf.com/images/how-it-works-video.png" onclick="$(this).fadeOut(200);" /><iframe src="http://player.vimeo.com/video/67764567?color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
         <div><img style="margin-top:100px; margin-bottom: 30px;" src="http://www.dahliawolf.com/images/how-it-works-get-started.png" /></div>
         <div style="cursor:pointer;"><img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" ></div>
@@ -307,7 +256,7 @@ margin-left: 2px;" /></a></div> -->
 <script>
 setTimeout(function(){
     homeWrecker.init(2800/* <- fade speed*/, 4000/* <- time between slides*/);
-}, 1000) ;
+}, 5000) ;
 
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);
