@@ -107,7 +107,7 @@ var theUser = new Object();
 
     woopra.config({
         domain: 'dahliawolf.com',
-        idle_timeout: 1800000,
+        idle_timeout: 1800000
     });
     woopra.track('pv', {
         url: window.location.pathname+window.location.search,

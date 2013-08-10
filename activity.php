@@ -38,10 +38,15 @@
 			, 'api_website_id' => 2
 		)
 	);
-	
+
 	$g_data = api_request('activity_log', $calls, true);
-	
-	$categories['comments'] = $g_data['data']['get_grouped_log']['data']['comments'];
+
+    $categories['messages'] = $g_data['data']['get_grouped_log']['data']['messages'];
+    $categories['messages']['title'] = 'Messages';
+    $categories['messages']['img_src'] = 'small_posts.png';
+    $categories['messages']['statement'] = 'Sent you a message';
+
+    $categories['comments'] = $g_data['data']['get_grouped_log']['data']['comments'];
 	$categories['comments']['title'] = 'Comments';
 	$categories['comments']['img_src'] = 'small_comment.png';
 	$categories['comments']['statement'] = 'SAYS';
@@ -60,16 +65,17 @@
 	$categories['posts']['title'] = 'Posts';
 	$categories['posts']['img_src'] = 'small_posts.png';
 	$categories['posts']['statement'] = 'ONE OF YOUR POSTS HAS WON!';
-	
-	
+
 	if (IS_LOGGED_IN) {
 		$params['viewer_user_id'] = $_SESSION['user']['user_id'];
 	}
 	$user = api_call('user', 'get_user', $params, true);
 	$user = $user['data'];
 	
-	$menu = array(	array('title' => 'RANK', 'img' => 'icon_rank.png', 'stat' => $user['rank'], 'new' => NULL), 
-					array('title' => 'POINTS', 'img' => 'icon_points.png', 'stat' => $user['points'], 'new' => NULL), 
+	$menu = array(
+                    array('title' => 'RANK', 'img' => 'icon_rank.png', 'stat' => $user['rank'], 'new' => NULL),
+					array('title' => 'POINTS', 'img' => 'icon_points.png', 'stat' => $user['points'], 'new' => NULL),
+                    array('title' => 'MESSAGES', 'img' => 'icon_followers.png', 'stat' => NULL, 'new' => getNew($categories['messages']) ),
 					array('title' => 'POSTS', 'img' => 'icon_posts.png', 'stat' => NULL, 'new' => getNew($categories['posts']) ), 
 					array('title' => 'COMMENTS', 'img' => 'icon_comments.png', 'stat' => NULL, 'new' => getNew($categories['comments']) ), 
 					array('title' => 'LIKES', 'img' => 'icon_likes.png', 'stat' => NULL, 'new' => getNew($categories['likes']) ), 
@@ -138,6 +144,8 @@
 
 <?php include "footer.php" ?>
 <script>
+    console.log(<?= json_encode($g_data) ?>);
+
 var messages = new Object();
 messages['message'] = new Array();
 messages['message']['posting_like'] = "LIKES ONE OF YOUR IMAGES";

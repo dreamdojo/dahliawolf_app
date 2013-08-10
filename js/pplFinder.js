@@ -149,6 +149,13 @@ function fs_controlBox(){
 	});
 }
 
+friendStack.checkScroll = function() {
+    if($('#friend-'+this.index).position().top >  $('#pplContainer').height()) {
+        $('#pplContainer').scrollTop( $('#pplContainer').scrollTop() + 59);
+    } else if($('#friend-'+this.index).position().top <  0) {
+        $('#pplContainer').scrollTop( $('#pplContainer').scrollTop() - 59);
+    }
+}
 function fs_openMe(){
 	friendStack.controlBox;
 	friendStack.outlet.slideDown(200);
@@ -175,18 +182,20 @@ function fs_useName(){
 }
 
 function fs_moveDown(){
-	if(friendStack.index <= friendStack.avatar.length){
+    if((friendStack.index +2) < friendStack.avatar.length){
 		friendStack.index++;
+        friendStack.toggleLight(friendStack.index-1);
+        friendStack.toggleLight(friendStack.index);
+        friendStack.checkScroll();
 	}
-	friendStack.toggleLight(friendStack.index-1);
-	friendStack.toggleLight(friendStack.index);
 }
 function fs_moveUp(){
-	if(friendStack.index >= 0){
+    if(friendStack.index > 0){
 		friendStack.index--;
-	}
-	friendStack.toggleLight(friendStack.index+1);
-	friendStack.toggleLight(friendStack.index);
+        friendStack.toggleLight(friendStack.index+1);
+        friendStack.toggleLight(friendStack.index);
+        friendStack.checkScroll();
+    }
 }
 
 function fs_clear(){

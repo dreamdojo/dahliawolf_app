@@ -210,7 +210,7 @@ function user_events() {
 	});
 
     $(document).on('focus', '.socialize',  pplFinder.start);
-    $(document).on('blur', '.socialize',  pplFinder.closeMe);
+    //$(document).on('blur', '.socialize',  pplFinder.closeMe);
 
 	// Like/unlike
 	$(document).on('click', 'a[rel="like"]', function() {

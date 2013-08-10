@@ -11,7 +11,7 @@ directMessage.prototype.close = function() {
 
 directMessage.prototype.createBox = function(username) {
     this.$container = $('<div id="messengerBox"></div>').appendTo('body').append('<div class="titleBar">New Message</div>');
-    this.$titleBar = $('<div id="closeUpload">X</div>').appendTo('#messengerBox .titleBar').on('click', $.proxy(this.cancel, this) );
+    this.$titleBar = $('<div id="closeMessenger">X</div>').appendTo('#messengerBox .titleBar').on('click', $.proxy(this.cancel, this) );
     this.$addressBar = $('<input type="text" class="socialize" id="addressBar" value="'+username+'">').appendTo( this.$container );
     this.$contents = $('<textarea id="messageContents" maxlength="250" placeholder="Enter message here..."></textarea>').appendTo( this.$container );
     $('<div class="submitMessage">SEND</div>').appendTo(this.$container).on('click', $.proxy(this.submitMessage, this) );
