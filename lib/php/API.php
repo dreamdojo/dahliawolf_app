@@ -7,7 +7,7 @@ class API {
 	
 	private $SoapClients = array();
 	
-	public function __construct($api_key, $private_key) {
+	public function __construct($api_key, $private_key, $api_url = NULL) {
 		$this->api_key = $api_key;
 		$this->private_key = $private_key;
 	}
@@ -64,6 +64,8 @@ class API {
 			curl_setopt($ch, CURLOPT_POST, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $rest_request);
 		}
+		
+		curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST']);
 		
 		// Turning off the server and peer verification(TrustManager Concept).
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
