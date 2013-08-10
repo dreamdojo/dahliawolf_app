@@ -106,9 +106,22 @@ function get_cart() {
 			}
 
 			$data = commerce_api_request('cart', $calls, true);
+			/*
 			if (isset($_GET['b'])) {
-				echo '<pre>';print_r($_SESSION); print_r($data);die();
+				 echo 'THIS IS THE DATA' . $data . ' END';
+				 die();
+				echo '<pre>';
+				//print_r($_SESSION); 
+				$ups_options = array();
+				foreach ($data['data']['get_cart_from_db']['data']['carrier_options'] as $carrier_option) {
+					//if ($carrier_option['is_live_rate'] == '1') {
+						array_push($ups_options, $carrier_option);
+					//}
+				}
+				print_r($ups_options);
+				die();
 			}
+			*/
 			if (!empty($data['errors']) || !empty($data['data']['get_cart_from_db']['errors'])) {
 				$_SESSION['errors'] = api_errors_to_array($data, 'get_cart_from_db');
 			}
