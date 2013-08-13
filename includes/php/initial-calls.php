@@ -228,7 +228,7 @@ else if ($self == '/my-runway.php') {
 	$data = commerce_api_request('product', $calls, true);
 	$_data['products'] = $data['data']['get_products']['data'];
 }
-else if ($self == '/followers.php') {
+/*else if ($self == '/followers.php') {
 	if (empty($_GET['username'])) {
 		default_redirect();
 	}
@@ -243,7 +243,7 @@ else if ($self == '/followers.php') {
 	$_data['followers'] = $data['data'];
 	$_data['user']['username'] = $_GET['username'];
 }
-/*else if ($self == '/following.php') {
+else if ($self == '/account/following.php') {
 	if (empty($_GET['username'])) {
 		default_redirect();
 	}

@@ -107,32 +107,34 @@
 			<div class="notification-title">
 				<img src="/images/<?= $category['img_src'] ?>" />
 				<div class="title-bar-title"><?= $category['title'] ?></div>
+                <img class="clearCategory" src="images/x_light.png" data-cat="<?= $category[0]['entity'] ?>">
              </div>
 			<? foreach($category as $message): ?>
                 <?php if($message['read'] == NULL): ?>
                 <? $date = explode(" ", $message['created']) ?>
+
                 <? $img_url = getUrl( (!empty($message['posting_id']) ? $message['posting_id'] : '') ) ?>
-                    <div id="note-<?= $message['activity_log_id'] ?>" data-read="false" data-id="<?= $message['activity_log_id'] ?>" data-cat="<?= strtoupper($category['title']) ?>" class="notification">
+                    <div id="note-<?= $message['activity_log_id'] ?>" data-read="false" data-id="<?= $message['activity_log_id'] ?>" data-cat="<?= strtoupper($category['title']) ?>" class="notification <?= $message['entity'] ?>">
                         <div class="open-me" data-id="<?= $message['activity_log_id'] ?>" data-cat="<?= strtoupper($category['title']) ?>">
                             <div id="light-<?= $message['activity_log_id'] ?>" class="notification-light on"></div>
-                            <div class="content"><?= $message['username'].' '.$category['statement'].' '.(!empty($message['comment']) ? $message['comment'] : "") ?></div>
+                            <div class="content"><?= $message['username'].' '.$category['statement'].' '. ( !empty($message['comment']) ? $message['comment'] : (!empty($message['body']) ? $message['body'] : '') ) ?></div>
                             <div class="note-timestamp"><?= $date[0] ?></div>
                         </div>
                         <img class="close-me" src="images/x_light.png" data-cat="<?= strtoupper($category['title']) ?>" data-id="<?= $message['activity_log_id'] ?>">
                     </div>
-                    <div id="note-detail-<?= $message['activity_log_id'] ?>" class="note-detail">                     
+                    <div id="note-detail-<?= $message['activity_log_id'] ?>" class="note-detail <?= $message['entity'] ?>">
                         <div class="avatar-frame">
-                            <a href="/<?= $message['username'] ?>"><img src="http://www.dahliawolf.com/avatar.php?user_id=<?= $message['user_id'] ?>&width=150"></a>
+                            <a href="#" rel="message"><img src="http://www.dahliawolf.com/avatar.php?user_id=<?= $message['user_id'] ?>&width=150"></a>
                         </div>
                         <div class="note-detail-content">
                             <div class="note-activity">
                             	<a href="http://www.dahliawolf.com/<?= $message['username'] ?>"><?= $message['username'] ?></a>
-								<?= $category['statement'].' '.(!empty($message['comment']) ? $message['comment'] : "") ?></div>
+								<?= $category['statement'].' '.(!empty($message['comment']) ? $message['comment'] : $message['body']) ?></div>
                         </div>
                         <?php if($img_url != "" && isset($img_url) ): ?>
-                        <div class="avatar-frame">
-                        	<a href="/post/<?= $message['posting_id'] ?>"><img src="<?= $img_url ?>&width=150" /></a>
-                        </div>
+                            <div class="avatar-frame">
+                                <a href="/post/<?= $message['posting_id'] ?>"><img src="<?= $img_url ?>&width=150" /></a>
+                            </div>
                         <? endif ?>
                     </div>	
                 <? endif ?>
@@ -144,19 +146,20 @@
 
 <?php include "footer.php" ?>
 <script>
-    console.log(<?= json_encode($g_data) ?>);
-
+console.log(<?= json_encode($g_data) ?>);
 var messages = new Object();
 messages['message'] = new Array();
 messages['message']['posting_like'] = "LIKES ONE OF YOUR IMAGES";
 messages['message']['follow'] = 'IS NOW FOLLOWING YOU';
 messages['message']['comment'] = 'SAYS';
-messages['message']['posts'] = ''
+messages['message']['posts'] = '';
+messages['message']['message'] = 'SAID';
 
 messages['COMMENTS'] = <?= json_encode($categories['comments']) ?>;
 messages['LIKES'] = <?= json_encode($categories['likes']) ?>;
 messages['POSTS'] = <?= json_encode($categories['posts']) ?>;
 messages['FOLLOWERS'] = <?= json_encode($categories['followers']) ?>;
+messages['MESSAGES'] = <?= json_encode($categories['messages']) ?>;
 
 
 
@@ -178,11 +181,12 @@ theNote.fillDisplay = function(messages, cat){
 
 theNote.displayNote = function(note, cat){
 	if(typeof note == 'object'){
-		date = note.created.split(' ')[0];
+		console.log(note);
+        date = note.created.split(' ')[0];
 		str = '<div id="note-'+note.activity_log_id+'" data-read="'+(note.read ? true : false)+'" data-id="'+note.activity_log_id+'" data-cat="'+cat+'" class="notification">';
 		str += '<div class="open-me" data-id="'+note.activity_log_id+'" data-cat="'+cat+'">';
 		str += '<div id="light-'+note.activity_log_id+'" class="notification-light '+(note.read ? 'off' : 'on')+'"></div>';
-		str += '<div class="content">'+note.username+' '+messages['message'][note.entity]+' '+(note.entity == 'comment' ? note.comment : '')+' </div>';
+		str += '<div class="content">'+note.username+' '+messages['message'][note.entity]+' '+(note.entity === 'comment' ? note.comment : (note.entity === 'message' ? note.body : '') )+' </div>';
 		str += '<div class="note-timestamp">'+date+'</div>';
 		str += '</div>';
 		str += '<img class="close-me" src="images/x_light.png" data-cat="'+cat+'" data-id="'+note.activity_log_id+'">';
@@ -193,12 +197,16 @@ theNote.displayNote = function(note, cat){
 		str += '</div>'
 		str += '<div class="note-detail-content">';
 		str += '<div class="note-activity">';
-		str += '<a href="http://www.dahliawolf.com/'+note.username+'">'+note.username+' </a>';
-		str += messages['message'][note.entity]+' '+(note.entity == 'comment' ? note.comment : '')+' </div>';
+		str += '<a href="#" rel="message">'+note.username+' </a>';
+		str += messages['message'][note.entity]+' '+(note.entity == 'comment' ? note.comment : (note.entity === 'message' ? note.body : '') )+' </div>';
 		str += '</div>';
-		str += '<div class="avatar-frame">';
-		str += '<a href="/post/'+note.posting_id+'"><img src="http://repository.offlinela.com/upload/image.php?imagename=b5dbab50f642bc5e8e004418de1ce548.jpg"></a>';
-		str += '</div></div>';
+		if(note.image_url) {
+            str += '<div class="avatar-frame">';
+            str += '<a href="/post/'+note.posting_id+'"><img src="'+note.image_url+'"></a>';
+            str += '</div>';
+        }
+
+        str += '</div>';
 		theNote.display.append(str);
 	}
 }
@@ -235,7 +243,7 @@ theNote.deleteNote = function(){
 theNote.markAsRead = function(id, cat, remove){
 	if(id && id > 0 && theUser.id && theNote.isAvailable){
 		theNote.isAvailable = false;
-		URL = '/action/markasread.php?user_id='+theUser.id+'&activity_log_id='+id;
+		URL = '/api/1-0/activity_log.json?function=mark_read&user_id='+theUser.id+'&activity_log_id='+id+'&use_hmac_check=0';
 		$.ajax(URL).done(function(){
 			theNote.isAvailable = true;
 			if( $('#note-'+id).data('read') == false ){
@@ -249,6 +257,22 @@ theNote.markAsRead = function(id, cat, remove){
 			}
 		})
 	}
+}
+
+theNote.markCategoryAsRead = function() {
+    var cat = $(this).data('cat');
+    if(cat && cat !== '') {
+        var URL = '/api/1-0/activity_log.json?function=mark_read&user_id='+theUser.id+'&entity='+cat+'&use_hmac_check=0';
+        $.ajax(URL, function() {
+            console.log('done');
+        });
+        $.each( $('.'+cat), function(index, note) {
+            newCounts.update( $(note).data('cat') );
+            $(note).remove();
+        });
+    } else {
+        alert('No Entity Selected');
+    }
 }
 
 theNote.toggleHeight = function(){
@@ -273,6 +297,8 @@ theNote.init = function(){
 		$(this).addClass('invite-selected');
 		theNote.toggleHeight();
 	});
+
+    $('#theShaft').on('click', '.clearCategory', theNote.markCategoryAsRead);
 	//theNote.toggleHeight();
 	theNote.display = $('#mainCol');
 	
@@ -285,7 +311,8 @@ newCounts.init = function(){
 	this.counts = {	"LIKES" : parseInt( $('#new-count-LIKES').html() ),
 					"COMMENTS" : parseInt( $('#new-count-COMMENTS').html() ),
 					"FOLLOWERS" : parseInt( $('#new-count-FOLLOWERS').html() ),
-					"POSTS" : parseInt( $('#new-count-POSTS').html() )
+					"POSTS" : parseInt( $('#new-count-POSTS').html() ),
+                    "MESSAGES" : parseInt( $('#new-count-MESSAGES').html() )
 	};
 }
 

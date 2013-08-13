@@ -59,7 +59,7 @@ border: rgb(94, 94, 94) 1px solid;}
 #profileStatShare{ background-image:url(/images/profile/D.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
 .statTitle{margin-top: 34px;text-align: center;color: rgb(99, 99, 99);font-size: 18px;font-family: helvetica;font-weight: 100;}
 .statPoints{margin-top: -11px;text-align: center;}
-.boutitboutit{color:#969696;font-size: 17px;}
+.boutitboutit{color:#969696;font-size: 17px;height: 63px;overflow: hidden;text-overflow: ellipsis;width: 350px;}
 .profileFollowing{color: #c2c2c2 !important; border: #c2c2c2 thin solid !important;}
 </style>
 <? //var_dump($_data['user']) ?>
@@ -133,18 +133,6 @@ border: rgb(94, 94, 94) 1px solid;}
 
 
     <div id="userPostGrid"></div>
-    <!--
-    <div class="ColumnContainer" style="background-color: white; margin-top: 10px; padding-top: 10px;">
-	    <?
-	    if (!empty($_data['posts'])) {
-	    	//require $_SERVER['DOCUMENT_ROOT'] . '/includes/php/classes/Spine.php';
-			//$Spine = new Spine();
-			//$Spine->output($_data['posts'], 'spine');
-			//$Spine->output($_data['posts'], 'spine', '/spine-chunk.php?username=' . $_data['user']['username']);
-		}
-	    ?>
-    </div>-->
-    
 </div>	
 <script>
 	theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
