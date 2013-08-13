@@ -161,7 +161,7 @@ getStarted.prototype.moveToStepTwo = function() {
 }
 
 getStarted.prototype.addPost = function() {
-    $(this).prev().clone().appendTo( startingGuide.$frames.eq( $('.trainingPostComplete').length).addClass('trainingPostComplete') );
+    $("<img src='"+$(this).prev().attr('src')+"'>").appendTo( startingGuide.$frames.eq( $('.trainingPostComplete').length ).addClass('trainingPostComplete') );
 
     if($('.trainingPostComplete').length == 5) {
         setTimeout(function() {

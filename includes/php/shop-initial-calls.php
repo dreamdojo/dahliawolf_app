@@ -4,10 +4,15 @@ $self = $_SERVER['PHP_SELF'];
 // Mobile should use same logic per page
 $self = str_replace('/mobile', '', $self);
 
-$_data = array();
+if (empty($_data)) {
+	$_data = array();
+}
 
-// Get Cart
-$_data['cart'] = get_cart();
+// Get Cart (already gets called in initial-calls.php)
+//$_data['cart'] = get_cart();
+if (isset($_GET['t'])) {
+	die('shop-initial-calls.php:14');
+}
 
 // Get Categories
 $calls = array(

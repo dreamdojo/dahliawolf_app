@@ -25,7 +25,7 @@ if (IS_LOGGED_IN) {
 	$friends = array();
 	$params = array(
 		'username' => $_SESSION['user']['username'],
-		//'viewer_user_id' => $_SESSION['user']['user_id']
+		'viewer_user_id' => $_SESSION['user']['user_id']
 	);
 
 	$data = api_call('user', 'get_following', $params, true);
@@ -243,7 +243,7 @@ else if ($self == '/followers.php') {
 	$_data['followers'] = $data['data'];
 	$_data['user']['username'] = $_GET['username'];
 }
-else if ($self == '/following.php') {
+/*else if ($self == '/following.php') {
 	if (empty($_GET['username'])) {
 		default_redirect();
 	}
@@ -257,7 +257,7 @@ else if ($self == '/following.php') {
 	$data = api_call('user', 'get_following', $params, true);
 	$_data['following'] = $data['data'];
 	$_data['user']['username'] = $_GET['username'];
-}
+}*/
 else if ($self == '/account/posts.php') {
 	if (empty($_SESSION['user']) || empty($_SESSION['user']['user_id'])) {
 		default_redirect();
