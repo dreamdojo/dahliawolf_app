@@ -196,11 +196,11 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="inspira"><a href="/saharablaise">SaharaBlaise</a>, Los Angeles</div>
         </div>
     </div>
-    <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
-        <div class="item-box white">
-            <div class="item-title">ELLE MAY DRESS</div>
+    <div class="slide" style="display:none; background-image: url(/images/slider/ellemay.jpg);">
+        <div class="item-box black">
+            <div class="item-title">ELLE-MAY DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
+            <div class="inspira"><a style="font-color:black" href="/ellemay">ellemay</a>, Sunshine Coast, AU</div>
         </div>
     </div>
     <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
