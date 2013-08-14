@@ -101,7 +101,7 @@ theGrid.post.prototype.displayPost = function() {
     str = '<div id=post-'+this.data.posting_id+' class="post-frame color-'+Math.floor(Math.random()*5)+'">';
 	str += '<div rel="grid-vote" class="vote-frame '+(parseInt(this.data.is_liked) ? 'grid-unlike' : 'grid-like')+'" data-id="'+this.data.posting_id+'"></div>';
 	str += '<a href="/post-details?posting_id='+this.data.posting_id+'" class="image" rel="modal">';
-	str += '<img src="'+this.data.image_url+'" class="'+(theGrid.offset < theGrid.limit ? '' : 'lazy')+' zoom-in" data-src="'+this.data.image_url+'" '+(this.data.width >= this.data.height ? theGrid.htText : '')+'>';
+	str += '<img src="'+this.data.image_url+'&width=300" class="'+(theGrid.offset < theGrid.limit ? '' : 'lazy')+' zoom-in" data-src="'+this.data.image_url+'&width=300" '+(this.data.width >= this.data.height ? theGrid.htText : '')+'>';
 	str += '</a>';
     str += '<div class="gridPostDeets"><div class="gridUsername dahliaHead" data-id="'+this.data.user_id+'"><a href="/'+this.data.username+'">'+this.data.username+'</a></div>' +
         '<div class="gridLovesBox"><div class="postGridLikeImage '+(parseInt(this.data.is_liked) ? 'postGridLiked' : 'postGridUnLiked')+'" rel="grid-vote" data-id="'+this.data.posting_id+'"></div><p class="postGridLikeCount">'+this.data.total_likes+'</p></div>';

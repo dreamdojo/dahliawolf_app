@@ -66,7 +66,7 @@ postDetailGrid.prototype.init = function() {
 }
 
 postDetailGrid.prototype.setTitle = function() {
-	this.titleContainer.html('More posts by '+thePostDetail.data.username);
+	this.titleContainer.html('More posts by <a href="/'+thePostDetail.data.username+'">'+thePostDetail.data.username+'</a>');
 }
 
 postDetailGrid.prototype.toggleLove = function() {
@@ -105,7 +105,7 @@ postDetailGrid.prototype.getPosts = function() {
 				str = '<div class="userGridPostFrame">';
 				str += '<div class="popGridLove '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'"></div>';
 				str += '<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+index % 5+'" rel="modal">';
-				str += '<img src = "'+post.image_url+'" class="lazy zoom-in" data-src="'+post.image_url+'" '+(parseInt(post.width) >= parseInt(post.height) ? $this.htText : '')+'>';
+				str += '<img src = "'+post.image_url+'&width=300" class="lazy zoom-in" data-src="'+post.image_url+'&width=300" '+(parseInt(post.width) >= parseInt(post.height) ? $this.htText : '')+'>';
 				str += '</a></div>';
 				
 				$this.postContainer.append(str);

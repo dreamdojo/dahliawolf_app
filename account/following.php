@@ -3,24 +3,16 @@
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
+    $params = array(
+        'username' => strtolower($_GET['username']),
+        'limit' => 0
+    );
 
+    if (IS_LOGGED_IN) {
+        $params['viewer_user_id'] = $_SESSION['user']['user_id'];
+    }
+    $data = api_call('user', 'get_user', $params, true);
 ?>
-<style>
-    .avatarShadow{box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;}
-    #userListBanner{width: 1100px;margin: 0px auto;height: 200px;border-bottom: #c2c2c2 thin solid;padding-top: 20px;}
-    #userListBanner .avatarFrame{overflow: hidden;border-radius: 80px;height: 150px;width: 150px; float: left;}
-    #userListBanner ul{float: left;margin-top: 50px;margin-left: 10px;font-size: 18px;}
-    #userListBanner .followLand{ float: right;}
-
-    #userListCol {width: 1100px;height: 100px;margin: 0px auto;position: relative;}
-    #userListCol .userFrame{width: 100%;height: 150px; margin-top: 10px;}
-    #userListCol .avatarFrame{overflow: hidden;height: 110px;width: 110px;border-radius: 57px;margin-left: 10px;float: left;margin-top: 20px;}
-    #userListCol .avatarFrame img{width: 100%;}
-    #userListCol .dataList{float: left;margin-top: 30px; margin-left: 10px;font-size: 18px;width: 160px;}
-    #userListCol .postList li{overflow: hidden;width: 130px;float: left;height: 150px;margin-left: 20px;}
-    #userListCol .postList li img{min-height: 100%;}
-    #userListCol .dlUsername{width: 150px;text-overflow: ellipsis;overflow: hidden;}
-</style>
 
 <div id="userListBanner">
     <div class="avatarFrame avatarShadow"><img src="<?= $userConfig['avatar'] ?>&width=200"></div>
@@ -40,6 +32,9 @@
 ?>
 
 <script>
+
+    console.log(<? json_encode($data) ?>)
+
     function userList() {
         this.limit = 20;
         this.offset = 0;
@@ -94,7 +89,9 @@
         this.$userFrame = $('<div class="userFrame"></div>').appendTo( dahliawolfUserList.$bucket );
         this.$userFrame.append('<div class="avatarFrame avatarShadow"><a href="/'+this.data.username+'"><img src="'+this.data.avatar+'&width=100"></a></div>');
         this.$userFrame.append('<ul class="dataList"><a href="/'+this.data.username+'"><li class="dlUsername">'+this.data.username+'</li></a></ul>');
+        this.$userFrame.find('.dataList').append('<div>FOLLOW</div>');
         this.$userFrame.append('<ul class="postList">'+str+'</ul>');
+        console.log('pooty');
     }
 
     $(function() {
