@@ -1475,46 +1475,77 @@ width: 174px;
 
 /* PROFILE PAGE
 --------------------------------------------------------------------------------------- */
-.profile {
-	min-width: 1000px;
-	position: absolute;
-	top: 87px;
-	background-color: white;
-	left: 50%;
-	margin-left: -500px;
-}
+.profile {min-width: 1000px;position: absolute;top: 87px;background-color: white;left: 50%;margin-left: -500px;}
 .profile .ContextBar {margin-left: 222px; width: 778px; height: 544px; background-color:#eaebeb; }
 .profile .ColumnContainer {margin-top: -28px;}
 .profile .pinBoard {position: static;}
-
-.ProfileSidebar {float: left; width: 192px; padding: 15px; text-shadow: 0 1px rgba(255,255,255,0.9);background-color: #EAEBEB; height: 536px;
-}
-
+.ProfileSidebar {float: left; width: 192px; padding: 15px; text-shadow: 0 1px rgba(255,255,255,0.9);background-color: #EAEBEB; height: 536px;}
 .ProfileSidebar h1 {margin: 0 0 7px; font-size: 2.8em; font-weight: 300;}
 .ProfileImage {margin: 15px 0; border: black 20px solid;}
 .ProfileImage img {display: block; max-width: 100%; overflow:hidden;}
 .ProfileImage .Button {display: block; margin: 15px 0 0;}
 .ProfileImage .hidden {display: none;}
-
 .ProfileImage .aboutText {margin: 15px 0px 0px 0px; font-size: 12px;overflow: hidden;}
-
 .ProfileSidebar p {margin: 0 0 4px; font-size: 13px;}
 .ProfileSidebar p span {font-size: 11px; font-weight: normal;}
 .ProfileSidebar p strong {font-size: 11px;}
 .ProfileSidebar p:last-child {margin-bottom: 0;}
-
 .ProfileLinks {clear: both; margin-top: 8px; margin-bottom: 15px; overflow: hidden;}
-  .ProfileLinks li {display: inline;}
-  .ProfileLinks a {float: left;
-width: 192px;
-height: 60px;
-padding: 0;
-text-align: center;}
-  .ProfileLinks li:last-child a {margin-right: 0;}
-  .ProfileLinks a img {margin-top: 5px;}
-  .ProfileLinks a:active {box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35); -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35); -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35);}
-
+.ProfileLinks li {display: inline;}
+.ProfileLinks a {float: left;width: 192px;height: 60px;padding: 0;text-align: center;}
+.ProfileLinks li:last-child a {margin-right: 0;}
+.ProfileLinks a img {margin-top: 5px;}
+.ProfileLinks a:active {box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35); -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35); -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35);}
 .ProfileSidebar .pin {position: static; width: auto; margin-top: 15px; padding: 0; font-size: 13px;}
+#mainProfileColumn{width:1000px; margin:0px auto; margin-top: 110px; background-color:#f7f7f7; overflow:hidden; /*border:#e9e9e9 2px solid;*/ font-family:Helvetica, sans-serif;}
+#userPostGallery{ width:520%; height:350px; position:relative; overflow:hidden; background-color:#000;}
+#userPostGallery img{height:100%; float:left;}
+#userProfileDeets{height:140px; width: 98.5%;margin-left: .75%; background-color:#fff; position: relative;}
+#userProfileDeetsOverlay{width:100%; height: 129%; bottom:0px; position:absolute;}
+#userProfileMenuBar{ margin-top: 10px;height: 47px;width: 98.5%;margin-left: .75%;background-color: #fff;margin-bottom: 10px;}
+#profilePostBin{}
+.userProfileAvatarHome{width: 140px; height:100%; float:left;padding-top: 10px;margin-left: 10px;}
+.userProfileAvatarFrame{overflow: hidden;border-radius: 110px;border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;max-height: 150px;}
+.userProfileAvatarFrame img{width:100%;}
+#userProfileDeetsRightCol{float:right; height:100%; width:500px;}
+.userProfileDeetsList{ text-align:left; height:100%; float:left;margin-top: 7px;margin-left: 20px;max-width: 300px;word-wrap: break-word;}
+.userProfileDeetsList li{ margin-bottom: 10px;font-family: helvetica;font-weight: 100;}
+.followersLink{ height: 38px;text-align: right;font-size: 19px;margin-right: 40px;font-weight: 100;color: #fff;float: right;}
+.followersLink p{background-color: rgb(255, 255, 255);text-align: center;color: rgb(231, 105, 144);font-size: 17px;padding: 2px 20px 2px 20px;cursor: pointer;margin-top: 5.5px;font-weight:normal;opacity:.9;border: rgb(231, 100, 140) 1px solid;}
+.followersLink a{ color:#fff !important;}
+.userProfileStatList{ height: 65px;width: 100%;text-align: right;float: right;margin-top: 34px;opacity: .6;margin-right: -86px;}
+.userProfileStatList li{ height:100%; width:20%; float:left;}
+#userProfileShareBox{height: 76%;width: 400px;float: left;margin-left: 10px;margin-top: 6px;opacity: .5;}
+#userProfileShareBox li{height: 70%;width: 27px;float: left;margin-top: 5px; cursor:pointer;}
+#togglePostsLove{ height:100%; width:200px; float:left;}
+.togglePostsButton{height: 22px;width: 44%;margin-left: 5%;margin-top: 9px;float: left;padding-top: 4px;color: rgb(185, 185, 185);text-align: center;font-size: 15px;font-weight: 100;cursor: pointer;}
+#postsGridToggleButton{ height:100%; float:right; width:100px; margin-right:10px; position:absolute; top:0px;}
+.profileUsername{font-size: 25px;}
+.profileLocation{font-size: 16px;}
+.profileRed{ color: #ff2e6e;font-family: helvetica;font-size: 16px;}
+.toggleSelected{color: rgb(94, 94, 94);
+    border: rgb(94, 94, 94) 1px solid;}
+.overlayLayer{ position:absolute; left:-1%; top:0px; height:100%; width:102%; background-color:#fff; opacity:.5; }
+.levelWrap{position:relative;}
+#profileShareFacebook{ background-image:url(/images/profile/1.png); background-repeat: no-repeat; background-size:auto 100%;}
+#profileSharePinterest{ background-image:url(/images/profile/2.png); background-repeat: no-repeat; background-size:auto 100%;}
+#profileShareInstagram{ background-image:url(/images/profile/3.png); background-repeat: no-repeat; background-size:auto 100%;}
+#profileShareTumblr{ background-image:url(/images/profile/4.png); background-repeat: no-repeat; background-size:auto 100%;}
+#profileShareTwitter{ background-image:url(/images/profile/5.png); background-repeat: no-repeat; background-size:auto 100%;}
+#profileShareEmail{ background-image:url(/images/profile/6.png); background-repeat: no-repeat; background-size:auto 100%;}
+#profileStatRank{ background-image:url(/images/profile/A.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
+#profileStatPoints{ background-image:url(/images/profile/B.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
+#profileStatFollow{ background-image:url(/images/profile/C.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
+#profileStatShare{ background-image:url(/images/profile/D.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
+.statTitle{margin-top: 34px;text-align: center;color: rgb(99, 99, 99);font-size: 18px;font-family: helvetica;font-weight: 100;}
+.statPoints{margin-top: -11px;text-align: center;}
+.boutitboutit{color:#969696;font-size: 17px;height: 63px;overflow: hidden;text-overflow: ellipsis;width: 350px;}
+.profileFollowing{color: #c2c2c2 !important; border: #c2c2c2 thin solid !important;}
+
+
+
+
+
 
 #SendMessage {margin: 0 -15px; padding: 12px 15px; font-size: 13px; border-top: 1px solid #e1dfdf; overflow: hidden;}
   #SendMessage form {display: none}

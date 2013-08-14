@@ -42,7 +42,7 @@ directMessage.prototype.submitMessage = function() {
     }
 
     this.apiCall( 'send_message', {to_user_name : recipients, from_user_id: theUser.id, header : msgHead, body : theMsg, use_hmac_check : 0}, function(data) {
-        alert('Message Sent');
+        //alert('Message Sent');
     });
 
     this.close();
@@ -86,7 +86,6 @@ directMessage.prototype.apiCall = function(funct, data, callback) {
         cURL += '&'+key+'='+param;
     });
 
-    console.log(cURL);
     $.getJSON(cURL, function(data) {
         callback(data);
     });

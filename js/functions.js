@@ -9,6 +9,22 @@ $(document).ready(function() {
 	}
 });
 
+var holla = function () { };
+
+holla.log = function (message) {
+
+    try {
+
+        console.log(message);
+
+    } catch (exception) {
+
+        return;
+
+    }
+
+}
+
 
 
 function validateEmail(email) {
