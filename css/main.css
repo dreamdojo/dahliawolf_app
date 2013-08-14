@@ -15,7 +15,7 @@ sub{vertical-align:text-bottom;overflow:hidden;}
 input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit; resize: none;outline:none;}
 legend{color:#000;}
 
-body {font-family:Tahoma,arial,sans-serif;font-size:10px;color:#211922;min-width: 980px; margin-top: 90px;}
+body { font-family:helvetica; font-size:10px;color:#211922;min-width: 980px; margin-top: 90px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -328,6 +328,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userListCol .avatarFrame img{width: 100%;}
 #userListCol .dataList{float: left;margin-top: 30px; margin-left: 10px;font-size: 18px;width: 160px;}
 #userListCol .postList li{overflow: hidden;width: 130px;float: left;height: 150px;margin-left: 20px;}
+#userListCol .postList li:hover{opacity: .7;}
 #userListCol .postList li img{min-height: 100%;}
 #userListCol .dlUsername{width: 150px;text-overflow: ellipsis;overflow: hidden;}
 #userListCol .toggleFollow{font-size: 14px;padding: 1px 8px;float: left;cursor: pointer;margin-top: 5px;}
