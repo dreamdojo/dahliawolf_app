@@ -1,4 +1,5 @@
 <?
+    $pageTitle = "Get Started";
     include "head.php";
     include "header.php";
     include "post_slideout.php";
