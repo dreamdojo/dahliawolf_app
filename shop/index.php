@@ -83,7 +83,9 @@ shop.prototype.fillShop = function() {
     var _this = this;
 
     $.each(this.data, function(i, item) {
-        _this.products[item.id_product] = new _this.product(item, _this.$shop)
+        if(Number(item.active)) {
+            _this.products[item.id_product] = new _this.product(item, _this.$shop)
+        }
     });
 }
 
@@ -189,7 +191,7 @@ shop.prototype.product.prototype.addToWishlist = function() {
     var _this = this;
 
     if(this.data.wishlist_id && this.data.wishlist_id > 0) {
-        var URL =  '/api/commerce/wishlist.json?function=delete_from_wishlist&user_id='+theUser.id+','+this.data.fake_user_id+'&id_favorite_product='+this.data.wishlist_id+'&use_hmac_check=0';
+        var URL =  '/api/commerce/wishlist.json?function=delete_from_wishlist&user_id='+theUser.id+'&id_favorite_product='+this.data.wishlist_id+'&use_hmac_check=0';
         $count.html( Number($count.html()) + 1 );
         this.$wishlistButton.removeClass('inWishlist').html('Add To Wishlist');
         this.data.wishlist_id = null;
@@ -197,7 +199,7 @@ shop.prototype.product.prototype.addToWishlist = function() {
             holla.log(data);
         });
     } else {
-        var URL =  '/action/shop/add_item_to_wishlist.php?id_product='+this.data.id_product+'&ajax=true';
+        var URL =  '/api/commerce/wishlist.json?function=add_wishlist&user_id='+theUser.id+'&id_product='+this.data.id_product+'&id_shop=3&use_hmac_check=0';
         $count.html( Number($count.html()) - 1 );
         this.$wishlistButton.addClass('inWishlist').html('Added To Wishlist');
         $.getJSON(URL, function(data) {
