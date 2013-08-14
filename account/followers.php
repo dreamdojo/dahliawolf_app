@@ -1,30 +1,40 @@
 <?
-$pageTitle = "Followers";
+$pageTitle = "Following";
 include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
-?>
-<div class="ColumnContainer" style="margin-top: 80px;">
-        
-        <div class="BoardTitle">
-		<div class="follow-bar"><h1>FOLLOWERS</h1></div>
-        <h2><a style="text-transform: uppercase;" href="/profile.php?username=<?= $_data['user']['username'] ?>"><?= $_data['user']['username'] ?></a></h2>
-		<div class="desc"></div>
-	</div>
-    <div class="cl"></div>
+$params = array(
+    'username' => strtolower($_GET['username']),
+    'limit' => 0
+);
 
-    <div class="FixedContainer">
-        <div class="WhiteContainer clearfix">
-            <div id="sysFollowList" class="PeopleList">
-            	<?
-            	list_users($_data['followers']);
-				?>
-            </div>
-        </div>
-        <div class="cl"></div>
-        <div id="sysScrollContainerBottom"></div>
-    </div>
+if (IS_LOGGED_IN) {
+    $params['viewer_user_id'] = $_SESSION['user']['user_id'];
+}
+$data = api_call('user', 'get_user', $params, true);
+$user = $data['data'];
+?>
+
+<div id="userListBanner">
+    <div class="avatarFrame avatarShadow"><img src="<?= $user['avatar'] ?>&width=200"></div>
+    <ul>
+        <li style="font-size: 21px;"><a href="/<?= $user['username'] ?>"><?= $user['username'] ?></a></li>
+        <li><?= $userConfig['location'] ?></li>
+    </ul>
+    <ul class="followLand">
+        <li><a href="/<?= $user['username'] ?>/followers">Followers <?= $user['followers'] ?></a></li>
+        <li><a href="/<?= $user['username'] ?>/following">Following <?= $user['following'] ?></a></li>
+    </ul>
 </div>
+<div id="userListCol"></div>
+
 <?
 include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 ?>
+
+<script>
+    $(function() {
+        dahliawolfUserList = new userList(<?= json_encode($user) ?>, '<?= $self ?>');
+        dahliawolfUserList.getUsers();
+    });
+</script>
