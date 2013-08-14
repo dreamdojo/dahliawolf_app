@@ -115,7 +115,7 @@ shop.prototype.product.prototype.addToShop = function() {
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
     this.$hover.append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>').append( this.getInspirationButton() );
     this.$image_view = $('<div class="product-details"></div>').appendTo(this.$view);
-    this.$inspiration = $('<img class="inspirationImage" src="'+this.inspirationImage+'">').appendTo(this.$image_view);
+    this.$inspiration = $('<img class="inspirationImage" src="'+(this.inspirationImage ? this.inspirationImage : '')+'">').appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
     this.$image_view.append( this.getStatus() ).append( this.getPrice()).append( this.getImage() );
     this.$inspiration_view.append( this.getInspiration() );
