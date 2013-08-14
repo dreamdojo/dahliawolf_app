@@ -19,7 +19,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-<title>Dahliawolf - Homepage</title>
+<title>Dahlia\Wolf - Homepage</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/homes.js"></script>
 <script src="/js/functions.js" type="text/javascript"></script>
