@@ -1,5 +1,6 @@
 <a class="Button WhiteButton Indicator" href="#" id="ScrollToTop" style="display: none;"><img src="/skin/img/gototop.jpg" width="61" height="64"></a>
 <div class="cl"></div>
+<div id="theOverlay"></div>
 <div id="sys-profiler"></div>
 <div id="sysMessageDialog" style="display: none;" title="Message"></div>
 <div id="dw-footer-background"></div>

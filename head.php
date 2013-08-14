@@ -23,7 +23,7 @@ if ($top_dir == 'shop') {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0031)http://www.dahliawolf.com/login -->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" class="csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Dahlia Wolf</title>
+<title><?= isset($pageTitle) ? 'Dahlia\Wolf - '.$pageTitle : 'Dahlia Wolf' ?></title>
 
 <meta name="description" content="Dahlia Wolf - Dahlia Wolf">
 <meta name="keywords" content="Dahlia Wolf,Dahlia Wolf">
@@ -76,8 +76,10 @@ if ($top_dir == 'shop') {
 <script src="/js/lazyload.js" type="text/javascript"></script>
 <script src="/js/theLesson.js" type="text/javascript"></script>
 <script src="/js/theGrid.js" type="text/javascript"></script>
+<script src="/js/directMessager.js" type="text/javascript"></script>
 <script src="/js/postDetail.js" type="text/javascript"></script>
 <script src="/js/postDetailPosts.js" type="text/javascript"></script>
+<script src="/js/userList.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -106,7 +108,7 @@ var theUser = new Object();
 
     woopra.config({
         domain: 'dahliawolf.com',
-        idle_timeout: 1800000,
+        idle_timeout: 1800000
     });
     woopra.track('pv', {
         url: window.location.pathname+window.location.search,

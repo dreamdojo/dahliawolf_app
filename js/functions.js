@@ -9,6 +9,24 @@ $(document).ready(function() {
 	}
 });
 
+var holla = function () { };
+
+holla.log = function (message) {
+
+    try {
+
+        console.log(message);
+
+    } catch (exception) {
+
+        return;
+
+    }
+
+}
+
+
+
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
@@ -80,6 +98,11 @@ function events() {
 		}, 500);
 		return false;
 	});
+
+    $(document).on('click', 'a[rel="message"]', function(e) {
+        e.preventDefault();
+        dahliaMessenger.newMessage( $(this).html() );
+    });
 
     $(document).on('click', 'a[rel="addWishlist"]', function(event) {
         event.preventDefault();
@@ -203,6 +226,9 @@ function user_events() {
 
 		return false;
 	});
+
+    $(document).on('focus', '.socialize',  pplFinder.start);
+    //$(document).on('blur', '.socialize',  pplFinder.closeMe);
 
 	// Like/unlike
 	$(document).on('click', 'a[rel="like"]', function() {
@@ -419,7 +445,7 @@ function user_events() {
 			else {
 				//$state_select.hide();
 				//$province_input.show();
-                html += '<option value="N/A" selected="selected">' + 'not applicable' + '</option>';
+                html += '<option value="N/A" selected="selected">' + 'Not Applicable' + '</option>';
 			}
 			$state_select.html(html);
 		});
@@ -722,3 +748,9 @@ function sendToAnal(data){
         woopraTracker.pushEvent(data);
     }
 }
+
+Array.prototype.remove = function(from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+};

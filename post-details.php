@@ -88,7 +88,10 @@
             <a href="<?= $_data['post']['image_url'] ?>" target="_blank"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
         </div>
         
-        <div class="postOrigin"> Posted from <a href="<?= $_data['post']['image_attribution_url'] ?>" target="_blank"><?= $_data['post']['image_attribution_domain'] ?></a> on <?= $created[0] ?></div>
+        <div class="postOrigin">
+            Posted from <a href="<?= $_data['post']['image_attribution_url'] ?>" target="_blank"><?= $_data['post']['image_attribution_domain'] ?></a> on <?= $created[0] ?>,
+            Needs <span id="totalVotesNeed" class="dahliaPink"><?= (1000 - $_data['post']['total_likes']) ?></span> More Votes To Win
+        </div>
        	
         <div class="socialCol">
         	<div class="postDetailCommentSection">
@@ -137,7 +140,6 @@
 
 	var thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
     sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
-    $('.socialize').bind('click', pplFinder.start);
 
     <? if(isset($_GET['ajax'])): ?>
         $('body').css('overflow', 'hidden');
