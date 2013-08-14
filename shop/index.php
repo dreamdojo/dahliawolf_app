@@ -2,9 +2,6 @@
     $pageTitle = "Shop";
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
-
-    require DR . '/includes/php/classes/Product_Listing.php';
-    $Product_Listing = new Product_Listing()
 ?>
 <style>
 #dahliawolfShop{ width: 1050px;margin: 0 auto;position: relative; margin-top: 10px;}
