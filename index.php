@@ -198,12 +198,12 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="inspira">StunnaLOOK, Los Angeles</div>
         </div>
     </div>
-    <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
+    <div class="slide" style="display:none; background-image: url(/images/slider/ellemay.jpg);">
         <!--<img class="zeImg" src="/images/slider/artinourblood.jpeg" />-->
         <div class="item-box white">
             <div class="item-title">ELLE MAY DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
+            <div class="inspira"><a href="/ellemay"/>ellemay</a>, Sunshine Coast, AU</div>
         </div>
     </div>
     <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
