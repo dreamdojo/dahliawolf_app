@@ -6,6 +6,6 @@
  */
 
 
-echo "test";
+echo "the user shop";
 
 ?>
