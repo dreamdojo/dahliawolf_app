@@ -2,12 +2,61 @@
     $pageTitle = "Shop - Product";
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
+
+    if (empty($_GET['id_product'])) {
+        redirect('/shop');
+    }
+
+    if(!empty($_SESSION['user'])) {
+        $wl_calls = array(
+            'does_product_exist_in_wishlist' => array(
+                'id_customer' => $_SESSION['user']['user_id']
+            , 'id_product' => $_GET['id_product']
+            , 'id_shop' => SHOP_ID
+            , 'id_lang' => LANG_ID
+            )
+        );
+        $wl_data = commerce_api_request('wishlist', $wl_calls, true);
+        $_data['show_add_to_wishlist'] = empty($wl_data['data']['does_product_exist_in_wishlist']['data']) ? true : false;
+    } else $_data['show_add_to_wishlist'] =  false;
+
+    $calls = array(
+        'get_product_details' => array(
+            'id_product' => $_GET['id_product']
+        , 'id_shop' => SHOP_ID
+        , 'id_lang' => LANG_ID
+        , 'user_id' => !empty($_GET['user_id']) ? $_GET['user_id'] : NULL
+        )
+    );
+
+    $data = commerce_api_request('product', $calls, true);
+
+    // Failed
+    if (!empty($data['errors']) || !empty($data['data']['get_product_details']['errors'])) {
+        $_SESSION['errors'] = api_errors_to_array($data, 'get_product_details');
+    }
+    else {
+        $_data['product'] = $data['data']['get_product_details']['data'];
+
+        if (empty($_data['product']) || empty($_data['product']['product'])) {
+            $_SESSION['errors'] = array('Product not found');
+        }
+    }
 ?>
+
 <style>
     .shop-wishlist-button{padding: 12px 1px;font-size: 18px;text-align: center; color: #fff; cursor: pointer;}
     .not-in-wishlist{background-color: #363636;}
     .is-in-wishlist{background-color: #f4a5b4;}
 </style>
+
+<?
+if( isset($_GET['username']) && !empty($_data['product']['product']['posts'][0]['username']) && $_GET['username'] != $_data['product']['product']['posts'][0]['username'] ) {
+    echo 'This not '.$_GET['username'].'\'s Product';
+    die();
+} ?>
+
+
 <div class="shop body">
 	<div class="product">
 		<div class="product-details">
@@ -31,7 +80,7 @@
                         </ul>
 				<? endif ?>
 			<div class="info">
-            	<? if(!empty($_data['product']['product']['username'])): ?>
+            	<? if( !empty($_data['product']['product']['username']) ): ?>
                     <div class="user">
                         <p class="title"><img src="/mobile/images/wild-img.png" alt="Top Wild Member:" /></p>
                         

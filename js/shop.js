@@ -22,9 +22,19 @@ shop.prototype.loadProducts = function() {
             _this.data = data.data.get_products.data;
             _this.fillShop();
         } else {
-            //_this.$shop.append('<div class="shopOwnerTitle">'+_this.shopOwner.username+'\'s Shop </div><img src="/images/emptyShopBanner.jpg">');
+            _this.fillEmptyShop();
         }
     });
+}
+
+shop.prototype.fillEmptyShop = function() {
+    this.$shop.append('<div class="shopEmpty">'+(this.shopOwner.username === theUser.username ? 'Your shop is empty:( Start posting fashion images and getting votes right away!' : this.shopOwner.username + '\'s shop is empty')+'</div>');
+    var str = '<ul id="emptyShop">';
+    for(var x = 0; x < 8; x++) {
+        str += '<li><img src="/images/shopExample.png"></li>';
+    }
+    str += '</ul>';
+    this.$shop.append(str);
 }
 
 shop.prototype.fillShop = function() {
@@ -113,7 +123,7 @@ shop.prototype.product.prototype.getBuyButton = function() {
     var _this = this;
     this.$buyButton = $('<div class="buyButton overlayButton" style="background-color: #'+this.bgColors[this.data.status]+'">'+(this.data.status !== 'Live' ? this.data.status : 'BUY')+'</div>');
 
-    if(this.data.status == 'Pre Order' || this.data.status == 'Live') {
+    if(this.data.status == 'Pre Order' || this.data.status == 'Live' || this.data.status == 'Coming Soon') {
         $(this.$buyButton).on('click', function() {
             document.location = '/shop/'+_this.data.id_product;
         });

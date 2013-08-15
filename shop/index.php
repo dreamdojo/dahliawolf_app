@@ -10,23 +10,28 @@
     $user = $data['data'];
 ?>
 <style>
+    #emptyShop li{margin: 15px 1px; float: left;}
+    #emptyShop li:hover{opacity: .7;}
     #shopOwnerHeader{width: 1000px;margin: 0px auto;position: relative;margin-top: 10px;overflow: hidden;}
     #shopOwnerHeader img{width: 100%;}
-    .shopOwnerTitle{position: absolute;margin-top: 80px;left: 100px;font-size: 30px;}
+    .shopOwnerTitle{position: absolute;margin-top: 90px;left: 71px;font-size: 30px; text-transform: uppercase; font-weight: bolder !important; width: 528px;text-align: center;overflow: hidden;text-overflow: ellipsis;}
+    .shopEmpty{font-size: 20px; text-align: center; margin-top: 15px;}
 </style>
 
-<ul id="sortBar">
-    <li>sort products by: </li>
-    <li data-sort="Newest">newest / </li>
-    <li data-sort="Coming Soon">samples / </li>
-    <li data-sort="Live">available / </li>
-    <li data-sort="Pre Order" class="dahliaPink">pre-order 50% off</li>
-</ul>
+<? if( empty($user['user_id']) ): ?>
+    <ul id="sortBar">
+        <li>sort products by: </li>
+        <li data-sort="Newest">newest / </li>
+        <li data-sort="Coming Soon">samples / </li>
+        <li data-sort="Live">available / </li>
+        <li data-sort="Pre Order" class="dahliaPink">pre-order 50% off</li>
+    </ul>
+<? endif ?>
 
 <? if( !empty($user['user_id']) ): ?>
     <div id="shopOwnerHeader">
-        <div class="shopOwnerTitle"><?= $user['username'] ?>'s Shop </div><img src="/images/emptyShopBanner.jpg">
-    </div>
+        <div class="shopOwnerTitle"><a href="/<?= $user['username'] ?>"><?= $user['username'] ?>'s</a> boutique </div>
+        <img src="/images/emptyShopBanner.jpg">
     </div>
 <? endif ?>
 
