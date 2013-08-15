@@ -19,7 +19,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-<title>Dahliawolf</title>
+<title>Dahlia\Wolf - Homepage</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/homes.js"></script>
 <script src="/js/functions.js" type="text/javascript"></script>
@@ -81,9 +81,9 @@ a:hover{color: red;}
 .slide{ height:100%; width:100%; position:absolute; left:0px; top:0px;background-size: auto 100%;background-repeat: no-repeat;background-position: center; background-size: cover;}
 .slide img{min-width:100%; min-height:100%; }
 .theBox{width: 500px;height: 485px;border-radius: 3px;position: absolute;top: 41px;left: 60px;z-index: 1;font-size: 13px;color: #C5C9CC;box-shadow: 0 0 3px #1A1A1A; min-height: 300px; min-width:250px;  max-width:450px; overflow: hidden; font:Arial, Helvetica, sans-serif;}
-.theBox .header{position: relative;margin-left: 15%;z-index: 1;margin-top: 6%;}
+.theBox .header{position: relative;margin-left: 15%;z-index: 1;margin-top: 7%;}
 .box-section{width: 100%;height: 71%; position:absolute;}
-.pitch{color: #fff;width: 95%;margin-left: 2.5%;font-size: 1.9em;text-align: center;margin-top: 9%;font-family: Geneva, sans-serif;}
+.pitch{color: #fff;width: 95%;margin-left: 2.5%;font-size: 1.7em;text-align: center;margin-top: 9%;font-family: Futura, sans-serif;}
 .find-out-more{color: rgb(151, 151, 151);border: rgb(126, 126, 126) 1px solid;margin: 0 auto;width: 52%;font-size: .9em;padding: .5em 1.1em;text-align: center;margin-top: 4%;cursor: pointer;margin-bottom: 3%;
 font-family: futura, Arial, Helvetica, sans-serif;}
 .enter-butt{width: 60%;margin-left: 25%;margin-top: 15%;}
@@ -96,7 +96,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 .menu-form li{font-size: 1.1em;margin-bottom: 2%;}
 .menu-form input{width: 225px;height: 25px;border-radius: 0px;text-indent: 5px;font-size: .8em;}
 .rememba{text-align: left;margin-left: 24%;font-size: 1.1em; width: 232px;}
-#sysForm_submit{margin-left: 63px;margin-top: 5px;position: absolute;}
+#sysForm_submit{left: 50%;margin-left: -45px;margin-top: 5px;position: absolute;}
 #register{display:none;}
 #login{ display:none;}
 .item-box{position: absolute;right: 0px;height: 100px;width: 400px;bottom: 10px;font-size: 1em;text-align: right;margin-right: 40px;margin-bottom: 30px;font-family: futura, sans-serif;font-weight: normal;}
