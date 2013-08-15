@@ -10,15 +10,10 @@
     $user = $data['data'];
 ?>
 <style>
+    #shopOwnerHeader{width: 1000px;margin: 0px auto;position: relative;margin-top: 10px;overflow: hidden;}
+    #shopOwnerHeader img{width: 100%;}
     .shopOwnerTitle{position: absolute;margin-top: 80px;left: 100px;font-size: 30px;}
 </style>
-
-<? if( !empty($user['user_id']) ): ?>
-    <div id="shopOwnerHeader">
-        <div class="shopOwnerTitle"><?= $user['username'] ?>'s Shop </div><img src="/images/emptyShopBanner.jpg">
-    </div>
-</div>
-<? endif ?>
 
 <ul id="sortBar">
     <li>sort products by: </li>
@@ -27,6 +22,13 @@
     <li data-sort="Live">available / </li>
     <li data-sort="Pre Order" class="dahliaPink">pre-order 50% off</li>
 </ul>
+
+<? if( !empty($user['user_id']) ): ?>
+    <div id="shopOwnerHeader">
+        <div class="shopOwnerTitle"><?= $user['username'] ?>'s Shop </div><img src="/images/emptyShopBanner.jpg">
+    </div>
+    </div>
+<? endif ?>
 
 <div id="dahliawolfShop"></div>
 

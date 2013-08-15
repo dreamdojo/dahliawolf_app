@@ -22,7 +22,7 @@ shop.prototype.loadProducts = function() {
             _this.data = data.data.get_products.data;
             _this.fillShop();
         } else {
-            _this.$shop.append('<div class="shopOwnerTitle">'+_this.shopOwner.username+'\'s Shop </div><img src="/images/emptyShopBanner.jpg">');
+            //_this.$shop.append('<div class="shopOwnerTitle">'+_this.shopOwner.username+'\'s Shop </div><img src="/images/emptyShopBanner.jpg">');
         }
     });
 }
@@ -75,7 +75,7 @@ shop.prototype.product.prototype.addToShop = function() {
 shop.prototype.product.prototype.getStatus = function() {
     switch (this.data.status) {
         case 'Coming Soon' :
-            return '<div class="coming_soon"><h1>SAMPLE</h1> NEEDS <span class="wishlistCount dahliaPink">'+(1000 - Number(this.data.wishlist_count))+'</span> MORE WISHLIST ADDS</div>';
+            return '<div class="coming_soon"><h1>SAMPLE</h1><span class="wishlistCount dahliaPink">'+(1000 - Number(this.data.wishlist_count))+'</span> MORE WISHLIST ADDS</div>';
         case 'Sold Out' :
             return '<div class="sold-out">'+this.data.status+'</div>';
         case 'Pre Order' :
