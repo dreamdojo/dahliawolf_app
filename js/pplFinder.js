@@ -182,7 +182,7 @@ function fs_useName(){
 }
 
 function fs_moveDown(){
-    if((friendStack.index +2) < friendStack.avatar.length){
+    if((friendStack.index +1) < friendStack.avatar.length){
 		friendStack.index++;
         friendStack.toggleLight(friendStack.index-1);
         friendStack.toggleLight(friendStack.index);

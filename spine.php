@@ -1,5 +1,5 @@
 <?
-$pageTitle = "Post";
+$pageTitle = "Spine";
 include "head.php";
 include "header.php";
 

@@ -86,7 +86,7 @@ $(document).ready(function()
             	<img src="/images/slash.png" width="23" height="19">
             </div>
             <div class="marginmiddlebutton4 marginmiddlebutton">
-            	<a id="section-shop" href="/explore" class="<?= ($self == '/explore.php' ? 'color-me-red' : '') ?>">SHOP</a>
+            	<a id="section-shop" href="/shop" class="<?= ($self == '/explore.php' ? 'color-me-red' : '') ?>">SHOP</a>
             </div>
 
 

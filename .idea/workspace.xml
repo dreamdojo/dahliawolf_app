@@ -1,65 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="shoop">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/slider/neon-jacket.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/directMessager.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/import/pics/image.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile" afterPath="$PROJECT_DIR$/mobile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/pi-tag.png" afterPath="$PROJECT_DIR$/images/pi-tag.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jk07/utils/Error_Handler.php" afterPath="$PROJECT_DIR$/lib/jk07/utils/Error_Handler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Base.php" afterPath="$PROJECT_DIR$/lib/jk07/Jk_Base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Config.php" afterPath="$PROJECT_DIR$/lib/jk07/Jk_Config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Loader.php" afterPath="$PROJECT_DIR$/lib/jk07/Jk_Loader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Logger.php" afterPath="$PROJECT_DIR$/lib/jk07/Jk_Logger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/checkout/billing.php" afterPath="$PROJECT_DIR$/common/checkout/billing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/explore_popup.php" afterPath="$PROJECT_DIR$/explore_popup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/php/functions-api.php" afterPath="$PROJECT_DIR$/includes/php/functions-api.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/get_started.php" afterPath="$PROJECT_DIR$/get_started.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/head.php" afterPath="$PROJECT_DIR$/head.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/header_template.php" afterPath="$PROJECT_DIR$/themes/header_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/php/initial-calls.php" afterPath="$PROJECT_DIR$/includes/php/initial-calls.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagramConnect.php" afterPath="$PROJECT_DIR$/instagramConnect.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/invite.php" afterPath="$PROJECT_DIR$/invite.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/post-details.php" afterPath="$PROJECT_DIR$/post-details.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/postDetail.js" afterPath="$PROJECT_DIR$/js/postDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/post_image.php" afterPath="$PROJECT_DIR$/action/post_image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/post_slideout_template.php" afterPath="$PROJECT_DIR$/themes/post_slideout_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/pplFinder.js" afterPath="$PROJECT_DIR$/js/pplFinder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/product.php" afterPath="$PROJECT_DIR$/shop/product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.php" afterPath="$PROJECT_DIR$/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/shop/remove_item_from_wishlist.php" afterPath="$PROJECT_DIR$/action/shop/remove_item_from_wishlist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/php/shop-initial-calls.php" afterPath="$PROJECT_DIR$/includes/php/shop-initial-calls.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social-login.php" afterPath="$PROJECT_DIR$/social-login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spine.php" afterPath="$PROJECT_DIR$/spine.php" />
+    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="new home slider">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376022283046" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376441859855" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373655286145" ignored="false" />
-    <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375339387529" ignored="false" />
-    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376029050059" ignored="false" />
-    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376025963036" ignored="false" />
+    <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
+    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375398076074" ignored="false" />
+    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375469244418" ignored="false" />
     <file path="/Spine-1.1.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374534549200" ignored="false" />
     <file path="/a.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184379967" ignored="false" />
     <file path="/a.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184397202" ignored="false" />
-    <file path="/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374737099283" ignored="false" />
+    <file path="/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375485371282" ignored="false" />
     <file path="/explore_popup.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374512429568" ignored="false" />
     <file path="/profile.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374105947639" ignored="false" />
     <file path="/userProfile.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372287370523" ignored="false" />
     <file path="/explore.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373928286982" ignored="false" />
     <file path="/theGrid.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372290387376" ignored="false" />
     <file path="/api.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374531486320" ignored="false" />
-    <file path="/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372349121703" ignored="false" />
-    <file path="/post_slideout_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372349915800" ignored="false" />
-    <file path="/invite.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372369516577" ignored="false" />
+    <file path="/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375723275465" ignored="false" />
+    <file path="/post_slideout_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375736030853" ignored="false" />
+    <file path="/invite.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375746118037" ignored="false" />
     <file path="/invite-email.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372363821211" ignored="false" />
     <file path="/sendInviteEmails.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372369565761" ignored="false" />
     <file path="/postDetailPosts.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373675982092" ignored="false" />
@@ -68,7 +34,7 @@
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/profile.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374105947956" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/css/main_mobile.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374255220699" ignored="false" />
     <file path="/main_mobile.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373990445027" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/js/dahliawolf.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374738363018" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/js/dahliawolf.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375403137962" ignored="false" />
     <file path="/dahliawolf.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374738291089" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/common/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374255089290" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/common/header.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374733533316" ignored="false" />
@@ -83,7 +49,7 @@
     <file path="/inspire.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373999424138" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/js/m_functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374279444723" ignored="false" />
     <file path="/m_functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374085254592" ignored="false" />
-    <file path="/a.dummy" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374173809003" ignored="false" />
+    <file path="/a.dummy" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375746055397" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731311219" ignored="false" />
     <file path="/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374530612390" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/css/form.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374190743742" ignored="false" />
@@ -94,7 +60,7 @@
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/cart-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731311219" ignored="false" />
     <file path="/cart-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374265255597" ignored="false" />
     <file path="/add_item_to_wishlist.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374530443017" ignored="false" />
-    <file path="/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374526837635" ignored="false" />
+    <file path="/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376426137559" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731709771" ignored="false" />
     <file path="/cart.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374535657396" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374737305546" ignored="false" />
@@ -102,11 +68,8 @@
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/dahliawolf.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374738504957" ignored="false" />
     <file path="/dahliawolf.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374732408234" ignored="false" />
     <file path="/settings.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374733829625" ignored="false" />
-    <file path="/get_started.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375343263750" ignored="false" />
-    <file path="/theLesson.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375338150162" ignored="false" />
-    <file path="/directMessager.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376028714106" ignored="false" />
-    <file path="/footer.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376026328880" ignored="false" />
-    <file path="/pplFinder.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376029292181" ignored="false" />
+    <file path="/get_started.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375742503334" ignored="false" />
+    <file path="/instagramConnect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375737376917" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,84 +94,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="post_slideout_template.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="153" selection-start="6517" selection-end="6546" vertical-scroll-proportion="-13.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="directMessager.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/directMessager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="71" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post-details.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/post-details.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="68" selection-start="7462" selection-end="7462" vertical-scroll-proportion="-17.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="103" selection-start="4566" selection-end="4566" vertical-scroll-proportion="-14.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pplFinder.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/pplFinder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="32" selection-start="3347" selection-end="3347" vertical-scroll-proportion="0.36032388">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="366" column="215" selection-start="30328" selection-end="30328" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="19" selection-start="182" selection-end="192" vertical-scroll-proportion="-1.25">
-              <folding>
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="736" column="2" selection-start="21613" selection-end="21613" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="initial-calls.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/php/initial-calls.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="8" selection-start="729" selection-end="729" vertical-scroll-proportion="-10.625">
+            <state line="202" column="60" selection-start="12188" selection-end="12212" vertical-scroll-proportion="0.16050583">
               <folding />
             </state>
           </provider>
@@ -268,31 +157,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/api.js" />
-        <option value="$PROJECT_DIR$/includes/php/classes/Spine-1.1.php" />
-        <option value="$PROJECT_DIR$/common/checkout/cart.php" />
-        <option value="$PROJECT_DIR$/action/shop/place_order.php" />
         <option value="$PROJECT_DIR$/config/mobile-detect.php" />
-        <option value="$PROJECT_DIR$/js/theLesson.js" />
         <option value="$PROJECT_DIR$/themes/header_template.php" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/explore_popup.php" />
+        <option value="$PROJECT_DIR$/shop/product.php" />
+        <option value="$PROJECT_DIR$/js/postDetail.js" />
+        <option value="$PROJECT_DIR$/post-details.php" />
+        <option value="$PROJECT_DIR$/social-login.php" />
+        <option value="$PROJECT_DIR$/head.php" />
+        <option value="$PROJECT_DIR$/spine.php" />
+        <option value="$PROJECT_DIR$/instagramConnect.php" />
         <option value="$PROJECT_DIR$/themes/post_slideout_template.php" />
         <option value="$PROJECT_DIR$/get_started.php" />
-        <option value="$PROJECT_DIR$/includes/php/initial-calls.php" />
-        <option value="$PROJECT_DIR$/post-details.php" />
-        <option value="$PROJECT_DIR$/footer.php" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
-        <option value="$PROJECT_DIR$/js/directMessager.js" />
-        <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/pplFinder.js" />
+        <option value="$PROJECT_DIR$/invite.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="109" />
-    <option name="width" value="1646" />
-    <option name="height" value="894" />
+    <option name="x" value="188" />
+    <option name="y" value="108" />
+    <option name="width" value="2168" />
+    <option name="height" value="1213" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -324,25 +213,77 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dahliawolf_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slides" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="All" />
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,16 +300,32 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
-  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="Dahlia-DEV" serverId="8b23f12c-8037-474f-a18a-db76c25da55f" autoUpload="true" uploadOnSaveAll="true">
+  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="live-dahlia" serverId="119090ac-8d50-439f-9ae8-eb974a978722" autoUpload="true" uploadOnSaveAll="true">
     <servers>
-      <server id="8b23f12c-8037-474f-a18a-db76c25da55f">
+      <server id="119090ac-8d50-439f-9ae8-eb974a978722">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </server>
-      <server id="e18487a9-f106-4ed0-8985-776f0f16d8f9">
+      <server id="3082e7b7-a241-4124-938b-df55f7eabacd">
+        <serverdata />
+      </server>
+      <server id="3ddbf072-efce-4f8d-9183-02e0d76f79da">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="4874617c-3ed5-492a-86f8-997ae252a9d4">
+        <serverdata />
+      </server>
+      <server id="4c580b37-24f7-47a0-b7b0-b17f9016e1bf">
+        <serverdata />
+      </server>
+      <server id="52b3a762-ccc2-42cb-b516-c13154f390e3">
         <serverdata />
       </server>
     </servers>
@@ -376,6 +333,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/slider" />
+      <recent name="$PROJECT_DIR$/images/slider/slides" />
     </key>
   </component>
   <component name="RunManager">
@@ -535,38 +496,86 @@
       <created>1374535081349</created>
       <updated>1374535081349</updated>
     </task>
-    <task id="LOCAL-00031" summary="NEW MEMBER INTRO">
-      <created>1375343332671</created>
-      <updated>1375343332671</updated>
+    <task id="LOCAL-00031" summary="get started page">
+      <created>1375405635786</created>
+      <updated>1375405635786</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Final get started page and more analytics">
+      <created>1375469662639</created>
+      <updated>1375469662639</updated>
+    </task>
+    <task id="LOCAL-00033" summary="api not ready">
+      <created>1375469780339</created>
+      <updated>1375469780339</updated>
+    </task>
+    <task id="LOCAL-00034" summary="new user login process post details shows more posts on solo page">
+      <created>1375487545865</created>
+      <updated>1375487545865</updated>
+    </task>
+    <task id="LOCAL-00035" summary="new user login process post details shows more posts on solo page">
+      <created>1375737210124</created>
+      <updated>1375737210124</updated>
+    </task>
+    <task id="LOCAL-00036" summary="instagram non refresh">
+      <created>1375737402890</created>
+      <updated>1375737402890</updated>
+    </task>
+    <task id="LOCAL-00037" summary="instagram clean up">
+      <created>1375737852255</created>
+      <updated>1375737852255</updated>
+    </task>
+    <task id="LOCAL-00038" summary="instagram clean up">
+      <created>1375738001251</created>
+      <updated>1375738001251</updated>
+    </task>
+    <task id="LOCAL-00039" summary="get started fixes">
+      <created>1375742685675</created>
+      <updated>1375742685675</updated>
+    </task>
+    <task id="LOCAL-00040" summary="invite facebook">
+      <created>1375746160701</created>
+      <updated>1375746160701</updated>
+    </task>
+    <task id="LOCAL-00041" summary="new home slider">
+      <created>1375815821963</created>
+      <updated>1375815821963</updated>
+    </task>
+    <task id="LOCAL-00042" summary="new home slider">
+      <created>1375835767922</created>
+      <updated>1375835767922</updated>
+    </task>
+    <task id="LOCAL-00043" summary="new home slider">
+      <created>1376418267833</created>
+      <updated>1376418267833</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="109" width="1646" height="894" extended-state="0" />
-    <editor active="true" />
+    <frame x="188" y="108" width="2168" height="1213" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3273196" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32474226" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23510972" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6709887" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15375" sideWeight="0.67268044" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.261875" sideWeight="0.67525774" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21159284" sideWeight="0.67488587" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18001886" sideWeight="0.67488587" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3501292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490073" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32511416" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3289256" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3289256" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -611,7 +620,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="NEW MEMBER INTRO" />
+    <option name="LAST_COMMIT_MESSAGE" value="new home slider" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -625,11 +634,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="commit test&#10;" />
-    <MESSAGE value="delete test file" />
-    <MESSAGE value="init file upload" />
-    <MESSAGE value="test change" />
-    <MESSAGE value="test chnage undo comment" />
     <MESSAGE value="Merge latest changes from server" />
     <MESSAGE value="More testing from mars" />
     <MESSAGE value="Chat heads and invite emails" />
@@ -646,124 +650,98 @@
     <MESSAGE value="much little things" />
     <MESSAGE value="shoop" />
     <MESSAGE value="ooom blop" />
-    <MESSAGE value="NEW MEMBER INTRO" />
+    <MESSAGE value="get started page" />
+    <MESSAGE value="Final get started page and more analytics" />
+    <MESSAGE value="api not ready" />
+    <MESSAGE value="new user login process post details shows more posts on solo page" />
+    <MESSAGE value="instagram non refresh" />
+    <MESSAGE value="instagram clean up" />
+    <MESSAGE value="get started fixes" />
+    <MESSAGE value="invite facebook" />
+    <MESSAGE value="new home slider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/activity.php">
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="33.125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get_started.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="70" selection-start="782" selection-end="782" vertical-scroll-proportion="0.03267974">
-          <folding>
-            <marker date="1376022267000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/theLesson.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="42" selection-start="6802" selection-end="6836" vertical-scroll-proportion="0.06832298">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spine.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1563" selection-end="1564" vertical-scroll-proportion="0.8039216">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/header_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="0" selection-start="6970" selection-end="7008" vertical-scroll-proportion="3.8396626">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="41.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/php/initial-calls.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="8" selection-start="729" selection-end="729" vertical-scroll-proportion="-10.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="103" selection-start="4566" selection-end="4566" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/postDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.96524066">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="182" selection-end="192" vertical-scroll-proportion="-1.25">
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="153" selection-start="6517" selection-end="6546" vertical-scroll-proportion="-13.75">
-          <folding />
-        </state>
+        <state line="594" column="47" selection-start="17292" selection-end="17292" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/post-details.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="68" selection-start="7462" selection-end="7462" vertical-scroll-proportion="-17.75">
-          <folding />
-        </state>
+        <state line="141" column="10" selection-start="7370" selection-end="7370" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
+    <entry file="file://$PROJECT_DIR$/js/postDetailPosts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="736" column="2" selection-start="21613" selection-end="21613" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="39" column="26" selection-start="1400" selection-end="1401" vertical-scroll-proportion="0.021037867" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/directMessager.js">
+    <entry file="file://$PROJECT_DIR$/social-login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="71" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="27" column="48" selection-start="807" selection-end="807" vertical-scroll-proportion="0.59911245" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
+    <entry file="file://$PROJECT_DIR$/head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="366" column="215" selection-start="30328" selection-end="30328" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="25" column="90" selection-start="983" selection-end="1073" vertical-scroll-proportion="0.3106509" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/pplFinder.js">
+    <entry file="file://$PROJECT_DIR$/js/postDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="32" selection-start="3347" selection-end="3347" vertical-scroll-proportion="0.36032388">
+        <state line="18" column="80" selection-start="997" selection-end="997" vertical-scroll-proportion="0.021037867" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="5" selection-start="2296" selection-end="2296" vertical-scroll-proportion="0.021037867" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/php/initial-calls.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="246" column="35" selection-start="6650" selection-end="6650" vertical-scroll-proportion="0.021770682" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redirect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="383" column="91" selection-start="13321" selection-end="13321" vertical-scroll-proportion="1.9526627" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instagramConnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="0.30478954" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="21" selection-start="65" selection-end="65" vertical-scroll-proportion="0.06531204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_started.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="57" selection-start="3688" selection-end="3688" vertical-scroll-proportion="1.4423077" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/invite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.25224215" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="202" column="60" selection-start="12188" selection-end="12212" vertical-scroll-proportion="0.16050583">
           <folding />
         </state>
       </provider>
