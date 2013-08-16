@@ -124,36 +124,36 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .postGridUnLiked{background: url("/images/broken.png") no-repeat 0 0; background-size: 100% 100%;}
 
 /************************ ACTIVITY ****************/
-#theShaft{width:1000px; margin:0px auto;margin-top: -6px;background-color: #111111;font-family: futura, arial;position: absolute;left: 50%;margin-left: -493px;position: absolute;height: auto;min-height: 100%;}
-#theShaft #leftCol{background-color:#111111;width: 20%;float: left;padding-top: 20px;}
-#theShaft #mainCol{ background-color:#252525; width:80%; float:left;padding-top: 20px; height: 100%;}
-#theShaft .activity-menu{width: 100%;height: 60px;border-top: #252525 1px solid;text-align: left;color: #acacac;}
-#theShaft .activity-menu span{color:#882a3b !important; padding-left: 5px;}
-#theShaft .activity-menu-icon{width:60px; height:100%; background-repeat:no-repeat; background-size:cover; float:left; margin-left: -10px;}
+#theShaft{width:1000px; margin:0px auto;margin-top: -6px;background-color: #FFF; font-family: futura, arial;position: absolute;left: 50%; margin-left: -493px;position: absolute;height: auto;min-height: 100%;}
+#theShaft #leftCol{background-color:#FFF;width: 20%;float: left;padding-top: 20px;}
+#theShaft #mainCol{ background-color:#FFF; width:80%; float:left;padding-top: 20px; height: 100%;}
+#theShaft .activity-menu{width: 100%;height: 60px;border-top: #FFF 1px solid;text-align: left; color: #acacac;}
+#theShaft .activity-menu span{color:#999999 !important; padding-left: 5px;}
+#theShaft .activity-menu-icon{width:60px; height:100%; background-repeat:no-repeat; background-size: 38%;background-position: 100% 50%; float:left; margin-left: -10px;}
 #theShaft .activity-menu-title{ color:#acacac;font-size: 14px;margin-top: 21px;margin-left: 60px;}
-.new-bubs{background-image: url(/images/indicator.png); background-size: cover; color:#fff; text-align:center; float:right;height: 45px;width: 44px;margin-top: -14px;}
+.new-bubs {color:#fff; text-align:center; float:right;height: 45px;width: 44px;margin-top: -14px;}
 .new-bubs p{line-height: 44px !important; font-size:12px; padding-right:2px}
-#theShaft .notification{ background-color:#363636; width:100%; color:#767676;height: 35px;font-size: 14px; margin-top:2px; cursor:pointer; position:relative; float:left;}
-#theShaft .notification-title{ background-color:#212121; width:100%; color:#909090;height: 40px;font-size: 14px; font-weight:bold; margin-top:2px; cursor:pointer; position:relative; float:left;}
-#theShaft .notification-title img{height:75%;float: left;margin-top: 5px; margin-left: 5px;}
+#theShaft .notification{ background-color:#f0f0f0; width:100%; color:#767676;height: 35px;font-size: 14px; margin-top:2px; cursor:pointer; position:relative; float:left;}
+#theShaft .notification-title{ background-color:#E2E2E2; width:100%; color:#909090;height: 40px;font-size: 14px; font-weight:bold; margin-top:2px; cursor:pointer; position:relative; float:left;}
+#theShaft .notification-title img{height:48%;float: left;margin-top: 10px; margin-left: 10px;}
 #theShaft .title-bar-title{margin-left: 40px;margin-top: 8px;}
 #theShaft .content{ margin-left: 10px;padding-top: 6.5px; float:left;width: 76%;overflow: hidden; white-space:nowrap; text-overflow: ellipsis;}
-#theShaft .notification-light{height:35px; width:35px; background-repeat:no-repeat; background-size:cover; float:left;}
-#theShaft .notification .on{background-image: url(/images/new_msg_on.png)}
-#theShaft .notification .off{background-image: url(/images/new_msg_off.png)}
-#theShaft .note-detail{height: 135px;width: 100%;padding-top: 5px;display: none;margin-top: 37px;padding-left: 50px;}
+#theShaft .notification-light{height:10px; width:10px; background-repeat:no-repeat; background-size:cover; float:left; border-radius: 59px; margin-left: 12px; margin-top: 10px;}
+#theShaft .notification .on{background-color: #f9097a;}
+#theShaft .notification .off{background-color: #b7b7b7;}
+#theShaft .note-detail{height: 135px;width: 100%;padding-top: 5px; display: none; margin-top: 5px; float:left; background-color: #fafafa;}
 #theShaft .avatar-frame{height: 120px;width: 120px;overflow: hidden;margin-left: 16px; margin-top: 10px; float:left;margin-bottom: 10px;}
 #theShaft .avatar-frame img{width:100%; min-height:100%;}
 #theShaft .note-detail .note-detail-content{float:left; color:#d0cece; font-size: 15px; padding-left:10px;margin-top: 55px;}
-#theShaft .note-timestamp{float: right;margin-top: 6px;margin-right: 5px;}
-#theShaft .close-me{ position:absolute; height: 35px; right:0px;}
+#theShaft .note-timestamp{float: right;margin-top: 6px;}
+#theShaft .close-me{ position:absolute; height: 35px; right:0px; color: #000;}
 #theShaft .open-me{height: 100%;width: 95%;float: left;text-transform: lowercase;}
 #theShaft .del-wrap{position:relative;}
 #theShaft .note-activity{width: 360px;overflow: hidden;word-wrap: break-word;}
 #theShaft .note-activity a{color:#c2c2c2 !important;}
-.clearCategory{float: right !important; margin-top: -20px !important; margin-right: 3px !important;}
+.clearCategory{float: right !important; margin-top: -30px !important; margin-right: 0px !important; color: #a0a0a0;}
 
-.highlightable:hover{background-color: rgb(65, 65, 65);}
+.highlightable:hover{background-color: #F0F0F0;}
 .invite-selected{background-color: rgb(65, 65, 65);}
 .cursor{cursor:pointer;}
 /************************ POST DETAILS AND GRID ***********/
