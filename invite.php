@@ -17,7 +17,7 @@
 .invite-user-box-avatar-frame{ width:100px; padding:5px; overflow:hidden; float:left; height:86%;}
 .invite-user-box-avatar-frame img{width:100%;}
 .invite-user-info{ color: #acacac;}
-.invite-user-button{background-color: #ba4f63;padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
+.invite-user-button{background-color: #ba4f63; color#fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
 </style>
 
