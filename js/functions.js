@@ -10,19 +10,9 @@ $(document).ready(function() {
 });
 
 var holla = function () { };
-
 holla.log = function (message) {
-
-    try {
-
-        console.log(message);
-
-    } catch (exception) {
-
-        return;
-
-    }
-
+    try { console.log(message);}
+    catch(e) {return;}
 }
 
 
