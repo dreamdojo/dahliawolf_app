@@ -143,11 +143,11 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         <div class="box-section" id="home">
         	<div class="pitch">YOU POST FASHION IMAGES.</br>WE TURN YOUR IMAGE INTO CLOTHING.</div>
             <div onclick="homeWrecker.showHowTo();" class="find-out-more">SCROLL DOWN TO FIND OUT MORE</div>
-                   	<span class="enter-butt"><img class="fb-login loggle-toggle" onClick="document.location='social-login.php?social_network=facebook'" src="/images/signinfacebook2.png" ></span>
+                   	<span class="enter-butt"><img class="fb-login loggle-toggle" src="/images/signinfacebook2.png" ></span>
             <div class="already-user"><span class="loggle-toggle" onclick="homeWrecker.showBox('register');">JOIN </span> | <span class="loggle-toggle" onclick="homeWrecker.showBox('login');"> LOGIN</span></div>
         </div>
         <div class="box-section form-box" id="login">
-        	<img class="fb-login loggle-toggle" onClick="document.location='social-login.php?social_network=facebook'" src="/images/signinfacebook2.png" >
+        	<img class="fb-login loggle-toggle" src="/images/signinfacebook2.png" >
             <form id="sysForm_Login" method="POST" class="Form FancyForm AuthForm" action="/mobile/action/login.php">
                 <ul class="menu-form">
                     <li>or login with email: </li>
@@ -166,7 +166,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="already-user-also">Need an account? <span class="loggle-toggle" onclick="homeWrecker.showBox('register');">REGISTER</div>
         </div>
         <div class="box-section form-box" id="register">
-        	<img class="fb-login loggle-toggle" onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" >
+        	<img class="fb-login loggle-toggle" src="/images/facebook-signup.png" >
             <form id="sysForm_Register" method="POST" class="Form FancyForm AuthForm" action="/mobile/action/signup.php">
                 <ul class="menu-form">
                     <li>or signup with email: </li>
@@ -266,6 +266,10 @@ setTimeout(function(){
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);
     $('#sysForm_Login').submit(loginObj.loginUser);
+    $('.fb-login').on('click', function() {
+        sendToAnal({name : 'Logging in with Facebook'});
+        document.location = 'social-login.php?social_network=facebook';
+    });
 })
 
 </script>

@@ -117,7 +117,6 @@ $(document).ready(function()
 	                    		'Profile' 		=> '/' . $_SESSION['user']['username']
 	                    		, 'Activity' 	=> '/activity'
 								, 'Invite' 	=> '/invite'
-	                    		, 'Showroom' 		=> '/my-runway?username='.$_SESSION['user']['username']
                                 , 'Cart'.' $'.money_format('%i', isset($_data['cart']) && isset($_data['cart']['cart']) ? $_data['cart']['cart']['totals']['grand_total'] : 0) => '/shop/checkout'
 	                    		, 'Wishlist' 	=> '/shop/my-wishlist'
 	                    	)
