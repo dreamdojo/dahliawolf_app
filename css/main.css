@@ -153,8 +153,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #theShaft .note-activity a{color:#c2c2c2 !important;}
 .clearCategory{float: right !important; margin-top: -30px !important; margin-right: 0px !important; color: #a0a0a0;}
 
-.highlightable:hover{background-color: #F0F0F0;}
-.invite-selected{background-color: rgb(65, 65, 65);}
+.highlightable:hover{background-color: #fafafa;}
+.invite-selected{background-color: #F0F0F0;}
 .cursor{cursor:pointer;}
 /************************ POST DETAILS AND GRID ***********/
 .post-details-container{width: 1000px;height: 800px;margin-top: 25px; margin: 0px auto;color: rgb(102, 102, 102);font-family: Helvetica, sans-serif;font-weight: 100;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);padding-bottom: 20px;position: relative;}
