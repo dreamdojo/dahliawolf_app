@@ -208,7 +208,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         <div class="item-box white" style="color: #000">
             <div class="item-title" >STUFF SHE LIKES DRESS</div>
             <div class="inspired-by">stuffshelikes</div>
-            <div class="inspira"><a href="/stuffshelikes_slider"/>stuffshelikes_slider</a>, Los Angeles, CA</div>
+            <div class="inspira"><a href="/stuffshelikes_slider" style="color: #000" />stuffshelikes_slider</a>, Los Angeles, CA</div>
         </div>
     </div>
 
@@ -217,7 +217,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         <div class="item-box white" style="color: #000" >
             <div class="item-title">ELLE MAY DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/ellemay"/>ellemay</a>, Sunshine Coast, Australia</div>
+            <div class="inspira"><a href="/ellemay/" style="color: #000" />ellemay</a>, Sunshine Coast, Australia</div>
         </div>
     </div>
 
@@ -235,7 +235,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         <div class="item-box white" style="color: #000" >
             <div class="item-title">RubiLove Kimono</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City, CA</div>
+            <div class="inspira"><a href="/rubilove"/ style="color: #000">RubiLove</a>, Panorama City, CA</div>
         </div>
     </div>
 
