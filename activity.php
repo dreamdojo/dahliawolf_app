@@ -146,7 +146,6 @@
 
 <?php include "footer.php" ?>
 <script>
-console.log(<?= json_encode($g_data) ?>);
 var messages = new Object();
 messages['message'] = new Array();
 messages['message']['posting_like'] = "LIKES ONE OF YOUR IMAGES";
@@ -181,7 +180,6 @@ theNote.fillDisplay = function(messages, cat){
 
 theNote.displayNote = function(note, cat){
 	if(typeof note == 'object'){
-		console.log(note);
         date = note.created.split(' ')[0];
 		str = '<div id="note-'+note.activity_log_id+'" data-read="'+(note.read ? true : false)+'" data-id="'+note.activity_log_id+'" data-cat="'+cat+'" class="notification">';
 		str += '<div class="open-me" data-id="'+note.activity_log_id+'" data-cat="'+cat+'">';
@@ -189,7 +187,7 @@ theNote.displayNote = function(note, cat){
 		str += '<div class="content">'+note.username+' '+messages['message'][note.entity]+' '+(note.entity === 'comment' ? note.comment : (note.entity === 'message' ? note.body : '') )+' </div>';
 		str += '<div class="note-timestamp">'+date+'</div>';
 		str += '</div>';
-		str += '<img class="close-me" src="images/x_light.png" data-cat="'+cat+'" data-id="'+note.activity_log_id+'">';
+		str += '<div class="close-me" src="images/x_light.png" data-cat="'+cat+'" data-id="'+note.activity_log_id+'">X</div>';
 		str += '</div>';
 		str += '<div id="note-detail-'+note.activity_log_id+'" class="note-detail">';                    
 		str += '<div class="avatar-frame">';
@@ -264,7 +262,7 @@ theNote.markCategoryAsRead = function() {
     if(cat && cat !== '') {
         var URL = '/api/1-0/activity_log.json?function=mark_read&user_id='+theUser.id+'&entity='+cat+'&use_hmac_check=0';
         $.ajax(URL, function() {
-            console.log('done');
+            //console.log('done');
         });
         $.each( $('.'+cat), function(index, note) {
             newCounts.update( $(note).data('cat') );
@@ -276,7 +274,6 @@ theNote.markCategoryAsRead = function() {
 }
 
 theNote.toggleHeight = function(){
-	console.log($('#theShaft').height() +' '+ $(window).height());
 	if($('#theShaft').height() < $(window).height() ){
 		$('#theShaft').css('height', 103+'%');
 	}else{
@@ -290,12 +287,16 @@ theNote.bindMessages = function(){
 
 theNote.init = function(){
 	theNote.bindMessages();
-	$('.activity-menu').bind('click', function(){
-		theNote.clearDisplay();
-		theNote.menuClicked( $(this).data('title') );
-		$('.activity-menu').removeClass('invite-selected');
-		$(this).addClass('invite-selected');
-		theNote.toggleHeight();
+
+    $('.activity-menu').bind('click', function(){
+        var title = $(this).data('title');
+        if(title !== 'POINTS' && title !== 'RANK') {
+            theNote.clearDisplay();
+            theNote.menuClicked( title );
+            $('.activity-menu').removeClass('invite-selected');
+            $(this).addClass('invite-selected');
+            theNote.toggleHeight();
+        }
 	});
 
     $('#theShaft').on('click', '.clearCategory', theNote.markCategoryAsRead);
