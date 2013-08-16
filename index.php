@@ -190,22 +190,16 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 
 
 <div id="slideshow-frame">
-    <div class="slide" style="background-image: url(/images/DAHLIA_NEWSLIDE.jpg);">
-    	<!--<img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />-->
-        <div class="item-box white">
-        	<div class="item-title">Coated in Tropicana Jacket</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira">StunnaLOOK, Los Angeles</div>
-        </div>
-    </div>
-    <div class="slide" style="display:none; background-image: url(/images/slider/ellemay.jpg);">
-        <!--<img class="zeImg" src="/images/slider/artinourblood.jpeg" />-->
-        <div class="item-box white" style="color: #000" >
-            <div class="item-title">ELLE MAY DRESS</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/ellemay"/>ellemay</a>, Sunshine Coast, AU</div>
-        </div>
-    </div>
+
+    <div class="slide" style="background-image: url(/images/slider/neon-jacket.jpg);">
+    <!--<img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />-->
+       <div class="item-box white">
+        <div class="item-title">Neon Blazer</div>
+           <div class="inspired-by">Inspired by member</div>
+           <div class="inspira">fashion4Ever, Los Angeles CA</div>
+       </div>
+   </div>
+
     <div class="slide" style="display:none; background-image: url(/images/slider/stuffshelikes_slider.jpg);">
         <div class="item-box white" style="color: #000">
             <div class="item-title" >STUFF SHE LIKES DRESS</div>
@@ -213,22 +207,35 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="inspira"><a href="/stuffshelikes_slider"/>stuffshelikes_slider</a>, Los Angeles, CA</div>
         </div>
     </div>
+
+    <div class="slide" style="display:none; background-image: url(/images/slider/ellemay.jpg);">
+        <!--<img class="zeImg" src="/images/slider/artinourblood.jpeg" />-->
+        <div class="item-box white" style="color: #000" >
+            <div class="item-title">ELLE MAY DRESS</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira"><a href="/ellemay"/>ellemay</a>, Sunshine Coast, Australia</div>
+        </div>
+    </div>
+
+
     <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
         <div class="item-box white">
             <div class="item-title">ART IN OUR BLOOD DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
+            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose, CA</div>
         </div>
     </div>
+
     <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
         <!--<img class="zeImg" src="/images/slider/rubilove.jpg" />-->
-        <div class="item-box white">
+        <div class="item-box white" style="color: #000" >
             <div class="item-title">RubiLove Kimono</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City</div>
+            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City, CA</div>
         </div>
     </div>
-    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
+
+    <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpg);">
     	<!--<img class="zeImg" src="/images/slider/blazer.jpeg" />-->
         <div class="item-box white">
         	<div class="item-title">WHITE NITE BLAZER</div>
@@ -236,11 +243,21 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="inspira">Jessica, New York</div>
         </div>
     </div>
-    <div class="slide" style="display:none;  background-image: url(http://content.dahliawolf.com/home/DW-slide-3.jpg);">
+
+    <div class="slide" style="display:none;  background-image: url(/images/slider/modern_native_dress.jpg);">
         <div class="item-box white" style="color: #000">
         	<div class="item-title">MODERN NATIVE DRESS</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Parker, Alabama</div>
+        </div>
+    </div>
+
+    <div class="slide" style="background-image: url(/images/DAHLIA_NEWSLIDE.jpg);">
+    	<!--<img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />-->
+        <div class="item-box white">
+        	<div class="item-title">Coated in Tropicana Jacket</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira">StunnaLOOK, Los Angeles</div>
         </div>
     </div>
 </div>
@@ -267,7 +284,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 </html>
 <script>
 setTimeout(function(){
-    homeWrecker.init(2800/* <- fade speed*/, 4000/* <- time between slides*/);
+    homeWrecker.init(1800/* <- fade speed*/, 3000/* <- time between slides*/);
 }, 1000) ;
 
 $(function(){
