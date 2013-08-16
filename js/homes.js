@@ -20,13 +20,16 @@ homeWrecker.showHowTo = function(){
 	});
 }
 
-homeWrecker.startSlideShow = function(){
+homeWrecker.startSlideShow = function(_start){
 	$(homeWrecker.slides[homeWrecker.index]).fadeOut(homeWrecker.fadeSpeed);
-	homeWrecker.index++;
-	if(homeWrecker.index >= homeWrecker.numberOfSlides){
-		homeWrecker.index = 0;
-	}
-	$(homeWrecker.slides[homeWrecker.index]).fadeIn(homeWrecker.fadeSpeed);
+
+    homeWrecker.index++;
+    if(homeWrecker.index >= homeWrecker.numberOfSlides){
+			homeWrecker.index = 0;
+    }
+
+    if(!_start) $(homeWrecker.slides[homeWrecker.index]).fadeIn(homeWrecker.fadeSpeed);
+
 	setTimeout(homeWrecker.startSlideShow, homeWrecker.changeSpeed);
 }
 
@@ -35,7 +38,10 @@ homeWrecker.initSlideShow = function(fade, change){
 	homeWrecker.changeSpeed = change;
 	homeWrecker.slides = $('.slide');
 	homeWrecker.numberOfSlides = homeWrecker.slides.length;
-	homeWrecker.startSlideShow();
+
+    $(homeWrecker.slides[homeWrecker.index]).fadeIn(homeWrecker.fadeSpeed);
+
+    setTimeout(homeWrecker.startSlideShow, homeWrecker.fadeSpeed*2);
 }
 
 homeWrecker.init = function(fade, change){

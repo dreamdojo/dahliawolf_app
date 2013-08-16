@@ -190,7 +190,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 
 <style>
     #slideshow-frame .slide {display: none}
-    #slideshow-frame:first-child  {display: block}
+    /*#slideshow-frame:first-child  {display: block}*/
 </style>
 
 <div id="slideshow-frame">
@@ -249,7 +249,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
     </div>
 
     <div class="slide" style="display:none;  background-image: url(/images/slider/modern_native_dress.jpg);">
-        <div class="item-box white" style="color: #000">
+        <div class="item-box white" style="color: #fff">
         	<div class="item-title">MODERN NATIVE DRESS</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Parker, Alabama</div>
@@ -288,7 +288,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 </html>
 <script>
 setTimeout(function(){
-    homeWrecker.init(1800/* <- fade speed*/, 3000/* <- time between slides*/);
+    homeWrecker.init(1700/* <- fade speed*/, 3200/* <- time between slides*/);
 }, 1000) ;
 
 $(function(){
