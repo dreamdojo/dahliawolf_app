@@ -43,27 +43,27 @@
 
     $categories['messages'] = $g_data['data']['get_grouped_log']['data']['messages'];
     $categories['messages']['title'] = 'Messages';
-    $categories['messages']['img_src'] = 'small_posts.png';
+    $categories['messages']['img_src'] = 'icon_messages.png';
     $categories['messages']['statement'] = 'Sent you a message';
 
     $categories['comments'] = $g_data['data']['get_grouped_log']['data']['comments'];
 	$categories['comments']['title'] = 'Comments';
-	$categories['comments']['img_src'] = 'small_comment.png';
+	$categories['comments']['img_src'] = 'icon_comments.png';
 	$categories['comments']['statement'] = 'SAYS';
 	
 	$categories['likes'] = $g_data['data']['get_grouped_log']['data']['likes'];
 	$categories['likes']['title'] = 'Likes';
-	$categories['likes']['img_src'] = 'small_heart.png';
+	$categories['likes']['img_src'] = 'icon_likes.png';
 	$categories['likes']['statement'] = "LIKES ONE OF YOUR IMAGES";
 	
 	$categories['followers'] = $g_data['data']['get_grouped_log']['data']['followers'];
 	$categories['followers']['title'] = 'Followers';
-	$categories['followers']['img_src'] = 'small_followers.png';
+	$categories['followers']['img_src'] = 'icon_followers.png';
 	$categories['followers']['statement'] = 'IS NOW FOLLOWING YOU';
 	
 	$categories['posts'] = $g_data['data']['get_grouped_log']['data']['posts'];
 	$categories['posts']['title'] = 'Posts';
-	$categories['posts']['img_src'] = 'small_posts.png';
+	$categories['posts']['img_src'] = 'icon_posts.png';
 	$categories['posts']['statement'] = 'ONE OF YOUR POSTS HAS WON!';
 
 	if (IS_LOGGED_IN) {
@@ -75,7 +75,7 @@
 	$menu = array(
                     array('title' => 'RANK', 'img' => 'icon_rank.png', 'stat' => $user['rank'], 'new' => NULL),
 					array('title' => 'POINTS', 'img' => 'icon_points.png', 'stat' => $user['points'], 'new' => NULL),
-                    array('title' => 'MESSAGES', 'img' => 'icon_followers.png', 'stat' => NULL, 'new' => getNew($categories['messages']) ),
+                    array('title' => 'MESSAGES', 'img' => 'icon_messages.png', 'stat' => NULL, 'new' => getNew($categories['messages']) ),
 					array('title' => 'POSTS', 'img' => 'icon_posts.png', 'stat' => NULL, 'new' => getNew($categories['posts']) ), 
 					array('title' => 'COMMENTS', 'img' => 'icon_comments.png', 'stat' => NULL, 'new' => getNew($categories['comments']) ), 
 					array('title' => 'LIKES', 'img' => 'icon_likes.png', 'stat' => NULL, 'new' => getNew($categories['likes']) ), 
@@ -96,7 +96,7 @@
                 	<?= $item['title'] ?>
                     <span><?= $item['stat'] ?></span>
                     <? if($item['new'] && $item['new'] > 0): ?>
-                    	<div class="new-bubs"><p id="new-count-<?= $item['title'] ?>"><?= $item['new'] ?></p></div>
+                    	<div class="new-bubs"><p id="new-count-<?= $item['title'] ?>"><span style="color: #fff !important; padding: 5px;background-color: #f9095e;"><?= $item['new'] ?></span></p></div>
                     <? endif ?>
                 </div>
             </div>
@@ -107,7 +107,7 @@
 			<div class="notification-title">
 				<img src="/images/<?= $category['img_src'] ?>" />
 				<div class="title-bar-title"><?= $category['title'] ?></div>
-                <img class="clearCategory" src="images/x_light.png" data-cat="<?= $category[0]['entity'] ?>">
+                <div class="clearCategory" data-cat="<?= $category[0]['entity'] ?>" >X</div>
              </div>
 			<? foreach($category as $message): ?>
                 <?php if($message['read'] == NULL): ?>
@@ -120,7 +120,7 @@
                             <div class="content"><?= $message['username'].' '.$category['statement'].' '. ( !empty($message['comment']) ? $message['comment'] : (!empty($message['body']) ? $message['body'] : '') ) ?></div>
                             <div class="note-timestamp"><?= $date[0] ?></div>
                         </div>
-                        <img class="close-me" src="images/x_light.png" data-cat="<?= strtoupper($category['title']) ?>" data-id="<?= $message['activity_log_id'] ?>">
+                        <div class="close-me" data-cat="<?= strtoupper($category['title']) ?>" data-id="<?= $message['activity_log_id'] ?>">X</div>
                     </div>
                     <div id="note-detail-<?= $message['activity_log_id'] ?>" class="note-detail <?= $message['entity'] ?>">
                         <div class="avatar-frame">
