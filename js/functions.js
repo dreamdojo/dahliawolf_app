@@ -745,7 +745,8 @@ $(function(){
 
 function sendToAnal(data){
     if(data) {
-        woopraTracker.pushEvent(data);
+        try{ if(woopraTracker) woopraTracker.pushEvent(data); }
+        catch(e) { }
     }
 }
 

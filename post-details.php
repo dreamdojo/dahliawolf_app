@@ -85,7 +85,7 @@
         	<? if($_data['post']['is_winner']): ?>
                 <div class="is_winner_box">WINNER <a href="/shop/<?= $_data['post']['product_id'] ?>">view item</a></div>
             <? endif ?>
-            <a href="<?= $_data['post']['image_url'] ?>" target="_blank"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
+            <a id="post_image" href="<?= $_data['post']['image_url'] ?>" target="_blank"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
         </div>
         
         <div class="postOrigin">
@@ -143,8 +143,17 @@
 
     <? if(isset($_GET['ajax'])): ?>
         $('body').css('overflow', 'hidden');
-    <? endif ?>
+    <? endif ?>;
 
+
+    $(document).ready(function(){
+        $("#post_image")
+            .click(function(){
+                    alert('hi');
+                    return false;
+            });
+        $("#post_image").fancybox();
+    });
 
 </script>
 
