@@ -200,10 +200,17 @@ font-family: futura, Arial, Helvetica, sans-serif;}
     </div>
     <div class="slide" style="display:none; background-image: url(/images/slider/ellemay.jpg);">
         <!--<img class="zeImg" src="/images/slider/artinourblood.jpeg" />-->
-        <div class="item-box white">
+        <div class="item-box white" style="color: #000" >
             <div class="item-title">ELLE MAY DRESS</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira"><a href="/ellemay"/>ellemay</a>, Sunshine Coast, AU</div>
+        </div>
+    </div>
+    <div class="slide" style="display:none; background-image: url(/images/slider/stuffshelikes_slider.jpg);">
+        <div class="item-box white" style="color: #000">
+            <div class="item-title" >STUFF SHE LIKES DRESS</div>
+            <div class="inspired-by">stuffshelikes</div>
+            <div class="inspira"><a href="/stuffshelikes_slider"/>stuffshelikes_slider</a>, Los Angeles, CA</div>
         </div>
     </div>
     <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
@@ -212,7 +219,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
         </div>
-        </div>
+    </div>
     <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
         <!--<img class="zeImg" src="/images/slider/rubilove.jpg" />-->
         <div class="item-box white">
@@ -230,7 +237,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         </div>
     </div>
     <div class="slide" style="display:none;  background-image: url(http://content.dahliawolf.com/home/DW-slide-3.jpg);">
-        <div class="item-box white">
+        <div class="item-box white" style="color: #000">
         	<div class="item-title">MODERN NATIVE DRESS</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Parker, Alabama</div>
