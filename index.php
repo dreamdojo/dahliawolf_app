@@ -188,6 +188,10 @@ font-family: futura, Arial, Helvetica, sans-serif;}
     </div>
 </div>
 
+<style>
+    #slideshow-frame .slide {display: none}
+    #slideshow-frame:first-child  {display: block}
+</style>
 
 <div id="slideshow-frame">
 
