@@ -13,7 +13,7 @@
 ?>
 
 <style>
-.invite-user-box{width:47%; height:100px; color:  float:left; margin-left:2%; margin-bottom:2%;}
+.invite-user-box{width:47%; height:100px; float:left; margin-left:2%; margin-bottom:2%;}
 .invite-user-box-avatar-frame{ width:100px; padding:5px; overflow:hidden; float:left; height:86%;}
 .invite-user-box-avatar-frame img{width:100%;}
 .invite-user-info{ color: #acacac;}
