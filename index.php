@@ -19,7 +19,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-<title>Dahliawolf</title>
+<title>Dahlia\Wolf - Homepage</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/homes.js"></script>
 <script src="/js/functions.js" type="text/javascript"></script>
@@ -81,9 +81,9 @@ a:hover{color: red;}
 .slide{ height:100%; width:100%; position:absolute; left:0px; top:0px;background-size: auto 100%;background-repeat: no-repeat;background-position: center; background-size: cover;}
 .slide img{min-width:100%; min-height:100%; }
 .theBox{width: 500px;height: 485px;border-radius: 3px;position: absolute;top: 41px;left: 60px;z-index: 1;font-size: 13px;color: #C5C9CC;box-shadow: 0 0 3px #1A1A1A; min-height: 300px; min-width:250px;  max-width:450px; overflow: hidden; font:Arial, Helvetica, sans-serif;}
-.theBox .header{position: relative;margin-left: 15%;z-index: 1;margin-top: 6%;}
+.theBox .header{position: relative;margin-left: 15%;z-index: 1;margin-top: 7%;}
 .box-section{width: 100%;height: 71%; position:absolute;}
-.pitch{color: #fff;width: 95%;margin-left: 2.5%;font-size: 1.9em;text-align: center;margin-top: 9%;font-family: Geneva, sans-serif;}
+.pitch{color: #fff;width: 95%;margin-left: 2.5%;font-size: 1.7em;text-align: center;margin-top: 9%;font-family: Futura, sans-serif;}
 .find-out-more{color: rgb(151, 151, 151);border: rgb(126, 126, 126) 1px solid;margin: 0 auto;width: 52%;font-size: .9em;padding: .5em 1.1em;text-align: center;margin-top: 4%;cursor: pointer;margin-bottom: 3%;
 font-family: futura, Arial, Helvetica, sans-serif;}
 .enter-butt{width: 60%;margin-left: 25%;margin-top: 15%;}
@@ -96,7 +96,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 .menu-form li{font-size: 1.1em;margin-bottom: 2%;}
 .menu-form input{width: 225px;height: 25px;border-radius: 0px;text-indent: 5px;font-size: .8em;}
 .rememba{text-align: left;margin-left: 24%;font-size: 1.1em; width: 232px;}
-#sysForm_submit{margin-left: 63px;margin-top: 5px;position: absolute;}
+#sysForm_submit{left: 50%;margin-left: -45px;margin-top: 5px;position: absolute;}
 #register{display:none;}
 #login{ display:none;}
 .item-box{position: absolute;right: 0px;height: 100px;width: 400px;bottom: 10px;font-size: 1em;text-align: right;margin-right: 40px;margin-bottom: 30px;font-family: futura, sans-serif;font-weight: normal;}
@@ -143,11 +143,11 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         <div class="box-section" id="home">
         	<div class="pitch">YOU POST FASHION IMAGES.</br>WE TURN YOUR IMAGE INTO CLOTHING.</div>
             <div onclick="homeWrecker.showHowTo();" class="find-out-more">SCROLL DOWN TO FIND OUT MORE</div>
-                   	<span class="enter-butt"><img class="fb-login loggle-toggle" onClick="document.location='social-login.php?social_network=facebook'" src="/images/signinfacebook2.png" ></span>
+                   	<span class="enter-butt"><img class="fb-login loggle-toggle" src="/images/signinfacebook2.png" ></span>
             <div class="already-user"><span class="loggle-toggle" onclick="homeWrecker.showBox('register');">JOIN </span> | <span class="loggle-toggle" onclick="homeWrecker.showBox('login');"> LOGIN</span></div>
         </div>
         <div class="box-section form-box" id="login">
-        	<img class="fb-login loggle-toggle" onClick="document.location='social-login.php?social_network=facebook'" src="/images/signinfacebook2.png" >
+        	<img class="fb-login loggle-toggle" src="/images/signinfacebook2.png" >
             <form id="sysForm_Login" method="POST" class="Form FancyForm AuthForm" action="/mobile/action/login.php">
                 <ul class="menu-form">
                     <li>or login with email: </li>
@@ -166,7 +166,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
             <div class="already-user-also">Need an account? <span class="loggle-toggle" onclick="homeWrecker.showBox('register');">REGISTER</div>
         </div>
         <div class="box-section form-box" id="register">
-        	<img class="fb-login loggle-toggle" onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" >
+        	<img class="fb-login loggle-toggle" src="/images/facebook-signup.png" >
             <form id="sysForm_Register" method="POST" class="Form FancyForm AuthForm" action="/mobile/action/signup.php">
                 <ul class="menu-form">
                     <li>or signup with email: </li>
@@ -188,54 +188,80 @@ font-family: futura, Arial, Helvetica, sans-serif;}
     </div>
 </div>
 
+<style>
+    #slideshow-frame .slide {display: none}
+    /*#slideshow-frame:first-child  {display: block}*/
+</style>
+
 <div id="slideshow-frame">
+
     <div class="slide" style="background-image: url(/images/slider/neon-jacket.jpg);">
-        <div class="item-box white">
-            <div class="item-title">NIGHT NEON JACKET</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/saharablaise">SaharaBlaise</a>, Los Angeles</div>
+    <!--<img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />-->
+       <div class="item-box white">
+        <div class="item-title">Neon Blazer</div>
+           <div class="inspired-by">Inspired by member</div>
+           <div class="inspira">fashion4Ever, Los Angeles CA</div>
+       </div>
+   </div>
+
+    <div class="slide" style="display:none; background-image: url(/images/slider/stuffshelikes_slider.jpg);">
+        <div class="item-box white" style="color: #000">
+            <div class="item-title" >STUFF SHE LIKES DRESS</div>
+            <div class="inspired-by">stuffshelikes</div>
+            <div class="inspira"><a href="/stuffshelikes_slider" style="color: #000" />stuffshelikes_slider</a>, Los Angeles, CA</div>
         </div>
     </div>
+
     <div class="slide" style="display:none; background-image: url(/images/slider/ellemay.jpg);">
-        <div class="item-box black">
-            <div class="item-title">ELLE-MAY DRESS</div>
+        <!--<img class="zeImg" src="/images/slider/artinourblood.jpeg" />-->
+        <div class="item-box white" style="color: #000" >
+            <div class="item-title">ELLE MAY DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a style="font-color:black" href="/ellemay">ellemay</a>, Sunshine Coast, AU</div>
+            <div class="inspira"><a href="/ellemay/" style="color: #000" />ellemay</a>, Sunshine Coast, Australia</div>
         </div>
     </div>
+
+
     <div class="slide" style="display:none; background-image: url(/images/slider/artinourblood.jpeg);">
         <div class="item-box white">
             <div class="item-title">ART IN OUR BLOOD DRESS</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose</div>
+            <div class="inspira"><a href="/artinourblood"/>artinourblood</a>, San Jose, CA</div>
         </div>
     </div>
-    <div class="slide" style="display:none; background-image: url(/images/DAHLIA_NEWSLIDE.jpg);">
-        <div class="item-box white">
-            <div class="item-title">COATED IN TROPICANA JACKET</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/StunnaLOOK">StunnaLOOK</a>, Los Angeles</div>
-        </div>
-    </div>
+
     <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
-        <div class="item-box white">
-            <div class="item-title">RUBILOVE KIMONO</div>
+        <!--<img class="zeImg" src="/images/slider/rubilove.jpg" />-->
+        <div class="item-box white" style="color: #000" >
+            <div class="item-title">RubiLove Kimono</div>
             <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/rubilove"/>RubiLove</a>, Panorama City</div>
+            <div class="inspira"><a href="/rubilove"/ style="color: #000">RubiLove</a>, Panorama City, CA</div>
         </div>
     </div>
-    <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpeg);">
+
+    <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpg);">
+    	<!--<img class="zeImg" src="/images/slider/blazer.jpeg" />-->
         <div class="item-box white">
-            <div class="item-title">WHITE NITE BLAZER</div>
+        	<div class="item-title">WHITE NITE BLAZER</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Jessica, New York</div>
         </div>
     </div>
-    <div class="slide" style="display:none;  background-image: url(http://content.dahliawolf.com/home/DW-slide-3.jpg);">
-        <div class="item-box white">
-            <div class="item-title">MODERN NATIVE DRESS</div>
+
+    <div class="slide" style="display:none;  background-image: url(/images/slider/modern_native_dress.jpg);">
+        <div class="item-box white" style="color: #fff">
+        	<div class="item-title">MODERN NATIVE DRESS</div>
             <div class="inspired-by">Inspired by member</div>
             <div class="inspira">Parker, Alabama</div>
+        </div>
+    </div>
+
+    <div class="slide" style="background-image: url(/images/DAHLIA_NEWSLIDE.jpg);">
+    	<!--<img class="zeImg" src="/images/DAHLIA_NEWSLIDE.jpg" />-->
+        <div class="item-box white">
+        	<div class="item-title">Coated in Tropicana Jacket</div>
+            <div class="inspired-by">Inspired by member</div>
+            <div class="inspira">StunnaLOOK, Los Angeles</div>
         </div>
     </div>
 </div>
@@ -262,12 +288,16 @@ font-family: futura, Arial, Helvetica, sans-serif;}
 </html>
 <script>
 setTimeout(function(){
-    homeWrecker.init(2800/* <- fade speed*/, 4000/* <- time between slides*/);
-}, 5000) ;
+    homeWrecker.init(1700/* <- fade speed*/, 3200/* <- time between slides*/);
+}, 1000) ;
 
 $(function(){
     $('#sysForm_Register').submit(loginObj.submitNewUser);
     $('#sysForm_Login').submit(loginObj.loginUser);
+    $('.fb-login').on('click', function() {
+        sendToAnal({name : 'Logging in with Facebook'});
+        document.location = 'social-login.php?social_network=facebook';
+    });
 })
 
 </script>

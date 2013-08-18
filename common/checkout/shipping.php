@@ -10,15 +10,43 @@ else {
     <form action="/action/shop/select_checkout_carrier.php" class="Form StaticForm shipping" method="post">
         <fieldset>
             <?
+            // Group shipping options by carrier
+            $carrier_option_groups = array();
+			foreach ($_data['cart']['carrier_options'] as $i => $carrier) {
+				if (empty($carrier_option_groups[$carrier['carrier_name']])) {
+					$carrier_option_groups[$carrier['carrier_name']] = array();
+				}
+				array_push($carrier_option_groups[$carrier['carrier_name']], $carrier);
+			}
+			ksort($carrier_option_groups);
+
+			foreach ($carrier_option_groups as $carrier_name => $carrier_options) {
+				?>
+				<h3><?= $carrier_name ?></h3>
+				<ul class="radios">
+					<?
+					foreach ($carrier_options as $i => $carrier) {
+						$cart_carrier_id_delivery = !empty($_data['cart']['cart']['carrier']) ? $_data['cart']['cart']['carrier']['id_delivery'] : NULL;
+						$carrier_checked = !empty($cart_carrier_id_delivery) && $cart_carrier_id_delivery == $carrier['id_delivery'] ? ' checked="checked"' : '';
+						$id = 'id_delivery_' . $carrier['id_delivery'];
+						?>
+						<li>
+							<input type="radio" id="<?= $id ?>" name="id_delivery" value="<?= $carrier['id_delivery'] ?>"<?= $carrier_checked ?> />
+							<label for="<?= $id ?>"><strong><?= $carrier['carrier_name'] ?></strong> - <?= $carrier['delay'] ?> $<?= number_format($carrier['price'], 2) ?></label>
+						</li>
+						<?
+						$last_carrier_name = $carrier['carrier_name'];
+					}
+					?>
+				</ul>
+				<?
+			}
+
+			/*
             $last_carrier_name = NULL;
             foreach ($_data['cart']['carrier_options'] as $i => $carrier) {
 				$cart_carrier_id_delivery = !empty($_data['cart']['cart']['carrier']) ? $_data['cart']['cart']['carrier']['id_delivery'] : NULL;
 				$carrier_checked = !empty($cart_carrier_id_delivery) && $cart_carrier_id_delivery == $carrier['id_delivery'] ? ' checked="checked"' : '';
-				/*if ($carrier['carrier_name'] != $last_carrier_name) {
-					?>
-					<h3><?= $carrier['carrier_name'] ?></h3>
-					<?
-				}*/
 				$id = 'id_delivery_' . $carrier['id_delivery'];
 				?>
 				<ul class="radios">
@@ -30,6 +58,7 @@ else {
 				<?
 				$last_carrier_name = $carrier['carrier_name'];
 			}
+			*/
 
            	if (!empty($_GET['session_type'])) {
                 ?>

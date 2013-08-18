@@ -26,7 +26,7 @@ $data = commerce_api_request('category', $calls, true);
 $_data['categories'] = $data['data']['get_shop_categories']['data'];
 
 if ($self == '/shop/index.php') {
-
+    /*
 	if (!empty($_GET['id_category'])) {
 		$calls = array(
 			'get_category' => array(
@@ -71,7 +71,7 @@ if ($self == '/shop/index.php') {
 		else {
 			$_data['products'] = $data['data']['get_products']['data'];
 		}
-	}
+	}*/
 }
 else if ($self == '/shop/my-wishlist.php') {
 	if(!empty($_SESSION['user'])) {

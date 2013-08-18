@@ -1,5 +1,5 @@
 <?
-$pageTitle = "Post";
+$pageTitle = "Grid";
 include "head.php";
 include "header.php";
 ?>

@@ -9,6 +9,12 @@ $(document).ready(function() {
 	}
 });
 
+var holla = function () { };
+holla.log = function (message) {
+    try { console.log(message);}
+    catch(e) {return;}
+}
+
 
 
 function validateEmail(email) {
@@ -729,7 +735,8 @@ $(function(){
 
 function sendToAnal(data){
     if(data) {
-        woopraTracker.pushEvent(data);
+        try{ if(woopraTracker) woopraTracker.pushEvent(data); }
+        catch(e) { }
     }
 }
 

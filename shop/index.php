@@ -1,44 +1,24 @@
 <?
-    $pageTitle = "Shop - Products";
+    $pageTitle = "Shop";
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
-    require DR . '/includes/php/classes/Product_Listing.php';
-    $Product_Listing = new Product_Listing()
+    $user_params = array(
+        'username' => $_GET['username']
+    );
+    $data = api_call('user', 'get_user', $user_params, true);
+    $user = $data['data'];
 ?>
 <style>
-#dahliawolfShop{ width: 1050px;margin: 0 auto;position: relative; margin-top: 10px;}
-#dahliawolfShop .shop-item{width: 250px;overflow: hidden;height: 500px;float: left;position: relative;border: #c2c2c2 thin solid;margin-left: 5px;margin-right: 5px;margin-bottom: 50px;}
-#dahliawolfShop .product-details{width: 100%;height: 420px;overflow: hidden;position: relative;}
-#dahliawolfShop .image-frame{width: 100%;height: 100%;position: relative;}
-#dahliawolfShop .image-frame img{ width: 80%;margin-left: 10%;margin-top: 60px;}
-#dahliawolfShop .item-status{position: absolute;right: 0px;font-size: 18px; z-index: 1}
-#dahliawolfShop .priceLine{position: absolute;width: 100%;bottom: 10px; z-index: 1}
-#dahliawolfShop .product-name{float: left;font-size: 17px;text-indent: 10px;width: 200px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-transform: uppercase;font-size: 11px;line-height: 21px;}
-#dahliawolfShop .product-inspiration{border-top: #c2c2c2 thin solid;}
-#dahliawolfShop .product-price{float: right;font-size: 18px;margin-right: 10px;}
-#dahliawolfShop .avatarFrame{float: left;width: 50px;overflow: hidden;border-radius: 50px;height: 50px;margin: 15px 8px;}
-#dahliawolfShop .avatarFrame img{width: 100%;}
-#dahliawolfShop .inspire{font-size: 13px;overflow: hidden;text-overflow: ellipsis;padding-top: 20px;}
-#dahliawolfShop .sold-out{background-color: #000;position: absolute;right: -29px;top: 19px;z-index: 1;color: #fff;font-size: 18px;padding: 3px 30px; overflow:hidden; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg);-ms-transform: rotate(45deg); -o-transform: rotate(45deg);}
-#dahliawolfShop .coming_soon{position: absolute;top: 7px;right: 7px;z-index: 1;text-align: center;background-color: #dddddd; color: #595959; width: 100px;height: 60px;}
-#dahliawolfShop h1{margin: 0;font-weight: 100;font-size: 20px;}
-#dahliawolfShop .pre-order{background-color: #eb1d5d;position: absolute;right: 7px;z-index: 1;top: 7px;height: 75px;width: 75px;border-radius: 50px;line-height: 75px;text-align: center;color: #fff;font-size: 14px;}
-#dahliawolfShop .shop-item:hover .hoverData{display: block;}
-#dahliawolfShop .hoverData{position: absolute;width: 100%;height: 100%;z-index: 3;top: 0px;left: 0px; display:none;}
-#dahliawolfShop .itemOverlay{position: absolute;z-index: 1;background-color: #fff;width: 100%;height: 100%;top: 0;left: 0;opacity: .7;}
-#dahliawolfShop .overlayButton{position: absolute;z-index: 2; padding: 8px 20px;font-size: 18px; left: 50%;margin-left: -84px;width: 130px;text-align: center;cursor: pointer;}
-#dahliawolfShop .overlayButton:hover{opacity: .7;}
-#dahliawolfShop .wishlistButton{background-color: #5e5e5e; color: #fff;margin-top: 110px;}
-#dahliawolfShop .buyButton{background-color: #5e5e5e; color: #fff;margin-top: 150px;}
-#dahliawolfShop .inspirationButton{background-color: #5e5e5e; color: #fff;bottom: 0px;position: absolute;bottom: 0px;left: 0px;height: 79px;font-size: 18px;line-height: 70px;width: 100%;text-align: center;z-index: 3; cursor: pointer;}
-#dahliawolfShop .inspirationButton:hover{color: #c86362; }
-#dahliawolfShop .inspirationImage{ position: absolute;width: 100%;z-index: 33;left: 100%; transition: left .2s; -webkit-transition: left .2s;}
-
-#sortBar{width: 1038px;background-color: #c2c2c2;height: 20px;margin: 0px auto;text-indent: 10px;}
-#sortBar li:not(:first-child){ cursor: pointer;}
-#sortBar li{float: left;font-size: 13px;}
+    #emptyShop li{margin: 15px 1px; float: left;}
+    #emptyShop li:hover{opacity: .7;}
+    #shopOwnerHeader{width: 1000px;margin: 0px auto;position: relative;margin-top: 10px;overflow: hidden;}
+    #shopOwnerHeader img{width: 100%;}
+    .shopOwnerTitle{position: absolute;margin-top: 90px;left: 71px;font-size: 30px; text-transform: uppercase; font-weight: bolder !important; width: 528px;text-align: center;overflow: hidden;text-overflow: ellipsis;}
+    .shopEmpty{font-size: 20px; text-align: center; margin-top: 15px;}
 </style>
+
+<? if( empty($user['user_id']) ): ?>
     <ul id="sortBar">
         <li>sort products by: </li>
         <li data-sort="Newest">newest / </li>
@@ -46,6 +26,15 @@
         <li data-sort="Live">available / </li>
         <li data-sort="Pre Order" class="dahliaPink">pre-order 50% off</li>
     </ul>
+<? endif ?>
+
+<? if( !empty($user['user_id']) ): ?>
+    <div id="shopOwnerHeader">
+        <div class="shopOwnerTitle"><a href="/<?= $user['username'] ?>"><?= $user['username'] ?>'s</a> boutique </div>
+        <img src="/images/emptyShopBanner.jpg">
+    </div>
+<? endif ?>
+
 <div id="dahliawolfShop"></div>
 
 <?
@@ -53,120 +42,7 @@
 ?>
 
 <script>
-function shop(data) {
-    this.$shop = $('#dahliawolfShop');
-    this.products = [];
-
-    this.loadProducts(data);
-
-    $('#sortBar li:not(:first-child)').on('click', this.filterShop);
-}
-
-shop.prototype.loadProducts = function(data) {
-    this.data = data;
-
-    this.fillShop();
-}
-
-shop.prototype.fillShop = function() {
-    var _this = this;
-    $.each(this.data, function(i, item) {
-        _this.products[item.id_product] = new _this.product(item, _this.$shop)
-    });
-}
-
-shop.prototype.filterShop = function() {
-    var filter = $(this).data('sort');
-
-    $(this).css('font-weight', 'bolder').siblings().css('font-weight',  'normal')
-    if(filter === 'Newest') {
-        $('.shop-item').removeClass('hidden');
-    } else {
-        $('.shop-item[rel="'+filter+'"]').removeClass('hidden');
-        $('.shop-item[rel!="'+filter+'"]').addClass('hidden');
-    }
-}
-
-//************* product ************************
-shop.prototype.product = function(item, $shop) {
-    this.data = item;
-    this.$shop = $shop;
-    this.bgColors = {'Pre Order' : 'e195a7', 'Coming Soon' : 'C2C2C2', 'Sold Out' : '000', 'Live' : '000' };
-    if(item.hasOwnProperty('posts')) {
-        this.inspirationImage = item.posts[0].source+item.posts[0].imagename;
-    }
-
-    this.addToShop();
-}
-
-shop.prototype.product.prototype.addToShop = function() {
-    this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
-    this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
-    this.$hover.append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>').append( this.getInspirationButton() );
-    this.$image_view = $('<div class="product-details"></div>').appendTo(this.$view);
-    this.$inspiration = $('<img class="inspirationImage" src="'+this.inspirationImage+'">').appendTo(this.$image_view);
-    this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
-    this.$image_view.append( this.getStatus() ).append( this.getPrice()).append( this.getImage() );
-    this.$inspiration_view.append( this.getInspiration() );
-}
-
-shop.prototype.product.prototype.getStatus = function() {
-    switch (this.data.status) {
-        case 'Coming Soon' :
-            return '<div class="coming_soon"><h1>SAMPLE</h1> NEEDS <span class="dahliaPink">480</span> MORE WISHLIST ADDS</div>';
-        case 'Sold Out' :
-            return '<div class="sold-out">'+this.data.status+'</div>';
-        case 'Pre Order' :
-            return '<div class="pre-order">'+this.data.status+'</div>';
-    }
-}
-
-shop.prototype.product.prototype.getPrice = function() {
-    return '<div class="priceLine"><div class="product-name">'+this.data.product_name+'</div><div class="product-price">$'+Math.floor(this.data.price, 2)+'</div></div>';
-}
-
-shop.prototype.product.prototype.getImage = function() {
-    return '<div class="image-frame"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></div>';
-}
-
-shop.prototype.product.prototype.getInspiration = function() {
-   return '<ul><li class="avatarFrame avatarShadow"><img src="/avatar.php?user_id='+this.data.user_id+'"></li><li class="inspire"><span class="dahliaPink">Inspired By </span><a href="/'+this.data.username+'">'+this.data.username+'</a></li><li>'+this.data.location+'</li></ul>'
-}
-
-shop.prototype.product.prototype.getWishlistButton = function() {
-    this.$wishlistButton = $('<div class="wishlistButton overlayButton">Add To Wishlist</div>').on('click', $.proxy(this.addToWishlist, this) );
-    return this.$wishlistButton;
-}
-
-shop.prototype.product.prototype.getBuyButton = function() {
-    var _this = this;
-    this.$buyButton = $('<div class="buyButton overlayButton" style="background-color: #'+this.bgColors[this.data.status]+'">'+(this.data.status !== 'Live' ? this.data.status : 'BUY')+'</div>');
-
-    if(this.data.status == 'Pre Order') {
-        $(this.$buyButton).on('click', function() {
-            document.location = '/shop/'+_this.data.id_product;
-        });
-    }
-    return this.$buyButton;
-}
-
-shop.prototype.product.prototype.getInspirationButton = function() {
-    var _this = this;
-
-    this.$inspirationButton = $('<div class="inspirationButton">VIEW INSPIRATION</div>').hover(
-        function() {
-            _this.$inspiration.css('left', 0);
-        }, function() {
-            _this.$inspiration.css('left', 100+'%');
-        }
-    );
-    return this.$inspirationButton;
-}
-
-shop.prototype.product.prototype.addToWishlist = function() {
-    alert(this.data.product_name+' Added to wishlist');
-}
 $(function() {
-    dahliawolfShop = new shop(<?= json_encode( $_data['products'] ) ?>);
+    dahliawolfShop = new shop(<?= json_encode($user) ?>);
 });
 </script>
