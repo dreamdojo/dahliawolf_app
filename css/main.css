@@ -195,7 +195,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .postCommentAvatarFrame img{ width: 100%;}
 .name a{ color: #a84655 !important;font-weight: 100;font-size: 20px;}
 .name a:hover{ color: black !important;}
-.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;height: 55px;padding: 10px; overflow: scroll;}
+.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;height: 55px;padding: 10px; overflow-x: hidden; overflow-y: auto; width: 220px;}
 .postCommentComment p{ width:215px; text-align: left;}
 .postDetailUsername{margin-top: 0px;font-size: 17px;}
 .postDetailUserLocation{font-size: 13px;color: #000 !important;margin-top: 0px !important;}

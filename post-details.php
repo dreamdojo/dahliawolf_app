@@ -145,16 +145,6 @@
         $('body').css('overflow', 'hidden');
     <? endif ?>;
 
-
-    $(document).ready(function(){
-        $("#post_image")
-            .click(function(){
-                    alert('hi');
-                    return false;
-            });
-        $("#post_image").fancybox();
-    });
-
 </script>
 
 <?

@@ -13,11 +13,11 @@
 ?>
 
 <style>
-.invite-user-box{width:47%; height:100px; background-color:#363636; float:left; margin-left:2%; margin-bottom:2%;}
+.invite-user-box{width:47%; height:100px; float:left; margin-left:2%; margin-bottom:2%;}
 .invite-user-box-avatar-frame{ width:100px; padding:5px; overflow:hidden; float:left; height:86%;}
 .invite-user-box-avatar-frame img{width:100%;}
-.invite-user-info{ color:#e9e9e9;}
-.invite-user-button{background-color: #ba4f63;padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
+.invite-user-info{ color: #acacac;}
+.invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
 </style>
 

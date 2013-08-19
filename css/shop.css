@@ -725,3 +725,7 @@ ul.checkout.nav .current a {
 .checkout-footer .totals form fieldset + table {
 	margin-top: 20px;
 }
+
+form.shipping ul.radios + h3 {
+	margin-top: 20px;
+}
