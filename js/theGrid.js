@@ -22,7 +22,7 @@ theGrid.sortTerm = null;
 theGrid.urls = [];
 theGrid.urls['like'] = '/action/like?posting_id=';
 theGrid.urls['unlike'] = '/action/unlike?posting_id=';
-theGrid.htText = 'style="height:100%; min-width:100%; width:auto;"';
+theGrid.htText = 'style="min-width:101%; width:auto;"';
 
 theGrid.showLoader = function() {
 	$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
