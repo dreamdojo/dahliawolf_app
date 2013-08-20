@@ -108,7 +108,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #theGrid{position: relative;width: 1000px;margin: 0px auto;}
 #theGrid .post-frame{ width:300px; float:left; margin:10px;height: 350px;overflow: hidden;position: relative; cursor:pointer;}
 #theGrid .post-frame:hover .vote-frame{display:block;}
-#theGrid .post-frame img{ width:100%; position:relative; }
+#theGrid .post-frame img{ width:101%; position:relative; }
 #theGrid .vote-frame{ position:absolute; overflow: hidden;width: 141px;height: 135px;z-index: 1;top: 50%;margin-top: -67px;left: 50%;margin-left: -71px; display:none;}
 #theGrid .grid-like{background: url(/images/like.png) no-repeat center center;background-size: 100% 100%;}
 #theGrid .grid-unlike{background: url(/images/wild_like.png) no-repeat center center;background-size: 100% 100%;}
@@ -173,7 +173,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .pd-Loved{ background-image:url(/images/postDetailsLoveButtonLoved.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
 .pd-unLoved { background-image:url(/images/postDetailsLoveButton.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
 #shareRow{ height:100%; width:400px; float:left;}
-.postShareTitle{width: 100%;height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px;border: 1px solid rgb(221, 221, 221);}
+.postShareTitle{text-align: center; width: 100%;height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px;border: 1px solid rgb(221, 221, 221);}
 #postShareSection{width: 420px;float: right;margin-right: 40px;}
 .shareButts{height: 82px; width:104%;}
 .shareButts li{width: 63.7px;height:85%; float:left;background-color: #FFF; margin-top: 5px;margin-right: 5px; border:#dfdfdf thin solid; cursor:pointer;}
