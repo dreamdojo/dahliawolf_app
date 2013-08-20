@@ -424,7 +424,7 @@ ul.products .price {
 	padding: 5px 0;
 	text-transform: uppercase;
 	border-top: 1px solid #ccc;
-	background: url("../images/shop/arr_down2.png") no-repeat 95px center;
+	background: url("../images/shop/arr_down2.png") no-repeat 150px center;
 	color: #666;
 	cursor: pointer;
 }

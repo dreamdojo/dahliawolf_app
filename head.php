@@ -51,6 +51,7 @@ if ($top_dir == 'shop') {
 <link href="/css/spine<?= !empty($_data['spine_version']) ? $_data['spine_version'] : '' ?>.css.php" media="screen" rel="stylesheet" type="text/css">
 <link type="text/css" href="/css/shop.css" rel="stylesheet" media="screen" />
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 <!--<script id="facebook-jssdk" src="/js/all.js"></script>-->
 <!--<script src="/js/cb=gapi.loaded_0" async=""></script>-->
 <script type="text/javascript" src="/js/jquery.js"></script>
