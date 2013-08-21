@@ -1570,8 +1570,8 @@ width: 174px;
 }
 /* SHOP PAGE ***********************/
 #dahliawolfShop{ width: 1008px; margin: 0 auto;position: relative; margin-top: 10px;}
-#dahliawolfShop .shop-item{width: 240px;overflow: hidden;height: 500px;float: left;position: relative;border: #c2c2c2 thin solid;margin-left: 5px;margin-right: 5px;margin-bottom: 50px;}
-#dahliawolfShop .product-details{width: 100%;height: 420px;overflow: hidden;position: relative;}
+#dahliawolfShop .shop-item{width: 240px;overflow: hidden;height: 500px;float: left;position: relative;border: #c2c2c2 thin solid;margin-left: 5px;margin-right: 5px;margin-bottom: 50px; cursor: pointer;}
+#dahliawolfShop .product-details{width: 100%;height: 420px;overflow: hidden;position: relative; cursor: pointer;}
 #dahliawolfShop .image-frame{width: 100%;height: 100%;position: relative;}
 #dahliawolfShop .image-frame img{ width: 100%;}
 #dahliawolfShop .item-status{position: absolute;right: 0px;font-size: 18px; z-index: 1}

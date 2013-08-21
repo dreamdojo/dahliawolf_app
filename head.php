@@ -44,6 +44,7 @@ if ($top_dir == 'shop') {
 <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/main-custom.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/font-face.css" rel="stylesheet" type="text/css">
+<link href="/css/jquery.countdown.css" rel="stylesheet" type="text/css">
 <!--[if IE 7]> <link href="http://www.dahliawolf.com/css/face/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if IE 8]> <link href="http://www.dahliawolf.com/css/face/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 <link href="/css/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet" type="text/css">
@@ -85,6 +86,7 @@ if ($top_dir == 'shop') {
 <script src="/js/userList.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>
+<script src="/js/jquery.countdown.js" type="text/javascript"></script>
 <script type="text/javascript">
 var theUser = new Object();
 <? if (IS_LOGGED_IN): ?>

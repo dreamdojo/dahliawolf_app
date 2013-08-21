@@ -64,7 +64,9 @@
 
     #shopContent{border-top: #d5d5d5 2px solid;clear: left;}
     #shopContent .leftCol{float: left; width: 300px;}
-    #shopContent .leftCol .follow{color: #fc2c71;height: 30px;line-height: 30px;font-size: 15px;cursor: pointer;width: 90px;text-align: left;}
+    #shopContent .leftCol .follow{height: 30px;line-height: 30px;font-size: 15px;cursor: pointer;width: 90px;text-align: left;}
+    #shopContent .leftCol .isfollowing{color: #c2c2c2;}
+    #shopContent .leftCol .isnotfollowing{color: #fc2c71;}
     #shopContent .leftCol .story{font-size: 27px;border-top: #dcdcdc thin solid;padding-top: 10px;margin-bottom: 10px;}
     #shopContent .leftCol .content{font-size: 12px;line-height: 17px;}
     #shopContent .leftCol h2{font-size: 18px;margin-top: 10px;}
@@ -83,7 +85,7 @@
     #theCountdown li p{height: 50px;line-height: 50px;font-size: 30px;}
     #theCountdown li p:first-child{height: 58px; border-bottom: #fff thin solid; line-height: 50px;font-size: 15px;}
     #theCountdown li p:last-child{color: #000;}
-    #theCountdown{width: 100%;height: 150px;}
+    #theCountdown{width: 100%;height: 65px; padding-top: 12px; color: #888888;}
     #shopOptions li{width: 100%; height: 30px; font-size: 13px; line-height: 30px;}
     .options li{float: left;width: 65px !important;text-align: center;}
     .scribble{font-family: 'Shadows Into Light', cursive;}
@@ -101,7 +103,7 @@
         <li style="font-size: 25px;" class="scribble"><?= $_data['product']['product']['posts'][0]['username']?></li>
     </ul>
     <div id="postShareSection">
-        <div class="postShareTitle">SHARE THIS POST</div>
+        <div class="postShareTitle">SHARE THIS PRODUCT</div>
         <ul class="shareButts">
             <? $image_url = CDN_IMAGE_SCRIPT . $_data['product']['files'][0]['product_file_id'] . '&width=' . $width . '&height=' . $height; ?>
 
@@ -128,9 +130,9 @@
 <div id="shopContent" class="shop-section">
     <div class="leftCol">
         <ul>
-            <li class="follow">FOLLOW+</li>
+            <li class="follow isnotfollowing">FOLLOW+</li>
             <li>
-                <p class="scribble story">Story of <?= $_data['product']['product']['posts'][0]['username']?></p>
+                <p class="scribble story">Story behind <?= $_data['product']['product']['product_name'] ?></p>
                 <p class="content"><?= $_data['product']['product']['story_behind_design'] ?></p>
             </li>
             <li style="border-top: #dcdcdc thin solid;">
@@ -173,12 +175,8 @@
             <div class="presalePrice">$<?= number_format( ($_data['product']['product']['price']/2), 2, '.', ',') ?></div>
         <? endif ?>
         <? if( $status == 'Pre Order'): ?>
-            <ul id="theCountdown">
-                <li><p>Days</p><p>10</p></li>
-                <li><p>Hours</p><p>10</p></li>
-                <li><p>Mins</p><p>10</p></li>
-                <li><p>Secs</p><p>10</p></li>
-            </ul>
+            <div id="theCountdown">
+            </div>
         <? endif ?>
         <div>
             <form action="/action/shop/add_item_to_cart.php" method="post">
@@ -216,6 +214,15 @@
 </div>
 <script>
     console.log(<?= json_encode( $_data['product'] ) ?>);
+
+    $(function() {
+       if( $('#theCountdown').length ) {
+           var productData = <?= json_encode( $_data['product'] ) ?>;
+           var newYear = new Date(productData.product.commission_from_date);
+           $('#theCountdown').countdown({until: newYear});
+       }
+    });
+
     $(document).on('click', '.shop-wishlist-button', function() {
         var $button = $(this);
         var id = Number( $button.data('id') );
