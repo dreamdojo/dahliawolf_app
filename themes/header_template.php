@@ -129,14 +129,14 @@ $(document).ready(function()
     <div id="dahliaMainMenuButton">
         <ul class="theMainMenu">
             <li><a href="/grid">INSPIRE</a></li>
-            <li><a href="/grid">VOTE</a></li>
+            <li><a href="/spine">VOTE</a></li>
             <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>
     <a href="/grid"><div id="dahliaLogo"></div></a>
     <ul id="mainMenu">
         <li><a href="#" onclick="thePost.buttonPushed();return false;"><span class="<?= $self == '' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
-        <li><a href="/grid"><span class="<?= $self == '/grid.php' || $self == '/spine.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
+        <li><a href="/spine"><span class="<?= $self == '/grid.php' || $self == '/spine.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
         <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
     </ul>
     <div id="rightHandMenu">
