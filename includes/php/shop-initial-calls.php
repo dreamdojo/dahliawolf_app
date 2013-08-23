@@ -9,7 +9,7 @@ if (empty($_data)) {
 }
 
 // Get Cart (already gets called in initial-calls.php)
-//$_data['cart'] = get_cart();
+$_data['cart'] = get_cart();
 if (isset($_GET['t'])) {
 	die('shop-initial-calls.php:14');
 }
@@ -87,7 +87,7 @@ else if ($self == '/shop/my-wishlist.php') {
 	}
 }
 else if ($self == '/shop/product.php') {
-	/*if (empty($_GET['id_product'])) {
+	if (empty($_GET['id_product'])) {
 		redirect('/shop');
 	}
 
@@ -125,7 +125,7 @@ else if ($self == '/shop/product.php') {
 		if (empty($_data['product']) || empty($_data['product']['product'])) {
 			$_SESSION['errors'] = array('Product not found');
 		}
-	}*/
+	}
 }
 else if ($self == '/shop/checkout.php') {
 	// Set session delivery id

@@ -6,7 +6,16 @@ function shop(user) {
     $('#sortBar li:not(:first-child)').on('click', this.filterShop);
 
     this.loadProducts();
+    this.centerShop();
+    $(window).resize($.proxy(this.centerShop, this));
+}
 
+shop.prototype.centerShop = function() {
+    if(window.innerWidth > 330*3) {
+        this.$shop.width(330*3).css('margin', 0+'px auto');
+    }else {
+        this.$shop.css('margin-left', (window.innerWidth % 330)/2).css('width', 'auto');
+    }
 }
 
 shop.prototype.loadProducts = function() {
@@ -72,13 +81,14 @@ shop.prototype.product = function(item, $shop) {
 }
 
 shop.prototype.product.prototype.addToShop = function() {
-    this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
+    this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" onclick="document.location=\''+this.data.id_product+'\'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
-    this.$hover.append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>').append( this.getInspirationButton() );
+    //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );
+    this.$hover.append( this.getInspirationButton() );
     this.$image_view = $('<div class="product-details"></div>').appendTo(this.$view);
     this.$inspiration = $('<img class="inspirationImage" src="'+(this.inspirationImage ? this.inspirationImage : '')+'">').appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
-    this.$image_view.append( this.getStatus() ).append( this.getPrice()).append( this.getImage() );
+    this.$image_view.append( this.getPrice()).append( this.getImage() );
     this.$inspiration_view.append( this.getInspiration() );
 }
 
@@ -107,7 +117,7 @@ shop.prototype.product.prototype.getInspiration = function() {
     } catch(err) {
         var username = '';
     }
-    return '<ul><li class="avatarFrame avatarShadow"><img src="/avatar.php?user_id='+this.data.user_id+'"></li><li class="inspire"><span class="dahliaPink">Inspired By </span><a href="/'+username+'">'+username+'</a></li><li>'+this.data.location+'</li></ul>'
+    return '<ul><li class="avatarFrame avatarShadow"><img src="/avatar.php?user_id='+this.data.user_id+'"></li><li class="inspire"><span class="dahliaPink">Inspired By </span></li><li><a href="/'+username+'">'+username+'</a></li></ul>'
 }
 
 shop.prototype.product.prototype.getWishlistButton = function() {
@@ -134,7 +144,7 @@ shop.prototype.product.prototype.getBuyButton = function() {
 shop.prototype.product.prototype.getInspirationButton = function() {
     var _this = this;
 
-    this.$inspirationButton = $('<div class="inspirationButton">VIEW INSPIRATION</div>').hover(
+    this.$inspirationButton = $('<div class="inspirationButton"><span>VIEW INSPIRATION</span></div>').hover(
         function() {
             _this.$inspiration.css('left', 0);
         }, function() {

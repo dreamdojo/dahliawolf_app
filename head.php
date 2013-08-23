@@ -18,7 +18,6 @@ if ($top_dir == 'mobile') {
 if ($top_dir == 'shop') {
 	require 'includes/php/shop-initial-calls.php';
 }
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0031)http://www.dahliawolf.com/login -->
@@ -44,6 +43,7 @@ if ($top_dir == 'shop') {
 <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/main-custom.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/font-face.css" rel="stylesheet" type="text/css">
+<link href="/css/jquery.countdown.css" rel="stylesheet" type="text/css">
 <!--[if IE 7]> <link href="http://www.dahliawolf.com/css/face/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if IE 8]> <link href="http://www.dahliawolf.com/css/face/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 <link href="/css/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet" type="text/css">
@@ -51,6 +51,7 @@ if ($top_dir == 'shop') {
 <link href="/css/spine<?= !empty($_data['spine_version']) ? $_data['spine_version'] : '' ?>.css.php" media="screen" rel="stylesheet" type="text/css">
 <link type="text/css" href="/css/shop.css" rel="stylesheet" media="screen" />
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 <!--<script id="facebook-jssdk" src="/js/all.js"></script>-->
 <!--<script src="/js/cb=gapi.loaded_0" async=""></script>-->
 <script type="text/javascript" src="/js/jquery.js"></script>
@@ -63,8 +64,8 @@ if ($top_dir == 'shop') {
 <script type="text/javascript" src="/js/pin.js"></script>
 <script type="text/javascript" src="/js/pplFinder.js"></script>
 <script type="text/javascript" src="/js/jquery.masonry.min.js"></script>
-<!--<script type="text/javascript" src="/js/jquery.fancybox-1.3.4.pack.js"></script>-->
-<script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
+<!--<script type="text/javascript" src="/js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>-->
 <script type="text/javascript" src="/js/jquery.tipTip.minified.js"></script>
 <script type="text/javascript">var base_url = "http://www.dahliawolf.com";</script>
 <script type="text/javascript" src="/js/custom.js"></script>
@@ -84,7 +85,9 @@ if ($top_dir == 'shop') {
 <script src="/js/userList.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>
+<script src="/js/jquery.countdown.js" type="text/javascript"></script>
 <script type="text/javascript">
+
 var theUser = new Object();
 <? if (IS_LOGGED_IN): ?>
 	var userConfig = <?= json_encode($userConfig) ?>;
@@ -114,8 +117,7 @@ var theUser = new Object();
     });
     woopra.track('pv', {
         url: window.location.pathname+window.location.search,
-        title: document.title,
-        gong : 'blop'
+        title: document.title
     });
 
     function woopraReady(tracker){
@@ -137,8 +139,5 @@ var theUser = new Object();
         ssc.parentNode.insertBefore(wsc, ssc);
     })();
 <!-- End of Woopra Code -->
-
-$('.socialize').bind('click', pplFinder.start);
 </script>
 </head>
-
