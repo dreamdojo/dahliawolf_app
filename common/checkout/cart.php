@@ -1,7 +1,9 @@
 <?
 $is_review = !empty($is_review) ? true : false;
 //print_r($_data['cart']);
+
 ?>
+
 <div class="cart-container">
 	<?
 	if (!$is_review) {
