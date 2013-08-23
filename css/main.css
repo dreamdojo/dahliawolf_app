@@ -15,7 +15,7 @@ sub{vertical-align:text-bottom;overflow:hidden;}
 input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit; resize: none;outline:none;}
 legend{color:#000;}
 
-body { font-family:helvetica; font-size:10px;color:#211922;min-width: 980px; margin-top: 90px;}
+body { font-family:helvetica; font-size:10px;color:#211922; margin-top: 50px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -57,7 +57,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .facebook{font-size: 14px;margin-top: 4px; cursor:pointer;}
 
 /*--------------- SORT SECTION ----------------*/
-#sort-bar{ width:960px; background-color:#f5f5f5;margin: 0px auto;padding: 10px 40px;font-size: 12px }
+#sort-bar{ width:960px; background-color:#f5f5f5;margin: 0px auto;padding: 10px 40px;font-size: 12px; margin-top: 60px; }
 .bold{ font-weight:bold !important; }
 .sort-option{ font-weight:normal; }
 
@@ -105,10 +105,10 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .userHead:hover #dahliaHead{ display:block; }
 
 /*********** THE GRID ***********/
-#theGrid{position: relative;width: 1000px;margin: 0px auto;}
+#theGrid{position: relative; width: auto;margin: 0px auto;}
 #theGrid .post-frame{ width:300px; float:left; margin:10px;height: 350px;overflow: hidden;position: relative; cursor:pointer;}
 #theGrid .post-frame:hover .vote-frame{display:block;}
-#theGrid .post-frame img{ width:100%; position:relative; }
+#theGrid .post-frame img{ width:101%; position:relative; }
 #theGrid .vote-frame{ position:absolute; overflow: hidden;width: 141px;height: 135px;z-index: 1;top: 50%;margin-top: -67px;left: 50%;margin-left: -71px; display:none;}
 #theGrid .grid-like{background: url(/images/like.png) no-repeat center center;background-size: 100% 100%;}
 #theGrid .grid-unlike{background: url(/images/wild_like.png) no-repeat center center;background-size: 100% 100%;}
@@ -173,7 +173,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .pd-Loved{ background-image:url(/images/postDetailsLoveButtonLoved.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
 .pd-unLoved { background-image:url(/images/postDetailsLoveButton.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
 #shareRow{ height:100%; width:400px; float:left;}
-.postShareTitle{width: 100%;height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px;border: 1px solid rgb(221, 221, 221);}
+.postShareTitle{text-align: center; width: 100%;height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px;border: 1px solid rgb(221, 221, 221);}
 #postShareSection{width: 420px;float: right;margin-right: 40px;}
 .shareButts{height: 82px; width:104%;}
 .shareButts li{width: 63.7px;height:85%; float:left;background-color: #FFF; margin-top: 5px;margin-right: 5px; border:#dfdfdf thin solid; cursor:pointer;}
@@ -243,7 +243,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .fork-or{ float:left; color:#FFF;font-size: 16px;margin-top: 11px;padding-left: 20px;padding-right: 20px;}
 .fork-title{width: 100%;height: 20%;color: #fff;text-align: center;font-size: 20px;margin-top: 30px;}
 .fork-choices{margin-left: 166px;margin-top: 20px;}
-#bank-roll{width:1000px; background-color:#ebebeb; left:50%; margin-left:-500px; top:171px; display:none; position:fixed; height:100%;z-index: 100; text-align:center; overflow:scroll;}
+#bank-roll{width:1000px; background-color:#ebebeb; left:50%; margin-left:-500px; top:107px; display:none; position:fixed; height:100%;z-index: 100; text-align:center; overflow:scroll;}
 .b-roll-img{margin-top: 25px; margin-left: 20px;}
 #bank-overlay{ position:fixed; top:0px; left:0px; width:100%; height:100%; overflow:hidden; z-index:99; background-color: #fff; opacity: 1; display:none; }
 .tag{margin-left: -110px; margin-bottom: 10%; cursor:pointer;top: 35px;position: absolute; opacity: .8; height: 100px;}
@@ -1569,19 +1569,20 @@ width: 174px;
     font-weight: 300;
 }
 /* SHOP PAGE ***********************/
-#dahliawolfShop{ width: 1008px; margin: 0 auto;position: relative; margin-top: 10px;}
-#dahliawolfShop .shop-item{width: 240px;overflow: hidden;height: 500px;float: left;position: relative;border: #c2c2c2 thin solid;margin-left: 5px;margin-right: 5px;margin-bottom: 50px;}
-#dahliawolfShop .product-details{width: 100%;height: 420px;overflow: hidden;position: relative;}
+#dahliawolfShop{ width: auto; margin: 0 auto; position: relative; margin-top: 10px;}
+#dahliawolfShop .shop-item{width: 300px;overflow: hidden;height:392px;float: left;position: relative; margin-left: 15px; margin-right: 15px; margin-bottom: 55px; cursor: pointer;}
+#dahliawolfShop .product-details{width: 100%;height: 350px; overflow: hidden;position: relative; cursor: pointer;}
 #dahliawolfShop .image-frame{width: 100%;height: 100%;position: relative;}
-#dahliawolfShop .image-frame img{ width: 100%;}
+#dahliawolfShop .image-frame img{ width: 72%;margin-left: 14%;}
 #dahliawolfShop .item-status{position: absolute;right: 0px;font-size: 18px; z-index: 1}
-#dahliawolfShop .priceLine{position: absolute;width: 100%;bottom: 10px; z-index: 1}
+#dahliawolfShop .priceLine{position: absolute;width: 100%;bottom: 3px; z-index: 1}
 #dahliawolfShop .product-name{float: left;font-size: 17px;text-indent: 10px;width: 160px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-transform: uppercase;font-size: 11px;line-height: 21px;}
 #dahliawolfShop .product-inspiration{border-top: #c2c2c2 thin solid;}
-#dahliawolfShop .product-price{float: right;font-size: 18px;margin-right: 10px;}
-#dahliawolfShop .avatarFrame{float: left;width: 50px;overflow: hidden;border-radius: 50px;height: 50px;margin: 15px 8px;}
+#dahliawolfShop .product-inspiration ul li:last-child{margin-top: -2px; font-size: 13px;}
+#dahliawolfShop .product-price{float: right;font-size: 13px; margin-right: 10px;margin-right: 10px;line-height: 21px;}
+#dahliawolfShop .avatarFrame{float: left;width: 25px; overflow: hidden;border-radius: 50px;height: 25px;margin: 8px 8px;}
 #dahliawolfShop .avatarFrame img{width: 100%;}
-#dahliawolfShop .inspire{font-size: 13px;overflow: hidden;text-overflow: ellipsis;padding-top: 20px;}
+#dahliawolfShop .inspire{font-size: 11px;overflow: hidden;text-overflow: ellipsis;padding-top: 8px;}
 #dahliawolfShop .sold-out{background-color: #000;position: absolute;right: -29px;top: 19px;z-index: 1;color: #fff;font-size: 18px;padding: 3px 30px; overflow:hidden; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg);-ms-transform: rotate(45deg); -o-transform: rotate(45deg);}
 #dahliawolfShop .coming_soon{position: absolute;top: 7px;right: 7px;z-index: 1;text-align: center;background-color: #dddddd; color: #595959; width: 75px;height: 75px; border-radius: 50px;}
 #dahliawolfShop h1{margin: 0;font-weight: 100;font-size: 13px;padding-top: 13px;}
@@ -1593,7 +1594,8 @@ width: 174px;
 #dahliawolfShop .overlayButton:hover{opacity: .7;}
 #dahliawolfShop .wishlistButton{background-color: #5e5e5e; color: #fff;margin-top: 110px;}
 #dahliawolfShop .buyButton{background-color: #5e5e5e; color: #fff;margin-top: 150px;}
-#dahliawolfShop .inspirationButton{background-color: #5e5e5e; color: #fff;bottom: 0px;position: absolute;bottom: 0px;left: 0px;height: 79px;font-size: 18px;line-height: 70px;width: 100%;text-align: center;z-index: 3; cursor: pointer;}
+#dahliawolfShop .inspirationButton{color: #fff;bottom: 0px;position: absolute;bottom: 0px;left: 0px; height: 41px; font-size: 11px; line-height: 45px; width: 100%;text-align: right; z-index: 3; cursor: pointer;}
+#dahliawolfShop .inspirationButton span{margin-right: 13px;background-color: #000;padding: 5px 10px;}
 #dahliawolfShop .inspirationButton:hover{color: #c86362; }
 #dahliawolfShop .inspirationImage{ position: absolute;width: 100%;z-index: 33;left: 100%; transition: left .2s; -webkit-transition: left .2s;}
 #dahliawolfShop .inWishlist{background-color: #f4a5b4 !important;white-space: nowrap; text-indent: -8px;}

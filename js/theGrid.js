@@ -22,7 +22,7 @@ theGrid.sortTerm = null;
 theGrid.urls = [];
 theGrid.urls['like'] = '/action/like?posting_id=';
 theGrid.urls['unlike'] = '/action/unlike?posting_id=';
-theGrid.htText = 'style="height:100%; min-width:100%; width:auto;"';
+theGrid.htText = 'style="min-height: 100%; min-width:101%; width:auto;"';
 
 theGrid.showLoader = function() {
 	$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
@@ -31,8 +31,11 @@ theGrid.destroyLoader = function() {
 	$('#theGridLoader').remove();
 }
 
+theGrid.adjustMargins = function() {
+    $('#theGrid').css('margin-left', (window.innerWidth % 320)/2);
+};
+
 theGrid.likeAction = function(){
-	console.log('yooo');
     id = parseInt( $(this).data('id') );
     likeBox = $('#post-'+id).find('.postGridLikeCount');
     likeImage = $('#post-'+id).find('.postGridLikeImage');
@@ -67,8 +70,9 @@ theGrid.getImages = function() {
 			theGrid.destroyLoader();
 			$.each(data, function(index, post){
 				theGrid.posts[post.posting_id] = new theGrid.post(post);
+                theGrid.adjustMargins();
 			});
-			theGrid.container.append('<div style="clear:left"></div>');
+			//theGrid.container.append('<div style="clear:left"></div>');
 			theGrid.offset += theGrid.limit;
 			theGrid.isAvailable = true;
 		});
@@ -101,7 +105,7 @@ theGrid.post.prototype.displayPost = function() {
     str = '<div id=post-'+this.data.posting_id+' class="post-frame color-'+Math.floor(Math.random()*5)+'">';
 	str += '<div rel="grid-vote" class="vote-frame '+(parseInt(this.data.is_liked) ? 'grid-unlike' : 'grid-like')+'" data-id="'+this.data.posting_id+'"></div>';
 	str += '<a href="/post-details?posting_id='+this.data.posting_id+'" class="image" rel="modal">';
-	str += '<img src="'+this.data.image_url+'&width=300" class="'+(theGrid.offset < theGrid.limit ? '' : 'lazy')+' zoom-in" data-src="'+this.data.image_url+'&width=300" '+(this.data.width >= this.data.height ? theGrid.htText : '')+'>';
+	str += '<img src="'+this.data.image_url+'&width=300" class="'+(theGrid.offset < theGrid.limit ? '' : 'lazy')+' zoom-in" data-src="'+this.data.image_url+'&width=300" '+(Number(this.data.width) >= Number(this.data.height) ? theGrid.htText : '')+'>';
 	str += '</a>';
     str += '<div class="gridPostDeets"><div class="gridUsername dahliaHead" data-id="'+this.data.user_id+'"><a href="/'+this.data.username+'">'+this.data.username+'</a></div>' +
         '<div class="gridLovesBox"><div class="postGridLikeImage '+(parseInt(this.data.is_liked) ? 'postGridLiked' : 'postGridUnLiked')+'" rel="grid-vote" data-id="'+this.data.posting_id+'"></div><p class="postGridLikeCount">'+this.data.total_likes+'</p></div>';
@@ -128,4 +132,6 @@ theGrid.init = function(sortTerm, searchTerm) {
 	theGrid.infiniteScroll();
 	theGrid.bindVoteButtons();
 	theGrid.getImages();
+    theGrid.adjustMargins();
+    $(window).resize(theGrid.adjustMargins);
 }

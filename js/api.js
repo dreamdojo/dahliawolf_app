@@ -19,13 +19,12 @@ function dahliawolfApi() {
 dahliawolfApi.prototype.callApi = function(api, apiFunction, params, callback) {
     if(api && apiFunction) {
         var theCallUrl = '/api/?api='+api+'&function='+apiFunction+params;
-        console.log(theCallUrl);
         var xhr = $.ajax(theCallUrl).done(function(data){
             if(callback && typeof callback === 'function') {
                 callback(data);
             }
         }).fail(function(){
-            console.log('oh no something broke');
+            holla.log('oh no something broke');
         });
         return xhr;
     }
