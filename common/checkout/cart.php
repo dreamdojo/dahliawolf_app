@@ -454,12 +454,15 @@ $is_review = !empty($is_review) ? true : false;
 						?>
 						<tr class="discounts">
 							<th scope="row">
-
 	                            <?
+	                            // Disallow modifying on review page
 								if (!$is_review) {
-									?>
-	                            	<a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
-	                                <?
+									// Membership level discount is always automatically added, so no reason to show remove link
+									if (empty($discount['membership_level_id'])) {
+										?>
+		                            	<a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
+		                                <?
+									}
 								}
 								?>
 								Discount (<?= $discount['name'] ?> - <?= ($discount['is_amount_discount'] == '1') ? '$' . number_format($discount['reduction_amount'], 2, '.', ',') : number_format($discount['reduction_percent'], 0, '.', ',') . '%' ?> off)
