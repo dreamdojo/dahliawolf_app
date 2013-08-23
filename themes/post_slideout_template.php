@@ -307,7 +307,7 @@
 	theBank.refilling = false;
 	theBank.isOpen = false;
 	theBank.refreshPage = false;
-	theBank.topDistance = 170;
+	theBank.topDistance = 107;
 	theBank.trainingTopDistance = 390;
 	theBank.dragndrop = '<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent">Don\'t have images? Post from the DAHLIA WOLF IMAGE BANK</span>';
 	theBank.dragndrop += '<div id="viewToggle" class="toggleViewLine"></div></div><div id="theUploadBuffer" class="first"></div>';
@@ -531,7 +531,7 @@
 	}
 	
 	function _resetTopDistance(){
-		theBank.topDistance = 170;
+		theBank.topDistance = 107;
 	}
 	
 	function _transformToTrainingMode(){
@@ -637,7 +637,7 @@
             theBank.fillerUp();
             thePost.fork.animate({top: theBank.topDistance}, 200, function(){
 				$('#bankOptions').slideDown(100);
-				thePost.fork.animate({'top' : 170}, 100, function(){
+				thePost.fork.animate({'top' : 107}, 100, function(){
 					thePost.fork.fadeOut(200);
 					thePost.fork.animate({top: thePost.hideMe}, 1, function(){
 						thePost.fork.show();
@@ -702,7 +702,7 @@
 	}
 	
 	function _resetPostTopDistance(){
-		thePost.topDistance = 170;
+		thePost.topDistance = 107;
 	}
 	
 	function unsetTrainingMode(){

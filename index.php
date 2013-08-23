@@ -280,7 +280,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         <div><img style="margin-top:100px; margin-bottom: 30px;" src="http://www.dahliawolf.com/images/how-it-works-get-started.png" /></div>
         <div style="cursor:pointer;"><img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" ></div>
         <div class="signupemail2"><a href="http://www.dahliawolf.com/signup">SIGN UP THE OLD SCHOOL WAY WITH EMAIL</a></div>
-    	<div class="signuplater2"><span style="aligh:right;">Sign up later... <a href="http://www.dahliawolf.com/spine">ENTER</a></span></div>
+    	<div class="signuplater2"><span style="aligh:right;">Sign up later... <a href="/spine">ENTER</a></span></div>
 	</div>
 </div>
 

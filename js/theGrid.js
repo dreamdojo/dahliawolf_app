@@ -31,8 +31,11 @@ theGrid.destroyLoader = function() {
 	$('#theGridLoader').remove();
 }
 
+theGrid.adjustMargins = function() {
+    $('#theGrid').css('margin-left', (window.innerWidth % 320)/2);
+};
+
 theGrid.likeAction = function(){
-	console.log('yooo');
     id = parseInt( $(this).data('id') );
     likeBox = $('#post-'+id).find('.postGridLikeCount');
     likeImage = $('#post-'+id).find('.postGridLikeImage');
@@ -67,8 +70,9 @@ theGrid.getImages = function() {
 			theGrid.destroyLoader();
 			$.each(data, function(index, post){
 				theGrid.posts[post.posting_id] = new theGrid.post(post);
+                theGrid.adjustMargins();
 			});
-			theGrid.container.append('<div style="clear:left"></div>');
+			//theGrid.container.append('<div style="clear:left"></div>');
 			theGrid.offset += theGrid.limit;
 			theGrid.isAvailable = true;
 		});
@@ -128,4 +132,6 @@ theGrid.init = function(sortTerm, searchTerm) {
 	theGrid.infiniteScroll();
 	theGrid.bindVoteButtons();
 	theGrid.getImages();
+    theGrid.adjustMargins();
+    $(window).resize(theGrid.adjustMargins);
 }

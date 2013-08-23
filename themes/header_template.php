@@ -66,113 +66,127 @@ $(document).ready(function()
 </div>
 
 <a name="top"></a>
-<div class="header">
-    <div class="HeaderContainer">
-        <div class="HeaderContents">
-            <div class="header_logo"><a href="/spine"><img src="/images/logo.png"></a>
-            </div>
-        <div id="middlebutton">
-          	<div class="marginmiddlebutton1 marginmiddlebutton">
-            	<a id="section-inspire" href="#" onClick="thePost.buttonPushed();" >INSPIRE+</a>
-            </div>
-            <div class="slasher">
-            	<img src="/images/slash.png" width="23" height="19">
-            </div>
-                        <div class="marginmiddlebutton1 marginmiddlebutton">
-            	<a id="section-vote" href="/spine" class="<?= ($self == '/spine.php' || $self == '/grid.php' ? 'color-me-red' : '') ?>">VOTE</a>
-            </div>
+<style>
+    #dahliaHeader{position: fixed; height: 50px; width: 100%; background-color: #000; left: 0px; top: 0px;z-index: 11111; min-width: 500px; font-family: futura;
+        background: #3f3f3f; /* Old browsers */
+        background: -moz-linear-gradient(top,  #3f3f3f 0%, #131313 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f3f3f), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #3f3f3f 0%,#131313 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #3f3f3f 0%,#131313 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #3f3f3f 0%,#131313 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #3f3f3f 0%,#131313 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+    }
+    #dahliaHeader a{color: #fff !important;}
+    /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
+    #dahliaHeader #dahliaLogo{width: 160px;height: 80%;background-image: url("/images/logo_no_beta.png");background-size: 100%;background-repeat: no-repeat;background-position: 46% 50%;margin-top: 7px;margin-left: 20px;overflow: hidden; float: left; cursor: pointer;}
+    #dahliaHeader #userMenu{float: right; padding-right: 20px; position: relative; height: 40px; margin-top: 10px; margin-right: 8px;}
+    #dahliaHeader .avatarFrame{width: 30px;height: 30px;overflow: hidden; margin-top: -1px; border-radius: 30px;float: right;}
+    #dahliaHeader .avatarFrame img{width: 100%;}
+    #dahliaHeader .userName{float: right;color: #fff;font-size: 12px;line-height: 32px; margin-right: 9px;}
+    #dahliaHeader #mainMenu{position: absolute;width: 260px; left: 50%;margin-left: -130px; color: #fff;height: 60px;line-height: 50px;font-size: 18px;text-align: center;}
+    #dahliaHeader #mainMenu li{float: left; margin: 0px 10px; position: relative;}
+    #dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 40px;height: 40px;background-size: 81%; background-repeat: no-repeat; background-position: -7px -2px; margin-top: 10px;}
+    #dahliaHeader #searchButton{ float:right; background-image: url("/images/s_mag.png"); width: 40px; height: 40px; background-size: 75%; background-repeat: no-repeat;margin-top: 10px; margin-right: 0px;}
+    #dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 10px;}
+    #dahliaMainMenuButton{float: left; height: 48px; width: 50px;  display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 86%; background-repeat: no-repeat;margin-top: 2px;}
+    #dahliaMainMenuButton:hover .theMainMenu{display: block;}
+    .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
+    .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
+    #dahliaHeader #userMenu:hover ul{display: block;}
+    #userMenu ul{position: absolute;width: 100%; margin-top: 40px; text-align: left; background-color: #000;color: #fff;min-width: 100px; display: none;opacity: .88;}
+    #userMenu li{font-size: 13px;padding: 5px 14px; font-family: arial;border-top: #292929 1px solid;}
+    #userMenu li:hover{background-color: #1a1a1a;}
+    #userMenu li:last-child{padding-bottom: 10px;}
+    .loginDept{color: #fff;font-size: 13px;width: 125px;line-height: 50px;}
+    .loginDept li{float: left;margin-right: 10px; position: relative;margin-left: 8px;}
+    .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
+    .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
+    .mmBorder{border-right: #666666 thin solid;position: absolute; height: 30px;right: -10px; top: 10px;
+        -webkit-transform: rotate(-22deg);
+        -moz-transform: rotate(-22deg);
+        -o-transform: rotate(-22deg);
+        -ms-transform: rotate(-22deg);
+        transform: rotate(-22deg);}
 
-             <div class="slasher">
-            	<img src="/images/slash.png" width="23" height="19">
-            </div>
-            <div class="marginmiddlebutton4 marginmiddlebutton">
-            	<a id="section-shop" href="/shop" class="<?= ($self == '/explore.php' ? 'color-me-red' : '') ?>">SHOP</a>
-            </div>
+    #searchBar{width: 100%;position: fixed;height: 60px;left: 0px;background-color: #000;top: 49px; z-index: 123;border-top: #fff thin solid;display: none;}
+    #searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7;font-size: 40px;text-indent: 15px;text-align: center;}
+    .pinkMe{color: #F03E63;}
 
+    @media screen and (max-width: 1000px) {
+        #dahliaHeader .userName{display: none;}
+    }
 
-            <div style="clear:both"></div>
+    @media screen and (max-width: 700px) {
+        #dahliaHeader #mainMenu{display: none;}
+        #dahliaMainMenuButton{display: block;}
+        #dahliaHeader #dahliaLogo{float: none;position: absolute;left: 50%;margin-left: -120px;}
+        #userMenu ul{position: fixed;right: 0px;width: 130px;}
+    }
+</style>
+
+<div id="dahliaHeader" class="avatarShadow">
+    <div id="dahliaMainMenuButton">
+        <ul class="theMainMenu">
+            <li><a href="/grid">INSPIRE</a></li>
+            <li><a href="/grid">VOTE</a></li>
+            <li><a href="/shop">SHOP</a></li>
+        </ul>
+    </div>
+    <a href="/grid"><div id="dahliaLogo"></div></a>
+    <ul id="mainMenu">
+        <li><a href="#" onclick="thePost.buttonPushed();return false;"><span class="<?= $self == '' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
+        <li><a href="/grid"><span class="<?= $self == '/grid.php' || $self == '/spine.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
+        <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
+    </ul>
+    <div id="rightHandMenu">
+        <? if(IS_LOGGED_IN): ?>
+        <a href="/shop/checkout.php"><div id="shoppingCart"></div></a>
+        <div id="searchButton"></div>
+        <div id="userMenu">
+            <div class="rtBorder"></div>
+            <div class="avatarFrame"><img src="<?= $userConfig['avatar'] ?>"></div>
+            <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #B1B1B1 !important;"><?= $_SESSION['user']['username'] ?></a></div>
+            <ul>
+                <li><a href="/<?= $_SESSION['user']['username'] ?>">Profile</a></li>
+                <li><a href="/activity">Activity</a></li>
+                <li><a href="/invite">Invite</a></li>
+                <li><a href="/shop/my-wishlist">Wishlist</a></li>
+                <li><a href="/pinit">Inspire Tool</a></li>
+                <li><a href="/account/settings">Settings</a></li>
+                <li><a href="/shop/my-orders">Orders</a></li>
+                <li><a href="/action/logout">Logout</a></li>
+                <li><a href="/wolf-pack">Pack Leaders</a></li>
+            </ul>
         </div>
-        <div id="user-nav">
-          <ul class="Navigation">
-				<?php if(IS_LOGGED_IN): ?>
-                 <li class="parent username">
-                    <a href="<? echo '/' . $_SESSION['user']['username'] ?>">
-                    	<?php echo $_SESSION['user']['username'] ?>
-                    	<span class="arrow"></span>
-                    </a>
-                    <ul>
-                		<li>
-                			<form style="min-width:135px;padding-top:15px; padding-bottom:10px; padding-left:5px; color:#fff !important; background-color:#000;" class="sysFullTSForm text" method="get" action="/spine">
-	        					<input style="width: 65%; background-color: rgb(0, 0, 0); border: 2px solid rgb(170, 170, 170); margin-left: 2px; padding-left: 2px; padding-top: 2px; color: rgb(135, 135, 135) !important; text-transform: uppercase !important;" type="text" value="" size="10" name="q" id="query" is_empty="yes" class="ui-autocomplete-input" inited="inited">
-	        					<button class="lg" style="width:20%; padding: 4px;" id="query_button" type="submit"><img alt="Search" src="<?= CR ?>/images/search.gif"></button>
-	        				</form>
-
-	        				<script type="text/javascript">
-	        					//$('.sysFullTSForm INPUT[name="q"]').emptyVal({text: "Search"})
-	        				</script>
-        				</li>
-                    	<?
-                    	$account_navs = array(
-                    		array(
-	                    		'Profile' 		=> '/' . $_SESSION['user']['username']
-	                    		, 'Activity' 	=> '/activity'
-								, 'Invite' 	=> '/invite'
-                                , 'Cart'.' $'.money_format('%i', isset($_data['cart']) && isset($_data['cart']['cart']) ? $_data['cart']['cart']['totals']['grand_total'] : 0) => '/shop/checkout'
-	                    		, 'Wishlist' 	=> '/shop/my-wishlist'
-	                    	)
-							, array(
-								'Inspire Tool' => '/pinit'
-                    		)
-							, array(
-								'Settings' => '/account/settings'
-								, 'Orders' => '/shop/my-orders'
-								, 'Logout' => '/action/logout'
-                    		)
-
-							, array(
-								'Pack Leaders' => '/wolf-pack'
-
-                    		)
-						);
-						foreach ($account_navs as $i => $group) {
-							$j = 0;
-							foreach ($group as $name => $url) {
-								?>
-								<li<?= $i != 0 && $j == 0 ? ' class="divider"' : '' ?>><a href="<?= $url ?>"><?= $name ?></a><? if($name == 'Activity' && $new_activity > 0){echo '<div class="new-bubs"><p>'.$new_activity.'</p></div>';} ?></li>
-								<?
-								$j++;
-							}
-						}
-                    	?>
-                    </ul>
-                </li>
-
-                <?php else: ?>
-                <li class="Navigation2">
-                    <a href="javascript:;" onClick="loginscreen('signup')">Signup</a>
-                </li>
-                <li>
-                    <a href="javascript:;" onClick="loginscreen('login')">Login</a>
-                </li>
-                <?php endif ?>
-         </ul>
-         <?
-         if (IS_LOGGED_IN) {
-         	?>
-			<div id="point-board">
-				<a href="/wolf-pack">
-					You have <span class="points user-points">1</span> points
-				</a>
-				<span class="message">You have earned <span class="earned-points"></span> points</span>
-			</div>
-			<?
-		 }
-		 ?>
-       </div>
-       <div id="tour-button">SHOW HELPER</div>
-   </div>
+        <? else: ?>
+            <ul class="loginDept">
+                <li onclick="loginscreen('login')">Login<div class="mmBorder"></div></li>
+                <li onclick="loginscreen('signup')" style="margin-right: 20px; color: #F03E63;">Signup</li>
+            </ul>
+        <? endif ?>
+    </div>
 </div>
+<div id="searchBar">
+    <input type="text" placeholder="Whatcha lookin for hun?">
 </div>
+
+<script>
+    $(function() {
+       $('#searchButton').bind('click', function() {
+           $('#searchBar').slideToggle(200);
+           $('#searchBar input').focus();
+           $('#searchBar input').unbind('keydown').bind('keydown', function(e){
+               if(e.keyCode == 13) {
+                   var s_key = $(this).val();
+                   document.location = '/grid?q='+s_key;
+                   $('#searchBar').slideUp(200);
+               }
+           });
+       });
+    });
+</script>
+<? //var_dump($userConfig) ?>
 
 <div id="dahliaHead">
     <div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div>
@@ -240,6 +254,7 @@ $(document).ready(function()
 </div>
 
 <script>
+
 $(function(){
 	theLesson.init('<?= $self ?>');
 });

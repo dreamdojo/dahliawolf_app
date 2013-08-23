@@ -18,7 +18,6 @@ if ($top_dir == 'mobile') {
 if ($top_dir == 'shop') {
 	require 'includes/php/shop-initial-calls.php';
 }
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0031)http://www.dahliawolf.com/login -->
@@ -88,6 +87,7 @@ if ($top_dir == 'shop') {
 <script src="/js/api.js" type="text/javascript"></script>
 <script src="/js/jquery.countdown.js" type="text/javascript"></script>
 <script type="text/javascript">
+
 var theUser = new Object();
 <? if (IS_LOGGED_IN): ?>
 	var userConfig = <?= json_encode($userConfig) ?>;
@@ -141,4 +141,3 @@ var theUser = new Object();
 <!-- End of Woopra Code -->
 </script>
 </head>
-

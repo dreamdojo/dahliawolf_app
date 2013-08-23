@@ -26,5 +26,8 @@ if(isset($_GET['q']) && count($_data['users'])):?>
 
 <?php include "footer.php" ?>
 <script>
- $(function(){theGrid.init(<?= ( !empty($_GET['sort']) ? '"'.$_GET['sort'].'"' : 'null' ) ?>, <?= ( !empty($_GET['q']) ? '"'.$_GET['q'].'"' : 'null' ) ?>);});
+
+    $(function(){
+        theGrid.init(<?= ( !empty($_GET['sort']) ? '"'.$_GET['sort'].'"' : 'null' ) ?>, <?= ( !empty($_GET['q']) ? '"'.$_GET['q'].'"' : 'null' ) ?>);
+    });
 </script>
