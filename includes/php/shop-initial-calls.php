@@ -9,7 +9,7 @@ if (empty($_data)) {
 }
 
 // Get Cart (already gets called in initial-calls.php)
-//$_data['cart'] = get_cart();
+$_data['cart'] = get_cart();
 if (isset($_GET['t'])) {
 	die('shop-initial-calls.php:14');
 }
