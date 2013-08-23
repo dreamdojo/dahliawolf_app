@@ -303,7 +303,7 @@ else if ($self == '/shop/my-orders.php') {
 		$_data['orders'] = $data['data']['get_user_orders']['data'];
 	}
 }
-else if ($self == '/shop/order-details.php') {
+else if ($self == '/shop/order-details.php' || $self == '/shop/post-checkout-summary.php') {
 	if (empty($_SESSION['user'])) {
 		$_SESSION['errors'] = array('Please login to continue.');
 		redirect('/login.php');
@@ -311,8 +311,23 @@ else if ($self == '/shop/order-details.php') {
 	}
 	else if (empty($_GET['id_order'])) {
 		$_SESSION['errors'] = array('Order not found.');
+		redirect('/shop/my-orders');
 	}
 	else {
+		// Get shop name
+		$calls = array(
+			'get_shop' => array(
+				'id_shop' => SHOP_ID
+			)
+		);
+		$data = commerce_api_request('shop', $calls, true);
+		if (!empty($data['errors']) || !empty($data['data']['get_shop']['errors'])) {
+			$_SESSION['errors'] = api_errors_to_array($data, 'get_shop');
+		}
+		else {
+			$_data['shop'] = $data['data']['get_shop']['data'];
+		}
+
 		$calls = array(
 			'get_user_order_details' => array(
 				'user_id'		=> $_SESSION['user']['user_id']
@@ -331,6 +346,4 @@ else if ($self == '/shop/order-details.php') {
 
 	}
 }
-
-
 ?>

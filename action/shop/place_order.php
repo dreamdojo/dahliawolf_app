@@ -81,7 +81,7 @@ setcookie(SITENAME_PREFIX . "[cart]", '', time() + 1209600, '/');
 unset($_SESSION['id_cart'], $_SESSION['checkout_billing_address_id'], $_SESSION['checkout_shipping_address_id'], $_SESSION['checkout_id_delivery'], $_SESSION['checkout_payment_method_id']);
 
 if( !isset($_POST['ajax']) ) {
-    redirect('/shop/my-orders.php');
+    redirect('/shop/post-checkout-summary?id_order=' . $data['data']['place_order']['data']['id_order']);
     die();
 } else {
     echo json_encode($data);
