@@ -4,7 +4,7 @@ function userList(user, action) {
     this.users = [];
     this.isReloadAvailable = true;
     this.$bucket = $('#userListCol');
-    this.urls = {'/account/following.php' : 'get_top_following', '/account/followers.php' : 'get_top_followers'};
+    this.urls = {'/account/following.php' : 'get_top_following', '/account/followers.php' : 'get_top_followers', '/wolf-pack.php' : 'get_top_following'};
     this.action = action;
 
     if(user) {
@@ -30,7 +30,7 @@ userList.prototype.bindScroll = function() {
 userList.prototype.getUsers = function() {
     var _this = this;
 
-    $.getJSON('/api/?api=user&function='+this.urls[this.action]+'&user_id='+this.user.user_id+'&viewer_user_id='+theUser.id+'&limit='+this.limit+'&offset='+this.offset, function(data) {
+    $.getJSON('/api/?api=user&function='+this.urls[this.action]+'&user_id='+(this.action !== '/wolf-pack.php' ? this.user.user_id : '')+'&viewer_user_id='+theUser.id+'&limit='+this.limit+'&offset='+this.offset, function(data) {
         if(data.data.length != _this.limit) {
             $(window).unbind('scroll');
         }
@@ -42,7 +42,6 @@ userList.prototype.getUsers = function() {
 
 userList.prototype.addUsersToStack = function(array) {
     var _this = this;
-
     $.each(array, function(index, user) {
         _this.users.push( new userList.prototype.user(user) );
     });
