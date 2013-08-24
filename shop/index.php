@@ -16,8 +16,10 @@
     #shopOwnerHeader img{width: 100%;}
     .shopOwnerTitle{position: absolute;margin-top: 90px;left: 71px;font-size: 30px; text-transform: uppercase; font-weight: bolder !important; width: 528px;text-align: center;overflow: hidden;text-overflow: ellipsis;}
     .shopEmpty{font-size: 20px; text-align: center; margin-top: 15px;}
+    body{text-align: center;}
 </style>
-
+<img style="text-align: center; margin: 0px auto;" src="/images/COMINGSOON.png">
+<!--
 <? if( empty($user['user_id']) ): ?>
     <ul id="sortBar">
         <li>sort products by: </li>
@@ -36,13 +38,13 @@
 <? endif ?>
 
 <div id="dahliawolfShop"></div>
-
+-->
 <?
     include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 ?>
 
 <script>
 $(function() {
-    dahliawolfShop = new shop(<?= json_encode($user) ?>);
+    //dahliawolfShop = new shop(<?= json_encode($user) ?>);
 });
 </script>
