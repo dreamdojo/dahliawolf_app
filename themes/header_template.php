@@ -128,12 +128,12 @@ $(document).ready(function()
 <div id="dahliaHeader" class="avatarShadow">
     <div id="dahliaMainMenuButton">
         <ul class="theMainMenu">
-            <li><a href="/grid">INSPIRE</a></li>
+            <li><a href="#" onclick="thePost.buttonPushed();return false;">INSPIRE</a></li>
             <li><a href="/spine">VOTE</a></li>
             <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>
-    <a href="/grid"><div id="dahliaLogo"></div></a>
+    <a href="/spine"><div id="dahliaLogo"></div></a>
     <ul id="mainMenu">
         <li><a href="#" onclick="thePost.buttonPushed();return false;"><span class="<?= $self == '' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
         <li><a href="/spine"><span class="<?= $self == '/grid.php' || $self == '/spine.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
@@ -168,7 +168,7 @@ $(document).ready(function()
     </div>
 </div>
 <div id="searchBar">
-    <input type="text" placeholder="Whatcha lookin for hun?">
+    <input type="text" placeholder="Start typing to search...">
 </div>
 
 <script>
