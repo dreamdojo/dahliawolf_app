@@ -8,7 +8,7 @@ $Spine = new Spine();
 ?>
 <div id="sort-bar">
 	sort inspirations by: 	<span class=""><a class="sort-option <?= ($_GET['sort'] == 'new' || empty($_GET['sort']) ? 'bold' : '') ?>" href="/spine?sort=new">newest</a></span> /
-    						<span class=""><a class="sort-option <?= ($_GET['sort'] == 'hot' ? 'bold' : '') ?>" href="/spine?sort=hot"> hottest</a></span> /
+    						<span class=""><a class="sort-option <?= ($_GET['sort'] == 'hot' ? 'bold' : '') ?>" href="/spine?sort=hot"> trending</a></span> /
                             <span class=""><a class="sort-option <?= ($_GET['sort'] == 'top' ? 'bold' : '') ?>" href="/spine?sort=top"> most popular</a></span>
                             <?
                             if (IS_LOGGED_IN) {
