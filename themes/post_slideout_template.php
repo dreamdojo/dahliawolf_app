@@ -15,7 +15,7 @@
 .uploadPreview-frame img{ width:100%;}
 .view-upload-button{float: left;background-color: #ff416d;font-size: 15px;color: #fff;height: 21px;margin-top: -24px;line-height: 20px;padding: 0px 10px;}
 .bar-frame{height: 45px;background-color: #fff;float: left;width: 750px;margin-top: 6px;margin-left: 10px;}
-.title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px; font-family:Arial, Helvetica, sans-serif;position: fixed;width: 975px;z-index: 1; font-weight:bold;}
+.title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px; position: fixed;width: 975px;z-index: 1; font-weight:bold;}
 .gridzy{height: 350px;width: 325px;overflow: hidden;float: left;}
 .gridzy .b-roll-img{min-height: 100%;width: 100%;}
 .gridzy .tag{height: 60px; margin-left: -55px;position: absolute;top: 35px; left: 95%;}
