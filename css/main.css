@@ -254,7 +254,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #comment{width: 300px;}
 .PinForm{/*margin-top:25px !important;*/}
 #u-clsr{position:absolute; right:25px; margin-top:10px; color:#FFF; font-size:24px; cursor:pointer;}
-.animated-word{color: #fff;text-align: center;font-size: 52px;margin-top: 70px;font-weight: 100;font-family: helvetica;}
+.animated-word{color: #fff;text-align: center;font-size: 52px;margin-top: 70px;font-weight: 100;font-family: futura;}
 #d-n-drop{height: 140px;width: 90%;margin-left: 5%;border: #6e6e6e 2px dashed;margin-top: 46px; background-color:#f9f9f9;border-radius: 2px;}
 .inpiration-text{ color: #6e6e6e;margin-top: 20px;line-height: 30px;font-size: 18px;}
 .postfromanywhere{color:#909090;color: #909090;font-size: 14px;margin-top: 9px;}
@@ -264,7 +264,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #theOverlay{position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; background-color: #FFF; opacity: .8; display: none;}
 
 /****************** LESSONS STEPS **********************************************/
-
+#postTitleContent{font-family: futura;}
 
 /**************** WOLF PACK ***************************************/
 .packlist{width:1000px;margin:0 auto;height:auto;margin-top:100px;}
