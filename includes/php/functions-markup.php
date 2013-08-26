@@ -268,6 +268,14 @@ function output_order_details($order) {
 								<?
 							}
 						}
+						if (!empty($order['cart_commission'])) {
+							?>
+							<tr class="discounts">
+								<th scope="row">Discount (Commission Redemption)</th>
+								<td>- $<?= number_format($order['cart_commission']['amount'], 2) ?></td>
+							</tr>
+							<?
+						}
   						?>
       					<tr class="shipping">
         					<th scope="row">

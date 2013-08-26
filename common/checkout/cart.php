@@ -1,9 +1,7 @@
 <?
 $is_review = !empty($is_review) ? true : false;
 //print_r($_data['cart']);
-
 ?>
-
 <div class="cart-container">
 	<?
 	if (!$is_review) {
@@ -272,7 +270,22 @@ $is_review = !empty($is_review) ? true : false;
 				</form>
 			</div>
 			*/?>
-            <?
+			<?
+			if (!empty($_data['cart']['available_commissions'])) {
+				?>
+				<div class="commission-redemption">
+					<h4>Commission Redemption</h4>
+					<form class="discount-code" action="/action/shop/save_cart_commission.php" method="post">
+						<fieldset>
+							<label for="cart-commission-amount">Enter an amount to redeem:</label>
+							<input type="text" name="amount" id="cart-commission-amount" value="<?= !empty($_data['cart']['cart_commission']) ? $_data['cart']['cart_commission']['amount'] : '0.00' ?>" />
+							<span>/ $<?= $_data['cart']['available_commissions']['total_commissions'] ?> (Earned Commissions)</span>
+							<p class="button"><a onclick="$(this).closest('form').submit()">Redeem Commissions</a></p>
+						</fieldset>
+					</form>
+				</div>
+	            <?
+			}
 		}
 		else {
 			?>
@@ -448,7 +461,6 @@ $is_review = !empty($is_review) ? true : false;
 					<td>$<?= !empty($_data['cart']) ? number_format($_data['cart']['cart']['totals']['products'], 2, '.', ',') : '0.00' ?></td>
 				</tr>
 				<?
-
 				if (!empty($_data['cart']['discounts'])) {
 					foreach($_data['cart']['discounts'] as $discount) {
 						?>
@@ -472,6 +484,18 @@ $is_review = !empty($is_review) ? true : false;
 						</tr>
 						<?
 					}
+				}
+
+				// Cart commission
+				if (!empty($_data['cart']['cart_commission'])) {
+					?>
+					<tr class="discounts">
+						<th scope="row">
+							Discount (Commission Redemption)
+						</th>
+						<td>- $<?= number_format($_data['cart']['cart_commission']['amount'], 2) ?></td>
+					</tr>
+					<?
 				}
 
 				//if ($is_review) {
