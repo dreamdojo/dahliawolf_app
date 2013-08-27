@@ -156,6 +156,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .highlightable:hover{background-color: #fafafa;}
 .invite-selected{background-color: #F0F0F0;}
 .cursor{cursor:pointer;}
+
 /************************ POST DETAILS AND GRID ***********/
 .post-details-container{width: 1000px;height: 800px;margin-top: 25px; margin: 0px auto;color: rgb(102, 102, 102);font-family: Helvetica, sans-serif;font-weight: 100;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);padding-bottom: 20px;position: relative;}
 #postDetailTopRow{ width: 100%;height: 100px;padding-top: 20px;background-color: white;padding-bottom: 20px;}
@@ -214,14 +215,14 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .userGridPostFrame a{ float:left; height:100%;}
 .userGridPostFrame img{ width:100%;}
 .myLittleSecret{position:absolute; height:100%; right:0px; width:20px; background-color:#fff;}
-.userGridPostFrame:hover .popGridLove{ display:block; }
-.popGridLove{ position: absolute;height: 100px;width: 100px;left: 50%;margin-left: -50px;top: 50%;margin-top: -50px; display:none; cursor: pointer;}
+.popGridLove{ position: absolute;height: 100px;width: 100px;left: 50%;margin-left: -50px;top: 50%;margin-top: -50px; cursor: pointer;}
 .popGridnotLoved{background: url("/images/like.png") no-repeat center center; background-size: 100%;}
 .popGridisLoved{background: url("/images/wild_like.png") no-repeat center center; background-size: 100%;}
 #postGridTitle{font-size: 20px;margin-top: 20px;margin-bottom: 10px;font-family: helvetica;font-weight: 100;text-align: center;color: rgb(80, 80, 80);}
 .is_winner_box{position: absolute;right: 0px;color: #fff;font-size: 15px;height: 30px;background-color: #fd7173;line-height: 30px;padding: 0px 10px;}
 .dahliaPink{color:#F03E63;}
-
+#userPostGrid .delButton{position: absolute;right: 0px;font-size: 20px;background-color: #FFF; color: #000;padding: 7px;z-index: 1;text-align: center;}
+#userPostGrid .option{display: none;}
 /*********************** HEADER ***************************/
 .marginmiddlebutton1{float: left; margin-right: 8px;}
 .marginmiddlebutton2{float: left; margin-right: 10px;}
