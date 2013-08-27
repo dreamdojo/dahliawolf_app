@@ -271,9 +271,9 @@ $is_review = !empty($is_review) ? true : false;
 			</div>
 			*/?>
 			<?
-			if (!empty($_data['cart']['available_commissions'])) {
+			if (!empty($_data['cart']['available_commissions']) && $_data['cart']['available_commissions']['total_commissions'] > 0) {
 				?>
-				<div class="commission-redemption">
+				<div class="commission-redemption redemption">
 					<h4>Commission Redemption</h4>
 					<form class="discount-code" action="/action/shop/save_cart_commission.php" method="post">
 						<fieldset>
@@ -281,6 +281,21 @@ $is_review = !empty($is_review) ? true : false;
 							<input type="text" name="amount" id="cart-commission-amount" value="<?= !empty($_data['cart']['cart_commission']) ? $_data['cart']['cart_commission']['amount'] : '0.00' ?>" />
 							<span>/ $<?= $_data['cart']['available_commissions']['total_commissions'] ?> (Earned Commissions)</span>
 							<p class="button"><a onclick="$(this).closest('form').submit()">Redeem Commissions</a></p>
+						</fieldset>
+					</form>
+				</div>
+	            <?
+			}
+			if (!empty($_data['cart']['available_store_credits']) && $_data['cart']['available_store_credits']['total_credits'] > 0) {
+				?>
+				<div class="store-credit-redemption redemption">
+					<h4>Store Credit Redemption</h4>
+					<form class="discount-code" action="/action/shop/save_cart_store_credit.php" method="post">
+						<fieldset>
+							<label for="cart-store-credit-amount">Enter an amount to redeem:</label>
+							<input type="text" name="amount" id="cart-store-credit-amount" value="<?= !empty($_data['cart']['cart_store_credit']) ? $_data['cart']['cart_store_credit']['amount'] : '0.00' ?>" />
+							<span>/ $<?= $_data['cart']['available_store_credits']['total_credits'] ?> (Store Credits)</span>
+							<p class="button"><a onclick="$(this).closest('form').submit()">Redeem Store Credit</a></p>
 						</fieldset>
 					</form>
 				</div>
@@ -494,6 +509,18 @@ $is_review = !empty($is_review) ? true : false;
 							Discount (Commission Redemption)
 						</th>
 						<td>- $<?= number_format($_data['cart']['cart_commission']['amount'], 2) ?></td>
+					</tr>
+					<?
+				}
+
+				// Store credit
+				if (!empty($_data['cart']['cart_store_credit'])) {
+					?>
+					<tr class="discounts">
+						<th scope="row">
+							Discount (Store Credit Redemption)
+						</th>
+						<td>- $<?= number_format($_data['cart']['cart_store_credit']['amount'], 2) ?></td>
 					</tr>
 					<?
 				}
