@@ -276,6 +276,14 @@ function output_order_details($order) {
 							</tr>
 							<?
 						}
+						if (!empty($order['cart_store_credit'])) {
+							?>
+							<tr class="discounts">
+								<th scope="row">Discount (Store Credit Redemption)</th>
+								<td>- $<?= number_format($order['cart_store_credit']['amount'], 2) ?></td>
+							</tr>
+							<?
+						}
   						?>
       					<tr class="shipping">
         					<th scope="row">
