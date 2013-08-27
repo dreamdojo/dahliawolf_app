@@ -105,7 +105,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .userHead:hover #dahliaHead{ display:block; }
 
 /*********** THE GRID ***********/
-#theGrid{position: relative; width: auto;margin: 0px auto;}
+#theGrid{position: relative; width: auto;margin: 0px auto; max-width: 1300px;}
 #theGrid .post-frame{ width:300px; float:left; margin:10px;height: 350px;overflow: hidden;position: relative; cursor:pointer;}
 #theGrid .post-frame:hover .vote-frame{display:block;}
 #theGrid .post-frame img{ width:101%; position:relative; }
