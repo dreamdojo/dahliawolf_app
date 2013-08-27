@@ -32,7 +32,7 @@ theGrid.destroyLoader = function() {
 }
 
 theGrid.adjustMargins = function() {
-    $('#theGrid').css('margin-left', (window.innerWidth % 320)/2);
+    //$('#theGrid').css('margin-left', (window.innerWidth % 320)/2);
 };
 
 theGrid.likeAction = function(){
