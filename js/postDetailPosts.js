@@ -133,7 +133,7 @@ postDetailGrid.prototype.delPost = function() {
     var id = $this.data('id');
     var c = confirm('Are you sure you want to delete this post?');
     if(c) {
-        api.deletePost(id);
+        $.ajax('/api/1-0/posting.json?use_hmac_check=0&function=delete_post&posting_id='+id);
         $this.parent().hide(200);
     }
 }
