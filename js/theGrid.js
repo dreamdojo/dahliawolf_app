@@ -23,6 +23,7 @@ theGrid.urls = [];
 theGrid.urls['like'] = '/action/like?posting_id=';
 theGrid.urls['unlike'] = '/action/unlike?posting_id=';
 theGrid.htText = 'style="min-height: 100%; min-width:101%; width:auto;"';
+theGrid.$view = $('#theGrid');
 
 theGrid.showLoader = function() {
 	$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
@@ -32,7 +33,11 @@ theGrid.destroyLoader = function() {
 }
 
 theGrid.adjustMargins = function() {
-    $('#theGrid').css('margin-left', (window.innerWidth % 320)/2);
+    if(window.innerWidth > 320*3) {
+        $('#theGrid').width(320*3).css('margin', 0+'px auto');
+    }else {
+        $('#theGrid').css('margin-left', (window.innerWidth % 320)/2).css('width', 'auto');
+    }
 };
 
 theGrid.likeAction = function(){
