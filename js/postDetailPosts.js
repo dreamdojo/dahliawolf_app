@@ -131,7 +131,7 @@ postDetailGrid.prototype.getPosts = function() {
 postDetailGrid.prototype.delPost = function() {
     var $this = $(this);
     var id = $this.data('id');
-    var c = confirm('Are you sure you want to delete post '+$this.data('id')+'?');
+    var c = confirm('Are you sure you want to delete this post?');
     if(c) {
         api.deletePost(id);
         $this.parent().hide(200);
