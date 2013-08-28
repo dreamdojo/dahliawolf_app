@@ -36,12 +36,10 @@
     .isDropFollowing{color: #A8A8A8; border: #A8A8A8 thin solid;}
     .enterSiteButton{background-color: #000; color: #fff; display: none; position: absolute;bottom: 70px;left: 50%;margin-left: -62px;font-size: 18px;padding: 7px 18px;}
     .enterSiteButton:hover{opacity:.7;}
-    #headerBlock{background: #FFF; position: relative; z-index: 102; height: 60px; padding-top: 24px; position: fixed; top: 0px; width: 100%; opacity: .85;}
-    #skipButton{position: absolute; width: 1000px; left: 50%; margin-left: -500px; bottom: 10px; text-align: right;}
+    #skipButton{position: absolute; right: 40px; left: 50%; margin-left: -500px; bottom: 10px; text-align: right;}
     #skipButton p{font-size: 16px;background-color: #fff;padding: 4px 20px;border: #000 thin solid;float: right;}
+    #inspireSection{margin-top: -73px;}
 </style>
-
-<div id="headerBlock"></div>
 
 <div id="trainingDay" class="lessonBox">
     <div class="trainingContent">
@@ -57,7 +55,7 @@
         </h2>
         <h1>POST IMAGES TO INSPIRE NEW FASHION</h1>
         <ul>
-            <li style="left: 20px; z-index: 10;">1</li>
+            <li style="z-index: 10;">1</li>
             <li>2</li>
             <li>3</li>
             <li>4</li>
@@ -66,6 +64,7 @@
     </div>
     <div id="skipButton"><a href="/spine"><p>SKIP</p></a></div>
 </div>
+<div id="inspireSection"></div>
 
 <div id="rainGutter"></div>
 
@@ -77,6 +76,7 @@ function getStarted() {
     this.$rainGutter = $('#rainGutter');
     this.$stepOne = $('.trainingContent span').eq(0).first();
     this.$stepTwo = $('.trainingContent span').eq(1).last();
+    this.$inspire = $('#inspireSection');
     this.usersPerRow = 5;
 
 
@@ -86,22 +86,24 @@ function getStarted() {
 getStarted.prototype.init = function() {
     var _this = this;
 
-    theLesson.isOpen = true;
-    theBank.gridMode = true;
-
+    this.$inspire.on('click', '.postButton', this.addPost);
+    this.$inspire.on('click', '.postPostingWrap', function(e) {
+        e.preventDefault();
+        alert('Your image has been posted and will be visible on your profile');
+    });
     $('#trainingDay').prependTo('body').slideDown(200);
     $('.getStartedButton').bind('click', function() {
         setTimeout(function(){
-            thePost.buttonPushed();
+            $('body').append('<div id="bankBucket"></div>');
+            $('#inspireSection').load('/inspire?get_started=true');
         }, 400);
         setTimeout(function() {
             $('.trainingContent').first().animate({left: '-'+100+'%'}, 300,  function(){
                 setTimeout(function() {
                     _this.spreadFrames( _this.$frames.eq(1) );
-                }, 2400);
+                }, 1000);
                 $(this).remove();
             }).next().animate({left:0}, 300);
-            $('#bank-roll').on('click', '.tag', _this.addPost);
         }, 10);
     });
 
@@ -147,11 +149,9 @@ getStarted.prototype.animateLeft = function(pic) {
 
 getStarted.prototype.moveToStepTwo = function() {
     var _this = this;
-    theBank.refreshPage = false;
-    thePost.buttonPushed();
 
     sendToAnal({name:'Step One completed'});
-
+    this.$inspire.fadeOut(200);
     setTimeout(function() {
         _this.animateLeft( _this.$frames.first() );
     }, 100);
@@ -162,7 +162,7 @@ getStarted.prototype.moveToStepTwo = function() {
 }
 
 getStarted.prototype.addPost = function() {
-    $("<img src='"+$(this).prev().attr('src')+"'>").appendTo( startingGuide.$frames.eq( $('.trainingPostComplete').length ).addClass('trainingPostComplete') );
+    $("<img src='"+$(this).parent().find('img').attr('src')+"'>").appendTo( startingGuide.$frames.eq( $('.trainingPostComplete').length ).addClass('trainingPostComplete') );
 
     if($('.trainingPostComplete').length == 5) {
         setTimeout(function() {

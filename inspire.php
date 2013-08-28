@@ -1,7 +1,9 @@
 <?
     $pageTitle = "Inspire";
-    include "head.php";
-    include "header.php";
+    if( !isset($_GET['get_started']) ) {
+        include "head.php";
+        include "header.php";
+    }
 ?>
 <style>
     #bankBucket{width: 100%;max-width: 960px; margin: 0px auto; height: 100%;padding-top: 57px;}
@@ -15,9 +17,10 @@
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
     #viewToggle{background-image: url("/images/views.png");background-position: 100%;background-size: 180%;position: absolute;right: -18px;margin-top: 5px;width: 40px;background-repeat: no-repeat;overflow: hidden;}
+    .title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px;width: 100%;max-width: 920px;z-index: 1;font-weight: bold;margin: 0px auto;top: 70px;margin-bottom: 10px;position: relative;text-align: center;}
 
 </style>
-<div id="bankOptions" class="drop-shadow">
+<div id="bankOptions" class="drop-shadow" <?= isset($_GET['get_started']) ? 'style="display:none"' : '' ?>>
     <div id="bankCenter">
         <div class="bankSection">
             <img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
@@ -43,6 +46,7 @@
     <div id="viewToggle"></div>
 </div>
 
+<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent">Post from the DAHLIA WOLF IMAGE BANK</span></div>
 <div id="bankBucket"></div>
 
 <?php include "footer.php" ?>
@@ -189,11 +193,15 @@
 
     bankPost.prototype.post = function() {
         var description = '';
-        this.$button.remove();
+        this.$button.hide();
         this.$post.find('img').css('opacity', .6);
 
-        if(this.data.id) {
-            $.post('/action/post_feed_image.php', { id: this.data.id, description: description}, $.proxy(this.addAfterPostMessage, this) )
+        if(theUser.id) {
+            if(this.data.id) {
+                $.post('/action/post_feed_image.php', { id: this.data.id, description: description}, $.proxy(this.addAfterPostMessage, this) )
+            }
+        } else {
+            new_loginscreen();
         }
     }
 
@@ -221,7 +229,11 @@
         if(this.url) {
             this.$button.remove();
             this.$post.find('img').css('opacity', .6);
-            $.post('/action/uploadPost.php', {image_src : this.url, description: 'WOW', domain : this.domain, sourceurl : this.url}, $.proxy(this.addAfterPostMessage, this));
+            if(theUser.id) {
+                $.post('/action/uploadPost.php', {image_src : this.url, description: 'WOW', domain : this.domain, sourceurl : this.url}, $.proxy(this.addAfterPostMessage, this));
+            } else {
+                new_loginscreen();
+            }
         }
     }
 
@@ -234,4 +246,5 @@
 
         this.$post.append(str);
     }
+
 </script>
