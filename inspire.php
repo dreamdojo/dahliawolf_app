@@ -8,11 +8,13 @@
     #bankBucket .postFrame{overflow: hidden; position: relative;}
     #bankBucket .postFrame:hover .option{display: block;}
     #bankBucket .grid{float: left; width: 300px;height: 300px; margin: 10px;}
+    #bankBucket .line{width: 80%; margin: 10px auto;overflow: hidden;margin-bottom: 10px;margin-top: 10px; max-width: 500px;}
     #bankBucket .postFrame img{width: 100%;}
     #bankBucket .postButton{position: absolute;right: 10px;background-color: #fff;border-radius: 51px;width: 70px;height: 70px;text-align: center;line-height: 70px;margin-top: 10px;font-size: 18px; cursor: pointer;border: #c2c2c2 thin solid;}
     #bankBucket .postButton:hover{opacity: .7;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
+    #viewToggle{background-image: url("/images/views.png");background-position: 100%;background-size: 180%;position: absolute;right: -18px;margin-top: 5px;width: 40px;background-repeat: no-repeat;overflow: hidden;}
 
 </style>
 <div id="bankOptions" class="drop-shadow">
@@ -38,6 +40,7 @@
             <p>Select Images From Your Instagram</p>
         </div>
     </div>
+    <div id="viewToggle"></div>
 </div>
 
 <div id="bankBucket"></div>
@@ -52,6 +55,7 @@
     postBank.offset = 0;
     postBank.limit = 12;
     postBank.isRefillAvailable = true;
+    postBank.mode = 'grid';
 
     postBank.init = function() {
         postBank.bindScroll();
@@ -59,6 +63,9 @@
         $('#importFromPinterest').on('click', postBank.getImagesFromPinterest);
         $('#importFromInstagram').on('click', postBank.getImagesFromInstagram);
         $('#getPinterestName input').on('keydown', postBank.setPinterestName);
+        postBank.adjustMargins();
+        $(window).resize(postBank.adjustMargins);
+        $('#viewToggle').on('click', this.toggleMode);
     }
 
     postBank.clearBank = function() {
@@ -66,6 +73,30 @@
         postBank.$bucket.empty();
         if(postBank.ajaxCall) {
             postBank.ajaxCall.abort();
+        }
+    }
+
+    postBank.adjustMargins = function() {
+        if(window.innerWidth > 320*3) {
+            postBank.$bucket.width(320*3).css('margin', 0+'px auto');
+        }else {
+            postBank.$bucket.css('margin-left', (window.innerWidth % 320)/2).css('width', 'auto');
+        }
+    }
+
+    postBank.toggleMode = function() {
+        if(postBank.mode == 'grid') {
+            postBank.mode = 'line';
+            $(this).css('background-position', 0);
+            $.each($('#bankBucket .grid'), function(index, post){
+                $(post).removeClass('grid').addClass('line');
+            });
+        } else {
+            postBank.mode = 'grid';
+            $(this).css('background-position', 100+'%');
+            $.each($('#bankBucket .line'), function(index, post){
+                $(post).removeClass('line').addClass('grid');
+            });
         }
     }
 
@@ -97,7 +128,7 @@
             postBank.ajaxCall = $.ajax('https://api.instagram.com/v1/users/self/media/recent?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data) {
                 postBank.ajaxCall = null;
                     $.each(data.data, function(index, img){
-                    postBank.posts.push( new foreignPost(img.images.standard_resolution.url) );
+                    postBank.posts.push( new foreignPost(img.images.standard_resolution.url, 'Instagram') );
                 });
             });
         } else {
@@ -117,7 +148,7 @@
                 postBank.ajaxCall = null;
                 if(data.data) {
                     $.each(data.data, function(index, img){
-                        postBank.posts.push( new foreignPost(img.images.standard_resolution.url) );
+                        postBank.posts.push( new foreignPost(img.images.standard_resolution.url, 'Pinterest') );
                     });
                 } else {
                     alert('no posts found for user');
@@ -148,7 +179,7 @@
     function bankPost(data) {
         this.data = data;
 
-        this.$post = $('<div class="postFrame grid"></div>');
+        this.$post = $('<div class="postFrame '+postBank.mode+'"></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
         this.$image = $('<img src="'+this.data.source+this.data.imageURL+'">').appendTo(this.$post);
         this.$post.appendTo(postBank.$bucket);
@@ -157,18 +188,28 @@
     }
 
     bankPost.prototype.post = function() {
+        var description = '';
         this.$button.remove();
-        this.$post.css('opacity', .6);
+        this.$post.find('img').css('opacity', .6);
+
+        if(this.data.id) {
+            $.post('/action/post_feed_image.php', { id: this.data.id, description: description}, $.proxy(this.addAfterPostMessage, this) )
+        }
     }
 
-    bankPost.prototype.addAfterPostMessage = function() {
-        this.$post.append('');
+    bankPost.prototype.addAfterPostMessage = function(data) {
+        var str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
+        str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')">';
+        str += '<img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
+
+        this.$post.append(str);
     }
 
-    function foreignPost(url) {
+    function foreignPost(url, domain) {
         this.url = url;
+        this.domain = domain;
 
-        this.$post = $('<div class="postFrame grid"></div>');
+        this.$post = $('<div class="postFrame '+postBank.mode+'"></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
         this.$image = $('<img src="'+this.url+'">').appendTo(this.$post);
         this.$post.appendTo(postBank.$bucket);
@@ -177,9 +218,20 @@
     }
 
     foreignPost.prototype.post = function() {
-        /*$.post('/action/uploadPost.php', {image_src : imageUrl, description: 'pinterest', domain:img_domain, sourceurl : img_attribution_url}).done(function(data){
-            data = $.parseJSON(data);*/
-        this.$button.remove();
-        this.$post.css('opacity', .6);
+        if(this.url) {
+            this.$button.remove();
+            this.$post.find('img').css('opacity', .6);
+            $.post('/action/uploadPost.php', {image_src : this.url, description: 'WOW', domain : this.domain, sourceurl : this.url}, $.proxy(this.addAfterPostMessage, this));
+        }
+    }
+
+    foreignPost.prototype.addAfterPostMessage = function(data) {
+        var data = $.parseJSON(data);
+        data = data.data;
+        var str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
+        str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')">';
+        str += '<img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
+
+        this.$post.append(str);
     }
 </script>

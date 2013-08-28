@@ -122,7 +122,8 @@ $(document).ready(function()
         #dahliaMainMenuButton{display: block;}
         #dahliaHeader #dahliaLogo{float: none;position: absolute;left: 50%;margin-left: -120px;}
         #userMenu ul{position: fixed;right: 0px;width: 130px;}
-    }
+        .bankSection p{display: none;}
+        /*.bankSection img{left: 50%;position: relative;margin-left: -19px;}}*/
 </style>
 
 <div id="dahliaHeader" class="avatarShadow">
@@ -207,13 +208,13 @@ $(document).ready(function()
 </div>
 <style>
 #bankOptions{height:60px; width:100%; display:none; overflow:hidden;position: relative;z-index: 100;margin-top: 0px;border-bottom: #b6b6b6 1px solid;}
-#bankCenter{height:60px; width:1100px; margin:0px auto;}
-#bankCenter .bankSection{ width:24%; height:81%; float:left; border-right:#b6b6b6 1px solid;padding-top: 1.2%; color:rgb(104, 104, 104);}
+#bankCenter{height:60px; max-width: 1100px;width: 100%; margin:0px auto;}
+#bankCenter .bankSection{ width:24%; height:81%; float:left; border-right:#b6b6b6 1px solid;padding-top: 11px; color:rgb(104, 104, 104);}
 #bankCenter .bankSection:hover{background-color:#ebebeb;}
 .no-right-border{border-right:none !important;}
-.bankSection p{font-size: 13px;margin-top: 9px;margin-left: 10px;}
+.bankSection p{font-size: 13px;margin-top: 9px;margin-left: 10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .bankSection img{float: left;margin-left: 10px;margin-right: 10px;}
-#dndeezy{border: #777777 2px dotted;width: 80%;margin-left: 10%;border-radius: 8px;text-align: center;margin-top: -4px;}
+#dndeezy{border: #777777 2px dotted;width: 80%;margin-left: 10%;border-radius: 8px;text-align: center;margin-top: -4px;min-height: 80%;}
 #loadingView{display:none;width:100%; position:fixed; bottom:-100px;text-align: center;z-index: 10000000000;height: 60px;}
 #loadingView img{height:100%;}
 #getPinterestName{ position:absolute; left:-100%; height:100%; width:100%;background-color: #fff;top: 0px;}
