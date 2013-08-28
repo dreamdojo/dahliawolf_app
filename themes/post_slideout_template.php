@@ -89,7 +89,7 @@
 	});
 	
 	//********** OLD VERSION **************************
-	var imgUpload = new Object();
+    var imgUpload = new Object();
 	imgUpload.isOpen = false;
 	imgUpload.outlet = $('#post-me');
 	imgUpload.theForm = $('#thePinForm')[0];
@@ -222,7 +222,7 @@
 			reader.readAsDataURL(input.files[0]);
 		} 
 	}
-	
+	/*
 	//POST BOX - This controls the the pop up when you want to post an item
 	var postBox = new Object();
 	postBox.isOpenArray = new Array();
@@ -301,7 +301,7 @@
 	theBank.scroller.percentToRefill = 90;//what percentage the scroller must go down before getting more images
 	theBank.index = 0;
 	theBank.script = "/includes/php/ajax_getFeed.php?";
-	theBank.outlet = $('#bank-roll');
+	theBank.outlet = $('#bankBucket');
 	theBank.bankOptions = $('#bankOptions');
 	theBank.pinterestCover = $('#getPinterestName');
 	theBank.refilling = false;
@@ -805,4 +805,5 @@
 	$(function(){
 		thePost.init();
 	});
+	*/
 </script>

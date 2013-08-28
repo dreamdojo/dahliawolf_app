@@ -14,6 +14,7 @@ $calls = array(
 		'user_id' => $_SESSION['user']['user_id']
 		, 'id_cart' => $_SESSION['id_cart']
 		, 'id_shop' => SHOP_ID
+		, 'id_lang' =>LANG_ID
 		, 'amount' => $_POST['amount']
 	)
 );

@@ -38,7 +38,7 @@ theGrid.adjustMargins = function() {
     }else {
         $('#theGrid').css('margin-left', (window.innerWidth % 320)/2).css('width', 'auto');
     }
-};
+}
 
 theGrid.likeAction = function(){
     id = parseInt( $(this).data('id') );

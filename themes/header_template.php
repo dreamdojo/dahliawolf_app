@@ -122,7 +122,8 @@ $(document).ready(function()
         #dahliaMainMenuButton{display: block;}
         #dahliaHeader #dahliaLogo{float: none;position: absolute;left: 50%;margin-left: -120px;}
         #userMenu ul{position: fixed;right: 0px;width: 130px;}
-    }
+        .bankSection p{display: none;}
+        /*.bankSection img{left: 50%;position: relative;margin-left: -19px;}}*/
 </style>
 
 <div id="dahliaHeader" class="avatarShadow">
@@ -135,7 +136,7 @@ $(document).ready(function()
     </div>
     <a href="/spine"><div id="dahliaLogo"></div></a>
     <ul id="mainMenu">
-        <li><a href="#" onclick="thePost.buttonPushed();return false;"><span class="<?= $self == '' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
+        <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
         <li><a href="/spine"><span class="<?= $self == '/grid.php' || $self == '/spine.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
         <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
     </ul>
@@ -206,14 +207,14 @@ $(document).ready(function()
     </div>
 </div>
 <style>
-#bankOptions{height:60px; width:100%; display:none; overflow:hidden;position: relative;z-index: 100;margin-top: -6px;border-bottom: #b6b6b6 1px solid;}
-#bankCenter{height:60px; width:1100px; margin:0px auto;}
-#bankCenter .bankSection{ width:24%; height:81%; float:left; border-right:#b6b6b6 1px solid;padding-top: 1.2%; color:rgb(104, 104, 104);}
+#bankOptions{height:60px; width:100%; display:none; overflow:hidden;position: relative;z-index: 100;margin-top: 0px;border-bottom: #b6b6b6 1px solid;}
+#bankCenter{height:60px; max-width: 1100px;width: 100%; margin:0px auto;}
+#bankCenter .bankSection{ width:24%; height:81%; float:left; border-right:#b6b6b6 1px solid;padding-top: 11px; color:rgb(104, 104, 104);}
 #bankCenter .bankSection:hover{background-color:#ebebeb;}
 .no-right-border{border-right:none !important;}
-.bankSection p{font-size: 13px;margin-top: 9px;margin-left: 10px;}
+.bankSection p{font-size: 13px;margin-top: 9px;margin-left: 10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .bankSection img{float: left;margin-left: 10px;margin-right: 10px;}
-#dndeezy{border: #777777 2px dotted;width: 80%;margin-left: 10%;border-radius: 8px;text-align: center;margin-top: -4px;}
+#dndeezy{border: #777777 2px dotted;width: 80%;margin-left: 10%;border-radius: 8px;text-align: center;margin-top: -4px;min-height: 80%;}
 #loadingView{display:none;width:100%; position:fixed; bottom:-100px;text-align: center;z-index: 10000000000;height: 60px;}
 #loadingView img{height:100%;}
 #getPinterestName{ position:absolute; left:-100%; height:100%; width:100%;background-color: #fff;top: 0px;}
@@ -222,32 +223,6 @@ $(document).ready(function()
 #goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
 </style>
 
-
-
-<div id="bankOptions" class="drop-shadow">
-	<div id="bankCenter">
-    	<div class="bankSection">
-        	<img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
-   			<input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
-        </div>
-        <div class="bankSection">
-        	<div id="dndeezy">
-            	<p>Drag n Drop File Here</p>
-            </div>
-        </div>
-        <div id="importFromPinterest" class="bankSection cursor">
-        	<div id="getPinterestName">
-            	<input type="text" placeholder="Enter Pinterest Name Here" id="thePinterestName" /><div id="goPinterestButton"></div>
-            </div>
-            <img src="/images/bank-pinterest.png">
-            <p>Select Images From Your Pinterest</p>
-        </div>
-        <div id="importFromInstagram" class="bankSection no-right-border cursor">
-        	<img src="/images/bank-instagram.png">
-            <p>Select Images From Your Instagram</p>
-        </div>
-    </div>
-</div>
 
 <div id="loadingView">
 	<img src="/images/loading-feed.gif">
