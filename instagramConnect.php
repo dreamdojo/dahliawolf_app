@@ -13,7 +13,7 @@
 var _token = location.hash.split('=')[1];
 
 opener.userConfig.instagramToken = _token;
-opener.theBank.getImagesFromInstagram();
+opener.postBank.getImagesFromInstagram();
 
 $.post('/action/setInstagramToken.php', {token: _token}).done(function(){
     close();
