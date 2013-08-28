@@ -1,7 +1,9 @@
 <body>
+
 <div id="loadme"></div>
 
 <div id="fb-root"></div>
+
 <script>
   window.fbAsyncInit = function() {
     // init the FB JS SDK
@@ -66,14 +68,11 @@ $(document).ready(function()
 </div>
 
 <a name="top"></a>
-<style>
-
-</style>
 
 <div id="dahliaHeader" class="avatarShadow">
     <div id="dahliaMainMenuButton">
         <ul class="theMainMenu">
-            <li><a href="#" onclick="thePost.buttonPushed();return false;">INSPIRE</a></li>
+            <li><a href="/inspire">INSPIRE</a></li>
             <li><a href="/spine">VOTE</a></li>
             <li><a href="/shop">SHOP</a></li>
         </ul>
