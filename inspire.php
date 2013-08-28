@@ -40,7 +40,7 @@
             <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
         </div>
         <div class="bankSection">
-            <div id="dndeezy">
+            <div id="dndeezy" ondragover="allowDrop(event)">
                 <p>Drag n Drop File Here</p>
             </div>
         </div>
@@ -67,6 +67,7 @@
 <script>
     postBank = new Object();
     postBank.$bucket = $('#bankBucket');
+    postBank.$dropBox = $('#dndeezy');
     postBank.posts = [];
     postBank.offset = 0;
     postBank.limit = 12;
@@ -82,6 +83,21 @@
         postBank.adjustMargins();
         $(window).resize(postBank.adjustMargins);
         $('#viewToggle').on('click', this.toggleMode);
+        postBank.$dropBox.on('drop', this.postFromDrop);
+    }
+
+    function drag(ev)
+    {
+        postBank.$draggedItem = $(ev.target).parent();
+    }
+    function allowDrop(ev)
+    {
+        ev.preventDefault();
+    }
+
+    postBank.postFromDrop = function(ev) {
+        ev.preventDefault();
+        postBank.$draggedItem.find('.postButton').click();
     }
 
     postBank.clearBank = function() {
@@ -201,7 +217,7 @@
     function bankPost(data) {
         this.data = data;
 
-        this.$post = $('<div class="postFrame '+postBank.mode+'"></div>');
+        this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);"></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
         this.$image = $('<img src="'+this.data.source+this.data.imageURL+'">').appendTo(this.$post);
         this.$post.appendTo(postBank.$bucket);
