@@ -16,8 +16,8 @@
     #bankBucket .postButton:hover{opacity: .7;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
-    #viewToggle{background-image: url("/images/views.png");background-position: 100%;background-size: 180%;position: absolute;right: -18px;margin-top: 5px;width: 40px;background-repeat: no-repeat;overflow: hidden;}
-    .title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px;width: 100%;max-width: 920px;z-index: 1;font-weight: bold;margin: 0px auto;top: 70px;margin-bottom: 10px;position: relative;text-align: center;}
+    #viewToggle{background-image: url("/images/views.png");background-position: 100%;background-size: 180%;position: absolute;right: -11px;margin-top: 2px;width: 45px;background-repeat: no-repeat;overflow: hidden;}
+    .title-roll{background-color: #e4e2e3;font-size: 22px;width: 97%; max-width: 920px;z-index: 1;font-weight: bold;margin: 0px auto;top: 70px;margin-bottom: 10px;position: relative;text-align: center;}
 
 </style>
 <div id="bankOptions" class="drop-shadow" <?= isset($_GET['get_started']) ? 'style="display:none"' : '' ?>>
@@ -43,10 +43,9 @@
             <p>Select Images From Your Instagram</p>
         </div>
     </div>
-    <div id="viewToggle"></div>
 </div>
 
-<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent">Post from the DAHLIA WOLF IMAGE BANK</span></div>
+<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent"><span class="preHeader">Post from the</span> DAHLIA WOLF IMAGE BANK</span><div id="viewToggle"></div></div>
 <div id="bankBucket"></div>
 
 <?php include "footer.php" ?>

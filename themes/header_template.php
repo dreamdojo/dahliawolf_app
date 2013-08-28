@@ -123,6 +123,7 @@ $(document).ready(function()
         #dahliaHeader #dahliaLogo{float: none;position: absolute;left: 50%;margin-left: -120px;}
         #userMenu ul{position: fixed;right: 0px;width: 130px;}
         .bankSection p{display: none;}
+        .title-roll .preHeader{display: none;}
         /*.bankSection img{left: 50%;position: relative;margin-left: -19px;}}*/
 </style>
 
