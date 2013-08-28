@@ -64,9 +64,11 @@ userList.prototype.user = function(data, rank) {
 
 userList.prototype.user.prototype.addMeToBucket = function() {
     var str = '';
-    $.each(this.data.posts, function(x, post) {
-        str += '<li><a href="/post-details?posting_id='+post.posting_id+'" rel="modal" class="zoom-in"><img src="'+post.image_url+'&width=125"></a></li>';
-    });
+    if(this.data.posts) {
+        $.each(this.data.posts, function(x, post) {
+            str += '<li><a href="/post-details?posting_id='+post.posting_id+'" rel="modal" class="zoom-in"><img src="'+post.image_url+'&width=125"></a></li>';
+        });
+    }
 
     this.$userFrame = $('<div class="userFrame"></div>').appendTo( dahliawolfUserList.$bucket );
     this.$userFrame.append('<div class="avatarFrame avatarShadow"><a href="/'+this.data.username+'"><img src="'+this.data.avatar+'&width=100"></a></div>');
