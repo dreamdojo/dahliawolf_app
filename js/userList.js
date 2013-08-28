@@ -1,6 +1,7 @@
 function userList(user, action) {
     this.limit = 20;
     this.offset = 0;
+    this.index = 0;
     this.users = [];
     this.isReloadAvailable = true;
     this.$bucket = $('#userListCol');
@@ -14,6 +15,10 @@ function userList(user, action) {
     }
 
     this.bindScroll();
+}
+
+userList.prototype = {
+    get isWolfpack()    {return this.action === '/wolf-pack.php' }
 }
 
 userList.prototype.bindScroll = function() {
@@ -45,12 +50,14 @@ userList.prototype.getUsers = function() {
 userList.prototype.addUsersToStack = function(array) {
     var _this = this;
     $.each(array, function(index, user) {
-        _this.users.push( new userList.prototype.user(user) );
+        _this.index++;
+        _this.users.push( new userList.prototype.user(user, _this.index) );
     });
 }
 
-userList.prototype.user = function(data) {
+userList.prototype.user = function(data, rank) {
     this.data = data;
+    this.rank = rank;
 
     this.addMeToBucket();
 }
@@ -63,8 +70,9 @@ userList.prototype.user.prototype.addMeToBucket = function() {
 
     this.$userFrame = $('<div class="userFrame"></div>').appendTo( dahliawolfUserList.$bucket );
     this.$userFrame.append('<div class="avatarFrame avatarShadow"><a href="/'+this.data.username+'"><img src="'+this.data.avatar+'&width=100"></a></div>');
-    this.$userFrame.append('<ul class="dataList"><a href="/'+this.data.username+'"><li class="dlUsername">'+this.data.username+'</li></a></ul>');
+    this.$userFrame.append('<ul class="dataList"><a href="/'+this.data.username+'"><li class="dlUsername">'+this.data.username+'</li><li>'+this.data.points+' pts</li></a></ul>');
     this.$userFrame.append('<ul class="postList">'+str+'</ul>');
+    if(dahliawolfUserList.isWolfpack) this.$userFrame.append('<div class="rankBox">'+this.rank+'</div>');
     this.$followButton = $('<div class="toggleFollow '+(Number(this.data.is_followed) ? 'dahliaHeadUnFollow' : 'dahliaHeadFollow' )+'">'+ (Number(this.data.is_followed) ? 'FOLLOWING' : 'FOLLOW' )+'</div>').appendTo(this.$userFrame.find('.dataList')).on('click', $.proxy(this.toggleFollowers, this) );
 }
 
