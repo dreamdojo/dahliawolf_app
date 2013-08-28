@@ -397,6 +397,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userListCol .postList li img{min-height: 100%;}
 #userListCol .dlUsername{width: 150px;text-overflow: ellipsis;overflow: hidden;}
 #userListCol .toggleFollow{font-size: 14px;padding: 1px 8px;float: left;cursor: pointer;margin-top: 5px;}
+#userListCol .rankBox{position: absolute;height: 40px;width: 40px;font-size: 25px;text-align: center;line-height: 40px;color: #4E4646;font-weight: 700;}
 /******************** LOADER *************************/
 #loadingView{display:none;width: 100%;position: fixed;bottom: -100px;text-align: center;z-index: 10000000000;height: 40px;overflow: hidden;}
 #loadingView img{height: 65px;width: 173px;margin-top: -32px;}
