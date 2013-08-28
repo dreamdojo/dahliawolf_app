@@ -215,8 +215,8 @@ $(document).ready(function()
 .bankSection p{font-size: 13px;margin-top: 9px;margin-left: 10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .bankSection img{float: left;margin-left: 10px;margin-right: 10px;}
 #dndeezy{border: #777777 2px dotted;width: 80%;margin-left: 10%;border-radius: 8px;text-align: center;margin-top: -4px;min-height: 80%;}
-#loadingView{display:none;width:100%; position:fixed; bottom:-100px;text-align: center;z-index: 10000000000;height: 60px;}
-#loadingView img{height:100%;}
+#loadingView{display:none;width: 100%;position: fixed;bottom: -100px;text-align: center;z-index: 10000000000;height: 40px;overflow: hidden;}
+#loadingView img{height: 65px;width: 173px;margin-top: -32px;}
 #getPinterestName{ position:absolute; left:-100%; height:100%; width:100%;background-color: #fff;top: 0px;}
 #importFromPinterest{ position:relative; overflow:hidden;}
 #thePinterestName{height: 75%;margin-top: 2%;margin-left: 2%;width: 75%;font-size: 14px;text-indent: 3px; float:left;}
@@ -232,5 +232,6 @@ $(document).ready(function()
 
 $(function(){
 	theLesson.init('<?= $self ?>');
+    dahliaLoader = new loadingBar();
 });
 </script>

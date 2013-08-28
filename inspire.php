@@ -115,8 +115,10 @@
     postBank.getImages = function() {
         var _this = this;
         if(postBank.isRefillAvailable) {
+            dahliaLoader.show();
             postBank.isRefillAvailable = false;
             api.getBankPosts(this.offset, this.limit, function(data) {
+                dahliaLoader.hide();
                 postBank.isRefillAvailable = true;
                 $.each(data.data, function(index, post) {
                     postBank.posts.push(new bankPost(post));
@@ -129,9 +131,11 @@
         if(userConfig.instagramToken) {
             postBank.clearBank();
             $(window).unbind('scroll');
+            dahliaLoader.show();
             postBank.ajaxCall = $.ajax('https://api.instagram.com/v1/users/self/media/recent?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data) {
                 postBank.ajaxCall = null;
-                    $.each(data.data, function(index, img){
+                dahliaLoader.hide();
+                $.each(data.data, function(index, img){
                     postBank.posts.push( new foreignPost(img.images.standard_resolution.url, 'Instagram') );
                 });
             });
@@ -148,8 +152,10 @@
         if(userConfig.pinterest_username) {
             postBank.clearBank();
             $(window).unbind('scroll');
+            dahliaLoader.show();
             postBank.ajaxCall = $.post('/get_feed_from_pinterest', {pinterest_user : userConfig.pinterest_username }, function(data) {
                 postBank.ajaxCall = null;
+                dahliaLoader.hide();
                 if(data.data) {
                     $.each(data.data, function(index, img){
                         postBank.posts.push( new foreignPost(img.images.standard_resolution.url, 'Pinterest') );
