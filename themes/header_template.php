@@ -135,7 +135,7 @@ $(document).ready(function()
     </div>
     <a href="/spine"><div id="dahliaLogo"></div></a>
     <ul id="mainMenu">
-        <li><a href="#" onclick="thePost.buttonPushed();return false;"><span class="<?= $self == '' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
+        <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
         <li><a href="/spine"><span class="<?= $self == '/grid.php' || $self == '/spine.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
         <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
     </ul>
@@ -206,7 +206,7 @@ $(document).ready(function()
     </div>
 </div>
 <style>
-#bankOptions{height:60px; width:100%; display:none; overflow:hidden;position: relative;z-index: 100;margin-top: -6px;border-bottom: #b6b6b6 1px solid;}
+#bankOptions{height:60px; width:100%; display:none; overflow:hidden;position: relative;z-index: 100;margin-top: 0px;border-bottom: #b6b6b6 1px solid;}
 #bankCenter{height:60px; width:1100px; margin:0px auto;}
 #bankCenter .bankSection{ width:24%; height:81%; float:left; border-right:#b6b6b6 1px solid;padding-top: 1.2%; color:rgb(104, 104, 104);}
 #bankCenter .bankSection:hover{background-color:#ebebeb;}
@@ -222,32 +222,6 @@ $(document).ready(function()
 #goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
 </style>
 
-
-
-<div id="bankOptions" class="drop-shadow">
-	<div id="bankCenter">
-    	<div class="bankSection">
-        	<img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
-   			<input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
-        </div>
-        <div class="bankSection">
-        	<div id="dndeezy">
-            	<p>Drag n Drop File Here</p>
-            </div>
-        </div>
-        <div id="importFromPinterest" class="bankSection cursor">
-        	<div id="getPinterestName">
-            	<input type="text" placeholder="Enter Pinterest Name Here" id="thePinterestName" /><div id="goPinterestButton"></div>
-            </div>
-            <img src="/images/bank-pinterest.png">
-            <p>Select Images From Your Pinterest</p>
-        </div>
-        <div id="importFromInstagram" class="bankSection no-right-border cursor">
-        	<img src="/images/bank-instagram.png">
-            <p>Select Images From Your Instagram</p>
-        </div>
-    </div>
-</div>
 
 <div id="loadingView">
 	<img src="/images/loading-feed.gif">
