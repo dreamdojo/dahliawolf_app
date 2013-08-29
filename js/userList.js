@@ -38,6 +38,7 @@ userList.prototype.getUsers = function() {
     dahliaLoader.show();
     $.getJSON('/api/?api=user&function='+this.urls[this.action]+'&user_id='+(this.action !== '/wolf-pack.php' ? this.user.user_id : '')+'&viewer_user_id='+theUser.id+'&limit='+this.limit+'&offset='+this.offset, function(data) {
         dahliaLoader.hide();
+        console.log(data);
         if(data.data.length != _this.limit) {
             $(window).unbind('scroll');
         }
