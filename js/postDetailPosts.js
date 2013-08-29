@@ -66,7 +66,7 @@ postDetailGrid.prototype.init = function() {
 }
 
 postDetailGrid.prototype.setTitle = function() {
-	this.titleContainer.html('More posts by <a href="/'+thePostDetail.data.username+'">'+thePostDetail.data.username+'</a>');
+	//this.titleContainer.html('More posts by <a href="/'+thePostDetail.data.username+'">'+thePostDetail.data.username+'</a>');
 }
 
 postDetailGrid.prototype.toggleLove = function() {
