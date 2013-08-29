@@ -123,7 +123,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     .bankSection img:not(.fork-img){left: 50%;position: relative;margin-left: -19px;}
 }
 
-.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%;}
+.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 30px;}
 
 /*   POST BAR ******************************************/
 #tooltip-overlay{position:fixed; width:100%; height:100%; top:0px; left:0px; background-color:#000; opacity:.72; display:none; z-index:101;}
