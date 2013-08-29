@@ -136,14 +136,16 @@
 
 <script>
 
-    var thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
+    $(function() {
+        var thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
 
-	var thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
-    sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
+        var thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
+        sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
 
-    <? if(isset($_GET['ajax'])): ?>
+        <? if(isset($_GET['ajax'])): ?>
         $('body').css('overflow', 'hidden');
-    <? endif ?>;
+        <? endif ?>;
+    });
 
 </script>
 
