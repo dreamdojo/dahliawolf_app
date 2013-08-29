@@ -708,6 +708,17 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 	font-size:24px;
 	color:#FFF;
 }
+/********************* FOOTER *****************/
+#dwFooter{ position: fixed; left: 0px; bottom: 0px; width: 60px; height: 60px; background-color: #F3F3F3;}
+#dwFooter img{position: relative; z-index: 12; width: 45px; margin: 6px;}
+#dwFooter:hover ul{display: block !important;}
+#dwFooter:hover p{display: block !important;}
+#dwFooter ul{position: absolute; bottom: 80%; z-index: 1000; left: 0px; display: none;}
+#dwFooter ul:first-child{padding-top: 20px;}
+#dwFooter li{ color: #A7A7A7; background-color: #F3F3F3; font-size: 12px; width: 135px; padding: 5px 0px; text-indent: 10px;font-family: futura;}
+#dwFooter li:hover{color: #F03E63;}
+#dwFooter p{position: absolute; bottom: 0px; left: 0px; width: 135px; display: none; background-color: #F3F3F3;height: 60px;padding: 0px;margin: 0px;}
+
 #dw-footer{
 	position:fixed;
 	left:0px;
