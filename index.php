@@ -230,15 +230,6 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         </div>
     </div>
 
-    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
-        <!--<img class="zeImg" src="/images/slider/rubilove.jpg" />-->
-        <div class="item-box white" style="color: #000" >
-            <div class="item-title">RubiLove Kimono</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/rubilove"/ style="color: #000">RubiLove</a>, Panorama City, CA</div>
-        </div>
-    </div>
-
     <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpg);">
     	<!--<img class="zeImg" src="/images/slider/blazer.jpeg" />-->
         <div class="item-box white">
@@ -280,7 +271,7 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         <div><img style="margin-top:100px; margin-bottom: 30px;" src="http://www.dahliawolf.com/images/how-it-works-get-started.png" /></div>
         <div style="cursor:pointer;"><img onClick="document.location='social-login.php?social_network=facebook'" src="/images/facebook-signup.png" ></div>
         <div class="signupemail2"><a href="http://www.dahliawolf.com/signup">SIGN UP THE OLD SCHOOL WAY WITH EMAIL</a></div>
-    	<div class="signuplater2"><span style="aligh:right;">Sign up later... <a href="http://www.dahliawolf.com/spine">ENTER</a></span></div>
+    	<div class="signuplater2"><span style="aligh:right;">Sign up later... <a href="/spine">ENTER</a></span></div>
 	</div>
 </div>
 

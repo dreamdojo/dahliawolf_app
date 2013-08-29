@@ -100,7 +100,7 @@
     <div class="avatarFrame avatarShadow"><img src="<?= $_data['product']['product']['posts'][0]['avatar'] ?>&width=100" /></div>
     <ul id="shopUserData">
         <li style="font-size: 13px;">Inspiration by</li>
-        <li style="font-size: 25px;" class="scribble"><?= $_data['product']['product']['posts'][0]['username']?></li>
+        <li style="font-size: 25px;" class="scribble"><a href="/<?= $_data['product']['product']['posts'][0]['username']?>"><?= $_data['product']['product']['posts'][0]['username']?></a></li>
     </ul>
     <div id="postShareSection">
         <div class="postShareTitle">SHARE THIS PRODUCT</div>
@@ -141,7 +141,7 @@
             </li>
             <li class="product">
                 <dl class="additional-info accordion">
-                    <dt>Size &amp; Fit</dt>
+                    <dt>Size & Fit</dt>
                     <dd><img class="sizeAndFit"src=/images/dahliawolf_sizechart.jpg></dd>
                     <dt>Shipping &amp; Returns</dt>
                     <dd></dd>
@@ -154,7 +154,7 @@
     </div>
     <div class="centerCol">
         <? if (!empty($_data['product']) && !empty($_data['product']['files'])): ?>
-            <div id="nextImage">></div>
+            <!--<div id="nextImage">></div>-->
             <ul class="productImagesFrame">
                 <? foreach ($_data['product']['files'] as $i => $file): ?>
                     <? $image_url = CDN_IMAGE_SCRIPT . $file['product_file_id'] . '&width=' . $width . '&height=' . $height; ?>

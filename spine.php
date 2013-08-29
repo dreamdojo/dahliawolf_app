@@ -1,27 +1,14 @@
 <?
-$pageTitle = "Spine";
-include "head.php";
-include "header.php";
+    $pageTitle = "Spine";
+    include "head.php";
+    include "header.php";
 
-//require 'includes/php/classes/Spine' . $_data['spine_version'] . '.php';
-$Spine = new Spine();
+    //require 'includes/php/classes/Spine' . $_data['spine_version'] . '.php';
+    $Spine = new Spine();
 ?>
-<div id="sort-bar">
-	sort inspirations by: 	<span class=""><a class="sort-option <?= ($_GET['sort'] == 'new' || empty($_GET['sort']) ? 'bold' : '') ?>" href="/spine?sort=new">newest</a></span> /
-    						<span class=""><a class="sort-option <?= ($_GET['sort'] == 'hot' ? 'bold' : '') ?>" href="/spine?sort=hot"> hottest</a></span> /
-                            <span class=""><a class="sort-option <?= ($_GET['sort'] == 'top' ? 'bold' : '') ?>" href="/spine?sort=top"> most popular</a></span>
-                            <?
-                            if (IS_LOGGED_IN) {
-                            	?> /
-                            <span class=""><a class="sort-option <?= ($_GET['sort'] == 'following' ? 'bold' : '') ?>" href="/spine?sort=following"> following</a></span>
-                            	<?
-							}
-							?>
 
-                            <span style="float: right;">view: <span class=""><a class="sort-option <?= ($self == '/spine.php' ? 'bold' : '') ?>" href="/spine">artistic</a></span> /
-    						<span class=""><a class="sort-option <?= ($self == '/grid.php' ? 'bold' : '') ?>" href="/grid"> grid</a></span>
-</span>
-</div>
+<?php include "blocks/filter.php"; ?>
+
 <?
 if(isset($_GET['q']) && count($_data['users'])):?>
 <div class="user-results">

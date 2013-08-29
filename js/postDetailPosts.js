@@ -102,13 +102,21 @@ postDetailGrid.prototype.getPosts = function() {
 		$.post('/action/getPostsByUser', {post_user_id : $this.posterId, feed : $this.feedType, offset : this.offset, limit: this.limit}).done(function(data) {
 			$this.destroyLoader();
 			$.each(data.data, function(index, post){
-				str = '<div class="userGridPostFrame">';
-				str += '<div class="popGridLove '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'"></div>';
+				var $post = $('<div class="userGridPostFrame"></div>').hover(function() {
+                    $(this).find('.option').fadeIn(50);
+                }, function() {
+                    $(this).find('.option').fadeOut(50);
+                });
+				var str = '';
+                str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'"></div>';
 				str += '<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+index % 5+'" rel="modal">';
 				str += '<img src = "'+post.image_url+'&width=300" class="lazy zoom-in" data-src="'+post.image_url+'&width=300" '+(parseInt(post.width) >= parseInt(post.height) ? $this.htText : '')+'>';
-				str += '</a></div>';
-				
-				$this.postContainer.append(str);
+				str += '</a>';
+                if(post.user_id == theUser.id) {
+                    $('<div data-id="'+post.posting_id+'" class="delButton option">X</div>').appendTo($post).on('click', $this.delPost);
+                }
+
+                $this.postContainer.append( $post.append(str) );
 			});
 			$this.resetBindings();
 			if(data.data.length == 0){
@@ -118,4 +126,14 @@ postDetailGrid.prototype.getPosts = function() {
 			$this.refillAvailable = true;
 		});
 	}
+}
+
+postDetailGrid.prototype.delPost = function() {
+    var $this = $(this);
+    var id = $this.data('id');
+    var c = confirm('Are you sure you want to delete this post?');
+    if(c) {
+        $.ajax('/api/1-0/posting.json?use_hmac_check=0&function=delete_post&posting_id='+id);
+        $this.parent().hide(200);
+    }
 }

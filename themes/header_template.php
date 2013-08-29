@@ -1,7 +1,9 @@
 <body>
+
 <div id="loadme"></div>
 
 <div id="fb-root"></div>
+
 <script>
   window.fbAsyncInit = function() {
     // init the FB JS SDK
@@ -66,113 +68,57 @@ $(document).ready(function()
 </div>
 
 <a name="top"></a>
-<div class="header">
-    <div class="HeaderContainer">
-        <div class="HeaderContents">
-            <div class="header_logo"><a href="/spine"><img src="/images/logo.png"></a>
-            </div>
-        <div id="middlebutton">
-          	<div class="marginmiddlebutton1 marginmiddlebutton">
-            	<a id="section-inspire" href="#" onClick="thePost.buttonPushed();" >INSPIRE+</a>
-            </div>
-            <div class="slasher">
-            	<img src="/images/slash.png" width="23" height="19">
-            </div>
-                        <div class="marginmiddlebutton1 marginmiddlebutton">
-            	<a id="section-vote" href="/spine" class="<?= ($self == '/spine.php' || $self == '/grid.php' ? 'color-me-red' : '') ?>">VOTE</a>
-            </div>
 
-             <div class="slasher">
-            	<img src="/images/slash.png" width="23" height="19">
-            </div>
-            <div class="marginmiddlebutton4 marginmiddlebutton">
-            	<a id="section-shop" href="/shop" class="<?= ($self == '/explore.php' ? 'color-me-red' : '') ?>">SHOP</a>
-            </div>
-
-
-            <div style="clear:both"></div>
+<div id="dahliaHeader" class="avatarShadow">
+    <div id="dahliaMainMenuButton">
+        <ul class="theMainMenu">
+            <li><a href="/inspire">INSPIRE</a></li>
+            <li><a href="/spine">VOTE</a></li>
+            <li><a href="/shop">SHOP</a></li>
+        </ul>
+    </div>
+    <a href="/spine"><div id="dahliaLogo"></div></a>
+    <ul id="mainMenu">
+        <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
+        <li><a href="/spine"><span class="<?= $self == '/grid.php' || $self == '/spine.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
+        <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
+    </ul>
+    <div id="rightHandMenu">
+        <? if(IS_LOGGED_IN): ?>
+        <a href="/shop/checkout.php"><div id="shoppingCart"></div></a>
+        <div id="searchButton"></div>
+        <div id="userMenu">
+            <div class="rtBorder"></div>
+            <div class="avatarFrame"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>"></a></div>
+            <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #B1B1B1 !important;"><?= $_SESSION['user']['username'] ?></a></div>
+            <ul>
+                <a href="/<?= $_SESSION['user']['username'] ?>"><li>Profile</li></a>
+                <a href="/activity"><li>Activity</li></a>
+                <a href="/invite"><li>Invite</li></a>
+                <a href="/shop/my-wishlist"><li>Wishlist</a></li>
+                <a href="/pinit"><li>Inspire Tool</li></a>
+                <a href="/account/settings"><li>Settings</li></a>
+                <a href="/shop/my-orders"><li>Orders</li></a>
+                <a href="/action/logout"><li>Logout</li></a>
+                <a href="/wolf-pack"><li>Pack Leaders</li></a>
+            </ul>
         </div>
-        <div id="user-nav">
-          <ul class="Navigation">
-				<?php if(IS_LOGGED_IN): ?>
-                 <li class="parent username">
-                    <a href="<? echo '/' . $_SESSION['user']['username'] ?>">
-                    	<?php echo $_SESSION['user']['username'] ?>
-                    	<span class="arrow"></span>
-                    </a>
-                    <ul>
-                		<li>
-                			<form style="min-width:135px;padding-top:15px; padding-bottom:10px; padding-left:5px; color:#fff !important; background-color:#000;" class="sysFullTSForm text" method="get" action="/spine">
-	        					<input style="width: 65%; background-color: rgb(0, 0, 0); border: 2px solid rgb(170, 170, 170); margin-left: 2px; padding-left: 2px; padding-top: 2px; color: rgb(135, 135, 135) !important; text-transform: uppercase !important;" type="text" value="" size="10" name="q" id="query" is_empty="yes" class="ui-autocomplete-input" inited="inited">
-	        					<button class="lg" style="width:20%; padding: 4px;" id="query_button" type="submit"><img alt="Search" src="<?= CR ?>/images/search.gif"></button>
-	        				</form>
-
-	        				<script type="text/javascript">
-	        					//$('.sysFullTSForm INPUT[name="q"]').emptyVal({text: "Search"})
-	        				</script>
-        				</li>
-                    	<?
-                    	$account_navs = array(
-                    		array(
-	                    		'Profile' 		=> '/' . $_SESSION['user']['username']
-	                    		, 'Activity' 	=> '/activity'
-								, 'Invite' 	=> '/invite'
-                                , 'Cart'.' $'.money_format('%i', isset($_data['cart']) && isset($_data['cart']['cart']) ? $_data['cart']['cart']['totals']['grand_total'] : 0) => '/shop/checkout'
-	                    		, 'Wishlist' 	=> '/shop/my-wishlist'
-	                    	)
-							, array(
-								'Inspire Tool' => '/pinit'
-                    		)
-							, array(
-								'Settings' => '/account/settings'
-								, 'Orders' => '/shop/my-orders'
-								, 'Logout' => '/action/logout'
-                    		)
-
-							, array(
-								'Pack Leaders' => '/wolf-pack'
-
-                    		)
-						);
-						foreach ($account_navs as $i => $group) {
-							$j = 0;
-							foreach ($group as $name => $url) {
-								?>
-								<li<?= $i != 0 && $j == 0 ? ' class="divider"' : '' ?>><a href="<?= $url ?>"><?= $name ?></a><? if($name == 'Activity' && $new_activity > 0){echo '<div class="new-bubs"><p>'.$new_activity.'</p></div>';} ?></li>
-								<?
-								$j++;
-							}
-						}
-                    	?>
-                    </ul>
-                </li>
-
-                <?php else: ?>
-                <li class="Navigation2">
-                    <a href="javascript:;" onClick="loginscreen('signup')">Signup</a>
-                </li>
-                <li>
-                    <a href="javascript:;" onClick="loginscreen('login')">Login</a>
-                </li>
-                <?php endif ?>
-         </ul>
-         <?
-         if (IS_LOGGED_IN) {
-         	?>
-			<div id="point-board">
-				<a href="/wolf-pack">
-					You have <span class="points user-points">1</span> points
-				</a>
-				<span class="message">You have earned <span class="earned-points"></span> points</span>
-			</div>
-			<?
-		 }
-		 ?>
-       </div>
-       <div id="tour-button">SHOW HELPER</div>
-   </div>
+        <? else: ?>
+            <ul class="loginDept">
+                <li onclick="loginscreen('login')">Login<div class="mmBorder"></div></li>
+                <li onclick="loginscreen('signup')" style="margin-right: 20px; color: #F03E63;">Signup</li>
+            </ul>
+        <? endif ?>
+    </div>
 </div>
+<div id="searchBar">
+    <input type="text" placeholder="Start typing to search...">
 </div>
+
+<script>
+
+</script>
+<? //var_dump($userConfig) ?>
 
 <div id="dahliaHead">
     <div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div>
@@ -191,56 +137,26 @@ $(document).ready(function()
         <div style="padding-top: 29px;color: rgb(104, 104, 104);">Still have questions? Visit the <a href="/faqs">FAQs</a> or <a href="/help">How it Works</a></div>
     </div>
 </div>
-<style>
-#bankOptions{height:60px; width:100%; display:none; overflow:hidden;position: relative;z-index: 100;margin-top: -6px;border-bottom: #b6b6b6 1px solid;}
-#bankCenter{height:60px; width:1100px; margin:0px auto;}
-#bankCenter .bankSection{ width:24%; height:81%; float:left; border-right:#b6b6b6 1px solid;padding-top: 1.2%; color:rgb(104, 104, 104);}
-#bankCenter .bankSection:hover{background-color:#ebebeb;}
-.no-right-border{border-right:none !important;}
-.bankSection p{font-size: 13px;margin-top: 9px;margin-left: 10px;}
-.bankSection img{float: left;margin-left: 10px;margin-right: 10px;}
-#dndeezy{border: #777777 2px dotted;width: 80%;margin-left: 10%;border-radius: 8px;text-align: center;margin-top: -4px;}
-#loadingView{display:none;width:100%; position:fixed; bottom:-100px;text-align: center;z-index: 10000000000;height: 60px;}
-#loadingView img{height:100%;}
-#getPinterestName{ position:absolute; left:-100%; height:100%; width:100%;background-color: #fff;top: 0px;}
-#importFromPinterest{ position:relative; overflow:hidden;}
-#thePinterestName{height: 75%;margin-top: 2%;margin-left: 2%;width: 75%;font-size: 14px;text-indent: 3px; float:left;}
-#goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
-</style>
-
-
-
-<div id="bankOptions" class="drop-shadow">
-	<div id="bankCenter">
-    	<div class="bankSection">
-        	<img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
-   			<input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
-        </div>
-        <div class="bankSection">
-        	<div id="dndeezy">
-            	<p>Drag n Drop File Here</p>
-            </div>
-        </div>
-        <div id="importFromPinterest" class="bankSection cursor">
-        	<div id="getPinterestName">
-            	<input type="text" placeholder="Enter Pinterest Name Here" id="thePinterestName" /><div id="goPinterestButton"></div>
-            </div>
-            <img src="/images/bank-pinterest.png">
-            <p>Select Images From Your Pinterest</p>
-        </div>
-        <div id="importFromInstagram" class="bankSection no-right-border cursor">
-        	<img src="/images/bank-instagram.png">
-            <p>Select Images From Your Instagram</p>
-        </div>
-    </div>
-</div>
 
 <div id="loadingView">
 	<img src="/images/loading-feed.gif">
 </div>
 
 <script>
+
 $(function(){
 	theLesson.init('<?= $self ?>');
+    dahliaLoader = new loadingBar();
+    $('#searchButton').bind('click', function() {
+        $('#searchBar').slideToggle(200);
+        $('#searchBar input').focus();
+        $('#searchBar input').unbind('keydown').bind('keydown', function(e){
+            if(e.keyCode == 13) {
+                var s_key = $(this).val();
+                document.location = '/grid?q='+s_key;
+                $('#searchBar').slideUp(200);
+            }
+        });
+    });
 });
 </script>

@@ -1,10 +1,11 @@
 function userList(user, action) {
     this.limit = 20;
     this.offset = 0;
+    this.index = 0;
     this.users = [];
     this.isReloadAvailable = true;
     this.$bucket = $('#userListCol');
-    this.urls = {'/account/following.php' : 'get_top_following', '/account/followers.php' : 'get_top_followers'};
+    this.urls = {'/account/following.php' : 'get_top_following', '/account/followers.php' : 'get_top_followers', '/wolf-pack.php' : 'get_top_following'};
     this.action = action;
 
     if(user) {
@@ -14,6 +15,10 @@ function userList(user, action) {
     }
 
     this.bindScroll();
+}
+
+userList.prototype = {
+    get isWolfpack()    {return this.action === '/wolf-pack.php' }
 }
 
 userList.prototype.bindScroll = function() {
@@ -30,7 +35,9 @@ userList.prototype.bindScroll = function() {
 userList.prototype.getUsers = function() {
     var _this = this;
 
-    $.getJSON('/api/?api=user&function='+this.urls[this.action]+'&user_id='+this.user.user_id+'&viewer_user_id='+theUser.id+'&limit='+this.limit+'&offset='+this.offset, function(data) {
+    dahliaLoader.show();
+    $.getJSON('/api/?api=user&function='+this.urls[this.action]+'&user_id='+(this.action !== '/wolf-pack.php' ? this.user.user_id : '')+'&viewer_user_id='+theUser.id+'&limit='+this.limit+'&offset='+this.offset, function(data) {
+        dahliaLoader.hide();
         if(data.data.length != _this.limit) {
             $(window).unbind('scroll');
         }
@@ -42,28 +49,32 @@ userList.prototype.getUsers = function() {
 
 userList.prototype.addUsersToStack = function(array) {
     var _this = this;
-
     $.each(array, function(index, user) {
-        _this.users.push( new userList.prototype.user(user) );
+        _this.index++;
+        _this.users.push( new userList.prototype.user(user, _this.index) );
     });
 }
 
-userList.prototype.user = function(data) {
+userList.prototype.user = function(data, rank) {
     this.data = data;
+    this.rank = rank;
 
     this.addMeToBucket();
 }
 
 userList.prototype.user.prototype.addMeToBucket = function() {
     var str = '';
-    $.each(this.data.posts, function(x, post) {
-        str += '<li><a href="/post-details?posting_id='+post.posting_id+'" rel="modal" class="zoom-in"><img src="'+post.image_url+'&width=125"></a></li>';
-    });
+    if(this.data.posts) {
+        $.each(this.data.posts, function(x, post) {
+            str += '<li><a href="/post-details?posting_id='+post.posting_id+'" rel="modal" class="zoom-in"><img src="'+post.image_url+'&width=125"></a></li>';
+        });
+    }
 
     this.$userFrame = $('<div class="userFrame"></div>').appendTo( dahliawolfUserList.$bucket );
     this.$userFrame.append('<div class="avatarFrame avatarShadow"><a href="/'+this.data.username+'"><img src="'+this.data.avatar+'&width=100"></a></div>');
-    this.$userFrame.append('<ul class="dataList"><a href="/'+this.data.username+'"><li class="dlUsername">'+this.data.username+'</li></a></ul>');
+    this.$userFrame.append('<ul class="dataList"><a href="/'+this.data.username+'"><li class="dlUsername">'+this.data.username+'</li><li>'+this.data.points+' pts</li></a></ul>');
     this.$userFrame.append('<ul class="postList">'+str+'</ul>');
+    if(dahliawolfUserList.isWolfpack) this.$userFrame.append('<div class="rankBox">'+this.rank+'</div>');
     this.$followButton = $('<div class="toggleFollow '+(Number(this.data.is_followed) ? 'dahliaHeadUnFollow' : 'dahliaHeadFollow' )+'">'+ (Number(this.data.is_followed) ? 'FOLLOWING' : 'FOLLOW' )+'</div>').appendTo(this.$userFrame.find('.dataList')).on('click', $.proxy(this.toggleFollowers, this) );
 }
 

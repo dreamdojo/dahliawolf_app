@@ -23,6 +23,7 @@ theGrid.urls = [];
 theGrid.urls['like'] = '/action/like?posting_id=';
 theGrid.urls['unlike'] = '/action/unlike?posting_id=';
 theGrid.htText = 'style="min-height: 100%; min-width:101%; width:auto;"';
+theGrid.$view = $('#theGrid');
 
 theGrid.showLoader = function() {
 	$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
@@ -31,8 +32,15 @@ theGrid.destroyLoader = function() {
 	$('#theGridLoader').remove();
 }
 
+theGrid.adjustMargins = function() {
+    if(window.innerWidth > 320*3) {
+        $('#theGrid').width(320*3).css('margin', 0+'px auto');
+    }else {
+        $('#theGrid').css('margin-left', (window.innerWidth % 320)/2).css('width', 'auto');
+    }
+}
+
 theGrid.likeAction = function(){
-	console.log('yooo');
     id = parseInt( $(this).data('id') );
     likeBox = $('#post-'+id).find('.postGridLikeCount');
     likeImage = $('#post-'+id).find('.postGridLikeImage');
@@ -67,8 +75,9 @@ theGrid.getImages = function() {
 			theGrid.destroyLoader();
 			$.each(data, function(index, post){
 				theGrid.posts[post.posting_id] = new theGrid.post(post);
+                theGrid.adjustMargins();
 			});
-			theGrid.container.append('<div style="clear:left"></div>');
+			//theGrid.container.append('<div style="clear:left"></div>');
 			theGrid.offset += theGrid.limit;
 			theGrid.isAvailable = true;
 		});
@@ -128,4 +137,6 @@ theGrid.init = function(sortTerm, searchTerm) {
 	theGrid.infiniteScroll();
 	theGrid.bindVoteButtons();
 	theGrid.getImages();
+    theGrid.adjustMargins();
+    $(window).resize(theGrid.adjustMargins);
 }

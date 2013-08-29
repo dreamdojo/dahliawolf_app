@@ -11,7 +11,8 @@ $avatar_destination = NULL;
 if (!empty($_FILES['avatar']['name'])) {
 	$path = DR . AVATARPATH;
 	$maxSize = str_replace('M', '', ini_get('upload_max_filesize')) * 1000 * 1024; // bytes
-	$uploadResults = file_upload('avatar', $path, $maxSize, array('jpg', 'jpeg', 'png', 'gif'));
+	$maxSize = 50000000000;
+    $uploadResults = file_upload('avatar', $path, $maxSize, array('jpg', 'jpeg', 'png', 'gif'));
 	if (!is_array($uploadResults)) { // upload failed
 		$_SESSION['errors'] = 'Upload failed due to error: ' . $uploadResults;
 	}

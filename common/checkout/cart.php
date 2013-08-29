@@ -270,7 +270,37 @@ $is_review = !empty($is_review) ? true : false;
 				</form>
 			</div>
 			*/?>
-            <?
+			<?
+			if (!empty($_data['cart']['available_commissions']) && $_data['cart']['available_commissions']['total_commissions'] > 0) {
+				?>
+				<div class="commission-redemption redemption">
+					<h4>Commission Redemption</h4>
+					<form class="discount-code" action="/action/shop/save_cart_commission.php" method="post">
+						<fieldset>
+							<label for="cart-commission-amount">Enter an amount to redeem:</label>
+							<input type="text" name="amount" id="cart-commission-amount" value="<?= !empty($_data['cart']['cart_commission']) ? $_data['cart']['cart_commission']['amount'] : '0.00' ?>" />
+							<span>/ $<?= $_data['cart']['available_commissions']['total_commissions'] ?> (Earned Commissions)</span>
+							<p class="button"><a onclick="$(this).closest('form').submit()">Redeem Commissions</a></p>
+						</fieldset>
+					</form>
+				</div>
+	            <?
+			}
+			if (!empty($_data['cart']['available_store_credits']) && $_data['cart']['available_store_credits']['total_credits'] > 0) {
+				?>
+				<div class="store-credit-redemption redemption">
+					<h4>Store Credit Redemption</h4>
+					<form class="discount-code" action="/action/shop/save_cart_store_credit.php" method="post">
+						<fieldset>
+							<label for="cart-store-credit-amount">Enter an amount to redeem:</label>
+							<input type="text" name="amount" id="cart-store-credit-amount" value="<?= !empty($_data['cart']['cart_store_credit']) ? $_data['cart']['cart_store_credit']['amount'] : '0.00' ?>" />
+							<span>/ $<?= $_data['cart']['available_store_credits']['total_credits'] ?> (Store Credits)</span>
+							<p class="button"><a onclick="$(this).closest('form').submit()">Redeem Store Credit</a></p>
+						</fieldset>
+					</form>
+				</div>
+	            <?
+			}
 		}
 		else {
 			?>
@@ -446,18 +476,20 @@ $is_review = !empty($is_review) ? true : false;
 					<td>$<?= !empty($_data['cart']) ? number_format($_data['cart']['cart']['totals']['products'], 2, '.', ',') : '0.00' ?></td>
 				</tr>
 				<?
-
 				if (!empty($_data['cart']['discounts'])) {
 					foreach($_data['cart']['discounts'] as $discount) {
 						?>
 						<tr class="discounts">
 							<th scope="row">
-
 	                            <?
+	                            // Disallow modifying on review page
 								if (!$is_review) {
-									?>
-	                            	<a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
-	                                <?
+									// Membership level discount is always automatically added, so no reason to show remove link
+									if (empty($discount['membership_level_id'])) {
+										?>
+		                            	<a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
+		                                <?
+									}
 								}
 								?>
 								Discount (<?= $discount['name'] ?> - <?= ($discount['is_amount_discount'] == '1') ? '$' . number_format($discount['reduction_amount'], 2, '.', ',') : number_format($discount['reduction_percent'], 0, '.', ',') . '%' ?> off)
@@ -467,6 +499,30 @@ $is_review = !empty($is_review) ? true : false;
 						</tr>
 						<?
 					}
+				}
+
+				// Cart commission
+				if (!empty($_data['cart']['cart_commission'])) {
+					?>
+					<tr class="discounts">
+						<th scope="row">
+							Discount (Commission Redemption)
+						</th>
+						<td>- $<?= number_format($_data['cart']['cart_commission']['amount'], 2) ?></td>
+					</tr>
+					<?
+				}
+
+				// Store credit
+				if (!empty($_data['cart']['cart_store_credit'])) {
+					?>
+					<tr class="discounts">
+						<th scope="row">
+							Discount (Store Credit Redemption)
+						</th>
+						<td>- $<?= number_format($_data['cart']['cart_store_credit']['amount'], 2) ?></td>
+					</tr>
+					<?
 				}
 
 				//if ($is_review) {

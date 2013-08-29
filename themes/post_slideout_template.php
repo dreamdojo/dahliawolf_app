@@ -15,7 +15,7 @@
 .uploadPreview-frame img{ width:100%;}
 .view-upload-button{float: left;background-color: #ff416d;font-size: 15px;color: #fff;height: 21px;margin-top: -24px;line-height: 20px;padding: 0px 10px;}
 .bar-frame{height: 45px;background-color: #fff;float: left;width: 750px;margin-top: 6px;margin-left: 10px;}
-.title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px; font-family:Arial, Helvetica, sans-serif;position: fixed;width: 975px;z-index: 1; font-weight:bold;}
+.title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px; position: fixed;width: 975px;z-index: 1; font-weight:bold;}
 .gridzy{height: 350px;width: 325px;overflow: hidden;float: left;}
 .gridzy .b-roll-img{min-height: 100%;width: 100%;}
 .gridzy .tag{height: 60px; margin-left: -55px;position: absolute;top: 35px; left: 95%;}
@@ -89,7 +89,7 @@
 	});
 	
 	//********** OLD VERSION **************************
-	var imgUpload = new Object();
+    var imgUpload = new Object();
 	imgUpload.isOpen = false;
 	imgUpload.outlet = $('#post-me');
 	imgUpload.theForm = $('#thePinForm')[0];
@@ -222,7 +222,7 @@
 			reader.readAsDataURL(input.files[0]);
 		} 
 	}
-	
+	/*
 	//POST BOX - This controls the the pop up when you want to post an item
 	var postBox = new Object();
 	postBox.isOpenArray = new Array();
@@ -301,13 +301,13 @@
 	theBank.scroller.percentToRefill = 90;//what percentage the scroller must go down before getting more images
 	theBank.index = 0;
 	theBank.script = "/includes/php/ajax_getFeed.php?";
-	theBank.outlet = $('#bank-roll');
+	theBank.outlet = $('#bankBucket');
 	theBank.bankOptions = $('#bankOptions');
 	theBank.pinterestCover = $('#getPinterestName');
 	theBank.refilling = false;
 	theBank.isOpen = false;
 	theBank.refreshPage = false;
-	theBank.topDistance = 170;
+	theBank.topDistance = 107;
 	theBank.trainingTopDistance = 390;
 	theBank.dragndrop = '<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent">Don\'t have images? Post from the DAHLIA WOLF IMAGE BANK</span>';
 	theBank.dragndrop += '<div id="viewToggle" class="toggleViewLine"></div></div><div id="theUploadBuffer" class="first"></div>';
@@ -531,7 +531,7 @@
 	}
 	
 	function _resetTopDistance(){
-		theBank.topDistance = 170;
+		theBank.topDistance = 107;
 	}
 	
 	function _transformToTrainingMode(){
@@ -637,7 +637,7 @@
             theBank.fillerUp();
             thePost.fork.animate({top: theBank.topDistance}, 200, function(){
 				$('#bankOptions').slideDown(100);
-				thePost.fork.animate({'top' : 170}, 100, function(){
+				thePost.fork.animate({'top' : 107}, 100, function(){
 					thePost.fork.fadeOut(200);
 					thePost.fork.animate({top: thePost.hideMe}, 1, function(){
 						thePost.fork.show();
@@ -702,7 +702,7 @@
 	}
 	
 	function _resetPostTopDistance(){
-		thePost.topDistance = 170;
+		thePost.topDistance = 107;
 	}
 	
 	function unsetTrainingMode(){
@@ -805,4 +805,5 @@
 	$(function(){
 		thePost.init();
 	});
+	*/
 </script>

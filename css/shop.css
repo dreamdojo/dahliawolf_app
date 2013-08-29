@@ -556,6 +556,9 @@ table.cart a.remove:hover {
 .checkout-footer > div.totals {
 	float: right;
 }
+.checkout-footer .redemption {
+	margin: 0 0 20px;
+}
 table.totals {
 	margin: 0 0 20px auto;
 }
