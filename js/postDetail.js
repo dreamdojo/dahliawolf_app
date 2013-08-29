@@ -19,7 +19,7 @@ function postDetail(data){
 	window.history.replaceState( {} , 'Post Detail', '/post/'+data.posting_id );
 }
 
-postDetail.prototype.bindFrontend = function(){
+postDetail.prototype.bindFrontend = function() {
 	this.loveCount = $('#loveCount');
 	this.followStatus = $('#followStatus');
 	this.followButton = $('#postDetailFollowButton');
