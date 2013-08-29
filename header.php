@@ -1,32 +1,32 @@
 <?php if(!IS_LOGGED_IN): ?>
 <?php include "login_pop.php"; ?>
 <?php endif ?>
-<? include "post_slideout.php" ?>
+<?php include "post_slideout.php" ?>
 <?php include "themes/header_template.php" ?>
 <?
 // Errors
 if (!empty($_SESSION['errors'])): ?>
 	<div class="user-message user-error ui-state-error ui-corner-all">
         <div class='user-message-close'>X</div>
-        <? if (count($_SESSION['errors']) == 1): ?>
-			<? if (!empty($_SESSION['errors'][0])): ?>
+        <?php if (count($_SESSION['errors']) == 1): ?>
+			<?php if (!empty($_SESSION['errors'][0])): ?>
 				<p><?= $_SESSION['errors'][0] ?></p>
-		    <? endif ?>
-		<? else: ?>
+		    <?php endif ?>
+		<?php else: ?>
 			<ul>
-				<? foreach ($_SESSION['errors'] as $error): ?>
+				<?php foreach ($_SESSION['errors'] as $error): ?>
 					<li><?= $error ?></li>
-				<? endforeach ?>
+				<?php endforeach ?>
 			</ul>
-		<? endif ?>
+		<?php endif ?>
 	</div>
-	<? unset($_SESSION['errors']); ?>
-<? endif ?>
+	<?php unset($_SESSION['errors']); ?>
+<?php endif ?>
 
-<? if( !empty($_SESSION['success']) ): ?>
+<?php if( !empty($_SESSION['success']) ): ?>
     <div class="user-message user-success ui-state-highlight ui-corner-all">
         <div class='user-message-close'>X</div>
         <p><?= $_SESSION['success'] ?></p>
     </div>
-    <? unset($_SESSION['success']) ?>
-<? endif ?>
+    <?php unset($_SESSION['success']) ?>
+<?php endif ?>
