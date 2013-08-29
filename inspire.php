@@ -31,7 +31,8 @@
     #bankOptions{display: block; position: fixed; background-color: #fff;}
     #viewToggle{background-image: url("/images/views.png");background-position: 100%;background-size: 180%;position: absolute;right: -11px;margin-top: 2px;width: 45px;background-repeat: no-repeat;overflow: hidden;}
     .title-roll{background-color: #e4e2e3;font-size: 22px;width: 97%; max-width: 920px;z-index: 1;font-weight: bold;margin: 0px auto;top: 70px;margin-bottom: 10px;position: relative;text-align: center;}
-
+    .xDomainStatus{position: absolute;height: 100%;width: 100%;background-color: #c2c2c2;z-index: 111;top: 0px;left: 0px;}
+    .xDomainStatus p{width: 1000px;margin: 0px auto;font-size: 27px;text-align: center;line-height: 60px;}
 </style>
 <div id="bankOptions" class="drop-shadow" <?= isset($_GET['get_started']) ? 'style="display:none"' : '' ?>>
     <div id="bankCenter">
@@ -40,7 +41,7 @@
             <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
         </div>
         <div class="bankSection">
-            <div id="dndeezy" ondragover="allowDrop(event)">
+            <div id="dndeezy" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="disallowDrop(event)">
                 <p>Drag n Drop File Here</p>
             </div>
         </div>
@@ -68,6 +69,7 @@
     postBank = new Object();
     postBank.$bucket = $('#bankBucket');
     postBank.$dropBox = $('#dndeezy');
+    postBank.$bankOptions = $('#bankOptions');
     postBank.posts = [];
     postBank.offset = 0;
     postBank.limit = 12;
@@ -83,21 +85,56 @@
         postBank.adjustMargins();
         $(window).resize(postBank.adjustMargins);
         $('#viewToggle').on('click', this.toggleMode);
-        postBank.$dropBox.on('drop', this.postFromDrop);
     }
 
     function drag(ev)
     {
         postBank.$draggedItem = $(ev.target).parent();
     }
-    function allowDrop(ev)
-    {
+
+    function allowDrop(ev) {
         ev.preventDefault();
+        $(ev.target).css('border-color', 'blue');
+    }
+    function disallowDrop(ev) {
+        ev.preventDefault();
+        $(ev.target).css('border-color', 'black');
     }
 
-    postBank.postFromDrop = function(ev) {
+    function drop(ev) {
         ev.preventDefault();
-        postBank.$draggedItem.find('.postButton').click();
+        if(postBank.$draggedItem) {
+            postBank.$draggedItem.find('.postButton').click();
+            postBank.$draggedItem = null;
+        } else {
+            var url = ev.dataTransfer.getData('URL');
+            var domain = url.split('/')[2];
+
+            if(theUser.id && url) {
+                postBank.$bank = $('<div class="xDomainStatus"></div>').appendTo(postBank.$bankOptions);
+                postBank.$bankMsg = $('<p>Uploading...</p>').appendTo(postBank.$bank);
+                $.post('/action/uploadPost.php', {image_src : url, description: 'WOW', domain : domain, sourceurl : this.url}, postBank.crossBrowserUpload);
+            } else {
+                new_loginscreen();
+            }
+        }
+    }
+    postBank.crossBrowserUpload = function(data) {
+        var data = $.parseJSON(data);
+        if(data) {
+            data = data.data;
+            postBank.$bank.css({'background-color': '#ff787d', 'color' : '#fff'});
+            postBank.$bankMsg.html('Upload Successful!');
+        } else {
+            postBank.$bank.css('background-color', '#666666');
+            postBank.$bankMsg.html('Upload Failed. Image is too small');
+        }
+
+        setTimeout(function() {
+            postBank.$bank.fadeOut(200, function() {
+                $(this).remove();
+            });
+        }, 3000);
     }
 
     postBank.clearBank = function() {

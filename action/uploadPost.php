@@ -21,17 +21,19 @@ if (IS_LOGGED_IN) {
 		$dimensions = @getimagesize($image_url);
 		
 		// make api to add_post_image
-		$params = array(
-			'imagename' => $imagename
-			, 'source' => $source
-			, 'user_id' => $user_id
-			, 'description' => $_POST['description']
+		if($dimensions[0] * $dimensions[1] >= 900) {
+            $params = array(
+                'imagename' => $imagename
+            , 'source' => $source
+            , 'user_id' => $user_id
+            , 'description' => $_POST['description']
             , 'domain' => $_POST['domain']
             , 'attribution_url' => $_POST['sourceurl']
-			, 'dimensionsX' => $dimensions[0]
-			, 'dimensionsY' => $dimensions[1]
-		);
-		$data = api_call('posting', 'add_post_image', $params);
+            , 'dimensionsX' => $dimensions[0]
+            , 'dimensionsY' => $dimensions[1]
+            );
+            $data = api_call('posting', 'add_post_image', $params);
+        }
 		header('Content-Type: application/json');
 		echo json_encode($data);	
 	}
