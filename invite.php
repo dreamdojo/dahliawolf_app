@@ -18,6 +18,9 @@
 .invite-user-box-avatar-frame img{width:100%;}
 .invite-user-info{ color: #acacac;}
 .invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
+.invite-follow-button{padding: 5px 10px;margin: 0px auto;width: 60%;margin-top: 12px;cursor: pointer;}
+.following{border: #c2c2c2 thin solid;color: #c2c2c2 !important;}
+.follow{border: #c2c2c2 thin solid;color: #c2c2c2 !important;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
 #followFbFriends{width: 100%;float: left;height: 100%;}
 </style>
@@ -194,7 +197,9 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 partyLine.displayUsers = function(){
 	$('#theShaft').css('height', 'auto');
 	$.each(partyLine.users,function(index,friend) {
-        if( dahliawolf.isFacebookFriend(friend.id) ) {
+        var user = dahliawolf.isFacebookFriend(friend.id);
+        if( user ) {
+            holla.log(user);
             str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
             str+='<div class="invite-user-box-avatar-frame">';
             str += '<img src="'+friend.image+'">';
