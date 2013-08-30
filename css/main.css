@@ -73,6 +73,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     background: linear-gradient(to bottom,  #3f3f3f 0%,#131313 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
 }
+
+#tourButton{float: right; background: url('/images/tourIcon.png'); background-size: 90%;height: 40px;width: 40px;background-repeat: no-repeat;background-position: 50%;margin-top: 5px;}
 #dahliaHeader a{color: #fff !important;}
 /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
 #dahliaHeader #dahliaLogo{width: 160px;height: 80%;background-image: url("/images/logo_no_beta.png");background-size: 100%;background-repeat: no-repeat;background-position: 46% 50%;margin-top: 7px;margin-left: 20px;overflow: hidden; float: left; cursor: pointer;}
@@ -82,7 +84,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #dahliaHeader .userName{float: right;color: #fff;font-size: 12px;line-height: 32px; margin-right: 9px;}
 #dahliaHeader #mainMenu{position: absolute;width: 260px; left: 50%;margin-left: -130px; color: #fff;height: 60px;line-height: 50px;font-size: 18px;text-align: center;}
 #dahliaHeader #mainMenu li{float: left; margin: 0px 10px; position: relative;}
-#dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 40px;height: 40px;background-size: 81%; background-repeat: no-repeat; background-position: -7px -2px; margin-top: 10px;}
+#dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 40px;height: 40px;background-size: 81%; background-repeat: no-repeat; background-position: 1px -2px; margin-top: 10px;}
 #dahliaHeader #searchButton{ float:right; background-image: url("/images/s_mag.png"); width: 40px; height: 40px; background-size: 75%; background-repeat: no-repeat;margin-top: 10px; margin-right: 0px;}
 #dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 10px;}
 #dahliaMainMenuButton{float: left; height: 48px; width: 50px;  display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 86%; background-repeat: no-repeat;margin-top: 2px;}
@@ -106,7 +108,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     transform: rotate(-22deg);}
 
 #searchBar{width: 100%;position: fixed;height: 60px;left: 0px;background-color: #000;top: 49px; z-index: 123;border-top: #fff thin solid;display: none;}
-#searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7;font-size: 40px;text-indent: 15px;text-align: center;}
+#searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center; font-family: futura;}
 .pinkMe{color: #F03E63;}
 
 @media screen and (max-width: 1000px) {
@@ -121,6 +123,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     .bankSection p{display: none;}
     .title-roll .preHeader{display: none;}
     .bankSection img:not(.fork-img){left: 50%;position: relative;margin-left: -19px;}
+    #tourButton{display: none;}
 }
 
 .filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 30px;}

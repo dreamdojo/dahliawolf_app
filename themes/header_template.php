@@ -84,6 +84,7 @@ $(document).ready(function()
         <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
     </ul>
     <div id="rightHandMenu">
+        <div id="tourButton"></div>
         <? if(IS_LOGGED_IN): ?>
         <a href="/shop/checkout.php"><div id="shoppingCart"></div></a>
         <div id="searchButton"></div>
