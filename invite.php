@@ -223,8 +223,8 @@ partyLine.displayUsers = function(){
             $('#followFbFriends').append(str);
         } else {
             str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
-            str+='<div class="invite-user-box-avatar-frame">';
-            str += '<img src="'+friend.image+'">';
+            str+='<div class="invite-user-box-avatar-frame" style="background-image: url('+friend.image+');">';
+            //str += '<img src="'+friend.image+'">';
             str+='</div><div class="invite-user-info">';
             str+='<div class="invite-user-name">'+friend.name+'</div>';
             str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">INVITE</div>';
