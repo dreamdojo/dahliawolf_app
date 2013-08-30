@@ -18,7 +18,7 @@
 .invite-user-box-avatar-frame img{width:100%;}
 .invite-user-info{ color: #acacac;}
 .invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
-.invite-follow-button{padding: 5px 10px;margin: 0px auto;width: 60%;margin-top: 12px;cursor: pointer;}
+.invite-follow-button{padding: 5px 10px;margin: 0px auto;cursor: pointer;float: left;}
 .following{border: #c2c2c2 thin solid;color: #c2c2c2 !important;}
 .follow{border: #c2c2c2 thin solid;color: #c2c2c2 !important;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
@@ -205,7 +205,7 @@ partyLine.displayUsers = function(){
             str += '<img src="'+friend.image+'">';
             str+='</div><div class="invite-user-info">';
             str+='<div class="invite-user-name">'+friend.name+'</div>';
-            str+='<div class="invite-follow-button '+(Number(user.is_followed) ? 'following' : 'follow')+'" data-id="'+friend.id+'" data-platform="'+friend.platform+'">FOLLOW</div>';
+            str+='<div class="invite-follow-button '+(Number(user.is_followed) ? 'following' : 'follow')+'" data-id="'+friend.id+'" data-platform="'+friend.platform+'">'+(Number(user.is_followed) ? 'FOLLOWING' : 'FOLLOW')+'</div>';
             str+='</div></div>';
             $('#followFbFriends').append(str);
         } else {
