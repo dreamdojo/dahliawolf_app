@@ -58,7 +58,16 @@ partyLine.users = new Array();// USR CLASS
 partyLine.userTank = $('#mainCol');
 
 partyLine.userTank.on('click', '.invite-follow-button', function() {
-   console.log($(this).data('id'));
+   var id = Number($(this).data('id'));
+   var $button = $(this);
+
+   if( $button.hasClass('following') ) {
+       //api.unfollowUser(id);
+       $button.removeClass('following').addClass('follow').html('FOLLOW');
+   } else {
+       //api.followUser(id);
+       $button.removeClass('follow').addClass('following').html('FOLLOWING');
+   }
 });
 
 partyLine.removeUser = function(id){
