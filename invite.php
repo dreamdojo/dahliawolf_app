@@ -198,6 +198,8 @@ partyLine.displayUsers = function(){
             str+='<div class="invite-user-name">'+friend.name+'</div>';
             str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">FOLLOW</div>';
             str+='</div></div>';
+            var fTank = $('<div class="followFbFriends"></div>').appendTo(partyLine.userTank);
+            fTank.append(str);
         } else {
             str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
             str+='<div class="invite-user-box-avatar-frame">';
