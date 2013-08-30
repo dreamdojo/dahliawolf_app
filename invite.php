@@ -19,6 +19,7 @@
 .invite-user-info{ color: #acacac;}
 .invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
+.followFbFriends{width: 100%;float: left;height: 100%;}
 </style>
 
 <div id="theShaft">
