@@ -29,7 +29,7 @@
     #bankBucket .postButton:hover{opacity: .7;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
-    #viewToggle{background-image: url("/images/views.png");background-position: 100%;background-size: 180%;position: absolute;right: -11px;margin-top: 2px;width: 45px;background-repeat: no-repeat;overflow: hidden;}
+    #viewToggle{background-image: url("/images/views.png");background-position: 0%;background-size: 180%;position: absolute;right: -11px;margin-top: 2px;width: 45px;background-repeat: no-repeat;overflow: hidden;}
     .title-roll{background-color: #e4e2e3;font-size: 22px;width: 97%; max-width: 920px;z-index: 1;font-weight: bold;margin: 0px auto;top: 70px;margin-bottom: 10px;position: relative;text-align: center;}
     .xDomainStatus{position: absolute;height: 100%;width: 100%;background-color: #c2c2c2;z-index: 111;top: 0px;left: 0px;}
     .xDomainStatus p{width: 1000px;margin: 0px auto;font-size: 27px;text-align: center;line-height: 60px;}
@@ -156,13 +156,13 @@
     postBank.toggleMode = function() {
         if(postBank.mode == 'grid') {
             postBank.mode = 'line';
-            $(this).css('background-position', 0);
+            $(this).css('background-position', 100+'%');
             $.each($('#bankBucket .grid'), function(index, post){
                 $(post).removeClass('grid').addClass('line');
             });
         } else {
             postBank.mode = 'grid';
-            $(this).css('background-position', 100+'%');
+            $(this).css('background-position', 0);
             $.each($('#bankBucket .line'), function(index, post){
                 $(post).removeClass('line').addClass('grid');
             });
