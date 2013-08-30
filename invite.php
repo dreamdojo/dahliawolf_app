@@ -14,7 +14,7 @@
 
 <style>
 .invite-user-box{width:47%; height:100px; float:left; margin-left:2%; margin-bottom:2%;}
-.invite-user-box-avatar-frame{ width: 75px;overflow: hidden;float: left;height: 80px;border-radius: 187px;margin-right: 10px; background-size: 100% 100%;}
+.invite-user-box-avatar-frame{ width: 75px;overflow: hidden;float: left;height: 80px;border-radius: 187px;margin-right: 10px; background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
 .invite-user-box-avatar-frame img{width:100%;}
 .invite-user-info{ color: #acacac;}
 .invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
