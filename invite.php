@@ -57,6 +57,10 @@ partyLine.users = new Array();// USR CLASS
 
 partyLine.userTank = $('#mainCol');
 
+partyLine.userTank.on('click', '.invite-follow-button', function() {
+   console.log($(this).data('id'));
+});
+
 partyLine.removeUser = function(id){
 	$('#user-box-'+id).slideUp(200, function(){
 		$(this).remove();
@@ -205,7 +209,7 @@ partyLine.displayUsers = function(){
             str += '<img src="'+friend.image+'">';
             str+='</div><div class="invite-user-info">';
             str+='<div class="invite-user-name">'+friend.name+'</div>';
-            str+='<div class="invite-follow-button '+(Number(user.is_followed) ? 'following' : 'follow')+'" data-id="'+friend.id+'" data-platform="'+friend.platform+'">'+(Number(user.is_followed) ? 'FOLLOWING' : 'FOLLOW')+'</div>';
+            str+='<div class="invite-follow-button '+(Number(user.is_followed) ? 'following' : 'follow')+'" data-id="'+user.user_id+'" data-platform="'+friend.platform+'">'+(Number(user.is_followed) ? 'FOLLOWING' : 'FOLLOW')+'</div>';
             str+='</div></div>';
             $('#followFbFriends').append(str);
         } else {
