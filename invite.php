@@ -205,7 +205,7 @@ partyLine.displayUsers = function(){
             str += '<img src="'+friend.image+'">';
             str+='</div><div class="invite-user-info">';
             str+='<div class="invite-user-name">'+friend.name+'</div>';
-            str+='<div class="invite-follow-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">FOLLOW</div>';
+            str+='<div class="invite-follow-button '+(Number(user.is_followed) ? 'following' : 'follow')+'" data-id="'+friend.id+'" data-platform="'+friend.platform+'">FOLLOW</div>';
             str+='</div></div>';
             $('#followFbFriends').append(str);
         } else {
