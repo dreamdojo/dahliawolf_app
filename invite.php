@@ -194,7 +194,8 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 partyLine.displayUsers = function(){
 	$('#theShaft').css('height', 'auto');
 	$.each(partyLine.users,function(index,friend) {
-		str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
+		holla.log(friend);
+        str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
 			str+='<div class="invite-user-box-avatar-frame">';
 				str += '<img src="'+friend.image+'">';
 			str+='</div><div class="invite-user-info">';

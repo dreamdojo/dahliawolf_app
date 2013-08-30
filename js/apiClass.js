@@ -26,6 +26,25 @@ User.prototype = {
     getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');}
 };
 
+User.prototype.setFriends = function(data) {
+    this.friends = data;
+}
+
+User.prototype.isFacebookFriend = function(id) {
+    var retVal = false;
+    if(this.friends.length) {
+        $.each(this.friends, function(index, friend) {
+            if(friend.fb_uid == id) {
+                retVal = true;
+                return;
+            }
+        });
+    } else {
+        holla.log('no friends set');
+    }
+    return retVal;
+}
+
 User.prototype.isFriend = function(id) {
     return true;
 }
