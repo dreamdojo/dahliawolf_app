@@ -19,7 +19,7 @@
 .invite-user-info{ color: #acacac;}
 .invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
-.followFbFriends{width: 100%;float: left;height: 100%;}
+#followFbFriends{width: 100%;float: left;height: 100%;}
 </style>
 
 <div id="theShaft">
@@ -71,6 +71,7 @@ partyLine.setTwitterAccount = function(){
 partyLine.init = function(platform){// CLEARS MAIN COLUMN AND CALLS GET USERS
 	partyLine.platform = platform;
 	partyLine.userTank.empty();
+    partyLine.userTank.append('<div id="followFbFriends"></div>');
 	partyLine.users = [];
 	partyLine.getUsers[platform]();
 }
@@ -199,8 +200,7 @@ partyLine.displayUsers = function(){
             str+='<div class="invite-user-name">'+friend.name+'</div>';
             str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">FOLLOW</div>';
             str+='</div></div>';
-            var fTank = $('<div class="followFbFriends"></div>').appendTo(partyLine.userTank);
-            fTank.append(str);
+            $('#followFbFriends').append(str);
         } else {
             str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
             str+='<div class="invite-user-box-avatar-frame">';
