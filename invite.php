@@ -20,7 +20,7 @@
 .invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
 .invite-follow-button{padding: 5px 10px;margin: 0px auto;cursor: pointer;float: left;}
 .following{border: #c2c2c2 thin solid;color: #c2c2c2 !important;}
-.follow{border: #c2c2c2 thin solid;color: #c2c2c2 !important;}
+.follow{border: #f74d6d thin solid;color: #f74d6d !important;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
 #followFbFriends{width: 100%;float: left;height: 100%;}
 </style>
@@ -62,10 +62,10 @@ partyLine.userTank.on('click', '.invite-follow-button', function() {
    var $button = $(this);
 
    if( $button.hasClass('following') ) {
-       //api.unfollowUser(id);
+       api.unfollowUser(id);
        $button.removeClass('following').addClass('follow').html('FOLLOW');
    } else {
-       //api.followUser(id);
+       api.followUser(id);
        $button.removeClass('follow').addClass('following').html('FOLLOWING');
    }
 });
