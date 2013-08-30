@@ -194,7 +194,7 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 partyLine.displayUsers = function(){
 	$('#theShaft').css('height', 'auto');
 	$.each(partyLine.users,function(index,friend) {
-		holla.log(friend);
+		holla.log( dahliawolf.isFacebookFriend(friend.id) );
         str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
 			str+='<div class="invite-user-box-avatar-frame">';
 				str += '<img src="'+friend.image+'">';
