@@ -14,7 +14,7 @@
 
 <style>
 .invite-user-box{width:47%; height:100px; float:left; margin-left:2%; margin-bottom:2%;}
-.invite-user-box-avatar-frame{ width: 75px;overflow: hidden;float: left;height: 80px;border-radius: 187px;margin-right: 10px;}
+.invite-user-box-avatar-frame{ width: 75px;overflow: hidden;float: left;height: 80px;border-radius: 187px;margin-right: 10px; background-size: 100% 100%;}
 .invite-user-box-avatar-frame img{width:100%;}
 .invite-user-info{ color: #acacac;}
 .invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
@@ -214,8 +214,7 @@ partyLine.displayUsers = function(){
         if( user ) {
             holla.log(user);
             str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
-            str+='<div class="invite-user-box-avatar-frame">';
-            str += '<img src="'+friend.image+'">';
+            str+='<div class="invite-user-box-avatar-frame" style="background-image: url('+friend.image+');">';
             str+='</div><div class="invite-user-info">';
             str+='<div class="invite-user-name">'+friend.name+'</div>';
             str+='<div class="invite-follow-button '+(Number(user.is_followed) ? 'following' : 'follow')+'" data-id="'+user.user_id+'" data-platform="'+friend.platform+'">'+(Number(user.is_followed) ? 'FOLLOWING' : 'FOLLOW')+'</div>';
@@ -224,7 +223,6 @@ partyLine.displayUsers = function(){
         } else {
             str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
             str+='<div class="invite-user-box-avatar-frame" style="background-image: url('+friend.image+');">';
-            //str += '<img src="'+friend.image+'">';
             str+='</div><div class="invite-user-info">';
             str+='<div class="invite-user-name">'+friend.name+'</div>';
             str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">INVITE</div>';
