@@ -74,8 +74,10 @@ theLesson.toggleButton = theLessonToggleButton;
 
 function theLessonToggleButton(){
 	if(theLesson.isOpen){
+        theLesson.toggleButtonDisplay.css('background-position',  106+'%');
 		//theLesson.toggleButtonDisplay.html('HIDE HELPER');
 	}else{
+        theLesson.toggleButtonDisplay.css('background-position',  0+'%');
 		//theLesson.toggleButtonDisplay.html('SHOW HELPER');
 	}
 }
