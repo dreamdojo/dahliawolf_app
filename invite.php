@@ -119,7 +119,6 @@ partyLine.sendInvite['EMAIL'] = function(){
                 $('#emailCollection').val('');
                 $('#personalMessage').val('');
                 alert('Invites Sent');
-                console.log(data);
             });
         } else {
             alert('Please enter an email address');
@@ -142,7 +141,6 @@ partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
 	FB.api('/me/friends', function(response) {
         if(response.data) {
 			$.each(response.data,function(index,friend) {
-                console.log(friend);
                 partyLine.users[index] = new partyLine.user(friend.name, friend.id, 'http://graph.facebook.com/'+friend.id+'/picture?type=large', 'FACEBOOK');
             });
 			partyLine.displayUsers();
@@ -154,7 +152,6 @@ partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
 
 partyLine.getUsers['INSTAGRAM'] = function(){// GET FACEBOOK USER METHODS
 	$.ajax('https://api.instagram.com/v1/users/self/followed-by?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType : "jsonp"}).done(function(data){
-		console.log(data);
 		$.each(data.data,function(index,friend) {
 			partyLine.users[index] = new partyLine.user(friend.full_name, friend.username, friend.profile_picture, 'INSTAGRAM');
 		});
@@ -172,7 +169,6 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 					cursor = obj.next_cursor;
 					obj = obj['users'];
 					$.each(obj,function(index,friend) {
-						console.log(friend);
                         partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
 					});
 					partyLine.displayUsers();
@@ -194,15 +190,24 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 partyLine.displayUsers = function(){
 	$('#theShaft').css('height', 'auto');
 	$.each(partyLine.users,function(index,friend) {
-		holla.log( dahliawolf.isFacebookFriend(friend.id) );
-        str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
-			str+='<div class="invite-user-box-avatar-frame">';
-				str += '<img src="'+friend.image+'">';
-			str+='</div><div class="invite-user-info">';
-				str+='<div class="invite-user-name">'+friend.name+'</div>';
-				str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">INVITE</div>';
-		str+='</div></div>';
-		partyLine.userTank.append(str);
+        if( dahliawolf.isFacebookFriend(friend.id) ) {
+            str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
+            str+='<div class="invite-user-box-avatar-frame">';
+            str += '<img src="'+friend.image+'">';
+            str+='</div><div class="invite-user-info">';
+            str+='<div class="invite-user-name">'+friend.name+'</div>';
+            str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">FOLLOW</div>';
+            str+='</div></div>';
+        } else {
+            str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
+            str+='<div class="invite-user-box-avatar-frame">';
+            str += '<img src="'+friend.image+'">';
+            str+='</div><div class="invite-user-info">';
+            str+='<div class="invite-user-name">'+friend.name+'</div>';
+            str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">INVITE</div>';
+            str+='</div></div>';
+            partyLine.userTank.append(str);
+        }
 	});
 	partyLine.userTank.append('<div class="clear"></div>');
 	partyLine.bindMessageButtons();
