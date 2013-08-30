@@ -34,6 +34,7 @@ postDetail.prototype.bindFrontend = function() {
 	$('#postDetailLoveButton').on('click', $.proxy(this.toggleLove, this));
 	$('#shareFacebook').on('click', $.proxy(this.sendFacebook, this));
 	$('#postCommentButton').on('click', $.proxy(this.publishComment, this));
+    $('.shareButton').on('click', this.recordShare);
 }
 
 postDetail.prototype.publishComment = function() {
@@ -54,6 +55,16 @@ postDetail.prototype.publishComment = function() {
 			new_loginscreen();
 		}
 	}
+}
+
+postDetail.prototype.recordShare = function() {
+    var platform = $(this).data('platform');
+    var str = '/api/1-0/sharing.json?function=add_share&posting_id='+thePostDetail.data.posting_id+'network='+platform+'posting_owner_user_id='+thePostDetail.data.user_id+'&use_hmac_check=0';
+
+    sendToAnal({name:'Shared Post on '+platform, id : thePostDetail.data.posting_id});
+    $.getJSON(str, function(data) {
+       //holla.log(data);
+    });
 }
 
 postDetail.prototype.sendFacebook = function() {

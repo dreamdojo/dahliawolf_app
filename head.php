@@ -18,6 +18,7 @@ if ($top_dir == 'mobile') {
 if ($top_dir == 'shop') {
 	require 'includes/php/shop-initial-calls.php';
 }
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0031)http://www.dahliawolf.com/login -->
@@ -82,12 +83,12 @@ if ($top_dir == 'shop') {
 <script src="/js/postDetail.js" type="text/javascript"></script>
 <script src="/js/postDetailPosts.js" type="text/javascript"></script>
 <script src="/js/shop.js" type="text/javascript"></script>
+<script src="/js/apiClass.js" type="text/javascript"></script>
 <script src="/js/userList.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>
 <script src="/js/jquery.countdown.js" type="text/javascript"></script>
 <script type="text/javascript">
-
 var theUser = new Object();
 <? if (IS_LOGGED_IN): ?>
 	var userConfig = <?= json_encode($userConfig) ?>;
@@ -95,7 +96,7 @@ var theUser = new Object();
 	<? if(INSTAGRAM_IS_LOGGED_IN): ?>
 		userConfig.instagramToken = '<?= $_SESSION['user']['instagramToken'] ?>';
 	<? endif ?>
-	theUser.id = <?= $_SESSION['user']['user_id'] ?>;
+    theUser.id = <?= $_SESSION['user']['user_id'] ?>;
 	theUser.username = '<?= $_SESSION['user']['username'] ?>';
 	theUser.friends = <? echo json_encode($friends) ?>;
 	var user_id = <?= $_SESSION['user']['user_id'] ?>;
@@ -105,7 +106,7 @@ var theUser = new Object();
 	theUser.username = false;
 	var userConfig = new Object();
 <? endif ?>
-
+    dahliawolf = new User(<? echo json_encode($userConfig) ?>);
 <!-- Start of Woopra Code -->
     (function(){
         var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
@@ -141,3 +142,4 @@ var theUser = new Object();
 <!-- End of Woopra Code -->
 </script>
 </head>
+

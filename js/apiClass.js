@@ -5,7 +5,7 @@ function User(userData) {
         this.data = {};
     }
     this.member = new Member(this.isLoggedIn);
-    this.post = new Post();
+    this.post = new Post(this.isLoggedIn);
 }
 
 User.prototype = {
@@ -32,7 +32,7 @@ function Api() {
 
 Api.prototype.callApi = function() {
     if(this.isLoggedIn) {
-        console.log('calling api '+this.baseUrl+this.apiApi+'?function='+this.apiFunction);
+        console.log('calling api '+this.baseUrl+this.apiApi+'?function='+this.apiFunction+'&posting_id='+this.posting_id);
     } else {
         console.log('not logged in');
     }
@@ -48,12 +48,14 @@ function Member(isLoggedIn) {
 
 Member.prototype.follow = function(id, callback) {
     this.apiFunction = 'follow';
+    this.user_id = id;
     this.callApi();
     return this;
 }
 
 Member.prototype.unfollow = function(id, callback) {
     this.apiFunction = 'unfollow';
+    this.user_id = id;
     this.callApi();
     return this;
 }
@@ -67,12 +69,14 @@ Post.prototype.constructor = Post;
 
 Post.prototype.love = function(id, callback) {
     this.apiFunction = 'love';
+    this.posting_id = id;
     this.callApi();
     return this;
 }
 
 Post.prototype.unlove = function(id, callback) {
     this.apiFunction = 'unlove';
+    this.posting_id = id;
     this.callApi();
     return this;
 }
