@@ -27,7 +27,8 @@ theLesson.title = {		'/spine.php' : 'DISCOVER AND VOTE',
 						'/my-runway.php' : 'YOUR RUNWAY',
 						'/activity.php' : 'YOUR ACTIVITY',
                         '/inspire.php' : 'INPSIRE NEW FASHION',
-                        '/invite.php' : 'FIND FRIENDS'
+                        '/invite.php' : 'FIND FRIENDS',
+                        '/shop/index.php' : 'SHOP AND ENJOY'
 					};	
 theLesson.content = {	'/spine.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!', 
 						'/grid.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!', 
@@ -44,13 +45,14 @@ theLesson.content = {	'/spine.php' : 'Show some love for your favorite members i
 						'/my-runway.php' : 'These are all the styles you inspired. Keep inspiring and build your personal brand ',
 						'/activity.php' : 'Here you can view all the recent activity on Dahlia',
                         '/inspire.php' : 'Post your favorite fashion images and inpsire a new work of art',
-                        '/invite.php' : 'Find your friends from Facebook on Dahliawolf or invite them to join you on Dahliawolf'
+                        '/invite.php' : 'Find your friends from Facebook on Dahliawolf or invite them to join you on Dahliawolf',
+                        '/shop/index.php' : 'SHOP MEMBER INSPIRED DESIGNS @ DAHLIAWOLF'
 					};					
 
 theLesson.postTitle = {'step1' : 'POST FASHION INSPIRATIONS', 'step2' : 'INSPIRE NEW DESIGNS', 'step3' : 'INSPIRATION POERTY' };
 theLesson.postContent = {	'step1': 'Share your personal style by posting fashion images.<br> Post images you already have or find new image in our D/W image bank.', 
 							'step2' : 'Share images of the styles you would like created. <br> Upload your own images or find new ones in the DW Image Bank.', 
-							'step3' : 'Tell everyone what you love about this item. Use #tags and @members to help get your inspirations exposure' 
+							'step3' : 'Tell everyone what you love about this item. Use #tags and @members to help get your inspirations exposure',
 						};
 theLesson.height = 230;
 theLesson.isOpen = false;
