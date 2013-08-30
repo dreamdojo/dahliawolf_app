@@ -25,6 +25,10 @@ User.prototype = {
 
     getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');}
 };
+
+User.prototype.isFriend = function(id) {
+    return true;
+}
 //************************************************************************************ API
 function Api() {
     this.baseUrl = '/api/1-0/';
@@ -43,7 +47,7 @@ Member.prototype.constructor = Member;
 
 function Member(isLoggedIn) {
     this.isLoggedIn = isLoggedIn;
-    this.apiApi = 'person.json';
+    this.apiApi = 'user.json';
 }
 
 Member.prototype.follow = function(id, callback) {
