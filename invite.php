@@ -87,8 +87,8 @@ partyLine.sendInvite['FACEBOOK'] = function(id){
 	 FB.ui({
         method: 'send',
 		to: id,
-        name: 'COME PLAY WITH ME',
-		picture: 'http://www.dahliawolf.com/mobile/images/shareFb.png',
+        name: 'You\'re Invited <3',
+		picture: 'http://www.dahliawolf.com/images/logo_60x60.png',
 		description: partyLine.description,
     	link: 'http://www.dahliawolf.com/index.html'
 	});
