@@ -120,6 +120,7 @@ function events() {
 				isSpineAvailable = false;
 				var offset = $('.spine .images > li').length;
 				url = update_query_string_parameter(url, 'offset', offset);
+                sendToAnal({name: 'Scrolling Down', page : 'Spine'});
 				$('.spine').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
 				globalSpineLoad = $.get(url, function(data) {
 					globalSpineLoad = null;
