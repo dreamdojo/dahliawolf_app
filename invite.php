@@ -1,5 +1,5 @@
 <?php
-	$pageTitle = "Activity";
+	$pageTitle = "Invite";
 	include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
 	include "header.php";
 	
