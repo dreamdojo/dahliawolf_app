@@ -4,8 +4,8 @@ function User(userData) {
     } else {
         this.data = {};
     }
-    this.member = new Member(this.isLoggedIn);
-    this.post = new Post(this.isLoggedIn);
+    this.member = new Member();
+    this.post = new Post();
 }
 
 User.prototype = {
@@ -25,14 +25,49 @@ User.prototype = {
 
     getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');}
 };
+
+User.prototype.setFriends = function(data) {
+    this.friends = data;
+}
+
+User.prototype.isFacebookFriend = function(id) {
+    var retVal = false;
+    if(this.friends.length) {
+        $.each(this.friends, function(index, friend) {
+            if(friend.fb_uid == id) {
+                retVal = true;
+                return;
+            }
+        });
+    } else {
+        holla.log('no friends set');
+    }
+    return retVal;
+}
+
+User.prototype.isFriend = function(id) {
+    return true;
+}
 //************************************************************************************ API
+
 function Api() {
     this.baseUrl = '/api/1-0/';
 }
 
-Api.prototype.callApi = function() {
-    if(this.isLoggedIn) {
-        console.log('calling api '+this.baseUrl+this.apiApi+'?function='+this.apiFunction+'&posting_id='+this.posting_id);
+Api.prototype.callApi = function(data) {
+    var params = '';
+    console.log(data);
+    for (var key in data){
+        if (data.hasOwnProperty(key)) {
+            params += '&'+key+'='+data[key];
+        }
+    }
+
+    if(dahliawolf.isLoggedIn) {
+        console.log('calling api '+this.baseUrl+this.apiApi+'?function='+this.apiFunction+params);
+        if(typeof this.callback === 'function') {
+            this.callback();
+        }
     } else {
         console.log('not logged in');
     }
@@ -41,15 +76,14 @@ Api.prototype.callApi = function() {
 Member.prototype = new Api();
 Member.prototype.constructor = Member;
 
-function Member(isLoggedIn) {
-    this.isLoggedIn = isLoggedIn;
-    this.apiApi = 'person.json';
+function Member() {
+    this.apiApi = 'user.json';
 }
 
 Member.prototype.follow = function(id, callback) {
     this.apiFunction = 'follow';
-    this.user_id = id;
-    this.callApi();
+    this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
+    this.callback = callback;
     return this;
 }
 
@@ -60,8 +94,7 @@ Member.prototype.unfollow = function(id, callback) {
     return this;
 }
 //************************************************************************************ POST
-function Post(isLoggedIn) {
-    this.isLoggedIn = isLoggedIn;
+function Post() {
     this.apiApi = 'post.json'
 }
 Post.prototype = new Api();
