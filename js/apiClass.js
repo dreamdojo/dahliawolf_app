@@ -35,7 +35,7 @@ User.prototype.isFacebookFriend = function(id) {
     if(this.friends.length) {
         $.each(this.friends, function(index, friend) {
             if(friend.fb_uid == id) {
-                retVal = true;
+                retVal = friend;
                 return;
             }
         });
