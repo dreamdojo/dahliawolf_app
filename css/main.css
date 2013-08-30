@@ -74,7 +74,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
 }
 
-#tourButton{float: right; background: url('/images/tourIcon.png'); background-size: 90%;height: 40px;width: 40px;background-repeat: no-repeat;background-position: 50%;margin-top: 5px;}
+#tourButton{float: right; background: url('/images/tourIcon.png'); background-size: 200%;height: 40px;width: 40px;background-repeat: no-repeat;background-position: 0%;margin-top: 5px;overflow: hidden;}
 #dahliaHeader a{color: #fff !important;}
 /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
 #dahliaHeader #dahliaLogo{width: 160px;height: 80%;background-image: url("/images/logo_no_beta.png");background-size: 100%;background-repeat: no-repeat;background-position: 46% 50%;margin-top: 7px;margin-left: 20px;overflow: hidden; float: left; cursor: pointer;}
