@@ -121,14 +121,16 @@
     }
     postBank.crossBrowserUpload = function(data) {
         var data = $.parseJSON(data);
-        holla.log(data);
+
         if(!data.error) {
             data = data.data;
             postBank.$bank.css({'background-color': '#ff787d', 'color' : '#fff'});
             postBank.$bankMsg.html('Upload Successful!');
+            sendToAnal({name:'Uploaded Image', type:'x-browser'});
         } else {
             postBank.$bank.css('background-color', '#666666');
             postBank.$bankMsg.html('Upload Failed.'+data.error);
+            sendToAnal({name:'Error:Uploaded Image', type:'x-browser', error:data.error})
         }
 
         setTimeout(function() {
@@ -270,7 +272,8 @@
 
         if(theUser.id) {
             if(this.data.id) {
-                $.post('/action/post_feed_image.php', { id: this.data.id, description: description}, $.proxy(this.addAfterPostMessage, this) )
+                $.post('/action/post_feed_image.php', { id: this.data.id, description: description}, $.proxy(this.addAfterPostMessage, this) );
+                sendToAnal({name:'Uploaded Image', type:'dahliawolf feed'});
             }
         } else {
             new_loginscreen();
