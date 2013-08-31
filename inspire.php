@@ -121,13 +121,14 @@
     }
     postBank.crossBrowserUpload = function(data) {
         var data = $.parseJSON(data);
-        if(data) {
+        holla.log(data);
+        if(!data.error) {
             data = data.data;
             postBank.$bank.css({'background-color': '#ff787d', 'color' : '#fff'});
             postBank.$bankMsg.html('Upload Successful!');
         } else {
             postBank.$bank.css('background-color', '#666666');
-            postBank.$bankMsg.html('Upload Failed. Image is too small');
+            postBank.$bankMsg.html('Upload Failed.'+data.error);
         }
 
         setTimeout(function() {
