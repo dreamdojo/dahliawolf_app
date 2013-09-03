@@ -96,7 +96,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userMenu li{font-size: 13px;padding: 5px 14px; font-family: arial;border-top: #292929 1px solid;}
 #userMenu li:hover{background-color: #1a1a1a;}
 #userMenu li:last-child{padding-bottom: 10px;}
-.loginDept{color: #fff;font-size: 13px;width: 125px;line-height: 50px;}
+.loginDept{color: #fff;font-size: 13px;width: 160px;line-height: 50px;}
 .loginDept li{float: left;margin-right: 10px; position: relative;margin-left: 8px;}
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
 .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
