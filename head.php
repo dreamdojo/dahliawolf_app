@@ -90,6 +90,7 @@ if ($top_dir == 'shop') {
 <script src="/js/jquery.countdown.js" type="text/javascript"></script>
 <script type="text/javascript">
 var theUser = new Object();
+var LOVE_REQUIRED = 1000;
 <? if (IS_LOGGED_IN): ?>
 	var userConfig = <?= json_encode($userConfig) ?>;
 	//console.log(userConfig);
