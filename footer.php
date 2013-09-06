@@ -3,9 +3,18 @@
 <div id="theOverlay"></div>
 <div id="sys-profiler"></div>
 <div id="sysMessageDialog" style="display: none;" title="Message"></div>
-<div id="dw-footer-background"></div>
-<div id="dw-footer"><img src="/images/dw-copyright.png" style="padding-top: 3px; padding-left: 6px;"><span class="dw-foot"> © Dahlia Wolf 2013</span><span class="dw-foot" style="color:red;"><a href="/help">How it Works</a></span><span class="dw-foot"><a href="/tos">Legal</a></span><span class="dw-foot" style="color:red;"><a href="/faqs">FAQs</a></span><span class="dw-foot-last" style="color:red;"><a href="/contact">Contact</a></span></div>
 
+<div id="dwFooter">
+    <ul>
+        <a href="/help"><li style="padding-top: 20px;">How it Works</li></a>
+        <a href="/tos"><li>Legal</li></a>
+        <a href="/faqs"><li>FAQs</li></a>
+        <a href="/contact"><li>Contact</li></a>
+        <li style="color: #c3c3c3;">© Dahlia Wolf 2013</li>
+    </ul>
+    <p></p>
+    <img src="/images/logo_60x60.png">
+</div>
 <?
 if (!empty($_GET['modal'])) {
 	?>

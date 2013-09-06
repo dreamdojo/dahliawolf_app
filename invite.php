@@ -1,5 +1,5 @@
 <?php
-	$pageTitle = "Activity";
+	$pageTitle = "Invite";
 	include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
 	include "header.php";
 	
@@ -14,11 +14,15 @@
 
 <style>
 .invite-user-box{width:47%; height:100px; float:left; margin-left:2%; margin-bottom:2%;}
-.invite-user-box-avatar-frame{ width:100px; padding:5px; overflow:hidden; float:left; height:86%;}
+.invite-user-box-avatar-frame{ width: 75px;overflow: hidden;float: left;height: 80px;border-radius: 187px;margin-right: 10px; background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
 .invite-user-box-avatar-frame img{width:100%;}
 .invite-user-info{ color: #acacac;}
 .invite-user-button{background-color: #ba4f63; color: #fff; padding: 5px 28px;float: left;font-size: 11px; cursor:pointer;}
+.invite-follow-button{padding: 5px 10px;margin: 0px auto;cursor: pointer;float: left;}
+.following{border: #c2c2c2 thin solid;color: #c2c2c2 !important;}
+.follow{border: #f74d6d thin solid;color: #f74d6d !important;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
+#followFbFriends{width: 100%;float: left;height: 100%;}
 </style>
 
 <div id="theShaft">
@@ -53,6 +57,19 @@ partyLine.users = new Array();// USR CLASS
 
 partyLine.userTank = $('#mainCol');
 
+partyLine.userTank.on('click', '.invite-follow-button', function() {
+   var id = Number($(this).data('id'));
+   var $button = $(this);
+
+   if( $button.hasClass('following') ) {
+       api.unfollowUser(id);
+       $button.removeClass('following').addClass('follow').html('FOLLOW');
+   } else {
+       api.followUser(id);
+       $button.removeClass('follow').addClass('following').html('FOLLOWING');
+   }
+});
+
 partyLine.removeUser = function(id){
 	$('#user-box-'+id).slideUp(200, function(){
 		$(this).remove();
@@ -70,6 +87,7 @@ partyLine.setTwitterAccount = function(){
 partyLine.init = function(platform){// CLEARS MAIN COLUMN AND CALLS GET USERS
 	partyLine.platform = platform;
 	partyLine.userTank.empty();
+    partyLine.userTank.append('<div id="followFbFriends"></div>');
 	partyLine.users = [];
 	partyLine.getUsers[platform]();
 }
@@ -85,8 +103,8 @@ partyLine.sendInvite['FACEBOOK'] = function(id){
 	 FB.ui({
         method: 'send',
 		to: id,
-        name: 'COME PLAY WITH ME',
-		picture: 'http://www.dahliawolf.com/images/logo_190x190.jpg',
+        name: 'You\'re Invited <3',
+		picture: 'http://www.dahliawolf.com/images/logo_60x60.png',
 		description: partyLine.description,
     	link: 'http://www.dahliawolf.com/index.html'
 	});
@@ -119,7 +137,6 @@ partyLine.sendInvite['EMAIL'] = function(){
                 $('#emailCollection').val('');
                 $('#personalMessage').val('');
                 alert('Invites Sent');
-                console.log(data);
             });
         } else {
             alert('Please enter an email address');
@@ -140,9 +157,10 @@ partyLine.getUsers['EMAIL'] = function(){
 
 partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
 	FB.api('/me/friends', function(response) {
+        dahliaLoader.show();
         if(response.data) {
+            dahliaLoader.hide();
 			$.each(response.data,function(index,friend) {
-                console.log(friend);
                 partyLine.users[index] = new partyLine.user(friend.name, friend.id, 'http://graph.facebook.com/'+friend.id+'/picture?type=large', 'FACEBOOK');
             });
 			partyLine.displayUsers();
@@ -154,7 +172,6 @@ partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
 
 partyLine.getUsers['INSTAGRAM'] = function(){// GET FACEBOOK USER METHODS
 	$.ajax('https://api.instagram.com/v1/users/self/followed-by?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType : "jsonp"}).done(function(data){
-		console.log(data);
 		$.each(data.data,function(index,friend) {
 			partyLine.users[index] = new partyLine.user(friend.full_name, friend.username, friend.profile_picture, 'INSTAGRAM');
 		});
@@ -172,7 +189,6 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 					cursor = obj.next_cursor;
 					obj = obj['users'];
 					$.each(obj,function(index,friend) {
-						console.log(friend);
                         partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
 					});
 					partyLine.displayUsers();
@@ -194,14 +210,25 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 partyLine.displayUsers = function(){
 	$('#theShaft').css('height', 'auto');
 	$.each(partyLine.users,function(index,friend) {
-		str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
-			str+='<div class="invite-user-box-avatar-frame">';
-				str += '<img src="'+friend.image+'">';
-			str+='</div><div class="invite-user-info">';
-				str+='<div class="invite-user-name">'+friend.name+'</div>';
-				str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">INVITE</div>';
-		str+='</div></div>';
-		partyLine.userTank.append(str);
+        var user = dahliawolf.isFacebookFriend(friend.id);
+        if( user ) {
+            holla.log(user);
+            str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
+            str+='<div class="invite-user-box-avatar-frame" style="background-image: url('+friend.image+');">';
+            str+='</div><div class="invite-user-info">';
+            str+='<div class="invite-user-name">'+friend.name+'</div>';
+            str+='<div class="invite-follow-button '+(Number(user.is_followed) ? 'following' : 'follow')+'" data-id="'+user.user_id+'" data-platform="'+friend.platform+'">'+(Number(user.is_followed) ? 'FOLLOWING' : 'FOLLOW')+'</div>';
+            str+='</div></div>';
+            $('#followFbFriends').append(str);
+        } else {
+            str = '<div id="user-box-'+friend.id+'" class="invite-user-box">';
+            str+='<div class="invite-user-box-avatar-frame" style="background-image: url('+friend.image+');">';
+            str+='</div><div class="invite-user-info">';
+            str+='<div class="invite-user-name">'+friend.name+'</div>';
+            str+='<div class="invite-user-button" data-id="'+friend.id+'" data-platform="'+friend.platform+'">INVITE</div>';
+            str+='</div></div>';
+            partyLine.userTank.append(str);
+        }
 	});
 	partyLine.userTank.append('<div class="clear"></div>');
 	partyLine.bindMessageButtons();

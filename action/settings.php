@@ -51,7 +51,8 @@ if (!empty($data['errors']) || !empty($data['data']['save_user']['errors'])) {
 else {
 	// Update session
 	// loop through session['user'] keys to update values
-	foreach ($_SESSION['user'] as $key => $value) {
+    $_POST['website'] = preg_replace('#^https?://#', '', $_POST['website']);
+    foreach ($_SESSION['user'] as $key => $value) {
 		if (isset($_POST[$key])) {
 			$_SESSION['user'][$key] = $_POST[$key];
 		}

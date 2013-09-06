@@ -63,19 +63,19 @@
             <ul class="shareButts">
                 <li class="cursor" id="shareFacebook"></li>
                 <a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com&amp;media=<?= $_data['post']['image_url'] ?>" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
-                	<li id="sharePinterest"></li>
+                	<li id="sharePinterest" class="shareButton" data-platform="pinterest"></li>
                 </a>
                 <a href="http://www.tumblr.com/share/photo?source=<?= rawurlencode( $_data['post']['image_url'] )?>&caption=<?= rawurlencode( "OMG Super Amazeballs" )?>&click_thru=<?= rawurlencode( "http://www.dahliawolf.com/post/".$_data['post']['posting_id']) ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                	<li id="shareTumbler"></li>
+                	<li id="shareTumbler" class="shareButton" data-platform="tumbler"></li>
                  </a>
                  <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&amp;url=http://www.dahliawolf.com/post/<?= $_data['post']['posting_id'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">	
-                    <li id="shareTwitter"></li>
+                    <li id="shareTwitter" class="shareButton" data-platform="twitter"></li>
                  </a>
                 <a href="https://plus.google.com/share?url=http://www.dahliawolf.com/post/<?= $_data['post']['posting_id'] ?>"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
-                	<li id="shareGplus"></li>
+                	<li id="shareGplus" class="shareButton" data-platform="google"></li>
                 </a>
                 <a href='mailto:?subject=Frickin Awesome&body=Yo check out this bangin outfit I found at http://www.dahliawolf.com/post/<?= $_data['post']['posting_id'] ?>.'>
-                	<li id="shareEmail"></li>
+                	<li id="shareEmail" class="shareButton" data-platform="email"></li>
                 </a>
             </ul>
         </div>
@@ -136,14 +136,16 @@
 
 <script>
 
-    var thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
+    $(function() {
 
-	var thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
-    sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
+        window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
+        window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
 
-    <? if(isset($_GET['ajax'])): ?>
+        sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
+        <? if(isset($_GET['ajax'])): ?>
         $('body').css('overflow', 'hidden');
-    <? endif ?>;
+        <? endif ?>;
+    });
 
 </script>
 

@@ -14,7 +14,7 @@ if (IS_LOGGED_IN) {
 $data = api_call('user', 'get_user', $params, true);
 $user = $data['data'];
 ?>
-
+<div id="wolfPackHeader" style="height: 1px;width: 100px;"></div>
 <div id="userListCol"></div>
 
 <

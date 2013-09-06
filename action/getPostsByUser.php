@@ -16,6 +16,14 @@
 		if (!empty($_POST['offset'])) {
 			$params['offset'] = $_POST['offset'];
 		}
+
+        if (!empty($_POST['order_by'])) {
+            $params['order_by'] = $_POST['order_by'];
+        }
+
+        if(!empty($_POST['filter'])) {
+            $params['filter'] = $_POST['filter'];
+        }
 		
 		if (IS_LOGGED_IN) {
 			$params['viewer_user_id'] = $_SESSION['user']['user_id'];

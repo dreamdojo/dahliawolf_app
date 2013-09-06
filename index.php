@@ -230,15 +230,6 @@ font-family: futura, Arial, Helvetica, sans-serif;}
         </div>
     </div>
 
-    <div class="slide" style="display:none; background-image: url(/images/slider/rubilove.jpg);">
-        <!--<img class="zeImg" src="/images/slider/rubilove.jpg" />-->
-        <div class="item-box white" style="color: #000" >
-            <div class="item-title">RubiLove Kimono</div>
-            <div class="inspired-by">Inspired by member</div>
-            <div class="inspira"><a href="/rubilove"/ style="color: #000">RubiLove</a>, Panorama City, CA</div>
-        </div>
-    </div>
-
     <div class="slide" style="display:none; background-image: url(/images/slider/blazer.jpg);">
     	<!--<img class="zeImg" src="/images/slider/blazer.jpeg" />-->
         <div class="item-box white">

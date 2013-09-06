@@ -120,6 +120,7 @@ function events() {
 				isSpineAvailable = false;
 				var offset = $('.spine .images > li').length;
 				url = update_query_string_parameter(url, 'offset', offset);
+                sendToAnal({name: 'Scrolling Down', page : 'Spine'});
 				$('.spine').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
 				globalSpineLoad = $.get(url, function(data) {
 					globalSpineLoad = null;
@@ -614,6 +615,21 @@ userLogin.prototype.submitNewUser = function(e) {
 }
 
 loginObj = new userLogin();
+
+function loadingBar() {
+    this.$view = $('#loadingView');
+    this.speed = 200;
+}
+loadingBar.prototype.show = function() {
+    this.$view.show();
+    this.$view.animate({'bottom': 0}, this.speed);
+}
+loadingBar.prototype.hide = function() {
+    var that = this;
+    this.$view.animate({'bottom': '-'+100+'px'}, this.speed, function() {
+        that.$view.hide();
+    });
+}
 
 function userCache() {
     this.users = new Object();

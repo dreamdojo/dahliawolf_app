@@ -14,6 +14,7 @@
     $feedType = ($_data['view'] == 'wild-4s' ? 'loves' : 'posts');
 ?>
 
+<? if( !MY_PROFILE || isset($_GET['showPublic']) ): ?>
 <div id="mainProfileColumn">
 	<div id="userPostGallery">
     	<? if(count($_data['posts']) >= 6): ?>
@@ -30,7 +31,7 @@
             <div class="levelWrap">
                 <div class="userProfileAvatarHome">
                     <div class="userProfileAvatarFrame">
-                        <a href="<?= $_data['user']['avatar'] ?>" target="_blank"><img alt="<?= $_SESSION['user']['username'] ?>" src="<?= $_data['user']['avatar'] ?>&amp;width=152"/></a>
+                        <a href="<?= $_data['user']['avatar'] ?>" target="_blank"><img alt="<?= $_SESSION['user']['username'] ?>" src="<?= $_data['user']['avatar'] ?>&width=152"/></a>
                     </div>
                 </div>
                 <ul class="userProfileDeetsList">
@@ -83,11 +84,18 @@
 
 
     <div id="userPostGrid"></div>
-</div>	
+</div>
+
 <script>
-	theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
-    var thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= $feedType ?>" );
-</script> 
+	$(function() {
+        theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
+        var thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= $feedType ?>" );
+    });
+</script>
+
+<? elseif(MY_PROFILE): ?>
+    <? include "dashboard.php"; ?>
+<? endif ?>
 <?
 include "footer.php";
 ?>

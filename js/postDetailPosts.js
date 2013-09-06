@@ -66,7 +66,7 @@ postDetailGrid.prototype.init = function() {
 }
 
 postDetailGrid.prototype.setTitle = function() {
-	this.titleContainer.html('More posts by <a href="/'+thePostDetail.data.username+'">'+thePostDetail.data.username+'</a>');
+	//this.titleContainer.html('More posts by <a href="/'+thePostDetail.data.username+'">'+thePostDetail.data.username+'</a>');
 }
 
 postDetailGrid.prototype.toggleLove = function() {
@@ -98,9 +98,9 @@ postDetailGrid.prototype.getPosts = function() {
 	var $this = this;
 	if(this.refillAvailable && !this.finished && (this.offset % this.limit) == 0){
 		this.refillAvailable = false;
-		this.showLoader();
+        dahliaLoader.show();
 		$.post('/action/getPostsByUser', {post_user_id : $this.posterId, feed : $this.feedType, offset : this.offset, limit: this.limit}).done(function(data) {
-			$this.destroyLoader();
+            dahliaLoader.hide();
 			$.each(data.data, function(index, post){
 				var $post = $('<div class="userGridPostFrame"></div>').hover(function() {
                     $(this).find('.option').fadeIn(50);

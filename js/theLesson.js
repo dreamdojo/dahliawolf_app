@@ -25,7 +25,10 @@ theLesson.title = {		'/spine.php' : 'DISCOVER AND VOTE',
 						'/wolf-pack.php' : 'THE WOLFPACK',
 						'/account/settings.php' : 'SETTINGS',
 						'/my-runway.php' : 'YOUR RUNWAY',
-						'/activity.php' : 'YOUR ACTIVITY'
+						'/activity.php' : 'YOUR ACTIVITY',
+                        '/inspire.php' : 'INPSIRE NEW FASHION',
+                        '/invite.php' : 'FIND FRIENDS',
+                        '/shop/index.php' : 'SHOP AND ENJOY'
 					};	
 theLesson.content = {	'/spine.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!', 
 						'/grid.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!', 
@@ -40,13 +43,16 @@ theLesson.content = {	'/spine.php' : 'Show some love for your favorite members i
 						'/wolf-pack.php' : 'These are the top 100 members on Dahlia Wolf. <br>Do you have what it takes to become a pack leader?Be the best of stand out from the rest!',
 						'/account/settings.php' : 'This is where you can update your profile and adjust your settings. <br>Write something cool about yourself. Try not to be boring :)',
 						'/my-runway.php' : 'These are all the styles you inspired. Keep inspiring and build your personal brand ',
-						'/activity.php' : 'Here you can view all the recent activity on Dahlia'
+						'/activity.php' : 'Here you can view all the recent activity on Dahlia',
+                        '/inspire.php' : 'Post your favorite fashion images and inpsire a new work of art',
+                        '/invite.php' : 'Find your friends from Facebook on Dahliawolf or invite them to join you on Dahliawolf',
+                        '/shop/index.php' : 'SHOP MEMBER INSPIRED DESIGNS @ DAHLIAWOLF'
 					};					
 
 theLesson.postTitle = {'step1' : 'POST FASHION INSPIRATIONS', 'step2' : 'INSPIRE NEW DESIGNS', 'step3' : 'INSPIRATION POERTY' };
 theLesson.postContent = {	'step1': 'Share your personal style by posting fashion images.<br> Post images you already have or find new image in our D/W image bank.', 
 							'step2' : 'Share images of the styles you would like created. <br> Upload your own images or find new ones in the DW Image Bank.', 
-							'step3' : 'Tell everyone what you love about this item. Use #tags and @members to help get your inspirations exposure' 
+							'step3' : 'Tell everyone what you love about this item. Use #tags and @members to help get your inspirations exposure',
 						};
 theLesson.height = 230;
 theLesson.isOpen = false;
@@ -59,7 +65,6 @@ theLesson.showMe = theLessonShowMe;
 theLesson.ShowTourGuide = theLessonShowTourGuide;
 theLesson.CloseTourGuide = theLessonCloseTourGuide;
 theLesson.resetToHome = theLessonResetToHome;
-theLesson.togglePostFeedTrainingMode = theLessonTogglePostFeedTrainingMode;
 theLesson.checkFloat = theLessonCheckFloat;
 theLesson.setSection = theLessonSetSection;
 theLesson.init = theLessonInit;
@@ -69,9 +74,11 @@ theLesson.toggleButton = theLessonToggleButton;
 
 function theLessonToggleButton(){
 	if(theLesson.isOpen){
-		theLesson.toggleButtonDisplay.html('HIDE HELPER');
+        theLesson.toggleButtonDisplay.css('background-position',  106+'%');
+		//theLesson.toggleButtonDisplay.html('HIDE HELPER');
 	}else{
-		theLesson.toggleButtonDisplay.html('SHOW HELPER');
+        theLesson.toggleButtonDisplay.css('background-position',  0+'%');
+		//theLesson.toggleButtonDisplay.html('SHOW HELPER');
 	}
 }
 
@@ -89,7 +96,7 @@ function theLessonInit(str){
 	theLesson.display = $('#theLesson');
 	theLesson.titleDisplay = $('#lesson-title');
 	theLesson.contentDisplay = $('#lesson-content');
-	theLesson.toggleButtonDisplay = $('#tour-button'); 
+	theLesson.toggleButtonDisplay = $('#tourButton');
 	theLesson.checkIfClosedByUser();
 	theLesson.setSection(str);
 	/*theLesson.checkFloat();
@@ -115,26 +122,12 @@ function theLessonCheckFloat(){
 	}
 }
 
-function theLessonTogglePostFeedTrainingMode(){
-	if(!thePost.trainingMode){
-		thePost.setTrainingMode();
-	}else{
-		thePost.unsetTrainingMode();
-	}
-}
-
 function theLessonResetToHome(){
 	theLesson.changeTitle(theLesson.title[theLesson.section]);
 	theLesson.changeContent(theLesson.content[theLesson.section]);
 }
 
 function theLessonCloseTourGuide(){// CLOSE THE TOUR GUIDE
-	if(thePost.isOpen){
-		thePost.transformFromTrainingMode();
-	}
-	if(theBank.isOpen){
-		theBank.transformFromTrainingMode();
-	}
 	theLesson.display.slideUp(theLesson.speed);
 	theLesson.isOpen = false;
 	theLesson.toggleButton();
@@ -144,24 +137,13 @@ function theLessonShowTourGuide(){//   OPENS THE TOUR GUIDE
     sendToAnal({name:'Opened tour guide', section:theLesson.title[this.section]});
     if(theLesson.title[this.section]){//check to make sure there is info for page
 		$(window).scrollTop(0);
-		if(!theBank.isOpen){
-			theLesson.changeTitle(theLesson.title[theLesson.section]);
-			theLesson.changeContent(theLesson.content[theLesson.section]);
-		}else{
-			theLesson.changeTitle( theLesson.postTitle['step2'] );
-			theLesson.changeContent( theLesson.postContent['step2'] );
-		}
+        theLesson.changeTitle(theLesson.title[theLesson.section]);
+	    theLesson.changeContent(theLesson.content[theLesson.section]);
 		theLesson.showMe();
 	}
 }
 
 function theLessonShowMe(){
-	if(thePost.isOpen){
-		thePost.transformToTrainingMode();
-	}
-	if(theBank.isOpen){
-		theBank.transformToTrainingMode();
-	}
 	theLesson.display.slideDown(theLesson.speed);
 	theLesson.isOpen = true;
 	theLesson.toggleButton();
