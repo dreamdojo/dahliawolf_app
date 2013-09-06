@@ -46,6 +46,7 @@
 }
 .heading-categories dd {
 	position: relative;
+	z-index: 1;
 }
 .heading-categories ul {
 	position: absolute;
@@ -611,6 +612,9 @@ table.totals.payment th {
 .checkout input[type="submit"]:hover {
 	background: #c96161;
 }
+.checkout.order input[type="submit"] {
+	margin-left: 0;
+}
 .checkout label em {
 	float: right;
 	margin-right: 8px;
@@ -731,4 +735,36 @@ ul.checkout.nav .current a {
 
 form.shipping ul.radios + h3 {
 	margin-top: 20px;
+}
+
+.shop .thank-you-message {
+	margin: 0 0 20px;
+	background: #fcf8e3;
+	border: 1px solid #fbeed5;
+	border-radius: 5px;
+	padding: 20px 20px 10px;
+	color: #c09853;
+}
+.shop .thank-you-message h3,
+.shop .thank-you-message p {
+	margin: 0 0 10px;
+}
+.shop .thank-you-message h3 {
+	font-size: 14px;
+	text-transform: none;
+}
+
+form.return {
+	margin: 0 0 40px;
+}
+.return ul.radios {
+	margin: 0 0 20px;
+}
+.return ul.radios li {
+	display: inline-block;
+	margin-right: 20px;
+}
+.return ul.radios input[type="radio"],
+.return ul.radios label {
+	vertical-align: middle;
 }

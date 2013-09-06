@@ -83,6 +83,11 @@
 				<label for="billing-zip">Zip/Postal Code <em>*</em></label>
 				<input type="text" id="billing-zip" name="billing_zip" />
 			</li>
+            
+            <li>
+				<label for="billing-phone">Phone <em>*</em></label>
+				<input type="text" id="billing-phone" name="billing_phone" />
+			</li>
 			<?
 			/*
 
@@ -185,6 +190,11 @@
 			<li>
 				<label for="shipping-zip">Zip/Postal Code <em>*</em></label>
 				<input type="text" id="shipping-zip" name="shipping_zip" />
+			</li>
+            
+            <li>
+				<label for="shipping-phone">Phone <em>*</em></label>
+				<input type="text" id="shipping-phone" name="shipping_phone" />
 			</li>
 			<?
 			/*

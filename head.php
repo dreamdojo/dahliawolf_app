@@ -4,9 +4,9 @@ if(isset($_COOKIE["dahliaUser"]) && !isset($_SESSION['user']) ){
     $_SESSION['token'] = $_COOKIE["token"];
 }
 
-require 'config/config.php';
-require 'config/mobile-detect.php';
-require 'includes/php/initial-calls.php';
+require_once 'config/config.php';
+require_once 'config/mobile-detect.php';
+require_once 'includes/php/initial-calls.php';
 
 $path_parts = explode('/', $_SERVER['REQUEST_URI']);
 $top_dir = $path_parts[1];
@@ -16,7 +16,7 @@ if ($top_dir == 'mobile') {
 }
 
 if ($top_dir == 'shop') {
-	require 'includes/php/shop-initial-calls.php';
+	require_once 'includes/php/shop-initial-calls.php';
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

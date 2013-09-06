@@ -2,6 +2,10 @@ a {
 	cursor: pointer;
 }
 
+.no-wrap {
+	white-space: nowrap;
+}
+
 .pub-butt{
 	border: none;
 	background: none;
@@ -371,7 +375,7 @@ body > .profile {
 	display:none;
 	font-size: 23px;
 	text-align: center;
-	
+
 	/*position: fixed;
 	width: 100%;
 	z-index: 2;
