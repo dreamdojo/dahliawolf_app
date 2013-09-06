@@ -14,7 +14,7 @@
     $feedType = ($_data['view'] == 'wild-4s' ? 'loves' : 'posts');
 ?>
 
-<? if( !MY_PROFILE || isset($_GET['showPublic']) ): ?>
+<?// if( !MY_PROFILE || isset($_GET['showPublic']) ): ?>
 <div id="mainProfileColumn">
 	<div id="userPostGallery">
     	<? if(count($_data['posts']) >= 6): ?>
@@ -93,9 +93,9 @@
     });
 </script>
 
-<? elseif(MY_PROFILE): ?>
-    <? include "dashboard.php"; ?>
-<? endif ?>
+<? //elseif(MY_PROFILE): ?>
+    <?// include "dashboard.php"; ?>
+<?// endif ?>
 <?
 include "footer.php";
 ?>
