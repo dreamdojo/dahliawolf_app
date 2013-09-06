@@ -141,6 +141,6 @@ Share.prototype.add = function(id, net, type, posting_owner, callback) {
 
 Share.prototype.get = function(id, type, callback) {
     this.callback = callback;
-    this.callApi({function : 'get_shares', posting_id : id, type : type});
+    this.callApi({function : 'get_shares', posting_id : id, user_id : dahliawolf.userId, type : type});
 }
 
