@@ -317,6 +317,8 @@ $is_review = !empty($is_review) ? true : false;
                         <?= $_data['billing_address']['city'] ?>, <?= $_data['billing_address']['state'] ?> <?= $_data['billing_address']['zip'] ?>
                         <br />
                         <?= $_data['billing_address']['country'] ?>
+                        <br />
+                        <?= $_data['billing_address']['phone'] ?>
                     </p>
                     <?
                 }
@@ -332,6 +334,8 @@ $is_review = !empty($is_review) ? true : false;
                         <?= $_data['shipping_address']['city'] ?>, <?= $_data['shipping_address']['state'] ?> <?= $_data['shipping_address']['zip'] ?>
                         <br />
                         <?= $_data['shipping_address']['country'] ?>
+                        <br />
+                        <?= $_data['shipping_address']['phone'] ?>
                     </p>
                     <?
                 }

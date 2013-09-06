@@ -6,6 +6,8 @@ function User(userData) {
     }
     this.member = new Member();
     this.post = new Post();
+    this.post = new Post();
+    this.share = new Share();
 }
 
 User.prototype = {
@@ -55,19 +57,16 @@ function Api() {
 }
 
 Api.prototype.callApi = function(data) {
-    var params = '';
-    console.log(data);
-    for (var key in data){
-        if (data.hasOwnProperty(key)) {
-            params += '&'+key+'='+data[key];
-        }
-    }
+    that = this;
+    data.use_hmac_check = 0;
 
     if(dahliawolf.isLoggedIn) {
-        console.log('calling api '+this.baseUrl+this.apiApi+'?function='+this.apiFunction+params);
-        if(typeof this.callback === 'function') {
-            this.callback();
-        }
+        var url = this.baseUrl+this.apiApi;
+        $.getJSON(url, data, function(data) {
+            if(typeof that.callback === 'function') {
+                that.callback(data);
+            }
+        });
     } else {
         console.log('not logged in');
     }
@@ -119,3 +118,29 @@ Post.prototype.delete = function(id, callback) {
     this.callApi();
     return this;
 }
+
+//**************************************************************************************** SHARING
+
+function Share() {
+    this.apiApi = 'sharing.json';
+}
+
+Share.prototype = new Api();
+Share.prototype.constructor = Share;
+
+Share.prototype.add = function(id, net, type, posting_owner, callback) {
+    this.callback = callback;
+    //http://dev.dahliawolf.com/api/1-0/sharing.json?function=add_share&product_id=123&sharing_user_id=658&network=facebook&type=product&product_owner_user_id=658&use_hmac_check=0
+    //http://dev.dahliawolf.com/api/1-0/sharing.json?function=get_shares&type=product&product_id=123&use_hmac_check=0
+    if(type === 'posting') {
+        this.callApi({function : 'add_share', posting_id : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
+    } else {
+        this.callApi({function : 'add_share', id_product : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
+    }
+}
+
+Share.prototype.get = function(id, type, callback) {
+    this.callback = callback;
+    this.callApi({function : 'get_shares', posting_id : id, type : type});
+}
+

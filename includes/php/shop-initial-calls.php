@@ -300,7 +300,7 @@ else if ($self == '/shop/my-orders.php') {
 		$_data['orders'] = $data['data']['get_user_orders']['data'];
 	}
 }
-else if ($self == '/shop/order-details.php' || $self == '/shop/post-checkout-summary.php') {
+else if ($self == '/shop/order-details.php' || $self == '/shop/post-checkout-summary.php' || $self == '/shop/order-return.php') {
 	if (empty($_SESSION['user'])) {
 		$_SESSION['errors'] = array('Please login to continue.');
 		redirect('/login.php');
@@ -333,6 +333,17 @@ else if ($self == '/shop/order-details.php' || $self == '/shop/post-checkout-sum
 				, 'id_order' 	=> $_GET['id_order']
 			)
 		);
+		// Get return types
+		if ($self == '/shop/order-return.php') {
+			$calls['get_return_types'] = array();
+			$calls['get_user_order_detail_returns'] = array(
+				'user_id'		=> $_SESSION['user']['user_id']
+				, 'id_shop' 	=> SHOP_ID
+				, 'id_lang' 	=> LANG_ID
+				, 'id_order' 	=> $_GET['id_order']
+			);
+		}
+
 		$data = commerce_api_request('orders', $calls, true);
 		if (!empty($data['errors']) || !empty($data['data']['get_user_order_details']['errors'])) {
 			$_SESSION['errors'] = api_errors_to_array($data, 'get_user_order_details');
@@ -341,6 +352,20 @@ else if ($self == '/shop/order-details.php' || $self == '/shop/post-checkout-sum
 			$_data['order'] = $data['data']['get_user_order_details']['data'];
 		}
 
+		if ($self == '/shop/order-return.php') {
+			if (!empty($data['errors']) || !empty($data['data']['get_return_types']['errors'])) {
+				$_SESSION['errors'] = api_errors_to_array($data, 'get_return_types');
+			}
+			else {
+				$_data['return_types'] = $data['data']['get_return_types']['data'];
+			}
+			if (!empty($data['errors']) || !empty($data['data']['get_user_order_detail_returns']['errors'])) {
+				$_SESSION['errors'] = api_errors_to_array($data, 'get_user_order_detail_returns');
+			}
+			else {
+				$_data['order_detail_returns'] = $data['data']['get_user_order_detail_returns']['data'];
+			}
+		}
 	}
 }
 ?>

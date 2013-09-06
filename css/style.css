@@ -595,19 +595,3 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-progressbar { height:2em; text-align: left; }
 .ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }
 
-.shop .thank-you-message {
-	margin: 0 0 20px;
-	background: #fcf8e3;
-	border: 1px solid #fbeed5;
-	border-radius: 5px;
-	padding: 20px 20px 10px;
-	color: #c09853;
-}
-.shop .thank-you-message h3,
-.shop .thank-you-message p {
-	margin: 0 0 10px;
-}
-.shop .thank-you-message h3 {
-	font-size: 14px;
-	text-transform: none;
-}

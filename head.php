@@ -4,9 +4,9 @@ if(isset($_COOKIE["dahliaUser"]) && !isset($_SESSION['user']) ){
     $_SESSION['token'] = $_COOKIE["token"];
 }
 
-require 'config/config.php';
-require 'config/mobile-detect.php';
-require 'includes/php/initial-calls.php';
+require_once 'config/config.php';
+require_once 'config/mobile-detect.php';
+require_once 'includes/php/initial-calls.php';
 
 $path_parts = explode('/', $_SERVER['REQUEST_URI']);
 $top_dir = $path_parts[1];
@@ -90,6 +90,7 @@ if ($top_dir == 'shop') {
 <script src="/js/jquery.countdown.js" type="text/javascript"></script>
 <script type="text/javascript">
 var theUser = new Object();
+var LOVE_REQUIRED = 1000;
 <? if (IS_LOGGED_IN): ?>
 	var userConfig = <?= json_encode($userConfig) ?>;
 	//console.log(userConfig);
@@ -143,4 +144,3 @@ var theUser = new Object();
 <!-- End of Woopra Code -->
 </script>
 </head>
-

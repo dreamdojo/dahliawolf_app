@@ -34,6 +34,7 @@ else {
 			, 'zip' => $_POST['billing_zip']
 			, 'state' => $billing_state
 			, 'country' => $_POST['billing_country']
+			, 'phone' => $_POST['billing_phone']
 		)
 	);
 	$data = api_request('address', $calls, true);
@@ -66,6 +67,7 @@ else {
 			, 'zip' => $_POST['shipping_zip']
 			, 'state' => $shipping_state
 			, 'country' => $_POST['shipping_country']
+			, 'phone' => $_POST['shipping_phone']
 		)
 	);
 	$data = api_request('address', $calls, true);
