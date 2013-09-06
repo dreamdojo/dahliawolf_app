@@ -31,7 +31,18 @@
     #dbModal{ position: fixed; width: 700px; height: 300px; border: #c2c2c2 thin solid; background-color: #fff; display: none; left: 50%; top: 50%; margin-top: -150px; margin-left: -350px; z-index: 1000010;overflow: scroll;}
     #dbModal ul{width: 90%;background-color: #c2c2c2;height: 150px;margin: 0px auto;margin-top: 10px;}
     #dbModal li{float: left;}
-    #dbModal .avatarFrame{height: 100px;width: 100px;background-color: #000;border-radius: 50px;margin-top: 25px;margin-left: 15px;}
+    #dbModal .avatarFrame{height: 100px;width: 100px; border-radius: 50px;margin-top: 25px;margin-left: 15px; overflow: hidden; background-position: 50%; background-size: 100%; background-repeat: no-repeat;}
+    #dbModal .social_icon{float: right; width: 150px; height: 150px; background-size: 100%; background-repeat: no-repeat; background-position: 0% 35%;}
+    #dbModal .facebook{background-image: url("/mobile/images/shareFb.png");}
+    #dbModal .pinterest{background-image: url("/mobile/images/sharePintrest.png");}
+    #dbModal .gplus{background-image: url("/mobile/images/shareGplus.png");}
+    #dbModal .instagram{background-image: url("/mobile/images/shareInstagram.png");}
+    #dbModal .text{background-image: url("/mobile/images/shareText.png");}
+    #dbModal .twitter{background-image: url("/mobile/images/shareTwitter.png");}
+    #dbModal .tumbler{background-image: url("/mobile/images/shareTumbler.png");}
+    #dbModal .shareDeets{margin-top: 50px;margin-left: 10px;}
+    #dbModal .shareDeets p:first-child{font-size: 18px;}
+    #dbModal .shareDeets p{line-height: 10px;}
     .tranny{transition: all .5s; -webkit-transition: all .5s;}
     .sorter{cursor: pointer;}
     .filter{cursor: pointer;}
@@ -53,8 +64,8 @@
         </ul>
         <ul class="cashOut">
             <li style="font-weight: 100;">ACCOUNT BALANCE</li>
-            <li style="font-size: 32px;">$729</li>
-            <li class="dbButton" style="width: 100px;">CASH OUT</li>
+            <li style="font-size: 32px;">$0</li>
+            <li class="dbButton" style="width: 100px;" onClick="alert('coming soon');">CASH OUT</li>
         </ul>
     </div>
 </div>
@@ -157,13 +168,16 @@
 
     dashboard.getProducts = function() {
         var that = this;
-        var URL = '/api/commerce/product.json?function=get_products'+(dahliawolf.userId ? '&viewer_user_id='+dahliawolf.userId : '')+'&use_hmac_check=0&id_shop=3&id_lang=1';
+        var URL = '/api/commerce/product.json?function=get_products&user_id='+dahliawolf.userId+'&viewer_user_id='+dahliawolf.userId+'&use_hmac_check=0&id_shop=3&id_lang=1';
 
         if(dashboard.isAvailable) {
             dashboard.isAvailable = false;
+            holla.log(URL);
             $.getJSON(URL, function(data) {
                 dashboard.isAvailable = true;
-                holla.log(data);
+                $.each(data.data.get_products.data, function(index, product) {
+                    that.$bin.append(new dashboardProduct(product));
+                });
             });
         }
     }
@@ -185,9 +199,10 @@
 
     function dashboardProduct(data) {
         this.data = data;
-        this.$product = $('<ul></ul>');
+        this.$product = $('<ul class="dbPost"></ul>');
+        $('<li style="width: 30%; background-image: url(\''+this.data.inspiration_image_url+'&width=300\')"></li>').appendTo(this.$product);
 
-        return this;
+        return this.$product;
     }
 
     dashboard.resetBin = function() {
@@ -221,13 +236,16 @@
             var modalHt = (data.data.get_shares.data.sharings.length * 160) + 10;
             $modal.height(modalHt).css({'top': ((window.innerHeight - modalHt) / 2), 'margin-top': 0}  );
 
+            holla.log(data);
             setTimeout(function() {
                 $.each(data.data.get_shares.data.sharings, function(index, shares) {
                     var $user = $('<ul></ul>');
-                    $user.append('<li><div class="avatarFrame"><img src=""></div></li>');
+                    $user.append('<li><div class="avatarFrame" style="background-image: url('+shares.avatar+')"></div></li>');
+                    $user.append('<li class="shareDeets"><p><a href="/'+shares.username+'">@'+shares.username+'</a></p><p>'+shares.location+'</p><p>is following '+shares.is_followed+'</p></li>');
+                    $user.append('<li class="social_icon '+shares.network+'"></li>');
                     $user.appendTo($modal);
                 });
-            }, 500);
+            }, 800);
         });
     }
 

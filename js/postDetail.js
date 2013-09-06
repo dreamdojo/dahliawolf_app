@@ -59,7 +59,7 @@ postDetail.prototype.publishComment = function() {
 
 postDetail.prototype.recordShare = function() {
     var platform = $(this).data('platform');
-    var str = '/api/1-0/sharing.json?function=add_share&posting_id='+thePostDetail.data.posting_id+'network='+platform+'posting_owner_user_id='+thePostDetail.data.user_id+'&use_hmac_check=0';
+    var str = '/api/1-0/sharing.json?function=add_share&posting_id='+thePostDetail.data.posting_id+'&type=posting&network='+platform+'&posting_owner_user_id='+thePostDetail.data.user_id+'&sharing_user_id='+dahliawolf.userId+'&use_hmac_check=0';
 
     sendToAnal({name:'Shared Post on '+platform, id : thePostDetail.data.posting_id});
     $.getJSON(str, function(data) {
