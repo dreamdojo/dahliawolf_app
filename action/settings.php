@@ -24,7 +24,15 @@ if (!empty($_FILES['avatar']['name'])) {
 		rename($uploadResults[0], $destination);
 
 		$avatar_destination = AVATARFILE . $_SESSION['user']['user_id'];
+        if(!empty($_GET['ajax'])) {
+            echo "SUCCESS";
+            die();
+        }
 	}
+}
+if($_POST['avatarAjax']) {
+    echo "FAIL";
+    die();
 }
 
 // API call

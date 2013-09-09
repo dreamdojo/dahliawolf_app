@@ -1,8 +1,8 @@
-<style>
+<style xmlns="http://www.w3.org/1999/html">
     #dashboardHeader{width: 100%; height: 200px; background-color: #f3f3f3;}
     #dashboardHeader .leftCol{float: left; width: 150px;}
     #dashboardHeader .dashboardInner{margin: 0px auto; width: 1000px; padding-top: 25px;}
-    #dashboardHeader .avatarFrame{width: 100px;overflow: hidden; border-radius: 50px;margin-left: 25px;}
+    #dashboardHeader .avatarFrame{width: 100px; height: 100px; overflow: hidden; border-radius: 50px;margin-left: 25px; background-position: 50%; background-repeat: no-repeat; background-size: 100%;}
     #dashboardHeader .avatarFrame img{width: 100%;}
     #dashboardHeader .mLevel{font-size: 15px; color: #fff; font-weight: bolder; background-color: #ff0066; width: 175px; text-indent: 5px !important;}
     #dashboardHeader .stats{width: 400px;float: left;margin-left: 10px;margin-top: 15px;}
@@ -47,12 +47,14 @@
     .sorter{cursor: pointer;}
     .filter{cursor: pointer;}
 
+    #avatarUploadSystem{position: fixed; display: none; width: 650px; height: 400px; background-color: #fff; border: #c2c2c2 thin solid; left: 50%; top: 50%; margin-left: -325px; margin-top: -200px;}
+    #avatarUploadSystem .avatarFrame{ width: 150px; height: 150px; overflow: hidden; border-radius: 80px; background-size: 100%; background-repeat: no-repeat; background-position: 50%;}
 </style>
 <div id="dashboardHeader">
     <div class="dashboardInner">
         <div class="leftCol">
-            <div class="avatarFrame">
-                <img src="<?= $_data['user']['avatar'] ?>&width=152">
+            <input type="file" name="avatar" onchange="new dahliawolf.uploadAvatar(this.files[0]);">
+            <div class="avatarFrame theUsersAvatar" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=152')">
             </div>
             <a href="/<?= $_data['user']['username'] ?>?showPublic=true"><div class="dbButton vpp">VIEW PUBLIC PROFILE</div></a>
         </div>

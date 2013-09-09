@@ -50,6 +50,75 @@ User.prototype.isFacebookFriend = function(id) {
 User.prototype.isFriend = function(id) {
     return true;
 }
+//***************************************************************************** User uploading system
+User.prototype.uploadAvatar = function(file) {
+    this.file = file;
+
+    if( window.FormData !== undefined ) {
+        this.preview();
+    }
+}
+
+User.prototype.uploadAvatar.prototype.preview = function() {
+    var reader = new FileReader();
+
+    reader.readAsDataURL(this.file);
+    reader.onload = $.proxy(this.drawPreview, this);
+}
+
+User.prototype.uploadAvatar.prototype.drawPreview = function(event) {
+    this.$previewImg = $('<div class="avatarFrame" style="background-image: url(\''+event.target.result+'\');"></div>');
+    this.$view = $('<div id="avatarUploadSystem"></div>');
+    this.$swapButton = $('<div class="swapButton">SWAP</div>');
+
+    this.$previewImg.appendTo(this.$view);
+    this.$swapButton.appendTo(this.$view).on('click', $.proxy(this.doUploadAvatar, this) );
+    this.$view.appendTo($('body')).fadeIn(200);
+}
+
+User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
+    var URL = '/action/settings.php?ajax=true';
+    var that = this;
+
+    var MyForm = new FormData();
+
+    MyForm.append("avatar", this.file);
+    MyForm.append("avatarAjax", true);
+
+    var oReq = new XMLHttpRequest();
+
+    //this.oReq.upload.addEventListener("loadstart", transferStart, false);
+    //this.oReq.upload.addEventListener("progress", transferUpdate, false);
+    oReq.onreadystatechange = function() {
+        if(this.readyState == 4) {
+            var $avatars = $('.theUsersAvatar');
+            console.log(this.responseText);
+            $.each($avatars, function(index, avatar) {
+                var $avatar = $(avatar);
+
+                if($avatar.find('img').length) {
+                    $avatar.find('img').attr('src', dahliawolf.avatar+'&width=150&time='+new Date().getTime());
+                } else {
+                    $('.theUsersAvatar').css('background-image', 'url('+dahliawolf.avatar+'&width=150)');
+                }
+            });
+            that.closeShop();
+        }
+    }
+    oReq.open("POST", URL);
+    oReq.send(MyForm);
+}
+
+User.prototype.uploadAvatar.prototype.updateAvatar = function(file) {
+    this.file = file;
+    //this.$previewImg.css('background-image', 'url('')');
+}
+
+User.prototype.uploadAvatar.prototype.closeShop = function() {
+    this.$view.empty().remove();
+}
+
+
 //************************************************************************************ API
 
 function Api() {
