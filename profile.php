@@ -14,7 +14,7 @@
     $feedType = ($_data['view'] == 'wild-4s' ? 'loves' : 'posts');
 ?>
 
-<?// if( !MY_PROFILE || isset($_GET['showPublic']) ): ?>
+<? if( !MY_PROFILE || isset($_GET['showPublic']) ): ?>
 <div id="mainProfileColumn">
 	<div id="userPostGallery">
     	<? if(count($_data['posts']) >= 6): ?>
@@ -68,7 +68,7 @@
             <a href="http://www.tumblr.com/share/photo?source=<?= rawurlencode( $_data['user']['avatar'] )?>&caption=<?= rawurlencode( "OMG Check out my profile on Dahliawolf and vote on my posts you LOVE! Thanks smiles:)" )?>&click_thru=<?= rawurlencode( "http://www.dahliawolf.com/".$_SESSION['user']['username'] ) ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
             	<li id="profileShareTumblr"></li>
             </a>
-            <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&amp;url=http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+            <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&url=http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
             	<li id="profileShareTwitter"></li>
             </a>
             <a href='mailto:?subject=Check out my profile on Dahliawolf&body=Check out my profile on Dahliawolf and vote some of posts and help get my items chosen to make new fashions! Thank you :) http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>'>
@@ -93,9 +93,9 @@
     });
 </script>
 
-<? //elseif(MY_PROFILE): ?>
-    <?// include "dashboard.php"; ?>
-<?// endif ?>
+<? elseif(MY_PROFILE): ?>
+    <? include "dashboard.php"; ?>
+<? endif ?>
 <?
 include "footer.php";
 ?>

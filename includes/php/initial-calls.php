@@ -38,7 +38,7 @@ if (IS_LOGGED_IN) {
 	$userConfig = $userConfig['data'];
 }
 
-if ($self == '/spine.php' || $self == '/spine-chunk.php'  || $self == '/post-feed.php') {
+if ($self == '/spine.php' || $self == '/spine-chunk.php' || $self == '/index.php'  || $self == '/post-feed.php') {
 	require DR . '/includes/php/classes/Spine' . $_data['spine_version'] . '.php';
 	$spine_limit = Spine::get_spine_limit();
 

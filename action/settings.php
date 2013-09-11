@@ -24,7 +24,27 @@ if (!empty($_FILES['avatar']['name'])) {
 		rename($uploadResults[0], $destination);
 
 		$avatar_destination = AVATARFILE . $_SESSION['user']['user_id'];
+
+        if(!empty($_GET['ajax'])) {//run if ajax avatar
+
+            $user_params = array(
+                'user_id' => $_SESSION['user']['user_id']
+            );
+
+            if (!empty($avatar_destination)) {
+                $user_params['avatar'] = $avatar_destination;
+            }
+
+            $data = api_call('user', 'update_user', $user_params);
+
+            echo $data;
+            die();
+        }
 	}
+}
+if($_POST['avatarAjax']) {
+    echo "FAIL";
+    die();
 }
 
 // API call

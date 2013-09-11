@@ -111,7 +111,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
             <li>
                 <label for="id_img">Change Image</label>
                 <div class="Right">
-                    <p><input id="gphoto" type="file" name="avatar" size="6" onchange="this.form.submit();" /></p>
+                    <p><input id="gphoto" type="file" size="6" onchange="this.form.submit();" /></p>
                 </div>
                 <span class="help_text">Accepted Formats: jpeg, jpg, gif and png</span>
             </li>

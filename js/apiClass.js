@@ -8,6 +8,7 @@ function User(userData) {
     this.post = new Post();
     this.post = new Post();
     this.share = new Share();
+    this.shop = new Shop();
 }
 
 User.prototype = {
@@ -50,18 +51,112 @@ User.prototype.isFacebookFriend = function(id) {
 User.prototype.isFriend = function(id) {
     return true;
 }
+//***************************************************************************** User uploading system
+User.prototype.uploadAvatar = function(_this, file) {
+    this.coordTop = $(_this).offset().top;
+    this.coordLeft = $(_this).offset().left;
+    this.file = file;
+    $('.avatarChangeButton').hide();
+
+    if( window.FormData !== undefined ) {
+        this.preview();
+    }
+}
+
+User.prototype.uploadAvatar.prototype.preview = function() {
+    var reader = new FileReader();
+
+    reader.readAsDataURL(this.file);
+    reader.onload = $.proxy(this.drawPreview, this);
+}
+
+User.prototype.uploadAvatar.prototype.drawPreview = function(event) {
+    this.$previewImg = $('<div class="avatarFrame avatarShadow" style="background-image: url(\''+event.target.result+'\');"></div>');
+    this.$view = $('<div id="avatarUploadSystem"></div>').css('left' , this.coordLeft+40).css('top' , this.coordTop-10);
+    this.$swapButton = $('<div class="swapButton">Accept</div>');
+    this.$changeButton = $('<div class="swapButton">Change</div>');
+    this.$cancelButton = $('<div class="swapButton">Cancel</div>');
+    this.$uploadStatus = $('<div id="percUpload"></div>').appendTo(this.$view);
+
+    this.$previewImg.appendTo(this.$view);
+    this.$swapButton.appendTo(this.$view).on('click', $.proxy(this.doUploadAvatar, this) );
+    this.$changeButton.appendTo(this.$view).on('click', $.proxy(this.changeAvatar, this) );
+    this.$cancelButton.appendTo(this.$view).on('click', $.proxy(this.closeShop, this) );
+    this.$view.appendTo($('body')).fadeIn(200);
+}
+
+User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
+    var URL = '/action/settings.php?ajax=true';
+    var that = this;
+
+    var MyForm = new FormData();
+
+    MyForm.append("avatar", this.file);
+    MyForm.append("avatarAjax", true);
+
+    var oReq = new XMLHttpRequest();
+
+    oReq.upload.onprogress = function(e) {
+        that.$uploadStatus.html( Math.ceil( (e.loaded/e.total)*100 )+'%');
+    }
+
+    oReq.onreadystatechange = function() {
+        if(this.readyState == 4) {
+            var $avatars = $('.theUsersAvatar');
+            that.newAvatar = $.parseJSON(this.responseText).data.avatar;
+
+            that.$view.animate({left: that.coordLeft - 121}, 200, function() {
+                $.each($avatars, function(index, avatar) {
+                    var $avatar = $(avatar);
+
+                    $('.avatarChangeButton').show();
+                    if($avatar.find('img').length) {
+                        $avatar.find('img').attr('src', that.newAvatar+'&width=150&time='+new Date().getTime());
+                    } else {
+                        $('.theUsersAvatar').css('background-image', 'url('+that.newAvatar+'&width=150)');
+                    }
+                });
+                setTimeout(function() {
+                    that.closeShop();
+                }, 100);
+            });
+        }
+    }
+    oReq.open("POST", URL);
+    oReq.send(MyForm);
+}
+
+User.prototype.uploadAvatar.prototype.changeAvatar = function() {
+    alert('coming soon');
+}
+
+User.prototype.uploadAvatar.prototype.updateAvatar = function(file) {
+    this.file = file;
+    //this.$previewImg.css('background-image', 'url('')');
+}
+
+User.prototype.uploadAvatar.prototype.closeShop = function() {
+    this.$view.fadeOut(200, function() {
+        $(this).empty().remove();
+    });
+}
+
+
 //************************************************************************************ API
 
 function Api() {
     this.baseUrl = '/api/1-0/';
+    this.baseCommerceUrl = "/api/commerce/";
+    this.commerceApi = false;
 }
 
 Api.prototype.callApi = function(data) {
     that = this;
     data.use_hmac_check = 0;
+    data.function = this.apiFunction;
 
     if(dahliawolf.isLoggedIn) {
-        var url = this.baseUrl+this.apiApi;
+        var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
                 that.callback(data);
@@ -94,7 +189,7 @@ Member.prototype.unfollow = function(id, callback) {
 }
 //************************************************************************************ POST
 function Post() {
-    this.apiApi = 'post.json'
+    this.apiApi = 'posting.json'
 }
 Post.prototype = new Api();
 Post.prototype.constructor = Post;
@@ -118,6 +213,32 @@ Post.prototype.delete = function(id, callback) {
     this.callApi();
     return this;
 }
+Post.prototype.promote = function(id, callback) {
+    this.apiFunction = 'promote';
+    this.callback = callback;
+    this.callApi({posting_id : id, user_id : dahliawolf.userId});
+    return this;
+}
+Post.prototype.getLovers = function(id, limit, offset, callback) {
+    this.apiFunction = 'get_lovers';
+    this.callback = callback;
+    this.callApi({ posting_id : id, viewer_user_id : dahliawolf.userId, offset : offset, limit : limit});
+    return this;
+}
+//****************************************************************************************** Product
+function Shop() {
+    this.apiApi = 'product.json';
+    this.commerceApi = true;
+}
+Shop.prototype = new Api();
+Shop.prototype.constructor = Shop;
+
+Shop.prototype.getProducts = function(callback) {
+    this.apiFunction = 'get_products';
+    this.callback = callback;
+    this.callApi({viewer_user_id : dahliawolf.userId, id_shop:3, id_lang:1});
+    ///api/commerce/product.json?function=get_products'+(theUser.id ? '&viewer_user_id='+theUser.id : '')+'&use_hmac_check=0&id_shop=3&id_lang=1
+}
 
 //**************************************************************************************** SHARING
 
@@ -130,17 +251,17 @@ Share.prototype.constructor = Share;
 
 Share.prototype.add = function(id, net, type, posting_owner, callback) {
     this.callback = callback;
-    //http://dev.dahliawolf.com/api/1-0/sharing.json?function=add_share&product_id=123&sharing_user_id=658&network=facebook&type=product&product_owner_user_id=658&use_hmac_check=0
-    //http://dev.dahliawolf.com/api/1-0/sharing.json?function=get_shares&type=product&product_id=123&use_hmac_check=0
+    this.apiFunction = 'add_share';
     if(type === 'posting') {
-        this.callApi({function : 'add_share', posting_id : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
+        this.callApi({posting_id : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
     } else {
-        this.callApi({function : 'add_share', id_product : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
+        this.callApi({id_product : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
     }
 }
 
 Share.prototype.get = function(id, type, callback) {
     this.callback = callback;
-    this.callApi({function : 'get_shares', posting_id : id, user_id : dahliawolf.userId, type : type});
+    this.apiFunction = 'get_shares';
+    this.callApi({posting_id : id, user_id : dahliawolf.userId, type : type});
 }
 
