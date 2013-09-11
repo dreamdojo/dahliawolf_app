@@ -18,7 +18,7 @@
     .shopEmpty{font-size: 20px; text-align: center; margin-top: 15px;}
     body{text-align: center;}
 </style>
-<img style="text-align: center; margin: 0px auto; width: 80%; max-width: 1200px;" src="/images/COMINGSOON.png">
+<a href="/inspire"><img style="text-align: center; margin: 0px auto; width: 80%; max-width: 1200px;" src="/images/COMINGSOON.png"></a>
 <!--
 <? if( empty($user['user_id']) ): ?>
     <ul id="sortBar">
