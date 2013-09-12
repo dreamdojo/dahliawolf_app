@@ -121,12 +121,12 @@ function events() {
 				var offset = $('.spine .images > li').length;
 				url = update_query_string_parameter(url, 'offset', offset);
                 sendToAnal({name: 'Scrolling Down', page : 'Spine'});
-				$('.spine').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
+                dahliawolf.loader.show();
 				globalSpineLoad = $.get(url, function(data) {
 					globalSpineLoad = null;
 					if (data) {
 						isSpineAvailable = true;
-						$('#theGridLoader').remove();
+                        dahliawolf.loader.hide();
 						$('.spine .images:last').after(data);
 					} else {
                         $('#theGridLoader').remove();
@@ -619,15 +619,28 @@ loginObj = new userLogin();
 function loadingBar() {
     this.$view = $('#loadingView');
     this.speed = 200;
+    this.keepAnimating = true;
 }
 loadingBar.prototype.show = function() {
+    var that = this;
     this.$view.show();
-    this.$view.animate({'bottom': 0}, this.speed);
+    this.$view.animate({'bottom': 0}, this.speed, function() {
+        setTimeout(function() {
+            that.$view.find('img').addClass('spinnerz').on('webkitTransitionEnd', function() {
+                if($(this).hasClass('spinnerz')) {
+                    $(this).removeClass('spinnerz');
+                } else {
+                    $(this).addClass('spinnerz')
+                }
+            });
+        }, 100);
+    });
 }
 loadingBar.prototype.hide = function() {
     var that = this;
     this.$view.animate({'bottom': '-'+100+'px'}, this.speed, function() {
         that.$view.hide();
+        that.$view.find('img').removeClass('spinnerz').unbind();
     });
 }
 

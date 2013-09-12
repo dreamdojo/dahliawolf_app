@@ -171,12 +171,12 @@
         }
 
         if(dashboard.isAvailable) {
-            dahliaLoader.show();
+            dahliawolf.loader.show();
             dashboard.isAvailable = false;
             $.post('/action/getPostsByUser', data).done(function(data) {
                 holla.log(data);
                 dashboard.isAvailable = true;
-                dahliaLoader.hide();
+                dahliawolf.loader.hide();
                 $.each(data.data, function(index, post) {
                     that.$bin.append(new dashboardPost(post));
                 });

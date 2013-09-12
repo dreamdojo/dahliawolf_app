@@ -9,6 +9,7 @@ function User(userData) {
     this.post = new Post();
     this.share = new Share();
     this.shop = new Shop();
+    this.loader = new this.Loader();
 }
 
 User.prototype = {
@@ -25,9 +26,42 @@ User.prototype = {
     get increaseFollowers() { return ++this.data.followers;},
     get decreaseFollowers() { return --this.data.followers;},
     get isLoggedIn() {return (this.data.user_id && this.data.user_id > 0 ? true : false);},
+    get whoareyou() {return 'A hot bitch with a fat ASS!!';},
+    get hi() {return 'hello!';},
 
     getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');}
 };
+
+User.prototype.Loader = function(){
+    this.$view = $('#loadingView');
+    this.speed = 200;
+}
+
+User.prototype.Loader.prototype.show = function() {
+    var $view = $('#loadingView');
+
+    $view.show();
+    $view.animate({'bottom': 0}, this.speed, function() {
+        setTimeout(function() {
+            $view.find('img').addClass('spinnerz').on('webkitTransitionEnd', function() {
+                if($(this).hasClass('spinnerz')) {
+                    $(this).removeClass('spinnerz');
+                } else {
+                    $(this).addClass('spinnerz')
+                }
+            });
+        }, 100);
+    });
+}
+
+User.prototype.Loader.prototype.hide = function() {
+    var $view = $('#loadingView');
+
+    $view.animate({'bottom': '-'+100+'px'}, this.speed, function() {
+        $view.hide();
+        $view.find('img').removeClass('spinnerz').unbind();
+    });
+}
 
 User.prototype.setFriends = function(data) {
     this.friends = data;

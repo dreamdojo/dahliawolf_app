@@ -26,10 +26,12 @@ theGrid.htText = 'style="min-height: 100%; min-width:101%; width:auto;"';
 theGrid.$view = $('#theGrid');
 
 theGrid.showLoader = function() {
-	$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
+	//$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
+    dahliaLoader.show();
 }
 theGrid.destroyLoader = function() {
-	$('#theGridLoader').remove();
+    dahliaLoader.hide();
+	//$('#theGridLoader').remove();
 }
 
 theGrid.adjustMargins = function() {
@@ -77,7 +79,7 @@ theGrid.getImages = function() {
 				theGrid.posts[post.posting_id] = new theGrid.post(post);
                 theGrid.adjustMargins();
 			});
-			//theGrid.container.append('<div style="clear:left"></div>');
+			theGrid.container.append('<div style="clear:left"></div>');
 			theGrid.offset += theGrid.limit;
 			theGrid.isAvailable = true;
 		});
