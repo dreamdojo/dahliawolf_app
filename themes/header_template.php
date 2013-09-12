@@ -140,7 +140,7 @@ $(document).ready(function()
 </div>
 
 <div id="loadingView">
-	<img src="/images/loading-feed.gif">
+	<img src="/images/dw-logo.png">
 </div>
 
 <script>
