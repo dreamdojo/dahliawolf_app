@@ -23,7 +23,7 @@
     #dataCol #filters li{float: left; text-align: center;width: 33%; font-size: 11px; color: #666666;}
     #dataCol #postSelector{ width: 98%;}
 
-    #postBin{width: 96%; margin-left: 2%;}
+    #postBin{width: 96%; margin-left: 2%;padding-bottom: 120px;}
     #postBin .dbPost{height: 300px; width: 100%; background-color: #fff; float: left; margin-top: 10px;overflow: hidden;}
     #postBin .dbPost li{ float: left; height: 180px; padding-top: 60px; margin-top: 25px; text-align: center; font-size: 15px; position: relative; border: #c2c2c2 5px solid; margin-left: -5px;}
     #postBin .dbPost li:first-child{height: 70%;margin-top: 15px;margin-left: 15px; background-size: auto 96%;background-color: #F5F5F5; background-position: 50%;background-repeat: no-repeat; border: none}
@@ -180,6 +180,7 @@
                 $.each(data.data, function(index, post) {
                     that.$bin.append(new dashboardPost(post));
                 });
+                that.$bin.append('<div style="clear:left"></div>');
                 that.offset += data.data.length;
             });
         }
