@@ -109,7 +109,6 @@ User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
                 $.each($avatars, function(index, avatar) {
                     var $avatar = $(avatar);
 
-                    $('.avatarChangeButton').show();
                     if($avatar.find('img').length) {
                         $avatar.find('img').attr('src', that.newAvatar+'&width=150&time='+new Date().getTime());
                     } else {
@@ -117,6 +116,7 @@ User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
                     }
                 });
                 setTimeout(function() {
+                    $('.avatarChangeButton').show();
                     that.closeShop();
                 }, 100);
             });
@@ -176,15 +176,15 @@ function Member() {
 
 Member.prototype.follow = function(id, callback) {
     this.apiFunction = 'follow';
-    this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
     this.callback = callback;
+    this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
     return this;
 }
 
 Member.prototype.unfollow = function(id, callback) {
     this.apiFunction = 'unfollow';
-    this.user_id = id;
-    this.callApi();
+    this.callback = callback;
+    this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
     return this;
 }
 //************************************************************************************ POST
@@ -223,6 +223,7 @@ Post.prototype.getLovers = function(id, limit, offset, callback) {
     this.apiFunction = 'get_lovers';
     this.callback = callback;
     this.callApi({ posting_id : id, viewer_user_id : dahliawolf.userId, offset : offset, limit : limit});
+
     return this;
 }
 //****************************************************************************************** Product
