@@ -1596,7 +1596,7 @@ width: 174px;
 .togglePostsButton{height: 22px;width: 44%;margin-left: 5%;margin-top: 9px;float: left;padding-top: 4px;color: rgb(185, 185, 185);text-align: center;font-size: 15px;font-weight: 100;cursor: pointer;}
 #postsGridToggleButton{ height:100%; float:right; width:100px; margin-right:10px; position:absolute; top:0px;}
 .profileUsername{font-size: 25px;}
-.profileLocation{font-size: 16px;}
+.profileLocation{font-size: 16px; margin-bottom: 2px !important;}
 .profileRed{ color: #ff2e6e;font-family: helvetica;font-size: 16px;}
 .toggleSelected{color: rgb(94, 94, 94);
     border: rgb(94, 94, 94) 1px solid;}
@@ -1614,7 +1614,7 @@ width: 174px;
 #profileStatShare{ background-image:url(/images/profile/D.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
 .statTitle{margin-top: 34px;text-align: center;color: rgb(99, 99, 99);font-size: 18px;font-family: helvetica;font-weight: 100;}
 .statPoints{margin-top: -11px;text-align: center;}
-.boutitboutit{color:#969696;font-size: 17px;height: 63px;overflow: hidden;text-overflow: ellipsis;width: 350px;}
+.boutitboutit{color:#969696;font-size: 17px;max-height: 63px;overflow: hidden;text-overflow: ellipsis;width: 350px;margin-bottom: -2px !important;}
 .profileFollowing{color: #c2c2c2 !important; border: #c2c2c2 thin solid !important;}
 
 

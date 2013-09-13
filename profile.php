@@ -40,7 +40,7 @@
                     <li class="boutitboutit"><?= $_data['user']['about'] ?></li>
                     <li class="profileLocation"><a href="http://<?= $_data['user']['website'] ?>" target="_blank" style="font-weight: bold !important;"><?= $_data['user']['website'] ?></a></li>
                     <? if(MY_PROFILE): ?> 
-                    	<li><a href="/account/settings"><span class="profileRed">Edit</span></a></li>
+                    	<li style="margin-top: 5px !important;"><a href="/account/settings"><span class="profileRed">Edit</span></a></li>
                     <? endif ?>
                 </ul>
                 <div id="userProfileDeetsRightCol">
