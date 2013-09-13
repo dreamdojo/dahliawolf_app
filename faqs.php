@@ -13,7 +13,7 @@ include "header.php";
 
 		<h1>FAQs</h1>
 		        
-<h3>BELOW IS A LIST OF FREQUESTLY ASKED QUESTIONS ABOUT DAHLIA WOLF</h3>
+<h3>BELOW IS A LIST OF FREQUENTLY ASKED QUESTIONS ABOUT DAHLIA WOLF</h3>
 <br />
 <div style="background-color:rgb(241, 241, 241); width:770px;margin:0px; padding:20px;">
 
@@ -31,7 +31,7 @@ include "header.php";
 
 
 <div style="background-color:rgb(230, 230, 230);; text-align:center; width:730px;margin:20px; padding:20px;">
-<h3>WHAT IF I HAVE MORE QESTIONS?</h3></br>
+<h3>WHAT IF I HAVE MORE QUESTIONS?</h3></br>
 <p>If you don't find the answer you need on the FAQ page, there are many other ways you can contact us. If you have other questions or concerns about anything, please email us to help [at] dahliawolf.com</p>
 </div>
 </br>
@@ -294,7 +294,7 @@ We do not sell or give away images you upload to our site to anybody. The images
 <li><a name="70"> ► What copyright rules do you have for the images posted on your site?</a></br>
 If you upload a look of yourself or own the rights to the photograph, that's great! However, if you are posting images that do not belong to you, please make sure you credit the photographer or the site you got the image from. However, we cannot guarantee you that this will prevent a copyright challenge, but let's start by giving credit to where it is due. Also, if there is a copyright problem with the image, we may request you to delete the post, or we may delete it at our own discretion.</li></br>
 
-<li><a name="71"> ► What happens if I accidently violated a copyright rule with a post I made on your site?</a></br>
+<li><a name="71"> ► What happens if I accidently  violated a copyright rule with a post I made on your site?</a></br>
 Under our terms of service, by utilizing our site, "you have agreed not post content or take any action on Dahlia Wolf that infringes or violates someone else's rights or otherwise violates the law." If you do so, you acknowledge and agree that all risk arising out of your access to and use of this site content burdens on you.</li></br>
 
 <li><a name="72"> ► What do I do if I am a copyright owner and see that my copyright has been violated on your site?</a></br>
