@@ -94,6 +94,8 @@ User.prototype.uploadAvatar = function(_this, file) {
 
     if( window.FormData !== undefined ) {
         this.preview();
+    } else {
+        this.doUploadAvatar();
     }
 }
 
