@@ -18,7 +18,20 @@ function rgb2html($r, $g=-1, $b=-1)
     return $color;
 }
 
+function getClosest($search) {
+    $arr = array(0, 14942209, 14867526, 15265265);
+
+    $closest = null;
+    foreach($arr as $item) {
+        if($closest == null || abs($search - $closest) > abs($item - $search)) {
+            $closest = $item;
+        }
+    }
+    return $closest;
+}
+
 function getTag($dec) {
+
     switch($dec) {
         case $dec < hexdec('222222'):
             return 'BLACK';
