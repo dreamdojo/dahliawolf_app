@@ -12,7 +12,7 @@ include "header.php";
 	<div style="font-family:Futura, Arial, Helvetica, sans-serif; font-size:15px !important; color: rgb(92, 92, 92);">
 
 		<h1>FAQs</h1>
-		        
+
 <h3>BELOW IS A LIST OF FREQUENTLY ASKED QUESTIONS ABOUT DAHLIA WOLF</h3>
 <br />
 <div style="background-color:rgb(241, 241, 241); width:770px;margin:0px; padding:20px;">
