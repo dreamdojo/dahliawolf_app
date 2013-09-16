@@ -232,6 +232,7 @@
             $(window).unbind('scroll');
             dahliawolf.loader.show()
             postBank.ajaxCall = $.post('/get_feed_from_pinterest', {pinterest_user : userConfig.pinterest_username }, function(data) {
+                console.log(data);
                 postBank.ajaxCall = null;
                 dahliawolf.loader.hide()
                 if(data.data) {
@@ -246,6 +247,7 @@
             $('#getPinterestName').animate({left:0}, 100);
         }
     }
+
     postBank.setPinterestName = function(e) {
         if(e.keyCode==13){
             var name = $('#getPinterestName input').val();

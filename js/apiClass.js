@@ -193,6 +193,7 @@ Api.prototype.callApi = function(data) {
 
     if(dahliawolf.isLoggedIn) {
         var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
+        _gaq.push(['_trackEvent', this.apiApi, this.apiFunction]);
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
                 that.callback(data);
@@ -231,16 +232,15 @@ Post.prototype = new Api();
 Post.prototype.constructor = Post;
 
 Post.prototype.love = function(id, callback) {
-    this.apiFunction = 'love';
-    this.posting_id = id;
-    this.callApi();
+    this.apiFunction = 'add_like';
+    this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;
 }
 
 Post.prototype.unlove = function(id, callback) {
-    this.apiFunction = 'unlove';
+    this.apiFunction = 'delete_like';
     this.posting_id = id;
-    this.callApi();
+    this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;
 }
 

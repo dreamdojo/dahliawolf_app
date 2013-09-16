@@ -50,12 +50,12 @@ theGrid.likeAction = function(){
 	_this = $('#post-'+id).find('.vote-frame');
 	if(id && id > 0 && theUser.id && theUser.id > 0){
 		if( $(_this).hasClass('grid-like') ){
-            api.lovePost(id);
+            dahliawolf.post.love(id);
 			$(_this).removeClass('grid-like').addClass('grid-unlike').data('action', 'unlike');
             likeImage.removeClass('postGridUnLiked').addClass('postGridLiked');
             likeCount++;
 		}else{
-            api.unlovePost(id);
+            dahliawolf.post.unlove(id);
             likeImage.removeClass('postGridLiked').addClass('postGridUnLiked');
 			$(_this).removeClass('grid-unlike').addClass('grid-like').data('action', 'like');
             likeCount--;
