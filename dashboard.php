@@ -1,12 +1,14 @@
 <style xmlns="http://www.w3.org/1999/html">
     #dashboardHeader{width: 100%; height: 200px; background-color: #f3f3f3;}
-    #dashboardHeader .leftCol{float: left; width: 150px;}
+    #dashboardHeader .leftCol{float: left; width: 150px; position: relative;}
+    #dashboardHeader .leftCol input{opacity: 0; width: 30px; float: right;}
+    #dashboardHeader .leftCol .avatarChangeButton{ position: absolute; right: 14px; top: -6px;font-size: 32px; width: 30px; text-align: center; cursor: pointer;background-color: #666666; color: #f3f3f3;opacity: .7;height: 35px; line-height: 29px;}
     #dashboardHeader .dashboardInner{margin: 0px auto; width: 1000px; padding-top: 25px;}
     #dashboardHeader .avatarFrame{width: 100px; height: 100px; overflow: hidden; border-radius: 50px;margin-left: 25px; background-position: 50%; background-repeat: no-repeat; background-size: 100%;}
     #dashboardHeader .avatarFrame img{width: 100%;}
-    #dashboardHeader .mLevel{font-size: 15px; color: #fff; font-weight: bolder; background-color: #ff0066; width: 175px; text-indent: 5px !important;}
+    #dashboardHeader .mLevel{font-size: 15px; text-transform: capitalize; color: #fff; font-weight: bolder; background-color: #ff0066; width: 175px; text-indent: 5px !important;}
     #dashboardHeader .stats{width: 400px;float: left;margin-left: 10px;margin-top: 15px;}
-    #dashboardHeader .cashOut{float: right; width: 300px; text-align: center;margin-top: 25px; font-size: 18px;}
+    #dashboardHeader .cashOut{float: right; width: 300px; text-align: center;margin-top: 25px; font-size: 18px; display: none;}
     #dashboardHeader .cashOut li{padding-bottom: 5px;}
     #dashboardHeader .dbButton{background-color: #fff; border: #000 thin solid; color: #000; padding: 2px 10px; margin: 0px auto; cursor: pointer;}
     #dashboardHeader .vpp{margin-top: 20px; padding: 5px 0px; text-align: center;}
@@ -21,7 +23,7 @@
     #dataCol #filters li{float: left; text-align: center;width: 33%; font-size: 11px; color: #666666;}
     #dataCol #postSelector{ width: 98%;}
 
-    #postBin{width: 96%; margin-left: 2%;}
+    #postBin{width: 96%; margin-left: 2%;padding-bottom: 120px;}
     #postBin .dbPost{height: 300px; width: 100%; background-color: #fff; float: left; margin-top: 10px;overflow: hidden;}
     #postBin .dbPost li{ float: left; height: 180px; padding-top: 60px; margin-top: 25px; text-align: center; font-size: 15px; position: relative; border: #c2c2c2 5px solid; margin-left: -5px;}
     #postBin .dbPost li:first-child{height: 70%;margin-top: 15px;margin-left: 15px; background-size: auto 96%;background-color: #F5F5F5; background-position: 50%;background-repeat: no-repeat; border: none}
@@ -47,20 +49,33 @@
     .sorter{cursor: pointer;}
     .filter{cursor: pointer;}
 
-    #avatarUploadSystem{position: fixed; display: none; width: 650px; height: 400px; background-color: #fff; border: #c2c2c2 thin solid; left: 50%; top: 50%; margin-left: -325px; margin-top: -200px;}
-    #avatarUploadSystem .avatarFrame{ width: 150px; height: 150px; overflow: hidden; border-radius: 80px; background-size: 100%; background-repeat: no-repeat; background-position: 50%;}
+    #avatarUploadSystem{position: fixed; display: none;width: 150px; height: 205px; background-color: #fff; border: #c2c2c2 thin solid; text-align: center;}
+    #avatarUploadSystem .avatarFrame{ width: 100px; height: 100px; margin: 10px auto; overflow: hidden; border-radius: 80px; background-size: 100%; background-repeat: no-repeat; background-position: 50%;}
+    #avatarUploadSystem .swapButton{height: 25px; line-height: 25px; font-size: 14px; cursor: pointer;}
+    #avatarUploadSystem .swapButton:hover{ color: #ff0066;}
+    #avatarUploadSystem #percUpload{position: absolute; top: 0px; right: 0px; font-size: 12px;}
+
+    #postLoversBin{position: fixed; width: 800px; top: 69px; background-color: #fff; left: 50%; margin-left: -400px;z-index: 111111;overflow: auto;}
+    #postLoversBin .lover{width: 50%; float: left;height: 150px;}
+    #postLoversBin .lover .avatarFrame{height: 100px; width: 100px; background-repeat: no-repeat; background-position: 50%; background-size: 100%; overflow: hidden; border-radius: 50px; margin-top: 25px; margin-left: 20px; float: left;margin-right: 15px; }
+    #postLoversBin .lover .username{font-size: 16px; margin-top: 30px;}
+    #postLoversBin .lover .followButt{float: left; font-size: 15px; padding: 2px 5px; cursor: pointer;}
+    #postLoversBin .lover .FOLLOW{color: #F03E63; border: #F03E63 thin solid;}
+    #postLoversBin .lover .FOLLOWING{color: #c2c2c2; border: #c2c2c2 thin solid;}
+
 </style>
 <div id="dashboardHeader">
     <div class="dashboardInner">
         <div class="leftCol">
-            <input type="file" name="avatar" onchange="new dahliawolf.uploadAvatar(this.files[0]);">
-            <div class="avatarFrame theUsersAvatar" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=152')">
+            <div class="avatarChangeButton" onclick="$('#avataro').closest('input').click();">+</div>
+            <input type="file" name="avatar" id="avataro" onchange="new dahliawolf.uploadAvatar(this, this.files[0]);">
+            <div class="avatarFrame theUsersAvatar avatarShadow" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=152')">
             </div>
             <a href="/<?= $_data['user']['username'] ?>?showPublic=true"><div class="dbButton vpp">VIEW PUBLIC PROFILE</div></a>
         </div>
         <ul class="stats">
             <li class="uname">@<?= $_data['user']['username'] ?></li>
-            <li class="mLevel">MEMBERSHIP LEVEL</li>
+            <li class="mLevel">Member Level: <?= $_data['user']['membership_level'] ?></li>
             <li class="sSteez"><a href="/<?= $_data['user']['username'] ?>/followers"><?= $_data['user']['followers'] ?> FOLLOWERS</a> | <a href="/<?= $_data['user']['username'] ?>/following"><?= $_data['user']['following'] ?> FOLLOWING</a></li>
             <li class="sSteez"><?= $_data['user']['points'] ?> POINTS | </li>
         </ul>
@@ -79,9 +94,9 @@
     <ul id="filters">
         <li style="width: 32%;">
             <ul id="postSelector">
-                <li class="filter" data-filter="is_active">ACTIVE(12)</li>
-                <li class="filter" data-filter="is_expired">EXPIRED(5655)</li>
-                <li class="filter" data-filter="is_winner">WINNERS(34)</li>
+                <li class="filter" data-filter="is_active">ACTIVE(<?= $_data['user']['posts_active'] ?>)</li>
+                <li class="filter" data-filter="is_expired">EXPIRED(<?= $_data['user']['posts_expired'] ?>)</li>
+                <li class="filter" data-filter="is_winner">WINNERS(<?= $_data['user']['winner_posts'] ?>)</li>
             </ul>
         </li>
         <li class="sorter" style="width: 20%;" data-sorter="total_likes">VOTES</li>
@@ -156,13 +171,16 @@
         }
 
         if(dashboard.isAvailable) {
+            dahliawolf.loader.show();
             dashboard.isAvailable = false;
             $.post('/action/getPostsByUser', data).done(function(data) {
                 holla.log(data);
                 dashboard.isAvailable = true;
+                dahliawolf.loader.hide();
                 $.each(data.data, function(index, post) {
                     that.$bin.append(new dashboardPost(post));
                 });
+                that.$bin.append('<div style="clear:left"></div>');
                 that.offset += data.data.length;
             });
         }
@@ -192,9 +210,13 @@
         this.$panel1 = $('<li style="width: 15%;"><p>'+this.data.total_views+' VIEWS</p></li>').appendTo(this.$post);
         this.$panel2 = $('<li style="width: 15%;"><p>'+this.data.total_shares+' SHARES</p></li>').appendTo(this.$post);
         this.$panel3 = $('<li style="width: 15%;"><p>EXP: '+this.data.expiration_date+'</p></li>').appendTo(this.$post);
-        $('<div class="postAction">View Members</div>').appendTo(this.$panel0).on('click', $.proxy(dashboard.pooty, this));
-        $('<div class="postAction">View Shares</div>').appendTo(this.$panel2).on('click', $.proxy(dashboard.showShares, this));
-        $('<div class="postAction">More Time+</div>').appendTo(this.$panel3).on('click', $.proxy(dashboard.dooty, this));
+        if(Number(this.data.total_likes)){
+            $('<div class="postAction">View Members</div>').appendTo(this.$panel0).on('click', $.proxy(this.getLovers, this));
+        }
+        if(Number(this.data.total_shares)) {
+            $('<div class="postAction">View Shares</div>').appendTo(this.$panel2).on('click', $.proxy(dashboard.showShares, this));
+        }
+        $('<div class="postAction">More Time+</div>').appendTo(this.$panel3).on('click', $.proxy(dashboard.promotePost, this));
 
         return this.$post;
     }
@@ -238,7 +260,6 @@
             var modalHt = (data.data.get_shares.data.sharings.length * 160) + 10;
             $modal.height(modalHt).css({'top': ((window.innerHeight - modalHt) / 2), 'margin-top': 0}  );
 
-            holla.log(data);
             setTimeout(function() {
                 $.each(data.data.get_shares.data.sharings, function(index, shares) {
                     var $user = $('<ul></ul>');
@@ -251,12 +272,68 @@
         });
     }
 
-    dashboard.pooty = function() {
-        //holla.log('bruuump'+this.data.username);
-        dahliawolf.share.add(this.data.posting_id, 'facebook', 'posting', this.data.user_id);
+    dashboardPost.prototype.getLovers= function() {
+        var blop = new showPostLovers(this.data.posting_id);
+        /*dahliawolf.post.getLovers(this.data.posting_id, 12, 0, function(data) {
+           console.log(data);
+       });*/
     }
-    dashboard.dooty = function() {
-        dahliawolf.share.add(this.data.product_id, 'facebook', 'product', this.data.user_id);
+
+    dashboard.promotePost = function() {
+        dahliawolf.post.promote(this.data.posting_id, function(data) {
+            console.log(data);
+        });
+    }
+
+    function showPostLovers(id) {
+        var id = id;
+        this.limit = 12;
+        this.offset = 0;
+        this.lovers = new Array();
+
+        this.getId = function(){return id;}
+
+        this.buildView();
+        this.getLovers();
+    }
+
+    showPostLovers.prototype.buildView = function() {
+        var that = this;
+        this.$modal = $('<div id="postLoversBin"></div>').height(window.innerHeight-50).appendTo('body');
+        $('body').css('overflow', 'hidden');
+
+        var $overlay = $('<div id="tooltip-overlay"></div>').appendTo('body').fadeIn(200).on('click', function() {
+            $overlay.fadeOut(100, function() {$(this.remove())});
+            that.$modal.fadeOut(100, function() {$(this.remove())});
+            $('body').css('overflow', 'visible');
+        });
+    }
+
+    showPostLovers.prototype.getLovers = function() {
+        var that = this;
+
+        dahliawolf.post.getLovers(this.getId, this.limit, this.offset, function(data) {
+            $.each(data.data.get_lovers.lovers, function(index, user) {
+                var $user = $('<ul class="lover"></ul>');
+
+                $user.append('<li class="avatarFrame" style="background-image: url(\''+this.avatar+'&width=75\')"></li>');
+                $user.append('<li class="username"><a href="/'+user.username+'">@'+user.username+'</li>'+(user.location ? '<li>'+user.location+'</li>' : '') );
+                var $followButt = $('<li class="followButt '+(Number(user.is_followed) ? 'FOLLOWING' : 'FOLLOW')+'">'+(Number(user.is_followed) ? 'FOLLOWING' : 'FOLLOW')+'</li>').appendTo($user).on('click', function() {
+                    if(Number(user.is_followed)) {
+                        $(this).html('FOLLOW').removeClass('FOLLOWING').addClass('FOLLOW');
+                        user.is_followed = false;
+                        dahliawolf.member.unfollow(user.user_id, function(data){
+                            console.log(data);
+                        });
+                    } else {
+                        $(this).html('FOLLOWING').removeClass('FOLLOW').addClass('FOLLOWING');
+                        user.is_followed = true;
+                        dahliawolf.member.follow(user.user_id);
+                    }
+                });
+                $user.appendTo(that.$modal);
+            });
+        });
     }
 
     $(function() {

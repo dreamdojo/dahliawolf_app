@@ -172,7 +172,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .userHead:hover #dahliaHead{ display:block; }
 
 /*********** THE GRID ***********/
-#theGrid{position: relative; width: auto;margin: 0px auto; max-width: 1300px;}
+#theGrid{position: relative; width: auto;margin: 0px auto; max-width: 1300px;padding-bottom: 100px;}
 #theGrid .post-frame{ width:300px; float:left; margin:10px;height: 350px;overflow: hidden;position: relative; cursor:pointer;}
 #theGrid .post-frame:hover .vote-frame{display:block;}
 #theGrid .post-frame img{ width:101%; position:relative; }
@@ -402,8 +402,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userListCol .toggleFollow{font-size: 14px;padding: 1px 8px;float: left;cursor: pointer;margin-top: 5px;}
 #userListCol .rankBox{position: absolute;height: 40px;width: 40px;font-size: 25px;text-align: center;line-height: 40px;color: #4E4646;font-weight: 700;}
 /******************** LOADER *************************/
-#loadingView{display:none;width: 100%;position: fixed;bottom: -100px;text-align: center;z-index: 10000000000;height: 40px;overflow: hidden;}
-#loadingView img{height: 65px;width: 173px;margin-top: -32px;}
+#loadingView{display:none;width: 100%;position: fixed;bottom: -100px;text-align: center;z-index: 10000000000;height: 65px;}
+#loadingView img{-webkit-transition-duration: 1s; -moz-transition-duration: 1s; position: relative;}
+#loadingView .spinnerz{-webkit-transform:rotate(3000deg) scale(1.3); -moz-transform:rotate(3000deg) scale(1.3);}
 
 /******************** EXPLORE POP UP *****************/
 #product-details{width: 50%;height: 100%;float: left;background-color: #fff;position: absolute;margin-left: 25%;z-index: 100;}
@@ -1595,7 +1596,7 @@ width: 174px;
 .togglePostsButton{height: 22px;width: 44%;margin-left: 5%;margin-top: 9px;float: left;padding-top: 4px;color: rgb(185, 185, 185);text-align: center;font-size: 15px;font-weight: 100;cursor: pointer;}
 #postsGridToggleButton{ height:100%; float:right; width:100px; margin-right:10px; position:absolute; top:0px;}
 .profileUsername{font-size: 25px;}
-.profileLocation{font-size: 16px;}
+.profileLocation{font-size: 16px; margin-bottom: 2px !important;}
 .profileRed{ color: #ff2e6e;font-family: helvetica;font-size: 16px;}
 .toggleSelected{color: rgb(94, 94, 94);
     border: rgb(94, 94, 94) 1px solid;}
@@ -1613,7 +1614,7 @@ width: 174px;
 #profileStatShare{ background-image:url(/images/profile/D.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
 .statTitle{margin-top: 34px;text-align: center;color: rgb(99, 99, 99);font-size: 18px;font-family: helvetica;font-weight: 100;}
 .statPoints{margin-top: -11px;text-align: center;}
-.boutitboutit{color:#969696;font-size: 17px;height: 63px;overflow: hidden;text-overflow: ellipsis;width: 350px;}
+.boutitboutit{color:#969696;font-size: 17px;max-height: 63px;overflow: hidden;text-overflow: ellipsis;width: 350px;margin-bottom: -2px !important;}
 .profileFollowing{color: #c2c2c2 !important; border: #c2c2c2 thin solid !important;}
 
 

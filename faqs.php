@@ -12,8 +12,8 @@ include "header.php";
 	<div style="font-family:Futura, Arial, Helvetica, sans-serif; font-size:15px !important; color: rgb(92, 92, 92);">
 
 		<h1>FAQs</h1>
-		        
-<h3>BELOW IS A LIST OF FREQUESTLY ASKED QUESTIONS ABOUT DAHLIA WOLF</h3>
+
+<h3>BELOW IS A LIST OF FREQUENTLY ASKED QUESTIONS ABOUT DAHLIA WOLF</h3>
 <br />
 <div style="background-color:rgb(241, 241, 241); width:770px;margin:0px; padding:20px;">
 
@@ -31,7 +31,7 @@ include "header.php";
 
 
 <div style="background-color:rgb(230, 230, 230);; text-align:center; width:730px;margin:20px; padding:20px;">
-<h3>WHAT IF I HAVE MORE QESTIONS?</h3></br>
+<h3>WHAT IF I HAVE MORE QUESTIONS?</h3></br>
 <p>If you don't find the answer you need on the FAQ page, there are many other ways you can contact us. If you have other questions or concerns about anything, please email us to help [at] dahliawolf.com</p>
 </div>
 </br>
@@ -168,19 +168,10 @@ The following is a list of ways to earn points:</br>
 *Complete your profile: 500 points</br>
 *Be the winning inspiration for a new design: 1000 points (plus free one of a kind sample of the design for you)</br>
 *Be the supporting winning inspiration for a new design: 1000 points</br>
-*Have your style sold in the shop: 5000 points (plus 10% commission on all sales)</br>
+*Have your style sold in the shop: 5000 points (plus 5% commission on all sales)</br>
 *Purchasing:  Get 10 points for every $1 you spend at our shop</li></br>
 
-<li><a name="36"> ► What can I do with all the points I earn on Dahlia Wolf?</a></br>
-Points will earn you a particular membership status. With special membership status, you get to enjoy discounted rates for the purchasing at the store. See our points/membership levels below:</br></br>
-
-Unique Member Pricing:  Your active craze for fashion on our site will rack up points for you, and your member status will be categorized into one of the following:</br></br>
-
-Bronze Members (up to 10,000 points)= 10% Off </br>
-Silver Members (up to 100,000 points) = 20% Off </br>
-Gold Members (100,000+ points) = 30% Off</br>
-Platinum Members (500,000+ points) = 40% Off </br>
-Diamond Members (1,000,000+ points)= 50% off </li></br>
+<li><a name="36"> ► What can I do with all the points I earn on Dahlia Wolf?</a></br></li></br>
 
 <li><a name="37"> ► What is the purpose of the unique membership status?</a></br>
 It is our way of thanking you for actively participating in a step further to revolutionize fashion. Your active contribution to our site gets us one step closer to opening doors to the world of fashion never travelled in. In addition, we wanted you to feel special by labeling you into a certain status! What's more?You get to enjoy special rates and prices when shopping at the store. </li></br>
@@ -223,7 +214,7 @@ We will have a special voting section within the ship where all the samples made
 Dahlia Wolf pack members will be given a period of 1 month to vote on their favorite styles. </li></br>
 
 <li><a name="48"> ► If the style I inspired has the most votes, what happens?</a></br>
-Congratulations! The piece you have inspired will make its way to the shop and be made available to all consumers to buy! The best part? You earn 10% commission off the total sales!!</li></br> 
+Congratulations! The piece you have inspired will make its way to the shop and be made available to all consumers to buy! The best part? You earn 5% commission off the total sales!!</li></br>
 
 <li><a name="49"> ► Are there any benefits for me if my inspired image is made into a sample?</a></br>
 Of course there is! Dahlia Wolf would never leave you hanging…if your inspiring post is selected to be made into a sample, we will give you 1 free sample of your inspired design. Plus, free shipping on us, so absolutely free!</li></br>
@@ -246,8 +237,8 @@ Congratulations! Now you have the opportunity to make some money!</li></br>
 Dahlia Wolf allows a pre-sale on the item that has been voted to go into the shop.  For a limited time, members have the opportunity to purchase the pre-sale item for 50% off. Yes, we said 50% off, so don't miss your chance. Pay attention because all pre-sales will be available for a certain period of time only. </li></br>
 
 <li><a name="55"> ► So it says that I earn commission every time my inspired product is sold in the shop, how does that work?</a></br>
-Dahlia Wolf shares 10% of all revenue brought in by direct sales from your inspired product.
-To help make sense of this, here's an example: Let's say we start selling your inspired piece at the store for $100 a piece. Our shop sold 100 pieces of your inspired piece. We made 100 pieces x $100= $10,000. You make 10% of the total which is $1,000 in commission! Are you on cloud nine yet? </li></br>
+Dahlia Wolf shares 5% of all revenue brought in by direct sales from your inspired product.
+To help make sense of this, here's an example: Let's say we start selling your inspired piece at the store for $100 a piece. Our shop sold 100 pieces of your inspired piece. We made 100 pieces x $100= $10,000. You make 5% of the total which is $5000 in commission! Are you on cloud nine yet? </li></br>
 
 <li><a name="56"> ► How long will my inspired piece be made available for in the shop?</a></br>
 We leave our pieces in the shop for about 6 months. After the 6 months, it will be removed from the shop and not available for sale. </li></br>
@@ -303,7 +294,7 @@ We do not sell or give away images you upload to our site to anybody. The images
 <li><a name="70"> ► What copyright rules do you have for the images posted on your site?</a></br>
 If you upload a look of yourself or own the rights to the photograph, that's great! However, if you are posting images that do not belong to you, please make sure you credit the photographer or the site you got the image from. However, we cannot guarantee you that this will prevent a copyright challenge, but let's start by giving credit to where it is due. Also, if there is a copyright problem with the image, we may request you to delete the post, or we may delete it at our own discretion.</li></br>
 
-<li><a name="71"> ► What happens if I accidently violated a copyright rule with a post I made on your site?</a></br>
+<li><a name="71"> ► What happens if I accidently  violated a copyright rule with a post I made on your site?</a></br>
 Under our terms of service, by utilizing our site, "you have agreed not post content or take any action on Dahlia Wolf that infringes or violates someone else's rights or otherwise violates the law." If you do so, you acknowledge and agree that all risk arising out of your access to and use of this site content burdens on you.</li></br>
 
 <li><a name="72"> ► What do I do if I am a copyright owner and see that my copyright has been violated on your site?</a></br>

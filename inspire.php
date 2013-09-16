@@ -19,13 +19,13 @@
     #thePinterestName{height: 75%;margin-top: 2%;margin-left: 2%;width: 75%;font-size: 14px;text-indent: 3px; float:left;}
     #goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
 
-    #bankBucket{width: 100%;max-width: 960px; margin: 0px auto; height: 100%;padding-top: 57px;}
+    #bankBucket{width: 100%;max-width: 960px; margin: 0px auto; height: 100%;padding-top: 57px; padding-bottom: 100px;}
     #bankBucket .postFrame{overflow: hidden; position: relative;}
     #bankBucket .postFrame:hover .option{display: block;}
     #bankBucket .grid{float: left; width: 300px;height: 300px; margin: 10px;}
     #bankBucket .line{width: 80%; margin: 10px auto;overflow: hidden;margin-bottom: 10px;margin-top: 10px; max-width: 500px;}
     #bankBucket .postFrame img{width: 100%;}
-    #bankBucket .postButton{position: absolute;right: 10px;background-color: #fff;border-radius: 51px;width: 70px;height: 70px;text-align: center;line-height: 70px;margin-top: 10px;font-size: 18px; cursor: pointer;border: #c2c2c2 thin solid;}
+    #bankBucket .postButton{position: absolute;right: 10px;background-color: #000;width: 70px;height: 30px;text-align: center;line-height: 30px;margin-top: 10px;font-size: 15px;cursor: pointer;border: #c2c2c2 thin solid;font-family: futura;font-weight: bolder;color: #fff;}
     #bankBucket .postButton:hover{opacity: .7;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
@@ -192,14 +192,15 @@
     postBank.getImages = function() {
         var _this = this;
         if(postBank.isRefillAvailable) {
-            dahliaLoader.show();
+            dahliawolf.loader.show()
             postBank.isRefillAvailable = false;
             api.getBankPosts(this.offset, this.limit, function(data) {
-                dahliaLoader.hide();
+                dahliawolf.loader.hide()
                 postBank.isRefillAvailable = true;
                 $.each(data.data, function(index, post) {
                     postBank.posts.push(new bankPost(post));
                 });
+                postBank.$bucket.append('<div style="clear:left"></div>');
             });
         }
     }
@@ -208,10 +209,10 @@
         if(userConfig.instagramToken) {
             postBank.clearBank();
             $(window).unbind('scroll');
-            dahliaLoader.show();
+            dahliawolf.loader.show()
             postBank.ajaxCall = $.ajax('https://api.instagram.com/v1/users/self/media/recent?access_token='+userConfig.instagramToken+'&callback=callbackFunction', {dataType:'jsonp'}).done(function(data) {
                 postBank.ajaxCall = null;
-                dahliaLoader.hide();
+                dahliawolf.loader.hide()
                 $.each(data.data, function(index, img){
                     postBank.posts.push( new foreignPost(img.images.standard_resolution.url, 'Instagram') );
                 });
@@ -229,10 +230,11 @@
         if(userConfig.pinterest_username) {
             postBank.clearBank();
             $(window).unbind('scroll');
-            dahliaLoader.show();
+            dahliawolf.loader.show()
             postBank.ajaxCall = $.post('/get_feed_from_pinterest', {pinterest_user : userConfig.pinterest_username }, function(data) {
+                console.log(data);
                 postBank.ajaxCall = null;
-                dahliaLoader.hide();
+                dahliawolf.loader.hide()
                 if(data.data) {
                     $.each(data.data, function(index, img){
                         postBank.posts.push( new foreignPost(img.images.standard_resolution.url, 'Pinterest') );
@@ -245,6 +247,7 @@
             $('#getPinterestName').animate({left:0}, 100);
         }
     }
+
     postBank.setPinterestName = function(e) {
         if(e.keyCode==13){
             var name = $('#getPinterestName input').val();

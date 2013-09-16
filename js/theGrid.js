@@ -26,10 +26,12 @@ theGrid.htText = 'style="min-height: 100%; min-width:101%; width:auto;"';
 theGrid.$view = $('#theGrid');
 
 theGrid.showLoader = function() {
-	$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
+	//$('#theGrid').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
+    dahliaLoader.show();
 }
 theGrid.destroyLoader = function() {
-	$('#theGridLoader').remove();
+    dahliaLoader.hide();
+	//$('#theGridLoader').remove();
 }
 
 theGrid.adjustMargins = function() {
@@ -48,12 +50,12 @@ theGrid.likeAction = function(){
 	_this = $('#post-'+id).find('.vote-frame');
 	if(id && id > 0 && theUser.id && theUser.id > 0){
 		if( $(_this).hasClass('grid-like') ){
-            api.lovePost(id);
+            dahliawolf.post.love(id);
 			$(_this).removeClass('grid-like').addClass('grid-unlike').data('action', 'unlike');
             likeImage.removeClass('postGridUnLiked').addClass('postGridLiked');
             likeCount++;
 		}else{
-            api.unlovePost(id);
+            dahliawolf.post.unlove(id);
             likeImage.removeClass('postGridLiked').addClass('postGridUnLiked');
 			$(_this).removeClass('grid-unlike').addClass('grid-like').data('action', 'like');
             likeCount--;
@@ -77,7 +79,7 @@ theGrid.getImages = function() {
 				theGrid.posts[post.posting_id] = new theGrid.post(post);
                 theGrid.adjustMargins();
 			});
-			//theGrid.container.append('<div style="clear:left"></div>');
+			theGrid.container.append('<div style="clear:left"></div>');
 			theGrid.offset += theGrid.limit;
 			theGrid.isAvailable = true;
 		});
