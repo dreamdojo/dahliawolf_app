@@ -25,14 +25,16 @@
 #followFbFriends{width: 100%;float: left;height: 100%;}
 #theShaft .activity-menu-icon{border: #c2c2c2 thin solid; background-size: 174%; height: 99%;background-position: 50% 50%; margin-bottom: 10px; }
 #theShaft #mainCol{border-left: #c2c2c2 thin solid; border-left: #c2c2c2 thin solid; min-height: 1000px; margin-top: 20px;}
-#theShaft #leftCol{width: 9%;}
+#theShaft #leftCol{width: 9%; position: relative;}
 #theShaft .defaulto{left: 50%;position: relative;margin-left: -303px;}
 .invite-selected{background-color: #fff;}
+#bezel{position: absolute; right: -1px; font-size: 18px;color: #A2A2A2; top: 40px;}
 </style>
 
 <div id="theShaft">
 	<div id="leftCol">
-		<? foreach($menu as $item): ?>
+		<div id="bezel"><</div>
+        <? foreach($menu as $item): ?>
         	<div id="menu-<?= $item['title'] ?>" class="activity-menu cursor" data-platform="<?= $item['title'] ?>">
             	<div class="activity-menu-icon" style="background-image: url(<?= $item['img'] ?>)">
                 </div>
@@ -54,6 +56,7 @@ partyLine.twitterUrl = "/action/getTwitterFollowers.php";
 partyLine.isTwitterLoggedIn = <?= (TWITTER_IS_LOGGED_IN ? 'true' : 'false') ?>;
 partyLine.twitterUsername = null;
 partyLine.twitterMessengerBusy = false;
+partyLine.bezelMap = {'FACEBOOK': 40, 'TWITTER': 108, 'EMAIL' : 180};
 
 partyLine.users = new Array();// USR CLASS
 
@@ -243,11 +246,17 @@ partyLine.bindMessageButtons = function(){
 	});
 }
 
+partyLine.setBezel = function(platform) {
+    console.log(platform+this.bezelMap[platform]);
+    $('#bezel').animate({top : this.bezelMap[platform]+'px'}, 200);
+}
+
 $('.activity-menu').bind('click', function(){
 	if(theUser.id){
 		$('.activity-menu').removeClass('invite-selected');
 		$(this).addClass('invite-selected');
 		partyLine.init( $(this).data('platform') );
+        partyLine.setBezel($(this).data('platform'));
 	}else{
 		new_loginscreen();
 	}
