@@ -28,8 +28,11 @@ User.prototype = {
     get isLoggedIn() {return (this.data.user_id && this.data.user_id > 0 ? true : false);},
     get whoareyou() {return 'A hot bitch with a fat ASS!!';},
     get hi() {return 'hello!';},
+    get areYouLoggedIntoTwitter() {return this.data.twitterToken ? true : false;},
 
-    getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');}
+    getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');},
+
+    set twitterToken(token) {this.data.twitterToken = token;}
 };
 
 User.prototype.Loader = function(){
@@ -85,6 +88,7 @@ User.prototype.isFacebookFriend = function(id) {
 User.prototype.isFriend = function(id) {
     return true;
 }
+
 //***************************************************************************** User uploading system
 User.prototype.uploadAvatar = function(_this, file) {
     this.coordTop = $(_this).offset().top;
