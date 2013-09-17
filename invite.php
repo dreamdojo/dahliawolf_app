@@ -208,12 +208,7 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 			partyLine.setTwitterAccount();
 		}
 	}else{
-		//document.location = '/redirect.php';
-        window.open(
-            "/redirect.php",
-            'Log into Twitter',
-            'width=500, height=500'
-        );
+        dahliawolf.logIntoTwitter();
 	}
 }
 

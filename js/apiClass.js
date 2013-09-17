@@ -89,6 +89,14 @@ User.prototype.isFriend = function(id) {
     return true;
 }
 
+User.prototype.logIntoTwitter = function() {
+    window.open(
+        "/redirect.php",
+        'Log into Twitter',
+        'width=500, height=500'
+    );
+}
+
 //***************************************************************************** User uploading system
 User.prototype.uploadAvatar = function(_this, file) {
     this.coordTop = $(_this).offset().top;
