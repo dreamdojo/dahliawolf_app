@@ -176,9 +176,9 @@ partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
                 }
             });
         } else if (response.status === 'not_authorized') {
-            dahliawolf.logIntoFacebook();
+            dahliawolf.logIntoFacebook(partyLine.getUsers['FACEBOOK']);
         } else {
-            dahliawolf.logIntoFacebook();
+            dahliawolf.logIntoFacebook(partyLine.getUsers['FACEBOOK']);
         }
     });
 }

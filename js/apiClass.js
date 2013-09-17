@@ -97,10 +97,12 @@ User.prototype.logIntoTwitter = function() {
     );
 }
 
-User.prototype.logIntoFacebook = function() {
+User.prototype.logIntoFacebook = function(callback) {
     FB.login(function(response) {
         if (response.authResponse) {
-            // User authorized app
+            if(typeof callback == 'function') {
+                callback();
+            }
         } else {
             // User cancelled login or did not fully authorize
         }
