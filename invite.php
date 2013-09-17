@@ -33,7 +33,7 @@
 <div id="theShaft">
 	<div id="leftCol">
 		<? foreach($menu as $item): ?>
-        	<div id="menu-<?= $item['title'] ?>" class="activity-menu cursor highlightable" data-platform="<?= $item['title'] ?>">
+        	<div id="menu-<?= $item['title'] ?>" class="activity-menu cursor" data-platform="<?= $item['title'] ?>">
             	<div class="activity-menu-icon" style="background-image: url(<?= $item['img'] ?>)">
                 </div>
             </div>
