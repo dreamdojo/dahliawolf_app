@@ -37,8 +37,7 @@ if (200 == $connection->http_code): ?>
     <script>
         opener.dahliawolf.twitterToken = <?= $_SESSION['access_token'] ?>;
         opener.partyLine.getUsers['TWITTER']();
-
-        //close();
+        close();
     </script>
 
 <? else: ?>
