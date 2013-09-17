@@ -41,7 +41,7 @@ if (IS_LOGGED_IN) {
 
 		$data = api_call('posting', 'add_post_image', $params, true);
 
-		$data = json_decode($data);
+		//$data = json_decode($data);
         var_dump($data);
         /*
         //http://www.dahliawolf.com/add_pin?
