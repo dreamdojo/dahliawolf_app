@@ -184,9 +184,9 @@ partyLine.getUsers['INSTAGRAM'] = function(){// GET FACEBOOK USER METHODS
 	})
 }
 
-partyLine.getUsers['TWITTER'] = function(cursor){
+partyLine.getUsers['TWITTER'] = function(cursor, keepGoing){
 	if(!cursor){cursor = -1;}
-	if(partyLine.twitterUsers.length) {
+	if(partyLine.twitterUsers.length && !keepGoing) {
         $.each(partyLine.twitterUsers, function(index,friend) {
             partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
         });
@@ -205,7 +205,7 @@ partyLine.getUsers['TWITTER'] = function(cursor){
                         });
                         partyLine.displayUsers();
                         if(cursor != 0){
-                            partyLine.getUsers['TWITTER'](cursor);
+                            partyLine.getUsers['TWITTER'](cursor, true);
                         }
                     }else{
                         alert(obj.errors[0].message);
@@ -255,7 +255,6 @@ partyLine.bindMessageButtons = function(){
 }
 
 partyLine.setBezel = function(platform) {
-    console.log(platform+this.bezelMap[platform]);
     $('#bezel').animate({top : this.bezelMap[platform]+'px'}, 200);
 }
 
@@ -276,7 +275,6 @@ $(function(){
 	} else {
         setTimeout( function() {
             FB.getLoginStatus(function(response) {
-                console.log(response);
                 if (response.status === 'connected') {
                     $('#menu-FACEBOOK').click();
                 } else if (response.status === 'not_authorized') {
