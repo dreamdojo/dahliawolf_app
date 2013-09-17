@@ -17,7 +17,8 @@ if (IS_LOGGED_IN) {
 	$image = @file_get_contents($_GET['url']);
 	
 	if ($image) {
-		file_put_contents($image_url, $image);
+		echo 'ahoi';
+        file_put_contents($image_url, $image);
 		$dimensions = @getimagesize($image_url);
 		
 		// make api to add_post_image
@@ -74,7 +75,6 @@ body{text-align:center;}
 .imgFrame img{height: 100%; float:left;}
 </style>
 <body>
-<?= var_dump($dimensions) ?>
 <div id="contentFrame">
     <div class="titleHead">COOL PIC, KEEP'M COMIN ;)</div>
     <div class="dwTitle"><img src="http://www.dahliawolf.com/images/popTitle.png"></div>
