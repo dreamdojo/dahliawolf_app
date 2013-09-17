@@ -93,11 +93,11 @@ var theUser = new Object();
 var LOVE_REQUIRED = 1000;
 <? if (IS_LOGGED_IN): ?>
 	var userConfig = <?= json_encode($userConfig) ?>;
-	//console.log(userConfig);
+    var userSession = <?= json_encode($_SESSION) ?>;
 	<? if(INSTAGRAM_IS_LOGGED_IN): ?>
 		userConfig.instagramToken = '<?= $_SESSION['user']['instagramToken'] ?>';
 	<? endif ?>
-    userConfig.twitterToken = <?= $_SESSION['access_token'] ? $_SESSION['access_token'] : 0 ?>;
+    userConfig.twitterToken = <?= ($_SESSION['access_token'] ? $_SESSION['access_token'] : 0) ?>;
     theUser.id = <?= $_SESSION['user']['user_id'] ?>;
 	theUser.username = '<?= $_SESSION['user']['username'] ?>';
 	theUser.friends = <? echo json_encode($friends) ?>;
