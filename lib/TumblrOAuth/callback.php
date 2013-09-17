@@ -4,8 +4,8 @@ session_start();
 require_once('tumblroauth/tumblroauth.php');
 
 // Define the needed keys
-$consumer_key = "YOUR CONSUMER KEY GOES HERE";
-$consumer_secret = "PUT THE SECRET KEY HERE";
+$consumer_key = "CVzhkkyjfjeKsGeDuOflRGddP14Y3jzDLGUi0QnHTfvnAF010D";
+$consumer_secret = "7LZAUDAreohtQ50IrdOz2WjrRoxQ3d5MPdRLXb2h75Zhw43XLz";
 
 // Once the user approves your app at Tumblr, they are sent back to this script.
 // This script is passed two parameters in the URL, oauth_token (our Request Token)
@@ -24,11 +24,11 @@ unset($_SESSION['request_token']);
 unset($_SESSION['request_token_secret']);
 
 // Make sure nothing went wrong.
-/*if (200 == $tum_oauth->http_code) {
+if (200 == $tum_oauth->http_code) {
   // good to go
 } else {
   die('Unable to authenticate');
-}*/
+}
 
 // What's next?  Now that we have an Access Token and Secret, we can make an API call.
 
@@ -51,11 +51,11 @@ $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
 // This will also work: $userinfo = $tum_oauth->get('user/info');
 
 // Check for an error.
-/*if (200 == $tum_oauth->http_code) {
+if (200 == $tum_oauth->http_code) {
   // good to go
 } else {
   die('Unable to get info');
-}*/
+}
 
 // find primary blog.  Display its name.
 $screen_name = $userinfo->response->user->name;
