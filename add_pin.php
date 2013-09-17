@@ -42,6 +42,7 @@ if (IS_LOGGED_IN) {
 		$data = api_call('posting', 'add_post_image', $params, true);
 
 		$data = json_decode($data);
+        var_dump($data);
         /*
         //http://www.dahliawolf.com/add_pin?
         url=http%3A//images02.nastygal.com/resources/nastygal/images/products/processed/27104.0.browse-m.jpg&
@@ -56,7 +57,7 @@ if (IS_LOGGED_IN) {
 }?>
 
 <? if(IS_LOGGED_IN): ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?/*<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -100,4 +101,5 @@ setInterval(function(){
 	}
 }, 1000);
 </script>
+*/?>
 <? endif ?>
