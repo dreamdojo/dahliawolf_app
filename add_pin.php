@@ -94,7 +94,7 @@ setInterval(function(){
 	document.getElementById('clock').innerHTML = time;
 	console.log('<?= $data ?>');
     if(time < 0){
-		window.close();
+		//window.close();
 	}
 }, 1000);
 </script>
