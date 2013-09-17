@@ -36,7 +36,7 @@ if (IS_LOGGED_IN) {
 
         if(isset($_GET['t']))$params['t'] = true;
 
-        //var_dump($_GET);
+        var_dump($_GET);
         //var_dump($params);
         $data = api_call('posting', 'add_post_image', $params, true);
 
@@ -76,7 +76,6 @@ body{text-align:center;}
 .imgFrame img{height: 100%; float:left;}
 </style>
 <body>
-<? var_dump($params); ?>
 <div id="contentFrame">
     <div class="titleHead">COOL PIC, KEEP'M COMIN ;)</div>
     <div class="dwTitle"><img src="http://www.dahliawolf.com/images/popTitle.png"></div>
