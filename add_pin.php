@@ -74,7 +74,7 @@ body{text-align:center;}
 .imgFrame img{height: 100%; float:left;}
 </style>
 <body>
-<? $params ?>
+<?= var_dump($params) ?>
 <div id="contentFrame">
     <div class="titleHead">COOL PIC, KEEP'M COMIN ;)</div>
     <div class="dwTitle"><img src="http://www.dahliawolf.com/images/popTitle.png"></div>
