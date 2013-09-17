@@ -82,7 +82,7 @@ body{text-align:center;}
     <div class="dwTitle"><img src="http://www.dahliawolf.com/images/popTitle.png"></div>
     <div class="stuff">
         <div class="imgFrame"><img src="<?= $_GET['url'] ?>" /></div>
-        <div id="timer"><p id="clock">10</p></div>
+        <div id="timer"><p id="clock">5</p></div>
     </div>
     <div class="clickHere">Click <a href="http://www.dahliawolf.com/post/<?= $data['data']['posting_id'] ?>" target="_none">HERE</a> to view post</div>
 </div>
@@ -94,7 +94,7 @@ time = 5;
 setInterval(function(){
 	time--;
 	document.getElementById('clock').innerHTML = time;
-	console.log(<?= $data ?>);
+	console.log('<?= $data ?>');
     if(time < 0){
 		//window.close();
 	}
