@@ -98,32 +98,17 @@ foreach(glob($dir.'*.jpg') as $img): ?>
     $center = $imgDimensions[0]/2;
     $middle = $imgDimensions[1]/2;
     $point = array($center, $middle);
-    $area = -$imgDimensions[0]*.10;
+    $area = -$imgDimensions[0]*.25;
 
 
     $start_time = microtime(true);
     trace("color mapping start $img start time: $start_time");
     $area_length = abs($area);
 
-    $src = imagecreatefromjpeg("$img");
-    $dest = imagecreatetruecolor($area_length, $area_length);
-
-    // Copy
-    imagecopy($dest, $src, 0, 0, $center-($area_length/2), $middle-($area_length/2), $area_length, $area_length);
-    trace( sprintf("dst_im: %s, src_im: %s, dst_x: %s, dst_y: %s, src_x: %s, src_y: %s, src_w: %s, src_h: %s", 'dest', 'src', 0, 0, $center-($area_length/2), $middle-($area_length/2), $area_length, $area_length) );
-
-    ob_start();
-    imagejpeg($dest, null, 100);
-    $image_data = ob_get_clean();
-
-    $image_areas[$img] = base64_encode($image_data);
-    imagedestroy($src);
-    imagedestroy($dest);
-
-
-    for($x = $area; $x < abs($area); $x++) {
-
-        for($y = $area; $y < abs($area); $y++) {
+    for($x = $area; $x < abs($area); $x++)
+    {
+        for($y = $area; $y < abs($area); $y++)
+        {
             $rgb = imagecolorat($im, $center+$x, $middle+$y);
 
             //echo sprintf("<pre>x: %s y: %s</pre>", $center+$x, $middle+$y);
@@ -136,6 +121,61 @@ foreach(glob($dir.'*.jpg') as $img): ?>
         }
     }
 
+
+    ////////
+    // Copy area into new image
+    $src = imagecreatefromjpeg("$img");
+    $dest = imagecreatetruecolor($area_length, $area_length);
+
+    imagecopy($dest, $src, 0, 0, $center-($area_length/2), $middle-($area_length/2), $area_length, $area_length);
+    trace( sprintf("dst_im: %s, src_im: %s, dst_x: %s, dst_y: %s, src_x: %s, src_y: %s, src_w: %s, src_h: %s", 'dest', 'src', 0, 0, $center-($area_length/2), $middle-($area_length/2), $area_length, $area_length) );
+
+    //mark diag pixels
+    $red = imagecolorallocate($dest, 255, 0, 0);
+    for($x = 0; $x < $area_length; $x++)
+    {
+        for($y = $area; $y < $area_length; $y++) imagesetpixel($dest, $x, $x, $red);
+    }
+
+
+    $pi =  3.1456;
+    $rotation = 2 * $pi;
+
+    $sides  = 128;
+    $coils = 2;
+    $radius = $center = $area_length/2;
+
+    $away_step = ($area_length/4)/$sides;
+    $around_step = $coils/$sides;
+    $around_radians = $around_step * 2 * $pi;
+
+    $color = imagecolorallocate($dest, 221, 12, 195);
+
+    $spiral_locs = array();
+
+    for($i=0; $i < $area_length*3; $i++)
+    {
+        $away = $i * $away_step;
+        $around = $i * $around_radians + $rotation;
+
+        $x = $center + cos($around) * $away;
+        $y = $center + sin($around) * $away;
+
+        $spiral_locs[] = "$x,$y";
+
+        imagesetpixel($dest, $x, $y, $color);
+    }
+
+
+    //echo sprintf("<pre>%s</pre>", var_export($spiral_locs, true));
+
+
+    ob_start();
+    imagejpeg($dest, null, 100);
+    $image_data = ob_get_clean();
+    $image_areas[$img] = base64_encode($image_data);
+    imagedestroy($dest);
+    imagedestroy($src);
 
     trace( sprintf("color mapping step: array_count_values"));
     $values = array_count_values($matrix);
