@@ -16,7 +16,7 @@ if (IS_LOGGED_IN) {
 	// Grab and save remote image
 	$image = @file_get_contents($_GET['url']);
 	
-	echo 'blooppp';
+	echo $_GET['url'];
     if ($image) {
 		echo 'ahoi';
         file_put_contents($image_url, $image);
