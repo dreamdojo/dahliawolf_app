@@ -97,6 +97,14 @@ User.prototype.logIntoTwitter = function() {
     );
 }
 
+User.prototype.logIntoFacebook = function() {
+    window.open(
+        "/social-login.php?social_network=facebook",
+        'Log into Twitter',
+        'width=500, height=500'
+    );
+}
+
 //***************************************************************************** User uploading system
 User.prototype.uploadAvatar = function(_this, file) {
     this.coordTop = $(_this).offset().top;

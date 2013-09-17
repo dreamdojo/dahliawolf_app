@@ -161,7 +161,7 @@ partyLine.getUsers['EMAIL'] = function(){
 }
 
 partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
-	FB.api('/me/friends', function(response) {
+    FB.api('/me/friends', function(response) {
         dahliaLoader.show();
         if(response.data) {
             dahliaLoader.hide();
@@ -170,7 +170,7 @@ partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
             });
 			partyLine.displayUsers();
         } else {
-            document.location = "/social-login.php?social_network=facebook";
+            dahliawolf.logIntoFacebook();
         }
     });
 }
