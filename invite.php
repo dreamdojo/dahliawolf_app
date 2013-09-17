@@ -186,31 +186,38 @@ partyLine.getUsers['INSTAGRAM'] = function(){// GET FACEBOOK USER METHODS
 
 partyLine.getUsers['TWITTER'] = function(cursor){
 	if(!cursor){cursor = -1;}
-	if(dahliawolf.areYouLoggedIntoTwitter){
-		if(partyLine.twitterUsername != null){
-			$.post(partyLine.twitterUrl, {'cursor' : cursor, 'screen_name' : partyLine.twitterUsername }).done(function(data){
-				obj = JSON.parse(data);
-				if(!obj.errors){
-					cursor = obj.next_cursor;
-					obj = obj['users'];
-					$.each(obj,function(index,friend) {
-                        partyLine.twitterUsers.push(friend);
-                        partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
-					});
-					partyLine.displayUsers();
-					if(cursor != 0){
-						partyLine.getUsers['TWITTER'](cursor);
-					}
-				}else{
-					alert(obj.errors[0].message);
-				}
-			});
-		}else{
-			partyLine.setTwitterAccount();
-		}
-	}else{
-        dahliawolf.logIntoTwitter();
-	}
+	if(partyLine.twitterUsers.length) {
+        $.each(partyLine.twitterUsers, function(index,friend) {
+            partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
+        });
+        partyLine.displayUsers();
+    } else {
+        if(dahliawolf.areYouLoggedIntoTwitter){
+            if(partyLine.twitterUsername != null){
+                $.post(partyLine.twitterUrl, {'cursor' : cursor, 'screen_name' : partyLine.twitterUsername }).done(function(data){
+                    obj = JSON.parse(data);
+                    if(!obj.errors){
+                        cursor = obj.next_cursor;
+                        obj = obj['users'];
+                        $.each(obj,function(index,friend) {
+                            partyLine.twitterUsers.push(friend);
+                            partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
+                        });
+                        partyLine.displayUsers();
+                        if(cursor != 0){
+                            partyLine.getUsers['TWITTER'](cursor);
+                        }
+                    }else{
+                        alert(obj.errors[0].message);
+                    }
+                });
+            }else{
+                partyLine.setTwitterAccount();
+            }
+        }else{
+            dahliawolf.logIntoTwitter();
+        }
+    }
 }
 
 partyLine.displayUsers = function(){
@@ -254,8 +261,6 @@ partyLine.setBezel = function(platform) {
 
 $('.activity-menu').bind('click', function(){
 	if(theUser.id){
-		$('.activity-menu').removeClass('invite-selected');
-		$(this).addClass('invite-selected');
 		partyLine.init( $(this).data('platform') );
         partyLine.setBezel($(this).data('platform'));
 	}else{
