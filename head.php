@@ -92,10 +92,10 @@ if ($top_dir == 'shop') {
 var theUser = new Object();
 var LOVE_REQUIRED = 1000;
 <? if (IS_LOGGED_IN): ?>
-	var userConfig = <?= json_encode($userConfig) ?>;
-    var userSession = <?= json_encode($_SESSION) ?>;
+	userConfig = <?= json_encode($userConfig) ?>;
+    userSession = <?= json_encode($_SESSION) ?>;
 	<? if(INSTAGRAM_IS_LOGGED_IN): ?>
-		userConfig.instagramToken = '<?= $_SESSION['user']['instagramToken'] ?>';
+        userConfig.instagramToken = '<?= $_SESSION['user']['instagramToken'] ?>';
 	<? endif ?>
     userConfig.twitterToken = <?= ($_SESSION['access_token']['oauth_token'] ? 'true' : 'false') ?>;
     theUser.id = <?= $_SESSION['user']['user_id'] ?>;
@@ -110,7 +110,9 @@ var LOVE_REQUIRED = 1000;
 <? endif ?>
     dahliawolf = new User(<? echo json_encode($userConfig) ?>);
     dahliawolf.setFriends(theUser.friends);
+
 <!-- Start of Woopra Code -->
+
     (function(){
         var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
     })("woopra");

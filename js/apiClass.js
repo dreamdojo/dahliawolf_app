@@ -28,7 +28,7 @@ User.prototype = {
     get isLoggedIn() {return (this.data.user_id && this.data.user_id > 0 ? true : false);},
     get whoareyou() {return 'A hot bitch with a fat ASS!!';},
     get hi() {return 'hello!';},
-    get areYouLoggedIntoTwitter() {return this.data.twitterToken ? true : false;},
+    get areYouLoggedIntoTwitter() {return this.data.twitterToken;},
 
     getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');},
 
