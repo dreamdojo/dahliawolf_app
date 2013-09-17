@@ -39,7 +39,8 @@ if (IS_LOGGED_IN) {
         //var_dump($_GET);
         //var_dump($params);
 
-		$data = api_call('posting', 'add_post_image', $params, true);
+		var_dump($params);
+        $data = api_call('posting', 'add_post_image', $params, true);
 
 		//$data = json_decode($data);
         var_dump($data);
