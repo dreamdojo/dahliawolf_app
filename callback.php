@@ -36,6 +36,7 @@ if (200 == $connection->http_code): ?>
   //header('Location: ./invite?platform=TWITTER');
     <script>
         opener.dahliawolf.twitterToken = <?= $_SESSION['access_token'] ?>;
+        opener.partyLine.getUsers['TWITTER'];
         close();
     </script>
 
