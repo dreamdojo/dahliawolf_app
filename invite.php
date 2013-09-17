@@ -57,9 +57,9 @@ partyLine.isTwitterLoggedIn = <?= (TWITTER_IS_LOGGED_IN ? 'true' : 'false') ?>;
 partyLine.twitterUsername = null;
 partyLine.twitterMessengerBusy = false;
 partyLine.bezelMap = {'FACEBOOK': 40, 'TWITTER': 108, 'EMAIL' : 180};
+partyLine.twitterUsers = new Array();
 
-partyLine.users = new Array();// USR CLASS
-
+partyLine.users = new Array();
 partyLine.userTank = $('#mainCol');
 
 partyLine.userTank.on('click', '.invite-follow-button', function() {
@@ -194,6 +194,7 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 					cursor = obj.next_cursor;
 					obj = obj['users'];
 					$.each(obj,function(index,friend) {
+                        partyLine.twitterUsers[] = friend;
                         partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
 					});
 					partyLine.displayUsers();
