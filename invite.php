@@ -194,7 +194,7 @@ partyLine.getUsers['TWITTER'] = function(cursor){
 					cursor = obj.next_cursor;
 					obj = obj['users'];
 					$.each(obj,function(index,friend) {
-                        partyLine.twitterUsers[] = friend;
+                        partyLine.twitterUsers.push(friend);
                         partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
 					});
 					partyLine.displayUsers();
