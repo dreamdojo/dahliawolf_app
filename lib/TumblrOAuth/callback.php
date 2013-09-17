@@ -46,7 +46,7 @@ $tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, $access_token['oau
 
 // Make an API call with the TumblrOAuth instance.  There's also a post and delete method too.
 $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
-$params = Array(type=>'text',state=>'published',link=>urlencode('http://www.dahliawolf.com'), source=>urlencode('http://www.dahliawolf.com/postings/uploads/image.php?imagename=1379454763'));
+$params = Array(type=>'text',state=>'published',link=>urlencode('http://www.dahliawolf.com'), source=>urlencode('http://www.dahliawolf.com/postings/uploads/image.php?imagename=1379454763'), data=>urlencode('http://www.dahliawolf.com/postings/uploads/image.php?imagename=1379454763'));
 $newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/monk3ypoop.tumblr.com/post',$params);
 var_dump($newPost);
 // You don't actuall have to pass a full URL,  TukmblrOAuth will complete the URL for you.
