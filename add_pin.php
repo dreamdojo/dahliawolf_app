@@ -27,7 +27,7 @@ if (IS_LOGGED_IN) {
 			, 'attribution_url' => urldecode($_GET['sourceurl'])
 			, 'source' => $source
 			, 'user_id' => $user_id
-			, 'description' => $_GET['description']
+			, 'description' => !empty($_GET['description']) ? $_GET['description'] : ''
 			, 'dimensionsX' => $dimensions[0]
 			, 'dimensionsY' => $dimensions[1]
 
