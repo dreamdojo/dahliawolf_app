@@ -161,14 +161,22 @@ partyLine.getUsers['EMAIL'] = function(){
 }
 
 partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
-    FB.api('/me/friends', function(response) {
-        dahliaLoader.show();
-        if(response.data) {
-            dahliaLoader.hide();
-			$.each(response.data,function(index,friend) {
-                partyLine.users[index] = new partyLine.user(friend.name, friend.id, 'http://graph.facebook.com/'+friend.id+'/picture?type=large', 'FACEBOOK');
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            FB.api('/me/friends', function(response) {
+                dahliaLoader.show();
+                if(response.data) {
+                    dahliaLoader.hide();
+                    $.each(response.data,function(index,friend) {
+                        partyLine.users[index] = new partyLine.user(friend.name, friend.id, 'http://graph.facebook.com/'+friend.id+'/picture?type=large', 'FACEBOOK');
+                    });
+                    partyLine.displayUsers();
+                } else {
+
+                }
             });
-			partyLine.displayUsers();
+        } else if (response.status === 'not_authorized') {
+            dahliawolf.logIntoFacebook();
         } else {
             dahliawolf.logIntoFacebook();
         }

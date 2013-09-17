@@ -98,11 +98,13 @@ User.prototype.logIntoTwitter = function() {
 }
 
 User.prototype.logIntoFacebook = function() {
-    window.open(
-        "/social-login.php?social_network=facebook",
-        'Log into Twitter',
-        'width=500, height=500'
-    );
+    FB.login(function(response) {
+        if (response.authResponse) {
+            // User authorized app
+        } else {
+            // User cancelled login or did not fully authorize
+        }
+    }, {scope: 'email'});
 }
 
 //***************************************************************************** User uploading system
