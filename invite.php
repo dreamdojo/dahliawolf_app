@@ -3,10 +3,10 @@
 	include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
 	include "header.php";
 	
-	$menu = array(	array('title' => 'FACEBOOK', 'img' => 'menu_fb.png'), 
-					array('title' => 'TWITTER', 'img' => 'menu_twitter.png'), 
+	$menu = array(	array('title' => 'FACEBOOK', 'img' => '/mobile/images/shareFb.png'),
+					array('title' => 'TWITTER', 'img' => '/mobile/images/shareTwitter.png'),
 					//array('title' => 'INSTAGRAM', 'img' => 'menu_google.png'),
-					array('title' => 'EMAIL', 'img' => 'menu_custom.png')
+					array('title' => 'EMAIL', 'img' => '/mobile/images/shareEmail.png')
 				);
 	
 	$platform = ( !empty($_GET['platform']) ? $_GET['platform'] : 'none' );
@@ -23,16 +23,17 @@
 .follow{border: #f74d6d thin solid;color: #f74d6d !important;}
 .invite-user-name{font-size: 17px;margin-bottom: 3px;}
 #followFbFriends{width: 100%;float: left;height: 100%;}
+#theShaft .activity-menu-icon{border: #c2c2c2 thin solid; background-size: 174%; height: 99%;background-position: 50% 50%; margin-bottom: 10px; }
+#theShaft #mainCol{border-left: #c2c2c2 thin solid; border-left: #c2c2c2 thin solid; min-height: 1000px; margin-top: 20px;}
+#theShaft #leftCol{width: 9%;}
+#theShaft .defaulto{left: 50%;position: relative;margin-left: -303px;}
 </style>
 
 <div id="theShaft">
 	<div id="leftCol">
 		<? foreach($menu as $item): ?>
         	<div id="menu-<?= $item['title'] ?>" class="activity-menu cursor highlightable" data-platform="<?= $item['title'] ?>">
-            	<div class="activity-menu-icon" style="background-image: url(images/<?= $item['img'] ?>)">
-                </div>
-                <div class="activity-menu-title">
-                	<?= $item['title'] ?>
+            	<div class="activity-menu-icon" style="background-image: url(<?= $item['img'] ?>)">
                 </div>
             </div>
 		<? endforeach ?>
@@ -259,13 +260,14 @@ $(function(){
 	} else {
         setTimeout( function() {
             FB.getLoginStatus(function(response) {
+                console.log(response);
                 if (response.status === 'connected') {
                     $('#menu-FACEBOOK').click();
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook,
                     // but has not authenticated your app
                 } else {
-                    // the user isn't logged in to Facebook.
+                    partyLine.userTank.append('<img class="defaulto" src="/images/invite_default.jpg">');
                 }
             });
         }, 1000);
