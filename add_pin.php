@@ -38,12 +38,9 @@ if (IS_LOGGED_IN) {
 
         //var_dump($_GET);
         //var_dump($params);
-
-		var_dump($params);
         $data = api_call('posting', 'add_post_image', $params, true);
 
-		//$data = json_decode($data);
-        var_dump($data);
+		$data = json_decode($data);
         /*
         //http://www.dahliawolf.com/add_pin?
         url=http%3A//images02.nastygal.com/resources/nastygal/images/products/processed/27104.0.browse-m.jpg&
@@ -58,7 +55,7 @@ if (IS_LOGGED_IN) {
 }?>
 
 <? if(IS_LOGGED_IN): ?>
-<?/*<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -79,6 +76,7 @@ body{text-align:center;}
 .imgFrame img{height: 100%; float:left;}
 </style>
 <body>
+<? var_dump($params); ?>
 <div id="contentFrame">
     <div class="titleHead">COOL PIC, KEEP'M COMIN ;)</div>
     <div class="dwTitle"><img src="http://www.dahliawolf.com/images/popTitle.png"></div>
@@ -102,5 +100,4 @@ setInterval(function(){
 	}
 }, 1000);
 </script>
-*/?>
 <? endif ?>
