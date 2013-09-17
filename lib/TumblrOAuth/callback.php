@@ -68,6 +68,7 @@ for ($fln=0; $fln<count($userinfo->response->user->blogs); $fln=$fln+1) {
 
 echo("<br/>");
 echo("Your user name (the part before tumblr.com of your primary blog): ".$userinfo->response->user->name);
+echo 'token='.$_GET['oauth_token'];
 
 // And that's that.  Hopefully it will help.
 ?>
