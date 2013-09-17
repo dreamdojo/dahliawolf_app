@@ -89,13 +89,14 @@ body{text-align:center;}
 </body>
 </html>
 <script>
-time = 10;
+time = 5;
 
 setInterval(function(){
 	time--;
 	document.getElementById('clock').innerHTML = time;
-	if(time < 0){
-		window.close();
+	console.log(<?= $data ?>);
+    if(time < 0){
+		//window.close();
 	}
 }, 1000);
 </script>
