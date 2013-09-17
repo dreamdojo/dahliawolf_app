@@ -15,10 +15,8 @@ if (IS_LOGGED_IN) {
 	
 	// Grab and save remote image
 	$image = @file_get_contents($_GET['url']);
-	
-	echo $_GET['url'];
+
     if ($image) {
-		echo 'ahoi';
         file_put_contents($image_url, $image);
 		$dimensions = @getimagesize($image_url);
 		
@@ -95,7 +93,7 @@ setInterval(function(){
 	document.getElementById('clock').innerHTML = time;
 	console.log('<?= $data ?>');
     if(time < 0){
-		//window.close();
+		window.close();
 	}
 }, 1000);
 </script>
