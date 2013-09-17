@@ -36,8 +36,6 @@ if (IS_LOGGED_IN) {
 
         if(isset($_GET['t']))$params['t'] = true;
 
-        var_dump($_GET);
-        //var_dump($params);
         $data = api_call('posting', 'add_post_image', $params, true);
 
 		$data = json_decode($data);
@@ -95,7 +93,7 @@ setInterval(function(){
 	document.getElementById('clock').innerHTML = time;
 	console.log('<?= $data ?>');
     if(time < 0){
-		//window.close();
+		window.close();
 	}
 }, 1000);
 </script>
