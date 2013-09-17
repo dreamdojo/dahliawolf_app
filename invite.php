@@ -186,7 +186,7 @@ partyLine.getUsers['INSTAGRAM'] = function(){// GET FACEBOOK USER METHODS
 
 partyLine.getUsers['TWITTER'] = function(cursor){
 	if(!cursor){cursor = -1;}
-	if(partyLine.isTwitterLoggedIn){
+	if(dahliawolf.areYouLoggedIntoTwitter){
 		if(partyLine.twitterUsername != null){
 			$.post(partyLine.twitterUrl, {'cursor' : cursor, 'screen_name' : partyLine.twitterUsername }).done(function(data){
 				obj = JSON.parse(data);
