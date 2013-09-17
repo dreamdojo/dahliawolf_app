@@ -27,6 +27,7 @@
 #theShaft #mainCol{border-left: #c2c2c2 thin solid; border-left: #c2c2c2 thin solid; min-height: 1000px; margin-top: 20px;}
 #theShaft #leftCol{width: 9%;}
 #theShaft .defaulto{left: 50%;position: relative;margin-left: -303px;}
+.invite-selected{background-color: #fff;}
 </style>
 
 <div id="theShaft">
