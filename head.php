@@ -108,7 +108,7 @@ var LOVE_REQUIRED = 1000;
 	theUser.username = false;
 	var userConfig = new Object();
 <? endif ?>
-    dahliawolf = new User(<? echo json_encode($userConfig) ?>);
+    dahliawolf = new User(userConfig);
     dahliawolf.setFriends(theUser.friends);
 
 <!-- Start of Woopra Code -->
