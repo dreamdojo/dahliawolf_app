@@ -176,8 +176,10 @@ partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
                 }
             });
         } else if (response.status === 'not_authorized') {
+            partyLine.userTank.empty();
             dahliawolf.logIntoFacebook(partyLine.getUsers['FACEBOOK']);
         } else {
+            partyLine.userTank.empty();
             dahliawolf.logIntoFacebook(partyLine.getUsers['FACEBOOK']);
         }
     });

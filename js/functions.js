@@ -685,7 +685,7 @@ function dahliaHeads() {
     $(document).on('mouseenter', '.dahliaHead', function(){
         $this.clearDahliaTimer();
         $this.left = $(this).offset().left - ($this.view.width()/2);
-        $this.top = $(this).offset().top - $this.view.height();
+        $this.top = $(this).offset().top - $this.view.height()+10;
         var id = Number( $(this).data('id') );
 
         if( id != theUser.id){
