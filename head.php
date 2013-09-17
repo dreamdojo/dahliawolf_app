@@ -65,14 +65,11 @@ if ($top_dir == 'shop') {
 <script type="text/javascript" src="/js/pin.js"></script>
 <script type="text/javascript" src="/js/pplFinder.js"></script>
 <script type="text/javascript" src="/js/jquery.masonry.min.js"></script>
-<!--<script type="text/javascript" src="/js/jquery.fancybox-1.3.4.pack.js"></script>
-<script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>-->
 <script type="text/javascript" src="/js/jquery.tipTip.minified.js"></script>
 <script type="text/javascript">var base_url = "http://www.dahliawolf.com";</script>
 <script type="text/javascript" src="/js/custom.js"></script>
 <script type="text/javascript" src="/js/postbar.js"></script>
 <script src="/js/jquery.form.js"></script>
-<!--<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>-->
 <link rel="stylesheet" type="text/css" href="/css/facebook-style.css">
 <script src="/js/underscore-min.js" type="text/javascript"></script>
 <script src="/js/functions.js" type="text/javascript"></script>
