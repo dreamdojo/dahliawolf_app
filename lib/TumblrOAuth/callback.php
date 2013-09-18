@@ -42,7 +42,7 @@ if (200 == $tum_oauth->http_code) {
 
 // Start a new instance of TumblrOAuth, overwriting the old one.
 // This time it will need our Access Token and Secret instead of our Request Token and Secret
-$tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, $access_token['oauth_token'], $access_token['oauth_token_secret']);
+$tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, 'hCM6GehPbCeonrWBFB6ytCAmOa8kgWYGm4CL0hgPRQx0zIY5zz', 'MT2qpUnE2NIIxQpJTyx2KkcD1MBjNo71AB3g8h8iRTySpUdKft');
 
 // Make an API call with the TumblrOAuth instance.  There's also a post and delete method too.
 $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
