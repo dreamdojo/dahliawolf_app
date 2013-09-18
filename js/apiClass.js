@@ -105,9 +105,12 @@ User.prototype.logIntoTumblr = function(callback) {
         'Log into Tumblr',
         'width=500, height=700'
     )
-     loginWindow.addEventListener('unload', function() {
+    /*loginWindow.addEventListener('unload', function() {
             console.log('playa');
-        });
+        }, true);*/
+    loginWindow.onbeforeunload = function() {
+        console.log('playa');
+    }
 }
 
 User.prototype.logIntoFacebook = function(callback) {
