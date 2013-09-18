@@ -324,19 +324,15 @@ Post.prototype.shareOnTwitter = function(URL) {
 Post.prototype.shareOnFacebook = function(URL) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            console.log(URL);
             var params = {};
-            params['message'] = 'PicRolled';
-            //params['source'] = '@'+URL;
+            params['message'] = 'Love this on Dahliawolf';
             params['url'] = URL;
             params['access_token'] = response.authResponse.accessToken;
             params['upload file'] = true;
             params['fileName'] = 'Bloop';
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
-                    console.log(response);
-                } else {
-                    alert('Published to stream - you might want to delete it now!');
+                    holla.log(response);
                 }
             });
         } else if (response.status === 'not_authorized') {
