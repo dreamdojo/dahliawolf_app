@@ -77,6 +77,7 @@ echo("<br/>");
 echo("Your user name (the part before tumblr.com of your primary blog): ".$userinfo->response->user->name);
 echo '<br>token='.$_GET['oauth_token'];
 echo '<br>verifier='.$_GET['oauth_verifier'];
-
+$_SESSION['oauth_token'];
+$_SESSION['oauth_verifier']
 // And that's that.  Hopefully it will help.
 ?>
