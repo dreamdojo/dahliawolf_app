@@ -11,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529689741" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529970761" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -82,7 +82,7 @@
     <file path="/add_pin.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379435788848" ignored="false" />
     <file path="/callback.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529010393" ignored="false" />
     <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
-    <file path="/sharePost.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529786750" ignored="false" />
+    <file path="/sharePost.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379530008705" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +128,7 @@
       <file leaf-file-name="sharePost.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="2" selection-start="669" selection-end="669" vertical-scroll-proportion="0.3664495">
+            <state line="18" column="9" selection-start="818" selection-end="818" vertical-scroll-proportion="0.4397394">
               <folding />
             </state>
           </provider>
@@ -996,7 +996,19 @@
       <created>1379529691765</created>
       <updated>1379529691765</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="shareBalls not yet">
+      <created>1379529820542</created>
+      <updated>1379529820542</updated>
+    </task>
+    <task id="LOCAL-00138" summary="shareBalls not yet">
+      <created>1379529905996</created>
+      <updated>1379529905996</updated>
+    </task>
+    <task id="LOCAL-00139" summary="shareBalls not yet">
+      <created>1379529973524</created>
+      <updated>1379529973524</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1228,7 +1240,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="2" selection-start="669" selection-end="669" vertical-scroll-proportion="0.3664495">
+        <state line="18" column="9" selection-start="818" selection-end="818" vertical-scroll-proportion="0.4397394">
           <folding />
         </state>
       </provider>
