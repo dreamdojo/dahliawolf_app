@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/theGrid.js" afterPath="$PROJECT_DIR$/js/theGrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" afterPath="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
@@ -11,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529211680" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529473338" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -82,7 +82,7 @@
     <file path="/add_pin.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379435788848" ignored="false" />
     <file path="/callback.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529010393" ignored="false" />
     <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
-    <file path="/sharePost.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379526043385" ignored="false" />
+    <file path="/sharePost.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529658657" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,10 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sharePost.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sharePost.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="2" selection-start="807" selection-end="807" vertical-scroll-proportion="-11.25">
+            <state line="18" column="2" selection-start="809" selection-end="809" vertical-scroll-proportion="0.4397394">
               <folding />
             </state>
           </provider>
@@ -185,10 +185,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="theGrid.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="theGrid.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/theGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="74" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.736">
+            <state line="121" column="74" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1379529461000" expanded="false" signature="2944:2954" placeholder="..." />
@@ -263,10 +263,10 @@
         <option value="$PROJECT_DIR$/head.php" />
         <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/js/apiClass.js" />
-        <option value="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" />
         <option value="$PROJECT_DIR$/callback.php" />
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" />
         <option value="$PROJECT_DIR$/js/theGrid.js" />
+        <option value="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" />
       </list>
     </option>
   </component>
@@ -988,7 +988,11 @@
       <created>1379529214236</created>
       <updated>1379529214236</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="shareBalls not yet">
+      <created>1379529475529</created>
+      <updated>1379529475529</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1187,13 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="2" selection-start="807" selection-end="807" vertical-scroll-proportion="-11.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="802" column="56" selection-start="24327" selection-end="24327" vertical-scroll-proportion="0.0">
@@ -1217,11 +1214,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/theGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="74" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.736">
+        <state line="121" column="74" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1379529461000" expanded="false" signature="2944:2954" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="2" selection-start="809" selection-end="809" vertical-scroll-proportion="0.4397394">
+          <folding />
         </state>
       </provider>
     </entry>
