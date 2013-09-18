@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/sharePostOnTwitter.php" afterPath="$PROJECT_DIR$/action/sharePostOnTwitter.php" />
+    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="shareBalls not yet">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiClass.js" afterPath="$PROJECT_DIR$/js/apiClass.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
@@ -12,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379542582097" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379544499829" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -79,7 +78,7 @@
     <file path="/inspire.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379353966073" ignored="false" />
     <file path="/get_feed_from_pinterest.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379354406173" ignored="false" />
     <file path="/vote.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379355751529" ignored="false" />
-    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379539611081" ignored="false" />
+    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545167114" ignored="false" />
     <file path="/add_pin.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379435788848" ignored="false" />
     <file path="/callback.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536270899" ignored="false" />
     <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
@@ -136,15 +135,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="5" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-14.083333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sharePost.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -163,15 +153,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apiClass.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="apiClass.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/apiClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="313" column="51" selection-start="10018" selection-end="10018" vertical-scroll-proportion="0.0">
+            <state line="332" column="16" selection-start="10640" selection-end="10640" vertical-scroll-proportion="0.4190141">
               <folding>
                 <element signature="e#2226#2424#0" expanded="false" />
                 <element signature="e#2469#2497#0" expanded="false" />
                 <element signature="e#2546#2854#0" expanded="false" />
-                <marker date="1379540551000" expanded="true" signature="4358:4382" placeholder="..." />
+                <marker date="1379545185000" expanded="true" signature="4358:4382" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="invite.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/invite.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="184" column="7" selection-start="5845" selection-end="6781" vertical-scroll-proportion="-29.583334">
+              <folding>
+                <marker date="1379450119000" expanded="false" signature="9177:9199" placeholder="..." />
+                <marker date="1379450119000" expanded="false" signature="9829:9851" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -195,10 +197,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="functions.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="805" column="77" selection-start="24461" selection-end="24461" vertical-scroll-proportion="0.8415493">
+            <state line="804" column="23" selection-start="24383" selection-end="24383" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -267,13 +269,13 @@
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/connect.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/theGrid.js" />
-        <option value="$PROJECT_DIR$/js/apiClass.js" />
         <option value="$PROJECT_DIR$/head.php" />
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" />
         <option value="$PROJECT_DIR$/callback.php" />
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" />
         <option value="$PROJECT_DIR$/action/sharePostOnTwitter.php" />
         <option value="$PROJECT_DIR$/js/functions.js" />
+        <option value="$PROJECT_DIR$/js/apiClass.js" />
       </list>
     </option>
   </component>
@@ -1233,7 +1235,11 @@
       <created>1379542584099</created>
       <updated>1379542584100</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="shareBalls not yet">
+      <created>1379542728919</created>
+      <updated>1379542728919</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1349,13 +1355,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/action/uploadPost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="42" selection-start="465" selection-end="490" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="234" column="52" selection-start="17904" selection-end="17904" vertical-scroll-proportion="0.0">
@@ -1443,14 +1442,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/apiClass.js">
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="313" column="51" selection-start="10018" selection-end="10018" vertical-scroll-proportion="0.0">
+        <state line="804" column="23" selection-start="24383" selection-end="24383" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/invite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="184" column="7" selection-start="5845" selection-end="6781" vertical-scroll-proportion="-29.583334">
           <folding>
-            <element signature="e#2226#2424#0" expanded="false" />
-            <element signature="e#2469#2497#0" expanded="false" />
-            <element signature="e#2546#2854#0" expanded="false" />
-            <marker date="1379540551000" expanded="true" signature="4358:4382" placeholder="..." />
+            <marker date="1379450119000" expanded="false" signature="9177:9199" placeholder="..." />
+            <marker date="1379450119000" expanded="false" signature="9829:9851" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1462,10 +1466,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
+    <entry file="file://$PROJECT_DIR$/js/apiClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="805" column="77" selection-start="24461" selection-end="24461" vertical-scroll-proportion="0.8415493">
-          <folding />
+        <state line="332" column="16" selection-start="10640" selection-end="10640" vertical-scroll-proportion="0.4190141">
+          <folding>
+            <element signature="e#2226#2424#0" expanded="false" />
+            <element signature="e#2469#2497#0" expanded="false" />
+            <element signature="e#2546#2854#0" expanded="false" />
+            <marker date="1379545185000" expanded="true" signature="4358:4382" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

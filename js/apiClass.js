@@ -320,6 +320,21 @@ Post.prototype.shareOnTwitter = function(URL) {
         });
     }
 }
+
+Post,prototype.shareOnFacebook = function(URL) {
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            holla.log(response);
+            /*$.post('https://graph.facebook.com/me/photos?access_token="'+'d', function(data) {
+                holla.log(data);
+            });*/
+        } else if (response.status === 'not_authorized') {
+            dahliawolf.logIntoFacebook();
+        } else {
+            dahliawolf.logIntoFacebook();
+        }
+    });
+}
 //****************************************************************************************** Product
 function Shop() {
     this.apiApi = 'product.json';
