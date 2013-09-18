@@ -327,9 +327,11 @@ Post.prototype.shareOnFacebook = function(URL) {
             console.log(URL);
             var params = {};
             params['message'] = 'PicRolled';
-            params['source'] = '@'+URL;
+            //params['source'] = '@'+URL;
+            params['url'] = URL;
             params['access_token'] = response.authResponse.accessToken;
             params['upload file'] = true;
+            params['fileName'] = 'Bloop';
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
                     console.log(response);
