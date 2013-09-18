@@ -324,9 +324,10 @@ Post.prototype.shareOnTwitter = function(URL) {
 Post.prototype.shareOnFacebook = function(URL) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
+            console.log(URL);
             var params = {};
             params['message'] = 'PicRolled';
-            params['source'] = URL;
+            params['source'] = '@'+URL;
             params['access_token'] = response.authResponse.accessToken;
             params['upload file'] = true;
             FB.api('/me/photos', 'post', params, function(response) {
