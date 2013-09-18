@@ -800,14 +800,10 @@ shareBall.prototype.blastoff = function(data) {
 
     switch(data.data.platform) {
         case 'TUMBLR':
-            if(dahliawolf.areYouLoggedIntoTumblr) {
-                dahliawolf.post.shareOnTumbler(data.data.data.image_url);
-            } else {
-                dahliawolf.logIntoTumblr();
-            }
+            dahliawolf.post.shareOnTumbler(data.data.data.image_url);
             break;
         case 'TWITTER':
-            console.log(dahliawolf.areYouLoggedIntoTwitter);
+            dahliawolf.post.shareOnTwitter(data.data.data.image_url);
             break;
         case 'FACEBOOK':
             console.log('FB');

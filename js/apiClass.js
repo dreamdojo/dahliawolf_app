@@ -100,8 +100,6 @@ User.prototype.logIntoTwitter = function() {
 }
 
 User.prototype.logIntoTumblr = function(callback) {
-    window.globalCallback = callback;
-
     var loginWindow = window.open(
         "/lib/TumblrOAuth/connect.php",
         'Log into Tumblr',
@@ -307,6 +305,18 @@ Post.prototype.shareOnTumbler = function(URL) {
     } else {
         dahliawolf.logIntoTumblr(function() {
             console.log('holla');
+        });
+    }
+}
+
+Post.prototype.shareOnTwitter = function(URL) {
+    if(dahliawolf.areYouLoggedIntoTwitter) {
+        $.getJSON('/action/sharePostOnTwitter.php',{url:URL}, function(data) {
+            console.log(data);
+        });
+    } else {
+        dahliawolf.logIntoTwitter(function() {
+            holla.log('poopsy');
         });
     }
 }
