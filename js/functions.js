@@ -800,7 +800,6 @@ shareBall.prototype.blastoff = function(data) {
 
     switch(data.data.platform) {
         case 'TUMBLR':
-            console.log('img'+data.data.data.image_url);
             if(dahliawolf.areYouLoggedIntoTumblr) {
                 dahliawolf.post.shareOnTumbler(data.data.data.image_url);
             } else {
