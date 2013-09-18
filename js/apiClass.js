@@ -324,9 +324,17 @@ Post.prototype.shareOnTwitter = function(URL) {
 Post.prototype.shareOnFacebook = function(URL) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            holla.log(response);
-            $.post('https://graph.facebook.com/me/photos?access_token="'+response.authResponse.accessToken,{source:URL}, function(data) {
-                holla.log(data);
+            var params = {};
+            params['message'] = 'PicRolled';
+            params['source'] = '@'+URL;
+            params['access_token'] = response.authResponse.accessToken;
+            params['upload file'] = true;
+            FB.api('/me/photos', 'post', params, function(response) {
+                if (!response || response.error) {
+                    alert(response);
+                } else {
+                    alert('Published to stream - you might want to delete it now!');
+                }
             });
         } else if (response.status === 'not_authorized') {
             dahliawolf.logIntoFacebook();
