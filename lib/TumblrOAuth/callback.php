@@ -42,7 +42,7 @@ if (200 == $tum_oauth->http_code) {
 
 // Start a new instance of TumblrOAuth, overwriting the old one.
 // This time it will need our Access Token and Secret instead of our Request Token and Secret
-$tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, 'V4QuW92JP9XqeQHoaHFgkpMsgYJWzr1exHhd5wGZGoFyxSzOwc', 'SfM1uuQIDMb6QIqTTDlhOgF68YAnKZiLixuhRPHnyjGkwu33EP');
+$tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
 // Make an API call with the TumblrOAuth instance.  There's also a post and delete method too.
 $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
@@ -75,9 +75,8 @@ for ($fln=0; $fln<count($userinfo->response->user->blogs); $fln=$fln+1) {
 
 echo("<br/>");
 echo("Your user name (the part before tumblr.com of your primary blog): ".$userinfo->response->user->name);
-echo '<br>token='.$_GET['oauth_token'];
-echo '<br>verifier='.$_GET['oauth_verifier'];
-$_SESSION['oauth_token'] = 'V4QuW92JP9XqeQHoaHFgkpMsgYJWzr1exHhd5wGZGoFyxSzOwc';
-$_SESSION['oauth_verifier'] = 'SfM1uuQIDMb6QIqTTDlhOgF68YAnKZiLixuhRPHnyjGkwu33EP';
+echo '<br>token='.$access_token['oauth_token'];
+echo '<br>verifier='.$access_token['oauth_token_secret'];
+
 // And that's that.  Hopefully it will help.
 ?>
