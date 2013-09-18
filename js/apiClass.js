@@ -100,12 +100,13 @@ User.prototype.logIntoTwitter = function() {
 }
 
 User.prototype.logIntoTumblr = function(callback) {
+    window.globalCallback = callback;
+
     var loginWindow = window.open(
         "/lib/TumblrOAuth/connect.php",
         'Log into Tumblr',
         'width=500, height=700'
     );
-    loginWindow.onunload = callback;
 }
 
 User.prototype.logIntoFacebook = function(callback) {

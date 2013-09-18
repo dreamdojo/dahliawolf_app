@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiClass.js" afterPath="$PROJECT_DIR$/js/apiClass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" afterPath="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
@@ -11,7 +12,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379537612738" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379537864543" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -78,7 +79,7 @@
     <file path="/inspire.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379353966073" ignored="false" />
     <file path="/get_feed_from_pinterest.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379354406173" ignored="false" />
     <file path="/vote.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379355751529" ignored="false" />
-    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379537857330" ignored="false" />
+    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379538112146" ignored="false" />
     <file path="/add_pin.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379435788848" ignored="false" />
     <file path="/callback.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536270899" ignored="false" />
     <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
@@ -119,7 +120,7 @@
       <file leaf-file-name="callback.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/callback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="28" selection-start="3409" selection-end="3409" vertical-scroll-proportion="-21.291666">
+            <state line="76" column="5" selection-start="3419" selection-end="3419" vertical-scroll-proportion="-21.916666">
               <folding />
             </state>
           </provider>
@@ -164,12 +165,12 @@
       <file leaf-file-name="apiClass.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/apiClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="307" column="33" selection-start="9889" selection-end="9889" vertical-scroll-proportion="0.9263323">
+            <state line="96" column="27" selection-start="3031" selection-end="3031" vertical-scroll-proportion="0.43260187">
               <folding>
                 <element signature="e#2226#2424#0" expanded="false" />
                 <element signature="e#2469#2497#0" expanded="false" />
                 <element signature="e#2546#2854#0" expanded="false" />
-                <marker date="1379537863000" expanded="true" signature="4395:4419" placeholder="..." />
+                <marker date="1379538122000" expanded="true" signature="4397:4421" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1163,7 +1164,11 @@
       <created>1379537614368</created>
       <updated>1379537614368</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="shareBalls not yet">
+      <created>1379537866209</created>
+      <updated>1379537866209</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1368,7 +1373,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/callback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="28" selection-start="3409" selection-end="3409" vertical-scroll-proportion="-21.291666">
+        <state line="76" column="5" selection-start="3419" selection-end="3419" vertical-scroll-proportion="-21.916666">
           <folding />
         </state>
       </provider>
@@ -1389,12 +1394,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/apiClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="307" column="33" selection-start="9889" selection-end="9889" vertical-scroll-proportion="0.9263323">
+        <state line="96" column="27" selection-start="3031" selection-end="3031" vertical-scroll-proportion="0.43260187">
           <folding>
             <element signature="e#2226#2424#0" expanded="false" />
             <element signature="e#2469#2497#0" expanded="false" />
             <element signature="e#2546#2854#0" expanded="false" />
-            <marker date="1379537863000" expanded="true" signature="4395:4419" placeholder="..." />
+            <marker date="1379538122000" expanded="true" signature="4397:4421" placeholder="..." />
           </folding>
         </state>
       </provider>
