@@ -11,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536449554" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536698430" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -164,13 +164,13 @@
       <file leaf-file-name="apiClass.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/apiClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="28" selection-start="3345" selection-end="3345" vertical-scroll-proportion="0.5266458">
+            <state line="101" column="51" selection-start="3125" selection-end="3125" vertical-scroll-proportion="0.36206895">
               <folding>
                 <element signature="e#2226#2424#0" expanded="false" />
                 <element signature="e#2469#2497#0" expanded="false" />
                 <element signature="e#2546#2854#0" expanded="false" />
-                <element signature="e#5345#6663#0" expanded="false" />
-                <marker date="1379536694000" expanded="false" signature="4445:4469" placeholder="..." />
+                <element signature="e#5348#6666#0" expanded="false" />
+                <marker date="1379536931000" expanded="false" signature="4448:4472" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1132,7 +1132,11 @@
       <created>1379536451383</created>
       <updated>1379536451383</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="shareBalls not yet">
+      <created>1379536699746</created>
+      <updated>1379536699746</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1358,13 +1362,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/apiClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="28" selection-start="3345" selection-end="3345" vertical-scroll-proportion="0.5266458">
+        <state line="101" column="51" selection-start="3125" selection-end="3125" vertical-scroll-proportion="0.36206895">
           <folding>
             <element signature="e#2226#2424#0" expanded="false" />
             <element signature="e#2469#2497#0" expanded="false" />
             <element signature="e#2546#2854#0" expanded="false" />
-            <element signature="e#5345#6663#0" expanded="false" />
-            <marker date="1379536694000" expanded="false" signature="4445:4469" placeholder="..." />
+            <element signature="e#5348#6666#0" expanded="false" />
+            <marker date="1379536931000" expanded="false" signature="4448:4472" placeholder="..." />
           </folding>
         </state>
       </provider>
