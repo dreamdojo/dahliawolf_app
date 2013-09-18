@@ -11,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379541766707" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379542025909" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -188,7 +188,7 @@
       <file leaf-file-name="sharePostOnTwitter.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/action/sharePostOnTwitter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="89" selection-start="672" selection-end="672" vertical-scroll-proportion="0.2536232">
+            <state line="12" column="49" selection-start="490" selection-end="490" vertical-scroll-proportion="0.2173913">
               <folding />
             </state>
           </provider>
@@ -1212,7 +1212,11 @@
       <created>1379541768074</created>
       <updated>1379541768074</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="shareBalls not yet">
+      <created>1379542027425</created>
+      <updated>1379542027425</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1443,7 +1447,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/action/sharePostOnTwitter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="89" selection-start="672" selection-end="672" vertical-scroll-proportion="0.2536232">
+        <state line="12" column="49" selection-start="490" selection-end="490" vertical-scroll-proportion="0.2173913">
           <folding />
         </state>
       </provider>

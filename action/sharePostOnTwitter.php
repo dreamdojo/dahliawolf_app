@@ -10,9 +10,9 @@ $access_token = $_SESSION['access_token'];
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
 /* If method is set change API call made. Test is called by default. */
-$params = array('status' => 'Love this on Dahlia', 'media[]' => "@{$_GET['url']};Content-Type=multipart/form-data;filename={$_GET['url']}");
+$params = array('status' => 'Love this on Dahlia');
 
-$content = $connection->post('https://api.twitter.com/1.1/statuses/update_with_media.json', $params, true, true);
+$content = $connection->post('https://api.twitter.com/1.1/statuses/update.json', $params, true, true);
 
 echo json_encode($content);
 
