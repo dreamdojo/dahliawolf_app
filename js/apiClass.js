@@ -29,10 +29,12 @@ User.prototype = {
     get whoareyou() {return 'A hot bitch with a fat ASS!!';},
     get hi() {return 'hello!';},
     get areYouLoggedIntoTwitter() {return this.data.twitterToken;},
+    get areYouLoggedIntoTumblr() {return this.data.tumblrToken;},
 
     getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');},
 
-    set twitterToken(token) {this.data.twitterToken = token;}
+    set twitterToken(token) {this.data.twitterToken = token;},
+    set tumblrToken(token) {this.data.tumblrToken = token;}
 };
 
 User.prototype.Loader = function(){
@@ -94,6 +96,15 @@ User.prototype.logIntoTwitter = function() {
         "/redirect.php",
         'Log into Twitter',
         'width=500, height=500'
+    );
+}
+
+User.prototype.logIntoTumblr = function(callback) {
+    this.callback = callback;
+    window.open(
+        "/lib/TumblrOAuth/connect.php",
+        'Log into Tumblr',
+        'width=500, height=700'
     );
 }
 
@@ -285,6 +296,16 @@ Post.prototype.getLovers = function(id, limit, offset, callback) {
     this.callApi({ posting_id : id, viewer_user_id : dahliawolf.userId, offset : offset, limit : limit});
 
     return this;
+}
+
+Post.prototype.shareOnTumbler = function(URL) {
+    if(dahliawolf.areYouLoggedIntoTumblr) {
+        $.getJSON('/lib/TumblrOAuth/sharePost.php',{url:URL}, function(data) {
+           console.log(data);
+        });
+    } else {
+        dahliawolf.logIntoTumblr();
+    }
 }
 //****************************************************************************************** Product
 function Shop() {

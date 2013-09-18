@@ -91,10 +91,9 @@ var LOVE_REQUIRED = 1000;
 <? if (IS_LOGGED_IN): ?>
 	userConfig = <?= json_encode($userConfig) ?>;
     userSession = <?= json_encode($_SESSION) ?>;
-	<? if(INSTAGRAM_IS_LOGGED_IN): ?>
-        userConfig.instagramToken = '<?= $_SESSION['user']['instagramToken'] ?>';
-	<? endif ?>
+    userConfig.instagramToken = <?= ($_SESSION['user']['instagramToken'] ? 'true' : 'false') ?>;
     userConfig.twitterToken = <?= ($_SESSION['access_token']['oauth_token'] ? 'true' : 'false') ?>;
+    userConfig.tumblrToken = <?= ($_SESSION['access_token']['oauth_token'] ? 'true' : 'false') ?>;
     theUser.id = <?= $_SESSION['user']['user_id'] ?>;
 	theUser.username = '<?= $_SESSION['user']['username'] ?>';
 	theUser.friends = <? echo json_encode($friends) ?>;

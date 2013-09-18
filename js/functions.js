@@ -774,3 +774,50 @@ Array.prototype.remove = function(from, to) {
     this.length = from < 0 ? this.length + from : from;
     return this.push.apply(this, rest);
 };
+//*****************************************************************************************
+function shareBall(data) {
+    this.data = data;
+    this.$mainBall = $('<ul class="shareBall"></ul>');
+    this.$mainBall.append('<li class="left"></li><li class="middle"></li><li class="right"></li>');
+    $('<div class="rocket"></div>').appendTo( this.$mainBall.find('.left')).on('click', {data:this.data, platform:'TUMBLR'}, this.blastoff);
+    $('<div class="rocket"></div>').appendTo( this.$mainBall.find('.middle') ).on('click', {data:this.data, platform:'TWITTER'}, this.blastoff);
+    $('<div class="rocket"></div>').appendTo( this.$mainBall.find('.right') ).on('click', {data:this.data, platform:'FACEBOOK'}, this.blastoff);
+    $('<div class="hoverBall"></div>').prependTo(this.$mainBall).hover(
+        function(){
+            $(this).siblings().find('.rocket').css('bottom', 67+'%').css('-webkit-transform', 'scale(1.3)');
+        }, function() {
+            var that = this;
+            $('.shareBall').on('mouseleave', function() {
+                $(that).siblings().find('.rocket').css('bottom', 0+'%').css('-webkit-transform', 'scale(1)');
+                $(this).unbind();
+            });
+        });
+    return this.$mainBall;
+}
+shareBall.prototype.blastoff = function(data) {
+    var $this = $(this);
+    var $points = $('<div class="getPoints">20 POINTS!</div>').css('left', $this.offset().left+30).css('top', $this.offset().top+20).appendTo('body');
+
+    switch(data.data.platform) {
+        case 'TUMBLR':
+            console.log('img'+data.data.data.image_url);
+            if(dahliawolf.areYouLoggedIntoTumblr) {
+                dahliawolf.post.shareOnTumbler(data.data.data.image_url);
+            } else {
+                dahliawolf.logIntoTumblr();
+            }
+            break;
+        case 'TWITTER':
+            console.log(dahliawolf.areYouLoggedIntoTwitter);
+            break;
+        case 'FACEBOOK':
+            console.log('FB');
+            break;
+        default:
+            console.log('broke');
+    }
+
+    $points.css('left', $this.offset().left+80).fadeOut(600, function() {
+    });
+    $this.remove();
+}

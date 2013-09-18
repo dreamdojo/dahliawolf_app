@@ -118,6 +118,7 @@ theGrid.post.prototype.displayPost = function() {
         '<div class="gridLovesBox"><div class="postGridLikeImage '+(parseInt(this.data.is_liked) ? 'postGridLiked' : 'postGridUnLiked')+'" rel="grid-vote" data-id="'+this.data.posting_id+'"></div><p class="postGridLikeCount">'+this.data.total_likes+'</p></div>';
 	str+= '</div>';
 	theGrid.container.append(str);
+    $('#post-'+this.data.posting_id).append(new shareBall(this.data));
 }
 
 theGrid.infiniteScroll = function(){

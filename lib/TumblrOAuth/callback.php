@@ -42,17 +42,17 @@ if (200 == $tum_oauth->http_code) {
 
 // Start a new instance of TumblrOAuth, overwriting the old one.
 // This time it will need our Access Token and Secret instead of our Request Token and Secret
-$tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, 'hCM6GehPbCeonrWBFB6ytCAmOa8kgWYGm4CL0hgPRQx0zIY5zz', 'MT2qpUnE2NIIxQpJTyx2KkcD1MBjNo71AB3g8h8iRTySpUdKft');
+//$tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, 'hCM6GehPbCeonrWBFB6ytCAmOa8kgWYGm4CL0hgPRQx0zIY5zz', 'MT2qpUnE2NIIxQpJTyx2KkcD1MBjNo71AB3g8h8iRTySpUdKft');
 
 // Make an API call with the TumblrOAuth instance.  There's also a post and delete method too.
-$userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
+//$userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
 
-$params = array(data => file_get_contents('http://www.dahliawolf.com/postings/uploads/image.php?imagename=736_1379465290.jpg'), type => "photo", source=>urlencode('http://www.dahliawolf.com/postings/uploads/image.php?imagename=736_1379465290.jpg') );
+//$params = array(data => file_get_contents('http://www.dahliawolf.com/postings/uploads/image.php?imagename=736_1379465290.jpg'), type => "photo", source=>urlencode('http://www.dahliawolf.com/postings/uploads/image.php?imagename=736_1379465290.jpg') );
 
-$newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/monk3ypoop.tumblr.com/post',$params);
+//$newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/monk3ypoop.tumblr.com/post',$params);
 
 
-var_dump($userinfo);
+//var_dump($userinfo);
 
 // You don't actuall have to pass a full URL,  TukmblrOAuth will complete the URL for you.
 // This will also work: $userinfo = $tum_oauth->get('user/info');
@@ -65,18 +65,12 @@ var_dump($userinfo);
 }*/
 
 // find primary blog.  Display its name.
-$screen_name = $userinfo->response->user->name;
-for ($fln=0; $fln<count($userinfo->response->user->blogs); $fln=$fln+1) {
-	if ($userinfo->response->user->blogs[$fln]->primary==true) {
-		echo("Your primary blog's name: " .($userinfo->response->user->blogs[$fln]->title));
-		break;
-	}
-}
 
-echo("<br/>");
-echo("Your user name (the part before tumblr.com of your primary blog): ".$userinfo->response->user->name);
-echo '<br>token='.$access_token['oauth_token'];
-echo '<br>verifier='.$access_token['oauth_token_secret'];
-
+$_SESSION['access_token']['oauth_token'] = $access_token['oauth_token'];
+$_SESSION['access_token']['oauth_token_secret'] = $access_token['oauth_token_secret'];
 // And that's that.  Hopefully it will help.
 ?>
+<script>
+    opener.dahliawolf.tumblrToken = <?= $access_token['oauth_token'] ?>;
+    close();
+</script>
