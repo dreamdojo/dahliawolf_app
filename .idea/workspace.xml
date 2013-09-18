@@ -11,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529131550" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379529211680" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -188,10 +188,10 @@
       <file leaf-file-name="theGrid.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/theGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="18" selection-start="4683" selection-end="4683" vertical-scroll-proportion="0.688">
+            <state line="121" column="74" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.736">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1379529200000" expanded="false" signature="2944:2954" placeholder="..." />
+                <marker date="1379529461000" expanded="false" signature="2944:2954" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -984,7 +984,11 @@
       <created>1379529135237</created>
       <updated>1379529135237</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="shareBalls not yet">
+      <created>1379529214236</created>
+      <updated>1379529214236</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1213,10 +1217,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/theGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="18" selection-start="4683" selection-end="4683" vertical-scroll-proportion="0.688">
+        <state line="121" column="74" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.736">
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1379529200000" expanded="false" signature="2944:2954" placeholder="..." />
+            <marker date="1379529461000" expanded="false" signature="2944:2954" placeholder="..." />
           </folding>
         </state>
       </provider>
