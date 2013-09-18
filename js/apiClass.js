@@ -105,9 +105,7 @@ User.prototype.logIntoTumblr = function(callback) {
         'Log into Tumblr',
         'width=500, height=700'
     );
-    loginWindow.addEventListener('unload', function() {
-            console.log('playa');
-    }, true);
+    loginWindow.onunload = callback;
 }
 
 User.prototype.logIntoFacebook = function(callback) {
@@ -306,7 +304,9 @@ Post.prototype.shareOnTumbler = function(URL) {
            console.log(data);
         });
     } else {
-        dahliawolf.logIntoTumblr();
+        dahliawolf.logIntoTumblr(function() {
+            console.log('holla');
+        });
     }
 }
 //****************************************************************************************** Product
