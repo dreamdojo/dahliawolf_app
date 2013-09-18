@@ -806,7 +806,7 @@ shareBall.prototype.blastoff = function(data) {
             dahliawolf.post.shareOnTwitter('http://www.dahliawolf.com/post/'+data.data.data.posting_id);
             break;
         case 'FACEBOOK':
-            console.log('FB');
+            dahliawolf.post.shareOnFacebook('http://www.dahliawolf.com/post/'+data.data.data.posting_id);
             break;
         default:
             console.log('broke');

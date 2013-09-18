@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiClass.js" afterPath="$PROJECT_DIR$/js/apiClass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
@@ -11,12 +11,12 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545194090" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545229043" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
     <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379522970712" ignored="false" />
-    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379542699643" ignored="false" />
+    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545314347" ignored="false" />
     <file path="/Spine-1.1.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374534549200" ignored="false" />
     <file path="/a.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184379967" ignored="false" />
     <file path="/a.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184397202" ignored="false" />
@@ -153,10 +153,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apiClass.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="apiClass.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/apiClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="323" column="6" selection-start="10209" selection-end="10209" vertical-scroll-proportion="0.26056337">
+            <state line="323" column="6" selection-start="10209" selection-end="10209" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#2226#2424#0" expanded="false" />
                 <element signature="e#2469#2497#0" expanded="false" />
@@ -197,10 +197,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="functions.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="804" column="23" selection-start="24383" selection-end="24383" vertical-scroll-proportion="0.0">
+            <state line="807" column="24" selection-start="24532" selection-end="24532" vertical-scroll-proportion="0.7183099">
               <folding />
             </state>
           </provider>
@@ -274,8 +274,8 @@
         <option value="$PROJECT_DIR$/callback.php" />
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" />
         <option value="$PROJECT_DIR$/action/sharePostOnTwitter.php" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/js/apiClass.js" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
       </list>
     </option>
   </component>
@@ -1243,7 +1243,11 @@
       <created>1379545195637</created>
       <updated>1379545195637</updated>
     </task>
-    <option name="localTasksCounter" value="193" />
+    <task id="LOCAL-00193" summary="shareBalls not yet">
+      <created>1379545230978</created>
+      <updated>1379545230978</updated>
+    </task>
+    <option name="localTasksCounter" value="194" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1446,13 +1450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="804" column="23" selection-start="24383" selection-end="24383" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/invite.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="184" column="7" selection-start="5845" selection-end="6781" vertical-scroll-proportion="-29.583334">
@@ -1472,13 +1469,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/apiClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="323" column="6" selection-start="10209" selection-end="10209" vertical-scroll-proportion="0.26056337">
+        <state line="323" column="6" selection-start="10209" selection-end="10209" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#2226#2424#0" expanded="false" />
             <element signature="e#2469#2497#0" expanded="false" />
             <element signature="e#2546#2854#0" expanded="false" />
             <marker date="1379545224000" expanded="true" signature="4358:4382" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="807" column="24" selection-start="24532" selection-end="24532" vertical-scroll-proportion="0.7183099">
+          <folding />
         </state>
       </provider>
     </entry>
