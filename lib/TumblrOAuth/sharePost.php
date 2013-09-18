@@ -13,9 +13,8 @@ $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
 
 echo $_GET['url'];
 
-//$params = array(data => file_get_contents( $_GET['url'] ), type => "photo", source=>urlencode($_GET['url']) );
-//$newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/'.$userinfo['name'].'.tumblr.com/post',$params);
+$params = array(data => file_get_contents( $_GET['url'] ), type => "photo", source=>urlencode($_GET['url']) );
+$newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/'.$userinfo['name'].'.tumblr.com/post',$params);
+echo json_encode($newPost);
 
-//echo json_encode($userinfo);
-//var_dump($userinfo);
 ?>
