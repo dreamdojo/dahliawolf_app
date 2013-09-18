@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiClass.js" afterPath="$PROJECT_DIR$/js/apiClass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
@@ -11,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545322007" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545674853" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -200,7 +200,7 @@
       <file leaf-file-name="functions.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="808" column="44" selection-start="24577" selection-end="24577" vertical-scroll-proportion="0.0">
+            <state line="808" column="68" selection-start="24601" selection-end="24601" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -274,8 +274,8 @@
         <option value="$PROJECT_DIR$/callback.php" />
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" />
         <option value="$PROJECT_DIR$/action/sharePostOnTwitter.php" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/js/apiClass.js" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
       </list>
     </option>
   </component>
@@ -1251,7 +1251,11 @@
       <created>1379545323426</created>
       <updated>1379545323426</updated>
     </task>
-    <option name="localTasksCounter" value="195" />
+    <task id="LOCAL-00195" summary="shareBalls not yet">
+      <created>1379545681510</created>
+      <updated>1379545681510</updated>
+    </task>
+    <option name="localTasksCounter" value="196" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1457,13 +1461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="808" column="44" selection-start="24577" selection-end="24577" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action/getTwitterFollowers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="2" selection-start="0" selection-end="644" vertical-scroll-proportion="-10.0">
@@ -1474,6 +1471,13 @@
     <entry file="file://$PROJECT_DIR$/action/sharePostOnTwitter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="49" selection-start="490" selection-end="490" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="808" column="68" selection-start="24601" selection-end="24601" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
