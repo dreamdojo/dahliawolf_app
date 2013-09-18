@@ -104,10 +104,9 @@ User.prototype.logIntoTumblr = function(callback) {
         "/lib/TumblrOAuth/connect.php",
         'Log into Tumblr',
         'width=500, height=700'
-    );
-    $(loginWindow).bind('beforeunload', function() {
-       console.log('nugga');
-    });
+    ).addEventListener('close', function() {
+            console.log('playa');
+        });
 }
 
 User.prototype.logIntoFacebook = function(callback) {
