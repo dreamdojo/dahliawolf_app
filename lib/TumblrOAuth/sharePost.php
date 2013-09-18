@@ -15,5 +15,6 @@ $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
 //$newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/'.$userinfo['name'].'.tumblr.com/post',$params);
 
 //echo json_encode($userinfo);
+$userinfo = json_decode($userinfo);
 echo $userinfo['response']['user']['blogs'][0]['name'];
 ?>
