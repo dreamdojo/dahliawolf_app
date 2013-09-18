@@ -100,12 +100,14 @@ User.prototype.logIntoTwitter = function() {
 }
 
 User.prototype.logIntoTumblr = function(callback) {
-    this.callback = callback;
-    window.open(
+    var loginWindow = window.open(
         "/lib/TumblrOAuth/connect.php",
         'Log into Tumblr',
         'width=500, height=700'
     );
+    loginWindow.on('unload', function() {
+        console.log('blop');
+    })
 }
 
 User.prototype.logIntoFacebook = function(callback) {
