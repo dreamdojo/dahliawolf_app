@@ -13,8 +13,11 @@ $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
 
 echo $_GET['url'];
 
+try{
 $params = array(data => file_get_contents( $_GET['url'] ), type => "photo", source=>urlencode($_GET['url']) );
-
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
 //$newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/'.$userinfo['name'].'.tumblr.com/post',$params);
 
 //echo json_encode($userinfo);
