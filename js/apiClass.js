@@ -321,7 +321,7 @@ Post.prototype.shareOnTwitter = function(URL) {
     }
 }
 
-Post,prototype.shareOnFacebook = function(URL) {
+Post.prototype.shareOnFacebook = function(URL) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
             holla.log(response);

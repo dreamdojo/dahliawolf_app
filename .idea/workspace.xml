@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="shareBalls not yet">
+    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiClass.js" afterPath="$PROJECT_DIR$/js/apiClass.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -11,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379544499829" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545194090" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -78,7 +78,7 @@
     <file path="/inspire.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379353966073" ignored="false" />
     <file path="/get_feed_from_pinterest.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379354406173" ignored="false" />
     <file path="/vote.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379355751529" ignored="false" />
-    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545167114" ignored="false" />
+    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545222795" ignored="false" />
     <file path="/add_pin.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379435788848" ignored="false" />
     <file path="/callback.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536270899" ignored="false" />
     <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
@@ -156,12 +156,12 @@
       <file leaf-file-name="apiClass.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/apiClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="332" column="16" selection-start="10640" selection-end="10640" vertical-scroll-proportion="0.4190141">
+            <state line="323" column="6" selection-start="10209" selection-end="10209" vertical-scroll-proportion="0.26056337">
               <folding>
                 <element signature="e#2226#2424#0" expanded="false" />
                 <element signature="e#2469#2497#0" expanded="false" />
                 <element signature="e#2546#2854#0" expanded="false" />
-                <marker date="1379545185000" expanded="true" signature="4358:4382" placeholder="..." />
+                <marker date="1379545224000" expanded="true" signature="4358:4382" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1239,7 +1239,11 @@
       <created>1379542728919</created>
       <updated>1379542728919</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="shareBalls not yet">
+      <created>1379545195637</created>
+      <updated>1379545195637</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1468,12 +1472,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/apiClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="332" column="16" selection-start="10640" selection-end="10640" vertical-scroll-proportion="0.4190141">
+        <state line="323" column="6" selection-start="10209" selection-end="10209" vertical-scroll-proportion="0.26056337">
           <folding>
             <element signature="e#2226#2424#0" expanded="false" />
             <element signature="e#2469#2497#0" expanded="false" />
             <element signature="e#2546#2854#0" expanded="false" />
-            <marker date="1379545185000" expanded="true" signature="4358:4382" placeholder="..." />
+            <marker date="1379545224000" expanded="true" signature="4358:4382" placeholder="..." />
           </folding>
         </state>
       </provider>
