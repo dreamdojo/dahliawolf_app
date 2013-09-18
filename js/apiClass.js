@@ -331,7 +331,7 @@ Post.prototype.shareOnFacebook = function(URL) {
             params['upload file'] = true;
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
-                    alert(response);
+                    console.log(response);
                 } else {
                     alert('Published to stream - you might want to delete it now!');
                 }
