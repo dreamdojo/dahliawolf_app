@@ -58,11 +58,11 @@ var_dump($userinfo);
 // This will also work: $userinfo = $tum_oauth->get('user/info');
 
 // Check for an error.
-if (200 == $tum_oauth->http_code) {
+/*if (200 == $tum_oauth->http_code) {
   // good to go
 } else {
   die('Unable to get info');
-}
+}*/
 
 // find primary blog.  Display its name.
 $screen_name = $userinfo->response->user->name;
