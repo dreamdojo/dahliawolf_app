@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiClass.js" afterPath="$PROJECT_DIR$/js/apiClass.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" afterPath="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
@@ -12,7 +11,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379535941006" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536449554" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -79,7 +78,7 @@
     <file path="/inspire.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379353966073" ignored="false" />
     <file path="/get_feed_from_pinterest.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379354406173" ignored="false" />
     <file path="/vote.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379355751529" ignored="false" />
-    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536431180" ignored="false" />
+    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536688536" ignored="false" />
     <file path="/add_pin.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379435788848" ignored="false" />
     <file path="/callback.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379536270899" ignored="false" />
     <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
@@ -165,13 +164,13 @@
       <file leaf-file-name="apiClass.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/apiClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="28" selection-start="3337" selection-end="3337" vertical-scroll-proportion="0.5736677">
+            <state line="108" column="28" selection-start="3345" selection-end="3345" vertical-scroll-proportion="0.5266458">
               <folding>
                 <element signature="e#2226#2424#0" expanded="false" />
                 <element signature="e#2469#2497#0" expanded="false" />
                 <element signature="e#2546#2854#0" expanded="false" />
-                <element signature="e#5336#6654#0" expanded="false" />
-                <marker date="1379536447000" expanded="false" signature="4436:4460" placeholder="..." />
+                <element signature="e#5345#6663#0" expanded="false" />
+                <marker date="1379536694000" expanded="false" signature="4445:4469" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1129,7 +1128,11 @@
       <created>1379535942778</created>
       <updated>1379535942778</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="shareBalls not yet">
+      <created>1379536451383</created>
+      <updated>1379536451383</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1355,13 +1358,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/apiClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="28" selection-start="3337" selection-end="3337" vertical-scroll-proportion="0.5736677">
+        <state line="108" column="28" selection-start="3345" selection-end="3345" vertical-scroll-proportion="0.5266458">
           <folding>
             <element signature="e#2226#2424#0" expanded="false" />
             <element signature="e#2469#2497#0" expanded="false" />
             <element signature="e#2546#2854#0" expanded="false" />
-            <element signature="e#5336#6654#0" expanded="false" />
-            <marker date="1379536447000" expanded="false" signature="4436:4460" placeholder="..." />
+            <element signature="e#5345#6663#0" expanded="false" />
+            <marker date="1379536694000" expanded="false" signature="4445:4469" placeholder="..." />
           </folding>
         </state>
       </provider>

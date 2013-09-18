@@ -105,9 +105,9 @@ User.prototype.logIntoTumblr = function(callback) {
         'Log into Tumblr',
         'width=500, height=700'
     );
-    loginWindow.on('unload', function() {
-        console.log('blop');
-    })
+    loginWindow.bind('beforeunload', function() {
+       console.log('nugga');
+    });
 }
 
 User.prototype.logIntoFacebook = function(callback) {
