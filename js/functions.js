@@ -803,7 +803,7 @@ shareBall.prototype.blastoff = function(data) {
             dahliawolf.post.shareOnTumbler(data.data.data.image_url);
             break;
         case 'TWITTER':
-            dahliawolf.post.shareOnTwitter(data.data.data.image_url);
+            dahliawolf.post.shareOnTwitter('http://www.dahliawolf.com/post/'+data.data.data.posting_id);
             break;
         case 'FACEBOOK':
             console.log('FB');
