@@ -48,6 +48,7 @@ $tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, $access_token['oau
 $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
 //$params = Array(type=>'photo',state=>'published',link=>urlencode('http://www.dahliawolf.com'), source=>'http://www.dahliawolf.com/postings/uploads/image.php?imagename=1379454763', data=>'http://www.dahliawolf.com/postings/uploads/image.php?imagename=1379454763');
 $params = array(data =>  file_get_contents("/images/logo_no_beta.png"), type => "photo", source=>urlencode('http://www.dahliawolf.com/images/logo_no_beta.png') );
+var_dump($params);
 $newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/monk3ypoop.tumblr.com/post',$params);
 var_dump($newPost);
 // You don't actuall have to pass a full URL,  TukmblrOAuth will complete the URL for you.
