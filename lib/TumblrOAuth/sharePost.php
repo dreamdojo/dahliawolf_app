@@ -15,5 +15,6 @@ $params = array(data => file_get_contents($_GET['url']), type => "photo", source
 
 //$newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/'.$userinfo['name'].'.tumblr.com/post',$params);
 
-echo json_encode($userinfo);
+//echo json_encode($userinfo);
+echo $userinfo['user']['name'];
 ?>
