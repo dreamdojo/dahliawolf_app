@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/sharePostOnTwitter.php" afterPath="$PROJECT_DIR$/action/sharePostOnTwitter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/callback.php" afterPath="$PROJECT_DIR$/callback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" afterPath="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/head.php" afterPath="$PROJECT_DIR$/head.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
@@ -11,7 +13,7 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379542025909" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379542085523" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
@@ -111,16 +113,25 @@
       <file leaf-file-name="connect.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/connect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="91" selection-start="567" selection-end="567" vertical-scroll-proportion="2.5">
+            <state line="13" column="91" selection-start="567" selection-end="567" vertical-scroll-proportion="-8.125">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="callback.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="callback.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/callback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="5" selection-start="3419" selection-end="3419" vertical-scroll-proportion="-47.5">
+            <state line="69" column="19" selection-start="3149" selection-end="3149" vertical-scroll-proportion="0.72392637">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="head.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/head.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="95" column="53" selection-start="5775" selection-end="5785" vertical-scroll-proportion="-7.7083335">
               <folding />
             </state>
           </provider>
@@ -130,15 +141,6 @@
         <entry file="file://$PROJECT_DIR$/config/config.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="51" column="5" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-14.083333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="twitteroauth.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/twitteroauth/twitteroauth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="78.125">
               <folding />
             </state>
           </provider>
@@ -156,7 +158,7 @@
       <file leaf-file-name="callback.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/callback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="11" selection-start="1602" selection-end="1602" vertical-scroll-proportion="-23.75">
+            <state line="27" column="44" selection-start="1065" selection-end="1065" vertical-scroll-proportion="-14.375">
               <folding />
             </state>
           </provider>
@@ -185,10 +187,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sharePostOnTwitter.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sharePostOnTwitter.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/action/sharePostOnTwitter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="49" selection-start="490" selection-end="490" vertical-scroll-proportion="0.2173913">
+            <state line="12" column="49" selection-start="490" selection-end="490" vertical-scroll-proportion="-7.5">
               <folding />
             </state>
           </provider>
@@ -265,14 +267,14 @@
         <option value="$PROJECT_DIR$/lib/Tumblr/API/redirect.php" />
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/connect.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/head.php" />
-        <option value="$PROJECT_DIR$/callback.php" />
         <option value="$PROJECT_DIR$/js/theGrid.js" />
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" />
-        <option value="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" />
         <option value="$PROJECT_DIR$/js/apiClass.js" />
         <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/action/sharePostOnTwitter.php" />
+        <option value="$PROJECT_DIR$/head.php" />
+        <option value="$PROJECT_DIR$/callback.php" />
+        <option value="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" />
       </list>
     </option>
   </component>
@@ -1216,7 +1218,11 @@
       <created>1379542027425</created>
       <updated>1379542027425</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="shareBalls not yet">
+      <created>1379542087170</created>
+      <updated>1379542087170</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1370,20 +1376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="55" selection-start="5986" selection-end="5986" vertical-scroll-proportion="-7.9166665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="91" selection-start="567" selection-end="567" vertical-scroll-proportion="2.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action/getTwitterFollowers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="2" selection-start="0" selection-end="644" vertical-scroll-proportion="-10.0">
@@ -1403,34 +1395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/callback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="5" selection-start="3419" selection-end="3419" vertical-scroll-proportion="-47.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="5" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-14.083333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/twitteroauth/twitteroauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="78.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/callback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="11" selection-start="1602" selection-end="1602" vertical-scroll-proportion="-23.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="793" column="11" selection-start="23960" selection-end="23960" vertical-scroll-proportion="0.0">
@@ -1447,7 +1411,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/action/sharePostOnTwitter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="49" selection-start="490" selection-end="490" vertical-scroll-proportion="0.2173913">
+        <state line="12" column="49" selection-start="490" selection-end="490" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/twitteroauth/twitteroauth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.1594203">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="5" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-14.083333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="44" selection-start="1065" selection-end="1065" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="53" selection-start="5775" selection-end="5785" vertical-scroll-proportion="-7.7083335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="91" selection-start="567" selection-end="567" vertical-scroll-proportion="-8.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="19" selection-start="3149" selection-end="3149" vertical-scroll-proportion="0.72392637">
           <folding />
         </state>
       </provider>

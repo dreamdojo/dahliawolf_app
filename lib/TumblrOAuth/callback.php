@@ -66,8 +66,8 @@ if (200 == $tum_oauth->http_code) {
 
 // find primary blog.  Display its name.
 
-$_SESSION['access_token']['oauth_token'] = $access_token['oauth_token'];
-$_SESSION['access_token']['oauth_token_secret'] = $access_token['oauth_token_secret'];
+$_SESSION['tumblr']['access_token']['oauth_token'] = $access_token['oauth_token'];
+$_SESSION['tumblr']['access_token']['oauth_token_secret'] = $access_token['oauth_token_secret'];
 // And that's that.  Hopefully it will help.
 ?>
 <script>

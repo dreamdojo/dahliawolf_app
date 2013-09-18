@@ -23,7 +23,7 @@ $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['oauth_t
 $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
 
 /* Save the access tokens. Normally these would be saved in a database for future use. */
-$_SESSION['access_token'] = $access_token;
+$_SESSION['twitter']['access_token'] = $access_token;
 
 /* Remove no longer needed request tokens */
 unset($_SESSION['oauth_token']);
