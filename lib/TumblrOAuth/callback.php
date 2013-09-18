@@ -71,6 +71,6 @@ $_SESSION['access_token']['oauth_token_secret'] = $access_token['oauth_token_sec
 // And that's that.  Hopefully it will help.
 ?>
 <script>
-    opener.dahliawolf.tumblrToken = <?= $access_token['oauth_token'] ?>;
+    opener.dahliawolf.tumblrToken = "<?= $access_token['oauth_token'] ?>";
     close();
 </script>
