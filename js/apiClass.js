@@ -326,7 +326,7 @@ Post.prototype.shareOnFacebook = function(URL) {
         if (response.status === 'connected') {
             var params = {};
             params['message'] = 'PicRolled';
-            params['source'] = '@'+URL;
+            params['source'] = URL;
             params['access_token'] = response.authResponse.accessToken;
             params['upload file'] = true;
             FB.api('/me/photos', 'post', params, function(response) {
