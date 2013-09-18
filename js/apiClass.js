@@ -104,7 +104,7 @@ User.prototype.logIntoTumblr = function(callback) {
         "/lib/TumblrOAuth/connect.php",
         'Log into Tumblr',
         'width=500, height=700'
-    )
+    );
     loginWindow.addEventListener('unload', function() {
             console.log('playa');
     }, true);
