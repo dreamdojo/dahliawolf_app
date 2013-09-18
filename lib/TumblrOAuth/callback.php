@@ -27,7 +27,7 @@ unset($_SESSION['request_token_secret']);
 if (200 == $tum_oauth->http_code) {
   // good to go
 } else {
-  die('Unable to authenticate');
+  //die('Unable to authenticate');
 }
 
 // What's next?  Now that we have an Access Token and Secret, we can make an API call.
