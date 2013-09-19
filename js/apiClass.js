@@ -316,16 +316,16 @@ Post.prototype.shareOnTumbler = function(URL) {
            console.log(data);
         });
     } else {
-        dahliawolf.logIntoTumblr(function() {
-            console.log('holla');
-        });
+        dahliawolf.logIntoTumblr();
+        window.globalCallback = true;
+        window.globalURL = URL;
     }
 }
 
 Post.prototype.shareOnTwitter = function(URL) {
     if(dahliawolf.areYouLoggedIntoTwitter) {
         $.getJSON('/action/sharePostOnTwitter.php',{url:URL}, function(data) {
-            console.log(data);
+            holla.log(data);
         });
     } else {
         dahliawolf.logIntoTwitter();
