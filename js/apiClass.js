@@ -328,9 +328,8 @@ Post.prototype.shareOnTwitter = function(URL) {
             console.log(data);
         });
     } else {
-        dahliawolf.logIntoTwitter(function() {
-            holla.log('callback worked');
-        });
+        dahliawolf.logIntoTwitter();
+        window.globalCallback = dahliawolf.post.shareOnTwitter(URL);
     }
 }
 
