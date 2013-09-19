@@ -778,6 +778,9 @@ Array.prototype.remove = function(from, to) {
 function shareBall(data) {
     var _that = this;
     this.data = data;
+    if(data.new_image_url) {
+        this.data.image_url = data.new_image_url;
+    }
 
     this.$mainBall = $('<ul class="shareBall"></ul>');
     this.$hoverBall = $('<div class="hoverBall"></div>').prependTo(this.$mainBall).hover(
