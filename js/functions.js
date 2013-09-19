@@ -782,11 +782,11 @@ function shareBall(data) {
     this.$mainBall = $('<ul class="shareBall"></ul>');
     this.$hoverBall = $('<div class="hoverBall"></div>').prependTo(this.$mainBall).hover(
         function(){
-            $(this).siblings().find('.rocket').css('bottom', 67+'%').css({'-webkit-transform': 'scale(1.3)','transform': 'scale(1.3)', '-ms-transform': 'scale(1.3)'});
+            $(this).siblings().find('.rocket').css('bottom', 67+'%').css({'-webkit-transform': 'scale(1)','transform': 'scale(1)', '-ms-transform': 'scale(1)'});
         }, function() {
             var that = this;
             $('.shareBall').on('mouseleave', function() {
-                $(that).siblings().find('.rocket').css('bottom', 0+'%').css({'-webkit-transform': 'scale(.8)','transform': 'scale(.8)', '-ms-transform': 'scale(.8)'});
+                $(that).siblings().find('.rocket').css('bottom', 0+'%').css({'-webkit-transform': 'scale(.6)','transform': 'scale(.6)', '-ms-transform': 'scale(.6)'});
                 $(this).unbind();
             });
         });
@@ -809,12 +809,15 @@ shareBall.prototype.blastoff = function(data) {
     switch(data.data.platform) {
         case 'TUMBLR':
             dahliawolf.post.shareOnTumbler(data.data.data.image_url);
+            dahliawolf.share.add(data.data.data.posting_id, 'tumblr', 'posting', data.data.data.user_id);
             break;
         case 'TWITTER':
             dahliawolf.post.shareOnTwitter('http://www.dahliawolf.com/post/'+data.data.data.posting_id);
+            dahliawolf.share.add(data.data.data.posting_id, 'twitter', 'posting', data.data.data.user_id);
             break;
         case 'FACEBOOK':
             dahliawolf.post.shareOnFacebook(data.data.data.image_url);
+            dahliawolf.share.add(data.data.data.posting_id, 'facebook', 'posting', data.data.data.user_id);
             break;
         default:
             console.log('broke');

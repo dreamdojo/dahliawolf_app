@@ -41,7 +41,7 @@
     #dbModal .instagram{background-image: url("/mobile/images/shareInstagram.png");}
     #dbModal .text{background-image: url("/mobile/images/shareText.png");}
     #dbModal .twitter{background-image: url("/mobile/images/shareTwitter.png");}
-    #dbModal .tumbler{background-image: url("/mobile/images/shareTumbler.png");}
+    #dbModal .tumblr{background-image: url("/mobile/images/shareTumbler.png");}
     #dbModal .shareDeets{margin-top: 50px;margin-left: 10px;}
     #dbModal .shareDeets p:first-child{font-size: 18px;}
     #dbModal .shareDeets p{line-height: 10px;}
