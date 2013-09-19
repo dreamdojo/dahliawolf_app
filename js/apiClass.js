@@ -91,12 +91,25 @@ User.prototype.isFriend = function(id) {
     return true;
 }
 
-User.prototype.logIntoTwitter = function() {
-    window.open(
+User.prototype.logIntoTwitter = function(callback) {
+    var win = window.open(
         "/redirect.php",
         'Log into Twitter',
         'width=500, height=500'
     );
+    if (typeof win.attachEvent != "undefined") {
+        win.attachEvent("onunload", function() {
+            if(typeof callback == 'function') {
+                callback();
+            }
+        });
+    } else if (typeof win.addEventListener != "undefined") {
+        win.addEventListener("unload", function() {
+            if(typeof callback == 'function') {
+                callback();
+            }
+        }, false);
+    }
 }
 
 User.prototype.logIntoTumblr = function(callback) {
@@ -316,7 +329,7 @@ Post.prototype.shareOnTwitter = function(URL) {
         });
     } else {
         dahliawolf.logIntoTwitter(function() {
-            holla.log('poopsy');
+            holla.log('callback worked');
         });
     }
 }
