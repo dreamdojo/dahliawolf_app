@@ -785,7 +785,15 @@ function shareBall(data) {
     this.$mainBall = $('<ul class="shareBall"></ul>');
     this.$hoverBall = $('<div class="hoverBall"></div>').prependTo(this.$mainBall).hover(
         function(){
-            $(this).siblings().find('.rocket').css('bottom', 67+'%').css({'-webkit-transform': 'scale(1)','transform': 'scale(1)', '-ms-transform': 'scale(1)', 'visibility': 'visible'});
+            var rocketDistance = 67;
+            var ballz =  $(this).siblings().find('.rocket');
+            $(this).siblings().find('.rocket').css('bottom', (rocketDistance+5)+'%').css({'-webkit-transform': 'scale(1)','transform': 'scale(1)', '-ms-transform': 'scale(1)', 'visibility': 'visible'}).on('webkitTransitionEnd transitionend', function() {
+                ballz.unbind();
+                ballz.css('bottom', (rocketDistance-5)+'%').on('webkitTransitionEnd transitionend', function() {
+                    ballz.unbind();
+                    ballz.css('bottom', rocketDistance+'%');
+                });
+            });
         }, function() {
             var that = this;
             $('.shareBall').on('mouseleave', function() {
@@ -795,13 +803,13 @@ function shareBall(data) {
         });
     this.$mainBall.append('<li class="left"></li><li class="middle"></li><li class="right"></li>');
     $('<div class="rocket tumblrBall"></div>').appendTo( this.$mainBall.find('.left')).on('click', {data:this.data, platform:'TUMBLR'}, this.blastoff).hover(function() {
-        _that.$hoverBall.css('-webkit-transform', 'rotate(0deg)');
+        _that.$hoverBall.css({'-webkit-transform': 'rotate(-7deg)', 'transform' : 'rotate(0deg)', '-ms-transform': 'rotate(0deg)'});
     });
     $('<div class="rocket twitterBall"></div>').appendTo( this.$mainBall.find('.middle') ).on('click', {data:this.data, platform:'TWITTER'}, this.blastoff).hover(function() {
-        _that.$hoverBall.css('-webkit-transform', 'rotate(-45deg)');
+        _that.$hoverBall.css({'-webkit-transform': 'rotate(-50deg)', 'transform' : 'rotate(-45deg)', '-ms-transform': 'rotate(-45deg)'});
     });
     $('<div class="rocket fbBall"></div>').appendTo( this.$mainBall.find('.right') ).on('click', {data:this.data, platform:'FACEBOOK'}, this.blastoff).hover(function() {
-        _that.$hoverBall.css('-webkit-transform', 'rotate(-90deg)');
+        _that.$hoverBall.css({'-webkit-transform': 'rotate(-100deg)', 'transform' : 'rotate(-90deg)', '-ms-transform': 'rotate(-90deg)'});
     });;
     return this.$mainBall;
 }

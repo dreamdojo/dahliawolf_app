@@ -231,14 +231,16 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .shareBall .right{transform: rotate(90deg);-ms-transform: rotate(90deg);-webkit-transform: rotate(90deg);right: 27.6px;bottom: 26.6px;}
 .shareBall .middle{transform: rotate(135deg);-ms-transform: rotate(135deg);-webkit-transform: rotate(135deg);bottom: 8px;left: 19px;}
 .shareBall .hoverBall{height: 35px;width: 30px; background-image: url("/images/shareBall.png"); background-size: 95%; background-repeat: no-repeat; position: relative;z-index: 100;border-radius: 25px; cursor: pointer; transition: all .4s; -webkit-transition: all .4s;}
-.shareBall .rocket{position: absolute;background-color: #000;height: 30px;width: 31px;border-radius: 32px; bottom: 0%; transition: all .4s; -webkit-transition: all .4s;transform: scale(.6);-ms-transform: scale(.6);-webkit-transform: scale(.6); visibility: hidden;}
-.shareBall .rocket:hover{box-shadow: #fff 0px 0px 13px 4px; background-color: #F03E63;}
+.shareBall .rocket{position: absolute; height: 40px;width: 40px;border-radius: 32px; bottom: 0%; transition: bottom .2s, visibility .27s; left: -8px; -webkit-transition: bottom .2s, visibility .27s; transform: scale(.6);-ms-transform: scale(.6);-webkit-transform: scale(.6); visibility: hidden;}
 .shareBall .fbDeg{transform: rotate(-90deg);-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);}
 .shareBall .twitDeg{transform: rotate(-45deg);-ms-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);}
 .shareBall .tumbDeg{transform: rotate(-0deg);-ms-transform: rotate(-0deg);-webkit-transform: rotate(-0deg);}
-.shareBall .fbBall{background-image: url("/images/shareBalls_FB_off.png"); background-size: 100%;}
-.shareBall .tumblrBall{background-image: url("/images/shareBalls_TUMBLR_off.png"); background-size: 100%;background-position: 0px 1px;}
-.shareBall .twitterBall{background-image: url("/images/shareBalls_TWITTER_off.png"); background-size: 100%;}
+.shareBall .fbBall{background-image: url("/images/shareBalls_BG.png"); background-size: auto 100%;background-position: -2px 0px;background-repeat: no-repeat;}
+.shareBall .fbBall:hover{background-position: -42px 0px;}
+.shareBall .tumblrBall{background-image: url("/images/shareBalls_BG.png"); background-size: auto 100%;background-position: -82px 0px;background-repeat: no-repeat;}
+.shareBall .tumblrBall:hover{background-position: -122px 0px;}
+.shareBall .twitterBall{background-image: url("/images/shareBalls_BG.png"); background-size: auto 100%;background-position: -162px -1px;background-repeat: no-repeat;}
+.shareBall .twitterBall:hover{background-position: -202px -1px;}
 .postFrame:hover .shareBall{display: block;}
 .getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 
