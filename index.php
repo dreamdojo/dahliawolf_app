@@ -2,6 +2,7 @@
     $pageTitle = "Homepage";
     include "head.php";
 ?>
+<?php if(!IS_LOGGED_IN): ?>
 <style>
     #joinBanner{height: 400px;width: 100%; min-width:600px; position: relative; background-image: url("/images/joinBanner.jpg");background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;background-color: #dedede;}
     #joinBanner .hiw{position: absolute;right: 6%;margin-top: 44px;cursor: pointer;}
@@ -31,6 +32,7 @@
         </video>
     </div>
 </div>
+<? endif ?>
 <?
     include "header.php";
     $Spine = new Spine();
