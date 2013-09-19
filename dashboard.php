@@ -75,7 +75,7 @@
         </div>
         <ul class="stats">
             <li class="uname">@<?= $_data['user']['username'] ?></li>
-            <li class="mLevel">Member Level: <?= $_data['user']['membership_level'] ?></li>
+            <!--<li class="mLevel">Member Level: <?= $_data['user']['membership_level'] ?></li>-->
             <li class="sSteez"><a href="/<?= $_data['user']['username'] ?>/followers"><?= $_data['user']['followers'] ?> FOLLOWERS</a> | <a href="/<?= $_data['user']['username'] ?>/following"><?= $_data['user']['following'] ?> FOLLOWING</a></li>
             <li class="sSteez"><?= $_data['user']['points'] ?> POINTS | </li>
         </ul>
