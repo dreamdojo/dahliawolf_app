@@ -787,10 +787,10 @@ function shareBall(data) {
         function(){
             var rocketDistance = 67;
             var ballz =  $(this).siblings().find('.rocket');
-            $(this).siblings().find('.rocket').css('bottom', (rocketDistance+5)+'%').css({'-webkit-transform': 'scale(1)','transform': 'scale(1)', '-ms-transform': 'scale(1)', 'visibility': 'visible'}).on('webkitTransitionEnd transitionend', function() {
-                ballz.unbind();
-                ballz.css('bottom', (rocketDistance-5)+'%').on('webkitTransitionEnd transitionend', function() {
-                    ballz.unbind();
+            $(this).siblings().find('.rocket').css('bottom', (rocketDistance+10)+'%').css({'-webkit-transform': 'scale(1)','transform': 'scale(1)', '-ms-transform': 'scale(1)', 'visibility': 'visible'}).on('webkitTransitionEnd transitionend', function() {
+                ballz.unbind('webkitTransitionEnd transitionend');
+                ballz.css('bottom', (rocketDistance-10)+'%').on('webkitTransitionEnd transitionend', function() {
+                    ballz.unbind('webkitTransitionEnd transitionend');
                     ballz.css('bottom', rocketDistance+'%');
                 });
             });
