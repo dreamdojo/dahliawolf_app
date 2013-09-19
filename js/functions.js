@@ -782,11 +782,11 @@ function shareBall(data) {
     this.$mainBall = $('<ul class="shareBall"></ul>');
     this.$hoverBall = $('<div class="hoverBall"></div>').prependTo(this.$mainBall).hover(
         function(){
-            $(this).siblings().find('.rocket').css('bottom', 67+'%').css('-webkit-transform', 'scale(1.3)');
+            $(this).siblings().find('.rocket').css('bottom', 67+'%').css({'-webkit-transform': 'scale(1.3)','transform': 'scale(1.3)', '-ms-transform': 'scale(1.3)'});
         }, function() {
             var that = this;
             $('.shareBall').on('mouseleave', function() {
-                $(that).siblings().find('.rocket').css('bottom', 0+'%').css('-webkit-transform', 'scale(1)');
+                $(that).siblings().find('.rocket').css('bottom', 0+'%').css({'-webkit-transform': 'scale(.8)','transform': 'scale(.8)', '-ms-transform': 'scale(.8)'});
                 $(this).unbind();
             });
         });
