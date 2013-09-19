@@ -240,6 +240,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .shareBall .fbBall{background-image: url("/images/shareBalls_FB_off.png"); background-size: 100%;}
 .shareBall .tumblrBall{background-image: url("/images/shareBalls_TUMBLR_off.png"); background-size: 100%;}
 .shareBall .twitterBall{background-image: url("/images/shareBalls_TWITTER_off.png"); background-size: 100%;}
+.postFrame:hover .shareBall{display: block;}
 
 /************************ POST DETAILS AND GRID ***********/
 .post-details-container{width: 1000px;height: 800px;margin-top: 25px; margin: 0px auto;color: rgb(102, 102, 102);font-family: Helvetica, sans-serif;font-weight: 100;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);padding-bottom: 20px;position: relative;}
