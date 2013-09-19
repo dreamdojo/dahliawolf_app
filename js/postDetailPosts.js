@@ -104,8 +104,10 @@ postDetailGrid.prototype.getPosts = function() {
 			$.each(data.data, function(index, post){
 				var $post = $('<div class="userGridPostFrame"></div>').hover(function() {
                     $(this).find('.option').fadeIn(50);
+                    $(this).find('.shareBall').fadeIn(50);
                 }, function() {
                     $(this).find('.option').fadeOut(50);
+                    $(this).find('.shareBall').fadeOut(50);
                 });
 				var str = '';
                 str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'"></div>';
@@ -114,6 +116,9 @@ postDetailGrid.prototype.getPosts = function() {
 				str += '</a>';
                 if(post.user_id == theUser.id) {
                     $('<div data-id="'+post.posting_id+'" class="delButton option">X</div>').appendTo($post).on('click', $this.delPost);
+                }
+                if(dahliawolf.userId == 658) {
+                    $post.append(new shareBall(post));
                 }
 
                 $this.postContainer.append( $post.append(str) );

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="shareBalls not yet">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/postDetailPosts.js" afterPath="$PROJECT_DIR$/js/postDetailPosts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
@@ -11,12 +11,12 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379547375033" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379605792441" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
-    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379522970712" ignored="false" />
-    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379545314347" ignored="false" />
+    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379605750572" ignored="false" />
+    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379604998289" ignored="false" />
     <file path="/Spine-1.1.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374534549200" ignored="false" />
     <file path="/a.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184379967" ignored="false" />
     <file path="/a.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184397202" ignored="false" />
@@ -32,7 +32,7 @@
     <file path="/invite.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379444165276" ignored="false" />
     <file path="/invite-email.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372363821211" ignored="false" />
     <file path="/sendInviteEmails.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372369565761" ignored="false" />
-    <file path="/postDetailPosts.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373675982092" ignored="false" />
+    <file path="/postDetailPosts.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379606878142" ignored="false" />
     <file path="/spine-1.1.css.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373925214199" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/explore.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373929389418" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/profile.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374105947956" ignored="false" />
@@ -84,6 +84,7 @@
     <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
     <file path="/sharePost.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379535936978" ignored="false" />
     <file path="/sharePostOnTwitter.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379542666366" ignored="false" />
+    <file path="/dashboard.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379552289161" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,11 +109,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="functions.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/functions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="788" column="162" selection-start="23520" selection-end="23520" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="262" column="12" selection-start="20790" selection-end="20790" vertical-scroll-proportion="0.9642432">
+            <state line="232" column="147" selection-start="17697" selection-end="17697" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theGrid.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/theGrid.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="122" column="5" selection-start="4707" selection-end="4818" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1379529461000" expanded="false" signature="2944:2954" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="postDetailPosts.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/postDetailPosts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="120" column="51" selection-start="4596" selection-end="4596" vertical-scroll-proportion="0.5070422">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,8 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/vote.php" />
-        <option value="$PROJECT_DIR$/themes/header_template.php" />
         <option value="$PROJECT_DIR$/css/spine-1.1.css.php" />
         <option value="$PROJECT_DIR$/add_pin.php" />
         <option value="$PROJECT_DIR$/invite.php" />
@@ -184,16 +215,18 @@
         <option value="$PROJECT_DIR$/callback.php" />
         <option value="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" />
         <option value="$PROJECT_DIR$/action/sharePostOnTwitter.php" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/js/apiClass.js" />
+        <option value="$PROJECT_DIR$/dashboard.php" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/js/postDetailPosts.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="127" />
-    <option name="y" value="403" />
+    <option name="x" value="93" />
+    <option name="y" value="242" />
     <option name="width" value="1961" />
     <option name="height" value="1000" />
   </component>
@@ -252,25 +285,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="video" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -314,10 +329,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/images/video" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/images/slider" />
-      <recent name="$PROJECT_DIR$/images/slider/slides" />
     </key>
   </component>
   <component name="RunManager">
@@ -1166,12 +1182,24 @@
       <created>1379547376609</created>
       <updated>1379547376609</updated>
     </task>
-    <option name="localTasksCounter" value="203" />
+    <task id="LOCAL-00203" summary="shareBalls not yet">
+      <created>1379548973379</created>
+      <updated>1379548973379</updated>
+    </task>
+    <task id="LOCAL-00204" summary="shareBalls not yet">
+      <created>1379554766918</created>
+      <updated>1379554766918</updated>
+    </task>
+    <task id="LOCAL-00205" summary="shareBalls 1.0">
+      <created>1379605794055</created>
+      <updated>1379605794056</updated>
+    </task>
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="127" y="403" width="1961" height="1000" extended-state="0" />
-    <editor active="false" />
+    <frame x="93" y="242" width="1961" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35652173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23462215" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1180,11 +1208,11 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34736842" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3465909" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18328981" sideWeight="0.2778865" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18328981" sideWeight="0.65340906" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1238,7 +1266,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="shareBalls not yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="shareBalls 1.0" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1252,7 +1280,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="get started page" />
     <MESSAGE value="Final get started page and more analytics" />
     <MESSAGE value="api not ready" />
     <MESSAGE value="new user login process post details shows more posts on solo page" />
@@ -1277,49 +1304,12 @@
     <MESSAGE value="tumblr api" />
     <MESSAGE value="tumblr share" />
     <MESSAGE value="shareBalls not yet" />
+    <MESSAGE value="shareBalls 1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/twitteroauth/OAuth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/theGrid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="74" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1379529461000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/twitteroauth/twitteroauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.1594203">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="5" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-14.083333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="91" selection-start="567" selection-end="567" vertical-scroll-proportion="-8.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="94" column="55" selection-start="5665" selection-end="5676" vertical-scroll-proportion="-7.0833335">
@@ -1355,7 +1345,7 @@
             <element signature="e#2226#2424#0" expanded="false" />
             <element signature="e#2469#2497#0" expanded="false" />
             <element signature="e#2546#2854#0" expanded="false" />
-            <marker date="1379547366000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379604312000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1384,13 +1374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="808" column="68" selection-start="24601" selection-end="24601" vertical-scroll-proportion="0.7359155">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main-custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1398,10 +1381,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.30674848">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="1" selection-start="5936" selection-end="5936" vertical-scroll-proportion="0.11042945">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#4;n#ul#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1379552297000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="788" column="162" selection-start="23520" selection-end="23520" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="12" selection-start="20790" selection-end="20790" vertical-scroll-proportion="0.9642432">
+        <state line="232" column="147" selection-start="17697" selection-end="17697" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/postDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5184744">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/theGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="5" selection-start="4707" selection-end="4818" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1379529461000" expanded="false" signature="2944:2954" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/postDetailPosts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="51" selection-start="4596" selection-end="4596" vertical-scroll-proportion="0.5070422">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
