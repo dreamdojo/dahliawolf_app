@@ -230,9 +230,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .shareBall .right{transform: rotate(90deg);-ms-transform: rotate(90deg);-webkit-transform: rotate(90deg);right: 27.6px;bottom: 26.6px;}
 .shareBall .middle{transform: rotate(135deg);-ms-transform: rotate(135deg);-webkit-transform: rotate(135deg);bottom: 8px;left: 19px;}
 .shareBall .hoverBall{height: 25px;width: 25px;background-color: #000;position: relative;z-index: 100;border-radius: 25px; cursor: pointer;}
-.shareBall .hoverBall:hover{background-color: green;}
 .shareBall .rocket{position: absolute;background-color: #000;height: 25px;width: 25px;border-radius: 32px; bottom: 0%; transition: bottom .5s; -webkit-transition: bottom .5s;}
-.shareBall .rocket:hover{background-color: #c2c2c2;}
+.shareBall .rocket:hover{}
 .getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 
 
