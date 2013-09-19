@@ -117,10 +117,7 @@ postDetailGrid.prototype.getPosts = function() {
                 if(post.user_id == theUser.id) {
                     $('<div data-id="'+post.posting_id+'" class="delButton option">X</div>').appendTo($post).on('click', $this.delPost);
                 }
-                if(dahliawolf.userId == 658) {
-                    $post.append(new shareBall(post));
-                }
-
+                $post.append(new shareBall(post));
                 $this.postContainer.append( $post.append(str) );
 			});
 			$this.resetBindings();

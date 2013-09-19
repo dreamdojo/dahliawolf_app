@@ -299,9 +299,7 @@
         str += '<img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
 
         this.$post.append(str);
-        if(dahliawolf.userId == 658) {
-            this.$post.append(new shareBall(data));
-        }
+        this.$post.append(new shareBall(data));
     }
 
     function foreignPost(url, domain) {
