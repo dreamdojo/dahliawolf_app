@@ -329,7 +329,8 @@ Post.prototype.shareOnTwitter = function(URL) {
         });
     } else {
         dahliawolf.logIntoTwitter();
-        window.globalCallback = dahliawolf.post.shareOnTwitter(URL);
+        window.globalCallback = true;
+        window.globalURL = URL;
     }
 }
 

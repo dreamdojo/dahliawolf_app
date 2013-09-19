@@ -40,6 +40,9 @@ if (200 == $connection->http_code): ?>
 
 <script>
     opener.dahliawolf.twitterToken = "<?= $_SESSION['twitter']['access_token'] ?>";
-    opener.globalCallback();
+    if(opener.globalCallback) {
+        dahliawolf.post.shareOnTwitter(opener.globalURL);
+        opener.globalCallback = false;
+    };
     close();
 </script>
