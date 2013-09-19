@@ -33,13 +33,12 @@ unset($_SESSION['oauth_token_secret']);
 if (200 == $connection->http_code): ?>
   <?/* The user has been verified and the access tokens can be saved for future use */
   $_SESSION['status'] = 'verified';?>
-  //header('Location: ./invite?platform=TWITTER');
 <? else: ?>
   /* Save HTTP status for error dialog on connnect page.*/
   <? header('Location: ./clearsessions.php'); ?>
 <? endif ?>
 
 <script>
-    opener.dahliawolf.twitterToken = <?= $_SESSION['twitter']['access_token'] ?>;
+    opener.dahliawolf.twitterToken = "<?= $_SESSION['twitter']['access_token'] ?>";
     close();
 </script>

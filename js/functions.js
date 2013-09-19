@@ -776,13 +776,11 @@ Array.prototype.remove = function(from, to) {
 };
 //*****************************************************************************************
 function shareBall(data) {
+    var _that = this;
     this.data = data;
+
     this.$mainBall = $('<ul class="shareBall"></ul>');
-    this.$mainBall.append('<li class="left"></li><li class="middle"></li><li class="right"></li>');
-    $('<div class="rocket"></div>').appendTo( this.$mainBall.find('.left')).on('click', {data:this.data, platform:'TUMBLR'}, this.blastoff);
-    $('<div class="rocket"></div>').appendTo( this.$mainBall.find('.middle') ).on('click', {data:this.data, platform:'TWITTER'}, this.blastoff);
-    $('<div class="rocket"></div>').appendTo( this.$mainBall.find('.right') ).on('click', {data:this.data, platform:'FACEBOOK'}, this.blastoff);
-    $('<div class="hoverBall"></div>').prependTo(this.$mainBall).hover(
+    this.$hoverBall = $('<div class="hoverBall"></div>').prependTo(this.$mainBall).hover(
         function(){
             $(this).siblings().find('.rocket').css('bottom', 67+'%').css('-webkit-transform', 'scale(1.3)');
         }, function() {
@@ -792,6 +790,16 @@ function shareBall(data) {
                 $(this).unbind();
             });
         });
+    this.$mainBall.append('<li class="left"></li><li class="middle"></li><li class="right"></li>');
+    $('<div class="rocket tumblrBall"></div>').appendTo( this.$mainBall.find('.left')).on('click', {data:this.data, platform:'TUMBLR'}, this.blastoff).hover(function() {
+        _that.$hoverBall.css('-webkit-transform', 'rotate(0deg)');
+    });
+    $('<div class="rocket twitterBall"></div>').appendTo( this.$mainBall.find('.middle') ).on('click', {data:this.data, platform:'TWITTER'}, this.blastoff).hover(function() {
+        _that.$hoverBall.css('-webkit-transform', 'rotate(-45deg)');
+    });
+    $('<div class="rocket fbBall"></div>').appendTo( this.$mainBall.find('.right') ).on('click', {data:this.data, platform:'FACEBOOK'}, this.blastoff).hover(function() {
+        _that.$hoverBall.css('-webkit-transform', 'rotate(-90deg)');
+    });;
     return this.$mainBall;
 }
 shareBall.prototype.blastoff = function(data) {
