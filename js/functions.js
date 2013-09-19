@@ -807,7 +807,7 @@ function shareBall(data) {
 }
 shareBall.prototype.blastoff = function(data) {
     var $this = $(this);
-    var $points = $('<div class="getPoints">20 POINTS!</div>').css('left', $this.offset().left+30).css('top', $this.offset().top+20).appendTo('body');
+    var $points = $('<div class="getPoints">20 POINTS!</div>').css('left', $this.offset().left+30).css('top', ($this.offset().top+20 - $(window).scrollTop())).appendTo('body');
 
     switch(data.data.platform) {
         case 'TUMBLR':
@@ -827,6 +827,7 @@ shareBall.prototype.blastoff = function(data) {
     }
 
     $points.css('left', $this.offset().left+80).fadeOut(600, function() {
+        $(this).remove();
     });
     $this.remove();
 }

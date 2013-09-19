@@ -236,11 +236,11 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .shareBall .fbDeg{transform: rotate(-90deg);-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);}
 .shareBall .twitDeg{transform: rotate(-45deg);-ms-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);}
 .shareBall .tumbDeg{transform: rotate(-0deg);-ms-transform: rotate(-0deg);-webkit-transform: rotate(-0deg);}
-.shareBall .getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 .shareBall .fbBall{background-image: url("/images/shareBalls_FB_off.png"); background-size: 100%;}
 .shareBall .tumblrBall{background-image: url("/images/shareBalls_TUMBLR_off.png"); background-size: 100%;background-position: 0px 1px;}
 .shareBall .twitterBall{background-image: url("/images/shareBalls_TWITTER_off.png"); background-size: 100%;}
 .postFrame:hover .shareBall{display: block;}
+.getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 
 /************************ POST DETAILS AND GRID ***********/
 .post-details-container{width: 1000px;height: 800px;margin-top: 25px; margin: 0px auto;color: rgb(102, 102, 102);font-family: Helvetica, sans-serif;font-weight: 100;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);padding-bottom: 20px;position: relative;}

@@ -351,7 +351,9 @@ Post.prototype.shareOnFacebook = function(URL) {
         } else if (response.status === 'not_authorized') {
             dahliawolf.logIntoFacebook();
         } else {
-            dahliawolf.logIntoFacebook();
+            dahliawolf.logIntoFacebook(function() {
+                dahliawolf.shareOnFacebook(URL);
+            });
         }
     });
 }
