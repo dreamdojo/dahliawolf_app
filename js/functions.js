@@ -125,7 +125,7 @@ function events() {
 				globalSpineLoad = $.get(url, function(data) {
 					globalSpineLoad = null;
 					if (data) {
-						isSpineAvailable = true;
+                        isSpineAvailable = true;
                         dahliawolf.loader.hide();
 						$('.spine .images:last').after(data);
 					} else {
@@ -704,7 +704,7 @@ dahliaHeads.prototype.setDahliaTimer = function() {
     var $this = this;
     this.timer = setTimeout(function(){
         if( $this.view.is(':visible')) {
-            $this.view.fadeOut(200);
+            $this.view.fadeOut(80);
         }
     }, 300);
 }
@@ -729,7 +729,6 @@ dahliaHeads.prototype.toggleFollow = function() {
         api.unfollowUser(this.data.user_id);
         if(is_cached) {
             dahliaUserCache.users[this.data.user_id].is_followed = false;
-            console.log(dahliaUserCache.users[this.data.user_id].is_followed)
         }
     } else {
         this.data.is_followed = true;
@@ -737,7 +736,6 @@ dahliaHeads.prototype.toggleFollow = function() {
         api.followUser(this.data.user_id);
         if(is_cached) {
             dahliaUserCache.users[this.data.user_id].is_followed = true;
-            console.log(dahliaUserCache.users[this.data.user_id].is_followed);
         }
     }
 }
@@ -754,7 +752,7 @@ dahliaHeads.prototype.showHead = function(data) {
     }else {
         this.followButton.addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
     }
-    this.view.css({'left' : this.left, 'top' : this.top}).show();
+    this.view.css({'left' : this.left, 'top' : this.top}).fadeIn(100);
 }
 
 $(function(){

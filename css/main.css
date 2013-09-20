@@ -230,7 +230,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .shareBall .left{transform: rotate(180deg);-ms-transform: rotate(180deg);-webkit-transform: rotate(180deg);left: -0.7px;top: 0px;}
 .shareBall .right{transform: rotate(90deg);-ms-transform: rotate(90deg);-webkit-transform: rotate(90deg);right: 27.6px;bottom: 26.6px;}
 .shareBall .middle{transform: rotate(135deg);-ms-transform: rotate(135deg);-webkit-transform: rotate(135deg);bottom: 8px;left: 19px;}
-.shareBall .hoverBall{height: 35px;width: 30px; background-image: url("/images/shareBall.png"); background-size: 95%; background-repeat: no-repeat; position: relative;z-index: 100;border-radius: 25px; cursor: pointer; transition: all .4s; -webkit-transition: all .4s;}
+.shareBall .hoverBall{height: 35px;width: 30px; background-image: url("/images/shareBall.png"); background-size: 100%; background-repeat: no-repeat; position: relative;z-index: 100;border-radius: 25px; cursor: pointer; transition: all .4s; -webkit-transition: all .4s;}
 .shareBall .rocket{position: absolute; height: 40px;width: 40px;border-radius: 32px; bottom: 0%; transition: bottom .2s, visibility .27s; left: -8px; -webkit-transition: bottom .2s, visibility .27s; transform: scale(.6);-ms-transform: scale(.6);-webkit-transform: scale(.6); visibility: hidden;}
 .shareBall .fbDeg{transform: rotate(-90deg);-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);}
 .shareBall .twitDeg{transform: rotate(-45deg);-ms-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);}
