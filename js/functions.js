@@ -808,7 +808,8 @@ function shareBall(data) {
     });
     $('<div class="rocket fbBall"></div>').appendTo( this.$mainBall.find('.right') ).on('click', {data:this.data, platform:'FACEBOOK'}, this.blastoff).hover(function() {
         _that.$hoverBall.css({'-webkit-transform': 'rotate(-100deg)', 'transform' : 'rotate(-90deg)', '-ms-transform': 'rotate(-90deg)'});
-    });;
+    });
+
     return this.$mainBall;
 }
 shareBall.prototype.blastoff = function(data) {

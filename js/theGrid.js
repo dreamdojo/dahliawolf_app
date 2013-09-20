@@ -118,7 +118,13 @@ theGrid.post.prototype.displayPost = function() {
         '<div class="gridLovesBox"><div class="postGridLikeImage '+(parseInt(this.data.is_liked) ? 'postGridLiked' : 'postGridUnLiked')+'" rel="grid-vote" data-id="'+this.data.posting_id+'"></div><p class="postGridLikeCount">'+this.data.total_likes+'</p></div>';
 	str+= '</div>';
     theGrid.container.append(str);
-    $('#post-'+this.data.posting_id).append(new shareBall(this.data));
+    var $frame = $('#post-'+this.data.posting_id);
+    $frame.append(new shareBall(this.data));
+    $frame.find('.vote-frame').hover(function() {
+        $frame.find('.hoverBall').css({'-webkit-transform': 'rotate(-50deg)', 'transform' : 'rotate(-45deg)', '-ms-transform': 'rotate(-45deg)'});
+    }, function() {
+        $frame.find('.hoverBall').css({'-webkit-transform': 'rotate(-7deg)', 'transform' : 'rotate(0deg)', '-ms-transform': 'rotate(0deg)'});
+    });
 }
 
 theGrid.infiniteScroll = function(){
