@@ -1672,7 +1672,7 @@ width: 174px;
 #dahliawolfShop .item-status{position: absolute;right: 0px;font-size: 18px; z-index: 1}
 #dahliawolfShop .priceLine{position: absolute;width: 100%;bottom: 3px; z-index: 1}
 #dahliawolfShop .product-name{float: left;font-size: 17px;text-indent: 10px;width: 160px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-transform: uppercase;font-size: 11px;line-height: 21px;}
-#dahliawolfShop .product-inspiration{border-top: #c2c2c2 thin solid;}
+#dahliawolfShop .product-inspiration{border-top: #c2c2c2 thin solid; text-align: left;}
 #dahliawolfShop .product-inspiration ul li:last-child{margin-top: -2px; font-size: 13px;}
 #dahliawolfShop .product-price{float: right;font-size: 13px; margin-right: 10px;margin-right: 10px;line-height: 21px;}
 #dahliawolfShop .avatarFrame{float: left;width: 25px; overflow: hidden;border-radius: 50px;height: 25px;margin: 8px 8px;}

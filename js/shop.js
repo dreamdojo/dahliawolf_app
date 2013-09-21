@@ -1,7 +1,7 @@
 function shop(user) {
     this.$shop = $('#dahliawolfShop');
     this.products = [];
-    this.shopOwner = user ? user : null;
+    this.shopOwner = (user ? user : {});
 
     $('#sortBar li:not(:first-child)').on('click', this.filterShop);
 
