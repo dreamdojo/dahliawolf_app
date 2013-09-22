@@ -177,7 +177,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #theGrid .post-frame:hover .vote-frame{display:block;}
 #theGrid .post-frame:hover .shareBall{display:block;}
 #theGrid .post-frame img{ width:101%; position:relative; }
-#theGrid .vote-frame{ position:absolute; overflow: hidden;width: 141px;height: 135px;z-index: 1;top: 50%;margin-top: -67px;left: 50%;margin-left: -71px; display:none;}
+#theGrid .vote-frame{ position:absolute; overflow: hidden;width: 141px;height: 135px;z-index: 1;top: 50%;margin-top: -67px;left: 50%;margin-left: -71px; display:none;transition: all .2s; -webkit-transition: all .2s;}
 #theGrid .grid-like{background: url(/images/like.png) no-repeat center center;background-size: 100% 100%;}
 #theGrid .grid-unlike{background: url(/images/wild_like.png) no-repeat center center;background-size: 100% 100%;}
 #theGridLoader{height:100px; width:100%; text-align:center; }
@@ -231,7 +231,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .shareBall .right{transform: rotate(90deg);-ms-transform: rotate(90deg);-webkit-transform: rotate(90deg);right: 27.6px;bottom: 26.6px;}
 .shareBall .middle{transform: rotate(135deg);-ms-transform: rotate(135deg);-webkit-transform: rotate(135deg);bottom: 8px;left: 19px;}
 .shareBall .hoverBall{height: 35px;width: 30px; background-image: url("/images/shareBall.png"); background-size: 100%; background-repeat: no-repeat; position: relative;z-index: 100;border-radius: 25px; cursor: pointer; transition: all .4s; -webkit-transition: all .4s;}
-.shareBall .rocket{position: absolute; height: 40px;width: 40px;border-radius: 32px; bottom: 0%; transition: bottom .2s, visibility .27s; left: -8px; -webkit-transition: bottom .2s, visibility .27s; transform: scale(.6);-ms-transform: scale(.6);-webkit-transform: scale(.6); visibility: hidden;}
+.shareBall .rocket{position: absolute; height: 40px;width: 40px;border-radius: 32px; bottom: 0%; transition: bottom .2s, visibility .27s; left: -8px; -webkit-transition: bottom .2s, visibility .27s;
+    transform: scale(.6);-ms-transform: scale(.6);-webkit-transform: scale(.6); visibility: hidden; cursor: pointer;}
 .shareBall .fbDeg{transform: rotate(-90deg);-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);}
 .shareBall .twitDeg{transform: rotate(-45deg);-ms-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);}
 .shareBall .tumbDeg{transform: rotate(-0deg);-ms-transform: rotate(-0deg);-webkit-transform: rotate(-0deg);}

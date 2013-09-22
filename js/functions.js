@@ -745,7 +745,7 @@ dahliaHeads.prototype.showHead = function(data) {
     this.data.is_followed = Number(this.data.is_followed);
     dahliaUserCache.addUser(this.data);
 
-    this.avatar.attr({'src' : data.data.avatar+'&width=75', 'onclick' : 'document.location="/'+data.data.username+'";'});
+    this.avatar.attr({'src' : data.data.avatar+'&width=150', 'onclick' : 'document.location="/'+data.data.username+'";'});
     this.followButton.html( Number(data.data.is_followed) ? 'Unfollow' : 'Follow');
     if( this.data.is_followed ){
        this.followButton.addClass('dahliaHeadUnFollow').removeClass('dahliaHeadFollow');
@@ -837,4 +837,35 @@ shareBall.prototype.blastoff = function(data) {
         $(this).remove();
     });
     $this.remove();
+}
+
+function voteDot(data, callback) {
+    var that = this;
+    this.data = data;
+
+    var $voteDot = $('<div class="voteDot '+(this.isLoved ? 'loved' : 'unloved')+'"></div>');
+    var $text = $('<div>'+(this.isLoved ? 'LOVED' : 'LOVE')+'</div>').appendTo($voteDot);
+    $voteDot.on('click', function() {
+        if(this.isLoved) {
+            that.data.is_liked = false;
+            $voteDot.addClass('unloved').removeClass('loved');
+            $text.html('LOVE');
+        } else {
+            that.data.is_liked = true;
+            $voteDot.addClass('loved').removeClass('unloved');
+            $text.html('LOVED');
+        }
+        if(typeof callback === 'function') {
+           callback();
+       }
+    }).on('mouseover', function() {
+        $voteDot.css({'transform' : 'scale(1.05)', '-ms-transform': 'scale(1.05)', '-webkit-transform':  'scale(1.05)'}).on('webkitTransitionEnd transitionend', function() {
+            $voteDot.unbind('webkitTransitionEnd transitionend').css({'transform' : 'scale(1)', '-ms-transform': 'scale(1)', '-webkit-transform':  'scale(1)'});
+        });
+    });
+    return $voteDot;
+}
+
+voteDot.prototype = {
+    get isLoved() {return (Number(this.data.is_liked) ? true : false);}
 }

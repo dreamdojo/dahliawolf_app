@@ -148,4 +148,10 @@ theGrid.init = function(sortTerm, searchTerm) {
 	theGrid.getImages();
     theGrid.adjustMargins();
     $(window).resize(theGrid.adjustMargins);
+    $(document).on('mouseover', '.vote-frame', function() {
+        var $this = $(this);
+        $this.css({'transform' : 'scale(1.05)', '-ms-transform': 'scale(1.05)', '-webkit-transform':  'scale(1.05)'}).on('webkitTransitionEnd transitionend', function() {
+            $this.unbind().css({'transform' : 'scale(1)', '-ms-transform': 'scale(1)', '-webkit-transform':  'scale(1)'});
+        });
+    });
 }
