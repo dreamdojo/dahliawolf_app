@@ -846,14 +846,17 @@ function voteDot(data, callback) {
     var $voteDot = $('<div class="voteDot '+(this.isLoved ? 'loved' : 'unloved')+'"></div>');
     var $text = $('<div>'+(this.isLoved ? 'LOVED' : 'LOVE')+'</div>').appendTo($voteDot);
     $voteDot.on('click', function() {
-        if(this.isLoved) {
-            that.data.is_liked = false;
+        holla.log(that.isLoved);
+        if(that.isLoved) {
+            that.setLoved = false;
             $voteDot.addClass('unloved').removeClass('loved');
             $text.html('LOVE');
+            dahliawolf.post.unlove(that.data.posting_id);
         } else {
-            that.data.is_liked = true;
+            that.setLoved = true;
             $voteDot.addClass('loved').removeClass('unloved');
             $text.html('LOVED');
+            dahliawolf.post.love(that.data.posting_id);
         }
         if(typeof callback === 'function') {
            callback();
@@ -867,5 +870,7 @@ function voteDot(data, callback) {
 }
 
 voteDot.prototype = {
-    get isLoved() {return (Number(this.data.is_liked) ? true : false);}
+    get isLoved() {return (Number(this.data.is_liked) ? true : false);},
+
+    set setLoved(val) { this.data.is_liked = val;}
 }

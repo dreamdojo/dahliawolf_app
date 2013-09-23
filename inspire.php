@@ -166,17 +166,19 @@
     }
 
     postBank.toggleMode = function() {
+        var lineWidths = [500, 300, 400];
+
         if(postBank.mode == 'grid') {
             postBank.mode = 'line';
             $(this).css('background-position', 100+'%');
             $.each($('#bankBucket .grid'), function(index, post){
-                $(post).removeClass('grid').addClass('line');
+                $(post).removeClass('grid').addClass('line').width(lineWidths[index%3]);
             });
         } else {
             postBank.mode = 'grid';
             $(this).css('background-position', 0);
             $.each($('#bankBucket .line'), function(index, post){
-                $(post).removeClass('line').addClass('grid');
+                $(post).removeClass('line').addClass('grid').width(300);
             });
         }
     }
@@ -198,7 +200,7 @@
                 dahliawolf.loader.hide()
                 postBank.isRefillAvailable = true;
                 $.each(data.data, function(index, post) {
-                    postBank.posts.push(new bankPost(post));
+                    postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
                 });
                 postBank.$bucket.append('<div style="clear:left"></div>');
             });
@@ -266,10 +268,11 @@
         postBank.init();
     });
 
-    function bankPost(data) {
+    function bankPost(data, index) {
         this.data = data;
+        var widths = [500, 300, 400];
 
-        this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);"></div>');
+        this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
         this.$image = $('<img src="'+this.data.source+this.data.imageURL+'">').appendTo(this.$post);
         this.$post.appendTo(postBank.$bucket);
@@ -293,7 +296,6 @@
     }
 
     bankPost.prototype.addAfterPostMessage = function(data) {
-        holla.log(data);
         var str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
         str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')">';
         str += '<img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
