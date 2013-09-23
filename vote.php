@@ -18,6 +18,7 @@
     #voteBucket .righty .post{float: left; margin-left: 2px;}
     #voteBucket .userBar{position: absolute; width: 100%;top: 100%;}
     #voteBucket .innerwrap{max-height: 500px;overflow: hidden;}
+    #voteBucket .gCol{float: left; width: 33%; height: 100%;}
 
     .voteDot{position: absolute;width: 125px;height: 125px;margin-left: -75px;left: 50%;top: 50%;margin-top: -75px;
         border-radius: 75px;text-align: center;line-height: 113px;font-size: 21px; cursor: pointer; display: none; color: #fff;
@@ -102,6 +103,9 @@
      if(this.isSpineMode) {
          $post.append('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
      }
+     if(this.isGridMode) {
+         $post.css('margin-top', (Math.floor(Math.random() * (120 - 20) + 20)));
+     }
 
      return $post;
  }
@@ -138,12 +142,13 @@
  }
 
  voteFeed.prototype.funnelPosts = function(index, post) {
-     var $left = $('.lefty');
-     var $right = $('.righty');
-
      if(this.isGridMode) {
-         this.$bucket.append(this.get$Post(post));
+         $('.GridCol'+index%3).append(this.get$Post(post))
+         //this.$bucket.append(this.get$Post(post));
      } else if(this.isSpineMode) {
+         var $left = $('.lefty');
+         var $right = $('.righty');
+
          if(index % 2) {
              $left.append(this.get$Post(post));
          } else {
@@ -165,6 +170,9 @@
              this.$bucket.removeClass('gridMode');
          }
      } else if(this.isGridMode) {
+         if(!$('.leftGrid').length) {
+             this.$bucket.append('<div class="gCol GridCol0"></div><div class="gCol GridCol1"></div><div class="gCol GridCol2"></div>');
+         }
          if(!this.$bucket.hasClass('gridMode')) {
              this.$bucket.addClass('gridMode');
          }
