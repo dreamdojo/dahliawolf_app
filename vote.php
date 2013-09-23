@@ -5,7 +5,7 @@
 ?>
 <style>
     #voteBucket{width: 1000px; margin: 0px auto;}
-    #voteBucket .gridMode{max-width: 300px; overflow: hidden; height: 300px; float: left; margin: 2px;}
+    #voteBucket .gridMode{max-width: 300px; overflow: hidden; float: left; margin: 16px 2px;}
     #voteBucket .spineMode{max-width: 400px; border-width: 20px 20px 25px;border-color: rgb(173, 173, 173); border-style: solid;margin-top: 4px;}
     #voteBucket .post{position: relative;}
     #voteBucket .post a{float: left;}
@@ -17,14 +17,14 @@
     #voteBucket .lefty .post{float: right; margin-right: 2px;}
     #voteBucket .righty .post{float: left; margin-left: 2px;}
     #voteBucket .userBar{position: absolute; width: 100%;top: 100%;}
-    #voteBucket .innerwrap{max-height: 500px;overflow: hidden;}
+    #voteBucket .innerwrap{max-height: 600px;overflow: hidden;}
     #voteBucket .gCol{float: left; width: 33%; height: 100%;}
 
     .voteDot{position: absolute;width: 125px;height: 125px;margin-left: -75px;left: 50%;top: 50%;margin-top: -75px;
         border-radius: 75px;text-align: center;line-height: 113px;font-size: 21px; cursor: pointer; display: none; color: #fff;
         transition: all .2s; -webkit-transition: all .2s; opacity: .8;}
     .voteDot:hover{opacity: 1;}
-    #voteBucket .unloved{background-color: #c2c2c2;}
+    #voteBucket .unloved{background-color: #000;}
     #voteBucket .loved{background-color: #ff2e6e;}
     .voteDot div{line-height: 125px;}
 </style>
@@ -102,9 +102,6 @@
      $img.wrap('<div class="innerwrap"></div>');
      if(this.isSpineMode) {
          $post.append('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
-     }
-     if(this.isGridMode) {
-         $post.css('margin-top', (Math.floor(Math.random() * (120 - 20) + 20)));
      }
 
      return $post;
