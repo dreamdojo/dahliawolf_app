@@ -19,12 +19,13 @@
     #voteBucket .lefty .post{float: right; margin-right: 2px;}
     #voteBucket .righty .post{float: left; margin-left: 2px;}
     #voteBucket .userBar{position: absolute; width: 100%;top: 100%;}
+    #voteBucket .userBar a{font-size: 14px;color: #fff;line-height: 24px;text-indent: 5px;}
     #voteBucket .innerwrap{max-height: 600px; overflow: hidden;}
     #voteBucket .gCol{float: left; width: 33%; height: 100%;}
 
     .voteDot{position: absolute;width: 125px;height: 125px;margin-left: -75px;left: 50%;top: 50%;margin-top: -75px;
         border-radius: 75px;text-align: center;line-height: 113px;font-size: 21px; cursor: pointer; display: none; color: #fff;
-        transition: all .2s; -webkit-transition: all .2s; opacity: .8;}
+        transition: all .2s; -webkit-transition: all .2s; opacity: .8;z-index: 1;}
     .voteDot:hover{opacity: 1;}
     #voteBucket .unloved{background-color: #000;}
     #voteBucket .loved{background-color: #ff2e6e;}
@@ -42,7 +43,7 @@
      this.filter = (config.filter ? config.filter : null);
      this.search = (config.search ? config.search : null);
      this.offset = 0;
-     this.limit = 16;
+     this.limit = {'spine': 16, 'grid':15};
      this.postArray = new Array();
      this.posts = new Object();
      this.$bucket = $('#voteBucket');
@@ -58,7 +59,7 @@
 
  voteFeed.prototype = {
      get url() {
-         var URL = '/action/getFeedGrid.php?limit='+this.limit+'&offset='+this.offset;
+         var URL = '/action/getFeedGrid.php?limit='+this.limit[this.theFeedMode]+'&offset='+this.offset;
          URL += (dahliawolf.isLoggedIn ? '&viewer_user_id='+dahliawolf.userId : '');
          URL += (this.isFilterSet ? '&sort='+this.getFilter : '');
          //URL += SORT;
@@ -66,6 +67,7 @@
      },
      get isGridMode() {return this.feedMode === 'grid'},
      get isSpineMode() {return this.feedMode === 'spine'},
+     get theFeedMode() {return this.feedMode;},
      get randomWidth() {return Math.random() * (450 - 260) + 260;},
      get isFilterSet() {return (this.filter ? true : false);},
      get getFilter() {return this.filter;},
@@ -133,12 +135,12 @@
          }
          $img.appendTo($post);
          $img.wrap('<div class="innerwrap" style="width:'+postDims[index % 16][0]+'px; height:'+postDims[index % 16][1]+'px"></div>');
-         $post.append('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'-'+index+'</a></div>');
+         $post.append('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
      } else {
          var img_url = post.image_url+'&width=400';
          var $img = $('<img src="'+img_url+'">').appendTo($post);
          $img.wrap('<div class="innerwrap"></div>');
-         $post.append('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'-'+index+'</a></div>');
+         //$post.append('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
      }
      $img.wrap('<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+(Math.floor(Math.random() * (6 - 1) + 1))+'" rel="modal"></a>');
 
@@ -192,6 +194,23 @@
      }
  }
 
+ voteFeed.prototype.getShortestGridCol = function() {
+     var left = Math.floor($('.GridCol0').height());
+     var middle = Math.floor($('.GridCol1').height());
+     var right = Math.floor($('.GridCol2').height());
+     var temp = [left, middle, right];
+     var index = 0;
+     var value = temp[0];
+
+     for (var i = 1; i < temp.length; i++) {
+         if (temp[i] < value) {
+             value = temp[i];
+             index = i;
+         }
+     }
+     return index;
+ }
+
  voteFeed.prototype.prepBucket = function() {
      if(this.isSpineMode) {
          if(!$('.lefty').length) {
@@ -231,6 +250,6 @@
  }
 
  $(function() {
-     dahliawolfFeed = new voteFeed({mode:'spine' <? !empty($_GET['sort']) ? ', filter: "'.$_GET['sort'].'"' : '' ?> <? !empty($_GET['q']) ? ', search: "'.$_GET['q'].'"' : '' ?>});
+     dahliawolfFeed = new voteFeed({mode:'grid' <? !empty($_GET['sort']) ? ', filter: "'.$_GET['sort'].'"' : '' ?> <? !empty($_GET['q']) ? ', search: "'.$_GET['q'].'"' : '' ?>});
  });
 </script>

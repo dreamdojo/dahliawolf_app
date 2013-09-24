@@ -3,21 +3,12 @@
     include "head.php";
 ?>
 <?php if(!IS_LOGGED_IN): ?>
-<style>
-    #joinBanner{height: 400px;width: 100%; min-width:600px; position: relative; background-image: url("/images/joinBanner.jpg");background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;background-color: #dedede;}
-    #joinBanner .hiw{position: absolute;right: 6%;margin-top: 44px;cursor: pointer;}
-    #joinBanner .swf{position: absolute; right: 6%; margin-top: 319px;cursor: pointer;}
-    #dahliaHeader{position: relative;}
-    body{margin-top: 0px;}
-    #sort-bar{margin-top: 5px;}
-    #hiw-slide{display: none; left: 100%; height: 100%; background-color: #000; z-index: 1; position: absolute; width: 100%; text-align: center;}
-    #hiw-slide video{height: 95%;margin-top: 10px;}
-    #theCloser{position: absolute;right: 18px;top: 10px;font-size: 29px;color: #fff;cursor: pointer;}
-    @media screen and (max-width: 770px) {
-        #joinBanner .hiw{display: none;}
-        #joinBanner .swf{display: none;}
-    }
-</style>
+    <style>
+        #dahliaHeader{position: relative;}
+        body{margin-top: 0px;}
+        #sort-bar{margin-top: 5px;}
+    </style>
+
 <div id="joinBanner">
     <img class="hiw" src="/images/howitworks.png">
     <a href="/social-login.php?social_network=facebook">
@@ -33,6 +24,7 @@
     </div>
 </div>
 <? endif ?>
+
 <?
     include "header.php";
     $Spine = new Spine();

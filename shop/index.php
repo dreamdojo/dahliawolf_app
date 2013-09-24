@@ -27,7 +27,7 @@
         <li data-sort="Newest">newest / </li>
         <li data-sort="Coming Soon">samples / </li>
         <li data-sort="Live">available / </li>
-        <li data-sort="Pre Order" class="dahliaPink">pre-order 50% off</li>
+        <li data-sort="Pre Order" class="dahliaPink">pre-order 30% off</li>
     </ul>
 <? endif ?>
 

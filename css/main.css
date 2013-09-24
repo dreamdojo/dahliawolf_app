@@ -57,10 +57,24 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .facebook{font-size: 14px;margin-top: 4px; cursor:pointer;}
 
 /*--------------- SORT SECTION ----------------*/
-#sort-bar{ width:100%; border-bottom: #000 thin solid; margin: 0px auto;padding: 3px 0px;font-size: 12px; margin-top: 53px; padding-bottom: 5px;line-height: 25px; }
+.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 2px; color: #ACACAC; font-family: futura;}
+#sort-bar{ width:100%;border-bottom: #DBDBDB thin dotted; margin: 0px auto;padding: 3px 0px;font-size: 12px; margin-top: 53px; padding-bottom: 5px;line-height: 25px; }
 .bold{ font-weight:bold !important; }
-.sort-option{ font-weight:normal; }
-.filter-select{color: #cb2027;}
+.sort-option{ font-weight:normal;color: #ACACAC  }
+.filter-select{color: #F03E63 !important;}
+.light{color: #E0E0E0;}
+
+/*---------------- Home Banner --------------*/
+#joinBanner{height: 400px;width: 100%; min-width:600px; position: relative; background-image: url("/images/joinBanner.jpg");background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;background-color: #dedede;}
+#joinBanner .hiw{position: absolute;right: 6%;margin-top: 44px;cursor: pointer;}
+#joinBanner .swf{position: absolute; right: 6%; margin-top: 319px;cursor: pointer;}
+#hiw-slide{display: none; left: 100%; height: 100%; background-color: #000; z-index: 1; position: absolute; width: 100%; text-align: center;}
+#hiw-slide video{height: 95%;margin-top: 10px;}
+#theCloser{position: absolute;right: 18px;top: 10px;font-size: 29px;color: #fff;cursor: pointer;}
+@media screen and (max-width: 770px) {
+    #joinBanner .hiw{display: none;}
+    #joinBanner .swf{display: none;}
+}
 
 /*************************** HEADER ********************/
 #dahliaHeader{position: fixed; height: 50px; width: 100%; background-color: #000; left: 0px; top: 0px;z-index: 11111; min-width: 420px; font-family: futura;
@@ -125,8 +139,6 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     .bankSection img:not(.fork-img){left: 50%;position: relative;margin-left: -19px;}
     #tourButton{display: none;}
 }
-
-.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 30px;}
 
 /*   POST BAR ******************************************/
 #tooltip-overlay{position:fixed; width:100%; height:100%; top:0px; left:0px; background-color:#000; opacity:.72; display:none; z-index: 100008;}
@@ -225,7 +237,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .invite-selected{background-color: #F0F0F0;}
 .cursor{cursor:pointer;}
 /************************ SHARE BALLS ********************/
-.shareBall{position: absolute; top: 10px; left: 10px; width: 80px;height: 80px; display: none;}
+.shareBall{position: absolute; top: 10px; left: 10px; width: 80px;height: 80px; display: none;z-index: 100;}
 .shareBall li{ position: absolute; width: 25px; height: 80px; list-style-type: none; display: block;bottom: 0%;}
 .shareBall .left{transform: rotate(180deg);-ms-transform: rotate(180deg);-webkit-transform: rotate(180deg);left: -0.7px;top: 0px;}
 .shareBall .right{transform: rotate(90deg);-ms-transform: rotate(90deg);-webkit-transform: rotate(90deg);right: 27.6px;bottom: 26.6px;}
