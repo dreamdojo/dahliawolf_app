@@ -134,27 +134,23 @@ User.prototype.logIntoFacebook = function(callback) {
 
 //***************************************************************************** User uploading system
 User.prototype.uploadAvatar = function(_this, file) {
-    if(window.FormData !== undefined) {
+    if(window.FileReader !== undefined) {
         this.coordTop = $(_this).offset().top;
         this.coordLeft = $(_this).offset().left;
         this.file = file;
         $('.avatarChangeButton').hide();
-
-        if(window.FileReader) {
-            this.preview();
-        } else {
-            this.doUploadAvatar();
-        }
+        this.preview();
+        this.doUploadAvatar();
     } else {
         $('#avatarForm').submit();
     }
 }
 
 User.prototype.uploadAvatar.prototype.preview = function() {
-    var reader = new FileReader();
+        var reader = new FileReader();
 
-    reader.readAsDataURL(this.file);
-    reader.onload = $.proxy(this.drawPreview, this);
+        reader.readAsDataURL(this.file);
+        reader.onload = $.proxy(this.drawPreview, this);
 }
 
 User.prototype.uploadAvatar.prototype.drawPreview = function(event) {
@@ -182,11 +178,8 @@ User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
     MyForm.append("avatarAjax", true);
 
     var oReq = new XMLHttpRequest();
-
-    if(window.FileReader) {
-        oReq.upload.onprogress = function(e) {
-            that.$uploadStatus.html( Math.ceil( (e.loaded/e.total)*100 )+'%');
-        }
+    oReq.upload.onprogress = function(e) {
+        that.$uploadStatus.html( Math.ceil( (e.loaded/e.total)*100 )+'%');
     }
 
     oReq.onreadystatechange = function() {
@@ -194,25 +187,21 @@ User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
             var $avatars = $('.theUsersAvatar');
             that.newAvatar = $.parseJSON(this.responseText).data.avatar;
 
-            if(window.FileReader) {
-                that.$view.animate({left: that.coordLeft - 121}, 200, function() {
-                    $.each($avatars, function(index, avatar) {
-                        var $avatar = $(avatar);
+            that.$view.animate({left: that.coordLeft - 121}, 200, function() {
+                $.each($avatars, function(index, avatar) {
+                    var $avatar = $(avatar);
 
-                        if($avatar.find('img').length) {
-                            $avatar.find('img').attr('src', that.newAvatar+'&width=150&time='+new Date().getTime());
-                        } else {
-                            $('.theUsersAvatar').css('background-image', 'url('+that.newAvatar+'&width=150)');
-                        }
-                    });
-                    setTimeout(function() {
-                        $('.avatarChangeButton').show();
-                        that.closeShop();
-                    }, 100);
+                    if($avatar.find('img').length) {
+                        $avatar.find('img').attr('src', that.newAvatar+'&width=150&time='+new Date().getTime());
+                    } else {
+                        $('.theUsersAvatar').css('background-image', 'url('+that.newAvatar+'&width=150)');
+                    }
                 });
-            } else {
-                //old browser support
-            }
+                setTimeout(function() {
+                    $('.avatarChangeButton').show();
+                    that.closeShop();
+                }, 100);
+            });
         }
     }
     oReq.open("POST", URL);

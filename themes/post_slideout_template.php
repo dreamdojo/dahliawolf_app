@@ -135,11 +135,8 @@
                 MyForm.append("iurl", file);
 
                 imgUpload.oReq = new XMLHttpRequest();
-                imgUpload.oReq.upload.reader =  new FileReader();
 
                 imgUpload.oReq.upload.file = file;
-
-                imgUpload.oReq.upload.showPreview = showPreview;
 
                 imgUpload.oReq.upload.addEventListener("loadstart", transferStart, false);
                 imgUpload.oReq.upload.addEventListener("progress", transferUpdate, false);
