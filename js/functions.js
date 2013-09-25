@@ -846,14 +846,15 @@ function voteDot(data, callback) {
     var $voteDot = $('<div class="voteDot '+(this.isLoved ? 'loved' : 'unloved')+'"></div>');
     var $text = $('<div>'+(this.isLoved ? 'LOVED' : 'LOVE')+'</div>').appendTo($voteDot);
     $voteDot.on('click', function() {
-        holla.log(that.isLoved);
         if(that.isLoved) {
             that.setLoved = false;
+            that.data.total_likes = Number(that.data.total_likes) - 1;
             $voteDot.addClass('unloved').removeClass('loved');
             $text.html('LOVE');
             dahliawolf.post.unlove(that.data.posting_id);
         } else {
             that.setLoved = true;
+            that.data.total_likes = Number(that.data.total_likes) + 1;
             $voteDot.addClass('loved').removeClass('unloved');
             $text.html('LOVED');
             dahliawolf.post.love(that.data.posting_id);

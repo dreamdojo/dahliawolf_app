@@ -68,10 +68,13 @@
     <div class="dashboardInner">
         <div class="leftCol">
             <div class="avatarChangeButton" onclick="$('#avataro').closest('input').click();">+</div>
-            <input type="file" name="avatar" id="avataro" onchange="new dahliawolf.uploadAvatar(this, this.files[0]);">
+            <form id="avatarForm" action="/action/settings.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="avatar" id="avataro" onchange="new dahliawolf.uploadAvatar(this, this.files[0]);">
+                <input type="hidden" name="dashboardAvatar" value="takemehome">
+            </form>
             <div class="avatarFrame theUsersAvatar avatarShadow" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=152')">
             </div>
-            <a href="/<?= $_data['user']['username'] ?>?showPublic=true"><div class="dbButton vpp">VIEW PUBLIC PROFILE</div></a>
+            <a href="/<?= $_data['user']['username'] ?>"><div class="dbButton vpp">VIEW PUBLIC PROFILE</div></a>
         </div>
         <ul class="stats">
             <li class="uname">@<?= $_data['user']['username'] ?></li>
@@ -160,7 +163,7 @@
 
     dashboard.getPosts = function() {
         var that = this;
-        var data = {post_user_id : dahliawolf.userId, feed : this.feed, offset : this.offset, limit: this.limit};
+        var data = {user_id:dahliawolf.userId, feed : this.feed, offset : this.offset, limit: this.limit};
 
         if(this.sorter) {
             data.order_by = this.sorter;
@@ -173,15 +176,16 @@
         if(dashboard.isAvailable) {
             dahliawolf.loader.show();
             dashboard.isAvailable = false;
-            $.post('/action/getPostsByUser', data).done(function(data) {
+            //$.post('/action/getPostsByUser', data).done(function(data) {
+            dahliawolf.post.get_by_user(data, function(data) {
                 holla.log(data);
                 dashboard.isAvailable = true;
                 dahliawolf.loader.hide();
-                $.each(data.data, function(index, post) {
+                $.each(data.data.get_by_user.posts, function(index, post) {
                     that.$bin.append(new dashboardPost(post));
                 });
                 that.$bin.append('<div style="clear:left"></div>');
-                that.offset += data.data.length;
+                that.offset += data.data.get_by_user.posts.length;
             });
         }
     }

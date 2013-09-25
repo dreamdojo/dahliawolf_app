@@ -30,7 +30,7 @@ if (!empty($_GET['authen'])) {
 	}
 	// Else regular login
 	else {
-		header('location: ' . CR . '/spine');
+		header('location: ' . CR . '/vote');
 	}
 	die();
 }

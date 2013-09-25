@@ -38,7 +38,10 @@
     <div id="bankCenter">
         <div class="bankSection">
             <img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
-            <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
+            <form id="postUploadForm" action="/action/post_image.php" method="post" enctype="multipart/form-data">
+                <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
+                <input type="hidden" name="takeMeBack" value="takemehome">
+            </form>
         </div>
         <div class="bankSection">
             <div id="dndeezy" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="disallowDrop(event)">

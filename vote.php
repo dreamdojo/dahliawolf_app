@@ -6,7 +6,8 @@
 <style>
     #voteBucket{width: 1000px; margin: 0px auto;padding-bottom: 200px;}
     #voteBucket .gridMode{max-width: 300px; overflow: hidden; float: left; margin: 16px 2px;}
-    #voteBucket .spineMode{border-width: 20px 20px 25px;border-color: rgb(173, 173, 173); border-style: solid;margin-top: 4px;}
+    #voteBucket .userBar{bottom: 0;background-color: #c2c2c2;opacity: .9; top: auto;position: absolute; width: 100%; z-index: 1;}
+    #voteBucket .spineMode{margin: 10px;}
     .spineMode  .post .innerwrap{position: relative;}
     .spineMode  .post .innerwrap img{position: absolute; min-height: 100%; min-width: 100% !important; width: auto !important;}
     #voteBucket .post{position: relative;}
@@ -16,16 +17,19 @@
     #voteBucket .post img{width: 100%; min-width: 300px;}
     #voteBucket .lefty{width: 50%; float: left;}
     #voteBucket .righty{width: 50%; float: left;}
-    #voteBucket .lefty .post{float: right; margin-right: 2px;}
-    #voteBucket .righty .post{float: left; margin-left: 2px;}
-    #voteBucket .userBar{position: absolute; width: 100%;top: 100%;}
-    #voteBucket .userBar a{font-size: 14px;color: #fff;line-height: 24px;text-indent: 5px;}
+    #voteBucket .lefty .post{float: right;}
+    #voteBucket .righty .post{float: left;}
+    #voteBucket .userBar a{font-size: 14px;color: #fff;line-height: 24px;text-indent: 9px;font-family: futura;font-size: 13px;}
     #voteBucket .innerwrap{max-height: 600px; overflow: hidden;}
     #voteBucket .gCol{float: left; width: 33%; height: 100%;}
+    #voteBucket .userBar ul{float: right; height: 100%;margin-right: 3px; cursor: pointer;}
+    #voteBucket .userBar li{float: right;}
+    #voteBucket .loveCount{font-size: 13px;line-height: 22px;margin-right: 1px; font-family: futura; color: #fff;}
+    #voteBucket .loveHeart{background-image: url("/images/hearts_BG.png");background-size: auto 91%;z-index: 1;width: 22px;height: 23px;background-repeat: no-repeat;overflow: hidden;}
 
     .voteDot{position: absolute;width: 125px;height: 125px;margin-left: -75px;left: 50%;top: 50%;margin-top: -75px;
         border-radius: 75px;text-align: center;line-height: 113px;font-size: 21px; cursor: pointer; display: none; color: #fff;
-        transition: all .2s; -webkit-transition: all .2s; opacity: .8;z-index: 1;}
+        transition: all .2s; -webkit-transition: all .2s; opacity: .8;z-index: 1; font-family: futura;}
     .voteDot:hover{opacity: 1;}
     #voteBucket .unloved{background-color: #000;}
     #voteBucket .loved{background-color: #ff2e6e;}
@@ -59,11 +63,15 @@
 
  voteFeed.prototype = {
      get url() {
-         var URL = '/action/getFeedGrid.php?limit='+this.limit[this.theFeedMode]+'&offset='+this.offset;
-         URL += (dahliawolf.isLoggedIn ? '&viewer_user_id='+dahliawolf.userId : '');
-         URL += (this.isFilterSet ? '&sort='+this.getFilter : '');
-         //URL += SORT;
-         return URL;
+         var config = {limit: this.limit[this.feedMode], offset: this.offset};
+         if(dahliawolf.isLoggedIn) {
+             config.viewer_user_id = dahliawolf.userId;
+         }
+         if(this.isFilterSet) {
+             config.order_by = 'total_likes';
+             config.like_day_threshold = this.like_day_threshold;
+         }
+         return config;
      },
      get isGridMode() {return this.feedMode === 'grid'},
      get isSpineMode() {return this.feedMode === 'spine'},
@@ -83,8 +91,8 @@
          e.preventDefault();
          if(!that.isFilterSet && that.getFilter !== 'hot') {
              that.setFilter = 'hot';
-             that.$bucket.empty();
-             that.offset = 0;
+             that.like_day_threshold = 7;
+             that.resetFeed();
              that.getPostsFromApi();
          }
      })
@@ -104,6 +112,12 @@
          }
      });
 
+ }
+
+ voteFeed.prototype.resetFeed = function() {
+     this.$bucket.empty();
+     this.offset = 0;
+     this.prepBucket();
  }
 
  voteFeed.prototype.addPostData = function(post) {
@@ -126,7 +140,18 @@
 
      var $post = $('<div class="post '+(this.isSpineMode ? 'spineMode' : 'gridMode')+'"></div>');
      $post.append(new shareBall(post));
-     $post.append(new voteDot(post));
+     $post.append(new voteDot(post, function() {
+         that.updateLoveStats(post, $heartBG, $heartCount)
+     }));
+
+     var $userBar = $('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
+     var $counts = $('<ul></ul>').appendTo($userBar).on('click', function() {
+         $post.find('.voteDot').click();
+     });
+     var $heartBG = $('<li class="loveHeart" style="background-position: '+(Number(post.is_liked) ? 1 : '-'+21)+'px;"></li>').appendTo($counts);
+     var $heartCount = $('<li class="loveCount">'+post.total_likes+'</li>').appendTo($counts);
+     $post.append($userBar);
+
      if(this.isSpineMode) {
          var img_url = post.image_url+'&height='+postDims[index % 16][1];
          var $img = $('<img src="'+img_url+'&height='+postDims[index % 16][1]+'">');
@@ -135,16 +160,19 @@
          }
          $img.appendTo($post);
          $img.wrap('<div class="innerwrap" style="width:'+postDims[index % 16][0]+'px; height:'+postDims[index % 16][1]+'px"></div>');
-         $post.append('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
      } else {
-         var img_url = post.image_url+'&width=400';
+         var img_url = post.image_url+'&width=300';
          var $img = $('<img src="'+img_url+'">').appendTo($post);
          $img.wrap('<div class="innerwrap"></div>');
-         //$post.append('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
      }
      $img.wrap('<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+(Math.floor(Math.random() * (6 - 1) + 1))+'" rel="modal"></a>');
 
      return $post;
+ }
+
+ voteFeed.prototype.updateLoveStats = function(post, $heartBG, $count) {
+     $heartBG.css('background-position', (post.is_liked ? 1 : '-'+23)+'px');
+     $count.html(post.total_likes);
  }
 
  voteFeed.prototype.getPostsFromApi = function() {
@@ -153,13 +181,15 @@
      if(this.isApiAvailable) {
          this.isApiAvailable = false;
          dahliawolf.loader.show();
-         $.getJSON(this.url, function(data){
+
+         dahliawolf.post.get(this.url, function(data){
+             holla.log(data);
              var tempArray = new Array();
              that.isApiAvailable = true;
              dahliawolf.loader.hide();
-             that.offset += data.length;
+             that.offset += data.data.get_all.posts.length;
 
-             $.each(data, function(index, post) {
+             $.each(data.data.get_all.posts, function(index, post) {
                  that.addPostData(post);
                  tempArray.push(post.posting_id);
              });

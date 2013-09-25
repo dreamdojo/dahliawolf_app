@@ -125,29 +125,33 @@
         }
 
         if(theUser.id && imgUpload.isAvailable){
-            sendToAnal({name:'Uploaded an Image'});
-            imgUpload.isAvailable = false;
+            if(window.FormData !== undefined) {
+                sendToAnal({name:'Uploaded an Image'});
+                imgUpload.isAvailable = false;
 
-			URL = 'action/post_image.php?ajax=true';
-			
-			MyForm = new FormData();
-			MyForm.append("iurl", file);
-			
-			imgUpload.oReq = new XMLHttpRequest();
-			imgUpload.oReq.upload.reader =  new FileReader();
-			
-			imgUpload.oReq.upload.file = file;
-			
-			imgUpload.oReq.upload.showPreview = showPreview; 
-			
-			imgUpload.oReq.upload.addEventListener("loadstart", transferStart, false);
-			imgUpload.oReq.upload.addEventListener("progress", transferUpdate, false);
-			imgUpload.oReq.onreadystatechange = transferComplete;
-			
-			imgUpload.oReq.open("POST", URL);
-			imgUpload.oReq.send(MyForm);
-			
-		}else{
+                URL = 'action/post_image.php?ajax=true';
+
+                MyForm = new FormData();
+                MyForm.append("iurl", file);
+
+                imgUpload.oReq = new XMLHttpRequest();
+                imgUpload.oReq.upload.reader =  new FileReader();
+
+                imgUpload.oReq.upload.file = file;
+
+                imgUpload.oReq.upload.showPreview = showPreview;
+
+                imgUpload.oReq.upload.addEventListener("loadstart", transferStart, false);
+                imgUpload.oReq.upload.addEventListener("progress", transferUpdate, false);
+                imgUpload.oReq.onreadystatechange = transferComplete;
+
+                imgUpload.oReq.open("POST", URL);
+                imgUpload.oReq.send(MyForm);
+            } else {
+                $('#postUploadForm').submit();
+            }
+        }
+		else{
 			new_loginscreen();
 		}
 	}

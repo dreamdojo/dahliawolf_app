@@ -134,15 +134,19 @@ User.prototype.logIntoFacebook = function(callback) {
 
 //***************************************************************************** User uploading system
 User.prototype.uploadAvatar = function(_this, file) {
-    this.coordTop = $(_this).offset().top;
-    this.coordLeft = $(_this).offset().left;
-    this.file = file;
-    $('.avatarChangeButton').hide();
+    if(window.FormData !== undefined) {
+        this.coordTop = $(_this).offset().top;
+        this.coordLeft = $(_this).offset().left;
+        this.file = file;
+        $('.avatarChangeButton').hide();
 
-    if( window.FormData !== undefined ) {
-        this.preview();
+        if(window.FileReader) {
+            this.preview();
+        } else {
+            this.doUploadAvatar();
+        }
     } else {
-        this.doUploadAvatar();
+        $('#avatarForm').submit();
     }
 }
 
@@ -179,8 +183,10 @@ User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
 
     var oReq = new XMLHttpRequest();
 
-    oReq.upload.onprogress = function(e) {
-        that.$uploadStatus.html( Math.ceil( (e.loaded/e.total)*100 )+'%');
+    if(window.FileReader) {
+        oReq.upload.onprogress = function(e) {
+            that.$uploadStatus.html( Math.ceil( (e.loaded/e.total)*100 )+'%');
+        }
     }
 
     oReq.onreadystatechange = function() {
@@ -188,21 +194,25 @@ User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
             var $avatars = $('.theUsersAvatar');
             that.newAvatar = $.parseJSON(this.responseText).data.avatar;
 
-            that.$view.animate({left: that.coordLeft - 121}, 200, function() {
-                $.each($avatars, function(index, avatar) {
-                    var $avatar = $(avatar);
+            if(window.FileReader) {
+                that.$view.animate({left: that.coordLeft - 121}, 200, function() {
+                    $.each($avatars, function(index, avatar) {
+                        var $avatar = $(avatar);
 
-                    if($avatar.find('img').length) {
-                        $avatar.find('img').attr('src', that.newAvatar+'&width=150&time='+new Date().getTime());
-                    } else {
-                        $('.theUsersAvatar').css('background-image', 'url('+that.newAvatar+'&width=150)');
-                    }
+                        if($avatar.find('img').length) {
+                            $avatar.find('img').attr('src', that.newAvatar+'&width=150&time='+new Date().getTime());
+                        } else {
+                            $('.theUsersAvatar').css('background-image', 'url('+that.newAvatar+'&width=150)');
+                        }
+                    });
+                    setTimeout(function() {
+                        $('.avatarChangeButton').show();
+                        that.closeShop();
+                    }, 100);
                 });
-                setTimeout(function() {
-                    $('.avatarChangeButton').show();
-                    that.closeShop();
-                }, 100);
-            });
+            } else {
+                //old browser support
+            }
         }
     }
     oReq.open("POST", URL);
@@ -231,24 +241,26 @@ function Api() {
     this.baseUrl = '/api/1-0/';
     this.baseCommerceUrl = "/api/commerce/";
     this.commerceApi = false;
+    this.loginRequired = true;
 }
 
 Api.prototype.callApi = function(data) {
     that = this;
     data.use_hmac_check = 0;
     data.function = this.apiFunction;
+    var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
+    _gaq.push(['_trackEvent', this.apiApi, this.apiFunction]);
 
-    if(dahliawolf.isLoggedIn) {
-        var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
-        _gaq.push(['_trackEvent', this.apiApi, this.apiFunction]);
+    if(dahliawolf.isLoggedIn || !this.loginRequired) {
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
                 that.callback(data);
             }
         });
     } else {
-        console.log('not logged in');
+        new_loginscreen();
     }
+    this.loginRequired = true;
 }
 //************************************************************************************ MEMBER
 Member.prototype = new Api();
@@ -278,14 +290,31 @@ function Post() {
 Post.prototype = new Api();
 Post.prototype.constructor = Post;
 
+Post.prototype.get = function(config, callback) {
+    this.apiFunction = 'get_all';
+    this.callback = callback;
+    this.loginRequired = false;
+    this.callApi(config);
+    return this;
+}
+
+Post.prototype.get_by_user = function(config, callback) {
+    this.apiFunction = 'get_by_user';
+    this.callback = callback;
+    this.callApi(config);
+    return this;
+}
+
 Post.prototype.love = function(id, callback) {
     this.apiFunction = 'add_like';
+    this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;
 }
 
 Post.prototype.unlove = function(id, callback) {
     this.apiFunction = 'delete_like';
+    this.callback = callback;
     this.posting_id = id;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;

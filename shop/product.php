@@ -172,7 +172,7 @@
             <span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% Off' : ''?></span>
         </div>
         <? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
-            <div class="presalePrice">$<?= number_format( ($_data['product']['product']['price']/2), 2, '.', ',') ?></div>
+            <div class="presalePrice">$<?= number_format( ($_data['product']['product']['price']*.7), 2, '.', ',') ?></div>
         <? endif ?>
         <? if( $status == 'Pre Order'): ?>
             <div id="theCountdown">
