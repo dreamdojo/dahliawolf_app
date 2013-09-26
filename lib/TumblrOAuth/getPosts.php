@@ -15,5 +15,5 @@ $params = array('type' => 'photo');
 
 $newPost = $tum_oauth->get($userinfo->response->user->url, $params);
 
-echo json_encode($userinfo);
+echo json_encode($newPost);
 ?>
