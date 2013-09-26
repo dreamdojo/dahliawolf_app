@@ -16,8 +16,8 @@ $params = array('type' => 'photo');
 $newPost = $tum_oauth->get($userinfo->response->user->url, $params);
 //http://api.tumblr.com/v2/blog/cultoftomorrow.tumblr.com/posts/photo?&limit=20&offset=20&api_key=3d18fdI6UxAa52wJAaM3y9XkdcYt0RP9VXaB4MztNghZjO0N85
 
-/*$url = "http://api.tumblr.com/v2/blog/".$userinfo->response->user->name.".tumblr.com/posts/photo?&limit=20&offset=20&api_key=CVzhkkyjfjeKsGeDuOflRGddP14Y3jzDLGUi0QnHTfvnAF010D";
-$ch = curl_init($url);
+$url = "http://api.tumblr.com/v2/blog/".$userinfo->response->user->name.".tumblr.com/posts/photo?&limit=20&offset=20&api_key=CVzhkkyjfjeKsGeDuOflRGddP14Y3jzDLGUi0QnHTfvnAF010D";
+/*$ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $data = curl_exec($ch);
