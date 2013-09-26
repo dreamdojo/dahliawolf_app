@@ -29,11 +29,13 @@
     #bankBucket .postButton:hover{opacity: .7;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
-    #viewToggle{background-image: url("/images/views.png");background-position: 0%;background-size: 180%;position: absolute;right: -11px;margin-top: 2px;width: 45px;background-repeat: no-repeat;overflow: hidden;}
-    .title-roll{background-color: #e4e2e3;font-size: 22px;width: 97%; max-width: 920px;z-index: 1;font-weight: bold;margin: 0px auto;top: 70px;margin-bottom: 10px;position: relative;text-align: center;}
+    #viewToggle{background-image: url("/images/inspireToggle_BG.png");background-position: 0%;position: absolute;right: -11px;width: 45px;background-repeat: no-repeat;overflow: hidden; height: 30px;margin-right: 20px;top: 2px; cursor: pointer;}
+    .title-roll{border:#c2c2c2 thin solid; font-size: 22px;width: 97%; max-width: 940px;z-index: 1;font-weight: bold;margin: 0px auto; top: 77px; margin-bottom: 10px;position: relative;text-align: center; height: 35px; background-color: #fff;}
     .xDomainStatus{position: absolute;height: 100%;width: 100%;background-color: #c2c2c2;z-index: 111;top: 0px;left: 0px;}
     .xDomainStatus p{width: 1000px;margin: 0px auto;font-size: 27px;text-align: center;line-height: 60px;}
+    #postTitleContent{font-size:15px; line-height: 35px;}
 </style>
+
 
 <div id="bankOptions" class="drop-shadow" <?= isset($_GET['get_started']) ? 'style="display:none"' : '' ?>>
     <div id="bankCenter">
@@ -50,11 +52,8 @@
             </div>
         </div>
         <div id="importFromPinterest" class="bankSection cursor">
-            <div id="getPinterestName">
-                <input type="text" placeholder="Enter Pinterest Name Here" id="thePinterestName" /><div id="goPinterestButton"></div>
-            </div>
-            <img src="/images/bank-pinterest.png">
-            <p>Select Images From Your Pinterest</p>
+            <img src="/images/tumblr_logo.png" style="width: 31px;">
+            <p>Select Images From Your Tumblr</p>
         </div>
         <div id="importFromInstagram" class="bankSection no-right-border cursor">
             <img src="/images/bank-instagram.png">
@@ -83,9 +82,9 @@
     postBank.init = function() {
         postBank.bindScroll();
         postBank.getImages();
-        $('#importFromPinterest').on('click', postBank.getImagesFromPinterest);
+        $('#importFromPinterest').on('click', postBank.getImagesFromTumblr);
         $('#importFromInstagram').on('click', postBank.getImagesFromInstagram);
-        $('#getPinterestName input').on('keydown', postBank.setPinterestName);
+        //$('#getPinterestName input').on('keydown', postBank.setPinterestName);
         postBank.adjustMargins();
         $(window).resize(postBank.adjustMargins);
         $('#viewToggle').on('click', this.toggleMode);
@@ -174,13 +173,13 @@
 
         if(postBank.mode == 'grid') {
             postBank.mode = 'line';
-            $(this).css('background-position', 100+'%');
+            $(this).css('background-position', '-'+49+'px');
             $.each($('#bankBucket .grid'), function(index, post){
                 $(post).removeClass('grid').addClass('line').width(lineWidths[index%3]);
             });
         } else {
             postBank.mode = 'grid';
-            $(this).css('background-position', 0);
+            $(this).css('background-position', 0+'px');
             $.each($('#bankBucket .line'), function(index, post){
                 $(post).removeClass('line').addClass('grid').width(300);
             });
@@ -230,6 +229,15 @@
                 'width=500, height=500'
             );
         }
+    }
+    postBank.getImagesFromTumblr = function() {
+        /*
+        if(dahliawolf.areYouLoggedIntoTumblr) {
+            holla.log('logged in');
+        } else {
+            dahliawolf.logIntoTumblr(postBank.getImagesFromTumblr);
+        }*/
+        alert('Coming Soon');
     }
 
     postBank.getImagesFromPinterest = function() {

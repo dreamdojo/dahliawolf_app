@@ -59,7 +59,8 @@ shop.prototype.fillShop = function() {
 shop.prototype.filterShop = function() {
     var filter = $(this).data('sort');
 
-    $(this).css('font-weight', 'bolder').siblings().css('font-weight',  'normal')
+    $(this).siblings().removeClass('dahliaPink');
+    $(this).addClass('dahliaPink');
     if(filter === 'Newest') {
         $('.shop-item').removeClass('hidden');
     } else {
@@ -86,7 +87,8 @@ shop.prototype.product.prototype.addToShop = function() {
     //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );
     this.$hover.append( this.getInspirationButton() );
     this.$image_view = $('<div class="product-details"></div>').appendTo(this.$view);
-    this.$inspiration = $('<img class="inspirationImage" src="'+(this.inspirationImage ? this.inspirationImage : '')+'">').appendTo(this.$image_view);
+    this.$inspiration = $('<div class="inspirationImage"><img src="'+(this.inspirationImage ? this.inspirationImage : '')+'"></div>');
+    this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
     this.$image_view.append( this.getPrice()).append( this.getImage() );
     this.$inspiration_view.append( this.getInspiration() );
@@ -104,7 +106,13 @@ shop.prototype.product.prototype.getStatus = function() {
 }
 
 shop.prototype.product.prototype.getPrice = function() {
-    return '<div class="priceLine"><div class="product-name">'+this.data.product_name+'</div><div class="product-price">$'+Math.floor(this.data.price).toFixed(2)+'</div></div>';
+    holla.log(this.data);
+    var str =  '<ul class="priceBox">' +
+            '<li class="sale-price" style="'+(this.data.status === 'Pre Order' ? '' : 'visibility: hidden;')+'">$'+Math.floor(this.data.sale_price).toFixed(2)+'</li>'+
+            (this.data.status === 'Pre Order' ? '<li class="pre_order">Pre Order</li>' : '') +
+            '<li style="'+(this.data.status === 'Pre Order' ? 'text-decoration: line-through;' : '')+'">$'+Math.floor(this.data.price).toFixed(2)+'</li>' +
+        '</ul>';
+    return '<div class="priceLine"><div class="product-name">'+this.data.product_name+'</div>'+str+'</div>';
 }
 
 shop.prototype.product.prototype.getImage = function() {

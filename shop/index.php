@@ -22,13 +22,15 @@
 <!--<a href="/inspire"><img style="text-align: center; margin: 0px auto; width: 80%; max-width: 1200px;" src="/images/COMINGSOON.png"></a>-->
 
 <? if( empty($user['user_id']) ): ?>
-    <ul id="sortBar">
-        <li>sort products by: </li>
-        <li data-sort="Newest">newest / </li>
-        <li data-sort="Coming Soon">samples / </li>
-        <li data-sort="Live">available / </li>
-        <li data-sort="Pre Order" class="dahliaPink">pre-order 30% off</li>
-    </ul>
+    <div id="sortBar-wrap">
+        <ul id="sortBar">
+            <li>sort products by: </li>
+            <li data-sort="Newest">newest / </li>
+            <!--<li data-sort="Coming Soon">samples / </li>
+            <li data-sort="Live">available / </li>-->
+            <li data-sort="Pre Order" class="dahliaPink">pre-order 30% off</li>
+        </ul>
+    </div>
 <? endif ?>
 
 <? if( !empty($user['user_id']) ): ?>

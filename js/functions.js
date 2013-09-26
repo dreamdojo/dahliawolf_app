@@ -796,6 +796,7 @@ function shareBall(data) {
             var that = this;
             $('.shareBall').on('mouseleave', function() {
                 $(that).siblings().find('.rocket').css('bottom', 0+'%').css({'-webkit-transform': 'scale(.6)','transform': 'scale(.6)', '-ms-transform': 'scale(.6)', 'visibility': 'hidden'});
+                $(that).css({'-webkit-transform': 'rotate(-7deg)', 'transform' : 'rotate(0deg)', '-ms-transform': 'rotate(0deg)'});
                 $(this).unbind();
             });
         });

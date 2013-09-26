@@ -113,6 +113,7 @@ User.prototype.logIntoTwitter = function(callback) {
 }
 
 User.prototype.logIntoTumblr = function(callback) {
+    globalCallback = callback;
     var loginWindow = window.open(
         "/lib/TumblrOAuth/connect.php",
         'Log into Tumblr',

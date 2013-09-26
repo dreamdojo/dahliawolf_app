@@ -27,33 +27,40 @@
 
 <?
     include "header.php";
-    $Spine = new Spine();
     include "blocks/filter.php";
-    $Spine->output($_data['posts']);
+?>
+    <div id="voteBucket"></div>
+<?php
     include "footer.php";
 ?>
 <script>
     $(function() {
-       var $head = $('#dahliaHeader');
-        $(window).scroll(function() {
-            if($(this).scrollTop() > 400) {
-                $head.css('position', 'fixed');
-            } else {
-                $head.css('position', 'relative');
-            }
-        });
-        $('#theCloser').on('click', function() {
-            document.getElementById('hiwVideo').pause();
-            $('#hiw-slide').animate({'left':100+'%'}, 300, function() {
-                $(this).hide();
-            });
-        });
-        $('.hiw').on('click', function() {
-           $('#hiw-slide').fadeIn(0, function() {
-                $(this).animate({'left':0+'%'}, 300, function() {
-                    document.getElementById('hiwVideo').play();
-                });
+        dahliawolfFeed = new voteFeed({mode:'grid' <? !empty($_GET['sort']) ? ', filter: "'.$_GET['sort'].'"' : '' ?> <? !empty($_GET['q']) ? ', search: "'.$_GET['q'].'"' : '' ?>});
+    });
+
+    $(function() {
+       if(!dahliawolf.isLoggedIn) {
+           var $head = $('#dahliaHeader');
+           $(window).scroll(function() {
+               if($(this).scrollTop() > 400) {
+                   $head.css('position', 'fixed');
+               } else {
+                   $head.css('position', 'relative');
+               }
            });
-        });
+           $('#theCloser').on('click', function() {
+               document.getElementById('hiwVideo').pause();
+               $('#hiw-slide').animate({'left':100+'%'}, 300, function() {
+                   $(this).hide();
+               });
+           });
+           $('.hiw').on('click', function() {
+               $('#hiw-slide').fadeIn(0, function() {
+                   $(this).animate({'left':0+'%'}, 300, function() {
+                       document.getElementById('hiwVideo').play();
+                   });
+               });
+           });
+       }
     });
 </script>

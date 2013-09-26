@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/hearts_BG.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/shareBall.png" afterPath="$PROJECT_DIR$/images/shareBall.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/inspireToggle_BG.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tumblr_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/TumblrOAuth/getPosts.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vote.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiClass.js" afterPath="$PROJECT_DIR$/js/apiClass.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blocks/filter.php" afterPath="$PROJECT_DIR$/blocks/filter.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/header_template.php" afterPath="$PROJECT_DIR$/themes/header_template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/head.php" afterPath="$PROJECT_DIR$/head.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/index.php" afterPath="$PROJECT_DIR$/shop/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inspire.php" afterPath="$PROJECT_DIR$/inspire.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/post_image.php" afterPath="$PROJECT_DIR$/action/post_image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/post_slideout_template.php" afterPath="$PROJECT_DIR$/themes/post_slideout_template.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/product.php" afterPath="$PROJECT_DIR$/shop/product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.php" afterPath="$PROJECT_DIR$/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/settings.php" afterPath="$PROJECT_DIR$/account/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/settings.php" afterPath="$PROJECT_DIR$/action/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social-login.php" afterPath="$PROJECT_DIR$/social-login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/shop.js" afterPath="$PROJECT_DIR$/js/shop.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vote.php" afterPath="$PROJECT_DIR$/vote.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -26,12 +26,12 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380036167917" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380151539988" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
     <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
     <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380059217463" ignored="false" />
-    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379982946757" ignored="false" />
-    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380045134840" ignored="false" />
+    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380153885624" ignored="false" />
+    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380130587330" ignored="false" />
     <file path="/Spine-1.1.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374534549200" ignored="false" />
     <file path="/a.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184379967" ignored="false" />
     <file path="/a.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184397202" ignored="false" />
@@ -42,7 +42,7 @@
     <file path="/explore.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373928286982" ignored="false" />
     <file path="/theGrid.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379637985193" ignored="false" />
     <file path="/api.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374531486320" ignored="false" />
-    <file path="/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379524770308" ignored="false" />
+    <file path="/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380127726638" ignored="false" />
     <file path="/post_slideout_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380063297351" ignored="false" />
     <file path="/invite.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379444165276" ignored="false" />
     <file path="/invite-email.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372363821211" ignored="false" />
@@ -70,7 +70,7 @@
     <file path="/m_functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374085254592" ignored="false" />
     <file path="/a.dummy" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380059285692" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731311219" ignored="false" />
-    <file path="/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374530612390" ignored="false" />
+    <file path="/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380150854108" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/css/form.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374190743742" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/css/main-custom.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374187480744" ignored="false" />
     <file path="/form.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374187518557" ignored="false" />
@@ -79,7 +79,7 @@
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/cart-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731311219" ignored="false" />
     <file path="/cart-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374265255597" ignored="false" />
     <file path="/add_item_to_wishlist.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374530443017" ignored="false" />
-    <file path="/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379983057856" ignored="false" />
+    <file path="/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380150549324" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731709771" ignored="false" />
     <file path="/cart.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374535657396" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374737305546" ignored="false" />
@@ -90,10 +90,10 @@
     <file path="/get_started.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379979056410" ignored="false" />
     <file path="/instagramConnect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375737376917" ignored="false" />
     <file path="/post_image.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380063517556" ignored="false" />
-    <file path="/inspire.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380063497262" ignored="false" />
+    <file path="/inspire.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380141677412" ignored="false" />
     <file path="/get_feed_from_pinterest.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379354406173" ignored="false" />
     <file path="/vote.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380067995222" ignored="false" />
-    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380067404936" ignored="false" />
+    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380134123226" ignored="false" />
     <file path="/add_pin.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379435788848" ignored="false" />
     <file path="/callback.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379612181314" ignored="false" />
     <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
@@ -101,8 +101,11 @@
     <file path="/sharePostOnTwitter.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379542666366" ignored="false" />
     <file path="/dashboard.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380062508598" ignored="false" />
     <file path="$PROJECT_DIR$/../wholesale/public_html/app/design/frontend/default/dreamdojo/template/magentothem/custommenu/custommenu.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379725049397" ignored="false" />
-    <file path="/filter.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380067799439" ignored="false" />
+    <file path="/filter.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380129594069" ignored="false" />
     <file path="$PROJECT_DIR$/../wholesale/public_html/api.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379979564436" ignored="false" />
+    <file path="/vote.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380130825276" ignored="false" />
+    <file path="/getPosts.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380134694301" ignored="false" />
+    <file path="/shop.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380152766883" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,87 +130,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="post_image.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/action/post_image.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="50" selection-start="2122" selection-end="2122" vertical-scroll-proportion="-26.25">
+            <state line="29" column="53" selection-start="1332" selection-end="1332" vertical-scroll-proportion="-17.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profile.php">
+      <file leaf-file-name="product.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="47" selection-start="499" selection-end="499" vertical-scroll-proportion="-10.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="107" selection-start="6375" selection-end="6404" vertical-scroll-proportion="-43.75">
+            <state line="97" column="0" selection-start="5322" selection-end="5322" vertical-scroll-proportion="-60.625">
               <folding>
-                <marker date="1380062630000" expanded="false" signature="11133:11143" placeholder="..." />
-                <marker date="1380062630000" expanded="false" signature="12029:12065" placeholder="..." />
-                <marker date="1380062630000" expanded="false" signature="12170:12200" placeholder="..." />
-                <marker date="1380062630000" expanded="false" signature="12403:12414" placeholder="..." />
-                <marker date="1380062630000" expanded="false" signature="12521:12532" placeholder="..." />
-                <marker date="1380062630000" expanded="false" signature="12641:12652" placeholder="..." />
-                <marker date="1380062630000" expanded="false" signature="13396:13432" placeholder="..." />
-                <marker date="1380062630000" expanded="false" signature="14992:15014" placeholder="..." />
-                <marker date="1380062630000" expanded="false" signature="16997:17021" placeholder="..." />
+                <element signature="e#5408#5509#0" expanded="true" />
+                <element signature="e#5556#5580#0" expanded="true" />
+                <element signature="e#5613#5637#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header_template.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/header_template.php">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="72" selection-start="3804" selection-end="3804" vertical-scroll-proportion="-28.083334">
+            <state line="1741" column="50" selection-start="109526" selection-end="109526" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vote.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vote.php">
+      <file leaf-file-name="shop.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/shop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="110" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.37544698">
+            <state line="111" column="64" selection-start="4562" selection-end="4562" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1380068865000" expanded="false" signature="5983:6004" placeholder="..." />
-                <marker date="1380068865000" expanded="false" signature="6637:6643" placeholder="..." />
-                <marker date="1380068865000" expanded="false" signature="9551:9562" placeholder="..." />
-                <marker date="1380068865000" expanded="false" signature="10047:10058" placeholder="..." />
+                <marker date="1380152767000" expanded="true" signature="6202:6221" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="social-login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/social-login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="217" selection-end="217" vertical-scroll-proportion="-5.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shareBall.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/shareBall.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filter.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/filter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="144" selection-start="938" selection-end="938" vertical-scroll-proportion="-6.25">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -215,9 +175,22 @@
       <file leaf-file-name="apiClass.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/apiClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="252" column="0" selection-start="8272" selection-end="8272" vertical-scroll-proportion="0.0">
+            <state line="115" column="30" selection-start="3602" selection-end="3602" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1380067602000" expanded="false" signature="4920:4944" placeholder="..." />
+                <marker date="1380134176000" expanded="false" signature="4897:4921" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inspire.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inspire.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="6" selection-start="4465" selection-end="4465" vertical-scroll-proportion="0.71005917">
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1380154349000" expanded="false" signature="7143:7157" placeholder="..." />
+                <marker date="1380154349000" expanded="false" signature="10475:10485" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -277,31 +250,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
-        <option value="$PROJECT_DIR$/shop/product.php" />
-        <option value="$PROJECT_DIR$/themes/header_template.php" />
-        <option value="$PROJECT_DIR$/action/settings.php" />
-        <option value="$PROJECT_DIR$/dashboard.php" />
-        <option value="$PROJECT_DIR$/account/settings.php" />
-        <option value="$PROJECT_DIR$/inspire.php" />
-        <option value="$PROJECT_DIR$/action/post_image.php" />
-        <option value="$PROJECT_DIR$/themes/post_slideout_template.php" />
         <option value="$PROJECT_DIR$/profile.php" />
         <option value="$PROJECT_DIR$/social-login.php" />
-        <option value="$PROJECT_DIR$/js/apiClass.js" />
-        <option value="$PROJECT_DIR$/blocks/filter.php" />
+        <option value="$PROJECT_DIR$/head.php" />
         <option value="$PROJECT_DIR$/vote.php" />
+        <option value="$PROJECT_DIR$/blocks/filter.php" />
+        <option value="$PROJECT_DIR$/js/functions.js" />
+        <option value="$PROJECT_DIR$/js/vote.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/apiClass.js" />
+        <option value="$PROJECT_DIR$/lib/TumblrOAuth/getPosts.php" />
+        <option value="$PROJECT_DIR$/themes/post_slideout_template.php" />
+        <option value="$PROJECT_DIR$/shop/index.php" />
+        <option value="$PROJECT_DIR$/shop/product.php" />
+        <option value="$PROJECT_DIR$/js/shop.js" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/inspire.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="172" />
-    <option name="y" value="174" />
-    <option name="width" value="2446" />
-    <option name="height" value="1011" />
+    <option name="x" value="290" />
+    <option name="y" value="88" />
+    <option name="width" value="2227" />
+    <option name="height" value="1291" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -329,6 +302,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -347,52 +321,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blocks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="dev_Dahlia" serverId="666cdfd5-cdf3-4d6a-bc43-f5bef4a92f3c" autoUpload="true" uploadOnSaveAll="true">
     <servers>
@@ -1376,29 +1321,33 @@
       <created>1379985676841</created>
       <updated>1379985676841</updated>
     </task>
-    <option name="localTasksCounter" value="228" />
+    <task id="LOCAL-00228" summary="massive amounts of changes">
+      <created>1380076364247</created>
+      <updated>1380076364247</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="172" y="174" width="2446" height="1011" extended-state="0" />
+    <frame x="290" y="88" width="2227" height="1291" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29373246" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22288643" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23462215" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6709887" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292797" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21148825" sideWeight="0.6757469" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34640524" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6709887" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15458333" sideWeight="0.6707203" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21148825" sideWeight="0.6757469" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11508483" sideWeight="0.77711356" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34602463" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292797" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1448,7 +1397,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lots of various improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="massive amounts of changes" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1462,7 +1411,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="bezel time" />
     <MESSAGE value="add pin test" />
     <MESSAGE value="google analytics/ vote on index/ api stuff" />
     <MESSAGE value="add_pin debug" />
@@ -1487,106 +1435,62 @@
     <MESSAGE value="shop back up and sarker view toggle" />
     <MESSAGE value="vote page improvements" />
     <MESSAGE value="lots of various improvements" />
+    <MESSAGE value="massive amounts of changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shop/product.php">
+    <entry file="file://$PROJECT_DIR$/js/vote.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="99" selection-start="10168" selection-end="10168" vertical-scroll-proportion="-108.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="26" selection-start="1299" selection-end="1314" vertical-scroll-proportion="-26.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="54" selection-start="4340" selection-end="4340" vertical-scroll-proportion="-15.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/header_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="72" selection-start="3804" selection-end="3804" vertical-scroll-proportion="-28.083334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/uploadPost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/update_post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="107" selection-start="6375" selection-end="6404" vertical-scroll-proportion="-43.75">
+        <state line="45" column="46" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.08050089">
           <folding>
-            <marker date="1380062630000" expanded="false" signature="11133:11143" placeholder="..." />
-            <marker date="1380062630000" expanded="false" signature="12029:12065" placeholder="..." />
-            <marker date="1380062630000" expanded="false" signature="12170:12200" placeholder="..." />
-            <marker date="1380062630000" expanded="false" signature="12403:12414" placeholder="..." />
-            <marker date="1380062630000" expanded="false" signature="12521:12532" placeholder="..." />
-            <marker date="1380062630000" expanded="false" signature="12641:12652" placeholder="..." />
-            <marker date="1380062630000" expanded="false" signature="13396:13432" placeholder="..." />
-            <marker date="1380062630000" expanded="false" signature="14992:15014" placeholder="..." />
-            <marker date="1380062630000" expanded="false" signature="16997:17021" placeholder="..." />
+            <marker date="1380130828000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1380130828000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1380130828000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1380130828000" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
+    <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="44" selection-start="5360" selection-end="5360" vertical-scroll-proportion="0.53097343">
-          <folding>
-            <marker date="1380063700000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inspire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="53" selection-start="3618" selection-end="3628" vertical-scroll-proportion="-0.20916335">
-          <folding>
-            <marker date="1380063528000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1380063528000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/post_image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="50" selection-start="2122" selection-end="2122" vertical-scroll-proportion="-26.25">
+        <state line="795" column="28" selection-start="23785" selection-end="23785" vertical-scroll-proportion="0.46332738">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile.php">
+    <entry file="file://$PROJECT_DIR$/action/getFeedGrid.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="47" selection-start="499" selection-end="499" vertical-scroll-proportion="-10.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7116788">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/social-login.php">
+    <entry file="file://$PROJECT_DIR$/head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="217" selection-end="217" vertical-scroll-proportion="-5.0">
+        <state line="86" column="0" selection-start="5246" selection-end="5246" vertical-scroll-proportion="0.5046729">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/filter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="43" selection-start="582" selection-end="582" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="29" selection-start="3464" selection-end="3485" vertical-scroll-proportion="-26.583334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/getPosts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="2" selection-start="733" selection-end="733" vertical-scroll-proportion="-10.0">
           <folding />
         </state>
       </provider>
@@ -1596,30 +1500,72 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/apiClass.js">
+    <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="252" column="0" selection-start="8272" selection-end="8272" vertical-scroll-proportion="0.0">
+        <state line="20" column="25" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.38809833">
           <folding>
-            <marker date="1380067602000" expanded="false" signature="4920:4944" placeholder="..." />
+            <marker date="1380141059000" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/filter.php">
+    <entry file="file://$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="144" selection-start="938" selection-end="938" vertical-scroll-proportion="-6.25">
+        <state line="17" column="2" selection-start="841" selection-end="841" vertical-scroll-proportion="0.32988358">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vote.php">
+    <entry file="file://$PROJECT_DIR$/shop/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="110" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.37544698">
+        <state line="29" column="53" selection-start="1332" selection-end="1332" vertical-scroll-proportion="-17.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1741" column="50" selection-start="109526" selection-end="109526" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="0" selection-start="5322" selection-end="5322" vertical-scroll-proportion="-60.625">
           <folding>
-            <marker date="1380068865000" expanded="false" signature="5983:6004" placeholder="..." />
-            <marker date="1380068865000" expanded="false" signature="6637:6643" placeholder="..." />
-            <marker date="1380068865000" expanded="false" signature="9551:9562" placeholder="..." />
-            <marker date="1380068865000" expanded="false" signature="10047:10058" placeholder="..." />
+            <element signature="e#5408#5509#0" expanded="true" />
+            <element signature="e#5556#5580#0" expanded="true" />
+            <element signature="e#5613#5637#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/shop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="64" selection-start="4562" selection-end="4562" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1380152767000" expanded="true" signature="6202:6221" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/apiClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="30" selection-start="3602" selection-end="3602" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1380134176000" expanded="false" signature="4897:4921" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inspire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="6" selection-start="4465" selection-end="4465" vertical-scroll-proportion="0.71005917">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1380154349000" expanded="false" signature="7143:7157" placeholder="..." />
+            <marker date="1380154349000" expanded="false" signature="10475:10485" placeholder="..." />
           </folding>
         </state>
       </provider>
