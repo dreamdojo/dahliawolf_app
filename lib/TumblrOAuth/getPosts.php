@@ -14,6 +14,34 @@ $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
 $params = array('type' => 'photo');
 
 $newPost = $tum_oauth->get($userinfo->response->user->url, $params);
+http://api.tumblr.com/v2/blog/cultoftomorrow.tumblr.com/posts/photo?&limit=20&offset=20&api_key=3d18fdI6UxAa52wJAaM3y9XkdcYt0RP9VXaB4MztNghZjO0N85
 
-echo json_encode($newPost);
+$ch = curl_init("http://api.tumblr.com/v2/blog/".$userinfo->response->user->name.".tumblr.com/posts/photo?&limit=20&offset=20&api_key=CVzhkkyjfjeKsGeDuOflRGddP14Y3jzDLGUi0QnHTfvnAF010D");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+$data = curl_exec($ch);
+curl_close($ch);
+/*
+$xml = new SimpleXmlElement($data, LIBXML_NOCDATA);
+$cnt = count($xml->channel->item);
+
+for($i=0; $i<$cnt; $i++){
+    $img    = $xml->channel->item[$i]->description;
+    $title  = $xml->channel->item[$i]->title;
+    $description 		= split("<p>",$img);
+    $fulldescription 	= substr($description[2], 0, -4);
+    $unixdate 			= strtotime($xml->channel->item[$i]->pubDate);
+    $source 			= "http://www.pinterest.com";
+    $hashash 			= strpos($img,$hashtag);
+    $theurl 			= getimg($img);
+    $caption 			= $fulldescription;
+    $description 		= cleanit($caption);
+    $sourceurl 			= cleanit($source);
+    $url 				= cleanit($theurl);
+    $big_url	 		= $url;//substr($url, 0, -6).substr($url,-4);
+    $big_url			= str_replace('192', '736', $big_url);
+    $money[] 			= array('images' => array('thumbnail' => array('url' => $url), 'standard_resolution' => array('url' => $big_url), 'source' => array('src' => 'pinterest')));
+}*/
+//header('Content-Type: application/json');
+echo json_encode(ch);
 ?>
