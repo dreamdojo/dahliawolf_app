@@ -30,15 +30,7 @@
 
 
 <form action="action/post_image.php" id="thePinForm" method="POST" class="Form PinForm" enctype="multipart/form-data">
-<div id="theFork">
-    <div class="animated-word">INSPIRE NEW FASHION</div>
-</div>
 
-<div id="bank-roll">
-</div>
-
-<div id="bank-overlay">
-</div>
 
 <div id="post-me">
 	<div id="u-clsr" onclick="imgUpload.closeMe()">X</div>
