@@ -233,17 +233,21 @@
     postBank.getImagesFromTumblr = function() {
         if(dahliawolf.areYouLoggedIntoTumblr) {
             dahliawolf.loader.show();
-            postBank.clearBank();
-            $(window).unbind('scroll');
             $.getJSON('/lib/TumblrOAuth/getPosts', function(data) {
                 holla.log(data);
                 postBank.ajaxCall = null;
                 dahliawolf.loader.hide();
-                $.each(data.response.posts, function(index, post) {
-                    $.each(post.photos, function(index, photo) {
-                        postBank.posts.push( new foreignPost(photo.alt_sizes[0].url, 'Tumblr') );
+                if(data.response.posts.length) {
+                    postBank.clearBank();
+                    $(window).unbind('scroll');
+                    $.each(data.response.posts, function(index, post) {
+                        $.each(post.photos, function(index, photo) {
+                            postBank.posts.push( new foreignPost(photo.alt_sizes[0].url, 'Tumblr') );
+                        });
                     });
-                });
+                } else {
+                    alert('No Images Found');
+                }
             });
         } else {
             dahliawolf.logIntoTumblr(postBank.getImagesFromTumblr);
