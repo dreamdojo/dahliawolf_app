@@ -232,7 +232,6 @@
     }
     postBank.getImagesFromTumblr = function() {
         if(dahliawolf.areYouLoggedIntoTumblr) {
-            var photos = {};
             dahliawolf.loader.show();
             postBank.clearBank();
             $(window).unbind('scroll');
