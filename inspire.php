@@ -231,24 +231,35 @@
         }
     }
     postBank.getImagesFromTumblr = function() {
-        /*
         if(dahliawolf.areYouLoggedIntoTumblr) {
-            holla.log('logged in');
+            var photos = {};
+            dahliawolf.loader.show();
+            postBank.clearBank();
+            $(window).unbind('scroll');
+            $.getJSON('/lib/TumblrOAuth/getPosts', function(data) {
+                holla.log(data);
+                postBank.ajaxCall = null;
+                dahliawolf.loader.hide();
+                $.each(data.response.posts, function(index, post) {
+                    $.each(post.photos, function(index, photo) {
+                        postBank.posts.push( new foreignPost(photo.alt_sizes[0].url, 'Tumblr') );
+                    });
+                });
+            });
         } else {
             dahliawolf.logIntoTumblr(postBank.getImagesFromTumblr);
-        }*/
-        alert('Coming Soon');
+        }
     }
 
     postBank.getImagesFromPinterest = function() {
         if(userConfig.pinterest_username) {
             postBank.clearBank();
             $(window).unbind('scroll');
-            dahliawolf.loader.show()
+            dahliawolf.loader.show();
             postBank.ajaxCall = $.post('/get_feed_from_pinterest', {pinterest_user : userConfig.pinterest_username }, function(data) {
                 console.log(data);
                 postBank.ajaxCall = null;
-                dahliawolf.loader.hide()
+                dahliawolf.loader.hide();
                 if(data.data) {
                     $.each(data.data, function(index, img){
                         postBank.posts.push( new foreignPost(img.images.standard_resolution.url, 'Pinterest') );
