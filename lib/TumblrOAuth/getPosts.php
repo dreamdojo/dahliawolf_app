@@ -43,5 +43,5 @@ for($i=0; $i<$cnt; $i++){
     $money[] 			= array('images' => array('thumbnail' => array('url' => $url), 'standard_resolution' => array('url' => $big_url), 'source' => array('src' => 'pinterest')));
 }*/
 //header('Content-Type: application/json');
-echo json_encode(ch);
+echo json_encode($ch);
 ?>
