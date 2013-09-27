@@ -109,7 +109,7 @@ shop.prototype.product.prototype.getStatus = function() {
 shop.prototype.product.prototype.getPrice = function() {
     var str =  '<ul class="priceBox">' +
             '<li class="sale-price" style="'+(this.data.status === 'Pre Order' ? '' : 'visibility: hidden;')+'">$'+Math.floor(this.data.sale_price).toFixed(2)+'</li>'+
-            (this.data.status === 'Pre Order' ? '<li class="pre_order">Pre Order</li>' : '') +
+            (this.data.status !== 'Live' ? '<li class="pre_order">'+this.data.status+'</li>' : '') +
             '<li style="'+(this.data.status === 'Pre Order' ? 'text-decoration: line-through;' : '')+'">$'+Math.floor(this.data.price).toFixed(2)+'</li>' +
         '</ul>';
     return '<div class="priceLine"><div class="product-name">'+this.data.product_name+'</div>'+str+'</div>';
