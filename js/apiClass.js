@@ -92,24 +92,12 @@ User.prototype.isFriend = function(id) {
 }
 
 User.prototype.logIntoTwitter = function(callback) {
+    globalCallback = callback;
     var win = window.open(
         "/redirect.php",
         'Log into Twitter',
         'width=500, height=500'
     );
-    if (typeof win.attachEvent != "undefined") {
-        win.attachEvent("onunload", function() {
-            if(typeof callback == 'function') {
-                callback();
-            }
-        });
-    } else if (typeof win.addEventListener != "undefined") {
-        win.addEventListener("unload", function() {
-            if(typeof callback == 'function') {
-                callback();
-            }
-        }, false);
-    }
 }
 
 User.prototype.logIntoTumblr = function(callback) {
@@ -332,7 +320,7 @@ Post.prototype.getLovers = function(id, limit, offset, callback) {
 Post.prototype.shareOnTumbler = function(URL) {
     if(dahliawolf.areYouLoggedIntoTumblr) {
         $.getJSON('/lib/TumblrOAuth/sharePost.php',{url:URL}, function(data) {
-           console.log(data);
+           holla.log(data);
         });
     } else {
         dahliawolf.logIntoTumblr(function() {
@@ -356,19 +344,16 @@ Post.prototype.shareOnTwitter = function(URL) {
 Post.prototype.shareOnFacebook = function(URL) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            var params = {};
-            params['message'] = 'Love this on Dahliawolf';
-            params['url'] = URL;
-            params['access_token'] = response.authResponse.accessToken;
-            params['upload file'] = true;
-            params['fileName'] = 'Bloop';
+            var params = {message : 'Love this on Dahliawolf', url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
                     holla.log(response);
                 }
             });
         } else if (response.status === 'not_authorized') {
-            dahliawolf.logIntoFacebook();
+            dahliawolf.logIntoFacebook(function() {
+                dahliawolf.shareOnFacebook(URL);
+            });
         } else {
             dahliawolf.logIntoFacebook(function() {
                 dahliawolf.shareOnFacebook(URL);
