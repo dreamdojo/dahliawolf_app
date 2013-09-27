@@ -335,9 +335,9 @@ Post.prototype.shareOnTumbler = function(URL) {
            console.log(data);
         });
     } else {
-        dahliawolf.logIntoTumblr();
-        window.globalCallback = true;
-        window.globalURL = URL;
+        dahliawolf.logIntoTumblr(function() {
+            dahliawolf.post.shareOnTumbler(URL);
+        });
     }
 }
 
@@ -347,9 +347,9 @@ Post.prototype.shareOnTwitter = function(URL) {
             holla.log(data);
         });
     } else {
-        dahliawolf.logIntoTwitter();
-        window.globalCallback = true;
-        window.globalURL = URL;
+        dahliawolf.logIntoTwitter(function() {
+            dahliawolf.post.shareOnTwitter(URL);
+        });
     }
 }
 
