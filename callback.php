@@ -43,6 +43,6 @@ if (200 == $connection->http_code): ?>
     if(opener.globalCallback) {
         opener.globalCallback();
         opener.globalCallback = false;
-    };
+    }
     close();
 </script>
