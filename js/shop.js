@@ -82,12 +82,13 @@ shop.prototype.product = function(item, $shop) {
 }
 
 shop.prototype.product.prototype.addToShop = function() {
+    holla.log(this);
     this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
     //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );
     this.$hover.append( this.getInspirationButton() );
     this.$image_view = $('<div class="product-details" onclick="document.location=\''+this.data.id_product+'\'"></div>').appendTo(this.$view);
-    this.$inspiration = $('<div class="inspirationImage"><img src="'+(this.inspirationImage ? this.inspirationImage : '')+'"></div>');
+    this.$inspiration = $('<div class="inspirationImage"><img src="'+this.data.inspiration_image_url+'"></div>');
     this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
     this.$image_view.append( this.getPrice()).append( this.getImage() );
