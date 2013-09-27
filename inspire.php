@@ -18,14 +18,13 @@
     #importFromPinterest{ position:relative; overflow:hidden;}
     #thePinterestName{height: 75%;margin-top: 2%;margin-left: 2%;width: 75%;font-size: 14px;text-indent: 3px; float:left;}
     #goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
-
     #bankBucket{width: 100%;max-width: 960px; margin: 0px auto; height: 100%;padding-top: 57px; padding-bottom: 100px;}
     #bankBucket .postFrame{overflow: hidden; position: relative;}
-    #bankBucket .postFrame:hover .option{display: block;}
+    #bankBucket .postFrame:hover .postButton{display: block;}
     #bankBucket .grid{float: left; width: 300px;height: 300px; margin: 10px;}
     #bankBucket .line{width: 80%; margin: 10px auto;overflow: hidden;margin-bottom: 10px;margin-top: 10px; max-width: 500px;}
     #bankBucket .postFrame img{width: 100%;}
-    #bankBucket .postButton{position: absolute;right: 10px;background-color: #000;width: 70px;height: 30px;text-align: center;line-height: 30px;margin-top: 10px;font-size: 15px;cursor: pointer;border: #c2c2c2 thin solid;font-family: futura;font-weight: bolder;color: #fff;}
+    #bankBucket .postButton{position: absolute; display:none; right: 50%;top: 50%;background-color: #353535; width: 90px;height: 90px;border-radius: 50px;text-align: center;line-height: 90px;margin-top: -45px;margin-right: -45px;font-size: 15px;cursor: pointer;font-family: futura;font-weight: bolder;color: #fff;}
     #bankBucket .postButton:hover{opacity: .7;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
