@@ -47,8 +47,8 @@ if ($top_dir == 'shop') {
 <link href="/css/jquery.countdown.css" rel="stylesheet" type="text/css">
 <!--[if IE 7]> <link href="http://www.dahliawolf.com/css/face/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if IE 8]> <link href="http://www.dahliawolf.com/css/face/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-<link href="/css/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/tipTip.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/spine<?= !empty($_data['spine_version']) ? $_data['spine_version'] : '' ?>.css.php" media="screen" rel="stylesheet" type="text/css">
 <link type="text/css" href="/css/shop.css" rel="stylesheet" media="screen" />
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>

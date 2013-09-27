@@ -221,6 +221,24 @@ function user_events() {
     $(document).on('focus', '.socialize',  pplFinder.start);
     //$(document).on('blur', '.socialize',  pplFinder.closeMe);
 
+    $(document).on('click', '.zoombox', function(e) {
+        e.stopImmediatePropagation();
+        new crunkBox($(this).data('url'));
+    });
+
+    function crunkBox(url) {
+        if(url) {
+            var $box = $('<div class="crunkBox"></div>').on('click', function() {
+                $(this).fadeOut(200, function() {
+                    $(this).remove();
+                });
+            });
+            var $translucent = $('<div class="crunkBox_BG"></div>').appendTo($box);
+            var $img = $('<img src="'+url+'">').css({'height': window.innerHeight-200, 'padding-top':100}).appendTo($box);
+            $('body').append($box);
+        }
+    }
+
 	// Like/unlike
 	$(document).on('click', 'a[rel="like"]', function() {
 		if (this.href) {

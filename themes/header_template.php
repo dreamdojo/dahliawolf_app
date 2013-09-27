@@ -49,6 +49,7 @@ $(document).ready(function()
         else  $(this).removeClass("NotEmpty");
     });
 });
+
 //Google Aanalytics
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-34564940-1']);
