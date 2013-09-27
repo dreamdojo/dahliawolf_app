@@ -125,7 +125,7 @@ shop.prototype.product.prototype.getInspiration = function() {
     } catch(err) {
         var username = '';
     }
-    return '<ul><li class="avatarFrame avatarShadow"><img src="'+this.data.avatar+'"></li><li class="inspire"><span class="dahliaPink">Inspired By </span></li><li><a href="/'+username+'">'+username+'</a></li></ul>'
+    return '<ul><li class="avatarFrame avatarShadow" style="background-image: url(\''+this.data.avatar+'&width=100\');"></li><li class="inspire"><span class="dahliaPink">Inspired By </span></li><li><a href="/'+username+'">'+username+'</a></li></ul>'
 }
 
 shop.prototype.product.prototype.getWishlistButton = function() {
