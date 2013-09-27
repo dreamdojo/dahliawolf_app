@@ -106,7 +106,6 @@ shop.prototype.product.prototype.getStatus = function() {
 }
 
 shop.prototype.product.prototype.getPrice = function() {
-    holla.log(this.data);
     var str =  '<ul class="priceBox">' +
             '<li class="sale-price" style="'+(this.data.status === 'Pre Order' ? '' : 'visibility: hidden;')+'">$'+Math.floor(this.data.sale_price).toFixed(2)+'</li>'+
             (this.data.status === 'Pre Order' ? '<li class="pre_order">Pre Order</li>' : '') +
@@ -125,7 +124,7 @@ shop.prototype.product.prototype.getInspiration = function() {
     } catch(err) {
         var username = '';
     }
-    return '<ul><li class="avatarFrame avatarShadow"><img src="/avatar.php?user_id='+this.data.user_id+'"></li><li class="inspire"><span class="dahliaPink">Inspired By </span></li><li><a href="/'+username+'">'+username+'</a></li></ul>'
+    return '<ul><li class="avatarFrame avatarShadow"><img src="'+this.data.avatar+'"></li><li class="inspire"><span class="dahliaPink">Inspired By </span></li><li><a href="/'+username+'">'+username+'</a></li></ul>'
 }
 
 shop.prototype.product.prototype.getWishlistButton = function() {
