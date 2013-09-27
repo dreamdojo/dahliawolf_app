@@ -73,7 +73,7 @@ $_SESSION['tumblr']['access_token']['oauth_token_secret'] = $access_token['oauth
 <script>
     opener.dahliawolf.tumblrToken = "<?= $access_token['oauth_token'] ?>";
     if(opener.globalCallback) {
-        opener..globalCallback();
+        opener.globalCallback(); 
         opener.globalCallback = false;
     };
     close();
