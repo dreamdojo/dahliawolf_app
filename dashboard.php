@@ -209,7 +209,7 @@
     function dashboardPost(data) {
         this.data = data;
         this.$post = $('<ul class="dbPost"></ul>');
-        $('<li style="width: 30%; background-image: url(\''+this.data.image_url+'&width=300\')"></li>').appendTo(this.$post);
+        $('<a href="/post-details?posting_id='+this.data.posting_id+'" rel="modal"><li style="width: 30%; background-image: url(\''+this.data.image_url+'&width=300\')"></li></a>').appendTo(this.$post);
         this.$panel0 = $('<li style="width: 19%; margin-left: 10px;"><p>'+this.data.total_likes+' LOVES</p><p><span class="dahliaPink">'+(LOVE_REQUIRED - this.data.total_likes)+'</span> NEEDED TO WIN</p></li>').appendTo(this.$post);
         this.$panel1 = $('<li style="width: 15%;"><p>'+this.data.total_views+' VIEWS</p></li>').appendTo(this.$post);
         this.$panel2 = $('<li style="width: 15%;"><p>'+this.data.total_shares+' SHARES</p></li>').appendTo(this.$post);
