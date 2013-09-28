@@ -2,7 +2,6 @@
     $pageTitle = "Homepage";
     include "head.php";
 ?>
-<?php if(!IS_LOGGED_IN): ?>
     <style>
         #dahliaHeader{position: relative;}
         body{margin-top: 0px;}
@@ -11,9 +10,11 @@
 
 <div id="joinBanner">
     <img class="hiw" src="/images/howitworks.png">
-    <a href="/social-login.php?social_network=facebook">
-        <img class="swf" src="/images/facebook.png">
-    </a>
+    <?php if(!IS_LOGGED_IN): ?>
+        <a href="/social-login.php?social_network=facebook">
+            <img class="swf" src="/images/facebook.png">
+        </a>
+    <?php endif ?>
     <div id="hiw-slide">
         <div id="theCloser">X</div>
         <video id="hiwVideo" controls poster="http://www.dahliawolf.com/images/how-it-works-video.png" >
@@ -23,7 +24,6 @@
         </video>
     </div>
 </div>
-<? endif ?>
 
 <?
     include "header.php";

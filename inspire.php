@@ -296,10 +296,10 @@
     function bankPost(data, index) {
         this.data = data;
         var widths = [500, 300, 400];
-
+holla.log(this.data);
         this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
-        this.$image = $('<img src="'+this.data.source+this.data.imageURL+'">').appendTo(this.$post);
+        this.$image = $('<a class="zoombox" data-url="'+this.data.source+this.data.imageURL+'" rel="modal"><img src="'+this.data.source+this.data.imageURL+'"></a>').appendTo(this.$post);
         this.$post.appendTo(postBank.$bucket);
 
         return this;
