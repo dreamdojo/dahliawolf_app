@@ -39,28 +39,26 @@
     });
 
     $(function() {
-       if(!dahliawolf.isLoggedIn) {
-           var $head = $('#dahliaHeader');
-           $(window).scroll(function() {
-               if($(this).scrollTop() > 400) {
-                   $head.css('position', 'fixed');
-               } else {
-                   $head.css('position', 'relative');
-               }
+       var $head = $('#dahliaHeader');
+       $(window).scroll(function() {
+           if($(this).scrollTop() > 400) {
+               $head.css('position', 'fixed');
+           } else {
+               $head.css('position', 'relative');
+           }
+       });
+       $('#theCloser').on('click', function() {
+           document.getElementById('hiwVideo').pause();
+           $('#hiw-slide').animate({'left':100+'%'}, 300, function() {
+               $(this).hide();
            });
-           $('#theCloser').on('click', function() {
-               document.getElementById('hiwVideo').pause();
-               $('#hiw-slide').animate({'left':100+'%'}, 300, function() {
-                   $(this).hide();
+       });
+       $('.hiw').on('click', function() {
+           $('#hiw-slide').fadeIn(0, function() {
+               $(this).animate({'left':0+'%'}, 300, function() {
+                   document.getElementById('hiwVideo').play();
                });
            });
-           $('.hiw').on('click', function() {
-               $('#hiw-slide').fadeIn(0, function() {
-                   $(this).animate({'left':0+'%'}, 300, function() {
-                       document.getElementById('hiwVideo').play();
-                   });
-               });
-           });
-       }
+       });
     });
 </script>
