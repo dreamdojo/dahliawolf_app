@@ -7,7 +7,7 @@
 <style>
     .vipHeader{background-color: #fff; text-align: center; position: relative; z-index: 3; height: 240px;}
     .vipHeader li{list-style: none; position: relative; z-index: 3;}
-    .vip_overlay{position: absolute; background-color: #000; opacity: .8; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 2;}
+    .vip_overlay{position: absolute; background-color: #000; opacity: .6; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 2;}
     #vipBox{border: #fff 5px solid; background-color: #000; height: 300px; width: 500px; position: fixed; left: 50%; top: 50%; margin-left: -250px; margin-top: -150px; z-index: 3;}
     #vipBox form{color: #fff;text-align: center;margin-top: 50px;}
     .vipCode{height: 45px;width: 230px;margin-top: 45px;font-size: 30px;text-align: center;}
@@ -60,7 +60,6 @@
     }
     $(function() {
        var $bg = $('.bg_image');
-        $bg.height(window.innerHeight - 290);
        $(window).resize(function() {
           $bg.height(window.innerHeight - 290);
        });
