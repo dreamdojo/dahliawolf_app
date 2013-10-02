@@ -36,7 +36,7 @@ if (!empty($_GET['authen'])) {
 }
 
 if (empty($_GET['social_network'])) {
-	header('Location: ' . CR . '/spine?modal=signup');
+	header('Location: ' . CR . '/vote?modal=signup');
 	die();
 }
 

@@ -75,6 +75,8 @@ if (!empty($_GET['user_id']) && !empty($_GET['token'])) {
 	$_SESSION['token'] = $data['data']['token'];
 }
 
+$_SESSION['redirect'] = $_SERVER['PHP_SELF'];
+
 define('IS_LOGGED_IN', !empty($_SESSION) && !empty($_SESSION['user']) && !empty($_SESSION['token']));
 define('TWITTER_IS_LOGGED_IN', !empty($_SESSION) && !empty($_SESSION['access_token']));
 define('INSTAGRAM_IS_LOGGED_IN', !empty($_SESSION) && !empty($_SESSION['user']['instagramToken']));
