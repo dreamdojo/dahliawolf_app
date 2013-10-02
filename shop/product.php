@@ -59,7 +59,7 @@
     #shopHeader{height: 130px;padding-top: 15px;}
     #shopHeader #shopUserData{float: left; margin-top: 35px; margin-left: 10px;}
     #shopHeader #shopUserData li{float: left; width: 100px; width: 200px; width: 100%;}
-    #shopHeader .avatarFrame{float: left; overflow: hidden; border-radius: 50px; height: 100px; width: 100px; background-size: auto 100%; background-repeat: no-repeat;}
+    #shopHeader .avatarFrame{float: left; overflow: hidden; border-radius: 50px; height: 100px; width: 100px; background-size: auto 100%; background-repeat: no-repeat; background-position: 50%;}
     #shopHeader .avatarFrame img{width: 100%;}
 
     #shopContent{border-top: #d5d5d5 2px solid;clear: left;}
