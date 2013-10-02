@@ -60,6 +60,7 @@
     }
     $(function() {
        var $bg = $('.bg_image');
+        $bg.height(window.innerHeight - 290);
        $(window).resize(function() {
           $bg.height(window.innerHeight - 290);
        });
