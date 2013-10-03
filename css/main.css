@@ -1734,13 +1734,13 @@ width: 174px;
 #dahliawolfShop h1{margin: 0;font-weight: 100;font-size: 13px;padding-top: 13px;}
 #dahliawolfShop .pre-order{background-color: #eb1d5d;position: absolute;right: 7px;z-index: 1;top: 7px;height: 53px; width: 75px; padding-top: 22px; border-radius: 50px;text-align: center;color: #fff;font-size: 14px;}
 #dahliawolfShop .shop-item:hover .hoverData{display: block;}
-#dahliawolfShop .hoverData{position: absolute;width: 100%; height: 10%; z-index: 103;bottom: 0px;left: 0px; display:none;}
+#dahliawolfShop .hoverData{position: absolute;width: 150px; height: 10%; z-index: 103;bottom: 0px;right: 0px; display:none;}
 #dahliawolfShop .itemOverlay{position: absolute;z-index: 1;background-color: #fff;width: 100%;height: 100%;top: 0;left: 0;opacity: .7;}
 #dahliawolfShop .overlayButton{position: absolute;z-index: 2; padding: 8px 10px; font-size: 18px; left: 50%;margin-left: -84px;width: 150px; text-align: center;cursor: pointer;}
 #dahliawolfShop .overlayButton:hover{opacity: .7;}
 #dahliawolfShop .wishlistButton{background-color: #5e5e5e; color: #fff;margin-top: 110px;}
 #dahliawolfShop .buyButton{background-color: #5e5e5e; color: #fff;margin-top: 150px;}
-#dahliawolfShop .inspirationButton{color: #fff;bottom: 0px;position: absolute;bottom: 0px;left: 0px; height: 41px; font-size: 11px; line-height: 45px; width: 100%;text-align: right; z-index: 3; cursor: pointer;}
+#dahliawolfShop .inspirationButton{color: #fff;bottom: 0px;position: absolute;bottom: 0px;right: 0px; height: 41px; font-size: 11px; line-height: 45px; width: 150px; text-align: right; z-index: 3; cursor: pointer;}
 #dahliawolfShop .inspirationButton span{background-color: #000;padding: 5px 10px;color: #fff;}
 #dahliawolfShop .inspirationButton:hover{color: #c86362; }
 #dahliawolfShop .inspirationImage{ position: absolute;width: 100%;z-index: 33;left: 100%; transition: left .2s; -webkit-transition: left .2s;height: 350px;overflow: hidden; background-color: #fff;}
