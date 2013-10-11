@@ -43,6 +43,8 @@ function unset_action_session_keys() {
 function get_cart() {
 
 
+    error_log("init:" . __FUNCTION____ );
+
 
 	$cookie = array();
 	$cart = array();
