@@ -22,7 +22,7 @@ $calls = array(
 $data = commerce_api_request('category', $calls, true);
 $_data['categories'] = $data['data']['get_shop_categories']['data'];
 
-error_log(__FILE__ . " $self");
+error_log(__FILE__ . " action: $self");
 
 if ($self == '/shop/index.php') {
     /*
