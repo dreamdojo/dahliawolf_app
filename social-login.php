@@ -30,13 +30,13 @@ if (!empty($_GET['authen'])) {
 	}
 	// Else regular login
 	else {
-		header('location: ' . CR . '/spine');
+		header('location: ' . CR . '/vote');
 	}
 	die();
 }
 
 if (empty($_GET['social_network'])) {
-	header('Location: ' . CR . '/spine?modal=signup');
+	header('Location: ' . CR . '/vote?modal=signup');
 	die();
 }
 

@@ -143,7 +143,10 @@ margin-top: -29px;
                                         <input class="input_text" type="password" name="credential" id="sysForm_credential" value="">
                                         <label for="sysForm_credential">Password</label>
                                         <span class="fff"></span>
-                                    </li>  
+                                    </li>
+                                    <li style="text-align: left;">
+                                        <a style="color: #888;font-size: 12px;" href="/reset-password-link.php">Forgot password?</a>
+                                    </li>
                                     <li><span class="rememberme">
                                         <input class="checkbox" id="l_remember_me" name="l_remember_me" type="checkbox" value="1">
                                         <span class="texting"> Remember me</span></span>

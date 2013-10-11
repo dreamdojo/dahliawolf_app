@@ -57,9 +57,9 @@ partyLine.isTwitterLoggedIn = <?= (TWITTER_IS_LOGGED_IN ? 'true' : 'false') ?>;
 partyLine.twitterUsername = null;
 partyLine.twitterMessengerBusy = false;
 partyLine.bezelMap = {'FACEBOOK': 40, 'TWITTER': 108, 'EMAIL' : 180};
+partyLine.twitterUsers = new Array();
 
-partyLine.users = new Array();// USR CLASS
-
+partyLine.users = new Array();
 partyLine.userTank = $('#mainCol');
 
 partyLine.userTank.on('click', '.invite-follow-button', function() {
@@ -161,16 +161,26 @@ partyLine.getUsers['EMAIL'] = function(){
 }
 
 partyLine.getUsers['FACEBOOK'] = function(){// GET FACEBOOK USER METHODS
-	FB.api('/me/friends', function(response) {
-        dahliaLoader.show();
-        if(response.data) {
-            dahliaLoader.hide();
-			$.each(response.data,function(index,friend) {
-                partyLine.users[index] = new partyLine.user(friend.name, friend.id, 'http://graph.facebook.com/'+friend.id+'/picture?type=large', 'FACEBOOK');
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            FB.api('/me/friends', function(response) {
+                dahliaLoader.show();
+                if(response.data) {
+                    dahliaLoader.hide();
+                    $.each(response.data,function(index,friend) {
+                        partyLine.users[index] = new partyLine.user(friend.name, friend.id, 'http://graph.facebook.com/'+friend.id+'/picture?type=large', 'FACEBOOK');
+                    });
+                    partyLine.displayUsers();
+                } else {
+
+                }
             });
-			partyLine.displayUsers();
+        } else if (response.status === 'not_authorized') {
+            partyLine.userTank.empty();
+            dahliawolf.logIntoFacebook(partyLine.getUsers['FACEBOOK']);
         } else {
-            document.location = "/social-login.php?social_network=facebook";
+            partyLine.userTank.empty();
+            dahliawolf.logIntoFacebook(partyLine.getUsers['FACEBOOK']);
         }
     });
 }
@@ -184,32 +194,40 @@ partyLine.getUsers['INSTAGRAM'] = function(){// GET FACEBOOK USER METHODS
 	})
 }
 
-partyLine.getUsers['TWITTER'] = function(cursor){
+partyLine.getUsers['TWITTER'] = function(cursor, keepGoing){
 	if(!cursor){cursor = -1;}
-	if(partyLine.isTwitterLoggedIn){
-		if(partyLine.twitterUsername != null){
-			$.post(partyLine.twitterUrl, {'cursor' : cursor, 'screen_name' : partyLine.twitterUsername }).done(function(data){
-				obj = JSON.parse(data);
-				if(!obj.errors){
-					cursor = obj.next_cursor;
-					obj = obj['users'];
-					$.each(obj,function(index,friend) {
-                        partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
-					});
-					partyLine.displayUsers();
-					if(cursor != 0){
-						partyLine.getUsers['TWITTER'](cursor);
-					}
-				}else{
-					alert(obj.errors[0].message);
-				}
-			});
-		}else{
-			partyLine.setTwitterAccount();
-		}
-	}else{
-		document.location = '/redirect.php';
-	}
+	if(partyLine.twitterUsers.length && !keepGoing) {
+        $.each(partyLine.twitterUsers, function(index,friend) {
+            partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
+        });
+        partyLine.displayUsers();
+    } else {
+        if(dahliawolf.areYouLoggedIntoTwitter){
+            if(partyLine.twitterUsername != null){
+                $.post(partyLine.twitterUrl, {'cursor' : cursor, 'screen_name' : partyLine.twitterUsername }).done(function(data){
+                    obj = JSON.parse(data);
+                    if(!obj.errors){
+                        cursor = obj.next_cursor;
+                        obj = obj['users'];
+                        $.each(obj,function(index,friend) {
+                            partyLine.twitterUsers.push(friend);
+                            partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
+                        });
+                        partyLine.displayUsers();
+                        if(cursor != 0){
+                            partyLine.getUsers['TWITTER'](cursor, true);
+                        }
+                    }else{
+                        alert(obj.errors[0].message);
+                    }
+                });
+            }else{
+                partyLine.setTwitterAccount();
+            }
+        }else{
+            dahliawolf.logIntoTwitter();
+        }
+    }
 }
 
 partyLine.displayUsers = function(){
@@ -247,14 +265,11 @@ partyLine.bindMessageButtons = function(){
 }
 
 partyLine.setBezel = function(platform) {
-    console.log(platform+this.bezelMap[platform]);
     $('#bezel').animate({top : this.bezelMap[platform]+'px'}, 200);
 }
 
 $('.activity-menu').bind('click', function(){
 	if(theUser.id){
-		$('.activity-menu').removeClass('invite-selected');
-		$(this).addClass('invite-selected');
 		partyLine.init( $(this).data('platform') );
         partyLine.setBezel($(this).data('platform'));
 	}else{
@@ -270,7 +285,6 @@ $(function(){
 	} else {
         setTimeout( function() {
             FB.getLoginStatus(function(response) {
-                console.log(response);
                 if (response.status === 'connected') {
                     $('#menu-FACEBOOK').click();
                 } else if (response.status === 'not_authorized') {

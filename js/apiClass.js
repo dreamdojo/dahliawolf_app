@@ -28,8 +28,13 @@ User.prototype = {
     get isLoggedIn() {return (this.data.user_id && this.data.user_id > 0 ? true : false);},
     get whoareyou() {return 'A hot bitch with a fat ASS!!';},
     get hi() {return 'hello!';},
+    get areYouLoggedIntoTwitter() {return this.data.twitterToken;},
+    get areYouLoggedIntoTumblr() {return this.data.tumblrToken;},
 
-    getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');}
+    getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');},
+
+    set twitterToken(token) {this.data.twitterToken = token;},
+    set tumblrToken(token) {this.data.tumblrToken = token;}
 };
 
 User.prototype.Loader = function(){
@@ -85,25 +90,56 @@ User.prototype.isFacebookFriend = function(id) {
 User.prototype.isFriend = function(id) {
     return true;
 }
+
+User.prototype.logIntoTwitter = function(callback) {
+    globalCallback = callback;
+    var win = window.open(
+        "/redirect.php",
+        'Log into Twitter',
+        'width=500, height=500'
+    );
+}
+
+User.prototype.logIntoTumblr = function(callback) {
+    globalCallback = callback;
+    var loginWindow = window.open(
+        "/lib/TumblrOAuth/connect.php",
+        'Log into Tumblr',
+        'width=500, height=700'
+    );
+}
+
+User.prototype.logIntoFacebook = function(callback) {
+    FB.login(function(response) {
+        if (response.authResponse) {
+            if(typeof callback == 'function') {
+                callback();
+            }
+        } else {
+            // User cancelled login or did not fully authorize
+        }
+    }, {scope: 'email'});
+}
+
 //***************************************************************************** User uploading system
 User.prototype.uploadAvatar = function(_this, file) {
-    this.coordTop = $(_this).offset().top;
-    this.coordLeft = $(_this).offset().left;
-    this.file = file;
-    $('.avatarChangeButton').hide();
-
-    if( window.FormData !== undefined ) {
+    if(window.FileReader !== undefined) {
+        this.coordTop = $(_this).offset().top;
+        this.coordLeft = $(_this).offset().left;
+        this.file = file;
+        $('.avatarChangeButton').hide();
         this.preview();
-    } else {
         this.doUploadAvatar();
+    } else {
+        $('#avatarForm').submit();
     }
 }
 
 User.prototype.uploadAvatar.prototype.preview = function() {
-    var reader = new FileReader();
+        var reader = new FileReader();
 
-    reader.readAsDataURL(this.file);
-    reader.onload = $.proxy(this.drawPreview, this);
+        reader.readAsDataURL(this.file);
+        reader.onload = $.proxy(this.drawPreview, this);
 }
 
 User.prototype.uploadAvatar.prototype.drawPreview = function(event) {
@@ -131,7 +167,6 @@ User.prototype.uploadAvatar.prototype.doUploadAvatar = function() {
     MyForm.append("avatarAjax", true);
 
     var oReq = new XMLHttpRequest();
-
     oReq.upload.onprogress = function(e) {
         that.$uploadStatus.html( Math.ceil( (e.loaded/e.total)*100 )+'%');
     }
@@ -184,24 +219,26 @@ function Api() {
     this.baseUrl = '/api/1-0/';
     this.baseCommerceUrl = "/api/commerce/";
     this.commerceApi = false;
+    this.loginRequired = true;
 }
 
 Api.prototype.callApi = function(data) {
     that = this;
     data.use_hmac_check = 0;
     data.function = this.apiFunction;
+    var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
+    _gaq.push(['_trackEvent', this.apiApi, this.apiFunction]);
 
-    if(dahliawolf.isLoggedIn) {
-        var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
-        _gaq.push(['_trackEvent', this.apiApi, this.apiFunction]);
+    if(dahliawolf.isLoggedIn || !this.loginRequired) {
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
                 that.callback(data);
             }
         });
     } else {
-        console.log('not logged in');
+        new_loginscreen();
     }
+    this.loginRequired = true;
 }
 //************************************************************************************ MEMBER
 Member.prototype = new Api();
@@ -231,14 +268,31 @@ function Post() {
 Post.prototype = new Api();
 Post.prototype.constructor = Post;
 
+Post.prototype.get = function(config, callback) {
+    this.apiFunction = 'get_all';
+    this.callback = callback;
+    this.loginRequired = false;
+    this.callApi(config);
+    return this;
+}
+
+Post.prototype.get_by_user = function(config, callback) {
+    this.apiFunction = 'get_by_user';
+    this.callback = callback;
+    this.callApi(config);
+    return this;
+}
+
 Post.prototype.love = function(id, callback) {
     this.apiFunction = 'add_like';
+    this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;
 }
 
 Post.prototype.unlove = function(id, callback) {
     this.apiFunction = 'delete_like';
+    this.callback = callback;
     this.posting_id = id;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;
@@ -261,6 +315,51 @@ Post.prototype.getLovers = function(id, limit, offset, callback) {
     this.callApi({ posting_id : id, viewer_user_id : dahliawolf.userId, offset : offset, limit : limit});
 
     return this;
+}
+
+Post.prototype.shareOnTumbler = function(URL) {
+    if(dahliawolf.areYouLoggedIntoTumblr) {
+        $.getJSON('/lib/TumblrOAuth/sharePost.php',{url:URL}, function(data) {
+           holla.log(data);
+        });
+    } else {
+        dahliawolf.logIntoTumblr(function() {
+            dahliawolf.post.shareOnTumbler(URL);
+        });
+    }
+}
+
+Post.prototype.shareOnTwitter = function(URL) {
+    if(dahliawolf.areYouLoggedIntoTwitter) {
+        $.getJSON('/action/sharePostOnTwitter.php',{url:URL}, function(data) {
+            holla.log(data);
+        });
+    } else {
+        dahliawolf.logIntoTwitter(function() {
+            dahliawolf.post.shareOnTwitter(URL);
+        });
+    }
+}
+
+Post.prototype.shareOnFacebook = function(URL) {
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            var params = {message : 'Love this on Dahliawolf', url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
+            FB.api('/me/photos', 'post', params, function(response) {
+                if (!response || response.error) {
+                    holla.log(response);
+                }
+            });
+        } else if (response.status === 'not_authorized') {
+            dahliawolf.logIntoFacebook(function() {
+                dahliawolf.shareOnFacebook(URL);
+            });
+        } else {
+            dahliawolf.logIntoFacebook(function() {
+                dahliawolf.shareOnFacebook(URL);
+            });
+        }
+    });
 }
 //****************************************************************************************** Product
 function Shop() {

@@ -15,12 +15,10 @@
 .uploadPreview-frame img{ width:100%;}
 .view-upload-button{float: left;background-color: #ff416d;font-size: 15px;color: #fff;height: 21px;margin-top: -24px;line-height: 20px;padding: 0px 10px;}
 .bar-frame{height: 45px;background-color: #fff;float: left;width: 750px;margin-top: 6px;margin-left: 10px;}
-.title-roll{background-color: #e4e2e3;padding: 12px;font-size: 22px; position: fixed;width: 975px;z-index: 1; font-weight:bold;}
 .gridzy{height: 350px;width: 325px;overflow: hidden;float: left;}
 .gridzy .b-roll-img{min-height: 100%;width: 100%;}
 .gridzy .tag{height: 60px; margin-left: -55px;position: absolute;top: 35px; left: 95%;}
 .first{ margin-top:55px;}
-#viewToggle{height: 30px;width: 65px;position: absolute;right: 0px;top: 9px;margin-right: 20px; cursor:pointer;}
 .toggleViewGrid{ background-image:url(/images/view_toggle.png); background-size:100% 100%;}
 .toggleViewLine{ background-image:url(/images/view_toggle2.png); background-size:100% 100%;}
 #inspireBackButton{ position: absolute;left: 20px;height: 30px;width: 70px;margin-top: -3px;background-image: url(/images/inspireBackButton.png);background-size: 100% 100%;background-repeat: no-repeat; cursor:pointer;}
@@ -32,15 +30,7 @@
 
 
 <form action="action/post_image.php" id="thePinForm" method="POST" class="Form PinForm" enctype="multipart/form-data">
-<div id="theFork">
-    <div class="animated-word">INSPIRE NEW FASHION</div>
-</div>
 
-<div id="bank-roll">
-</div>
-
-<div id="bank-overlay">
-</div>
 
 <div id="post-me">
 	<div id="u-clsr" onclick="imgUpload.closeMe()">X</div>
@@ -125,29 +115,30 @@
         }
 
         if(theUser.id && imgUpload.isAvailable){
-            sendToAnal({name:'Uploaded an Image'});
-            imgUpload.isAvailable = false;
+            if(window.FormData !== undefined) {
+                sendToAnal({name:'Uploaded an Image'});
+                imgUpload.isAvailable = false;
 
-			URL = 'action/post_image.php?ajax=true';
-			
-			MyForm = new FormData();
-			MyForm.append("iurl", file);
-			
-			imgUpload.oReq = new XMLHttpRequest();
-			imgUpload.oReq.upload.reader =  new FileReader();
-			
-			imgUpload.oReq.upload.file = file;
-			
-			imgUpload.oReq.upload.showPreview = showPreview; 
-			
-			imgUpload.oReq.upload.addEventListener("loadstart", transferStart, false);
-			imgUpload.oReq.upload.addEventListener("progress", transferUpdate, false);
-			imgUpload.oReq.onreadystatechange = transferComplete;
-			
-			imgUpload.oReq.open("POST", URL);
-			imgUpload.oReq.send(MyForm);
-			
-		}else{
+                URL = 'action/post_image.php?ajax=true';
+
+                MyForm = new FormData();
+                MyForm.append("iurl", file);
+
+                imgUpload.oReq = new XMLHttpRequest();
+
+                imgUpload.oReq.upload.file = file;
+
+                imgUpload.oReq.upload.addEventListener("loadstart", transferStart, false);
+                imgUpload.oReq.upload.addEventListener("progress", transferUpdate, false);
+                imgUpload.oReq.onreadystatechange = transferComplete;
+
+                imgUpload.oReq.open("POST", URL);
+                imgUpload.oReq.send(MyForm);
+            } else {
+                $('#postUploadForm').submit();
+            }
+        }
+		else{
 			new_loginscreen();
 		}
 	}

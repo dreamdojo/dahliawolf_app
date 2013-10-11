@@ -8,6 +8,7 @@
     );
     $data = api_call('user', 'get_user', $user_params, true);
     $user = $data['data'];
+    //var_dump($user);
 ?>
 <style>
     #emptyShop li{margin: 15px 1px; float: left;}
@@ -18,16 +19,18 @@
     .shopEmpty{font-size: 20px; text-align: center; margin-top: 15px;}
     body{text-align: center;}
 </style>
-<a href="/inspire"><img style="text-align: center; margin: 0px auto; width: 80%; max-width: 1200px;" src="/images/COMINGSOON.png"></a>
-<!--
+<!--<a href="/inspire"><img style="text-align: center; margin: 0px auto; width: 80%; max-width: 1200px;" src="/images/COMINGSOON.png"></a>-->
+
 <? if( empty($user['user_id']) ): ?>
-    <ul id="sortBar">
-        <li>sort products by: </li>
-        <li data-sort="Newest">newest / </li>
-        <li data-sort="Coming Soon">samples / </li>
-        <li data-sort="Live">available / </li>
-        <li data-sort="Pre Order" class="dahliaPink">pre-order 50% off</li>
-    </ul>
+    <div id="sortBar-wrap">
+        <ul id="sortBar">
+            <li>sort products by: </li>
+            <li data-sort="Newest">newest / </li>
+            <!--<li data-sort="Coming Soon">samples / </li>
+            <li data-sort="Live">available / </li>-->
+            <li data-sort="Pre Order" class="dahliaPink">pre-order 30% off</li>
+        </ul>
+    </div>
 <? endif ?>
 
 <? if( !empty($user['user_id']) ): ?>
@@ -38,13 +41,13 @@
 <? endif ?>
 
 <div id="dahliawolfShop"></div>
--->
+
 <?
     include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 ?>
 
 <script>
 $(function() {
-    //dahliawolfShop = new shop(<?= json_encode($user) ?>);
+    dahliawolfShop = new shop(<?= json_encode($user) ?>);
 });
 </script>

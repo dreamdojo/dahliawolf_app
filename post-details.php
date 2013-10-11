@@ -85,7 +85,7 @@
         	<? if($_data['post']['is_winner']): ?>
                 <div class="is_winner_box">WINNER <a href="/shop/<?= $_data['post']['product_id'] ?>">view item</a></div>
             <? endif ?>
-            <a id="post_image" href="<?= $_data['post']['image_url'] ?>" target="_blank"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
+            <a id="post_image" class="zoombox" data-url="<?= $_data['post']['image_url'] ?>"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
         </div>
         
         <div class="postOrigin">

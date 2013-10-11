@@ -18,27 +18,32 @@
     #importFromPinterest{ position:relative; overflow:hidden;}
     #thePinterestName{height: 75%;margin-top: 2%;margin-left: 2%;width: 75%;font-size: 14px;text-indent: 3px; float:left;}
     #goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
-
     #bankBucket{width: 100%;max-width: 960px; margin: 0px auto; height: 100%;padding-top: 57px; padding-bottom: 100px;}
     #bankBucket .postFrame{overflow: hidden; position: relative;}
-    #bankBucket .postFrame:hover .option{display: block;}
+    #bankBucket .postFrame:hover .postButton{display: block;}
     #bankBucket .grid{float: left; width: 300px;height: 300px; margin: 10px;}
     #bankBucket .line{width: 80%; margin: 10px auto;overflow: hidden;margin-bottom: 10px;margin-top: 10px; max-width: 500px;}
     #bankBucket .postFrame img{width: 100%;}
-    #bankBucket .postButton{position: absolute;right: 10px;background-color: #000;width: 70px;height: 30px;text-align: center;line-height: 30px;margin-top: 10px;font-size: 15px;cursor: pointer;border: #c2c2c2 thin solid;font-family: futura;font-weight: bolder;color: #fff;}
+    #bankBucket .postButton{position: absolute; display:none; right: 50%;top: 50%;background-color: #353535; width: 90px;height: 90px;border-radius: 50px;text-align: center;line-height: 90px;margin-top: -45px;margin-right: -45px;font-size: 15px;cursor: pointer;font-family: futura;font-weight: bolder;color: #fff;}
     #bankBucket .postButton:hover{opacity: .7;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
-    #viewToggle{background-image: url("/images/views.png");background-position: 0%;background-size: 180%;position: absolute;right: -11px;margin-top: 2px;width: 45px;background-repeat: no-repeat;overflow: hidden;}
-    .title-roll{background-color: #e4e2e3;font-size: 22px;width: 97%; max-width: 920px;z-index: 1;font-weight: bold;margin: 0px auto;top: 70px;margin-bottom: 10px;position: relative;text-align: center;}
+    #viewToggle{background-image: url("/images/inspireToggle_BG.png");background-position: 0%;position: absolute;right: -11px;width: 45px;background-repeat: no-repeat;overflow: hidden; height: 30px;margin-right: 20px;top: 2px; cursor: pointer;}
+    .title-roll{border:#c2c2c2 thin solid; font-size: 22px;width: 97%; max-width: 940px;z-index: 1;font-weight: bold;margin: 0px auto; top: 77px; margin-bottom: 10px;position: relative;text-align: center; height: 35px; background-color: #fff;}
     .xDomainStatus{position: absolute;height: 100%;width: 100%;background-color: #c2c2c2;z-index: 111;top: 0px;left: 0px;}
     .xDomainStatus p{width: 1000px;margin: 0px auto;font-size: 27px;text-align: center;line-height: 60px;}
+    #postTitleContent{font-size:15px; line-height: 35px;}
 </style>
+
+
 <div id="bankOptions" class="drop-shadow" <?= isset($_GET['get_started']) ? 'style="display:none"' : '' ?>>
     <div id="bankCenter">
         <div class="bankSection">
             <img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
-            <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
+            <form id="postUploadForm" action="/action/post_image.php" method="post" enctype="multipart/form-data">
+                <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
+                <input type="hidden" name="takeMeBack" value="takemehome">
+            </form>
         </div>
         <div class="bankSection">
             <div id="dndeezy" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="disallowDrop(event)">
@@ -46,11 +51,8 @@
             </div>
         </div>
         <div id="importFromPinterest" class="bankSection cursor">
-            <div id="getPinterestName">
-                <input type="text" placeholder="Enter Pinterest Name Here" id="thePinterestName" /><div id="goPinterestButton"></div>
-            </div>
-            <img src="/images/bank-pinterest.png">
-            <p>Select Images From Your Pinterest</p>
+            <img src="/images/tumblr_logo.png" style="width: 31px;">
+            <p>Select Images From Your Tumblr</p>
         </div>
         <div id="importFromInstagram" class="bankSection no-right-border cursor">
             <img src="/images/bank-instagram.png">
@@ -79,9 +81,9 @@
     postBank.init = function() {
         postBank.bindScroll();
         postBank.getImages();
-        $('#importFromPinterest').on('click', postBank.getImagesFromPinterest);
+        $('#importFromPinterest').on('click', postBank.getImagesFromTumblr);
         $('#importFromInstagram').on('click', postBank.getImagesFromInstagram);
-        $('#getPinterestName input').on('keydown', postBank.setPinterestName);
+        //$('#getPinterestName input').on('keydown', postBank.setPinterestName);
         postBank.adjustMargins();
         $(window).resize(postBank.adjustMargins);
         $('#viewToggle').on('click', this.toggleMode);
@@ -166,17 +168,19 @@
     }
 
     postBank.toggleMode = function() {
+        var lineWidths = [500, 300, 400];
+
         if(postBank.mode == 'grid') {
             postBank.mode = 'line';
-            $(this).css('background-position', 100+'%');
+            $(this).css('background-position', '-'+49+'px');
             $.each($('#bankBucket .grid'), function(index, post){
-                $(post).removeClass('grid').addClass('line');
+                $(post).removeClass('grid').addClass('line').width(lineWidths[index%3]);
             });
         } else {
             postBank.mode = 'grid';
-            $(this).css('background-position', 0);
+            $(this).css('background-position', 0+'px');
             $.each($('#bankBucket .line'), function(index, post){
-                $(post).removeClass('line').addClass('grid');
+                $(post).removeClass('line').addClass('grid').width(300);
             });
         }
     }
@@ -198,7 +202,7 @@
                 dahliawolf.loader.hide()
                 postBank.isRefillAvailable = true;
                 $.each(data.data, function(index, post) {
-                    postBank.posts.push(new bankPost(post));
+                    postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
                 });
                 postBank.$bucket.append('<div style="clear:left"></div>');
             });
@@ -225,16 +229,39 @@
             );
         }
     }
+    postBank.getImagesFromTumblr = function() {
+        if(dahliawolf.areYouLoggedIntoTumblr) {
+            dahliawolf.loader.show();
+            $.getJSON('/lib/TumblrOAuth/getPosts', function(data) {
+                holla.log(data);
+                postBank.ajaxCall = null;
+                dahliawolf.loader.hide();
+                if(data.response.posts.length) {
+                    postBank.clearBank();
+                    $(window).unbind('scroll');
+                    $.each(data.response.posts, function(index, post) {
+                        $.each(post.photos, function(index, photo) {
+                            postBank.posts.push( new foreignPost(photo.alt_sizes[0].url, 'Tumblr') );
+                        });
+                    });
+                } else {
+                    alert('No Images Found');
+                }
+            });
+        } else {
+            dahliawolf.logIntoTumblr(postBank.getImagesFromTumblr);
+        }
+    }
 
     postBank.getImagesFromPinterest = function() {
         if(userConfig.pinterest_username) {
             postBank.clearBank();
             $(window).unbind('scroll');
-            dahliawolf.loader.show()
+            dahliawolf.loader.show();
             postBank.ajaxCall = $.post('/get_feed_from_pinterest', {pinterest_user : userConfig.pinterest_username }, function(data) {
                 console.log(data);
                 postBank.ajaxCall = null;
-                dahliawolf.loader.hide()
+                dahliawolf.loader.hide();
                 if(data.data) {
                     $.each(data.data, function(index, img){
                         postBank.posts.push( new foreignPost(img.images.standard_resolution.url, 'Pinterest') );
@@ -266,12 +293,13 @@
         postBank.init();
     });
 
-    function bankPost(data) {
+    function bankPost(data, index) {
         this.data = data;
-
-        this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);"></div>');
+        var widths = [500, 300, 400];
+holla.log(this.data);
+        this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
-        this.$image = $('<img src="'+this.data.source+this.data.imageURL+'">').appendTo(this.$post);
+        this.$image = $('<a class="zoombox" data-url="'+this.data.source+this.data.imageURL+'" rel="modal"><img src="'+this.data.source+this.data.imageURL+'"></a>').appendTo(this.$post);
         this.$post.appendTo(postBank.$bucket);
 
         return this;
@@ -298,6 +326,7 @@
         str += '<img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
 
         this.$post.append(str);
+        this.$post.append(new shareBall(data));
     }
 
     function foreignPost(url, domain) {

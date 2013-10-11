@@ -41,7 +41,7 @@
     #dbModal .instagram{background-image: url("/mobile/images/shareInstagram.png");}
     #dbModal .text{background-image: url("/mobile/images/shareText.png");}
     #dbModal .twitter{background-image: url("/mobile/images/shareTwitter.png");}
-    #dbModal .tumbler{background-image: url("/mobile/images/shareTumbler.png");}
+    #dbModal .tumblr{background-image: url("/mobile/images/shareTumbler.png");}
     #dbModal .shareDeets{margin-top: 50px;margin-left: 10px;}
     #dbModal .shareDeets p:first-child{font-size: 18px;}
     #dbModal .shareDeets p{line-height: 10px;}
@@ -68,14 +68,17 @@
     <div class="dashboardInner">
         <div class="leftCol">
             <div class="avatarChangeButton" onclick="$('#avataro').closest('input').click();">+</div>
-            <input type="file" name="avatar" id="avataro" onchange="new dahliawolf.uploadAvatar(this, this.files[0]);">
+            <form id="avatarForm" action="/action/settings.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="avatar" id="avataro" onchange="new dahliawolf.uploadAvatar(this, this.files[0]);">
+                <input type="hidden" name="dashboardAvatar" value="takemehome">
+            </form>
             <div class="avatarFrame theUsersAvatar avatarShadow" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=152')">
             </div>
-            <a href="/<?= $_data['user']['username'] ?>?showPublic=true"><div class="dbButton vpp">VIEW PUBLIC PROFILE</div></a>
+            <a href="/<?= $_data['user']['username'] ?>"><div class="dbButton vpp">VIEW PUBLIC PROFILE</div></a>
         </div>
         <ul class="stats">
             <li class="uname">@<?= $_data['user']['username'] ?></li>
-            <li class="mLevel">Member Level: <?= $_data['user']['membership_level'] ?></li>
+            <!--<li class="mLevel">Member Level: <?= $_data['user']['membership_level'] ?></li>-->
             <li class="sSteez"><a href="/<?= $_data['user']['username'] ?>/followers"><?= $_data['user']['followers'] ?> FOLLOWERS</a> | <a href="/<?= $_data['user']['username'] ?>/following"><?= $_data['user']['following'] ?> FOLLOWING</a></li>
             <li class="sSteez"><?= $_data['user']['points'] ?> POINTS | </li>
         </ul>
@@ -160,7 +163,7 @@
 
     dashboard.getPosts = function() {
         var that = this;
-        var data = {post_user_id : dahliawolf.userId, feed : this.feed, offset : this.offset, limit: this.limit};
+        var data = {user_id:dahliawolf.userId, feed : this.feed, offset : this.offset, limit: this.limit};
 
         if(this.sorter) {
             data.order_by = this.sorter;
@@ -173,15 +176,16 @@
         if(dashboard.isAvailable) {
             dahliawolf.loader.show();
             dashboard.isAvailable = false;
-            $.post('/action/getPostsByUser', data).done(function(data) {
+            //$.post('/action/getPostsByUser', data).done(function(data) {
+            dahliawolf.post.get_by_user(data, function(data) {
                 holla.log(data);
                 dashboard.isAvailable = true;
                 dahliawolf.loader.hide();
-                $.each(data.data, function(index, post) {
+                $.each(data.data.get_by_user.posts, function(index, post) {
                     that.$bin.append(new dashboardPost(post));
                 });
                 that.$bin.append('<div style="clear:left"></div>');
-                that.offset += data.data.length;
+                that.offset += data.data.get_by_user.posts.length;
             });
         }
     }
@@ -205,7 +209,7 @@
     function dashboardPost(data) {
         this.data = data;
         this.$post = $('<ul class="dbPost"></ul>');
-        $('<li style="width: 30%; background-image: url(\''+this.data.image_url+'&width=300\')"></li>').appendTo(this.$post);
+        $('<a href="/post-details?posting_id='+this.data.posting_id+'" rel="modal"><li style="width: 30%; background-image: url(\''+this.data.image_url+'&width=300\')"></li></a>').appendTo(this.$post);
         this.$panel0 = $('<li style="width: 19%; margin-left: 10px;"><p>'+this.data.total_likes+' LOVES</p><p><span class="dahliaPink">'+(LOVE_REQUIRED - this.data.total_likes)+'</span> NEEDED TO WIN</p></li>').appendTo(this.$post);
         this.$panel1 = $('<li style="width: 15%;"><p>'+this.data.total_views+' VIEWS</p></li>').appendTo(this.$post);
         this.$panel2 = $('<li style="width: 15%;"><p>'+this.data.total_shares+' SHARES</p></li>').appendTo(this.$post);

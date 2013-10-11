@@ -15,7 +15,7 @@ sub{vertical-align:text-bottom;overflow:hidden;}
 input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit; resize: none;outline:none;}
 legend{color:#000;}
 
-body { font-family:helvetica; font-size:10px;color:#211922; margin-top: 50px;}
+body { font-family: futura; font-size:10px;color:#211922; margin-top: 50px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -57,10 +57,24 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .facebook{font-size: 14px;margin-top: 4px; cursor:pointer;}
 
 /*--------------- SORT SECTION ----------------*/
-#sort-bar{ width:100%; border-bottom: #000 thin solid; margin: 0px auto;padding: 3px 0px;font-size: 12px; margin-top: 53px; padding-bottom: 5px;line-height: 25px; }
+.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 2px; color: #ACACAC; font-family: futura; text-transform: lowercase;}
+#sort-bar{ width:100%;border-bottom: #DBDBDB thin dotted; margin: 0px auto;padding: 3px 0px;font-size: 12px; margin-top: 53px; padding-bottom: 5px;line-height: 25px; }
 .bold{ font-weight:bold !important; }
-.sort-option{ font-weight:normal; }
-.filter-select{color: #cb2027;}
+.sort-option{ font-weight:normal;color: #ACACAC  }
+.filter-select{color: #F03E63 !important;}
+.light{color: #E0E0E0;}
+
+/*---------------- Home Banner --------------*/
+#joinBanner{height: 400px;width: 100%; min-width:600px; position: relative; background-image: url("/images/joinBanner.jpg");background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;background-color: #dedede;}
+#joinBanner .hiw{position: absolute;right: 6%;margin-top: 44px;cursor: pointer;}
+#joinBanner .swf{position: absolute; right: 6%; margin-top: 319px;cursor: pointer;}
+#hiw-slide{display: none; left: 100%; height: 100%; background-color: #000; z-index: 1; position: absolute; width: 100%; text-align: center;}
+#hiw-slide video{height: 95%;margin-top: 10px;}
+#theCloser{position: absolute;right: 18px;top: 10px;font-size: 29px;color: #fff;cursor: pointer;}
+@media screen and (max-width: 770px) {
+    #joinBanner .hiw{display: none;}
+    #joinBanner .swf{display: none;}
+}
 
 /*************************** HEADER ********************/
 #dahliaHeader{position: fixed; height: 50px; width: 100%; background-color: #000; left: 0px; top: 0px;z-index: 11111; min-width: 420px; font-family: futura;
@@ -126,8 +140,6 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     #tourButton{display: none;}
 }
 
-.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 30px;}
-
 /*   POST BAR ******************************************/
 #tooltip-overlay{position:fixed; width:100%; height:100%; top:0px; left:0px; background-color:#000; opacity:.72; display:none; z-index: 100008;}
 #feedback-tab{position: fixed; top: 332px; right: 0; z-index: 1;}
@@ -161,11 +173,11 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .soc-img-frame:hover{border-color:#F00;}
 
 /*********** DAHLIA HEADS ******/
-#dahliaHead{width:150px; height:175px; position:absolute; background-color:#faf9f9; display:none; text-align:center; border:#dadbe1 1px solid; z-index: 10000;}
+#dahliaHead{width:150px; height:175px; position:absolute; display:none; text-align:center; z-index: 10000;}
 #dahliaHeadAvatar{ margin:0px auto; width:70%; border-radius:85px; overflow:hidden; margin-top:10px; min-height:105px;border:#dadbe1 1px solid; box-shadow: #000 1px 5px 10px -3px;height: 105px;}
 #dahliaHeadAvatar img{ width:100%; cursor: pointer;}
 #dahliaHeadName{margin:0px auto; color:#fff; font-size:14px; margin-top:10px;}
-#dahliaHeadFollowToggle{padding:5px 10px; color:#000; margin:0px auto;width: 60%;margin-top: 12px; cursor:pointer;}
+#dahliaHeadFollowToggle{padding:5px 10px; color:#000; margin:0px auto;width: 60%;margin-top: 12px; cursor:pointer; background-color: #fff;}
 #dahliaHeadFollowToggle:hover{opacity:.8;}
 .dahliaHeadFollow{ border:#f74d6d thin solid; color:#f74d6d !important;}
 .dahliaHeadUnFollow{ border:#c2c2c2 thin solid; color:#c2c2c2 !important;}
@@ -175,8 +187,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #theGrid{position: relative; width: auto;margin: 0px auto; max-width: 1300px;padding-bottom: 100px;}
 #theGrid .post-frame{ width:300px; float:left; margin:10px;height: 350px;overflow: hidden;position: relative; cursor:pointer;}
 #theGrid .post-frame:hover .vote-frame{display:block;}
+#theGrid .post-frame:hover .shareBall{display:block;}
 #theGrid .post-frame img{ width:101%; position:relative; }
-#theGrid .vote-frame{ position:absolute; overflow: hidden;width: 141px;height: 135px;z-index: 1;top: 50%;margin-top: -67px;left: 50%;margin-left: -71px; display:none;}
+#theGrid .vote-frame{ position:absolute; overflow: hidden;width: 141px;height: 135px;z-index: 1;top: 50%;margin-top: -67px;left: 50%;margin-left: -71px; display:none;transition: all .2s; -webkit-transition: all .2s;}
 #theGrid .grid-like{background: url(/images/like.png) no-repeat center center;background-size: 100% 100%;}
 #theGrid .grid-unlike{background: url(/images/wild_like.png) no-repeat center center;background-size: 100% 100%;}
 #theGridLoader{height:100px; width:100%; text-align:center; }
@@ -189,6 +202,38 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .postGridLikeCount{font-size: 17px;margin-right: 4px;padding-top: 1px;}
 .postGridLiked{background: url("/images/heart.png") no-repeat 0 0; background-size: 100% 100%;}
 .postGridUnLiked{background: url("/images/broken.png") no-repeat 0 0; background-size: 100% 100%;}
+
+/************************ VOTE ******************/
+#voteBucket{width: 1000px; margin: 0px auto;padding-bottom: 200px;}
+#voteBucket .gridMode{max-width: 300px; overflow: hidden; float: left; margin: 16px 2px;}
+#voteBucket .userBar{bottom: 0;background-color: #c2c2c2;opacity: .9; top: auto;position: absolute; width: 100%; z-index: 1;}
+#voteBucket .spineMode{margin: 10px;}
+.spineMode  .post .innerwrap{position: relative;}
+.spineMode  .post .innerwrap img{position: absolute; min-height: 100%; min-width: 100% !important; width: auto !important;}
+#voteBucket .post{position: relative;}
+#voteBucket .post a{float: left;}
+#voteBucket .post:hover .shareBall{display: block;}
+#voteBucket .post:hover .voteDot{display: block;}
+#voteBucket .post img{width: 100%; min-width: 300px;}
+#voteBucket .lefty{width: 50%; float: left;}
+#voteBucket .righty{width: 50%; float: left;}
+#voteBucket .lefty .post{float: right;}
+#voteBucket .righty .post{float: left;}
+#voteBucket .userBar a{font-size: 14px;color: #fff;line-height: 24px;text-indent: 9px;font-family: futura;font-size: 13px;}
+#voteBucket .innerwrap{max-height: 600px; overflow: hidden;}
+#voteBucket .gCol{float: left; width: 33%; height: 100%;}
+#voteBucket .userBar ul{float: right; height: 100%;margin-right: 3px; cursor: pointer;}
+#voteBucket .userBar li{float: right;}
+#voteBucket .loveCount{font-size: 13px;line-height: 22px;margin-right: 1px; font-family: futura; color: #fff;}
+#voteBucket .loveHeart{background-image: url("/images/hearts_BG.png");background-size: auto 91%;z-index: 1;width: 22px;height: 23px;background-repeat: no-repeat;overflow: hidden;}
+
+.voteDot{position: absolute;width: 125px;height: 125px;margin-left: -75px;left: 50%;top: 50%;margin-top: -75px;
+    border-radius: 75px;text-align: center;line-height: 113px;font-size: 21px; cursor: pointer; display: none; color: #fff;
+    transition: all .2s; -webkit-transition: all .2s; opacity: .8;z-index: 1; font-family: futura;}
+.voteDot:hover{opacity: 1;}
+#voteBucket .unloved{background-color: #000;}
+#voteBucket .loved{background-color: #ff2e6e;}
+.voteDot div{line-height: 125px;}
 
 /************************ ACTIVITY ****************/
 #theShaft{width:1000px; margin:0px auto;margin-top: -6px;background-color: #FFF; font-family: futura, arial;position: absolute;left: 50%; margin-left: -493px;position: absolute;height: auto;min-height: 100%;}
@@ -223,6 +268,26 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .highlightable:hover{background-color: #fafafa;}
 .invite-selected{background-color: #F0F0F0;}
 .cursor{cursor:pointer;}
+/************************ SHARE BALLS ********************/
+.shareBall{position: absolute; top: 10px; left: 10px; width: 80px;height: 80px; display: none;z-index: 100;}
+.shareBall li{ position: absolute; width: 25px; height: 80px; list-style-type: none; display: block;bottom: 0%;}
+.shareBall .left{transform: rotate(180deg);-ms-transform: rotate(180deg);-webkit-transform: rotate(180deg);left: -0.7px;top: 0px;}
+.shareBall .right{transform: rotate(90deg);-ms-transform: rotate(90deg);-webkit-transform: rotate(90deg);right: 27.6px;bottom: 26.6px;}
+.shareBall .middle{transform: rotate(135deg);-ms-transform: rotate(135deg);-webkit-transform: rotate(135deg);bottom: 8px;left: 19px;}
+.shareBall .hoverBall{height: 35px;width: 30px; background-image: url("/images/shareBall.png"); background-size: 100%; background-repeat: no-repeat; position: relative;z-index: 100;border-radius: 25px; cursor: pointer; transition: all .4s; -webkit-transition: all .4s;}
+.shareBall .rocket{position: absolute; height: 40px;width: 40px;border-radius: 32px; bottom: 0%; transition: bottom .2s, visibility .27s; left: -8px; -webkit-transition: bottom .2s, visibility .27s;
+    transform: scale(.6);-ms-transform: scale(.6);-webkit-transform: scale(.6); visibility: hidden; cursor: pointer;}
+.shareBall .fbDeg{transform: rotate(-90deg);-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);}
+.shareBall .twitDeg{transform: rotate(-45deg);-ms-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);}
+.shareBall .tumbDeg{transform: rotate(-0deg);-ms-transform: rotate(-0deg);-webkit-transform: rotate(-0deg);}
+.shareBall .fbBall{background-image: url("/images/shareBalls_BG.png"); background-size: auto 100%;background-position: -2px 0px;background-repeat: no-repeat;}
+.shareBall .fbBall:hover{background-position: -42px 0px;}
+.shareBall .tumblrBall{background-image: url("/images/shareBalls_BG.png"); background-size: auto 100%;background-position: -82px 0px;background-repeat: no-repeat;}
+.shareBall .tumblrBall:hover{background-position: -122px 0px;}
+.shareBall .twitterBall{background-image: url("/images/shareBalls_BG.png"); background-size: auto 100%;background-position: -162px -1px;background-repeat: no-repeat;}
+.shareBall .twitterBall:hover{background-position: -202px -1px;}
+.postFrame:hover .shareBall{display: block;}
+.getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 
 /************************ POST DETAILS AND GRID ***********/
 .post-details-container{width: 1000px;height: 800px;margin-top: 25px; margin: 0px auto;color: rgb(102, 102, 102);font-family: Helvetica, sans-serif;font-weight: 100;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);padding-bottom: 20px;position: relative;}
@@ -480,7 +545,7 @@ padding: 20px;}
 -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(255,255,255,0.3),0px 1px 6px rgba(0,0,0,0.5);
 box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3),0px 1px 6px rgba(134, 134, 134, 0.5);}
 .lesson-section{font-size: 30px;rgb(82, 82, 82);padding: 5px;font-weight: bold;padding-top: 40px;}
-.lesson-content{font-size: 20px; color: rgb(90, 90, 90); padding-top: 20px;font-family: futura, arial;}
+.lesson-content{font-size: 20px; color: rgb(90, 90, 90); padding-top: 20px;font-family: futura, arial;max-width: 1000px; margin: 0px auto;}
 .lesson-content-post{font-size: 20px; color:#949494;padding-top: 8px;}
 .lesson-line{border:#c5c5c5 1px solid; width:158px; margin:0px auto;}
 .lesson-steps{margin-top:5px; font-size:15px}
@@ -1643,19 +1708,25 @@ width: 174px;
     font-size: 13px;
     font-weight: 300;
 }
+/******* CRUNK BOX ****************/
+.crunkBox{position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 1000000; text-align: center;}
+.crunkBox_BG{position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; background-color: #000; opacity: .9; z-index: -1;}
+.crunkBox img{margin: 0px auto; z-index: 12;}
+
 /* SHOP PAGE ***********************/
 #dahliawolfShop{ width: auto; margin: 0 auto; position: relative; margin-top: 10px;}
 #dahliawolfShop .shop-item{width: 300px;overflow: hidden;height:392px;float: left;position: relative; margin-left: 15px; margin-right: 15px; margin-bottom: 55px; cursor: pointer;}
-#dahliawolfShop .product-details{width: 100%;height: 350px; overflow: hidden;position: relative; cursor: pointer;}
+#dahliawolfShop .product-details{width: 100%;height: 350px;position: relative; cursor: pointer;z-index: 100;}
 #dahliawolfShop .image-frame{width: 100%;height: 100%;position: relative;}
 #dahliawolfShop .image-frame img{ width: 72%;margin-left: 14%;}
 #dahliawolfShop .item-status{position: absolute;right: 0px;font-size: 18px; z-index: 1}
 #dahliawolfShop .priceLine{position: absolute;width: 100%;bottom: 3px; z-index: 1}
-#dahliawolfShop .product-name{float: left;font-size: 17px;text-indent: 10px;width: 160px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-transform: uppercase;font-size: 11px;line-height: 21px;}
-#dahliawolfShop .product-inspiration{border-top: #c2c2c2 thin solid;}
+#dahliawolfShop .product-name{float: left;font-size: 17px;text-indent: 10px; text-align:left;width: 160px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-transform: uppercase;font-size: 11px;line-height: 21px;}
+#dahliawolfShop .product-inspiration{border-top: #c2c2c2 thin solid; text-align: left;}
 #dahliawolfShop .product-inspiration ul li:last-child{margin-top: -2px; font-size: 13px;}
-#dahliawolfShop .product-price{float: right;font-size: 13px; margin-right: 10px;margin-right: 10px;line-height: 21px;}
-#dahliawolfShop .avatarFrame{float: left;width: 25px; overflow: hidden;border-radius: 50px;height: 25px;margin: 8px 8px;}
+#dahliawolfShop .product-price{float: right;font-size: 13px; margin-right: 10px;margin-right: 10px;line-height: 21px; position: relative;}
+#dahliawolfShop .sale-price{margin-top: 13px; font-size: 16px;}
+#dahliawolfShop .avatarFrame{float: left;width: 25px; overflow: hidden;border-radius: 50px;height: 25px;margin: 8px 8px; background-repeat: no-repeat; background-size: auto 100%; background-position: 50%;}
 #dahliawolfShop .avatarFrame img{width: 100%;}
 #dahliawolfShop .inspire{font-size: 11px;overflow: hidden;text-overflow: ellipsis;padding-top: 8px;}
 #dahliawolfShop .sold-out{background-color: #000;position: absolute;right: -29px;top: 19px;z-index: 1;color: #fff;font-size: 18px;padding: 3px 30px; overflow:hidden; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg);-ms-transform: rotate(45deg); -o-transform: rotate(45deg);}
@@ -1663,21 +1734,26 @@ width: 174px;
 #dahliawolfShop h1{margin: 0;font-weight: 100;font-size: 13px;padding-top: 13px;}
 #dahliawolfShop .pre-order{background-color: #eb1d5d;position: absolute;right: 7px;z-index: 1;top: 7px;height: 53px; width: 75px; padding-top: 22px; border-radius: 50px;text-align: center;color: #fff;font-size: 14px;}
 #dahliawolfShop .shop-item:hover .hoverData{display: block;}
-#dahliawolfShop .hoverData{position: absolute;width: 100%;height: 100%;z-index: 3;top: 0px;left: 0px; display:none;}
+#dahliawolfShop .hoverData{position: absolute;width: 150px; height: 10%; z-index: 103;bottom: 0px;right: 0px; display:none;}
 #dahliawolfShop .itemOverlay{position: absolute;z-index: 1;background-color: #fff;width: 100%;height: 100%;top: 0;left: 0;opacity: .7;}
 #dahliawolfShop .overlayButton{position: absolute;z-index: 2; padding: 8px 10px; font-size: 18px; left: 50%;margin-left: -84px;width: 150px; text-align: center;cursor: pointer;}
 #dahliawolfShop .overlayButton:hover{opacity: .7;}
 #dahliawolfShop .wishlistButton{background-color: #5e5e5e; color: #fff;margin-top: 110px;}
 #dahliawolfShop .buyButton{background-color: #5e5e5e; color: #fff;margin-top: 150px;}
-#dahliawolfShop .inspirationButton{color: #fff;bottom: 0px;position: absolute;bottom: 0px;left: 0px; height: 41px; font-size: 11px; line-height: 45px; width: 100%;text-align: right; z-index: 3; cursor: pointer;}
-#dahliawolfShop .inspirationButton span{margin-right: 13px;background-color: #000;padding: 5px 10px;}
+#dahliawolfShop .inspirationButton{color: #fff;bottom: 0px;position: absolute;bottom: 0px;right: 0px; height: 41px; font-size: 11px; line-height: 45px; width: 150px; text-align: right; z-index: 3; cursor: pointer;}
+#dahliawolfShop .inspirationButton span{background-color: #000;padding: 5px 10px;color: #fff;}
 #dahliawolfShop .inspirationButton:hover{color: #c86362; }
-#dahliawolfShop .inspirationImage{ position: absolute;width: 100%;z-index: 33;left: 100%; transition: left .2s; -webkit-transition: left .2s;}
+#dahliawolfShop .inspirationImage{ position: absolute;width: 100%;z-index: 33;left: 100%; transition: left .2s; -webkit-transition: left .2s;height: 350px;overflow: hidden; background-color: #fff;}
+#dahliawolfShop .inspirationImage img{width: 78%;}
 #dahliawolfShop .inWishlist{background-color: #f4a5b4 !important;white-space: nowrap; text-indent: -8px;}
+.priceBox{position: absolute;right: 0px;width: 100px;text-align: right;font-size: 13px;bottom: -30px;}
+.priceBox .pre_order{margin-bottom: 17px;font-size: 10px;text-transform: uppercase;}
 
-#sortBar{width: 1000px; background-color: #f5f5f5; height: 30px; margin: 0px auto;text-indent: 15px; line-height: 30px}
+/*#sortBar{width: 1000px; background-color: #f5f5f5; height: 30px; margin: 0px auto;text-indent: 15px; line-height: 30px}*/
+#sortBar-wrap{width: 100%; border-bottom: #DBDBDB thin dotted;}
+#sortBar{width: 100%;max-width: 1000px;height: 30px;margin: 0px auto;text-indent: 12px;line-height: 30px; color: #ACACAC;}
 #sortBar li:not(:first-child){ cursor: pointer;}
-#sortBar li{float: left;font-size: 13px;}
+#sortBar li{float: left;font-size: 12px;}
 
 
 /* LOGIN PAGE

@@ -117,7 +117,14 @@ theGrid.post.prototype.displayPost = function() {
     str += '<div class="gridPostDeets"><div class="gridUsername dahliaHead" data-id="'+this.data.user_id+'"><a href="/'+this.data.username+'">'+this.data.username+'</a></div>' +
         '<div class="gridLovesBox"><div class="postGridLikeImage '+(parseInt(this.data.is_liked) ? 'postGridLiked' : 'postGridUnLiked')+'" rel="grid-vote" data-id="'+this.data.posting_id+'"></div><p class="postGridLikeCount">'+this.data.total_likes+'</p></div>';
 	str+= '</div>';
-	theGrid.container.append(str);
+    theGrid.container.append(str);
+    var $frame = $('#post-'+this.data.posting_id);
+    $frame.append(new shareBall(this.data));
+    $frame.find('.vote-frame').hover(function() {
+        $frame.find('.hoverBall').css({'-webkit-transform': 'rotate(-50deg)', 'transform' : 'rotate(-45deg)', '-ms-transform': 'rotate(-45deg)'});
+    }, function() {
+        $frame.find('.hoverBall').css({'-webkit-transform': 'rotate(-7deg)', 'transform' : 'rotate(0deg)', '-ms-transform': 'rotate(0deg)'});
+    });
 }
 
 theGrid.infiniteScroll = function(){
@@ -141,4 +148,10 @@ theGrid.init = function(sortTerm, searchTerm) {
 	theGrid.getImages();
     theGrid.adjustMargins();
     $(window).resize(theGrid.adjustMargins);
+    $(document).on('mouseover', '.vote-frame', function() {
+        var $this = $(this);
+        $this.css({'transform' : 'scale(1.05)', '-ms-transform': 'scale(1.05)', '-webkit-transform':  'scale(1.05)'}).on('webkitTransitionEnd transitionend', function() {
+            $this.unbind().css({'transform' : 'scale(1)', '-ms-transform': 'scale(1)', '-webkit-transform':  'scale(1)'});
+        });
+    });
 }

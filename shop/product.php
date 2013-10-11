@@ -59,7 +59,7 @@
     #shopHeader{height: 130px;padding-top: 15px;}
     #shopHeader #shopUserData{float: left; margin-top: 35px; margin-left: 10px;}
     #shopHeader #shopUserData li{float: left; width: 100px; width: 200px; width: 100%;}
-    #shopHeader .avatarFrame{float: left; overflow: hidden; border-radius: 50px; height: 100px; width: 100px;}
+    #shopHeader .avatarFrame{float: left; overflow: hidden; border-radius: 50px; height: 100px; width: 100px; background-size: auto 100%; background-repeat: no-repeat; background-position: 50%;}
     #shopHeader .avatarFrame img{width: 100%;}
 
     #shopContent{border-top: #d5d5d5 2px solid;clear: left;}
@@ -97,7 +97,7 @@
 </style>
 
 <div id="shopHeader" class="shop-section">
-    <div class="avatarFrame avatarShadow"><img src="<?= $_data['product']['product']['posts'][0]['avatar'] ?>&width=100" /></div>
+    <div class="avatarFrame avatarShadow" style="background-image: url('<?= $_data['product']['product']['posts'][0]['avatar'] ?>&width=300');"></div>
     <ul id="shopUserData">
         <li style="font-size: 13px;">Inspiration by</li>
         <li style="font-size: 25px;" class="scribble"><a href="/<?= $_data['product']['product']['posts'][0]['username']?>"><?= $_data['product']['product']['posts'][0]['username']?></a></li>
@@ -169,10 +169,10 @@
         <h3><?= $_data['product']['product']['product_name'] ?></h3>
         <div class="regularPrice">
             <span <?= $status ? 'style="text-decoration:line-through"' : '' ?>>$<?= number_format( ($_data['product']['product']['price']), 2, '.', ',') ?></span>
-            <span class="preOrderPrice"><?= $status == 'Pre Order' ? '50% Off' : ''?></span>
+            <span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% Off' : ''?></span>
         </div>
         <? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
-            <div class="presalePrice">$<?= number_format( ($_data['product']['product']['price']/2), 2, '.', ',') ?></div>
+            <div class="presalePrice">$<?= number_format( ($_data['product']['product']['price']*.7), 2, '.', ',') ?></div>
         <? endif ?>
         <? if( $status == 'Pre Order'): ?>
             <div id="theCountdown">

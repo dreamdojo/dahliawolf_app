@@ -46,6 +46,10 @@ if($_POST['avatarAjax']) {
     echo "FAIL";
     die();
 }
+if($_POST['dashboardAvatar']) {
+    redirect($_SERVER['HTTP_REFERER']);
+    die();
+}
 
 // API call
 $calls = array(

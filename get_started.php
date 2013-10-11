@@ -62,7 +62,7 @@
             <li>5</li>
         </ul>
     </div>
-    <div id="skipButton"><a href="/spine"><p>SKIP</p></a></div>
+    <div id="skipButton"><a href="/vote"><p>SKIP</p></a></div>
 </div>
 <div id="inspireSection"></div>
 
@@ -196,7 +196,7 @@ getStarted.prototype.animateFalling = function(drop) {
 }
 
 getStarted.prototype.showEnterButton = function() {
-    $('#trainingDay').append( '<a href="/spine"><div class="enterSiteButton">ENTER SITE</div></a>' );
+    $('#trainingDay').append( '<a href="/vote"><div class="enterSiteButton">ENTER SITE</div></a>' );
     $('.enterSiteButton').fadeIn(400);
 }
 

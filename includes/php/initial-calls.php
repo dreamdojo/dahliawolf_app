@@ -132,7 +132,7 @@ else if ($self == '/post-details.php' || $self ==  '/post-details-pop.php') {
 	$data = api_call('comment', 'get_post_comments', $params, true);
 	$_data['comments'] = $data['data'];
 }
-else if ($self == '/vote.php' || $self == '/explore.php' || $self == '/welcome_two.php') {
+else if ($self == '/explore.php' || $self == '/welcome_two.php') {
 	require DR . '/includes/php/classes/Spine' . $_data['spine_version'] . '.php';
 	$spine_limit = Spine::get_spine_limit();
 

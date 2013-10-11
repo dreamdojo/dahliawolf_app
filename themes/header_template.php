@@ -49,6 +49,7 @@ $(document).ready(function()
         else  $(this).removeClass("NotEmpty");
     });
 });
+
 //Google Aanalytics
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-34564940-1']);
@@ -77,10 +78,10 @@ $(document).ready(function()
             <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>
-    <a href="/spine"><div id="dahliaLogo"></div></a>
+    <a href="/"><div id="dahliaLogo"></div></a>
     <ul id="mainMenu">
         <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
-        <li><a href="/spine"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/index.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
+        <li><a href="/vote"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/vote.php'  || $self == '/index.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
         <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
     </ul>
     <div id="rightHandMenu">
@@ -93,8 +94,8 @@ $(document).ready(function()
             <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
             <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #B1B1B1 !important;"><?= $_SESSION['user']['username'] ?></a></div>
             <ul>
-                <a href="/<?= $_SESSION['user']['username'] ?>?showPublic=true"><li>Profile</li></a>
-                <a href="/<?= $_SESSION['user']['username'] ?>"><li>Dashboard</li></a>
+                <a href="/<?= $_SESSION['user']['username'] ?>"><li>Profile</li></a>
+                <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
                 <a href="/activity"><li>Activity</li></a>
                 <a href="/invite"><li>Invite</li></a>
                 <a href="/shop/my-wishlist"><li>Wishlist</li></a>
