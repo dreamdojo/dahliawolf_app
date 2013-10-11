@@ -14,8 +14,8 @@ if (empty($_data)) {
 // Get Categories
 $calls = array(
 	'get_shop_categories' => array(
-		'id_shop' 		=> SHOP_ID
-		, 'id_lang' 	=> LANG_ID
+		'id_shop' 		=> SHOP_ID,
+		'id_lang' 	=> LANG_ID
 
 	)
 );
