@@ -22,6 +22,8 @@ $calls = array(
 $data = commerce_api_request('category', $calls, true);
 $_data['categories'] = $data['data']['get_shop_categories']['data'];
 
+error_log(__FILE__ . " $self");
+
 if ($self == '/shop/index.php') {
     /*
 	if (!empty($_GET['id_category'])) {
