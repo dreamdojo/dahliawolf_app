@@ -9,7 +9,7 @@ if (empty($_data)) {
 }
 
 // Get Cart (already gets called in initial-calls.php)
-//$_data['cart'] = get_cart();
+$_data['cart'] = get_cart();
 
 // Get Categories
 $calls = array(
@@ -22,7 +22,6 @@ $calls = array(
 $data = commerce_api_request('category', $calls, true);
 $_data['categories'] = $data['data']['get_shop_categories']['data'];
 
-error_log(__FILE__ . " action: $self");
 
 if ($self == '/shop/index.php') {
     /*
@@ -126,7 +125,7 @@ else if ($self == '/shop/product.php') {
 		}
 	}
 }
-else if ($self == '/shop/checkout.php') {
+else if ($self == '/shop/checkout.php'  || $self == '/shop/product.php') {
 	// Set session delivery id
 	if (empty($_SESSION['checkout_id_delivery']) && !empty($_data['cart']['cart']['carrier'])) {
 		$_SESSION['checkout_id_delivery'] = $_data['cart']['cart']['carrier']['id_delivery'];
