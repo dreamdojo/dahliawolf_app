@@ -19,7 +19,7 @@ class Commerce_API {
 		$ch = curl_init();
 		$this->set_rest_api_request_options($ch, $api_url, $calls);
 
-        error_log(__CLASS__ . "rest_api_request()--> calls:" . var_export($calls, true));
+        error_log(__CLASS__ . " url: $api_url rest_api_request()--> calls:" . var_export($calls, true));
 		
 		// Attempt to connect up to 3 times
 		$attempts = 0;
