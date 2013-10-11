@@ -42,10 +42,6 @@ function unset_action_session_keys() {
 
 function get_cart() {
 
-
-    error_log("init: get_cart()" . __FUNCTION__ );
-
-
 	$cookie = array();
 	$cart = array();
 	if (!empty($_COOKIE[SITENAME_PREFIX]) && !empty($_COOKIE[SITENAME_PREFIX]['cart'])) {
@@ -61,12 +57,8 @@ function get_cart() {
 			)
 		);
 
-        error_log(__FILE__ . "get_cart()--> calls:" . var_export($calls, true));
-
 
 		$data = commerce_api_request('cart', $calls, true);
-
-        error_log(__FILE__ . "get_cart()--> data:" . var_export($data, true));
 
 
 		if (!empty($data['errors']) || !empty($data['data']['get_cart_from_cookie']['errors'])) {
@@ -88,12 +80,7 @@ function get_cart() {
 				)
 			);
 
-            error_log(__FILE__ . "get_cart()--> id_cart calls:" . var_export($calls, true));
-
 			$data = commerce_api_request('cart', $calls, true);
-
-            error_log(__FILE__ . "get_cart()--> data:" . var_export($data, true));
-
 
 
 			if (!empty($data['errors']) || !empty($data['data']['save_cookie_cart_to_db']['errors'])) {
@@ -125,8 +112,6 @@ function get_cart() {
 			}
 
 			$data = commerce_api_request('cart', $calls, true);
-
-            error_log( sprintf( __FILE__ . "get_cart()--> id_cart calls: %s\ndata: %s", var_export($calls, true), var_export($data, true)));
 
 
 			if (!empty($data['errors']) || !empty($data['data']['get_cart_from_db']['errors'])) {
