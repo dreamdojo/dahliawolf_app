@@ -168,7 +168,7 @@
     <div class="rightCol">
         <h3><?= $_data['product']['product']['product_name'] ?></h3>
         <div class="regularPrice">
-            <span <?= $status ? 'style="text-decoration:line-through"' : '' ?>>$<?= number_format( ($_data['product']['product']['price']), 2, '.', ',') ?></span>
+            <span <?= $status == 'Pre Order' ? 'style="text-decoration:line-through"' : '' ?>>$<?= number_format( ($_data['product']['product']['price']), 2, '.', ',') ?></span>
             <span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% Off' : ''?></span>
         </div>
         <? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
