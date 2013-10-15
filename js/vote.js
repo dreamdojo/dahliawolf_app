@@ -44,7 +44,7 @@ voteFeed.prototype = {
     get getOrder() {return this.order;},
     get isFilterSet() {return (this.filter ? true : false);},
     get getFilter() {return this.filter;},
-
+ 
     set setFeedMode(mode) {this.feedMode = mode;},
     set setOrder(order) {this.order = order;},
     set setFilter(filter) {this.filter = filter;}

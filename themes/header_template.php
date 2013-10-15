@@ -87,8 +87,10 @@ $(document).ready(function()
     <div id="rightHandMenu">
         <div id="tourButton"></div>
         <? if(IS_LOGGED_IN): ?>
-        <a href="/shop/checkout.php"><div id="shoppingCart"></div></a>
-        <div id="searchButton"></div>
+            <a href="/shop/checkout.php"><div id="shoppingCart"></div></a>
+        <? endif ?>
+            <div id="searchButton"></div>
+        <? if(IS_LOGGED_IN): ?>
         <div id="userMenu">
             <div class="rtBorder"></div>
             <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
@@ -113,9 +115,9 @@ $(document).ready(function()
             </ul>
         <? endif ?>
     </div>
-</div>
-<div id="searchBar">
-    <input type="text" placeholder="Start typing to search...">
+    <div id="searchBar">
+        <input type="text" placeholder="Start typing to search...">
+    </div>
 </div>
 
 <script>
