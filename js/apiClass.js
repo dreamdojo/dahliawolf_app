@@ -225,7 +225,7 @@ function Api() {
 Api.prototype.callApi = function(data) {
     that = this;
     data.use_hmac_check = 0;
-    data.function = this.apiFunction;
+    data['function'] = this.apiFunction;
     var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
     _gaq.push(['_trackEvent', this.apiApi, this.apiFunction]);
 
@@ -298,11 +298,12 @@ Post.prototype.unlove = function(id, callback) {
     return this;
 }
 
-Post.prototype.delete = function(id, callback) {
+Post.prototype.deleteMe = function(id, callback) {
     this.apiFunction = 'delete';
     this.callApi();
     return this;
 }
+
 Post.prototype.promote = function(id, callback) {
     this.apiFunction = 'promote';
     this.callback = callback;

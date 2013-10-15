@@ -131,13 +131,13 @@ margin-top: -29px;
                                <div style="margin-bottom: 20px;"><a href="<?= $login_urls['facebook'] ?>"><img src="/skin/img/signinfacebook2.png" width="244" height="49" /></a></div>
                                <div style="clear:both;"></div>                        
                            </div>
-                           <div class="texting">or login with email:</div>
+                           <div class="texting">or login with email/username:</div>
                            <div>
                                <form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="/action/login.php">
                                 <ul>
                                     <li>
                                         <input class="input_text" type="text" name="identity" id="sysForm_identity" value="">
-                                        <label for="sysForm_identity">E-Mail</label><span class="fff"></span>
+                                        <label for="sysForm_identity">E-Mail or Username</label><span class="fff"></span>
                                     </li>
                                     <li>
                                         <input class="input_text" type="password" name="credential" id="sysForm_credential" value="">
