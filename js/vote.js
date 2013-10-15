@@ -31,6 +31,9 @@ voteFeed.prototype = {
             config.filter_by = this.getFilter;
             config.follower_user_id = dahliawolf.userId;
         }
+        if(this.search) {
+            config.q = this.search;
+        }
         return config;
     },
     get isGridMode() {return this.feedMode === 'grid'},
