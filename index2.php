@@ -9,7 +9,7 @@ include 'config/mobile-detect.php';
 if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
     $_SESSION['user'] = unserialize($_COOKIE["dahliaUser"]);
     $_SESSION['token'] = $_COOKIE["token"];
-    header( 'Location: spine' );
+    //header( 'Location: spine' );
 }
 ?>
 

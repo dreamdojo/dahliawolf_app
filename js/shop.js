@@ -89,6 +89,9 @@ shop.prototype.product.prototype.addToShop = function() {
     this.$hover.append( this.getInspirationButton() );
     this.$image_view = $('<div class="product-details" onclick="document.location=\''+this.data.id_product+'\'"></div>').appendTo(this.$view);
     this.$inspiration = $('<div class="inspirationImage"><img src="'+this.data.inspiration_image_url+'"></div>');
+    if(this.data.product_images.length > 1) {
+        this.$photoTwo = $('<div class="takeTwo"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_images[1].product_file_id+'&width=400"></div>').appendTo(this.$image_view);
+    }
     this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
     this.$image_view.append( this.getPrice()).append( this.getImage() );

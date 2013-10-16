@@ -1,5 +1,9 @@
 <?php
     $pageTitle = "Homepage";
+    if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
+        $_SESSION['user'] = unserialize($_COOKIE["dahliaUser"]);
+        $_SESSION['token'] = $_COOKIE["token"];
+    }
     include "head.php";
 ?>
     <style>

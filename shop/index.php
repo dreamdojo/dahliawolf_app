@@ -18,6 +18,9 @@
     .shopOwnerTitle{position: absolute;margin-top: 90px;left: 71px;font-size: 30px; text-transform: uppercase; font-weight: bolder !important; width: 528px;text-align: center;overflow: hidden;text-overflow: ellipsis;}
     .shopEmpty{font-size: 20px; text-align: center; margin-top: 15px;}
     body{text-align: center;}
+    .takeTwo{position: absolute;top: 0px;left: -100%; z-index: 11111;width: 100%;transition: left .25s;-webkit-transition: left .25s; background-color: #fff;height: 100%;}
+    .takeTwo img{width: 70%; margin-left: 15%;}
+    .product-details:hover .takeTwo{left: 0%;}
 </style>
 <!--<a href="/inspire"><img style="text-align: center; margin: 0px auto; width: 80%; max-width: 1200px;" src="/images/COMINGSOON.png"></a>-->
 
