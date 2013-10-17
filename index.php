@@ -27,6 +27,10 @@
             Your browser does not support the video tag.
         </video>
     </div>
+    <ul id="mobNative">
+        <li><a href="https://itunes.apple.com/us/app/dahlia-wolf-fashion/id718253685?ls=1&mt=8"><img src="/images/apple.png"></a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.zyonnetworks.dahliawolf2&hl=en"><img src="/images/droid.png"></a></li>
+    </ul>
 </div>
 
 <?

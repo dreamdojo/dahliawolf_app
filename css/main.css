@@ -125,8 +125,14 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center; font-family: futura;}
 .pinkMe{color: #F03E63;}
 
+#mobNative{float: left;margin-top: 40px;margin-left: 6%;}
+#mobNative li{float: left; width: 115px;}
+#mobNative li:last-child{margin-left: 10px;}
+#mobNative li img{width: 100%;}
+
 @media screen and (max-width: 1000px) {
     #dahliaHeader .userName{display: none;}
+    #mobNative{display: none;}
 }
 
 @media screen and (max-width: 700px) {

@@ -26,7 +26,9 @@ shop.prototype.loadProducts = function() {
         URL += '&user_id='+this.shopOwner.user_id
     }
 
+    dahliawolf.loader.show();
     $.getJSON(URL, function(data) {
+        dahliawolf.loader.hide();
         if(data.data.get_products.data.length) {
             _this.data = data.data.get_products.data;
             _this.fillShop();
