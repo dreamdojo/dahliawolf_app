@@ -42,9 +42,9 @@
 <div class="post-details-container posting-<?= $_data['post']['posting_id'] ?><?= !empty($_data['post']['is_liked']) ? ' liked' : '' ?>" data-posting_id="<?= $_data['post']['posting_id'] ?>">
     
     <div id="postDetailTopRow">
-    	<div class="postDetailAvatarFrame">
-        	<a href="/<?= $_data['post']['username'] ?>"><img src = "<?= $_data['post']['avatar'] ?>" /></a>
-        </div>
+        <a href="/<?= $_data['post']['username'] ?>">
+            <div class="postDetailAvatarFrame" style='background-image: url("<?= $_data['post']['avatar'] ?>")'></div>
+        </a>
         <ul class="deetsList">
         	<li class="postDetailUsername name"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
             <li class="postDetailUserLocation"><?= $posterData['location'] ?></li>

@@ -22,7 +22,7 @@ a {
 }
 .user-message {
 	width: 575px;
-	margin: 0 auto 10px;
+    margin: 60px auto 15px;
 	padding: 10px 10px 10px 65px;
 	/* 45 x 39 */
 	background-position: 10px center;

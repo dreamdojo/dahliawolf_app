@@ -64,7 +64,7 @@
 
     #shopContent{border-top: #d5d5d5 2px solid;clear: left;}
     #shopContent .leftCol{float: left; width: 300px;}
-    #shopContent .leftCol .follow{height: 30px;line-height: 30px;font-size: 15px;cursor: pointer;width: 90px;text-align: left;}
+    #shopContent .leftCol .follow{height: 30px;line-height: 30px;font-size: 15px;cursor: pointer;width: 90px;text-align: left;color: #A3A3A3;}
     #shopContent .leftCol .isfollowing{color: #c2c2c2;}
     #shopContent .leftCol .isnotfollowing{color: #fc2c71;}
     #shopContent .leftCol .story{font-size: 27px;border-top: #dcdcdc thin solid;padding-top: 10px;margin-bottom: 10px;}
@@ -89,10 +89,11 @@
     #shopOptions li{width: 100%; height: 30px; font-size: 13px; line-height: 30px;}
     .options li{float: left;width: 65px !important;text-align: center;}
     .scribble{font-family: 'Shadows Into Light', cursive;}
-    #addToCart{background-color: #fc0964;text-align: center;padding: 10px 10px;font-size: 20px;width: 100%;float: left;color: #fff;margin-top: 10px;}
+    #addToCart{background-color: #fc0964;text-align: center;padding: 10px 10px;font-size: 20px;width: 92%;float: left;color: #fff;margin-top: 10px;}
     #nextImage{position: absolute;right: 0px;height: 100px;width: 50px;top: 50%;z-index: 1;margin-top: -50px;font-size: 60px;text-align: center;font-weight: 100;}
     .product{ color: #c5bfbf;}
-
+    #shopOptions .options li{border: #000 thin solid;width: 59px !important;text-align: center; margin-left: 15px;}
+    #shopOptions .options li input{display: none;}
     #postShareSection{margin-right: 0px;}
 </style>
 
@@ -130,7 +131,7 @@
 <div id="shopContent" class="shop-section">
     <div class="leftCol">
         <ul>
-            <li class="follow isnotfollowing">FOLLOW+</li>
+            <li id="prodFollow" class="follow isnotfollowing">FOLLOW+</li>
             <li>
                 <p class="scribble story">Story behind <?= $_data['product']['product']['product_name'] ?></p>
                 <p class="content"><?= $_data['product']['product']['story_behind_design'] ?></p>
@@ -182,9 +183,9 @@
             <form action="/action/shop/add_item_to_cart.php" method="post">
                 <input type="hidden" name="id_product" value="<?= $_data['product']['product']['id_product'] ?>" >
                 <ul id="shopOptions">
-                    <li>
+                    <li style="height: 45px;line-height: 45px;">
                         <label>Quantity</label>
-                        <select name="quantity" value="1" />
+                        <select name="quantity" value="1" style="font-size: 20px;" />
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -234,6 +235,21 @@
             $button.addClass('not-in-wishlist').removeClass('is-in-wishlist').html('Add To Wishlist');
             $.ajax('/action/shop/remove_item_from_wishlist.php?id_favorite_product='+id+'&ajax=true');
         }
+    });
+
+    $('#shopOptions .options li').on('click', function() {
+        $(this).css('background-color', '#e4e4e4').siblings().css('background-color', '#fff');
+        $(this).find('input').attr('checked', 'checked');
+    });
+
+    $('#prodFollow').on('click', function() {
+       var $el = $(this);
+
+       if( $el.hasClass('isnotfollowing') ) {
+           $el.html('FOLLOWING').removeClass('isnotfollowing');
+       } else {
+           $el.html('FOLLOW').addClass('isnotfollowing');
+       }
     });
 </script>
 
