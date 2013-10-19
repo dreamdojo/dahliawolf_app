@@ -83,7 +83,6 @@
         postBank.getImages();
         $('#importFromPinterest').on('click', postBank.getImagesFromTumblr);
         $('#importFromInstagram').on('click', postBank.getImagesFromInstagram);
-        //$('#getPinterestName input').on('keydown', postBank.setPinterestName);
         postBank.adjustMargins();
         $(window).resize(postBank.adjustMargins);
         $('#viewToggle').on('click', this.toggleMode);
@@ -92,6 +91,10 @@
     function drag(ev)
     {
         postBank.$draggedItem = $(ev.target).parent();
+    }
+
+    function undrag(ev) {
+        postBank.$draggedItem = null;
     }
 
     function allowDrop(ev) {
@@ -297,7 +300,7 @@
         this.data = data;
         var widths = [500, 300, 400];
 holla.log(this.data);
-        this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
+        this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" ondragleave="undrag(event)" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
         this.$image = $('<a class="zoombox" data-url="'+this.data.source+this.data.imageURL+'" rel="modal"><img src="'+this.data.source+this.data.imageURL+'"></a>').appendTo(this.$post);
         this.$post.appendTo(postBank.$bucket);

@@ -189,6 +189,11 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .dahliaHeadUnFollow{ border:#c2c2c2 thin solid; color:#c2c2c2 !important;}
 .userHead:hover #dahliaHead{ display:block; }
 
+/*******************************/
+.memberStats{padding: 1.5px;margin-left: 3px;float: left; position: relative;}
+.memberStats:hover .ms_ro{display: block;}
+.ms_ro{width: 112px;height: 23px;background-repeat: no-repeat;background-position: 50%;position: absolute;top: 2px;left: 25px;z-index: 1; display: none;}
+
 /*********** THE GRID ***********/
 #theGrid{position: relative; width: auto;margin: 0px auto; max-width: 1300px;padding-bottom: 100px;}
 #theGrid .post-frame{ width:300px; float:left; margin:10px;height: 350px;overflow: hidden;position: relative; cursor:pointer;}

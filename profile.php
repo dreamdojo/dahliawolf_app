@@ -35,7 +35,11 @@
                     </div>
                 </div>
                 <ul class="userProfileDeetsList">
-                    <li class="profileUsername"><a href="<?= $_data['user']['user_id'] ?>" rel="message">@<?= $_data['user']['username'] ?></a></li>
+                    <li class="profileUsername"><a href="<?= $_data['user']['user_id'] ?>" style="float: left;" rel="message">@<?= $_data['user']['username'] ?></a>
+                        <?= $_data['user']['verified'] && $_data['user']['membership_level'] != 'VIP' ? '<div class="memberStats"><img src="/images/verified.png"><div class="ms_ro" style="background-image: url(\'/images/verified_RO.png\')"></div></div>' : ''  ?>
+                        <?= $_data['user']['membership_level'] == 'VIP' ? '<div class="memberStats"><img src="/images/vip.png"><div class="ms_ro" style="background-image: url(\'/images/vip_RO.png\')"></div></div>' : ''  ?>
+                        <div style="clear: left;"></div>
+                    </li>
                     <li class="profileLocation"><?= $_data['user']['location'] ?></li>
                     <li class="boutitboutit"><?= $_data['user']['about'] ?></li>
                     <li class="profileLocation"><a href="http://<?= $_data['user']['website'] ?>" target="_blank" style="font-weight: bold !important;"><?= $_data['user']['website'] ?></a></li>
