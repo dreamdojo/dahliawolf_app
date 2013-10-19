@@ -94,7 +94,7 @@
     }
 
     function undrag(ev) {
-        postBank.$draggedItem = null;
+        //postBank.$draggedItem = null;
     }
 
     function allowDrop(ev) {
