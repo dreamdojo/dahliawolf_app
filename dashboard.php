@@ -1,3 +1,9 @@
+<?php
+if(!IS_LOGGED_IN) {
+    die();
+}
+?>
+
 <style xmlns="http://www.w3.org/1999/html">
     #dashboardHeader{width: 100%; height: 200px; background-color: #f3f3f3;}
     #dashboardHeader .leftCol{float: left; width: 150px; position: relative;}
@@ -8,7 +14,7 @@
     #dashboardHeader .avatarFrame img{width: 100%;}
     #dashboardHeader .mLevel{font-size: 15px; text-transform: capitalize; color: #fff; font-weight: bolder; background-color: #ff0066; width: 175px; text-indent: 5px !important;}
     #dashboardHeader .stats{width: 400px;float: left;margin-left: 10px;margin-top: 15px;}
-    #dashboardHeader .cashOut{float: right; width: 300px; text-align: center;margin-top: 25px; font-size: 18px; display: none;}
+    #dashboardHeader .cashOut{float: right; width: 300px; text-align: center;margin-top: 25px; font-size: 18px;}
     #dashboardHeader .cashOut li{padding-bottom: 5px;}
     #dashboardHeader .dbButton{background-color: #fff; border: #000 thin solid; color: #000; padding: 2px 10px; margin: 0px auto; cursor: pointer;}
     #dashboardHeader .vpp{margin-top: 20px; padding: 5px 0px; text-align: center;}
@@ -64,6 +70,7 @@
     #postLoversBin .lover .FOLLOWING{color: #c2c2c2; border: #c2c2c2 thin solid;}
 
 </style>
+<? $_data['cart'] = get_cart(); ?>
 <div id="dashboardHeader">
     <div class="dashboardInner">
         <div class="leftCol">
@@ -78,14 +85,14 @@
         </div>
         <ul class="stats">
             <li class="uname">@<?= $_data['user']['username'] ?></li>
-            <!--<li class="mLevel">Member Level: <?= $_data['user']['membership_level'] ?></li>-->
+            <!--<li class="mLevel">Member Level: <?= $_data['user']['membership_level']['total_commissions'] ?></li>-->
             <li class="sSteez"><a href="/<?= $_data['user']['username'] ?>/followers"><?= $_data['user']['followers'] ?> FOLLOWERS</a> | <a href="/<?= $_data['user']['username'] ?>/following"><?= $_data['user']['following'] ?> FOLLOWING</a></li>
             <li class="sSteez"><?= $_data['user']['points'] ?> POINTS | </li>
         </ul>
         <ul class="cashOut">
             <li style="font-weight: 100;">ACCOUNT BALANCE</li>
-            <li style="font-size: 32px;">$0</li>
-            <li class="dbButton" style="width: 100px;" onClick="alert('coming soon');">CASH OUT</li>
+            <li style="font-size: 32px;">$<?= $_data['cart']['available_commissions']['total_commissions'] ?></li>
+            <!--<li class="dbButton" style="width: 100px;" onClick="alert('coming soon');">CASH OUT</li>-->
         </ul>
     </div>
 </div>
@@ -112,6 +119,7 @@
 </div>
 <script>
     console.log(<?= json_encode($_data['user']) ?>);
+    console.log(<?= json_encode($_data['cart']) ?>);
 
     var dashboard = new Object();
     dashboard.limit = 12;

@@ -92,7 +92,7 @@
     #addToCart{background-color: #fc0964;text-align: center;padding: 10px 10px;font-size: 20px;width: 92%;float: left;color: #fff;margin-top: 10px;}
     #nextImage{position: absolute;right: 0px;height: 100px;width: 50px;top: 50%;z-index: 1;margin-top: -50px;font-size: 60px;text-align: center;font-weight: 100;}
     .product{ color: #c5bfbf;}
-    #shopOptions .options li{border: #000 thin solid;width: 59px !important;text-align: center; margin-left: 15px;}
+    #shopOptions .options li{border: #000 thin solid;width: 40px !important;text-align: center; margin-left: 15px;}
     #shopOptions .options li input{display: none;}
     #postShareSection{margin-right: 0px;}
 </style>
