@@ -12,7 +12,7 @@
     #vipBox form{color: #fff;text-align: center;margin-top: 50px;}
     .vipCode{height: 45px;width: 230px;margin-top: 45px;font-size: 30px;text-align: center;}
     .subButt{background-color: #000;border: #fff thin solid;margin-top: 20px;width: 122px; color: #fff;text-align: center;height: 26px;font-size: 12px; cursor: pointer;}
-    .bg_image{position: fixed; left: 0px; top: 290px; width: 100%; height: 100%; background-position: 50%; background-repeat: no-repeat; background-size: 100% auto; background-image: url('/images/DW-slide-1.jpg');}
+    .bg_image{position: fixed; left: 0px; top: 290px; width: 100%; height: 100%; background-position: 50%; background-repeat: no-repeat; background-size: 100% auto; background-image: url('/images/GRRR.JPG');}
 </style>
 
 <div class="bg_image"></div>
