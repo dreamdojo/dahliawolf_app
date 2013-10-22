@@ -1,4 +1,4 @@
-<body>
+<body style="overflow-x: hidden;">
 
 <div id="loadme"></div>
 
@@ -100,7 +100,7 @@ $(document).ready(function()
                 <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
                 <a href="/activity"><li>Activity</li></a>
                 <a href="/invite"><li>Invite</li></a>
-                <a href="/shop/my-wishlist"><li>Wishlist</li></a>
+                <!--<a href="/shop/my-wishlist"><li>Wishlist</li></a>-->
                 <a href="/pinit"><li>Inspire Tool</li></a>
                 <a href="/account/settings"><li>Settings</li></a>
                 <a href="/shop/my-orders"><li>Orders</li></a>
@@ -159,7 +159,11 @@ $(function(){
             if(e.keyCode == 13) {
                 var s_key = $(this).val();
                 document.location = '/vote?q='+s_key;
-                $('#searchBar').slideUp(200);
+                $('#searchBar').slideUp(200, function() {
+                    if(!$(this).is(':visible')) {
+                        $('#searchBar input').blur();
+                    }
+                });
             }
         });
     });

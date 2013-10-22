@@ -248,7 +248,7 @@
        if( $el.hasClass('isnotfollowing') ) {
            $el.html('FOLLOWING').removeClass('isnotfollowing');
        } else {
-           $el.html('FOLLOW').addClass('isnotfollowing');
+           $el.html('FOLLOW+').addClass('isnotfollowing');
        }
     });
 </script>
