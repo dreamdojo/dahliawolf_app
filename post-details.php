@@ -40,7 +40,7 @@
      <a href="/post-details?posting_id=<?= $_data['post']['next_posting_id'] ?>" rel="modal"><div class="arrow" id="rightArrow"></div></a>
 <? endif ?>
 <div class="post-details-container posting-<?= $_data['post']['posting_id'] ?><?= !empty($_data['post']['is_liked']) ? ' liked' : '' ?>" data-posting_id="<?= $_data['post']['posting_id'] ?>">
-    
+
     <div id="postDetailTopRow">
         <a href="/<?= $_data['post']['username'] ?>">
             <div class="postDetailAvatarFrame" style='background-image: url("<?= $_data['post']['avatar'] ?>")'></div>

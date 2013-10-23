@@ -132,7 +132,7 @@
             data = data.data;
             postBank.$bank.css({'background-color': '#ff787d', 'color' : '#fff'});
             postBank.$bankMsg.html('Upload Successful!');
-            sendToAnal({name:'Uploaded Image', type:'x-browser'});
+            sendToAnal({name:'Uploaded Image from other browser', type:'x-browser'});
             var str = '<div class="postFrame grid" draggable="true" ondragstart="drag(event);"><div class="postButton" style="display: none;">POST</div>';
             str+= '<img src="'+postBank.url+'" style="opacity: 0.6;"><div class="postPostingWrap"><div class="bankPosted">' +
                 '<p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>' +
@@ -316,7 +316,7 @@ holla.log(this.data);
         if(theUser.id) {
             if(this.data.id) {
                 $.post('/action/post_feed_image.php', { id: this.data.id, description: description}, $.proxy(this.addAfterPostMessage, this) );
-                sendToAnal({name:'Uploaded Image', type:'dahliawolf feed'});
+                sendToAnal({name:'Uploaded Image From Feed', type:'dahliawolf feed'});
             }
         } else {
             new_loginscreen();

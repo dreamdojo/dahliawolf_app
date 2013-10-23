@@ -14,9 +14,9 @@ if(!IS_LOGGED_IN) {
     #dashboardHeader .avatarFrame img{width: 100%;}
     #dashboardHeader .mLevel{font-size: 15px; text-transform: capitalize; color: #fff; font-weight: bolder; background-color: #ff0066; width: 175px; text-indent: 5px !important;}
     #dashboardHeader .stats{width: 400px;float: left;margin-left: 10px;margin-top: 15px;}
-    #dashboardHeader .cashOut{float: right; width: 300px; text-align: center;margin-top: 25px; font-size: 18px; display: none;}
+    #dashboardHeader .cashOut{float: right; width: 300px; text-align: center;margin-top: 25px; font-size: 18px;}
     #dashboardHeader .cashOut li{padding-bottom: 5px;}
-    #dashboardHeader .dbButton{background-color: #fff; border: #000 thin solid; color: #000; padding: 2px 10px; margin: 0px auto; cursor: pointer;}
+    #dashboardHeader .dbButton{background-color: #fff; border: #000 thin solid; color: #000; padding: 2px 10px; margin: 0px auto; cursor: pointer; display: none;}
     #dashboardHeader .vpp{margin-top: 20px; padding: 5px 0px; text-align: center;}
     #dashboardHeader .uname{font-size: 18px; text-indent: 0px !important;}
     #dashboardHeader .stats li{text-indent: 10px; padding: 3px 2px;}
@@ -91,7 +91,7 @@ if(!IS_LOGGED_IN) {
         </ul>
         <ul class="cashOut">
             <li style="font-weight: 100;">ACCOUNT BALANCE</li>
-            <li style="font-size: 32px;">$<?= $_data['cart']['available_commissions']['total_commissions'] ?></li>
+            <li style="font-size: 32px;">$<?= $_data['cart']['available_store_credits']['total_credits'] ?></li>
             <li class="dbButton" style="width: 100px;" onClick="alert('coming soon');">CASH OUT</li>
         </ul>
     </div>

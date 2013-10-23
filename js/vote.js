@@ -147,9 +147,19 @@ voteFeed.prototype.get$Post = function(id, index) {
     var $heartCount = $('<li class="loveCount">'+post.total_likes+'</li>').appendTo($counts);
     $post.append($userBar);
 
+    var video = ( post.image_url.split('.').pop() === 'mp4' );
+    console.log(video);
+
     if(this.isSpineMode) {
         var img_url = post.image_url+'&height='+postDims[index % 16][1];
-        var $img = $('<img src="'+img_url+'&height='+postDims[index % 16][1]+'">');
+
+        if(video) {
+            var $img = $('<img src="'+img_url+'&height='+postDims[index % 16][1]+'">');
+            var $img = $('<video autoplay loop height="'+postDims[index % 16][1]+'" preload="auto"><source src="'+img_url+'" type="video/mp4" /></video>');
+        } else {
+            var $img = $('<img src="'+img_url+'&height='+postDims[index % 16][1]+'">');
+        }
+
         if(Number(post.width) > Number(post.height)) {
             $img.css('margin-left', '-'+((Number(post.width) - postDims[index % 16][0]) / 2)+'px');
         }
