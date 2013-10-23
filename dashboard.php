@@ -91,7 +91,7 @@ if(!IS_LOGGED_IN) {
         </ul>
         <ul class="cashOut">
             <li style="font-weight: 100;">ACCOUNT BALANCE</li>
-            <li style="font-size: 32px;">$<?= $_data['cart']['available_store_credits']['total_credits'] ?></li>
+            <li style="font-size: 32px;">$<?= round( intval($_data['cart']['available_store_credits']['total_credits']) , 2) ?></li>
             <li class="dbButton" style="width: 100px;" onClick="alert('coming soon');">CASH OUT</li>
         </ul>
     </div>
