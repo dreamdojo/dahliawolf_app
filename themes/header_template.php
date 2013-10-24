@@ -102,6 +102,7 @@ $(document).ready(function()
                 <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
                 <a href="/activity"><li>Activity</li></a>
                 <a href="/invite"><li>Grow My Clique</li></a>
+                <a href="/goodies"><li>Goodies</li></a>
                 <!--<a href="/shop/my-wishlist"><li>Wishlist</li></a>-->
                 <a href="/pinit"><li>Inspire Tool</li></a>
                 <a href="/account/settings"><li>Settings</li></a>
@@ -135,7 +136,6 @@ $(document).ready(function()
 </div>
 
 <div id="theLesson" class="lessonBox">
-	<div id="lessonCloser"><a href="#">HIDE HELPER</a></div>
     <div id="lesson-title" class="lesson-section"></div>
     <div class="lesson-line"></div>
     <div id="lesson-content" class="lesson-content"></div>
