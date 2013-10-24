@@ -235,7 +235,7 @@ $credits = round(floatval($result->data->get_user_credits_total->data->total_cre
         if(Number(this.data.total_shares)) {
             $('<div class="postAction">View Shares</div>').appendTo(this.$panel2).on('click', $.proxy(dashboard.showShares, this));
         }
-        $('<div class="postAction">More Time+</div>').appendTo(this.$panel3).on('click', $.proxy(dashboard.promotePost, this));
+        //$('<div class="postAction">More Time+</div>').appendTo(this.$panel3).on('click', $.proxy(dashboard.promotePost, this));
 
         return this.$post;
     }
