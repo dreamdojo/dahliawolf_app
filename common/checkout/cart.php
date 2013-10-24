@@ -294,7 +294,7 @@ $is_review = !empty($is_review) ? true : false;
 						<fieldset>
 							<label for="cart-store-credit-amount">Enter an amount to redeem:</label>
 							<input type="text" name="amount" id="cart-store-credit-amount" value="<?= !empty($_data['cart']['cart_store_credit']) ? $_data['cart']['cart_store_credit']['amount'] : '0.00' ?>" />
-							<span>/ $<?= $_data['cart']['available_store_credits']['total_credits'] ?> (Store Credits)</span>
+							<span>/ $<?= number_format($_data['cart']['available_store_credits']['total_credits'], 2) ?> (Store Credits)</span>
 							<p class="button"><a onclick="$(this).closest('form').submit()">Redeem Store Credit</a></p>
 						</fieldset>
 					</form>
