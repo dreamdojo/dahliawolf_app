@@ -40,6 +40,10 @@ function unset_action_session_keys() {
 	}
 }
 
+function get_cart_from_db() {
+
+}
+
 function get_cart() {
 
 	$cookie = array();

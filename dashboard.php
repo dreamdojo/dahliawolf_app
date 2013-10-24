@@ -2,6 +2,14 @@
 if(!IS_LOGGED_IN) {
     die();
 }
+$url = 'http://dev.commerce.offlinela.com/1-0/store_credit.json?function=get_user_credits_total&user_id='.$_SESSION['user']['user_id'].'&use_hmac_check=0';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$url);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result = json_decode(curl_exec ($ch));
+curl_close ($ch);
+$credits = round(floatval($result->data->get_user_credits_total->data->total_credits), 2);
 ?>
 
 <style xmlns="http://www.w3.org/1999/html">
@@ -70,7 +78,7 @@ if(!IS_LOGGED_IN) {
     #postLoversBin .lover .FOLLOWING{color: #c2c2c2; border: #c2c2c2 thin solid;}
 
 </style>
-<? $_data['cart'] = get_cart(); ?>
+
 <div id="dashboardHeader">
     <div class="dashboardInner">
         <div class="leftCol">
@@ -91,7 +99,7 @@ if(!IS_LOGGED_IN) {
         </ul>
         <ul class="cashOut">
             <li style="font-weight: 100;">ACCOUNT BALANCE</li>
-            <li style="font-size: 32px;">$<?= round( intval($_data['cart']['available_store_credits']['total_credits']) , 2) ?></li>
+            <li style="font-size: 32px;">$<?= $credits ?></li>
             <li class="dbButton" style="width: 100px;" onClick="alert('coming soon');">CASH OUT</li>
         </ul>
     </div>
@@ -119,7 +127,6 @@ if(!IS_LOGGED_IN) {
 </div>
 <script>
     console.log(<?= json_encode($_data['user']) ?>);
-    console.log(<?= json_encode($_data['cart']) ?>);
 
     var dashboard = new Object();
     dashboard.limit = 12;
