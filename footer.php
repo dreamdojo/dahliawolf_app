@@ -3,18 +3,6 @@
 <div id="theOverlay"></div>
 <div id="sys-profiler"></div>
 <div id="sysMessageDialog" style="display: none;" title="Message"></div>
-
-<div id="dwFooter">
-    <ul>
-        <a href="/help"><li style="padding-top: 20px;">How it Works</li></a>
-        <a href="/tos"><li>Legal</li></a>
-        <a href="/faqs"><li>FAQs</li></a>
-        <a href="/contact"><li>Contact</li></a>
-        <li style="color: #c3c3c3;">© Dahlia Wolf 2013</li>
-    </ul>
-    <p></p>
-    <img src="/images/logo_60x60.png">
-</div>
 <?
 if (!empty($_GET['modal'])) {
 	?>

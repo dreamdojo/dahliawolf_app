@@ -88,28 +88,35 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
 }
 
-#tourButton{float: right; background: url('/images/tourIcon.png'); background-size: 200%;height: 40px;width: 40px;background-repeat: no-repeat;background-position: 0%;margin-top: 5px;overflow: hidden;}
+#tourButton{float: right; background: url('/images/tourIcon.png'); background-size: 200%;height: 40px;width: 40px;background-repeat: no-repeat;background-position: 0%;margin-top: 7px; margin-left:1px; overflow: hidden;}
 #dahliaHeader a{color: #fff !important;}
 /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
 #dahliaHeader #dahliaLogo{width: 160px;height: 80%;background-image: url("/images/logo_no_beta.png");background-size: 100%;background-repeat: no-repeat;background-position: 46% 50%;margin-top: 7px;margin-left: 20px;overflow: hidden; float: left; cursor: pointer;}
-#dahliaHeader #userMenu{float: right; padding-right: 20px; position: relative; height: 40px; margin-top: 10px; margin-right: 8px;}
-#dahliaHeader .avatarFrame{width: 30px;height: 30px;overflow: hidden; margin-top: -1px; border-radius: 30px;float: right;}
+#dahliaHeader #userMenu{float: right; padding-right: 20px; position: relative; height: 40px; margin-top: 10px; margin-right: 4px;}
+#dahliaHeader .avatarFrame{width: 25px;height: 25px;overflow: hidden; margin-top: 3px; border-radius: 30px;float: right;}
 #dahliaHeader .avatarFrame img{width: 100%;}
 #dahliaHeader .userName{float: right;color: #fff;font-size: 12px;line-height: 32px; margin-right: 9px;}
 #dahliaHeader #mainMenu{position: absolute;width: 260px; left: 50%;margin-left: -130px; color: #fff;height: 60px;line-height: 50px;font-size: 18px;text-align: center;}
 #dahliaHeader #mainMenu li{float: left; margin: 0px 10px; position: relative;}
-#dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 40px;height: 40px;background-size: 81%; background-repeat: no-repeat; background-position: 1px -2px; margin-top: 10px;}
-#dahliaHeader #searchButton{ float:right; background-image: url("/images/s_mag.png"); width: 40px; height: 40px; background-size: 75%; background-repeat: no-repeat;margin-top: 10px; margin-right: 0px;}
+#dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 30px;height: 30px;background-size: 54%; background-repeat: no-repeat; background-position: 7px 4px; margin-top: 10px;}
+#dahliaHeader #searchButton{ float:right; background-image: url("/images/s_mag.png"); width: 30px; height: 30px; background-size: 76%;background-position: 3px 5px; background-repeat: no-repeat;margin-top: 10px; margin-right: 0px;}
 #dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 10px;}
 #dahliaMainMenuButton{float: left; height: 48px; width: 50px;  display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 86%; background-repeat: no-repeat;margin-top: 2px;}
 #dahliaMainMenuButton:hover .theMainMenu{display: block;}
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover ul{display: block;}
-#userMenu ul{position: absolute;width: 100%; margin-top: 40px; text-align: left; background-color: #000;color: #fff;min-width: 100px; display: none;opacity: .88;}
-#userMenu li{font-size: 13px;padding: 5px 14px; font-family: arial;border-top: #292929 1px solid;}
+#userMenu ul{position: absolute;width: 292px; margin-top: 30px; text-align: left; color: #636363; display: none;opacity: .88; padding-top: 16px; border-bottom: #292929 thin solid; right: -109px;}
+#userMenu li{font-size: 13px; font-family: arial; border-top: #292929 1px solid; background-color: #000;color: #B1B1B1;border-left: #292929 thin solid;border-right: #292929 thin solid;width: 290px; height: 30px;line-height: 30px;text-indent: 20px;}
+#userMenu ul .header-bezier{position: absolute; width: 291px; background-image: url("/images/menu-bezier.png"); background-repeat: no-repeat; background-size: 100%;background-position: 0px 0px;height: 15px;top: -7px;margin-top: 9px;}
+#userMenu .top-menu-footer{ background-color: #2e2e2e; color: #b1b1b1; text-indent: 0px; text-align: center; font-size: 11px;}
+#userMenu .top-menu-footer a{color: #b1b1b1 !important;}
+#userMenu .top-menu-footer a:hover{color: #F03E63 !important;}
+#userMenu .menuBars{float: right;padding: 5px;margin-right: -15px;margin-left: 5px;margin-top: 1px;}
+#userMenu .menuBars img{height:19px;}
 #userMenu li:hover{background-color: #1a1a1a;}
-#userMenu li:last-child{padding-bottom: 10px;}
+#userMenu li:first-child{}
+#userMenu li:last-child{}
 .loginDept{color: #fff;font-size: 13px;width: 200px;line-height: 50px;}
 .loginDept li{float: left;margin-right: 10px; position: relative;margin-left: 8px;}
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
