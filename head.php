@@ -39,6 +39,7 @@ if ($top_dir == 'shop') {
 <? else: ?>
 	<meta property="og:image" content="/images/logo_190x190.jpg">
 <? endif ?>
+<meta property="og:image" content="/images//images/logo_190x190.jpg">
 <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/pin-create-img-picker.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css">
