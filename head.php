@@ -37,9 +37,9 @@ if ($top_dir == 'shop') {
 <? elseif( !empty($_GET['id_product']) ): ?>
 	<meta property="og:image" content="<?= CDN_IMAGE_SCRIPT . $_data['product']['product']['id_product'] ?>" />
 <? else: ?>
-	<meta property="og:image" content="/images/logo_190x190.jpg">
+	<meta property="og:image" content="http://www.dahliawolf.com/images/logo_190x190.jpg">
 <? endif ?>
-<meta property="og:image" content="/images//images/logo_190x190.jpg">
+<meta property="og:image" content="http://www.dahliawolf.com/images/images/logo_190x190.jpg">
 <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/pin-create-img-picker.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css">
