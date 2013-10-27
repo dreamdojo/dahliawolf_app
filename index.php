@@ -96,8 +96,8 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 
 <div id="slideshow-frame">
     <video style="min-width: 100%; min-height: 100%;" autoplay loop>
-        <source src="/images/video/story.mp4" type="video/mp4">
-        <source src="/images/video/story.ogv" type="video/ogg">
+        <source src="http://dev.dahliawolf.com/images/video/story.mp4" type="video/mp4">
+        <source src="http://dev.dahliawolf.com/images/video/story.ogv" type="video/ogg">
     </video>
 </div>
 
@@ -125,6 +125,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <script>
     $(function(){
         centerVideo();
+
         $('#slideshow-frame video').on('play', centerVideo);
         $(window).resize(centerVideo);
     });
