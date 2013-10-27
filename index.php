@@ -136,6 +136,9 @@ function centerVideo() {
     if($video.width() > window.innerWidth) {
         $video.css('left', '-'+(($video.width() - window.innerWidth)/2)+'px');
     }
+    if($video.height() > window.innerHeight){
+        $video.css('top', '-'+(($video.height() - window.innerHeight)/2)+'px');
+    }
 }
 
 </script>
