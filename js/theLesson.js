@@ -15,6 +15,7 @@ var theLesson = new Object();
 theLesson.title = {		'/index.php' : 'WELCOME TO DAHLIAWOLF',
                         '/spine.php' : 'DISCOVER AND VOTE',
                         '/vote.php' : 'DISCOVER AND VOTE',
+                        '/home.php' : 'WELCOME TO DAHLIAWOLF',
 						'/grid.php' : 'DISCOVER AND VOTE', 
 						'/post.php' : 'POST FASHION INSPIRATIONS', 
 						'/explore.php': 'MEMBER INSPIRED SHOP',
@@ -33,6 +34,7 @@ theLesson.title = {		'/index.php' : 'WELCOME TO DAHLIAWOLF',
                         '/shop/index.php' : 'SHOP AND ENJOY'
 					};	
 theLesson.content = {	'/index.php' : 'You post fashion images. We turn your images into clothing! Dahlia Wolf is a fashion inspiration community where the images you post inspire our newest designs.',
+                        '/home.php' : 'You post fashion images. We turn your images into clothing! Dahlia Wolf is a fashion inspiration community where the images you post inspire our newest designs.',
                         '/spine.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!',
                         '/vote.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!',
 						'/grid.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!', 
