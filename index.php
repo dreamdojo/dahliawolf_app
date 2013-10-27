@@ -125,6 +125,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <script>
     $(function(){
         centerVideo();
+        $('#slideshow-frame video').on('play', centerVideo);
         $(window).resize(centerVideo);
     });
 
