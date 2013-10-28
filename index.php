@@ -1,8 +1,4 @@
 <?
-/*
-ini_set("memcache.compress_threshold",4294967296);
-ob_start();
-*/
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
 include 'config/mobile-detect.php';
@@ -19,7 +15,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <title>Dahlia\Wolf - Homepage</title>
+    <title>Dahlia\Wolf - Landing Page</title>
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/homes.js"></script>
     <script src="/js/functions.js" type="text/javascript"></script>
