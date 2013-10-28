@@ -155,7 +155,7 @@ voteFeed.prototype.get$Post = function(id, index) {
 
         if(video) {
             var $img = $('<img src="'+img_url+'&height='+postDims[index % 16][1]+'">');
-            var $img = $('<video autoplay loop height="'+postDims[index % 16][1]+'" preload="auto"><source src="'+img_url+'" type="video/mp4" /></video>');
+            var $img = $('<video autoplay loop muted height="'+postDims[index % 16][1]+'" preload="auto"><source src="'+img_url+'" type="video/mp4" /></video>');
         } else {
             var $img = $('<img src="'+img_url+'&height='+postDims[index % 16][1]+'">');
         }
