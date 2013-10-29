@@ -10,15 +10,17 @@
         #dahliaHeader{position: relative;}
         body{margin-top: 0px;}
         #sort-bar{margin-top: 5px;}
+        #joinBanner span{color: #F03E63;}
+        #joinBanner ul{width: 450px;display: inline-block;margin: 0px auto;text-align: center;}
+        #joinBanner li{float: left; width: 33%;}
+        .bits{font-size: 18px;padding: 40px;color: #666;min-height: 50px;}
+        .bits p{position: absolute;width: 100%;left: 0; display: none;}
+        .bits .default{display: block;}
+        #theMethod li{cursor: pointer;}
     </style>
 
 <div id="joinBanner">
     <img class="hiw" src="/images/howitworks.png">
-    <?php if(!IS_LOGGED_IN): ?>
-        <a href="/social-login.php?social_network=facebook">
-            <img class="swf" src="/images/facebook.png">
-        </a>
-    <?php endif ?>
     <div id="hiw-slide">
         <div id="theCloser">X</div>
         <video id="hiwVideo" controls poster="http://www.dahliawolf.com/images/how-it-works-video.png" >
@@ -27,9 +29,16 @@
             Your browser does not support the video tag.
         </video>
     </div>
-    <ul id="mobNative">
-        <li><a href="https://itunes.apple.com/us/app/dahlia-wolf-fashion/id718253685?ls=1&mt=8"><img src="/images/apple.png"></a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.zyonnetworks.dahliawolf2&hl=en"><img src="/images/droid.png"></a></li>
+    <div class="bits">
+        <p class="default">YOU <span>POST</span> FASHION IMAGES</BR>WE TURN YOUR IMAGES INTO <span>CLOTHING</span></p>
+        <p class="inspire">YOU POST IMAGES AND THE COMMUNITY VOTES<br>GET ENOUGH VOTES AND WE DESIGN AN ITEM FOR THE SHOP</p>
+        <p class="design">BASED ON THE IMAGES YOU POST AND RECEIVE ENOUGH VOTES</br>WE CREATE A FASHION ITEM JUST FOR YOU TO BE SOLD IN OUR SHOP</p>
+        <p class="earn">FOR EVERY ITEM THAT YOU INSPIRE</br>YOU GET A CHECK FOR 5% OF ALL SALES OF THAT ITEM!!</p>
+    </div>
+    <ul id="theMethod">
+        <li data-section="inspire"><img src="/images/hb_insp.png"></li>
+        <li data-section="design"><img src="/images/hb_des.png"></li>
+        <li data-section="earn"><img src="/images/hb_earn.png"></li>
     </ul>
 </div>
 
@@ -68,5 +77,32 @@
                });
            });
        });
+
+        new learnEm();
     });
+
+    function learnEm() {
+        var text = {'default': 'YOU <span>POST</span> FASHION IMAGES</BR>WE TURN YOUR IMAGES INTO <span>CLOTHING</span>',
+            'inspire' : 'YOU POST IMAGES AND THE COMMUNITY VOTES<br>GET ENOUGH VOTES AND WE DESIGN AN ITEM FOR THE SHOP',
+            'design' : 'BASED ON THE IMAGES THAT RECIEVE ENOUGH VOTES</br>WE CREATE A FASHION ITEM JUST FOR YOU TO BE SOLD IN OUR SHOP',
+            'earn' : 'FOR EVERY ITEM THAT YOU INSPIRE</br>YOU GET A CHECK FOR 5% OF ALL SALES OF THAT ITEM!!'
+        };
+        var $view = $('.bits');
+        var $def = $('.bits .default');
+        var timer = 100;
+        var $last = null;
+
+        $('#theMethod li').hover(function() {
+            if($last && $last.is(':visible')) {
+                $last.hide();
+            }
+            $def.fadeOut(timer);
+            $('.'+$(this).data('section')).fadeIn(timer);
+        }, function() {
+            $last = $('.'+$(this).data('section')).fadeOut(timer);
+        });
+        $('#theMethod').on('mouseleave', function() {
+            $def.fadeIn(timer);
+        });
+    }
 </script>

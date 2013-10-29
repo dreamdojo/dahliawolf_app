@@ -563,7 +563,7 @@ $(function(){
 		if ($(event.target).hasClass('modal') || $(event.target).hasClass('close')) {
 			$(this).hide(function() {
 				$('body').css('overflow', 'auto');
-				window.history.replaceState( {} , 'Post Detail', '/spine' );
+				window.history.replaceState( {} , 'Post Detail', '/vote' );
 				$modal_content.empty();
 			});
 			return false;
@@ -593,7 +593,7 @@ userLogin.prototype.loginUser = function(e) {
             alert(str);
             sendToAnal({name:'Failed to Login', errorCode: str});
         } else {
-            document.location = '/spine';
+            document.location = '/vote';
         }
     });
 }

@@ -79,6 +79,18 @@ $(document).ready(function()
         </ul>
     </div>
     <a href="/home"><div id="dahliaLogo"></div></a>
+    <ul class="native_head">
+        <li>
+            <a href="https://itunes.apple.com/us/app/dahlia-wolf-fashion/id718253685?ls=1&mt=8">
+                <img src="/images/nh_ios.png">
+            </a>
+        </li>
+        <li>
+            <a href="https://play.google.com/store/apps/details?id=com.zyonnetworks.dahliawolf2&hl=en">
+                <img src="/images/nh_droid.png">
+            </a>
+        </li>
+    </ul>
     <ul id="mainMenu">
         <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
         <li><a href="/vote"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/vote.php'  || $self == '/index.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
@@ -86,34 +98,37 @@ $(document).ready(function()
     </ul>
     <div id="rightHandMenu">
         <div id="tourButton"></div>
-        <? if(IS_LOGGED_IN): ?>
-            <a href="/shop/checkout.php"><div id="shoppingCart"></div></a>
-        <? endif ?>
-            <div id="searchButton"></div>
-        <? if(IS_LOGGED_IN): ?>
+        <a href="/shop/checkout.php"><div id="shoppingCart"></div></a>
+        <div id="searchButton"></div>
         <div id="userMenu">
             <div class="rtBorder"></div>
             <div class="menuBars"><img src="/images/menu-bars.png"></div>
-            <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
-            <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #B1B1B1 !important;"><?= $_SESSION['user']['username'] ?></a></div>
+            <? if(IS_LOGGED_IN): ?>
+                <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
+                <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #B1B1B1 !important;"><?= $_SESSION['user']['username'] ?></a></div>
+            <? endif ?>
             <ul>
                 <div class="header-bezier"></div>
-                <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
-                <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
-                <a href="/activity"><li>Activity</li></a>
-                <a href="/invite"><li>Grow My Clique</li></a>
+                <? if(IS_LOGGED_IN): ?>
+                    <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
+                    <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
+                    <a href="/activity"><li>Activity</li></a>
+                    <a href="/invite"><li>Grow My Clique</li></a>
+                    <a href="/account/settings"><li>Settings</li></a>
+                    <a href="/shop/my-orders"><li>Orders</li></a>
+                <? endif ?>
                 <a href="/goodies"><li>Goodies</li></a>
                 <!--<a href="/shop/my-wishlist"><li>Wishlist</li></a>-->
                 <a href="/pinit"><li>Inspire Tool</li></a>
-                <a href="/account/settings"><li>Settings</li></a>
-                <a href="/shop/my-orders"><li>Orders</li></a>
                 <a href="/wolf-pack"><li style="border-bottom: none;">Pack Leaders</li></a>
                 <a href="/faqs"><li>FAQ</li></a>
-                <a href="/action/logout"><li>Logout</li></a>
+                <? if(IS_LOGGED_IN): ?>
+                    <a href="/action/logout"><li>Logout</li></a>
+                <? endif ?>
                 <li class="top-menu-footer"><a href="/help">How it Works</a> - <a href="/tos">Legal</a> - <a href="/contact">Contact</a> - <bold>© Dahlia Wolf 2013</bold></li>
             </ul>
         </div>
-        <? else: ?>
+        <? if(!IS_LOGGED_IN): ?>
             <ul class="loginDept">
                 <li onclick="loginscreen('login')">Login<div class="mmBorder"></div></li>
                 <li onclick="loginscreen('signup')" style="margin-right: 20px; color: #F03E63;">Signup</li>
