@@ -96,7 +96,7 @@ shop.prototype.product.prototype.addToShop = function() {
     }
     this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
-    this.$image_view.append( this.getPrice()).append( this.getImage() );
+    this.$image_view.append( this.getPrice()).append( this.getImage()).wrap( $('<a href="/shop/'+this.data.id_product+'"></a>') );
     this.$inspiration_view.append( this.getInspiration() );
 }
 

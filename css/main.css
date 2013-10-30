@@ -327,17 +327,17 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .pd-unLoved { background-image:url(/images/postDetailsLoveButton.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
 #shareRow{ height:100%; width:400px; float:left;}
 .postShareTitle{text-align: center; width: 100%;height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px;border: 1px solid rgb(221, 221, 221);}
-#postShareSection{width: 420px;float: right;margin-right: 40px;}
-.shareButts{height: 82px; width:104%;}
-.shareButts li{width: 63.7px;height:85%; float:left;background-color: #FFF; margin-top: 5px;margin-right: 5px; border:#dfdfdf thin solid; cursor:pointer;}
+#postShareSection{width: 260px;margin-right: 40px;}
+.shareButts{height: 50px; width:104%;}
+.shareButts li{width: 39.4px;height:40%; float:left;background-color: #FFF; margin-top: 5px;margin-right: 5px; cursor:pointer;}
 .shareButts li:hover{background-color: rgb(202, 202, 202) !important;}
-#shareFacebook{background: url(/mobile/images/shareFb.png) no-repeat; background-position: 50%;background-size: 160% auto; background-color:#fff;}
-#sharePinterest{background: url(/mobile/images/sharePintrest.png) no-repeat; background-position: 50%;background-size: 160% auto; background-color:#fff;}
-#shareInstagram{background: url(/mobile/images/shareInstagram.png) no-repeat; background-position: 50%;background-size: 66% auto; background-color:#fff;}
-#shareTumbler{background: url(/mobile/images/shareTumbler.png) no-repeat; background-position: 50%;background-size: 160% auto; background-color:#fff;}
-#shareTwitter{background: url(/mobile/images/shareTwitter.png) no-repeat; background-position: 50%;background-size: 160% auto; background-color:#fff;}
-#shareEmail{background: url(/mobile/images/shareEmail.png) no-repeat; background-position: 50%;background-size: 160% auto; background-color:#fff;}
-#shareGplus{background: url(/mobile/images/shareGplus.png) no-repeat; background-position: 50%;background-size: auto 100%; background-color:#fff;}
+#shareFacebook{background: url(/mobile/images/shareFb.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
+#sharePinterest{background: url(/mobile/images/sharePintrest.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
+#shareInstagram{background: url(/mobile/images/shareInstagram.png) no-repeat; background-position: 50% -5px; background-size: 66% auto; background-color:#fff;}
+#shareTumbler{background: url(/mobile/images/shareTumbler.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
+#shareTwitter{background: url(/mobile/images/shareTwitter.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
+#shareEmail{background: url(/mobile/images/shareEmail.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
+#shareGplus{background: url(/mobile/images/shareGplus.png) no-repeat; background-position: 50% -5px; background-size: 100%; background-color:#fff;}
 #postDetailMainRow{height: 620px;width: 100%;margin-top: 20px;}
 .postImageFrame{ width: 620px;overflow: hidden;float: left;height: 100%;background-color: white;margin-left: 20px;border: 1px solid rgb(224, 224, 224); position: relative;}
 .postImageFrame img{height: 100%;}
