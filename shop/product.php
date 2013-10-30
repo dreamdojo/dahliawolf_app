@@ -117,15 +117,14 @@
                 <p class="content"><?= $_data['product']['product']['story_behind_design'] ?></p>
             </li>
         </ul>
-
     </div>
     <div class="centerCol">
         <? if (!empty($_data['product']) && !empty($_data['product']['files'])): ?>
             <!--<div id="nextImage">></div>-->
-            <ul class="productImagesFrame">
+            <ul class="productImagesFrame" id="prodImgFrame">
                 <? foreach ($_data['product']['files'] as $i => $file): ?>
                     <? $image_url = CDN_IMAGE_SCRIPT . $file['product_file_id'] . '&width=' . $width . '&height=' . $height; ?>
-                    <li>
+                    <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                         <img src="<?= $image_url ?>" width="<?= $width ?>" />
                     </li>
                 <? endforeach ?>
@@ -235,12 +234,31 @@
        }
 
         var thumbs = $('#thumbs li');
+        var lengtho = 200;
         if(thumbs.length) {
             $.each(thumbs, function(x, thumb) {
                 $(thumb).hover(function() {
-                    $('.productImagesFrame li').hide();
-                    $( $('.productImagesFrame li')[x] ).fadeIn(100);
+                    if(!$($('.productImagesFrame li')[x]).hasClass('showing')) {
+                        $('.showing').fadeOut(lengtho).removeClass('showing');
+                        $( $('.productImagesFrame li')[x] ).addClass('showing').fadeIn(lengtho);
+                    }
+                }, function() {
+                    //console.log('df');
                 });
+            });
+            $('<div id="leftArrow" class="arrow"></div>').prependTo( $('.centerCol')).on('click', function() {
+                var $sel = $('.showing');
+                if($sel.prev().length) {
+                    $sel.removeClass('showing').fadeOut(lengtho).prev().addClass('showing').fadeIn(lengtho);
+                }
+            });
+            $('<div id="rightArrow" class="arrow"></div>').appendTo( $('.centerCol')).on('click', function() {
+                var $sel = $('.showing');
+                if($sel.next().length) {
+                    $sel.removeClass('showing').fadeOut(lengtho).next().addClass('showing').fadeIn(lengtho);
+                } else {
+
+                }
             });
         }
     });
