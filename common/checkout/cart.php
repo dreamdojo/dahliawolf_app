@@ -295,10 +295,34 @@ $is_review = !empty($is_review) ? true : false;
 							<label for="cart-store-credit-amount">Enter an amount to redeem:</label>
 							<input type="text" name="amount" id="cart-store-credit-amount" value="<?= !empty($_data['cart']['cart_store_credit']) ? $_data['cart']['cart_store_credit']['amount'] : '0.00' ?>" />
 							<span>/ $<?= number_format($_data['cart']['available_store_credits']['total_credits'], 2) ?> (Store Credits)</span>
-							<p class="button"><a onclick="$(this).closest('form').submit()">Redeem Store Credit</a></p>
+							<p class="button"><a id="cart-store-credit-amount-submit">Redeem Store Credit</a></p>
 						</fieldset>
 					</form>
 				</div>
+
+                <script>
+
+                    $('#cart-store-credit-amount-submit').on('click', function()
+                    {
+                        var grant_total         = parseFloat(<?php echo $_data['cart']['cart']['totals']['grand_total']; ?>);
+                        var total_store_credit  = parseFloat(<?php echo $_data['cart']['available_store_credits']['total_credits']; ?>);
+                        var apply_store_credit  = parseFloat( $('#cart-store-credit-amount').val() );
+
+                        if(  (total_store_credit >  grant_total) && (apply_store_credit > grant_total)  )
+                        {
+                            $('#cart-store-credit-amount').val(grant_total);
+                        }
+
+                        $(this).closest('form').submit()
+
+                    });
+
+
+
+                </script>
+
+
+
 	            <?
 			}
 		}
@@ -456,7 +480,7 @@ $is_review = !empty($is_review) ? true : false;
 			<tfoot>
 				<tr>
 					<th scope="row">Grand Total</th>
-					<td>$<?= !empty($_data['cart']) ? number_format($_data['cart']['cart']['totals']['grand_total'], 2, '.', ',') : '0.00' ?></td>
+					<td>$<?= !empty($_data['cart']) ? number_format( $_data['cart']['cart']['totals']['grand_total'], 2, '.', ',') : '0.00' ?></td>
 				</tr>
 			</tfoot>
 			<tbody>
