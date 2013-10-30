@@ -166,7 +166,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 
     function onVideoProgress(evt) {
         var curr_time = evt.target.currentTime;
-        console.log("progress progress progress..... " + curr_time);
+        //console.log("progress progress progress..... " + curr_time);
 
         var index = getTickerIndex(curr_time);
         if(index){ triggerTicker(index); }
@@ -190,19 +190,17 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
     {
         if(__is_ticker_active) return;
 
-
-
         __is_ticker_active = true;
         var current_tick = __video_queue[_index];
 
-        console.log("triggerTicker..... " + current_tick.header);
+        //console.log("triggerTicker..... " + current_tick.header);
 
         $('.videoticker').fadeOut(250, function(){ $(this).remove();} );
 
         var ticker_wrapper  = $('<div class="videoticker" style="position: absolute; top: 50%; z-index: 999; margin-left: 40px; display: none"  />');
 
-        var subheader       = $('<p style="font-size: 75%; color: #fff; line-height: 100%" >').text(current_tick.subheader);
-        var header          = $('<p style="font-size: 200%; color: #fff; line-height: 100%; margin-top: -5px" >').text( current_tick.header);
+        var subheader       = $('<p style="font-size: 75%; opacity: .85;  color: #fff; line-height: 100%" >').text(current_tick.subheader);
+        var header          = $('<p style="font-size: 200%; opacity: .85; color: #fff; line-height: 100%; margin-top: -5px" >').text( current_tick.header);
 
         ticker_wrapper
             .append(subheader)
@@ -214,8 +212,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
         ticker_wrapper
             .fadeIn(500)
             .delay(current_tick.ttl*1000)
-            .fadeOut(500, function(){ $(this).remove(); __is_ticker_active = false; console.log('IM OUT!') })
-
+            .fadeOut(500, function(){ $(this).remove(); __is_ticker_active = false; /* console.log('IM OUT!')*/ })
 
     }
 
@@ -232,7 +229,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
             }
         }
 
-        console.log("ticker index.. " + index);
+        //console.log("ticker index.. " + index);
 
         return index;
     }
