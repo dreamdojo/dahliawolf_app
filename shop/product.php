@@ -75,7 +75,7 @@
     #shopContent .rightCol h3{height: 30px;color: #000;font-size: 16px;line-height: 20px;}
     #shopContent .rightCol .regularPrice{color: #000;line-height: 30px;font-size: 17px;text-indent: 10px;text-align: right;}
     #shopContent .rightCol .presalePrice{color: #000;line-height: 30px;font-size: 17px;text-indent: 10px;}
-    #shopContent .productImagesFrame{width: 100%; height: 600px; position: relative;}
+    #shopContent .productImagesFrame{width: 100%; height: 600px; position: relative; overflow: hidden;}
     #shopContent .productImagesFrame li{width: 100%;overflow: hidden;position: absolute; display: none;}
     #shopContent .productImagesFrame li:first-child{display: block;}
     #shopContent .productImagesFrame li img{width: 100%;}
@@ -97,8 +97,8 @@
     #postShareSection{margin-right: 0px;}
     .timeLeft{text-align: right;font-size: 15px;line-height: 50px;}
     .timeLeft span{font-weight: 700;}
-    #thumbs{width: 100%;}
-    #thumbs li{width: 20%; float: left;border: #c2c2c2 thin solid;margin-left: 10px;}
+    #thumbs{width: 100%; margin-top: 10px;}
+    #thumbs li{width: 20%; float: left;border: #c2c2c2 thin solid;margin-left: 10px; max-height: 121px;overflow: hidden;}
     #thumbs li img{width: 100%;}
 </style>
 
@@ -169,11 +169,11 @@
         <ul class="regularPrice">
             <li><span <?= $status == 'Pre Order' ? 'style="text-decoration:line-through"' : '' ?>>$<?= number_format( ($_data['product']['product']['price']), 2, '.', ',') ?></span></li>
             <? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
-                <li><span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% OFF PRE_ORDER' : ''?></span> $<?= number_format( ($_data['product']['product']['price']*.7), 2, '.', ',') ?></li>
+                <li><span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% OFF PRE-ORDER' : ''?></span> $<?= number_format( ($_data['product']['product']['price']*.7), 2, '.', ',') ?></li>
             <? endif ?>
         </ul>
         <? if( $status == 'Pre Order'): ?>
-            <div class="timeLeft"><span>28 Days</span> left to pre-order at 30% off</div>
+            <div class="timeLeft"><span style="font-weight: 700;"><span id="daysLeft">28</span> Days</span> left to pre-order at 30% off</div>
         <? endif ?>
         <div>
             <form action="/action/shop/add_item_to_cart.php" method="post">
@@ -227,11 +227,10 @@
 <script>
     console.log(<?= json_encode( $_data['product'] ) ?>);
 
+
     $(function() {
-       if( $('#theCountdown').length ) {
-           var productData = <?= json_encode( $_data['product'] ) ?>;
-           var newYear = new Date(productData.product.commission_from_date);
-       }
+        var data = <?= json_encode( $_data['product'] ) ?>;
+        $('#daysLeft').html(getDaysLeft(data.product.commission_from_date));
 
         var thumbs = $('#thumbs li');
         var lengtho = 200;

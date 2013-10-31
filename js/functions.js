@@ -894,3 +894,15 @@ voteDot.prototype = {
 
     set setLoved(val) { this.data.is_liked = val;}
 }
+
+function getDaysLeft(date) {
+    var firstDate = new Date();
+    var secondDate = new Date(date);
+    var oneDay = 24*60*60*1000;
+
+    var retVal =  Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+    if(retVal > 100 ) {
+        retVal = 0;
+    }
+    return retVal;
+}

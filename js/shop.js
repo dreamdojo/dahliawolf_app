@@ -92,7 +92,7 @@ shop.prototype.product.prototype.addToShop = function() {
     this.$image_view = $('<div class="product-details"></div>').appendTo(this.$view);
     this.$inspiration = $('<div class="inspirationImage"><img src="'+this.data.inspiration_image_url+'"></div>');
     if(this.data.product_images.length > 1) {
-        this.$photoTwo = $('<div class="takeTwo"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_images[1].product_file_id+'&width=400"></div>').appendTo(this.$image_view);
+        this.$photoTwo = $('<div class="takeTwo">'+(this.data.status === 'Pre Order' ? '<div class="daysEnd"><span class="dahliaPink">'+getDaysLeft(this.data.commission_from_date)+' Days</span> <span style="font-style: italic; color: #000;"> left to pre-order at 30% OFF</span></div>' : '')+'<img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_images[1].product_file_id+'&width=400"></div>').appendTo(this.$image_view);
     }
     this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
@@ -113,11 +113,10 @@ shop.prototype.product.prototype.getStatus = function() {
 
 shop.prototype.product.prototype.getPrice = function() {
     var str =  '<ul class="priceBox">' +
-            '<li class="sale-price" style="'+(this.data.status === 'Pre Order' ? '' : 'visibility: hidden;')+'">$'+Math.floor(this.data.sale_price).toFixed(2)+'</li>'+
-            (this.data.status !== 'Live' ? '<li class="pre_order">'+this.data.status+'</li>' : '') +
+            '<li class="sale-price" style="'+(this.data.status === 'Pre Order' ? '' : 'visibility: hidden;')+'">$'+Math.floor(this.data.sale_price).toFixed(2)+' pre-order price</li>'+
             '<li style="'+(this.data.status === 'Pre Order' ? 'text-decoration: line-through;' : '')+'">$'+Math.floor(this.data.price).toFixed(2)+'</li>' +
         '</ul>';
-    return '<div class="priceLine"><div class="product-name">'+this.data.product_name+'</div>'+str+'</div>';
+    return '<div class="priceLine"><div class="product-name"></div>'+str+'</div>';
 }
 
 shop.prototype.product.prototype.getImage = function() {
@@ -130,7 +129,7 @@ shop.prototype.product.prototype.getInspiration = function() {
     } catch(err) {
         var username = '';
     }
-    return '<ul><li class="avatarFrame avatarShadow" style="background-image: url(\''+this.data.avatar+'&width=100\');"></li><li class="inspire"><span class="dahliaPink">Inspired By </span></li><li><a href="/'+username+'">'+username+'</a></li></ul>'
+    return '<div class="prodTitle">'+this.data.product_name+'</div><ul><li class="avatarFrame avatarShadow" style="background-image: url(\''+this.data.avatar+'&width=100\');"></li><li>By <a href="/'+username+'">'+username+'</a></li></ul>'
 }
 
 shop.prototype.product.prototype.getWishlistButton = function() {
