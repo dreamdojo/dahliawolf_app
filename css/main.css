@@ -312,6 +312,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 /************************ POST DETAILS AND GRID ***********/
 .post-details-container{width: 1000px;height: 800px;margin-top: 25px; margin: 0px auto;color: rgb(102, 102, 102);font-family: Helvetica, sans-serif;font-weight: 100;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);padding-bottom: 20px;position: relative;}
 #postDetailTopRow{ width: 100%;height: 100px;padding-top: 20px;background-color: white;padding-bottom: 20px;}
+#postDetailTopRow #postShareSection{width: 320px;margin-right: 10px; float: right;}
+#postDetailTopRow #postShareSection li{height: 70px;width: 14.2%; border: #c2c2c2 thin solid; background-position: 50%;}
 .postDetailAvatarFrame{height:75px; width:75px; overflow:hidden; float:left; margin-left: 20px;background-size: auto 100%;background-position: 50%;border-radius: 50px;}
 .postDetailAvatarFrame img{ width:100%;}
 #postDetailTopRow .deetsList{ height:100%; width:270px; float:left; text-align: left;margin-left: 10px;font-size: 10px;}
