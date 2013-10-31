@@ -121,8 +121,6 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
     function centerVideo($this) {
         var $video = $('#slideshow-frame video');
 
-
-
         if($video.height() > window.innerHeight){
             $video.css('top', '-'+(($video.height() - window.innerHeight)/2)+'px');
         }
@@ -142,7 +140,6 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 
         var font_size = $video.width()*$video.height()/20000;
         $('#slideshow-frame').css({'font-size': font_size+'px'})
-
     }
 
 
