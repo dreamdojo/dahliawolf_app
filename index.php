@@ -148,13 +148,6 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 
     var __video_queue = [];
 
-    /*
-    __video_queue.push({  triggertime: 9,  ttl: 5, subheader: "YOU", header: "INSPIRE" });
-    __video_queue.push({  triggertime: 18, ttl: 7, subheader: "MEMBERS", header: "VOTE" });
-    __video_queue.push({  triggertime: 27, ttl: 5, subheader: "WE", header: "DESIGN" });
-    __video_queue.push({  triggertime: 34, ttl: 4, subheader: "YOU", header: "EARN" });
-    */
-
     __video_queue.push({  triggertime: 9,  ttl: 3, subheader: "YOU", header: "INSPIRE" });
     __video_queue.push({  triggertime: 18, ttl: 5, subheader: "MEMBERS", header: "VOTE" });
     __video_queue.push({  triggertime: 25.5, ttl: 3, subheader: "WE", header: "DESIGN" });
