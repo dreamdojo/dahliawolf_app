@@ -11,7 +11,7 @@ function userList(user, action) {
     if(user) {
         this.user = user;
     } else {
-        alert('user not set');
+        //alert('user not set');
     }
 
     this.bindScroll();
