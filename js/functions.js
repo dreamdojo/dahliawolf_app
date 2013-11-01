@@ -384,10 +384,11 @@ function user_events() {
 			$('input[name="shipping_address"]').val(saved_billing_select.data('street'));
 			$('input[name="shipping_address_2"]').val(saved_billing_select.data('address_2'));
 			$('input[name="shipping_city"]').val(saved_billing_select.data('city'));
+            $('select[name="shipping_country"]').val(saved_billing_select.data('country')).trigger('change');
 			$('select[name="shipping_state"]').val(saved_billing_select.data('state'));
 			//$('input[name="shipping_province"]').val(saved_billing_select.data('state'));
-			$('select[name="shipping_country"]').val(saved_billing_select.data('country')).trigger('change');
 			$('input[name="shipping_zip"]').val(saved_billing_select.data('zip'));
+            $('input[name="shipping_phone"]').val(saved_billing_select.data('phone'));
 		}
 		else {
 			$('input[name="shipping_first_name"]').val($('input[name="billing_first_name"]').val());
@@ -395,10 +396,10 @@ function user_events() {
 			$('input[name="shipping_address"]').val($('input[name="billing_address"]').val());
 			$('input[name="shipping_address_2"]').val($('input[name="billing_address_2"]').val());
 			$('input[name="shipping_city"]').val($('input[name="billing_city"]').val());
-			$('select[name="shipping_state"]').val($('select[name="billing_state"]').val());
-			//$('input[name="shipping_province"]').val($('input[name="billing_province"]').val());
-			$('select[name="shipping_country"]').val($('select[name="billing_country"]').val()).trigger('change');
+            $('select[name="shipping_country"]').val($('select[name="billing_country"]').val()).trigger('change');
 			$('input[name="shipping_zip"]').val($('input[name="billing_zip"]').val());
+            $('input[name="shipping_phone"]').val($('input[name="billing_phone"]').val());
+            $('select[name="shipping_state"]').val( $('select[name="billing_state"]').val() );
 
 			/*if ($('select[name="billing_state"]').is(':visible')) {
 				$('input[name="shipping_province"]').hide();
@@ -435,7 +436,7 @@ function user_events() {
 	});
 
 	// Billing/Shipping dynamic country states/provinces
-	$('form.billing select.country').on('change', function() {
+	$('#billing-country, #shipping-country').on('change', function() {
 		var $this = $(this);
 		var $fieldset = $this.closest('fieldset');
 		var $state_select = $fieldset.find('select.state');
@@ -457,6 +458,7 @@ function user_events() {
                 html += '<option value="N/A" selected="selected">' + 'Not Applicable' + '</option>';
 			}
 			$state_select.html(html);
+            $('select[name="shipping_state"]').val( $('select[name="billing_state"]').val() );
 		});
 	});
 

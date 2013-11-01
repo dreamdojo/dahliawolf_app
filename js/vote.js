@@ -10,6 +10,8 @@ function voteFeed(config) {
     this.$spineButton = $('#selectSpine');
     this.$gridButton = $('#selectGrid');
     this.isApiAvailable = true;
+    this.setOrder = 'total_likes';
+    this.like_day_threshold = 7;
 
     this.prepBucket();
     this.getPostsFromApi();
