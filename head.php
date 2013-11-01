@@ -35,7 +35,7 @@ if ($top_dir == 'shop') {
 <? if( !empty($_GET['posting_id']) ): ?>
 	<meta property="og:image" content="<?= $_data['post']['image_url'] ?>" />
 <? elseif( !empty($_GET['id_product']) ): ?>
-	<meta property="og:image" content="<?= CDN_IMAGE_SCRIPT . $_data['product']['product']['id_product'] ?>" />
+	<meta property="og:image" content="<?= CDN_IMAGE_SCRIPT . $_data['product']['files'][0]['product_file_id'] ?>" />
 <? else: ?>
 	<meta property="og:image" content="http://www.dahliawolf.com/images/logo_190x190.jpg">
 <? endif ?>
