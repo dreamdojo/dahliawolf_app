@@ -689,7 +689,7 @@ ul.checkout.nav li {
 }
 ul.checkout.nav a {
 	display: block;
-    width: 166px;
+    width: 250px;
 	padding-bottom: 15px;
 	font-weight: normal;
 	border-bottom: 20px solid #ccc;
@@ -699,8 +699,8 @@ ul.checkout.nav a:hover {
 	opacity: 0.8;
 }
 ul.checkout.nav .completed a {
-	border-color: #c96161;
-	color: #c96161;
+    border-color: #cf1f40;
+    color: #cf1f40;
 }
 ul.checkout.nav .current a {
 	border-color: #cf1f40;

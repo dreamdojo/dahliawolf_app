@@ -5,17 +5,17 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
 ?>
 <div class="shop body checkout">
-	<? include DR . "/common/cart-summary.php"; ?>
+	<? //include DR . "/common/cart-summary.php"; ?>
 	
 	<h2>Checkout</h2>
 	
 	<?
 	$checkout_steps = array(
-		'cart' => 'My Shopping Cart'
-		, 'billing' => 'Billing & Shipping'
+		'cart' => 'Shopping Cart'
+		, 'billing' => 'Address'
 		, 'shipping' => 'Shipping Options'
 		//, 'payment' => 'Payment Type'
-		, 'confirmation' => 'Order Review'
+		, 'confirmation' => 'Payment'
 	);
 	$current_step = 'cart';
 	if (isset($_GET['step']) && !empty($checkout_steps[$_GET['step']])) {

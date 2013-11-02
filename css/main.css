@@ -1543,12 +1543,16 @@ width: 174px;
 #CollaboratorsList .person .Button {float: right;}
 #CollaboratorsList .PersonPins {display: none;}
 
+#shippingFields{display: none;}
+#pop-ship{height: 35px;width: 35px;border: #C0C0C0 1px solid;float: left;margin-left: 180px;margin-right: 10px;line-height: 35px;text-align: center;font-size: 30px;color: #a3a3a3;}
+.fail{border-color: red !important;}
+.good{}
 /* FORMS
 --------------------------------------------------------------------------------------- */
 .Form li {display: block; margin-bottom: 10px; font-size: 16px; font-weight: 300;}
   .Form input[type=text],
   .Form input[type=password],
-  .Form textarea {display: inline-block; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box; padding: 6px 12px; font-size: 16px; font-weight: bold; line-height: 1.2em; color: #221919; background: #fff; /*border: 1px solid #a4a2a2; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;*/ box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8); -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8); -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8); -moz-transition: all 0.08s ease-in-out; -webkit-transition: all 0.08s ease-in-out;}
+  .Form textarea {border: #AFAFAF thin solid;display: inline-block; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box; padding: 6px 12px; font-size: 16px; font-weight: bold; line-height: 1.2em; color: #221919; background: #fff; /*border: 1px solid #a4a2a2; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;*/  -moz-transition: all 0.08s ease-in-out; -webkit-transition: all 0.08s ease-in-out;}
   .Form textarea {min-height: 90px;}
   .Form label {display: inline-block; line-height: 1.4em; font-size: 16px;}
   .Form input[type=radio] {float: left; margin-right: 8px; border: none;}
@@ -1603,10 +1607,10 @@ width: 174px;
 
 /* Static Form */
 .StaticForm {margin: 36px 0; font-size: 13px;}
-  .StaticForm h3 {padding: 0 0 18px; font-size: 28px; line-height: 1.1em; font-weight: bold; color: #524d4d; text-shadow: 0 1px rgba(255,255,255,0.9); border-bottom: 3px double rgba(34,25,25,0.1);overflow: hidden;}
+  .StaticForm h3 {padding: 0 0 18px; font-size: 28px; line-height: 1.1em; font-weight: bold; color: #524d4d; text-shadow: 0 1px rgba(255,255,255,0.9); overflow: hidden;}
   .StaticForm h3 a {font-weight: 300;}
-  .StaticForm li {clear: both; margin: 0; padding: 15px 0; color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); border-top: 1px solid rgba(255,255,255,0.7); border-bottom: 1px solid rgba(34,25,25,0.1); float: left; width: 100%;} /* Float and Width for IE */
-  .StaticForm li:last-child {border-bottom: 3px double rgba(34,25,25,0.1);}
+  .StaticForm li {clear: both; margin: 0; padding: 5px 0; color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;} /* Float and Width for IE */
+  .StaticForm li:last-child {}
   .StaticForm li:after {clear: both; display: block; height: 0; content: " "; visibility: hidden;}
   .StaticForm label {float: left; width: 180px; padding-top: 7px; vertical-align: top;}
   .StaticForm label.radio { padding-top: 24px; } /* If the list item holds a radio, it needs more spacing to be consistent */
