@@ -6,6 +6,9 @@
 <?
 // Errors
 if (!empty($_SESSION['errors'])): ?>
+    <script>
+        sendToAnal({name:'ERROR', type, '<?= $_SESSION['errors'][0] ?>' });
+    </script>
 	<div class="user-message user-error ui-state-error ui-corner-all">
         <div class='user-message-close'>X</div>
         <?php if (count($_SESSION['errors']) == 1): ?>
