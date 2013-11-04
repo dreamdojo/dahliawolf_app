@@ -146,7 +146,7 @@ else if ($self == '/explore.php' || $self == '/welcome_two.php') {
 	$data = api_call('posting', 'get_vote_posts', $params, true);
 	$_data['posts'] = $data['data'];
 }
-else if ($self == '/profile.php') {
+else if ($self == '/profile.php' || $self == '/pages/profile.php') {
 	require DR . '/includes/php/classes/Spine' . $_data['spine_version'] . '.php';
 	$spine_limit = Spine::get_spine_limit();
 

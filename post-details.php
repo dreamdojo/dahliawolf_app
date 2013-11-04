@@ -43,7 +43,7 @@
 
     <div id="postDetailTopRow">
         <a href="/<?= $_data['post']['username'] ?>">
-            <div class="postDetailAvatarFrame" style='background-image: url("<?= $_data['post']['avatar'] ?>")'></div>
+            <div class="postDetailAvatarFrame" style='background-image: url("<?= $_data['post']['avatar'] ?>&width=200")'></div>
         </a>
         <ul class="deetsList">
         	<li class="postDetailUsername name"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>

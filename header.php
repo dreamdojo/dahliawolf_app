@@ -27,6 +27,9 @@ if (!empty($_SESSION['errors'])): ?>
 <?php endif ?>
 
 <?php if( !empty($_SESSION['success']) ): ?>
+    <script>
+        sendToAnal({name:'SUCCESS', type, '<?= $_SESSION['success'] ?>' });
+    </script>
     <div class="user-message user-success ui-state-highlight ui-corner-all">
         <div class='user-message-close'>X</div>
         <p><?= $_SESSION['success'] ?></p>
