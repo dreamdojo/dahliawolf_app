@@ -18,7 +18,7 @@
 <body>
 
 <div id="slideshow-frame">
-    <video id="dwvideo" controls style="min-width: 100%; min-height: 100%;" autoplay>
+    <video id="dwvideo" controls style="min-width: 100%; min-height: 100%;" autoplay loop>
         <source src="http://dev.dahliawolf.com/images/video/story.mp4" type="video/mp4">
         <source src="http://dev.dahliawolf.com/images/video/story.ogv" type="video/ogg">
     </video>
