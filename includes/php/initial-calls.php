@@ -288,7 +288,7 @@ else if ($self == '/account/wild-4s.php') {
 	$data = api_call('posting', 'get_liked_posts', $params, true);
 	$_data['posts'] = $data['data'];
 }
-else if ($self == '/account/settings.php') {
+else if ($self == '/account/settings.php' || $self == '/pages/settings.php') {
 	if (empty($_SESSION['user']) || empty($_SESSION['user']['user_id'])) {
 		default_redirect();
 	}

@@ -92,7 +92,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <body>
 
 <div id="slideshow-frame">
-    <video id="dwvideo" controls style="min-width: 100%; min-height: 100%;" autoplay>
+    <video id="dwvideo" muted controls style="min-width: 100%; min-height: 100%;" autoplay>
         <source src="http://dev.dahliawolf.com/images/video/story.mp4" type="video/mp4">
         <source src="http://dev.dahliawolf.com/images/video/story.ogv" type="video/ogg">
     </video>
