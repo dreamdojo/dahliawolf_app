@@ -14,6 +14,7 @@ sup{vertical-align:text-top;}
 sub{vertical-align:text-bottom;overflow:hidden;}
 input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit; resize: none;outline:none;}
 legend{color:#000;}
+iframe{height:0px;}
 
 body { font-family: futura; font-size:10px;color:#211922; margin-top: 50px;}
 table{font-size:inherit;}
@@ -154,6 +155,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     .bankSection img:not(.fork-img){left: 50%;position: relative;margin-left: -19px;}
     #tourButton{display: none;}
 }
+.closeMovie{position: fixed;right: 20px;font-size: 45px;z-index: 1000000;color: #fff;top: 10px;cursor: pointer;}
 
 /*   POST BAR ******************************************/
 #tooltip-overlay{position:fixed; width:100%; height:100%; top:0px; left:0px; background-color:#000; opacity:.72; display:none; z-index: 100008;}
