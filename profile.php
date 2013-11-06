@@ -30,9 +30,7 @@
         	<div class="overlayLayer"></div>
             <div class="levelWrap">
                 <div class="userProfileAvatarHome">
-                    <div class="userProfileAvatarFrame">
-                        <a href="<?= $_data['user']['avatar'] ?>" target="_blank"><img alt="<?= $_SESSION['user']['username'] ?>" src="<?= $_data['user']['avatar'] ?>&width=152"/></a>
-                    </div>
+                    <a href="<?= $_data['user']['avatar'] ?>" target="_blank"><div class="userProfileAvatarFrame" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=252');"></div></a>
                 </div>
                 <ul class="userProfileDeetsList">
                     <li class="profileUsername"><a href="<?= $_data['user']['user_id'] ?>" style="float: left;" rel="message">@<?= $_data['user']['username'] ?></a>

@@ -1676,7 +1676,7 @@ width: 174px;
 #userProfileMenuBar{ margin-top: 10px;height: 47px;width: 98.5%;margin-left: .75%;background-color: #fff;margin-bottom: 10px;}
 #profilePostBin{}
 .userProfileAvatarHome{width: 140px; height:100%; float:left;padding-top: 10px;margin-left: 10px;}
-.userProfileAvatarFrame{overflow: hidden;border-radius: 110px;border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;}
+.userProfileAvatarFrame{overflow: hidden;border-radius: 110px;border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
 .userProfileAvatarFrame img{width:100%;}
 #userProfileDeetsRightCol{float:right; height:100%; width:500px;}
 .userProfileDeetsList{ text-align:left; height:100%; float:left;margin-top: 7px;margin-left: 20px;max-width: 300px;word-wrap: break-word;}

@@ -36,9 +36,9 @@ function validateEmail(email) {
 })(jQuery);
 
 function update_user_points(earned_points) {
-	$.get('/ajax/get-points.php', {user_id: user_id}, function(data) {
+	/*$.get('/ajax/get-points.php', {user_id: user_id}, function(data) {
 		user_points_animation(earned_points);
-	});
+	});*/
 }
 function user_points_animation(earned_points) {
 	if (earned_points) {

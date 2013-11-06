@@ -1,5 +1,5 @@
 function userList(user, action) {
-    this.limit = 20;
+    this.limit = 10;
     this.offset = 0;
     this.index = 0;
     this.users = [];
