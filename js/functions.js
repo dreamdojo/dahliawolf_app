@@ -862,6 +862,8 @@ function sendToAnal(data){
     if(data) {
         try{ if(woopraTracker) woopraTracker.pushEvent(data); }
         catch(e) { }
+        try{ _gaq.push(['_trackEvent', data.name, 'test']);}
+        catch(e) {}
     }
 }
 
