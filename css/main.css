@@ -228,7 +228,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 /************************ VOTE ******************/
 #voteBucket{width: 1000px; margin: 0px auto;padding-bottom: 200px;}
 #voteBucket .gridMode{max-width: 300px; overflow: hidden; float: left; margin: 16px 2px;}
-#voteBucket .userBar{bottom: 0;background-color: #c2c2c2;opacity: .9; top: auto;position: absolute; width: 100%; z-index: 1;}
+#voteBucket .userBar{bottom: 0;background-color: #e9e9e9; opacity: .9; top: auto;position: absolute; width: 100%; z-index: 1;}
 #voteBucket .spineMode{margin: 10px;}
 .spineMode  .post .innerwrap{position: relative;}
 .spineMode  .post .innerwrap img{position: absolute; min-height: 100%; min-width: 100% !important; width: auto !important;}
@@ -241,12 +241,12 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #voteBucket .righty{width: 50%; float: left;}
 #voteBucket .lefty .post{float: right;}
 #voteBucket .righty .post{float: left;}
-#voteBucket .userBar a{font-size: 14px;color: #fff;line-height: 24px;text-indent: 9px;font-family: futura;font-size: 13px;}
+#voteBucket .userBar a{font-size: 14px;color: #000;line-height: 24px;text-indent: 9px;font-family: futura;font-size: 13px;}
 #voteBucket .innerwrap{max-height: 600px; overflow: hidden;}
 #voteBucket .gCol{float: left; width: 33%; height: 100%;}
 #voteBucket .userBar ul{float: right; height: 100%;margin-right: 3px; cursor: pointer;}
 #voteBucket .userBar li{float: right;}
-#voteBucket .loveCount{font-size: 13px;line-height: 22px;margin-right: 1px; font-family: futura; color: #fff;}
+#voteBucket .loveCount{font-size: 13px;line-height: 22px;margin-right: 1px; font-family: futura; color: #000;}
 #voteBucket .loveHeart{background-image: url("/images/hearts_BG.png");background-size: auto 91%;z-index: 1;width: 22px;height: 23px;background-repeat: no-repeat;overflow: hidden;}
 
 .voteDot{position: absolute;width: 125px;height: 125px;margin-left: -75px;left: 50%;top: 50%;margin-top: -75px;
