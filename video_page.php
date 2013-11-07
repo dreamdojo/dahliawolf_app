@@ -63,13 +63,18 @@
         $('#slideshow-frame').css({'font-size': font_size+'px'})
     }
 
+    var __media_types = {};
+    __media_types.IMAGE = 'image';
+    __media_types.TEXT = 'text'
 
     var __video_queue = [];
 
-    __video_queue.push({  triggertime: 9,  ttl: 3, subheader: "YOU", header: "INSPIRE" });
-    __video_queue.push({  triggertime: 18, ttl: 5, subheader: "MEMBERS", header: "VOTE" });
-    __video_queue.push({  triggertime: 25.5, ttl: 3, subheader: "WE", header: "DESIGN" });
-    __video_queue.push({  triggertime: 34, ttl: 2, subheader: "YOU", header: "EARN" });
+    __video_queue.push({  triggertime: 9,  ttl: 3, subheader: "YOU", header: "INSPIRE", type: __media_types.TEXT });
+    __video_queue.push({  triggertime: 18, ttl: 5, subheader: "MEMBERS", header: "VOTE", type: __media_types.TEXT });
+    __video_queue.push({  triggertime: 25.5, ttl: 3, subheader: "WE", header: "DESIGN", type: __media_types.TEXT });
+    __video_queue.push({  triggertime: 34, ttl: 2, subheader: "YOU", header: "EARN", type: __media_types.TEXT });
+
+    __video_queue.push({  triggertime: 40, ttl: 2, src: "/images/video/dahliawolf_logo_color.svg", subheader: "", header: "", type: __media_types.IMAGE });
 
 
     var __is_ticker_active = false;
@@ -83,7 +88,7 @@
         if(index){ triggerTicker(index); }
         else {
             if (__is_ticker_active === false) {
-                $('.videoticker').fadeOut(250, function() { $(this).remove()  } );
+                $('.videoticker').fadeOut(250, function() { /*$(this).remove()*/  } );
             }
         }
 
@@ -108,14 +113,59 @@
 
         $('.videoticker').fadeOut(250, function(){ $(this).remove();} );
 
-        var ticker_wrapper  = $('<div class="videoticker" style="position: absolute; top: 50%; z-index: 999; margin-left: 40px; display: none"  />');
 
-        var subheader       = $('<p style="font-size: 75%; opacity: .85;  color: #fff; line-height: 100%" >').text(current_tick.subheader);
-        var header          = $('<p style="font-size: 200%; opacity: .85; color: #fff; line-height: 100%; margin-top: -5px" >').text( current_tick.header);
+        if(current_tick.type == __media_types.TEXT)
+        {
+            var tick_style = {
+                'position': 'absolute',
+                'top': '50%',
+                'z-index': '999',
+                'margin-left': '40px',
+                'display': 'none'
+            }
 
-        ticker_wrapper
-            .append(subheader)
-            .append(header)
+            var ticker_wrapper  = $('<div class="videoticker"  />');
+
+            var subheader       = $('<p style="font-size: 75%; opacity: .85;  color: #fff; line-height: 100%" >').text(current_tick.subheader);
+            var header          = $('<p style="font-size: 200%; opacity: .85; color: #fff; line-height: 100%; margin-top: -5px" >').text( current_tick.header);
+
+            ticker_wrapper
+                .css(tick_style)
+                .append(subheader)
+                .append(header)
+        }else if(current_tick.type == __media_types.IMAGE)
+        {
+            var tick_style = {
+                'display': "block",
+                //'left': '0%',
+                'margin': '40px',
+                'position': 'absolute',
+                'top': '28%',
+                'width': '100%',
+                'z-index': "999"
+            }
+            var ticker_wrapper  = $('<div class="videoticker"  />');
+
+            var image  = $('<img style="width: 75%; opacity: .85; line-height: 100%" >').attr('src', current_tick.src);
+
+
+            var svg_syle = {
+                'color': '#FFFFFF',
+                'line-height': '100%',
+                'margin': '0 auto',
+                'opacity': '0.85',
+                'width': '59%'
+            }
+
+            var svg_wrapper = $('<p style="font-size: 75%; opacity: .85;  color: #fff; line-height: 100%" >');
+            var svg = $('<object style="width: 100%; height: 100%" type="image/svg+xml" />').attr('data', current_tick.src);
+
+            svg_wrapper.css(svg_syle).append(svg);
+
+            ticker_wrapper
+                .css(tick_style)
+                .append(svg_wrapper)
+        }
 
         $('#slideshow-frame').append(ticker_wrapper);
 
@@ -123,7 +173,7 @@
         ticker_wrapper
             .fadeIn(500)
             .delay(current_tick.ttl*1000)
-            .fadeOut(500, function(){ $(this).remove(); __is_ticker_active = false; /* console.log('IM OUT!')*/ })
+            .fadeOut(500, function(){ /*$(this).remove();*/ __is_ticker_active = false; /* console.log('IM OUT!')*/ })
 
     }
 
