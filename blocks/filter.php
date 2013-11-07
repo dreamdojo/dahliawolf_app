@@ -2,10 +2,10 @@
     <div class="filter-wrap">
         Sort Inspirations By:
         <span class="">
-            <a id="filterNewest" class="sort-option <?= ($_GET['sort'] == 'new' || empty($_GET['sort']) ? 'filter-select' : '') ?>" href="/vote?sort=new">newest</a>
+            <a id="filterNewest" class="sort-option <?= ($_GET['sort'] == 'new'  ? 'filter-select' : '') ?>" href="/vote?sort=new">newest</a>
         </span> /
         <span class="">
-            <a id="filterTrending" class="sort-option <?= ($_GET['sort'] == 'hot' ? 'filter-select' : '') ?>" href="/vote?sort=hot"> trending</a>
+            <a id="filterTrending" class="sort-option filter-select <?= ($_GET['sort'] == 'hot' ? 'filter-select' : '') ?>" href="/vote?sort=hot"> trending</a>
         </span>
         <? if (IS_LOGGED_IN): ?>
              / <span class="">

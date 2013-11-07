@@ -146,7 +146,7 @@ else if ($self == '/explore.php' || $self == '/welcome_two.php') {
 	$data = api_call('posting', 'get_vote_posts', $params, true);
 	$_data['posts'] = $data['data'];
 }
-else if ($self == '/profile.php') {
+else if ($self == '/profile.php' || $self == '/pages/profile.php') {
 	require DR . '/includes/php/classes/Spine' . $_data['spine_version'] . '.php';
 	$spine_limit = Spine::get_spine_limit();
 
@@ -228,7 +228,7 @@ else if ($self == '/my-runway.php') {
 	$data = commerce_api_request('product', $calls, true);
 	$_data['products'] = $data['data']['get_products']['data'];
 }
-/*else if ($self == '/followers.php') {
+else if ($self == '/followers.php') {
 	if (empty($_GET['username'])) {
 		default_redirect();
 	}
@@ -257,7 +257,7 @@ else if ($self == '/account/following.php') {
 	$data = api_call('user', 'get_following', $params, true);
 	$_data['following'] = $data['data'];
 	$_data['user']['username'] = $_GET['username'];
-}*/
+}
 else if ($self == '/account/posts.php') {
 	if (empty($_SESSION['user']) || empty($_SESSION['user']['user_id'])) {
 		default_redirect();
@@ -288,7 +288,7 @@ else if ($self == '/account/wild-4s.php') {
 	$data = api_call('posting', 'get_liked_posts', $params, true);
 	$_data['posts'] = $data['data'];
 }
-else if ($self == '/account/settings.php') {
+else if ($self == '/account/settings.php' || $self == '/pages/settings.php') {
 	if (empty($_SESSION['user']) || empty($_SESSION['user']['user_id'])) {
 		default_redirect();
 	}
@@ -299,7 +299,7 @@ else if ($self == '/account/settings.php') {
 	$data = api_call('user', 'get_user', $params, true);
 	$_data['user'] = $data['data'];
 }
-else if ($self == '/wolf-pack.php') {
+else if ($self == '/wolf-pack.php' || $self == '/pages/wolf-pack.php') {
 	$params = array(
 		'limit' => 100
 	);

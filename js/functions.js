@@ -36,9 +36,9 @@ function validateEmail(email) {
 })(jQuery);
 
 function update_user_points(earned_points) {
-	$.get('/ajax/get-points.php', {user_id: user_id}, function(data) {
+	/*$.get('/ajax/get-points.php', {user_id: user_id}, function(data) {
 		user_points_animation(earned_points);
-	});
+	});*/
 }
 function user_points_animation(earned_points) {
 	if (earned_points) {
@@ -370,80 +370,159 @@ function user_events() {
 
 	});
 
+    $('#pop-ship').on('click', function() {
+        var $this = $(this);
+        var $box = $('#populate-shipping-from-billing');
+
+        if(!$box.prop('checked')) {
+            $this.html('X');
+            $('#shippingFields').slideUp(200);
+            $box.attr('checked', 'checked');
+        } else {
+            $this.html('');
+            $('#shippingFields').slideDown(200);
+            $box.attr('checked', false);
+        }
+    });
+
+    $('#shippingForm').on('submit', function() {
+        var fail = false;
+
+        if( $('#populate-shipping-from-billing').prop('checked') ) {
+            popShippingFromBilling();
+        }
+
+
+        $.each( $('.isRequired'), function(x, inp) {
+            var $field = $(inp);
+            if( !$field.val() || $field.val() === '' ) {
+                $field.addClass('fail');
+                fail = true;
+            } else if($field.hasClass('fail') ) {
+                $field.removeClass('fail');
+                $field.addClass('good');
+            } else {
+                $field.addClass('good');
+            }
+        });
+
+        if( $('#shipping_address_id').val() > 0 ) {
+
+        } else{
+            $.each( $('.isAlsoRequired'), function(x, inp) {
+                var $field = $(inp);
+                if( !$field.val() || $field.val() === '' ) {
+                    $field.addClass('fail');
+                    fail = true;
+                } else if($field.hasClass('fail') ) {
+                    $field.removeClass('fail');
+                    $field.addClass('good');
+                } else {
+                    $field.addClass('good');
+                }
+            });
+        }
+
+        if(!fail) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
 	// Show CC Fields
-	$(document).on('click', 'input[name="populate-shipping-from-billing"]', function(event) {
+function popShippingFromBilling() {
 		var saved_billing_select = $('select[name="billing_address_id"] option:selected');
 
 		if(!this.checked) {
-			return;
+			//return;
 		}
 
-		if (saved_billing_select.length > 0 && saved_billing_select.val() != '') {
+        if($('#populate-shipping-from-billing').prop('checked')) {
+            $('select[name="shipping_state"]').html( $('select[name="billing_state"]').html() );
+        }
+
+		/*if (saved_billing_select.length > 0 && saved_billing_select.val() != '') {
 			$('input[name="shipping_first_name"]').val(saved_billing_select.data('first_name'));
 			$('input[name="shipping_last_name"]').val(saved_billing_select.data('last_name'));
 			$('input[name="shipping_address"]').val(saved_billing_select.data('street'));
 			$('input[name="shipping_address_2"]').val(saved_billing_select.data('address_2'));
 			$('input[name="shipping_city"]').val(saved_billing_select.data('city'));
+            $('select[name="shipping_country"]').val(saved_billing_select.data('country')).trigger('change');
 			$('select[name="shipping_state"]').val(saved_billing_select.data('state'));
 			//$('input[name="shipping_province"]').val(saved_billing_select.data('state'));
-			$('select[name="shipping_country"]').val(saved_billing_select.data('country')).trigger('change');
 			$('input[name="shipping_zip"]').val(saved_billing_select.data('zip'));
+            $('input[name="shipping_phone"]').val(saved_billing_select.data('phone'));
 		}
-		else {
+		else {*/
 			$('input[name="shipping_first_name"]').val($('input[name="billing_first_name"]').val());
 			$('input[name="shipping_last_name"]').val($('input[name="billing_last_name"]').val());
 			$('input[name="shipping_address"]').val($('input[name="billing_address"]').val());
 			$('input[name="shipping_address_2"]').val($('input[name="billing_address_2"]').val());
 			$('input[name="shipping_city"]').val($('input[name="billing_city"]').val());
-			$('select[name="shipping_state"]').val($('select[name="billing_state"]').val());
-			//$('input[name="shipping_province"]').val($('input[name="billing_province"]').val());
-			$('select[name="shipping_country"]').val($('select[name="billing_country"]').val()).trigger('change');
+            $('select[name="shipping_country"]').val($('select[name="billing_country"]').val()).trigger('change');
 			$('input[name="shipping_zip"]').val($('input[name="billing_zip"]').val());
+            $('input[name="shipping_phone"]').val($('input[name="billing_phone"]').val());
+            $('select[name="shipping_state"]').val( $('select[name="billing_state"]').val() );
+		//}
 
-			/*if ($('select[name="billing_state"]').is(':visible')) {
-				$('input[name="shipping_province"]').hide();
-				$('select[name="shipping_state"]').show();
-			}
-			else {
-				$('select[name="shipping_state"]').hide();
-				$('input[name="shipping_province"]').show();
-			}*/
-		}
-
-	});
+	};
 
 	// Show Billing Fields
 	$(document).on('change', 'select[name="billing_address_id"]', function(event) {
 		if (this.value == '') {
-			$('#billing-address-fields').show();
+			//CLEAR FIELDS
 		}
 		else {
-			$('#billing-address-fields').hide();
+            var $data = $(this).find('option:selected');
+            $('input[name="billing_first_name"]').val($data.data('first_name') );
+            $('input[name="billing_last_name"]').val($data.data('last_name') );
+            $('select[name="billing_country"]').val($data.data('country') );
+            $('input[name="billing_address"]').val($data.data('street') );
+            $('input[name="billing_city"]').val($data.data('city') );
+            if( $data.data('state') ) {
+                $('<option selected="selected" value="'+$data.data('state')+'">'+$data.data('state')+'</option>').appendTo($('select[name="billing_state"]'));
+            }
+            $('input[name="billing_zip"]').val($data.data('zip') );
+            $('input[name="billing_phone"]').val($data.data('phone') );
 		}
 
 	});
 
 	// Show shipping Fields
 	$(document).on('change', 'select[name="shipping_address_id"]', function(event) {
-		if (this.value == '') {
-			$('#shipping-address-fields').show();
-		}
-		else {
-			$('#shipping-address-fields').hide();
-		}
 
+        if( $(this).val() > 0 ) {
+            $('#shipping-address-fields').slideUp(200);
+        } else {
+            $('#shipping-address-fields').slideDown(200);
+        }
+        /*if (this.value == '') {
+            //CLEAR FIELDS
+        }
+        else {
+            var $data = $(this).find('option:selected');
+            $('input[name="shipping_first_name"]').val($data.data('first_name') );
+            $('input[name="shipping_last_name"]').val($data.data('last_name') );
+            $('select[name="shipping_country"]').val($data.data('country') );
+            $('input[name="shipping_address"]').val($data.data('address') );
+            $('input[name="shipping_city"]').val($data.data('city') );
+            $('select[name="shipping_state"]').val($data.data('state') );
+            $('input[name="shipping_zip"]').val($data.data('zip') );
+            $('input[name="shipping_phone"]').val($data.data('phone') );
+        }*/
 	});
 
 	// Billing/Shipping dynamic country states/provinces
-	$('form.billing select.country').on('change', function() {
-		var $this = $(this);
+	$('#billing-country').on('change', function() {
+        var $this = $(this);
 		var $fieldset = $this.closest('fieldset');
-		var $state_select = $fieldset.find('select.state');
+		var $state_select = $fieldset.find('#billing-state');
 		var $province_input = $fieldset.find('input.province');
 
 		var iso_code = $this.val();
 		var states = $.getJSON('/json/get_states_by_country_iso_code.php', {iso_code: iso_code}, function(data) {
-			html = '<option value="">State/Province&hellip;</option>';
+            html = '<option value="">State/Province&hellip;</option>';
 			if (data.length) {
 				$.each(data, function(i, state) {
 					html += '<option value="' + state.iso_code + '">' + state.name + '</option>';
@@ -457,6 +536,7 @@ function user_events() {
                 html += '<option value="N/A" selected="selected">' + 'Not Applicable' + '</option>';
 			}
 			$state_select.html(html);
+            $('#shipping-state').val( $('#billing-state').val() );
 		});
 	});
 
@@ -782,6 +862,8 @@ function sendToAnal(data){
     if(data) {
         try{ if(woopraTracker) woopraTracker.pushEvent(data); }
         catch(e) { }
+        try{ _gaq.push(['_trackEvent', data.name, 'test']);}
+        catch(e) {}
     }
 }
 

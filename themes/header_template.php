@@ -78,7 +78,7 @@ $(document).ready(function()
             <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>
-    <a href="/home"><div id="dahliaLogo"></div></a>
+    <a href="/"><div id="dahliaLogo"></div></a>
     <ul class="native_head">
         <li>
             <a href="https://itunes.apple.com/us/app/dahlia-wolf-fashion/id718253685?ls=1&mt=8">

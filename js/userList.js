@@ -1,5 +1,5 @@
 function userList(user, action) {
-    this.limit = 20;
+    this.limit = 10;
     this.offset = 0;
     this.index = 0;
     this.users = [];
@@ -11,7 +11,7 @@ function userList(user, action) {
     if(user) {
         this.user = user;
     } else {
-        alert('user not set');
+        //alert('user not set');
     }
 
     this.bindScroll();
@@ -75,8 +75,8 @@ userList.prototype.user.prototype.addMeToBucket = function() {
     }
 
     this.$userFrame = $('<div class="userFrame"></div>').appendTo( dahliawolfUserList.$bucket );
-    this.$userFrame.append('<div class="avatarFrame avatarShadow"><a href="/'+this.data.username+'"><img src="'+this.data.avatar+'&width=100"></a></div>');
-    this.$userFrame.append('<ul class="dataList"><a href="/'+this.data.username+'"><li class="dlUsername">'+this.data.username+'</li><li>'+this.data.points+' pts</li></a></ul>');
+    this.$userFrame.append('<div class="avatarFrame avatarShadow" style="background-image: url(\''+this.data.avatar+'&width=150\')"><a href="/'+this.data.username+'"></a></div>');
+    this.$userFrame.append('<ul class="dataList"><li class="dlUsername"><a href="/'+this.data.username+'">'+this.data.username+'</a>'+( this.data.membership_level === 'VIP' ? '<div class="memberStats"><img src="/images/vip.png"></div>' : '')+'</li><li>'+this.data.points+' pts</li></ul>');
     this.$userFrame.append('<ul class="postList">'+str+'</ul>');
     if(dahliawolfUserList.isWolfpack) this.$userFrame.append('<div class="rankBox">'+this.rank+'</div>');
     this.$followButton = $('<div class="toggleFollow '+(Number(this.data.is_followed) ? 'dahliaHeadUnFollow' : 'dahliaHeadFollow' )+'">'+ (Number(this.data.is_followed) ? 'FOLLOWING' : 'FOLLOW' )+'</div>').appendTo(this.$userFrame.find('.dataList')).on('click', $.proxy(this.toggleFollowers, this) );

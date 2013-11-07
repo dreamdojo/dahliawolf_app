@@ -96,7 +96,7 @@ else {
 		redirect($redirect);
 		die();
 	}
-	redirect('/home');
+	redirect('/');
 }
 die();
 ?>

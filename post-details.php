@@ -43,7 +43,7 @@
 
     <div id="postDetailTopRow">
         <a href="/<?= $_data['post']['username'] ?>">
-            <div class="postDetailAvatarFrame" style='background-image: url("<?= $_data['post']['avatar'] ?>")'></div>
+            <div class="postDetailAvatarFrame" style='background-image: url("<?= $_data['post']['avatar'] ?>&width=200")'></div>
         </a>
         <ul class="deetsList">
         	<li class="postDetailUsername name"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
@@ -97,13 +97,7 @@
         	<div class="postDetailCommentSection">
             	<div class="commentSectionTitle">COMMENTS</div>
                 <div class="postDetailCommentBox">
-                	 <div class="postCommentAvatarFrame">
-                         <? if(IS_LOGGED_IN): ?>
-                         	<img src="<?= $userConfig['avatar'] ?>" />
-                         <? else: ?>
-                         	<img src="http://www.dahliawolf.com/avatar.php?user_id=&width=190">
-						 <? endif ?>
-                     </div>
+                	 <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>')"></div>
                      <textarea id="postUserCommentBox" class="socialize" placeholder="Enter Comment Here!"></textarea>
                 </div>
                 <div id="postCommentButton">POST COMMENT</div>
@@ -111,9 +105,7 @@
 					<? foreach($_data['comments'] as $comment): ?>
                         <? $hashified = socialize($comment['comment']); ?>
                         <div class="postDetailCommentBox">
-                            <div class="postCommentAvatarFrame">
-                                <img src="<?= $comment['avatar'] ?>" />
-                            </div>
+                            <div class="postCommentAvatarFrame" style="background-image: url('<?= $comment['avatar'] ?>');"></div>
                             <div class="postCommentComment">
                                 <p class="name"><?= $comment['username'] ?></p>
                                 <p><?= $hashified ?></p>
