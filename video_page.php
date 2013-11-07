@@ -88,7 +88,7 @@
         if(index){ triggerTicker(index); }
         else {
             if (__is_ticker_active === false) {
-                $('.videoticker').fadeOut(250, function() { /*$(this).remove()*/  } );
+                $('.videoticker').fadeOut(250, function() { $(this).remove()  } );
             }
         }
 
@@ -173,7 +173,7 @@
         ticker_wrapper
             .fadeIn(500)
             .delay(current_tick.ttl*1000)
-            .fadeOut(500, function(){ /*$(this).remove();*/ __is_ticker_active = false; /* console.log('IM OUT!')*/ })
+            .fadeOut(500, function(){ $(this).remove(); __is_ticker_active = false; /* console.log('IM OUT!')*/ })
 
     }
 
