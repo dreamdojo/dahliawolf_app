@@ -96,9 +96,27 @@ $(document).ready(function()
         <li><a href="/vote"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/vote.php'  || $self == '/index.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
         <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
     </ul>
+
     <div id="rightHandMenu">
         <div id="tourButton"></div>
-        <a href="/shop/checkout.php"><div id="shoppingCart"></div></a>
+            <div id="shoppingCart" <?= count($_data['cart']['products']) ? 'style="background-image: url(\'/images/shoppingCart_on.png\');"' : '' ?>>
+                <?php if(count($_data['cart']['products'])): ?>
+                    <a href="/shop/cart"><div class="cartCount"><?= count($_data['cart']['products']) ?></div></a>
+                    <ul id="dahliaCart">
+                        <div class="cart_bezier"></div>
+                        <?php foreach( $_data['cart']['products'] as $product ): ?>
+                            <ul>
+                                <li><img src="http://content.dahliawolf.com/shop/product/image.php?file_id=<?= $product['product_info']['product_file_id'] ?>&width=80"></li>
+                                <li style="line-height: 20px;"><?= $product['product_info']['product_name'] ?></li>
+                                <li>$<?= money_format('%i', ($product['product_info']['sale_price'] ? $product['product_info']['sale_price'] : $product['product_info']['price'])) ?></li>
+                                <li><?= $product['attributes'] ?></li>
+                                <li>Quantity 1</li>
+                            </ul>
+                        <?php endforeach ?>
+                        <a href="/shop/cart"><li class="cta">Edit bag/ Check out</li></a>
+                    </ul>
+                <? endif ?>
+            </div>
         <div id="searchButton"></div>
         <div id="userMenu">
             <div class="rtBorder"></div>
@@ -107,7 +125,7 @@ $(document).ready(function()
                 <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
                 <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #B1B1B1 !important;"><?= $_SESSION['user']['username'] ?></a></div>
             <? endif ?>
-            <ul>
+            <ul id="theDropdown">
                 <div class="header-bezier"></div>
                 <? if(IS_LOGGED_IN): ?>
                     <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
@@ -140,11 +158,6 @@ $(document).ready(function()
         <input type="text" placeholder="Start typing to search...">
     </div>
 </div>
-
-<script>
-
-</script>
-<? //var_dump($userConfig) ?>
 
 <div id="dahliaHead">
     <div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div>

@@ -3,7 +3,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
 
 // No inputs
 if (empty($_POST)) {
-	redirect('/shop/checkout.php');
+	redirect('/shop/cart.php');
 	die();
 }
 
@@ -61,6 +61,6 @@ else {
 	}
 }
 
-redirect('/shop/checkout.php');
+redirect('/shop/cart.php');
 die();
 ?>
