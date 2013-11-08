@@ -31,7 +31,7 @@ if ($top_dir == 'shop') {
 <meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <meta property="fb:app_id" content="552515884776900" />
 <meta property="og:site_name" content="Dahlia Wolf">
-<meta property="og:description" content="You post fashion images we turn them into clothing." />
+<meta property="og:description" content="Post fashion images. Dahlia Wolf will turn them into clothing." />
 <? if( !empty($_GET['posting_id']) ): ?>
 	<meta property="og:image" content="<?= $_data['post']['image_url'] ?>" />
 <? elseif( !empty($_GET['id_product']) ): ?>
