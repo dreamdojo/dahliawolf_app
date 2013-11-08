@@ -139,7 +139,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
     }
 
     dahliaCheckout.prototype.saveShippingOption = function() {
-        var that = this;
+        if( $(this).hasClass('fail') && $(this).val() != '' ) {
+            $(this).removeClass('fail');
+        }
 
         var data = $('#carrierForm').serialize();
         $('.cartTotals').empty().append('<div class="totalLoader"><img src="/images/loading-transparent.gif"></div>');
