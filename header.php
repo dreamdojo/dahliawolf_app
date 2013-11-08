@@ -11,7 +11,7 @@ if (!empty($_SESSION['errors'])): ?>
     </script>
 	<div class="user-message user-error ui-state-error ui-corner-all">
         <div class='user-message-close'>X</div>
-        <?php if (count($_SESSION['errors']) == 1): ?>
+        <?php if (count($_SESSION['errors']) == 1 && trim($_SESSION['errors'][0]) != '' ): ?>
 			<?php if (!empty($_SESSION['errors'][0])): ?>
 				<p><?= $_SESSION['errors'][0] ?></p>
                 <script>_gaq.push(['_trackEvent','ERROR' , '<?= $_SESSION['errors'][0] ?>']);</script>
