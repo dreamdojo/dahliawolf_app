@@ -305,7 +305,8 @@ $is_review = !empty($is_review) ? true : false;
 
                     $('#cart-store-credit-amount-submit').on('click', function()
                     {
-                        var grant_total         = parseFloat(<?php echo $_data['cart']['cart']['totals']['grand_total']; ?>);
+                        console.log(<?= json_encode($_data['cart']) ?>);
+                        var grant_total         = parseFloat(<?php echo $_data['cart']['cart']['totals']['products']; ?>);
                         var total_store_credit  = parseFloat(<?php echo $_data['cart']['available_store_credits']['total_credits']; ?>);
                         var apply_store_credit  = parseFloat( $('#cart-store-credit-amount').val() );
 
@@ -313,6 +314,7 @@ $is_review = !empty($is_review) ? true : false;
                         {
                             $('#cart-store-credit-amount').val(grant_total);
                         }
+                        debugger;
 
                         $(this).closest('form').submit()
 

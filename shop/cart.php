@@ -203,6 +203,7 @@ $is_review = !empty($is_review) ? true : false;
 							<input type="text" name="amount" id="cart-store-credit-amount" value="<?= !empty($_data['cart']['cart_store_credit']) ? $_data['cart']['cart_store_credit']['amount'] : '0.00' ?>" />
 							<span>/ $<?= number_format($_data['cart']['available_store_credits']['total_credits'], 2) ?> (Store Credits)</span>
 							<p class="button"><a id="cart-store-credit-amount-submit">Redeem Store Credit</a></p>
+                            <div>*Store credit can not be applied to tax and shipping</div>
 						</fieldset>
 					</form>
 				</div>
@@ -211,7 +212,7 @@ $is_review = !empty($is_review) ? true : false;
 
                     $('#cart-store-credit-amount-submit').on('click', function()
                     {
-                        var grant_total         = parseFloat(<?php echo $_data['cart']['cart']['totals']['grand_total']; ?>);
+                        var grant_total         = parseFloat(<?php echo $_data['cart']['cart']['totals']['products']; ?>);
                         var total_store_credit  = parseFloat(<?php echo $_data['cart']['available_store_credits']['total_credits']; ?>);
                         var apply_store_credit  = parseFloat( $('#cart-store-credit-amount').val() );
 
