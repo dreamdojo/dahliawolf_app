@@ -1,7 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
-
-$_data['cart'] = get_cart();
+require $_SERVER['DOCUMENT_ROOT'] . '/includes/php/shop-initial-calls.php';
 
 echo json_encode($_data['cart']);
 ?>

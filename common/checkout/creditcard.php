@@ -27,7 +27,7 @@
     $paypal_payment = false;
 ?>
 <form action="/action/shop/place_order.php" id="place_order_form" class="Form StaticForm payment" method="post">
-<input type="hidden" name="amount" value="<?= $_data['cart']['cart']['totals']['grand_total'] ?>" />
+<input id="gTotes" type="hidden" name="amount" value="<?= $_data['cart']['cart']['totals']['grand_total'] ?>" />
 <fieldset>
     <h3>Payment Method</h3>
     <? if(!empty($_data['payment_methods'])): ?>

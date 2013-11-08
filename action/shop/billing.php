@@ -77,10 +77,10 @@ if( !isset($_POST['ajax']) ) {
         echo json_encode( $_SESSION['errors'] );
     }
     else {
+        $_SESSION['checkout_id_delivery'] = null;
         if (is_numeric($_POST['billing_address_id'])) {
             echo json_encode(Array('billing'=>$billing_address_id, 'shipping'=>$shipping_address_id));
         } else {
-            //echo json_encode($data);
             echo json_encode(Array('billing'=>$billing_address_id, 'shipping'=>$shipping_address_id));
         }
     }

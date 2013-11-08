@@ -143,10 +143,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 
         var data = $('#carrierForm').serialize();
         $('.cartTotals').empty().append('<div class="totalLoader"><img src="/images/loading-transparent.gif"></div>');
-        console.log(data);
         $.post('/action/shop/select_checkout_carrier.php', data, function(data) {
-            console.log('save carrier');
-            console.log(data);
             dahliawolfCheckout.loadCart(function(data) {
                 dahliawolfCheckout.updateCart(data);
             });
@@ -209,11 +206,11 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
         }
 
         if(!fail) {
-            console.log('ALLL GOOD');
+            console.log('Saving Address');
             dahliawolfCheckout.saveAddress();
             return false;
         } else {
-            console.log('ALLL BAAAD');
+            console.log('Check address and FAILED VALIDATION');
             return false;
         }
     }
@@ -233,7 +230,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
         that.showShipLoader();
         $.post('/action/shop/billing.php', data, function(data) {
             var data = $.parseJSON(data);
-            console.log(data.billing);
             if(!$('select[name=billing_address_id]').length) {
                 $('#shippingForm').prepend('<input type="hidden" name="billing_address_id" value="'+data.billing+'">');
             }
@@ -251,6 +247,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
     dahliaCheckout.prototype.updateShippingOptions = function(options) {
         var $options = $('#shippingOptions');
         $options.empty();
+        $options.addClass('fail').append('<option slected="selected">PLEASE SELECT A SHIPPING METHOD</option>');
         $.each(options, function(x, option) {
             $options.append('<option id="id_delivery_'+option.id_delivery+'" value="'+option.id_delivery+'">'+option.carrier_name+' - '+option.delay+' $'+Math.round(option.price * 100) / 100+'</option>');
         });
@@ -261,6 +258,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
         this.data = cart;
         this.$cart.empty();
         this.buildCart();
+        $('#gTotes').val(cart.cart.totals.grand_total);
     }
 
     dahliaCheckout.prototype.buildCart = function() {
@@ -294,5 +292,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 
     $(function() {
         dahliawolfCheckout = new dahliaCheckout(<?= json_encode($_data['cart']) ?>);
+        console.log(<?= json_encode($_SESSION) ?>);
     });
 </script>

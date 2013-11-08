@@ -109,7 +109,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover #theDropdown{display: block;}
-#userMenu ul{position: absolute;width: 292px; margin-top: 30px; text-align: left; color: #636363; display: none;opacity: .88; padding-top: 16px; border-bottom: #292929 thin solid; right: -110.5px;}
+#userMenu ul{position: absolute;width: 292px; margin-top: 30px; text-align: left; color: #636363; display: none;padding-top: 16px; border-bottom: #292929 thin solid; right: -110.5px;}
 #userMenu li{font-size: 13px; font-family: arial; border-top: #292929 1px solid; background-color: #000;color: #B1B1B1;border-left: #292929 thin solid;border-right: #292929 thin solid;width: 290px; height: 30px;line-height: 30px;text-indent: 20px;}
 #userMenu ul .header-bezier{position: absolute; width: 291px; background-image: url("/images/menu-bezier.png"); background-repeat: no-repeat; background-size: 100%;background-position: 0px 0px;height: 15px;top: -7px;margin-top: 9px;}
 #userMenu .top-menu-footer{ background-color: #2e2e2e; color: #b1b1b1; text-indent: 0px; text-align: center; font-size: 11px;}
