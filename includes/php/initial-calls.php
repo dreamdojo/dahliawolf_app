@@ -299,7 +299,7 @@ else if ($self == '/account/settings.php' || $self == '/pages/settings.php') {
 	$data = api_call('user', 'get_user', $params, true);
 	$_data['user'] = $data['data'];
 }
-else if ($self == '/wolf-pack.php' || $self == '/pages/wolf-pack.php') {
+/*else if ($self == '/wolf-pack.php' || $self == '/pages/wolf-pack.php') {
 	$params = array(
 		'limit' => 100
 	);
@@ -311,5 +311,5 @@ else if ($self == '/wolf-pack.php' || $self == '/pages/wolf-pack.php') {
 	);
 	$data = api_call('user', 'get_rank', $params, true);
 	$_data['rank'] = $data['data'];
-}
+}*/
 ?>
