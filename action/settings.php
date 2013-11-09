@@ -54,15 +54,18 @@ if($_POST['dashboardAvatar']) {
 // API call
 $calls = array(
 	'save_user' => array(
-		'user_id' => $_SESSION['user']['user_id']
-		, 'first_name' => $_POST['first_name']
-		, 'last_name' => $_POST['last_name']
-		, 'date_of_birth' => !empty($_POST['date_of_birth']) ? date('Y-m-d', strtotime($_POST['date_of_birth'])) : NULL
-		, 'gender' => $_POST['gender']
-		, 'email' => $_POST['email']
-		, 'username' => $_POST['username']
+		'user_id' => $_SESSION['user']['user_id'],
+		'first_name' => $_POST['first_name'],
+		'last_name' => $_POST['last_name'],
+		'date_of_birth' => !empty($_POST['date_of_birth']) ? date('Y-m-d', strtotime($_POST['date_of_birth'])) : NULL,
+		'gender' => $_POST['gender'],
+		'email' => $_POST['email'],
+		'username' => $_POST['username'],
 		//, 'password' => $_POST['user_password']
-		, 'api_website_id' => API_WEBSITE_ID
+        'location' => $_POST['first_name'],
+        'website' => $_POST['website'],
+        'about' => $_POST['about'],
+		'api_website_id' => API_WEBSITE_ID
 	)
 );
 $data = api_request('user', $calls, true);
