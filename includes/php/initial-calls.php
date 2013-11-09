@@ -147,8 +147,6 @@ else if ($self == '/explore.php' || $self == '/welcome_two.php') {
 	$_data['posts'] = $data['data'];
 }
 else if ($self == '/profile.php' || $self == '/pages/profile.php') {
-	require DR . '/includes/php/classes/Spine' . $_data['spine_version'] . '.php';
-	$spine_limit = Spine::get_spine_limit();
 
 	if (empty($_GET['username'])) {
 		default_redirect();
@@ -156,7 +154,7 @@ else if ($self == '/profile.php' || $self == '/pages/profile.php') {
 
 	$params = array(
 		'username' => strtolower($_GET['username'])
-		, 'limit' => $spine_limit
+		, 'limit' => 0
 	);
 
 	if (IS_LOGGED_IN) {
