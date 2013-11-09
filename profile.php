@@ -60,20 +60,23 @@
        		</div>
     	</div>
     </div>
+
     <div id="userProfileMenuBar">
     	<ul id="userProfileShareBox">
-        	<li onclick="facebookFeed('http://www.dahliawolf.com/images/logo.png', 'http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>', 'OMGeeezy follow me on Dahliawolf and vote on some of my posts!');" id="profileShareFacebook"></li>
-             <a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>&media=<?= $_data['user']['avatar'] ?>" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.dahliawolf.com/<?= $_data['user']['username']  ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+                <li id="profileShareFacebook"></li>
+            </a>
+             <a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com/<?= $_data['user']['username']  ?>&media=<?= $_data['user']['avatar'] ?>" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
             	<li id="profileSharePinterest"></li>
             </a>
             <li id="profileShareInstagram"></li>
-            <a href="http://www.tumblr.com/share/photo?source=<?= rawurlencode( $_data['user']['avatar'] )?>&caption=<?= rawurlencode( "OMG Check out my profile on Dahliawolf and vote on my posts you LOVE! Thanks smiles:)" )?>&click_thru=<?= rawurlencode( "http://www.dahliawolf.com/".$_SESSION['user']['username'] ) ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <a href="http://www.tumblr.com/share/photo?source=<?= rawurlencode( $_data['user']['avatar'] )?>&caption=<?= rawurlencode( "Check out this profile on #Dahliawolf" )?>&click_thru=<?= rawurlencode( "http://www.dahliawolf.com/".$_data['user']['username'] ) ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
             	<li id="profileShareTumblr"></li>
             </a>
-            <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&url=http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+            <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&url=http://www.dahliawolf.com/<?= $_data['user']['username'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
             	<li id="profileShareTwitter"></li>
             </a>
-            <a href='mailto:?subject=Check out my profile on Dahliawolf&body=Check out my profile on Dahliawolf and vote some of posts and help get my items chosen to make new fashions! Thank you :) http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>'>
+            <a href='mailto:?subject=Check out <?= $_data['user']['username'] ?>'s profile on Dahliawolf&body=http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>'>
             	<li id="profileShareEmail"></li>
             </a>
         </ul>
@@ -81,7 +84,7 @@
             <a href="/<?= $_data['user']['username'] ?>"><div class="togglePostsButton <?= ( empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">POSTS</div></a>
             <a href="/<?= $_data['user']['username'] ?>/loves"><div class="togglePostsButton <?= ( !empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">LOVES</div></a>
         </div>
-        
+
     </div>
 
 

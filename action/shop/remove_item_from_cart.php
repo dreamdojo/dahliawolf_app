@@ -147,7 +147,7 @@ if (!empty($cart) && !empty($cart['products'])) {
 }
 
 if( !isset($_POST['ajax']) ) {
-    redirect('/shop/checkout.php');
+    redirect('/shop/cart.php');
 } else {
     echo 'success';
 }

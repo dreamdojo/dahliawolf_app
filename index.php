@@ -29,9 +29,9 @@
         <p class="earn">FOR EVERY ITEM THAT YOU INSPIRE</br>YOU GET A CHECK FOR 5% OF ALL SALES OF THAT ITEM!!</p>
     </div>
     <ul id="theMethod">
-        <li data-section="inspire"><img src="/images/hb_insp.png"></li>
-        <li data-section="design"><img src="/images/hb_des.png"></li>
-        <li data-section="earn"><img src="/images/hb_earn.png"></li>
+        <li data-section="inspire"><a href="/help"><img src="/images/hb_insp.png"></a></li>
+        <li data-section="design"><a href="/help"><img src="/images/hb_des.png"></a></li>
+        <li data-section="earn"><a href="/help"><img src="/images/hb_earn.png"></a></li>
     </ul>
 </div>
 

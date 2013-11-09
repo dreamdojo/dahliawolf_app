@@ -16,22 +16,22 @@ else if (empty($_SESSION['id_cart'])) {
 }
 else if (empty($_SESSION['checkout_billing_address_id'])) {
 	$_SESSION['errors'] = array('Billing address is not set.');
-	redirect('/shop/checkout.php?step=billing');
+	redirect('/shop/checkout.php');
 	exit();
 }
 else if (empty($_SESSION['checkout_shipping_address_id'])) {
 	$_SESSION['errors'] = array('Shipping address is not set.');
-	redirect('/shop/checkout.php?step=billing');
+	redirect('/shop/checkout.php');
 	exit();
 }
 else if (empty($_SESSION['checkout_id_delivery'])) {
 	$_SESSION['errors'] = array('Delivery method is not set.');
- 	redirect('/shop/checkout.php?step=shipping');
+ 	redirect('/shop/checkout.php');
 	exit();
 }
 else if (empty($_SESSION['checkout_payment_method_id'])) {
 	$_SESSION['errors'] = array('Payment method is not set.');
- 	redirect('/shop/checkout.php?step=confirmation');
+ 	redirect('/shop/checkout.php');
 	exit();
 }
 

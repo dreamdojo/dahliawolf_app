@@ -125,7 +125,7 @@ else if ($self == '/shop/product.php') {
 		}
 	}
 }
-else if ($self == '/shop/checkout.php'  || $self == '/shop/product.php') {
+else if ($self == '/shop/checkout.php'  || $self == '/shop/product.php' || $self == '/shop/cart.php') {
 	// Set session delivery id
 	if (empty($_SESSION['checkout_id_delivery']) && !empty($_data['cart']['cart']['carrier'])) {
 		$_SESSION['checkout_id_delivery'] = $_data['cart']['cart']['carrier']['id_delivery'];
@@ -139,7 +139,7 @@ else if ($self == '/shop/checkout.php'  || $self == '/shop/product.php') {
 		}
 		else if (empty($_SESSION['id_cart']) || empty($_data['cart']) || empty($_data['cart']['products'])) {
 			$_SESSION['errors'] = array('Your cart is empty.');
-			redirect('/shop/checkout.php');
+			redirect('/shop/cart.php');
 			die();
 		}
 	}

@@ -1,14 +1,22 @@
 <?
 if (empty($_data['cart']['carrier_options'])) {
 	?>
-	<p>We're sorry, there are no shipping options available for your specified location.</p>
+    <h3>Shipping Options</h3>
+    <form id="carrierForm" action="/action/shop/select_checkout_carrier.php" class="Form StaticForm shipping" method="post">
+    <input type="hidden" name="ajax" value="true">
+    <select name="id_delivery" id="shippingOptions">
+        <option>No options Avaliable</option>
+    </select>
+    </form>
 	<?
 }
 else {
 	?>
 	<h3>Shipping Options</h3>
-    <form action="/action/shop/select_checkout_carrier.php" class="Form StaticForm shipping" method="post">
-        <fieldset>
+    <form id="carrierForm" action="/action/shop/select_checkout_carrier.php" class="Form StaticForm shipping" method="post">
+        <div id="alisBeeper"><img src="/images/checkoutLoad.gif"></div>
+        <input type="hidden" name="ajax" value="true">
+        <select name="id_delivery" id="shippingOptions">
             <?
             // Group shipping options by carrier
             $carrier_option_groups = array();
@@ -22,23 +30,17 @@ else {
 
 			foreach ($carrier_option_groups as $carrier_name => $carrier_options) {
 				?>
-				<h3><?= $carrier_name ?></h3>
-				<ul class="radios">
 					<?
 					foreach ($carrier_options as $i => $carrier) {
 						$cart_carrier_id_delivery = !empty($_data['cart']['cart']['carrier']) ? $_data['cart']['cart']['carrier']['id_delivery'] : NULL;
-						$carrier_checked = !empty($cart_carrier_id_delivery) && $cart_carrier_id_delivery == $carrier['id_delivery'] ? ' checked="checked"' : '';
+						$carrier_checked = !empty($cart_carrier_id_delivery) && $cart_carrier_id_delivery == $carrier['id_delivery'] ? ' selected' : '';
 						$id = 'id_delivery_' . $carrier['id_delivery'];
 						?>
-						<li>
-							<input type="radio" id="<?= $id ?>" name="id_delivery" value="<?= $carrier['id_delivery'] ?>"<?= $carrier_checked ?> />
-							<label for="<?= $id ?>"><strong><?= $carrier['carrier_name'] ?></strong> - <?= $carrier['delay'] ?> $<?= number_format($carrier['price'], 2) ?></label>
-						</li>
+							<option id="<?= $id ?>" value="<?= $carrier['id_delivery'] ?>"<?= $carrier_checked ?> /><?= $carrier['carrier_name'] ?> - <?= $carrier['delay'] ?> $<?= number_format($carrier['price'], 2) ?></option>
 						<?
 						$last_carrier_name = $carrier['carrier_name'];
 					}
 					?>
-				</ul>
 				<?
 			}
 
@@ -66,7 +68,7 @@ else {
                 <?
             }
             ?>
-        </fieldset>
+        </select>
         <?
         /*
         <fieldset>
@@ -98,7 +100,7 @@ else {
         */
         ?>
         <fieldset>
-            <input type="submit" value="Next Step &gt" />
+            <input type="submit" value="Next Step &gt" style="visibility: hidden;" />
         </fieldset>
     </form>
     <?

@@ -32,7 +32,6 @@ postDetail.prototype.bindFrontend = function() {
 	
 	$('#postDetailFollowButton').on('click', $.proxy(this.toggleFollow, this));
 	$('#postDetailLoveButton').on('click', $.proxy(this.toggleLove, this));
-	$('#shareFacebook').on('click', $.proxy(this.sendFacebook, this));
 	$('#postCommentButton').on('click', $.proxy(this.publishComment, this));
     $('.shareButton').on('click', this.recordShare);
 }
