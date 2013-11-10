@@ -26,6 +26,7 @@
     #bankBucket .postFrame img{width: 100%;}
     #bankBucket .postButton{position: absolute; display:none; right: 50%;top: 50%;background-color: #353535; width: 90px;height: 90px;border-radius: 50px;text-align: center;line-height: 90px;margin-top: -45px;margin-right: -45px;font-size: 15px;cursor: pointer;font-family: futura;font-weight: bolder;color: #fff;}
     #bankBucket .postButton:hover{opacity: .7;}
+    #bankBucket h2{text-align: center;width: 80%;margin: 30px auto;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
     #viewToggle{background-image: url("/images/inspireToggle_BG.png");background-position: 0%;position: absolute;right: -11px;width: 45px;background-repeat: no-repeat;overflow: hidden; height: 30px;margin-right: 20px;top: 2px; cursor: pointer;}
@@ -204,9 +205,15 @@
             api.getBankPosts(this.offset, this.limit, function(data) {
                 dahliawolf.loader.hide()
                 postBank.isRefillAvailable = true;
-                $.each(data.data, function(index, post) {
-                    postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
-                });
+                console.log(data);
+                if(data.data.length) {
+                    $.each(data.data, function(index, post) {
+                        postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
+                    });
+                } else {
+                    $('#bankBucket').append('<h2>OH NO! We temporarily ran out of images. Please use one of the options above and keep inspiring!</h2>')
+                }
+
                 postBank.$bucket.append('<div style="clear:left"></div>');
             });
         }
