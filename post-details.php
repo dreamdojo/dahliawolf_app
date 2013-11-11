@@ -99,7 +99,7 @@
         	<div class="postDetailCommentSection">
             	<div class="commentSectionTitle">COMMENTS</div>
                 <div class="postDetailCommentBox">
-                	 <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>')"></div>
+                	 <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
                      <textarea id="postUserCommentBox" class="socialize" placeholder="Enter Comment Here!"></textarea>
                 </div>
                 <div id="postCommentButton">POST COMMENT</div>
@@ -107,7 +107,7 @@
 					<? foreach($_data['comments'] as $comment): ?>
                         <? $hashified = socialize($comment['comment']); ?>
                         <div class="postDetailCommentBox">
-                            <div class="postCommentAvatarFrame" style="background-image: url('<?= $comment['avatar'] ?>');"></div>
+                            <div class="postCommentAvatarFrame" style="background-image: url('<?= $comment['avatar'] ?>&width=75');"></div>
                             <div class="postCommentComment">
                                 <p class="name"><?= $comment['username'] ?></p>
                                 <p><?= $hashified ?></p>

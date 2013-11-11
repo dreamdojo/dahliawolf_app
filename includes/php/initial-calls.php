@@ -151,10 +151,10 @@ else if ($self == '/profile.php' || $self == '/pages/profile.php') {
 	if (empty($_GET['username'])) {
 		default_redirect();
 	}
-
+/*
 	$params = array(
 		'username' => strtolower($_GET['username'])
-		, 'limit' => 0
+		, 'limit' => 12
 	);
 
 	if (IS_LOGGED_IN) {
@@ -189,7 +189,7 @@ else if ($self == '/profile.php' || $self == '/pages/profile.php') {
 	}
 	if (!empty($posts_data)) {
 		$_data['posts'] = $posts_data['data'];
-	}
+	}*/
 
 	// My Runway
 	$calls = array(

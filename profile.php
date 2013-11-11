@@ -2,6 +2,34 @@
     $pageTitle = "Profile";
     include "head.php";
 
+$params = array(
+    'username' => strtolower($_GET['username']),
+    'limit' => 0
+);
+
+    if (IS_LOGGED_IN) {
+        $params['viewer_user_id'] = $_SESSION['user']['user_id'];
+    }
+    $data = api_call('user', 'get_user', $params, true);
+    $_data['user'] = $data['data'];
+    if (empty($_data['user'])) {
+        default_redirect();
+    }
+
+    $params = array(
+        'user_id' => $_data['user']['user_id'],
+        'limit' => 12
+    );
+
+    $posts_data = api_call('posting', 'all_posts', $params, true);
+
+    $_data['posts'] = $posts_data['data'];
+
+    if(!$_data['user']['user_id']) {
+        echo "<div class='no-findy'><div class='no-user'>YOU LOOK LOST</div><img src='/mobile/images/404-wolf.jpg'></div>";
+        die();
+    }
+
     if(!$_data['user']['user_id']) {
         $_SESSION['errors'][0] = 'You have wandered off the beaten path :(';
         include "header.php";
