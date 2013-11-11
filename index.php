@@ -59,6 +59,7 @@
        });
 
        $('.hiw').on('click', function() {
+           sendToAnal({name:'Watching Video', errorCode: 'On homepage'});
            var $movieScreen = $('<div id="tooltip-overlay"></div>').css({'opacity': 1}).appendTo($('body')).fadeIn(1000,function() {
                $movieScreen.load('/video_page.php');
                var $closer = $('<div class="closeMovie"><img src="/images/movieClose.png"></div>').appendTo($('body')).on('click', function(){
