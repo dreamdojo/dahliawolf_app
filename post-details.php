@@ -119,7 +119,7 @@
         </div>
     </div>
 </div>
-<div id="postGridTitle">MORE POSTS BY <?= $_data['post']['username'] ?></div>
+<div id="postGridTitle">MORE POSTS BY <a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></div>
 <div id="userPostGrid"></div>
 
 <? if(!isset( $_GET['ajax'] )): ?>
