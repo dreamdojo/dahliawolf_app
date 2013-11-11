@@ -210,7 +210,7 @@
                     $.each(data.data, function(index, post) {
                         postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
                     });
-                } else {
+                } else if(!$('#bankBucket h2').length) {
                     $('#bankBucket').append('<h2>OH NO! We temporarily ran out of images. Please use one of the options above and keep inspiring!</h2>')
                 }
 
