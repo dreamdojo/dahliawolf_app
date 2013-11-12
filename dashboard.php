@@ -2,14 +2,23 @@
 if(!IS_LOGGED_IN) {
     die();
 }
-$url = 'http://dev.commerce.offlinela.com/1-0/store_credit.json?function=get_user_credits_total&user_id='.$_SESSION['user']['user_id'].'&use_hmac_check=0';
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,$url);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$result = json_decode(curl_exec ($ch));
-curl_close ($ch);
-$credits = round(floatval($result->data->get_user_credits_total->data->total_credits), 2);
+    $url = 'http://dev.commerce.offlinela.com/1-0/store_credit.json?function=get_user_credits_total&user_id='.$_SESSION['user']['user_id'].'&use_hmac_check=0';
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
+    $credits = round(floatval($result->data->get_user_credits_total->data->total_credits), 2);
+
+    $url = 'http://dev.commerce.offlinela.com/1-0/user.json?function=get_comissions&use_hmac_check=0&id_shop=3&id_lang=1&user_id='.$_SESSION['user']['user_id'];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
+    $commision = round(floatval($result->data->get_comissions->data->sales_total), 2);
 ?>
 
 <style xmlns="http://www.w3.org/1999/html">
@@ -30,18 +39,21 @@ $credits = round(floatval($result->data->get_user_credits_total->data->total_cre
     #dashboardHeader .stats li{text-indent: 10px; padding: 3px 2px;}
     .choosed{border: #000 thin solid;}
 
-    #dataCol{background-color: #f3f3f3; margin: 0px auto; width: 1000px; margin-top: 15px;}
+    #dataCol{margin: 0px auto; width: 900px; margin-top: 15px;}
     #dataCol .menuToggle{width: 202px; margin: 0px auto; height: 60px;}
     #dataCol .menuToggle li{width: 75px; margin-top: 13px; float: left; background-color: #fff; padding: 9px; font-size: 13px; text-align: center; cursor: pointer;}
-    #dataCol #filters{ width: 96%; margin-left: 2%; float: left; background-color: #fff; height: 25px; line-height: 25px;}
-    #dataCol #filters li{float: left; text-align: center;width: 33%; font-size: 11px; color: #666666;}
+    #dataCol #filters{ width: 100%; background-color: #fff; height: 25px; line-height: 25px;}
+    #dataCol #filters ul{float: left;}
+    #dataCol #filters li{float: left; text-align: center;width: 33%; font-size: 11px; color: #666666; display: none;}
     #dataCol #postSelector{ width: 98%;}
+    .menuTitle{border: #c2c2c2 thin solid;}
 
-    #postBin{width: 96%; margin-left: 2%;padding-bottom: 120px;}
-    #postBin .dbPost{height: 300px; width: 100%; background-color: #fff; float: left; margin-top: 10px;overflow: hidden;}
-    #postBin .dbPost li{ float: left; height: 180px; padding-top: 60px; margin-top: 25px; text-align: center; font-size: 15px; position: relative; border: #c2c2c2 5px solid; margin-left: -5px;}
-    #postBin .dbPost li:first-child{height: 70%;margin-top: 15px;margin-left: 15px; background-size: auto 96%;background-color: #F5F5F5; background-position: 50%;background-repeat: no-repeat; border: none}
-    .postAction{ position: absolute; width: 100%; text-align: center;bottom: 10px; cursor: pointer;}
+    #postBin{width: 100%; padding-bottom: 120px;}
+    #postBin .dbPost{height: 400px; width: 32%; background-color: #fff; float: left; margin-top: 10px; overflow: hidden; margin-left: 1%;border: #c2c2c2 thin solid;}
+    #postBin .dbPost li{ width: 90%; margin:0px auto;text-align: left;font-size: 12px;position: relative;height: 22px;line-height: 22px;}
+    #postBin .dbPost div{height: 70%; width: 90%;margin: 15px auto; background-size: 96% auto; background-color: #F5F5F5; background-position: 50%;background-repeat: no-repeat; border: none}
+    #postBin .dbPost li p{padding: 0px; margin: 0px; width: 60%; float: left;}
+    #postBin .dbPost li p:last-child{text-align: right; width: 40%;}
     .sSteez{font-size: 12px;color: #666666;font-size: 15px;font-weight: 100;}
 
     #dbModal{ position: fixed; width: 700px; height: 300px; border: #c2c2c2 thin solid; background-color: #fff; display: none; left: 50%; top: 50%; margin-top: -150px; margin-left: -350px; z-index: 1000010;overflow: scroll;}
@@ -95,7 +107,7 @@ $credits = round(floatval($result->data->get_user_credits_total->data->total_cre
             <li class="uname">@<?= $_data['user']['username'] ?></li>
             <!--<li class="mLevel">Member Level: <?= $_data['user']['membership_level']['total_commissions'] ?></li>-->
             <li class="sSteez"><a href="/<?= $_data['user']['username'] ?>/followers"><?= $_data['user']['followers'] ?> FOLLOWERS</a> | <a href="/<?= $_data['user']['username'] ?>/following"><?= $_data['user']['following'] ?> FOLLOWING</a></li>
-            <li class="sSteez"><?= $_data['user']['points'] ?> POINTS | </li>
+            <li class="sSteez"><?= $_data['user']['points'] ?> POINTS | $<?= $commision ?> SALES</li>
         </ul>
         <ul class="cashOut">
             <li style="font-weight: 100;">ACCOUNT BALANCE</li>
@@ -105,23 +117,26 @@ $credits = round(floatval($result->data->get_user_credits_total->data->total_cre
     </div>
 </div>
 <div id="dataCol">
-    <ul class="menuToggle">
-        <li class="dbButton toggleDisplay choosed">POSTS</li>
-        <li style="margin-left: 14px;" class="toggleDisplay">PRODUCTS</li>
-    </ul>
-    <ul id="filters">
-        <li style="width: 32%;">
-            <ul id="postSelector">
-                <li class="filter" data-filter="is_active">ACTIVE(<?= $_data['user']['posts_active'] ?>)</li>
-                <li class="filter" data-filter="is_expired">EXPIRED(<?= $_data['user']['posts_expired'] ?>)</li>
-                <li class="filter" data-filter="is_winner">WINNERS(<?= $_data['user']['winner_posts'] ?>)</li>
-            </ul>
-        </li>
-        <li class="sorter" style="width: 20%;" data-sorter="total_likes">VOTES</li>
-        <li class="sorter" style="width: 16%;" data-sorter="total_views">VIEWS</li>
-        <li class="sorter" style="width: 15.5%;" data-sorter="total_shares">SHARES</li>
-        <li style="width: 15%;">TIME LEFT</li>
-    </ul>
+    <div id="filters">
+        <ul style="width: 40%;">
+            <div class="menuTitle">Show</div>
+            <li class="dbButton toggleDisplay choosed">POSTS</li>
+            <li style="margin-left: 14px;" class="toggleDisplay">PRODUCTS</li>
+        </ul>
+        <ul id="postSelector"  style="width: 40%;">
+            <div class="menuTitle">Sort</div>
+            <li class="filter" data-filter="is_active">ACTIVE(<?= $_data['user']['posts_active'] ?>)</li>
+            <li class="filter" data-filter="is_expired">EXPIRED(<?= $_data['user']['posts_expired'] ?>)</li>
+            <li class="filter" data-filter="is_winner">WINNERS(<?= $_data['user']['winner_posts'] ?>)</li>
+        </ul>
+        <ul  style="width: 20%;">
+            <div class="menuTitle">View</div>
+            <li class="sorter" style="width: 20%;" data-sorter="total_likes">VOTES</li>
+            <li class="sorter" style="width: 16%;" data-sorter="total_views">VIEWS</li>
+            <li class="sorter" style="width: 15.5%;" data-sorter="total_shares">SHARES</li>
+            <li style="width: 15%;">TIME LEFT</li>
+        </ul>
+    </div>
     <div id="postBin"></div>
     <p style="clear: left;"></p>
 </div>
@@ -224,18 +239,11 @@ $credits = round(floatval($result->data->get_user_credits_total->data->total_cre
     function dashboardPost(data) {
         this.data = data;
         this.$post = $('<ul class="dbPost"></ul>');
-        $('<a href="/post-details?posting_id='+this.data.posting_id+'" rel="modal"><li style="width: 30%; background-image: url(\''+this.data.image_url+'&width=300\')"></li></a>').appendTo(this.$post);
-        this.$panel0 = $('<li style="width: 19%; margin-left: 10px;"><p>'+this.data.total_likes+' LOVES</p><p><span class="dahliaPink">'+(LOVE_REQUIRED - this.data.total_likes)+'</span> NEEDED TO WIN</p></li>').appendTo(this.$post);
-        this.$panel1 = $('<li style="width: 15%;"><p>'+this.data.total_views+' VIEWS</p></li>').appendTo(this.$post);
-        this.$panel2 = $('<li style="width: 15%;"><p>'+this.data.total_shares+' SHARES</p></li>').appendTo(this.$post);
-        this.$panel3 = $('<li style="width: 15%;"><p>EXP: '+this.data.expiration_date+'</p></li>').appendTo(this.$post);
-        if(Number(this.data.total_likes)){
-            $('<div class="postAction">View Members</div>').appendTo(this.$panel0).on('click', $.proxy(this.getLovers, this));
-        }
-        if(Number(this.data.total_shares)) {
-            $('<div class="postAction">View Shares</div>').appendTo(this.$panel2).on('click', $.proxy(dashboard.showShares, this));
-        }
-        //$('<div class="postAction">More Time+</div>').appendTo(this.$panel3).on('click', $.proxy(dashboard.promotePost, this));
+        $('<a href="/post-details?posting_id='+this.data.posting_id+'" rel="modal"><div style="background-image: url(\''+this.data.image_url+'&width=300\')"></div></a>').appendTo(this.$post);
+        $('<li><p>Views..... '+this.data.total_views+'</p><p></p></li>').appendTo(this.$post);
+        $('<li><p>Loves...... '+this.data.total_likes+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(this.getLovers, this));;
+        $('<li><p>Shares.... '+this.data.total_shares+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(dashboard.showShares, this));
+        $('<li><p>Expires... '+this.data.expiration_date+'</p><p>+TIME</p></li>').appendTo(this.$post);
 
         return this.$post;
     }
