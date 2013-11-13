@@ -25,10 +25,14 @@ $params = array(
 
     $_data['posts'] = $posts_data['data'];
 
-    if(!$_data['user']['user_id']) {
-        echo "<div class='no-findy'><div class='no-user'>YOU LOOK LOST</div><img src='/mobile/images/404-wolf.jpg'></div>";
-        die();
-    }
+    $url = 'http://dev.dahliawolf.com/api/1-0/posting.json?function=get_user_faves&use_hmac_check=0&user_id='.$_SESSION['user']['user_id'];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
+    $faves = $result->data->get_user_faves;
 
     if(!$_data['user']['user_id']) {
         $_SESSION['errors'][0] = 'You have wandered off the beaten path :(';
@@ -116,13 +120,16 @@ $params = array(
     </div>
 
 
-    <div id="userPostGrid"></div>
+    <div id="userPostGrid">
+    </div>
 </div>
 
 <script>
+    console.log(<?= json_encode($faves) ?>);
 	$(function() {
         theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
         var thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= $feedType ?>" );
+        thePostGrid.setFaves(<?= json_encode($faves) ?>);
     });
 </script>
 

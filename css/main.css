@@ -368,6 +368,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #rightArrow{right: -5px;background-position: -22px; }
 #userPostGrid{ width: 939px;float: left;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);margin-left: 7px;padding-left: 45px;padding-bottom: 25px;}
 .userGridPostFrame{ float: left;width: 264px;overflow: hidden;margin-right: 20px;height: 315px;margin-top: 25px;border: rgb(255, 255, 255) 10px solid;position: relative;}
+.userGridPostFrame .profFeat{width: 60px;position: absolute;z-index: 12;right: 0px;top: 0px;}
 .userGridPostFrame a{ float:left; height:100%;}
 .userGridPostFrame img{ width:100%;}
 .myLittleSecret{position:absolute; height:100%; right:0px; width:20px; background-color:#fff;}
@@ -1688,7 +1689,7 @@ width: 174px;
 #userProfileMenuBar{ margin-top: 10px;height: 47px;width: 98.5%;margin-left: .75%;background-color: #fff;margin-bottom: 10px;}
 #profilePostBin{}
 .userProfileAvatarHome{width: 140px; height:100%; float:left;padding-top: 10px;margin-left: 10px;}
-.userProfileAvatarFrame{overflow: hidden;border-radius: 110px;border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
+.userProfileAvatarFrame{overflow: hidden;border-radius: 110px; margin-top:10px; border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
 .userProfileAvatarFrame img{width:100%;}
 #userProfileDeetsRightCol{float:right; height:100%; width:500px;}
 .userProfileDeetsList{ text-align:left; height:100%; float:left;margin-top: 7px;margin-left: 20px;max-width: 300px;word-wrap: break-word;}
@@ -1708,7 +1709,7 @@ width: 174px;
 .profileRed{ color: #ff2e6e;font-family: helvetica;font-size: 16px;}
 .toggleSelected{color: rgb(94, 94, 94);
     border: rgb(94, 94, 94) 1px solid;}
-.overlayLayer{ position:absolute; left:-1%; top:0px; height:100%; width:102%; background-color:#fff; opacity:.5; }
+.overlayLayer{ position:absolute; left:-1%; top:0px; height:100%; width:102%; background-color:#fff; opacity:.9; }
 .levelWrap{position:relative;}
 #profileShareFacebook{ background-image:url(/images/profile/1.png); background-repeat: no-repeat; background-size:auto 100%;}
 #profileSharePinterest{ background-image:url(/images/profile/2.png); background-repeat: no-repeat; background-size:auto 100%;}

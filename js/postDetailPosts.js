@@ -27,6 +27,26 @@ function postDetailGrid(id, parentContainer, profile, feedType) {
 	this.init();
 }
 
+postDetailGrid.prototype.setFaves = function(posts) {
+    var $this = this;
+    $.each(posts, function(x, post) {
+        var $post = $('<div class="userGridPostFrame"></div>').hover(function() {
+            $(this).find('.option').fadeIn(50);
+            $(this).find('.shareBall').fadeIn(50);
+        }, function() {
+            $(this).find('.option').fadeOut(50);
+            $(this).find('.shareBall').fadeOut(50);
+        });
+        var str = '';
+        str += '<div class="popGridLove option '+( parseInt(post.posting_data.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_data.posting_id+'" data-isLoved="'+parseInt(post.posting_data.is_liked)+'"></div>';
+        str += '<a href="/post-details?posting_id='+post.posting_data.posting_id+'" class="image color-'+x % 5+'" rel="modal">';
+        str += '<img src = "'+post.posting_data.image_url+'&width=300" class="lazy zoom-in" data-src="'+post.posting_data.image_url+'&width=300" '+(parseInt(post.posting_data.width) >= parseInt(post.posting_data.height) ? $this.htText : '')+'>';
+        str += '</a>';
+        str += '<img class="profFeat" src="/images/featProf.png">';
+        $post.append(new shareBall(post.posting_data));
+        $this.postContainer.append( $post.append(str) );
+    });
+}
 
 postDetailGrid.prototype.showLoader = function() {
 	this.postContainer.append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');

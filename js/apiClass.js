@@ -310,6 +310,19 @@ Post.prototype.promote = function(id, callback) {
     this.callApi({posting_id : id, user_id : dahliawolf.userId});
     return this;
 }
+
+Post.prototype.addToFaves = function(id, callback) {
+    this.apiFunction = 'fave';
+    this.callback = callback;
+    this.callApi({posting_id: id, user_id : dahliawolf.userId});
+}
+
+Post.prototype.delFromFaves = function(id, callback) {
+    this.apiFunction = 'remove_fave';
+    this.callback = callback;
+    this.callApi({posting_id: id, user_id:dahliawolf.userId })
+}
+
 Post.prototype.getLovers = function(id, limit, offset, callback) {
     this.apiFunction = 'get_lovers';
     this.callback = callback;
