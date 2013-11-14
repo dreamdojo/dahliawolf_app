@@ -213,6 +213,7 @@ $Spine->output_css();
 	display: none;
 	
 	position: absolute;
+    z-index: 10000000;
 }
 #modal-content {
 	position: absolute;

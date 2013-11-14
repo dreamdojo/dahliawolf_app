@@ -15,6 +15,10 @@ holla.log = function (message) {
     catch(e) {return;}
 }
 
+function sendGeoffMessage(msge) {
+    $.post('/action/sendGeoffMsg', {msg : msge});
+}
+
 
 
 function validateEmail(email) {
