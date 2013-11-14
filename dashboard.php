@@ -160,7 +160,7 @@ if(!IS_LOGGED_IN) {
             <li data-filter="posts">Posts</li>
             <li data-filter="products">Products</li>
         </ul>
-        <ul id="postSelector" class="posts" style="width: 38%; margin-left: 1%;">
+        <ul id="postSelector" class="dbposts" style="width: 38%; margin-left: 1%;">
             <div class="menuTitle">Sort</div>
             <li class="onlyPosts" data-filter="is_active">Active(<?= $_data['user']['posts_active'] ?>)</li>
             <li class="onlyPosts" data-filter="is_expired">Expired(<?= $_data['user']['posts_expired'] ?>)</li>
@@ -168,7 +168,7 @@ if(!IS_LOGGED_IN) {
             <li class="onlyProducts" data-filter="Live">Live</li>
             <li class="onlyProducts" data-filter="Pre Order">Pre Order</li>
         </ul>
-        <ul id="viewSelector" class="posts" style="width: 38%;margin-left: 1%;">
+        <ul id="viewSelector" class="dbposts" style="width: 38%;margin-left: 1%;">
             <div class="menuTitle">View</div>
             <li class="onlyPosts" data-filter="total_likes">Loves</li>
             <li class="onlyPosts" data-filter="total_views">Views</li>
