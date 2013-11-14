@@ -117,10 +117,12 @@
         <div class="socialCol">
         	<div class="postDetailCommentSection">
             	<div class="commentSectionTitle">COMMENTS</div>
-                <div class="postDetailCommentBox">
-                	 <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
-                     <textarea id="postUserCommentBox" class="socialize" placeholder="Enter Comment Here!"></textarea>
-                </div>
+                <? if(IS_LOGGED_IN): ?>
+                    <div class="postDetailCommentBox">
+                         <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
+                         <textarea id="postUserCommentBox" class="socialize" placeholder="Enter Comment Here!"></textarea>
+                    </div>
+                <? endif ?>
                 <div id="postCommentButton">POST COMMENT</div>
                 <div id="commentContainer">
 					<? foreach($_data['comments'] as $comment): ?>

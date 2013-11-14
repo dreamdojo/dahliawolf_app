@@ -225,14 +225,22 @@ if(!IS_LOGGED_IN) {
             dashboard.filter = $(this).data('filter');
             $(this).siblings('.menuTitle').html($(this).html());
             dashboard.resetBin();
-            dashboard.getPosts();
+            if(dashboard.feed === 'posts') {
+                dashboard.getPosts();
+            } else {
+                dashboard.getProducts();
+            }
         });
 
         $('#viewSelector li').on('click', function() {
             dashboard.sorter = $(this).data('filter');
             $(this).siblings('.menuTitle').html($(this).html());
             dashboard.resetBin();
-            dashboard.getPosts();
+            if(dashboard.feed === 'posts') {
+                dashboard.getPosts();
+            } else {
+                dashboard.getProducts();
+            }
         });
     }
 
@@ -354,16 +362,24 @@ if(!IS_LOGGED_IN) {
         console.log(data);
         this.data = data;
         this.$product = $('<ul class="dbPost"></ul>');
-        var $img = $('<div class="image" style="background-image: url(\'http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=300\')"></div>').appendTo(this.$product);
+        var $img = $('<div class="image" style="background-image: url(\'http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=300\')"><p class="needs">Status: '+data.status+'</p></div>').appendTo(this.$product);
 
-        $('<li><p>Views..... '+this.data.total_views+'</p><p></p></li>').appendTo(this.$post);
-        $('<li><p>Shares...... '+this.data.total_likes+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(this.getLovers, this));;
-        $('<li><p>Sales.... '+this.data.total_shares+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(dashboard.showShares, this));
+        if(data.status === 'Pre Order' || data.status === 'Live') {
+            $('<li><p>Views..... 0</p><p></p></li>').appendTo(this.$product);
+            $('<li><p>Shares.... 0</p><p>VIEW</p></li>').appendTo(this.$product);
+            $('<li><p>Sales..... 0</p><p>VIEW</p></li>').appendTo(this.$product);
+        } else {
+            $('<li><p>1. Submitted</p><p></p></li>').appendTo(this.$product);
+            $('<li><p>2. Designed</p><p></p></li>').appendTo(this.$product);
+            $('<li><p>3. Produced</p><p></p></li>').appendTo(this.$product);
+            $('<li><p>4. Shipped</p><p></p></li>').appendTo(this.$product);
+        }
 
         return this.$product;
     }
 
     dashboard.resetBin = function() {
+        $('body').scrollTop(0);
         this.$bin.empty();
         this.offset = 0;
         dashboard.bindScroll();
