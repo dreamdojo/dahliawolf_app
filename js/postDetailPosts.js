@@ -38,7 +38,7 @@ postDetailGrid.prototype.setFaves = function(posts) {
             $(this).find('.shareBall').fadeOut(50);
         });
         var str = '';
-        str += '<div class="popGridLove option '+( parseInt(post.posting_data.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_data.posting_id+'" data-isLoved="'+parseInt(post.posting_data.is_liked)+'"></div>';
+        str += '<div class="popGridLove option '+( parseInt(post.posting_data.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_data.posting_id+'" data-isLoved="'+parseInt(post.posting_data.is_liked)+'">'+( parseInt(post.posting_data.is_liked) ? 'LOVED' : 'LOVE')+'</div>';
         str += '<a href="/post-details?posting_id='+post.posting_data.posting_id+'" class="image color-'+x % 5+'" rel="modal">';
         str += '<img src = "'+post.posting_data.image_url+'&width=300" class="lazy zoom-in" data-src="'+post.posting_data.image_url+'&width=300" '+(parseInt(post.posting_data.width) >= parseInt(post.posting_data.height) ? $this.htText : '')+'>';
         str += '</a>';

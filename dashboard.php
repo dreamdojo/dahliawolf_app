@@ -156,7 +156,7 @@ if(!IS_LOGGED_IN) {
 <div id="dataCol">
     <div id="filters">
         <ul id="typeSelector" style="width: 20%; margin-left: 1%;">
-            <div class="menuTitle">Show</div>
+            <div class="menuTitle">Posts</div>
             <li data-filter="posts">Posts</li>
             <li data-filter="products">Products</li>
         </ul>
