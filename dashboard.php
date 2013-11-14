@@ -11,14 +11,14 @@ if(!IS_LOGGED_IN) {
     curl_close ($ch);
     $credits = round(floatval($result->data->get_user_credits_total->data->total_credits), 2);
 
-    $url = 'http://dev.commerce.offlinela.com/1-0/user.json?function=get_sales&use_hmac_check=0&id_shop=3&id_lang=1&user_id='.$_SESSION['user']['user_id'];
+    $url = 'http://dev.dahliawolf.com/api/1-0/user.json?function=get_sales&use_hmac_check=0&id_shop=3&id_lang=1&user_id='.$_SESSION['user']['user_id'];
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $result = json_decode(curl_exec ($ch));
     curl_close ($ch);
-    $commision = round(floatval($result->data->get_sales->data->sales_total), 2);
+    $commision = round(floatval($result->data->get_sales->sales_total), 2);
 
     $url = 'http://dev.dahliawolf.com/api/1-0/posting.json?function=get_user_faves&use_hmac_check=0&user_id='.$_SESSION['user']['user_id'];
     $ch = curl_init();
