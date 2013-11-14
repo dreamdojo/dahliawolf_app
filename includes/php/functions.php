@@ -19,8 +19,8 @@ function edit_action_redirect($data, $function_name, $success_msg, $redirect = N
 	die();
 }
 function socialize($str){
-	$hashified = preg_replace('/\#([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/spine?q=$1">#$1</a>',$str);
-    $hashified = preg_replace('/\@([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/profile.php?username=$1">@$1</a>', $hashified);
+	$hashified = preg_replace('/\#([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/vote?q=$1">#$1</a>',$str);
+    $hashified = preg_replace('/\@([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/$1">@$1</a>', $hashified);
 	return $hashified;
 }
 function p_r($array) {

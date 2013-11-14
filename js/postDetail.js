@@ -117,3 +117,4 @@ postDetail.prototype.toggleLove = function() {
 		new_loginscreen();
 	}
 }
+

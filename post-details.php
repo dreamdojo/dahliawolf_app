@@ -51,13 +51,7 @@
 <? if(!isset( $_GET['ajax'] )): ?>
     <div id="modal-content" style="margin-left: -500px;">
 <? endif ?>
-
-<? if( 1 == 2/*isset($_data['post']['previous_posting_id']) && isset($_GET['ajax'])*/ ): ?>
-     <a href="/post-details?posting_id=<?= $_data['post']['previous_posting_id'] ?>" rel="modal"><div class="arrow" id="leftArrow"></div></a>
-<? endif ?>
-<? if( 1 == 2/*isset($_data['post']['next_posting_id']) && isset($_GET['ajax'])*/ ): ?>
-     <a href="/post-details?posting_id=<?= $_data['post']['next_posting_id'] ?>" rel="modal"><div class="arrow" id="rightArrow"></div></a>
-<? endif ?>
+<div class="pdWrap">
 <div class="post-details-container posting-<?= $_data['post']['posting_id'] ?><?= !empty($_data['post']['is_liked']) ? ' liked' : '' ?>" data-posting_id="<?= $_data['post']['posting_id'] ?>">
 
     <div id="postDetailTopRow">
@@ -102,12 +96,9 @@
         </div>
     </div>
     <div id="postDetailMainRow">
-    	<div class="postImageFrame">
-        	<? if($_data['post']['is_winner']): ?>
-                <div class="is_winner_box">WINNER <a href="/shop/<?= $_data['post']['product_id'] ?>">view item</a></div>
-            <? endif ?>
-            <a id="post_image" class="zoombox" data-url="<?= $_data['post']['image_url'] ?>"><img class="zoom-in" src="<?= $_data['post']['image_url'] ?>" /></a>
-        </div>
+        <a id="post_image" class="zoombox" data-url="<?= $_data['post']['image_url'] ?>">
+            <div class="postImageFrame <?= intval($_data['post']['width']) > intval($_data['post']['height']) ? 'postWide' : 'postTall' ?>" style='background-image: url("<?= $_data['post']['image_url'] ?>")'></div>
+        </a>
         
         <div class="postOrigin">
             Posted from <a href="<?= $_data['post']['image_attribution_url'] ?>" target="_blank"><?= $_data['post']['image_attribution_domain'] ?></a> on <?= $created[0] ?>,
@@ -120,7 +111,7 @@
                 <? if(IS_LOGGED_IN): ?>
                     <div class="postDetailCommentBox">
                          <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
-                         <textarea id="postUserCommentBox" class="socialize" placeholder="Enter Comment Here!"></textarea>
+                         <textarea id="postUserCommentBox" class="socialize" placeholder="Write message @member, #hashtag"></textarea>
                     </div>
                 <? endif ?>
                 <div id="postCommentButton">POST COMMENT</div>
@@ -142,6 +133,7 @@
 </div>
 <div id="postGridTitle">MORE POSTS BY <a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></div>
 <div id="userPostGrid"></div>
+</div>
 
 <? if(!isset( $_GET['ajax'] )): ?>
     </div>
@@ -152,7 +144,7 @@
 <script>
 
     $(function() {
-
+        console.log(<?= json_encode($_data['post']) ?>);
         window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
         window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
 
