@@ -1,11 +1,11 @@
 <?
-    $pageTitle = "Profile";
+    $pageTitle = "Profile - ".$_GET['username'];
     include "head.php";
 
-$params = array(
-    'username' => strtolower($_GET['username']),
-    'limit' => 0
-);
+    $params = array(
+        'username' => strtolower($_GET['username']),
+        'limit' => 0
+    );
 
     if (IS_LOGGED_IN) {
         $params['viewer_user_id'] = $_SESSION['user']['user_id'];
@@ -25,7 +25,9 @@ $params = array(
 
     $_data['posts'] = $posts_data['data'];
 
-    $url = 'http://dev.dahliawolf.com/api/1-0/posting.json?function=get_user_faves&use_hmac_check=0&user_id='.$_SESSION['user']['user_id'];
+    define('MY_PROFILE', (!empty($_SESSION['user']) && $_SESSION['user']['user_id'] == $_data['user']['user_id'] ? true : false) );
+
+    $url = 'http://dev.dahliawolf.com/api/1-0/posting.json?function=get_user_faves&use_hmac_check=0&viewer_user_id='.$_SESSION['user']['user_id'].'&user_id='.$_data['user']['user_id'];
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_POST, 1);
@@ -40,10 +42,6 @@ $params = array(
         die();
     }
     include "header.php";
-
-    define('MY_PROFILE', (!empty($_SESSION['user']) && $_SESSION['user']['user_id'] == $_data['user']['user_id'] ? true : false) );
-
-    $feedType = ($_data['view'] == 'wild-4s' ? 'loves' : 'posts');
 ?>
 
 <? if(!isset($_GET['dashboard']) || !MY_PROFILE): ?>

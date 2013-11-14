@@ -11,6 +11,25 @@
 		require $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
 		require $_SERVER['DOCUMENT_ROOT'] . '/includes/php/initial-calls.php';
 	}
+
+    if(isset($_GET['posting_id'])){
+        $params = array(
+            'posting_id' => $_GET['posting_id']
+        );
+    }
+    if (IS_LOGGED_IN) {
+        $params['viewer_user_id'] = $_SESSION['user']['user_id'];
+    }
+    $data = api_call('posting', 'get_post', $params, true);
+    $_data['post'] = $data['data'];
+
+    // Likes
+    $data = api_call('posting', 'get_post_likes', $params, true);
+    $_data['post_likes'] = $data['data'];
+
+    // Comments
+    $data = api_call('comment', 'get_post_comments', $params, true);
+    $_data['comments'] = $data['data'];
 	
 	$params = array(
 		'user_id' => $_data['post']['user_id']
@@ -109,7 +128,7 @@
                         <div class="postDetailCommentBox">
                             <div class="postCommentAvatarFrame" style="background-image: url('<?= $comment['avatar'] ?>&width=75');"></div>
                             <div class="postCommentComment">
-                                <p class="name"><?= $comment['username'] ?></p>
+                                <p class="name"><a href="/<?= $comment['username'] ?>"><?= $comment['username'] ?></a></p>
                                 <p><?= $hashified ?></p>
                             </div>
                         </div>

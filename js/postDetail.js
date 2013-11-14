@@ -46,7 +46,7 @@ postDetail.prototype.publishComment = function() {
 				data = $.parseJSON(data);
 				data = data.data;
 				str = '<div id="newComment-'+data.comment_id+'" class="postDetailCommentBox hidden"><div class="postCommentAvatarFrame"><img src="'+userConfig.avatar+'"></div>';
-                str += '<div class="postCommentComment"><p class="name">'+theUser.username+'</p><p>'+comment+'</p></div></div>';
+                str += '<div class="postCommentComment"><p class="name"><a href="/'+theUser.id+'">'+theUser.username+'</a></p><p>'+comment+'</p></div></div>';
 				$this.commentContainer.prepend(str);
 				$('#newComment-'+data.comment_id).slideDown(400);
 			});

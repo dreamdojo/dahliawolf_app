@@ -95,11 +95,11 @@ postDetailGrid.prototype.toggleLove = function() {
 	if(theUser.id) {	
 		if(id && id > 0) {
 			if(loved){
-				$(this).addClass('popGridnotLoved').removeClass('popGridisLoved');
+				$(this).addClass('popGridnotLoved').removeClass('popGridisLoved').html('LOVE');
 				$(this).data('isloved', 0);
 				$.post('/action/unlike?posting_id='+id)
 			} else {
-				$(this).removeClass('popGridnotLoved').addClass('popGridisLoved');
+				$(this).removeClass('popGridnotLoved').addClass('popGridisLoved').html('LOVED');
 				$(this).data('isloved', 1);
 				$.post('/action/like?posting_id='+id)
 			}
@@ -130,7 +130,7 @@ postDetailGrid.prototype.getPosts = function() {
                     $(this).find('.shareBall').fadeOut(50);
                 });
 				var str = '';
-                str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'"></div>';
+                str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'">'+(parseInt(post.is_liked) ? 'LOVED' : 'LOVE')+'</div>';
 				str += '<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+index % 5+'" rel="modal">';
 				str += '<img src = "'+post.image_url+'&width=300" class="lazy zoom-in" data-src="'+post.image_url+'&width=300" '+(parseInt(post.width) >= parseInt(post.height) ? $this.htText : '')+'>';
 				str += '</a>';

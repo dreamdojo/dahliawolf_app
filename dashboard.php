@@ -47,7 +47,7 @@ if(!IS_LOGGED_IN) {
     #dashboardHeader .dbButton{background-color: #fff; border: #000 thin solid; color: #000; padding: 2px 10px; margin: 0px auto; cursor: pointer; display: none;}
     #dashboardHeader .vpp{margin-top: 20px; padding: 5px 0px; text-align: center;}
     #dashboardHeader .uname{font-size: 18px; text-indent: 0px !important;}
-    #dashboardHeader .stats li{text-indent: 10px; padding: 3px 2px;}
+    #dashboardHeader .stats li{padding: 3px 2px;}
     .choosed{border: #000 thin solid;}
 
     #dataCol{margin: 0px auto; width: 900px; margin-top: 15px; position: relative;}
@@ -152,8 +152,8 @@ if(!IS_LOGGED_IN) {
     <div id="filters">
         <ul id="typeSelector" style="width: 20%; margin-left: 1%;">
             <div class="menuTitle">Show</div>
-            <li data-filter="is_posts">Posts</li>
-            <li data-filter="is_products">Products</li>
+            <li data-filter="posts">Posts</li>
+            <li data-filter="products">Products</li>
         </ul>
         <ul id="postSelector"  style="width: 38%; margin-left: 1%;">
             <div class="menuTitle">Sort</div>
@@ -211,7 +211,14 @@ if(!IS_LOGGED_IN) {
 
     dashboard.bindFilter = function() {
         $('#typeSelector li').on('click', function() {
-           console.log($(this).data());
+            dashboard.feed = $(this).data('filter');
+            $(this).siblings('.menuTitle').html($(this).html());
+            dashboard.resetBin();
+            if(dashboard.feed === 'posts') {
+                dashboard.getPosts();
+            } else {
+                dashboard.getProducts();
+            }
         });
 
         $('#postSelector li').on('click', function() {
@@ -232,9 +239,17 @@ if(!IS_LOGGED_IN) {
     dashboard.bindScroll = function() {
         $(window).scroll(function() {
             if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
-                dashboard.getPosts();
+                if(dashboard.feed == 'posts') {
+                    dashboard.getPosts();
+                } else {
+                    dashboard.getProducts();
+                }
             }
         });
+    }
+
+    dashboard.unbindScroll = function() {
+        $(window).unbind('scroll');
     }
 
     dashboard.loadWithSorter = function() {
@@ -289,6 +304,7 @@ if(!IS_LOGGED_IN) {
                 $.each(data.data.get_products.data, function(index, product) {
                     that.$bin.append(new dashboardProduct(product, false, index));
                 });
+                dashboard.unbindScroll();
             });
         }
     }
@@ -335,9 +351,14 @@ if(!IS_LOGGED_IN) {
     }
 
     function dashboardProduct(data) {
+        console.log(data);
         this.data = data;
         this.$product = $('<ul class="dbPost"></ul>');
-        $('<li style="width: 30%; background-image: url(\''+this.data.inspiration_image_url+'&width=300\')"></li>').appendTo(this.$product);
+        var $img = $('<div class="image" style="background-image: url(\'http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=300\')"></div>').appendTo(this.$product);
+
+        $('<li><p>Views..... '+this.data.total_views+'</p><p></p></li>').appendTo(this.$post);
+        $('<li><p>Shares...... '+this.data.total_likes+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(this.getLovers, this));;
+        $('<li><p>Sales.... '+this.data.total_shares+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(dashboard.showShares, this));
 
         return this.$product;
     }
@@ -345,6 +366,7 @@ if(!IS_LOGGED_IN) {
     dashboard.resetBin = function() {
         this.$bin.empty();
         this.offset = 0;
+        dashboard.bindScroll();
     }
 
     dashboard.toggleBin = function() {

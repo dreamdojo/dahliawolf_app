@@ -243,7 +243,6 @@
         if(dahliawolf.areYouLoggedIntoTumblr) {
             dahliawolf.loader.show();
             $.getJSON('/lib/TumblrOAuth/getPosts', function(data) {
-                holla.log(data);
                 postBank.ajaxCall = null;
                 dahliawolf.loader.hide();
                 if(data.response.posts.length) {
@@ -306,7 +305,6 @@
     function bankPost(data, index) {
         this.data = data;
         var widths = [500, 300, 400];
-holla.log(this.data);
         this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" ondragleave="undrag(event)" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
         this.$image = $('<a class="zoombox" data-url="'+this.data.source+this.data.imageURL+'" rel="modal"><img src="'+this.data.source+this.data.imageURL+'"></a>').appendTo(this.$post);
