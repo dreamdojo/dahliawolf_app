@@ -59,6 +59,11 @@ if(!IS_LOGGED_IN) {
         -webkit-transition:height .25s;
         -o-transition:height .25s, -o-transform .25s;
         transition:height .25s, transform .25s;}
+    #filters .dbposts .onlyPosts{display: block;}
+    #filters .dbposts .onlyProducts{display: none;}
+    #filters .dbproducts .onlyProducts{display: block;}
+    #filters .dbproducts .onlyPosts{display: none;}
+
     #dataCol #filters ul:hover{max-height:550px;}
     #dataCol #filters li{float: left; text-align: center; width: 33%; font-size: 11px; color: #666666; width: 100%;background-color: #fff;}
     #dataCol #filters li:hover{background-color: #c2c2c2;}
@@ -155,17 +160,21 @@ if(!IS_LOGGED_IN) {
             <li data-filter="posts">Posts</li>
             <li data-filter="products">Products</li>
         </ul>
-        <ul id="postSelector"  style="width: 38%; margin-left: 1%;">
+        <ul id="postSelector" class="posts" style="width: 38%; margin-left: 1%;">
             <div class="menuTitle">Sort</div>
-            <li data-filter="is_active">Active(<?= $_data['user']['posts_active'] ?>)</li>
-            <li data-filter="is_expired">Expired(<?= $_data['user']['posts_expired'] ?>)</li>
-            <li data-filter="is_winner">Winners(<?= $_data['user']['winner_posts'] ?>)</li>
+            <li class="onlyPosts" data-filter="is_active">Active(<?= $_data['user']['posts_active'] ?>)</li>
+            <li class="onlyPosts" data-filter="is_expired">Expired(<?= $_data['user']['posts_expired'] ?>)</li>
+            <li class="onlyPosts" data-filter="is_winner">Winners(<?= $_data['user']['winner_posts'] ?>)</li>
+            <li class="onlyProducts" data-filter="Live">Live</li>
+            <li class="onlyProducts" data-filter="Pre Order">Pre Order</li>
         </ul>
-        <ul id="viewSelector" style="width: 38%;margin-left: 1%;">
+        <ul id="viewSelector" class="posts" style="width: 38%;margin-left: 1%;">
             <div class="menuTitle">View</div>
-            <li data-filter="total_likes">Loves</li>
-            <li data-filter="total_views">Views</li>
-            <li data-filter="total_shares">Shares</li>
+            <li class="onlyPosts" data-filter="total_likes">Loves</li>
+            <li class="onlyPosts" data-filter="total_views">Views</li>
+            <li class="onlyPosts" data-filter="total_shares">Shares</li>
+            <li class="onlyProducts" data-filter="views">Views</li>
+            <li class="onlyProducts" data-filter="loves">Loves</li>
             <li >Time Left</li>
         </ul>
     </div>
@@ -211,7 +220,9 @@ if(!IS_LOGGED_IN) {
 
     dashboard.bindFilter = function() {
         $('#typeSelector li').on('click', function() {
-            dashboard.feed = $(this).data('filter');
+            var filter = $(this).data('filter');
+            var $menus = $('#filters ul').removeClass().addClass('db'+filter);
+            dashboard.feed = filter;
             $(this).siblings('.menuTitle').html($(this).html());
             dashboard.resetBin();
             if(dashboard.feed === 'posts') {

@@ -62,7 +62,7 @@
     </div>
 </div>
 
-<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent"><span class="preHeader">Post from the</span> DAHLIA WOLF IMAGE BANK</span><div id="viewToggle"></div></div>
+<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent"><span class="preHeader">DAHLIA\WOLF BANK</span><div id="viewToggle"></div></div>
 <div id="bankBucket"></div>
 
 <?php include "footer.php" ?>
@@ -211,7 +211,7 @@
                         postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
                     });
                 } else if(!$('#bankBucket h2').length) {
-                    $('#bankBucket').append('<h2>OH NO! We temporarily ran out of images. Please use one of the options above and keep inspiring!</h2>')
+                    $('#bankBucket').append('<h2>Choose from one of the options above and start inspiring new fashions.</h2>');
                 }
 
                 postBank.$bucket.append('<div style="clear:left"></div>');
