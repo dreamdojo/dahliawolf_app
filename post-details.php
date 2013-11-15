@@ -109,7 +109,7 @@
         <div class="socialCol">
         	<div class="postDetailCommentSection">
             	<div class="commentSectionTitle">COMMENTS</div>
-                <div id="commentContainer">
+                <div id="commentContainer" style="height: 620px;">
                     <? if(IS_LOGGED_IN): ?>
                         <div class="postDetailCommentBox">
                             <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
@@ -128,10 +128,10 @@
                         </div>
                     <? endforeach ?>
                 </div>
-                <div class="commentSectionTitle" style="margin-top: 20px;">Notes from <?= $_data['post']['username'] ?></div>
+                <!--<div class="commentSectionTitle" style="margin-top: 20px;">Notes from <?= $_data['post']['username'] ?></div>
                 <div id="tagsSection">
 
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
