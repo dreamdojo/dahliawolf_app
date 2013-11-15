@@ -3,11 +3,13 @@
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
-    $user_params = array(
-        'username' => $_GET['username']
-    );
-    $data = api_call('user', 'get_user', $user_params, true);
-    $user = $data['data'];
+    if(!empty($_GET['username'])) {
+        $user_params = array(
+            'username' => $_GET['username']
+        );
+        $data = api_call('user', 'get_user', $user_params, true);
+        $user = $data['data'];
+    }
     //var_dump($user);
 ?>
 <style>
