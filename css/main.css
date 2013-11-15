@@ -312,25 +312,25 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 
 /************************ POST DETAILS AND GRID ***********/
-.post-details-container{width: 1000px;height: 800px;margin-top: 25px; margin: 0px auto;color: #666; padding-bottom: 20px;position: relative;}
-#postDetailTopRow{ width: 100%;height: 100px;padding-top: 20px;padding-bottom: 20px;}
-#postDetailTopRow #postShareSection{width: 320px;margin-right: 10px; float: right;}
-#postDetailTopRow #postShareSection li{height: 70px;width: 14.2%; border: #c2c2c2 thin solid; background-position: 50%;}
-.postDetailAvatarFrame{height:75px; width:75px; overflow:hidden; float:left; margin-left: 20px;background-size: auto 100%;background-position: 50%;border-radius: 50px;}
+.post-details-container{width: 1000px;height: 762px;margin-top: 25px; margin: 0px auto;color: #666; padding-bottom: 20px;position: relative;}
+#postDetailTopRow{ width: 100%;height: 100px;padding-top: 10px;padding-bottom: 0px;}
+#postDetailTopRow #postShareSection{width: 322px;margin-right: 17px; float: right;}
+#postDetailTopRow #postShareSection li{height: 56px;width: 48px; border: #c2c2c2 thin solid; background-position: 50%;}
+.postDetailAvatarFrame{height:85px; width:85px; overflow:hidden; float:left; margin-left: 20px;background-size: auto 100%;background-position: 50%;border-radius: 50px;}
 .postDetailAvatarFrame img{ width:100%;}
 #postDetailTopRow .deetsList{ height:100%; width:270px; float:left; text-align: left;margin-left: 10px;font-size: 10px;}
-#postDetailTopRow .deetsList li{ color:#b7b7b7; margin-top: 5px;}
+#postDetailTopRow .deetsList li{ color:#b7b7b7;}
 #postDetailTopRow .postDetailStat a{color:#b7b7b7 !important;}
 .postDetailFollow{ height:100%; width:115px; float:left; margin-right: 10px;}
 .isFollowing{background-image:url(/images/postDetailIsFollowButton.png);background-repeat:no-repeat; background-size: 60% 50%;background-position: 50% 33%;}
 .notFollowing{background-image:url(/images/postDetailFollowButton.png);background-repeat:no-repeat; background-size: 60% 50%;background-position: 50% 33%;}
 .postDetailFollow:hover{ opacity:.7;}
-.postDetailLikes{ height: 100%;width: 115px;float: left;border: 1px solid rgb(218, 218, 218);margin-top: 1px;}
+.postDetailLikes{ height: 85px; width: 85px; float: left;border: 1px solid rgb(218, 218, 218);margin-top: 1px;}
 .postDetailLikes:hover{opacity:.7; background-color: rgb(255, 239, 244) !important;}
 .pd-Loved{ background-image:url(/images/postDetailsLoveButtonLoved.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
 .pd-unLoved { background-image:url(/images/postDetailsLoveButton.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
 #shareRow{ height:100%; width:400px; float:left;}
-.postShareTitle{text-align: center; width: 100%;height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px;border: 1px solid rgb(221, 221, 221); background-color: #fff;}
+.postShareTitle{text-align: center; width: 100%;height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px;border: 1px solid rgb(221, 221, 221); background-color: #fff; line-height: 15px;font-size: 12px;}
 #postShareSection{width: 260px;margin-right: 40px;}
 .shareButts{height: 50px; width:104%;}
 .shareButts li{width: 39.4px;height:40%; float:left;background-color: #FFF; margin-top: 5px;margin-right: 5px; cursor:pointer;}
@@ -343,24 +343,25 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #shareEmail{background: url(/mobile/images/shareEmail.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
 #shareGplus{background: url(/mobile/images/shareGplus.png) no-repeat; background-position: 50% -5px; background-size: 100%; background-color:#fff;}
 #postDetailMainRow{height: 620px;width: 100%;margin-top: 20px;}
-.socialCol{width: 325px;height: 100%;float: left;color: #b7b7b7;margin-left: 20px;}
+.socialCol{width: 325px;height: 100%; overflow:hidden; float: left;color: #b7b7b7;margin-left: 20px;}
 .commentSectionTitle{width:100%; height:20px; text-align:center;font-size: 14px;background-color: #fff;padding-top: 3px;}
 .postDetailCommentBox{ height:75px; width:100%; margin-top: 10px; }
 .postCommentAvatarFrame{ height: 75px;overflow: hidden;width: 75px;float: left;border-radius: 40px;background-position: 50%;background-size: auto 100%;}
 .postCommentAvatarFrame img{ width: 100%;}
 .name a{ color: #f03d64 !important;}
 .name a:hover{ color: black !important;}
-.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;height: 55px;padding: 10px; overflow-x: hidden; overflow-y: auto; width: 220px;}
+.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;min-height: 55px; padding: 10px; margin-bottom: 5px; overflow-x: hidden; overflow-y: auto; width: 220px;}
 .postCommentComment p{ width:215px; text-align: left;}
 .postDetailUsername{margin-top: 0px;font-size: 17px;}
-.postDetailUserLocation{font-size: 13px;color: #000 !important;margin-top: 0px !important;}
+.postDetailUserLocation{font-size: 13px;color: #000 !important;margin-top: 0px !important;line-height: 10px;}
 .postDetailCommentSection{ width: 325px;}
 .buttonText{font-size: 15px;margin-top: 63%;}
 #postUserCommentBox{height: 49px;width: 228px;background-color: #fff;margin-left: 12px;float: left;border: none;padding: 5px;font-size: 12px;}
 #postCommentButton{width: 100%;text-align: right;margin-top: -12px;margin-bottom: 16px;font-size: 13px;margin-left: -1px;cursor: pointer;}
 #postCommentButton:hover{color:#000;}
-#commentContainer{height: 495px;overflow: auto;}
-.postOrigin{position: absolute;bottom: 9px;float: left;font-size: 13px;padding-left: 20px;}
+#commentContainer{height: 310px;padding-bottom: 10px;overflow: scroll;}
+.postOrigin{position: absolute;bottom: 9px;float: left;font-size: 10px; padding-left: 20px; color: #bebebe;width: 620px;text-align: center;}
+.postOrigin a{color: #bebebe !important;}
 .arrow{ position: absolute;top: 275px;height: 60px;width: 30px;margin-top: -30px;background-image: url(/images/prodPageArrow.png);background-repeat: no-repeat;z-index: 1;overflow: hidden;cursor: pointer;background-size: auto 100%;}
 #leftArrow{background-position: 4px; }
 #rightArrow{right: -5px;background-position: -22px; }
@@ -378,12 +379,20 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .dahliaPink{color:#F03E63;}
 #userPostGrid .delButton{position: absolute;right: 0px;font-size: 20px;background-color: #FFF; color: #000;padding: 7px 12px; z-index: 1;text-align: center;}
 #userPostGrid .option{display: none; cursor: pointer;}
-.postImageFrame{ width: 620px; height: 620px; overflow: hidden; float: left; background-color: white;margin-left: 20px;border: 1px solid rgb(224, 224, 224); position: relative; background-repeat: no-repeat; background-position: 50%;}
+.postImageFrame{ width: 620px; height: 620px; float: left; background-color: white;margin-left: 20px;border: 1px solid rgb(224, 224, 224); position: relative; background-repeat: no-repeat; background-position: 50%;}
 .postTall{background-size: auto 100%;}
 .postWide{background-size: 100% auto;}
 .pdWrap{background-color: #fff;-moz-box-shadow:    0 0 5px 0 #ccc; -webkit-box-shadow: 0 0 5px 0 #ccc; box-shadow: 0 0 5px 0 #ccc; background-color: #f7f7f7;}
-
-
+.post-details-container #activateToggle{position: absolute;right: -18px;bottom: -19px;width: 65px;height: 65px;background-image: url("/images/tags.png");background-size: auto 100%;background-position: -79px;background-repeat: no-repeat;z-index: 100;line-height: 68px;color: #fff;text-align: center;text-indent: 11px;font-size: 8px;}
+.post-details-container .postTag{position: absolute; height: 30px; width: 30px; background-image: url("/images/tags.png"); background-size: auto 100%; background-position: 0px; background-repeat: no-repeat;}
+.post-details-container .active{background-position: -35px;}
+.post-details-container .activated{cursor: url("/images/postTagCursor.png"), pointer;}
+.post-details-container .note{height: 50px; width: 100%; margin-top: 5px; background-color: #fff;}
+.post-details-container .note li{float: left;}
+.post-details-container .note .tagImg{width: 50px;height: 50px;float: left; background-image: url("/images/tags.png"); background-size: auto 100%;background-position: 0px;background-repeat: no-repeat;}
+.post-details-container .note textarea{width: 265px; margin-left:3%; margin-top: 2%;height: 87%;border: none;line-height: 20px; font-size: 11px; color: #b7b7b7;}
+.post-details-container .note .inputWrap{height: 50px; width: 275px;}
+#tagsSection{height: 220px;overflow: scroll;}
 
 /*********************** HEADER ***************************/
 .marginmiddlebutton1{float: left; margin-right: 8px;}
@@ -1758,7 +1767,7 @@ width: 174px;
     font-weight: 300;
 }
 /******* CRUNK BOX ****************/
-.crunkBox{position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 1000000; text-align: center;}
+.crunkBox{position: fixed; left: 0px; top: 0px; width: 100%; height: 100%;z-index: 10000000; text-align: center;}
 .crunkBox_BG{position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; background-color: #000; opacity: .9; z-index: -1;}
 .crunkBox img{margin: 0px auto; z-index: 12;}
 .selectoBismol{background-image: url("/images/x.png");background-size: 68%;background-position: 50%;background-repeat: no-repeat;}
@@ -2971,7 +2980,7 @@ a.CommentUrlDecorate:hover {
 #td_dd .hidden{
     display:none !important;
 }
-#sign-up-modal{ position:fixed; width:770px; height:450px; left:50%; margin-left:-385px; top:50%; margin-top:-200px; background-color:#000; background-image:url(../images/modal-popup-bg.jpg); background-size:cover; display:none;z-index: 1000000;border: #C9C9C9 thin solid;box-shadow: #666 3px 4px 8px;}
+#sign-up-modal{ position:fixed; width:770px; height:450px; left:50%; margin-left:-385px; top:50%; margin-top:-200px; background-color:#000; background-image:url(../images/modal-popup-bg.jpg); background-size:cover; display:none;z-index: 100000000;border: #C9C9C9 thin solid;box-shadow: #666 3px 4px 8px;}
 .sign-up-business{margin-top: 348px; text-align: center;color: #666;font-size: 11px; font-family: Arial, Helvetica, sans-serif;}
 .mailme{margin-top: 7px; color:#666; font-size:12px; font-family:Arial, Helvetica, sans-serif;}
 .totalLoader{width: 100%; height: 100px; text-align: center;}

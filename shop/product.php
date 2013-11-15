@@ -169,7 +169,7 @@
         <ul class="regularPrice">
             <li><span <?= $status == 'Pre Order' ? 'style="text-decoration:line-through"' : '' ?>>$<?= number_format( ($_data['product']['product']['price']), 2, '.', ',') ?></span></li>
             <? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
-                <li><span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% OFF PRE-ORDER' : ''?></span> $<?= number_format( ($_data['product']['product']['price']*.7), 2, '.', ',') ?></li>
+                <li><span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% OFF PRE-ORDER' : ''?></span> $<?= number_format($_data['product']['product']['sale_price'], 2, '.', ',') ?></li>
             <? endif ?>
         </ul>
         <? if( $status == 'Pre Order'): ?>

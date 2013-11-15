@@ -61,7 +61,7 @@
         <ul class="deetsList">
         	<li class="postDetailUsername name"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
             <li class="postDetailUserLocation"><?= $posterData['location'] ?></li>
-           <li class="postDetailStat">RANK <?= $posterData['rank'] ?></li>
+           <li class="postDetailStat" style="margin-top: 10px;">RANK <?= $posterData['rank'] ?></li>
             <li class="postDetailStat"><a href="/<?= $_data['post']['username'] ?>/followers">FOLLOWERS</a> <span id="detailFollowingCount"><?= $posterData['followers'] ?></span></li>
             <li class="postDetailStat"><a href="/<?= $_data['post']['username'] ?>/following">FOLLOWING </a><?= $posterData['following'] ?></li>
             <li class="postDetailStat"></li>
@@ -97,25 +97,26 @@
     </div>
     <div id="postDetailMainRow">
         <a id="post_image" class="zoombox" data-url="<?= $_data['post']['image_url'] ?>">
-            <div class="postImageFrame <?= intval($_data['post']['width']) > intval($_data['post']['height']) ? 'postWide' : 'postTall' ?>" style='background-image: url("<?= $_data['post']['image_url'] ?>")'></div>
+            <div id="postDetailImage" class="postImageFrame <?= intval($_data['post']['width']) > intval($_data['post']['height']) ? 'postWide' : 'postTall' ?>" style='background-image: url("<?= $_data['post']['image_url'] ?>&width=620")'>
+                <!--<div id="activateToggle">NOTE</div>-->
+            </div>
         </a>
         
         <div class="postOrigin">
             Posted from <a href="<?= $_data['post']['image_attribution_url'] ?>" target="_blank"><?= $_data['post']['image_attribution_domain'] ?></a> on <?= $created[0] ?>,
-            Needs <span id="totalVotesNeed" class="dahliaPink"><?= (1000 - $_data['post']['total_likes']) ?></span> More Votes To Win
         </div>
        	
         <div class="socialCol">
         	<div class="postDetailCommentSection">
             	<div class="commentSectionTitle">COMMENTS</div>
-                <? if(IS_LOGGED_IN): ?>
-                    <div class="postDetailCommentBox">
-                         <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
-                         <textarea id="postUserCommentBox" class="socialize" placeholder="Write message @member, #hashtag"></textarea>
-                    </div>
-                <? endif ?>
-                <div id="postCommentButton">POST COMMENT</div>
                 <div id="commentContainer">
+                    <? if(IS_LOGGED_IN): ?>
+                        <div class="postDetailCommentBox">
+                            <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
+                            <textarea id="postUserCommentBox" class="socialize" placeholder="Write message @member, #hashtag"></textarea>
+                        </div>
+                        <div id="postCommentButton">POST COMMENT</div>
+                    <? endif ?>
 					<? foreach($_data['comments'] as $comment): ?>
                         <? $hashified = socialize($comment['comment']); ?>
                         <div class="postDetailCommentBox">
@@ -126,6 +127,10 @@
                             </div>
                         </div>
                     <? endforeach ?>
+                </div>
+                <div class="commentSectionTitle" style="margin-top: 20px;">Notes from <?= $_data['post']['username'] ?></div>
+                <div id="tagsSection">
+
                 </div>
             </div>
         </div>

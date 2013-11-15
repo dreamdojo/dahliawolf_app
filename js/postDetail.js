@@ -13,10 +13,10 @@
                                                                         
 function postDetail(data){
 	this.data = data;
-	//console.log(this.data);
 	this.data.total_likes = parseInt(this.data.total_likes);
 	this.bindFrontend();
 	window.history.replaceState( {} , 'Post Detail', '/post/'+data.posting_id );
+    this.tagMode = false;
 }
 
 postDetail.prototype.bindFrontend = function() {
@@ -27,6 +27,9 @@ postDetail.prototype.bindFrontend = function() {
 	this.loveButton = $('#postDetailLoveButton');
 	this.commentData = $('#postUserCommentBox');
 	this.commentContainer = $('#commentContainer');
+    this.$image = $('#postDetailImage');
+    this.$toggleBox =$('#activateToggle');
+    this.$tag = $('<div class="postTag"></div>')
 	
 	this.followerCount = parseInt( this.smallFollowCount.html() );
 	
@@ -34,6 +37,8 @@ postDetail.prototype.bindFrontend = function() {
 	$('#postDetailLoveButton').on('click', $.proxy(this.toggleLove, this));
 	$('#postCommentButton').on('click', $.proxy(this.publishComment, this));
     $('.shareButton').on('click', this.recordShare);
+    this.$toggleBox.on('click', this.toggleTagMode);
+
 }
 
 postDetail.prototype.publishComment = function() {
@@ -117,4 +122,76 @@ postDetail.prototype.toggleLove = function() {
 		new_loginscreen();
 	}
 }
+
+postDetail.prototype.toggleTagMode = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log(thePostDetail.tagMode);
+    if(!thePostDetail.tagMode) {
+        thePostDetail.tagMode = true;
+        thePostDetail.$image.addClass('activated').on('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            var offset_t = $(this).offset().top - $(window).scrollTop();
+            var offset_l = $(this).offset().left - $(window).scrollLeft();
+
+            var left = Math.round( (e.clientX - offset_l) );
+            var top = Math.round( (e.clientY - offset_t) );
+
+            new thePostDetail.createNewPost(left, top );
+        });
+    } else {
+        thePostDetail.deActivateTagMode();
+    }
+}
+
+postDetail.prototype.deActivateTagMode = function() {
+    thePostDetail.tagMode = false;
+    thePostDetail.$image.removeClass('activated').unbind('click');
+}
+
+postDetail.prototype.createNewPost = function(x, y) {
+    var that = this;
+    var css = '-'+62+'px';
+    var $tag = thePostDetail.$tag.clone().addClass('active').css({left : x, top: y}).appendTo(thePostDetail.$image);
+    var $note = $('<ul class="note"></ul>').css('display', 'none');
+    var $noteImg = $('<li class="tagImg"></li>').css('background-position', css).appendTo($note);
+    var $input = $('<li class="inputWrap"><textarea placeholder="describe tag"></textarea></li>').appendTo($note);
+    $note.prependTo($('#tagsSection')).slideDown(200).find('textarea').focus().on('keydown', function(e) {
+        if(e.keyCode == 13) {
+            $(this).blur();
+        }
+    }).on('blur', function() {
+        $(this).unbind('blur, focus');
+        $noteImg.css('background-position', 0);
+        $note.hover(function() {
+            if( !$input.is(':focus') ) {
+                $tag.addClass('active');
+                $noteImg.css('background-position', css);
+            }
+        }, function() {
+            if( !$input.is(':focus') ) {
+                $noteImg.css('background-position', 0);
+                $tag.removeClass('active');
+            }
+        });
+        $tag.removeClass('active').hover(function() {
+            $(this).addClass('active');
+            $noteImg.css('background-position', css);
+        }, function() {
+            $(this).removeClass('active');
+            $noteImg.css('background-position', 0);
+        });
+        that.submitNote(x, y, $input.find('textarea').val());
+    });
+    if(thePostDetail.tagMode == true) {
+        thePostDetail.deActivateTagMode();
+    }
+
+}
+
+postDetail.prototype.createNewPost.prototype.submitNote = function() {
+    console.log()
+}
+
 
