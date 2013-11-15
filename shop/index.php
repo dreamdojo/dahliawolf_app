@@ -36,7 +36,7 @@
     </div>
 <? endif ?>
 
-<? if( !empty($user['user_id']) ): ?>
+<? if( !empty($user['username']) ): ?>
     <div id="shopOwnerHeader">
         <div class="shopOwnerTitle"><a href="/<?= $user['username'] ?>"><?= $user['username'] ?>'s</a> boutique </div>
         <img src="/images/emptyShopBanner.jpg">
