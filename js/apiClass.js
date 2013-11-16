@@ -220,6 +220,7 @@ function Api() {
     this.baseCommerceUrl = "/api/commerce/";
     this.commerceApi = false;
     this.loginRequired = true;
+    this.ignorePop = false;
 }
 
 Api.prototype.callApi = function(data) {
@@ -236,7 +237,11 @@ Api.prototype.callApi = function(data) {
             }
         });
     } else {
-        new_loginscreen();
+        if(this.ignorePop) {
+
+        } else {
+            new_loginscreen();
+        }
     }
     this.loginRequired = true;
 }

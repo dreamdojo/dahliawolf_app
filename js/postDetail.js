@@ -63,8 +63,6 @@ postDetail.prototype.publishComment = function() {
 				$this.commentContainer.prepend(str);
 				$('#newComment-'+data.comment_id).slideDown(400);
 			});
-		} else {
-			new_loginscreen();
 		}
 	}
 }
