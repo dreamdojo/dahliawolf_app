@@ -17,6 +17,12 @@ function postDetail(data){
 	this.bindFrontend();
 	window.history.replaceState( {} , 'Post Detail', '/post/'+data.posting_id );
     this.tagMode = false;
+
+    this.getTags();
+}
+
+postDetail.prototype = {
+    get isSelfPost() {return (dahliawolf.userId == this.data.user_id)}
 }
 
 postDetail.prototype.bindFrontend = function() {
@@ -28,7 +34,6 @@ postDetail.prototype.bindFrontend = function() {
 	this.commentData = $('#postUserCommentBox');
 	this.commentContainer = $('#commentContainer');
     this.$image = $('#postDetailImage');
-    this.$toggleBox =$('#activateToggle');
     this.$tag = $('<div class="postTag"></div>')
 	
 	this.followerCount = parseInt( this.smallFollowCount.html() );
@@ -37,7 +42,10 @@ postDetail.prototype.bindFrontend = function() {
 	$('#postDetailLoveButton').on('click', $.proxy(this.toggleLove, this));
 	$('#postCommentButton').on('click', $.proxy(this.publishComment, this));
     $('.shareButton').on('click', this.recordShare);
-    this.$toggleBox.on('click', this.toggleTagMode);
+
+    if(this.isSelfPost) {
+        $('<div id="activateToggle">NOTE</div>').appendTo(this.$image).on('click', this.toggleTagMode);
+    }
 
 }
 
@@ -126,7 +134,6 @@ postDetail.prototype.toggleLove = function() {
 postDetail.prototype.toggleTagMode = function(e) {
     e.preventDefault();
     e.stopPropagation();
-    console.log(thePostDetail.tagMode);
     if(!thePostDetail.tagMode) {
         thePostDetail.tagMode = true;
         thePostDetail.$image.addClass('activated').on('click', function(e) {
@@ -138,7 +145,7 @@ postDetail.prototype.toggleTagMode = function(e) {
             var left = Math.round( (e.clientX - offset_l) );
             var top = Math.round( (e.clientY - offset_t) );
 
-            new thePostDetail.createNewPost(left, top );
+            new thePostDetail.createNewTag(left, top );
         });
     } else {
         thePostDetail.deActivateTagMode();
@@ -150,10 +157,56 @@ postDetail.prototype.deActivateTagMode = function() {
     thePostDetail.$image.removeClass('activated').unbind('click');
 }
 
-postDetail.prototype.createNewPost = function(x, y) {
+postDetail.prototype.getTags = function() {
     var that = this;
-    var css = '-'+62+'px';
-    var $tag = thePostDetail.$tag.clone().addClass('active').css({left : x, top: y}).appendTo(thePostDetail.$image);
+
+    dahliawolf.post.getTags(this.data.posting_id, function(data) {
+        var css = '-'+55+'px';
+        $.each(data.data.get_tags, function(x, tag) {
+            var $tag = that.$tag.clone().css({left : Number(tag.x), top: Number(tag.y)}).appendTo(that.$image).hover(function() {//HOVER OVER TAG
+                $noteImg.css('background-position', css);
+                $tag.addClass('active');
+            }, function() {
+                $noteImg.css('background-position', 0);
+                $tag.removeClass('active');
+            }).on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+
+            var $note = $('<ul class="note"></ul>').hover(function() {//HOVER OVER NOTE
+                $noteImg.css('background-position', css);
+                $tag.addClass('active');
+            }, function() {
+                $noteImg.css('background-position', 0);
+                $tag.removeClass('active');
+            });
+
+            if(that.isSelfPost) {
+                var $delTag = $('<img src="/images/deleteTag.png">').on('click', function() {
+                    dahliawolf.post.delTag(tag.posting_tag_id, that.data.posting_id);
+                    $tag.remove();
+                    $note.slideUp(200, function() {
+                       $(this).remove();
+                    });
+                });
+                var $noteImg = $('<li class="tagImg"></li>').append($delTag).appendTo($note);
+            } else {
+                var $noteImg = $('<li class="tagImg"></li>').appendTo($note);
+            }
+            var $message = $('<li class="userTag">'+(tag.message ? tag.message : '')+'</li>').appendTo($note);
+            $note.appendTo($('#tagsSection'));
+        });
+    })
+}
+
+postDetail.prototype.createNewTag = function(x, y) {
+    var that = this;
+    var css = '-'+55+'px';
+    var $tag = thePostDetail.$tag.clone().addClass('active').css({left : x, top: y}).appendTo(thePostDetail.$image).on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    });
     var $note = $('<ul class="note"></ul>').css('display', 'none');
     var $noteImg = $('<li class="tagImg"></li>').css('background-position', css).appendTo($note);
     var $input = $('<li class="inputWrap"><textarea placeholder="describe tag"></textarea></li>').appendTo($note);
@@ -182,16 +235,19 @@ postDetail.prototype.createNewPost = function(x, y) {
             $(this).removeClass('active');
             $noteImg.css('background-position', 0);
         });
-        that.submitNote(x, y, $input.find('textarea').val());
+        dahliawolf.post.addTag(thePostDetail.data.posting_id, x, y, $input.find('textarea').val(), function(data) {
+            var $delTag = $('<img src="/images/deleteTag.png">').on('click', function() {
+                dahliawolf.post.delTag(data.data.add_tag.posting_tag_id, thePostDetail.data.posting_id);
+                $tag.remove();
+                $note.slideUp(200, function() {
+                    $(this).remove();
+                });
+            }).appendTo($noteImg);
+        });
     });
     if(thePostDetail.tagMode == true) {
         thePostDetail.deActivateTagMode();
     }
-
-}
-
-postDetail.prototype.createNewPost.prototype.submitNote = function() {
-    console.log()
 }
 
 

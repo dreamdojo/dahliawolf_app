@@ -89,7 +89,7 @@ postDetailGrid.prototype.setTitle = function() {
 	//this.titleContainer.html('More posts by <a href="/'+thePostDetail.data.username+'">'+thePostDetail.data.username+'</a>');
 }
 
-postDetailGrid.prototype.toggleLove = function() {
+postDetailGrid.prototype.toggleLove = function(e) {
 	var loved = $(this).data('isloved');
 	var id = $(this).data('id');
 	if(theUser.id) {	
@@ -122,23 +122,21 @@ postDetailGrid.prototype.getPosts = function() {
 		$.post('/action/getPostsByUser', {post_user_id : $this.posterId, feed : $this.feedType, offset : this.offset, limit: this.limit}).done(function(data) {
             dahliaLoader.hide();
 			$.each(data.data, function(index, post){
-				var $post = $('<div class="userGridPostFrame"></div>').hover(function() {
+                var $post = $('<div class="userGridPostFrame" style="background-image: url(\''+post.image_url+'&width=300\'); background-size:'+(Number(post.height) > Number(post.width) ? '100% auto' : 'auto 100%')+';"></div>').hover(function() {
                     $(this).find('.option').fadeIn(50);
                     $(this).find('.shareBall').fadeIn(50);
                 }, function() {
                     $(this).find('.option').fadeOut(50);
                     $(this).find('.shareBall').fadeOut(50);
                 });
+                var $linkLayer = $('<a class="linkLayer" href="/post-details?posting_id='+post.posting_id+'" rel="modal"></a>').appendTo($post);
 				var str = '';
                 str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'">'+(parseInt(post.is_liked) ? 'LOVED' : 'LOVE')+'</div>';
-				str += '<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+index % 5+'" rel="modal">';
-				str += '<img src = "'+post.image_url+'&width=300" class="lazy zoom-in" data-src="'+post.image_url+'&width=300" '+(parseInt(post.width) >= parseInt(post.height) ? $this.htText : '')+'>';
-				str += '</a>';
                 if(post.user_id == theUser.id) {
                     $('<div data-id="'+post.posting_id+'" class="delButton option">X</div>').appendTo($post).on('click', $this.delPost);
                 }
                 $post.append(new shareBall(post));
-                $this.postContainer.append( $post.append(str) );
+                $this.postContainer.append( $post.append(str));
 			});
 			$this.resetBindings();
 			if(data.data.length == 0){

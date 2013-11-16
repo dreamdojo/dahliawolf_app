@@ -97,9 +97,7 @@
     </div>
     <div id="postDetailMainRow">
         <a id="post_image" class="zoombox" data-url="<?= $_data['post']['image_url'] ?>">
-            <div id="postDetailImage" class="postImageFrame <?= intval($_data['post']['width']) > intval($_data['post']['height']) ? 'postWide' : 'postTall' ?>" style='background-image: url("<?= $_data['post']['image_url'] ?>&width=620")'>
-                <!--<div id="activateToggle">NOTE</div>-->
-            </div>
+            <div id="postDetailImage" class="postImageFrame <?= intval($_data['post']['width']) > intval($_data['post']['height']) ? 'postWide' : 'postTall' ?>" style='background-image: url("<?= $_data['post']['image_url'] ?>&width=620")'></div>
         </a>
         
         <div class="postOrigin">
@@ -109,18 +107,20 @@
         <div class="socialCol">
         	<div class="postDetailCommentSection">
             	<div class="commentSectionTitle">COMMENTS</div>
-                <div id="commentContainer" style="height: 620px;">
-                    <? if(IS_LOGGED_IN): ?>
-                        <div class="postDetailCommentBox">
-                            <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
-                            <textarea id="postUserCommentBox" class="socialize" placeholder="Write message @member, #hashtag"></textarea>
-                        </div>
-                        <div id="postCommentButton">POST COMMENT</div>
-                    <? endif ?>
+                <? if(IS_LOGGED_IN): ?>
+                    <div class="postDetailCommentBox">
+                        <div class="postCommentAvatarFrame" style="background-image: url('<?= $userConfig['avatar'] ?>&width=75')"></div>
+                        <textarea id="postUserCommentBox" class="socialize" placeholder="Write message @member, #hashtag"></textarea>
+                    </div>
+                    <div id="postCommentButton">ADD COMMENT</div>
+                <? endif ?>
+                <div id="commentContainer" style="height: <?= $_data['post']['total_tags'] ? '227px' : '100%'?>;">
 					<? foreach($_data['comments'] as $comment): ?>
                         <? $hashified = socialize($comment['comment']); ?>
                         <div class="postDetailCommentBox">
-                            <div class="postCommentAvatarFrame" style="background-image: url('<?= $comment['avatar'] ?>&width=75');"></div>
+                            <a href="/<?= $comment['username'] ?>">
+                                <div class="postCommentAvatarFrame" style="background-image: url('<?= $comment['avatar'] ?>&width=75');"></div>
+                            </a>
                             <div class="postCommentComment">
                                 <p class="name"><a href="/<?= $comment['username'] ?>"><?= $comment['username'] ?></a></p>
                                 <p><?= $hashified ?></p>
@@ -128,10 +128,10 @@
                         </div>
                     <? endforeach ?>
                 </div>
-                <!--<div class="commentSectionTitle" style="margin-top: 20px;">Notes from <?= $_data['post']['username'] ?></div>
-                <div id="tagsSection">
-
-                </div>-->
+                <? if( $_data['post']['total_tags'] || $_data['post']['user_id'] == $_SESSION['user']['user_id'] ): ?>
+                    <div class="commentSectionTitle" style="margin-top: 20px;">Notes from <?= $_data['post']['username'] ?></div>
+                    <div id="tagsSection"></div>
+                <? endif ?>
             </div>
         </div>
     </div>
