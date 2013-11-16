@@ -26,6 +26,7 @@
     #bankBucket .postFrame img{width: 100%;}
     #bankBucket .postButton{position: absolute; display:none; right: 50%;top: 50%;background-color: #353535; width: 90px;height: 90px;border-radius: 50px;text-align: center;line-height: 90px;margin-top: -45px;margin-right: -45px;font-size: 15px;cursor: pointer;font-family: futura;font-weight: bolder;color: #fff;}
     #bankBucket .postButton:hover{opacity: .7;}
+    #bankBucket h2{text-align: center;width: 80%;margin: 30px auto;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
     #viewToggle{background-image: url("/images/inspireToggle_BG.png");background-position: 0%;position: absolute;right: -11px;width: 45px;background-repeat: no-repeat;overflow: hidden; height: 30px;margin-right: 20px;top: 2px; cursor: pointer;}
@@ -61,7 +62,7 @@
     </div>
 </div>
 
-<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent"><span class="preHeader">Post from the</span> DAHLIA WOLF IMAGE BANK</span><div id="viewToggle"></div></div>
+<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent"><span class="preHeader">DAHLIA\WOLF BANK</span><div id="viewToggle"></div></div>
 <div id="bankBucket"></div>
 
 <?php include "footer.php" ?>
@@ -204,9 +205,15 @@
             api.getBankPosts(this.offset, this.limit, function(data) {
                 dahliawolf.loader.hide()
                 postBank.isRefillAvailable = true;
-                $.each(data.data, function(index, post) {
-                    postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
-                });
+                console.log(data);
+                if(data.data.length) {
+                    $.each(data.data, function(index, post) {
+                        postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
+                    });
+                } else if(!$('#bankBucket h2').length) {
+                    $('#bankBucket').append('<h2>Choose from one of the options above and start inspiring new fashions.</h2>');
+                }
+
                 postBank.$bucket.append('<div style="clear:left"></div>');
             });
         }
@@ -236,7 +243,6 @@
         if(dahliawolf.areYouLoggedIntoTumblr) {
             dahliawolf.loader.show();
             $.getJSON('/lib/TumblrOAuth/getPosts', function(data) {
-                holla.log(data);
                 postBank.ajaxCall = null;
                 dahliawolf.loader.hide();
                 if(data.response.posts.length) {
@@ -299,7 +305,6 @@
     function bankPost(data, index) {
         this.data = data;
         var widths = [500, 300, 400];
-holla.log(this.data);
         this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" ondragleave="undrag(event)" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
         this.$image = $('<a class="zoombox" data-url="'+this.data.source+this.data.imageURL+'" rel="modal"><img src="'+this.data.source+this.data.imageURL+'"></a>').appendTo(this.$post);

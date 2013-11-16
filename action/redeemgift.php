@@ -1,5 +1,5 @@
 <?php
-$to = "vip@dahliawolf.com, geoff@offlinela.com, justin@offlinela.com, paxton@dahliawolf.com";
+$to = "vip@dahliawolf.com, geoff@offlinela.com, justin@offlinela.com, paxton@dahliawolf.com, jackie@offlinela.com";
 $subject = "NEW GIFT CARD REQUEST";
 $message = "this user: ".$_POST['user'].' entered this code: '.$_POST['code'];
 $from = "admin@dahliawolf.com";

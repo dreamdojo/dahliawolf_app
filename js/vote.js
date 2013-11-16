@@ -196,11 +196,15 @@ voteFeed.prototype.getPostsFromApi = function() {
             dahliawolf.loader.hide();
             that.offset += data.data.get_all.posts.length;
 
-            $.each(data.data.get_all.posts, function(index, post) {
-                that.addPostData(post);
-                tempArray.push(post.posting_id);
-            });
-            that.addToBucket(tempArray);
+            if(data.data.get_all && data.data.get_all.posts.length) {
+                $.each(data.data.get_all.posts, function(index, post) {
+                    that.addPostData(post);
+                    tempArray.push(post.posting_id);
+                });
+                that.addToBucket(tempArray);
+            } else {
+                that.unbindScroll();
+            }
         });
     }
 }
@@ -284,4 +288,8 @@ voteFeed.prototype.bindScroll = function() {
             that.getPostsFromApi();
         }
     });
+}
+
+voteFeed.prototype.unbindScroll = function() {
+    $(window).unbind('scroll');
 }

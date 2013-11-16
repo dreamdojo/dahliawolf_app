@@ -76,9 +76,9 @@
     #shopContent .rightCol .regularPrice{color: #000;line-height: 30px;font-size: 17px;text-indent: 10px;text-align: right;}
     #shopContent .rightCol .presalePrice{color: #000;line-height: 30px;font-size: 17px;text-indent: 10px;}
     #shopContent .productImagesFrame{width: 100%; height: 600px; position: relative; overflow: hidden;}
-    #shopContent .productImagesFrame li{width: 100%;overflow: hidden;position: absolute; display: none;}
+    #shopContent .productImagesFrame li{width: 100%;overflow: hidden;position: absolute; display: none; text-align: center;}
     #shopContent .productImagesFrame li:first-child{display: block;}
-    #shopContent .productImagesFrame li img{width: 100%;}
+    #shopContent .productImagesFrame li img{width: 80%;}
     #shopContent .rightCol .preOrderPrice{color: #fc0964;margin-left: 10px;}
     #shopContent .rightCol .strike{text-decoration:line-through;color: #fc0964; }
     #theCountdown li{float: left;width: 25%;text-align: center;font-size: 14px;color: #c7c7c7;background-color: #f4f4f4;}
@@ -169,7 +169,7 @@
         <ul class="regularPrice">
             <li><span <?= $status == 'Pre Order' ? 'style="text-decoration:line-through"' : '' ?>>$<?= number_format( ($_data['product']['product']['price']), 2, '.', ',') ?></span></li>
             <? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
-                <li><span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% OFF PRE-ORDER' : ''?></span> $<?= number_format( ($_data['product']['product']['price']*.7), 2, '.', ',') ?></li>
+                <li><span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% OFF PRE-ORDER' : ''?></span> $<?= number_format($_data['product']['product']['sale_price'], 2, '.', ',') ?></li>
             <? endif ?>
         </ul>
         <? if( $status == 'Pre Order'): ?>

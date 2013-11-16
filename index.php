@@ -40,9 +40,7 @@
     include "blocks/filter.php";
 ?>
     <div id="voteBucket"></div>
-<?php
-    include "/footer.php";
-?>
+<?php include "/footer.php"; ?>
 <script>
     $(function() {
         dahliawolfFeed = new voteFeed({mode:'grid' <? !empty($_GET['sort']) ? ', filter: "'.$_GET['sort'].'"' : '' ?> <? !empty($_GET['q']) ? ', search: "'.$_GET['q'].'"' : '' ?>});
@@ -59,6 +57,7 @@
        });
 
        $('.hiw').on('click', function() {
+           sendToAnal({name:'Watching Video', errorCode: 'On homepage'});
            var $movieScreen = $('<div id="tooltip-overlay"></div>').css({'opacity': 1}).appendTo($('body')).fadeIn(1000,function() {
                $movieScreen.load('/video_page.php');
                var $closer = $('<div class="closeMovie"><img src="/images/movieClose.png"></div>').appendTo($('body')).on('click', function(){

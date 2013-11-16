@@ -220,6 +220,7 @@ function Api() {
     this.baseCommerceUrl = "/api/commerce/";
     this.commerceApi = false;
     this.loginRequired = true;
+    this.ignorePop = false;
 }
 
 Api.prototype.callApi = function(data) {
@@ -236,7 +237,11 @@ Api.prototype.callApi = function(data) {
             }
         });
     } else {
-        new_loginscreen();
+        if(this.ignorePop) {
+
+        } else {
+            new_loginscreen();
+        }
     }
     this.loginRequired = true;
 }
@@ -310,6 +315,21 @@ Post.prototype.promote = function(id, callback) {
     this.callApi({posting_id : id, user_id : dahliawolf.userId});
     return this;
 }
+
+Post.prototype.addToFaves = function(id, callback) {
+    this.apiFunction = 'fave';
+    this.callback = callback;
+    this.callApi({posting_id: id, user_id : dahliawolf.userId});
+    return this;
+}
+
+Post.prototype.delFromFaves = function(id, callback) {
+    this.apiFunction = 'remove_fave';
+    this.callback = callback;
+    this.callApi({posting_id: id, user_id:dahliawolf.userId });
+    return this;
+}
+
 Post.prototype.getLovers = function(id, limit, offset, callback) {
     this.apiFunction = 'get_lovers';
     this.callback = callback;
@@ -362,6 +382,35 @@ Post.prototype.shareOnFacebook = function(URL) {
         }
     });
 }
+
+Post.prototype.addTag = function(id, p_x, p_y, note, callback) {
+    this.apiFunction = 'add_tag';
+    this.callback = callback;
+    this.callApi({user_id: dahliawolf.userId, posting_id: id, x:p_x, y:p_y, message: note });
+    return this;
+}
+
+Post.prototype.editTag = function(id, note, callback) {
+    this.apiFunction = 'edit_tag';
+    this.callback = callback;
+    this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, message: note });
+    return this;
+}
+
+Post.prototype.delTag = function(id, post_id, callback) {
+    this.apiFunction = 'remove_tag';
+    this.callback = callback;
+    this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, posting_id:post_id});
+    return this;
+}
+
+Post.prototype.getTags = function(id, callback) {
+    this.apiFunction = 'get_tags';
+    this.callback = callback;
+    this.callApi({user_id: dahliawolf.userId, posting_id: id});
+    return this;
+}
+
 //****************************************************************************************** Product
 function Shop() {
     this.apiApi = 'product.json';

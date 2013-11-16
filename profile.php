@@ -1,6 +1,40 @@
 <?
-    $pageTitle = "Profile";
+    $pageTitle = "Profile - ".$_GET['username'];
     include "head.php";
+
+    $params = array(
+        'username' => strtolower($_GET['username']),
+        'limit' => 0
+    );
+
+    if (IS_LOGGED_IN) {
+        $params['viewer_user_id'] = $_SESSION['user']['user_id'];
+    }
+    $data = api_call('user', 'get_user', $params, true);
+    $_data['user'] = $data['data'];
+    if (empty($_data['user'])) {
+        default_redirect();
+    }
+
+    $params = array(
+        'user_id' => $_data['user']['user_id'],
+        'limit' => 12
+    );
+
+    $posts_data = api_call('posting', 'all_posts', $params, true);
+
+    $_data['posts'] = $posts_data['data'];
+
+    define('MY_PROFILE', (!empty($_SESSION['user']) && $_SESSION['user']['user_id'] == $_data['user']['user_id'] ? true : false) );
+
+    $url = 'http://dev.dahliawolf.com/api/1-0/posting.json?function=get_user_faves&use_hmac_check=0&viewer_user_id='.$_SESSION['user']['user_id'].'&user_id='.$_data['user']['user_id'];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
+    $faves = $result->data->get_user_faves;
 
     if(!$_data['user']['user_id']) {
         $_SESSION['errors'][0] = 'You have wandered off the beaten path :(';
@@ -8,10 +42,6 @@
         die();
     }
     include "header.php";
-
-    define('MY_PROFILE', (!empty($_SESSION['user']) && $_SESSION['user']['user_id'] == $_data['user']['user_id'] ? true : false) );
-
-    $feedType = ($_data['view'] == 'wild-4s' ? 'loves' : 'posts');
 ?>
 
 <? if(!isset($_GET['dashboard']) || !MY_PROFILE): ?>
@@ -88,13 +118,16 @@
     </div>
 
 
-    <div id="userPostGrid"></div>
+    <div id="userPostGrid">
+    </div>
 </div>
 
 <script>
+    console.log(<?= json_encode($faves) ?>);
 	$(function() {
         theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
         var thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= $feedType ?>" );
+        thePostGrid.setFaves(<?= json_encode($faves) ?>);
     });
 </script>
 

@@ -312,73 +312,100 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 
 /************************ POST DETAILS AND GRID ***********/
-.post-details-container{width: 1000px;height: 800px;margin-top: 25px; margin: 0px auto;color: rgb(102, 102, 102);font-family: Helvetica, sans-serif;font-weight: 100;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);padding-bottom: 20px;position: relative;}
-#postDetailTopRow{ width: 100%;height: 100px;padding-top: 20px;background-color: white;padding-bottom: 20px;}
-#postDetailTopRow #postShareSection{width: 320px;margin-right: 10px; float: right;}
-#postDetailTopRow #postShareSection li{height: 70px;width: 14.2%; border: #c2c2c2 thin solid; background-position: 50%;}
-.postDetailAvatarFrame{height:75px; width:75px; overflow:hidden; float:left; margin-left: 20px;background-size: auto 100%;background-position: 50%;border-radius: 50px;}
+.post-details-container{width: 1000px;height: 762px;margin-top: 25px; margin: 0px auto;color: #b7b7b7; padding-bottom: 2px;position: relative;}
+#postDetailTopRow{ width: 100%;height: 100px;padding-top: 10px;padding-bottom: 0px;}
+#postDetailTopRow #postShareSection{width: 322px;margin-right: 17px; float: right;}
+#postDetailTopRow #postShareSection li{height: 56px;width: 50px; background-size: auto 100%; background-image: url(/images/postDeetsIcons.png); background-repeat: no-repeat;}
+.postDetailAvatarFrame{height:85px; width:85px; overflow:hidden; float:left; margin-left: 20px;background-size: auto 100%;background-position: 50%;border-radius: 50px;}
 .postDetailAvatarFrame img{ width:100%;}
-#postDetailTopRow .deetsList{ height:100%; width:270px; float:left; text-align: left;margin-left: 10px;font-size: 10px;}
-#postDetailTopRow .deetsList li{ color:#b7b7b7; margin-top: 5px;}
+#postDetailTopRow .deetsList{ height:100%; float:left; text-align: left;margin-left: 10px;font-size: 10px;}
+#postDetailTopRow .deetsList li{ color:#b7b7b7;}
 #postDetailTopRow .postDetailStat a{color:#b7b7b7 !important;}
 .postDetailFollow{ height:100%; width:115px; float:left; margin-right: 10px;}
 .isFollowing{background-image:url(/images/postDetailIsFollowButton.png);background-repeat:no-repeat; background-size: 60% 50%;background-position: 50% 33%;}
 .notFollowing{background-image:url(/images/postDetailFollowButton.png);background-repeat:no-repeat; background-size: 60% 50%;background-position: 50% 33%;}
 .postDetailFollow:hover{ opacity:.7;}
-.postDetailLikes{ height: 100%;width: 115px;float: left;border: 1px solid rgb(218, 218, 218);margin-top: 1px;}
-.postDetailLikes:hover{opacity:.7; background-color: rgb(255, 239, 244) !important;}
-.pd-Loved{ background-image:url(/images/postDetailsLoveButtonLoved.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
-.pd-unLoved { background-image:url(/images/postDetailsLoveButton.png); background-repeat:no-repeat; background-size: 45% 43%;background-position: 49% 34%; }
+.postDetailLikes{ height: 85px; width: 60px; float: left;margin-top: 1px;margin-left: 10px;}
+.postDetailLikes:hover{opacity:.7;}
+.pd-Loved{ background-image:url(/images/postDeetsIcons.png); background-repeat:no-repeat; background-size: auto 78%;background-position: -576px -5px; }
+.pd-unLoved { background-image:url(/images/postDeetsIcons.png); background-repeat:no-repeat; background-size: auto 78%;background-position: -633px -5px;}
 #shareRow{ height:100%; width:400px; float:left;}
-.postShareTitle{text-align: center; width: 100%;height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px;border: 1px solid rgb(221, 221, 221);}
+.postShareTitle{text-align: center; width: 327px; height: 15px;padding-top: 5px;font-size: 14px;padding-bottom: 5px;margin-left: -1px; background-color: #fff; line-height: 15px;font-size: 12px;}
 #postShareSection{width: 260px;margin-right: 40px;}
 .shareButts{height: 50px; width:104%;}
 .shareButts li{width: 39.4px;height:40%; float:left;background-color: #FFF; margin-top: 5px;margin-right: 5px; cursor:pointer;}
-.shareButts li:hover{background-color: rgb(202, 202, 202) !important;}
-#shareFacebook{background: url(/mobile/images/shareFb.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
-#sharePinterest{background: url(/mobile/images/sharePintrest.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
-#shareInstagram{background: url(/mobile/images/shareInstagram.png) no-repeat; background-position: 50% -5px; background-size: 66% auto; background-color:#fff;}
-#shareTumbler{background: url(/mobile/images/shareTumbler.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
-#shareTwitter{background: url(/mobile/images/shareTwitter.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
-#shareEmail{background: url(/mobile/images/shareEmail.png) no-repeat; background-position: 50% -5px; background-size: 170% auto; background-color:#fff;}
-#shareGplus{background: url(/mobile/images/shareGplus.png) no-repeat; background-position: 50% -5px; background-size: 100%; background-color:#fff;}
-#postDetailMainRow{height: 620px;width: 100%;margin-top: 20px;}
-.postImageFrame{ width: 620px;overflow: hidden;float: left;height: 100%;background-color: white;margin-left: 20px;border: 1px solid rgb(224, 224, 224); position: relative;}
-.postImageFrame img{height: 100%;}
-.socialCol{width: 325px;height: 100%;float: left;color: #b7b7b7;margin-left: 20px;}
-.commentSectionTitle{width:100%; height:20px; text-align:center;font-size: 14px;background-color: #fff;padding-top: 3px;}
+#shareFacebook{background-position: -147px;}
+#shareFacebook:hover{background-position: -97px;}
+#sharePinterest{background-position: -735px;}
+#sharePinterest:hover{background-position: -686px;}
+#shareInstagram{background-position: -380px;}
+#shareInstagram:hover{background-position: -380px;}
+#shareTumbler{background-position: -344px;}
+#shareTumbler:hover{background-position: -295px;}
+#shareTwitter{background-position: -442px;}
+#shareTwitter:hover{background-position: -393px;}
+#shareEmail{background-position: -49px;}
+#shareEmail:hover{background-position: -1px;}
+#shareGplus{background-position: -637px;}
+#shareGplus:hover{background-position: -587px;}
+#postDetailMainRow{height: 620px;width: 100%;margin-top: 5px;}
+.socialCol{width: 325px;height: 620px; overflow:hidden; float: left;color: #b7b7b7;margin-left: 20px;}
+.commentSectionTitle{width:100%; height:20px; text-align:center;font-size: 12px;background-color: #fff;padding-top: 3px; text-transform: uppercase;}
 .postDetailCommentBox{ height:75px; width:100%; margin-top: 10px; }
 .postCommentAvatarFrame{ height: 75px;overflow: hidden;width: 75px;float: left;border-radius: 40px;background-position: 50%;background-size: auto 100%;}
 .postCommentAvatarFrame img{ width: 100%;}
-.name a{ color: #a84655 !important;font-weight: 100;font-size: 20px;}
+.name a{ color: #f03d64 !important;}
 .name a:hover{ color: black !important;}
-.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;height: 55px;padding: 10px; overflow-x: hidden; overflow-y: auto; width: 220px;}
+.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;min-height: 55px; padding: 10px; margin-bottom: 5px; overflow-x: hidden; overflow-y: auto; width: 220px;}
 .postCommentComment p{ width:215px; text-align: left;}
 .postDetailUsername{margin-top: 0px;font-size: 17px;}
-.postDetailUserLocation{font-size: 13px;color: #000 !important;margin-top: 0px !important;}
-.postDetailCommentSection{ width: 325px;}
-.buttonText{font-size: 15px;margin-top: 63%;}
+.postDetailUserLocation{font-size: 13px;color: #000 !important;margin-top: 0px !important;line-height: 10px;}
+.postDetailCommentSection{ width: 325px; max-height: 100%;}
+.buttonText{font-size: 15px;margin-top: 96%;}
 #postUserCommentBox{height: 49px;width: 228px;background-color: #fff;margin-left: 12px;float: left;border: none;padding: 5px;font-size: 12px;}
-#postCommentButton{width: 100%;text-align: right;margin-top: -12px;margin-bottom: 16px;font-size: 13px;margin-left: -1px;cursor: pointer;}
-#postCommentButton:hover{color:#000;}
-#commentContainer{height: 495px;overflow: auto;}
-.postOrigin{position: absolute;bottom: 9px;float: left;font-size: 13px;padding-left: 20px;}
+#postCommentButton{width: 100%;text-align: right;margin-top: -12px;margin-bottom: 5px;font-size: 13px;margin-left: -1px;cursor: pointer;}
+#postCommentButton:hover{color:#f03d64;}
+#commentContainer{padding-bottom: 10px;overflow: scroll;max-height: 620px;}
+.postOrigin{position: absolute;bottom: 9px;float: left;font-size: 10px; padding-left: 20px; color: #bebebe;width: 620px;text-align: center;}
+.postOrigin a{color: #bebebe !important;}
 .arrow{ position: absolute;top: 275px;height: 60px;width: 30px;margin-top: -30px;background-image: url(/images/prodPageArrow.png);background-repeat: no-repeat;z-index: 1;overflow: hidden;cursor: pointer;background-size: auto 100%;}
 #leftArrow{background-position: 4px; }
 #rightArrow{right: -5px;background-position: -22px; }
-#userPostGrid{ width: 939px;float: left;box-shadow: rgb(235, 235, 235) -2px -2px 15px 2px;background-color: rgb(241, 241, 241);border: 1px solid rgb(219, 219, 219);margin-left: 7px;padding-left: 45px;padding-bottom: 25px;}
-.userGridPostFrame{ float: left;width: 264px;overflow: hidden;margin-right: 20px;height: 315px;margin-top: 25px;border: rgb(255, 255, 255) 10px solid;position: relative;}
+#userPostGrid{ width: 964px; margin-left: 7px; padding-left: 13px; padding-bottom: 25px; display: inline-block;}
+.userGridPostFrame{ float: left;width: 303px; overflow: hidden; height: 315px; border: #FFF 9px solid; position: relative;background-size: 100% auto;background-position: 50%;background-repeat: no-repeat;}
+.userGridPostFrame .profFeat{width: 60px;position: absolute;z-index: 12;right: 0px;top: 0px;}
 .userGridPostFrame a{ float:left; height:100%;}
 .userGridPostFrame img{ width:100%;}
 .myLittleSecret{position:absolute; height:100%; right:0px; width:20px; background-color:#fff;}
-.popGridLove{ position: absolute;height: 100px;width: 100px;left: 50%;margin-left: -50px;top: 50%;margin-top: -50px; cursor: pointer;}
-.popGridnotLoved{background: url("/images/like.png") no-repeat center center; background-size: 100%;}
-.popGridisLoved{background: url("/images/wild_like.png") no-repeat center center; background-size: 100%;}
-#postGridTitle{font-size: 20px;margin-top: 20px;margin-bottom: 10px;font-family: helvetica;font-weight: 100;text-align: center;color: rgb(80, 80, 80);}
+.popGridLove{ position: absolute;height: 100px;width: 100px;left: 50%;margin-left: -50px;top: 50%;margin-top: -50px; cursor: pointer;border-radius: 52px;line-height: 100px;text-align: center;color: #fff;font-size: 18px; z-index: 100;}
+.popGridnotLoved{background-color: #000;}
+.popGridisLoved{background-color: #ff2e6e;}
+.linkLayer{position: absolute; width: 100%; height: 100%; z-index: 1;}
+#postGridTitle{font-size: 12px;margin-top: 8px;margin-bottom: 10px;text-align: center; color: #b7b7b7; text-transform: uppercase;}
+#postGridTitle a{color: #b7b7b7;}
 .is_winner_box{position: absolute;right: 0px;color: #fff;font-size: 15px;height: 30px;background-color: #fd7173;line-height: 30px;padding: 0px 10px;}
 .dahliaPink{color:#F03E63;}
 #userPostGrid .delButton{position: absolute;right: 0px;font-size: 20px;background-color: #FFF; color: #000;padding: 7px 12px; z-index: 1;text-align: center;}
 #userPostGrid .option{display: none; cursor: pointer;}
+.postImageFrame{ width: 620px; height: 620px; float: left; background-color: white;margin-left: 20px; position: relative; background-repeat: no-repeat; background-position: 50%;}
+.postImageFrame:hover .postTag{display: block;}
+.postTall{background-size: auto 100%;}
+.postWide{background-size: 100% auto;}
+.pdWrap{background-color: #fff;-moz-box-shadow:    0 0 17px 0 #ccc; -webkit-box-shadow: 0 0 17px 0 #ccc; box-shadow: 0 0 17px 0 #ccc; background-color: #f7f7f7;}
+.post-details-container #activateToggle{position: absolute;right: -18px;bottom: -19px;width: 65px;height: 65px;background-image: url("/images/tags.png");background-size: auto 100%;background-position: -79px;background-repeat: no-repeat;z-index: 100;line-height: 68px;color: #fff;text-align: center;text-indent: 11px;font-size: 8px;}
+.post-details-container .postTag{position: absolute; height: 30px; width: 30px; background-image: url("/images/tags.png"); background-size: auto 100%; background-position: 0px; background-repeat: no-repeat; display: none;}
+.post-details-container .active{background-position: -35px; display: block !important;}
+.post-details-container .activated{cursor: url("/images/postTagCursor.png"), pointer;}
+.post-details-container .note{height: 50px; width: 100%; margin-top: 5px; background-color: #fff;}
+.post-details-container .note li{float: left;}
+.post-details-container .note .userTag{width: 80%;text-align: left;text-indent: 10px;padding-top: 7px;font-size: 11px;}
+.post-details-container .note .tagImg{width: 50px;height: 50px;float: left; background-image: url("/images/tags.png"); background-size: auto 90%;background-position: 0px;background-repeat: no-repeat;}
+.post-details-container .note .tagImg:hover img{display: block;}
+.post-details-container .note .tagImg img{height: 20px;margin-top: 32px;margin-left: 22px; display: none;}
+.post-details-container .note textarea{width: 265px; margin-left:3%; margin-top: 2%;height: 87%;border: none;line-height: 20px; font-size: 11px; color: #b7b7b7;}
+.post-details-container .note .inputWrap{height: 50px; width: 275px;}
+#tagsSection{height: 220px;overflow: scroll;}
+
 /*********************** HEADER ***************************/
 .marginmiddlebutton1{float: left; margin-right: 8px;}
 .marginmiddlebutton2{float: left; margin-right: 10px;}
@@ -549,7 +576,7 @@ padding: 20px;}
 /****************** SOCIALIZE ****************/
 .socialize{ border: 2px solid #dadada;}
 .socialize:focus { outline: none;border-color: #9ecaed;box-shadow: 0 0 10px #9ecaed;}
-#pplContainer{ position: absolute;width: 300px;background-color: #fff;border: #c2c2c2 1px solid;display: none;left: 50%;margin-left: -150px;margin-top: 7px; z-index:1000000000; padding: 10px 0px 10px;max-height: 347px;overflow: auto;}
+#pplContainer{ position: absolute;width: 300px;background-color: #fff;border: #c2c2c2 1px solid;display: none;left: 50%;margin-left: -150px;margin-top: 0px; z-index:1000000000; padding: 10px 0px 10px;max-height: 347px;overflow: auto;}
 .pplFinderBox{width: 89%;font-size: 15px;height: 47px;overflow: hidden;margin-bottom: 2px;margin-top: 2px;margin-left: 10px; cursor:pointer; padding: 5px;}
 .pplFinderBox:hover{background-color:rgb(233, 152, 152);}
 .pplFinderAvatarFrame{width: 100px; overflow:hidden; width: 50px; height:48px; float:left; border-radius: 50px;}
@@ -1685,10 +1712,10 @@ width: 174px;
 #userPostGallery img{height:100%; float:left;}
 #userProfileDeets{height:140px; width: 98.5%;margin-left: .75%; background-color:#fff; position: relative;}
 #userProfileDeetsOverlay{width:100%; height: 129%; bottom:0px; position:absolute;}
-#userProfileMenuBar{ margin-top: 10px;height: 47px;width: 98.5%;margin-left: .75%;background-color: #fff;margin-bottom: 10px;}
+#userProfileMenuBar{ margin-top: 10px;height: 47px;width: 963px; margin-left: 20px;background-color: #fff;margin-bottom: 10px;}
 #profilePostBin{}
 .userProfileAvatarHome{width: 140px; height:100%; float:left;padding-top: 10px;margin-left: 10px;}
-.userProfileAvatarFrame{overflow: hidden;border-radius: 110px;border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
+.userProfileAvatarFrame{overflow: hidden;border-radius: 110px; margin-top:10px; border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
 .userProfileAvatarFrame img{width:100%;}
 #userProfileDeetsRightCol{float:right; height:100%; width:500px;}
 .userProfileDeetsList{ text-align:left; height:100%; float:left;margin-top: 7px;margin-left: 20px;max-width: 300px;word-wrap: break-word;}
@@ -1708,7 +1735,7 @@ width: 174px;
 .profileRed{ color: #ff2e6e;font-family: helvetica;font-size: 16px;}
 .toggleSelected{color: rgb(94, 94, 94);
     border: rgb(94, 94, 94) 1px solid;}
-.overlayLayer{ position:absolute; left:-1%; top:0px; height:100%; width:102%; background-color:#fff; opacity:.5; }
+.overlayLayer{ position:absolute; left:-1%; top:0px; height:100%; width:102%; background-color:#fff; opacity:.9; }
 .levelWrap{position:relative;}
 #profileShareFacebook{ background-image:url(/images/profile/1.png); background-repeat: no-repeat; background-size:auto 100%;}
 #profileSharePinterest{ background-image:url(/images/profile/2.png); background-repeat: no-repeat; background-size:auto 100%;}
@@ -1752,7 +1779,7 @@ width: 174px;
     font-weight: 300;
 }
 /******* CRUNK BOX ****************/
-.crunkBox{position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 1000000; text-align: center;}
+.crunkBox{position: fixed; left: 0px; top: 0px; width: 100%; height: 100%;z-index: 10000000; text-align: center;}
 .crunkBox_BG{position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; background-color: #000; opacity: .9; z-index: -1;}
 .crunkBox img{margin: 0px auto; z-index: 12;}
 .selectoBismol{background-image: url("/images/x.png");background-size: 68%;background-position: 50%;background-repeat: no-repeat;}
@@ -2965,9 +2992,9 @@ a.CommentUrlDecorate:hover {
 #td_dd .hidden{
     display:none !important;
 }
-#sign-up-modal{ position:fixed; width:1000px; height:700px; left:50%; margin-left:-500px; top:50%; margin-top:-350px; background-color:#000; background-image:url(../images/modal-popup-bg.jpg); background-size:cover; display:none;z-index: 1000000;}
-.sign-up-business{margin-top: 600px;text-align: center;color: #fff;font-size: 11px;font-family: Arial, Helvetica, sans-serif;}
-.mailme{margin-top: 7px; color:#FFF; font-size:12px; font-family:Arial, Helvetica, sans-serif;}
+#sign-up-modal{ position:fixed; width:770px; height:450px; left:50%; margin-left:-385px; top:50%; margin-top:-200px; background-color:#000; background-image:url(../images/modal-popup-bg.jpg); background-size:cover; display:none;z-index: 100000000;border: #C9C9C9 thin solid;box-shadow: #666 3px 4px 8px;}
+.sign-up-business{margin-top: 348px; text-align: center;color: #666;font-size: 11px; font-family: Arial, Helvetica, sans-serif;}
+.mailme{margin-top: 7px; color:#666; font-size:12px; font-family:Arial, Helvetica, sans-serif;}
 .totalLoader{width: 100%; height: 100px; text-align: center;}
 .totalLoader img{margin-top: 35px;}
 /* Top Designs - end */

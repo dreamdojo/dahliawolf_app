@@ -28,12 +28,15 @@ shop.prototype.loadProducts = function() {
 
     dahliawolf.loader.show();
     $.getJSON(URL, function(data) {
+        console.log(data);
         dahliawolf.loader.hide();
         if(data.data.get_products.data.length) {
             _this.data = data.data.get_products.data;
             _this.fillShop();
-        } else {
+        } else if(_this.shopOwner.username && _this.shopOwner.username != '') {
             _this.fillEmptyShop();
+        } else {
+            _this.$shop.html('<h2>Our shop is temporarily out of service</h2>');
         }
     });
 }

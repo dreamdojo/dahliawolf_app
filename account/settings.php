@@ -2,6 +2,17 @@
 $pageTitle = "My Settings";
 include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
+
+if (empty($_SESSION['user']) || empty($_SESSION['user']['user_id'])) {
+    default_redirect();
+}
+
+$params = array(
+    'user_id' => $_SESSION['user']['user_id']
+);
+$data = api_call('user', 'get_user', $params, true);
+$_data['user'] = $data['data'];
+
 ?>
 <div class="FixedContainer settings-wrap">
     <div class="title-section">
