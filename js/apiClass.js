@@ -304,7 +304,7 @@ Post.prototype.constructor = Post;
 Post.prototype.get = function(config, callback) {
     this.apiFunction = 'get_all';
     this.loginRequired = false;
-    this.analArray = ['_trackEvent', 'System', 'Got posts for feed', window.location.href];
+    this.analArray = ['_trackEvent', 'System', 'Got posts for feed'];
     this.callback = callback;
     this.loginRequired = false;
     this.callApi(config);
@@ -322,7 +322,7 @@ Post.prototype.get_by_user = function(config, callback) {
 Post.prototype.love = function(id, callback) {
     this.apiFunction = 'add_like';
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Post', 'User loved a post', id];
+    this.analArray = ['_trackEvent', 'Post', 'User loved a post'];
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;
@@ -331,7 +331,7 @@ Post.prototype.love = function(id, callback) {
 Post.prototype.unlove = function(id, callback) {
     this.apiFunction = 'delete_like';
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Post', 'User unloved a post', id];
+    this.analArray = ['_trackEvent', 'Post', 'User unloved a post'];
     this.callback = callback;
     this.posting_id = id;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
@@ -348,7 +348,7 @@ Post.prototype.deleteMe = function(id, callback) {
 Post.prototype.promote = function(id, callback) {
     this.apiFunction = 'promote';
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Post', 'User promoted a post', id];
+    this.analArray = ['_trackEvent', 'Post', 'User promoted a post'];
     this.callback = callback;
     this.callApi({posting_id : id, user_id : dahliawolf.userId});
     return this;
@@ -357,7 +357,7 @@ Post.prototype.promote = function(id, callback) {
 Post.prototype.addToFaves = function(id, callback) {
     this.apiFunction = 'fave';
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Post', 'User added a post to faves', id];
+    this.analArray = ['_trackEvent', 'Post', 'User added a post to faves'];
     this.callback = callback;
     this.callApi({posting_id: id, user_id : dahliawolf.userId});
     return this;
@@ -366,7 +366,7 @@ Post.prototype.addToFaves = function(id, callback) {
 Post.prototype.delFromFaves = function(id, callback) {
     this.apiFunction = 'remove_fave';
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Post', 'User removed a post from faves', id];
+    this.analArray = ['_trackEvent', 'Post', 'User removed a post from faves'];
     this.callback = callback;
     this.callApi({posting_id: id, user_id:dahliawolf.userId });
     return this;
@@ -375,7 +375,7 @@ Post.prototype.delFromFaves = function(id, callback) {
 Post.prototype.getLovers = function(id, limit, offset, callback) {
     this.apiFunction = 'get_lovers';
     this.loginRequired = false;
-    this.analArray = ['_trackEvent', 'Post', 'User is viewing post lovers', id];
+    this.analArray = ['_trackEvent', 'Post', 'User is viewing post lovers'];
     this.callback = callback;
     this.callApi({ posting_id : id, viewer_user_id : dahliawolf.userId, offset : offset, limit : limit});
 
@@ -430,7 +430,7 @@ Post.prototype.shareOnFacebook = function(URL) {
 Post.prototype.addTag = function(id, p_x, p_y, note, callback) {
     this.apiFunction = 'add_tag';
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Post', 'User added a tag to post', id];
+    this.analArray = ['_trackEvent', 'Post', 'User added a tag to post'];
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id: id, x:p_x, y:p_y, message: note });
     return this;
@@ -439,7 +439,7 @@ Post.prototype.addTag = function(id, p_x, p_y, note, callback) {
 Post.prototype.editTag = function(id, note, callback) {
     this.apiFunction = 'edit_tag';
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Post', 'User edited a tag to post', id];
+    this.analArray = ['_trackEvent', 'Post', 'User edited a tag to post'];
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, message: note });
     return this;
@@ -448,7 +448,7 @@ Post.prototype.editTag = function(id, note, callback) {
 Post.prototype.delTag = function(id, post_id, callback) {
     this.apiFunction = 'remove_tag';
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Post', 'User removed a tag from post', id];
+    this.analArray = ['_trackEvent', 'Post', 'User removed a tag from post'];
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, posting_id:post_id});
     return this;
