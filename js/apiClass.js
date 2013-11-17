@@ -47,7 +47,7 @@ User.prototype.login = function(e) {
             _gaq.push(['_trackEvent', 'Login', 'Success']);
         } else {
             e.data.$errorBox.html('*'+result[0]);
-            _gaq.push(['_trackEvent', 'Login', 'Failure']);
+            _gaq.push(['_trackEvent', 'Login', result[0]]);
             _gaq.push(['_trackEvent', 'Errors', result[0]]);
         }
     });
