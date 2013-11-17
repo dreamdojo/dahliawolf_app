@@ -629,6 +629,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 
 .float{ position:fixed !important; }
 
+#loginbox #errorBox{margin-top: 23px;font-size: 15px;color: red;}
 
 .right-arrow{
 	height: 241px;
