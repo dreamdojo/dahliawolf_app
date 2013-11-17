@@ -2786,7 +2786,7 @@ a.CommentUrlDecorate:hover {
   position:fixed;
   left:0;
   top:0;
-  z-index:9000;
+  z-index: 90000000;
   background-color:#ffffff;
   display:none;
   height:100%;
