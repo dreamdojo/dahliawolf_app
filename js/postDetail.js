@@ -89,13 +89,15 @@ postDetail.prototype.toggleFollow = function() {
 			this.followerCount--;
 			this.followButton.data('isfollowing', false);
 			this.followButton.addClass('notFollowing').removeClass('isFollowing');
-			$.post('/action/unfollow.php', {user_id : this.data.user_id});
+			//$.post('/action/unfollow.php', {user_id : this.data.user_id});
+            dahliawolf.member.unfollow(this.data.user_id);
 			this.followStatus.html('FOLLOW');
 		} else {
 			this.followerCount++
 			this.followButton.data('isfollowing', true);
 			this.followButton.removeClass('notFollowing').addClass('isFollowing');
-			$.post('/action/follow.php', {user_id : this.data.user_id});
+			//$.post('/action/follow.php', {user_id : this.data.user_id});
+            dahliawolf.member.follow(this.data.user_id)
 			this.followStatus.html('UNFOLLOW');
 		}
 		this.smallFollowCount.html(this.followerCount);

@@ -27,8 +27,13 @@ $data = api_call('user', 'register', $user_params, true);
 if (!empty($data['errors'])) {
 	$_SESSION['errors'] = api_errors_to_array($data, NULL);
 
-	redirect('/signup.php');
-	die();
+	if(!empty($_POST['ajax']) && $_POST['ajax']) {
+        echo json_encode(api_errors_to_array($data, NULL));
+        unset($_SESSION['errors']);
+    } else {
+        redirect('/signup.php');
+    }
+    die();
 }
 
 $user = $data['data']['user'];
@@ -60,5 +65,9 @@ $_SESSION['user'] = $user;
 $_SESSION['token'] = $token;
 
 // Send to account page
-redirect('/');
+if( !empty($_POST['ajax']) && $_POST['ajax'] ) {
+    echo json_encode(array('success', true));
+} else {
+   redirect('/');
+}
 ?>
