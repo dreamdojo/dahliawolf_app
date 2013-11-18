@@ -138,7 +138,8 @@ margin-top: -29px;
                            </div>
                            <div class="texting">or login with email/username:</div>
                            <div>
-                               <form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="/action/login.php">
+                               <form id="loginForm" method="POST" class="Form FancyForm AuthForm" action="/action/login.php">
+                                   <input type="hidden" name="ajax" value="true">
                                 <ul>
                                     <li>
                                         <input class="input_text" type="text" name="identity" id="sysForm_identity" value="">
@@ -163,6 +164,7 @@ margin-top: -29px;
                                  <input type="hidden" name="r" value="">
                                  <input type="hidden" name="sublog" value="1">
                             </form>
+                               <div id="errorBox"></div>
                           </div> 
                           
                         </div>

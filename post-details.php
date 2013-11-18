@@ -153,7 +153,7 @@
         window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
         window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
 
-        sendToAnal({name:'is viewing post <?= $_GET['posting_id'] ?>'});
+        _gaq.push(['_trackEvent', 'Post', 'Viewing as pop up']);
         <? if(isset($_GET['ajax'])): ?>
         $('body').css('overflow', 'hidden');
         <? endif ?>;

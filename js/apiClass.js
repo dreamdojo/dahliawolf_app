@@ -37,36 +37,23 @@ User.prototype = {
     set tumblrToken(token) {this.data.tumblrToken = token;}
 };
 
-User.prototype.Loader = function(){
-    this.$view = $('#loadingView');
-    this.speed = 200;
-}
+User.prototype.login = function(e) {
+    var formData = $(this).serialize();
+    $.post('/action/login', formData, function(data) {
+        var result = $.parseJSON(data);
 
-User.prototype.Loader.prototype.show = function() {
-    var $view = $('#loadingView');
-
-    $view.show();
-    $view.animate({'bottom': 0}, this.speed, function() {
-        setTimeout(function() {
-            $view.find('img').addClass('spinnerz').on('webkitTransitionEnd', function() {
-                if($(this).hasClass('spinnerz')) {
-                    $(this).removeClass('spinnerz');
-                } else {
-                    $(this).addClass('spinnerz')
-                }
-            });
-        }, 100);
+        if(result[0] == 'success') {
+            location.reload();
+            _gaq.push(['_trackEvent', 'Login', 'Success']);
+        } else {
+            e.data.$errorBox.html('*'+result[0]);
+            _gaq.push(['_trackEvent', 'Login', result[0]]);
+            _gaq.push(['_trackEvent', 'Errors', result[0]]);
+        }
     });
+    return false;
 }
 
-User.prototype.Loader.prototype.hide = function() {
-    var $view = $('#loadingView');
-
-    $view.animate({'bottom': '-'+100+'px'}, this.speed, function() {
-        $view.hide();
-        $view.find('img').removeClass('spinnerz').unbind();
-    });
-}
 
 User.prototype.setFriends = function(data) {
     this.friends = data;
@@ -121,7 +108,40 @@ User.prototype.logIntoFacebook = function(callback) {
     }, {scope: 'email'});
 }
 
-//***************************************************************************** User uploading system
+/******************************************* SPINNING LOADER **********/
+User.prototype.Loader = function(){
+    this.$view = $('#loadingView');
+    this.speed = 200;
+}
+
+
+User.prototype.Loader.prototype.show = function() {
+    var $view = $('#loadingView');
+
+    $view.show();
+    $view.animate({'bottom': 0}, this.speed, function() {
+        setTimeout(function() {
+            $view.find('img').addClass('spinnerz').on('webkitTransitionEnd', function() {
+                if($(this).hasClass('spinnerz')) {
+                    $(this).removeClass('spinnerz');
+                } else {
+                    $(this).addClass('spinnerz')
+                }
+            });
+        }, 100);
+    });
+}
+
+User.prototype.Loader.prototype.hide = function() {
+    var $view = $('#loadingView');
+
+    $view.animate({'bottom': '-'+100+'px'}, this.speed, function() {
+        $view.hide();
+        $view.find('img').removeClass('spinnerz').unbind();
+    });
+}
+
+//************************************** User uploading system
 User.prototype.uploadAvatar = function(_this, file) {
     if(window.FileReader !== undefined) {
         this.coordTop = $(_this).offset().top;
@@ -219,8 +239,8 @@ function Api() {
     this.baseUrl = '/api/1-0/';
     this.baseCommerceUrl = "/api/commerce/";
     this.commerceApi = false;
-    this.loginRequired = true;
-    this.ignorePop = false;
+    this.loginRequired = false;
+    this.analArray = [];
 }
 
 Api.prototype.callApi = function(data) {
@@ -228,22 +248,26 @@ Api.prototype.callApi = function(data) {
     data.use_hmac_check = 0;
     data['function'] = this.apiFunction;
     var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
-    _gaq.push(['_trackEvent', this.apiApi, this.apiFunction]);
 
-    if(dahliawolf.isLoggedIn || !this.loginRequired) {
+    console.log(this.loginRequired +' '+ dahliawolf.isLoggedIn);
+    if(this.loginRequired && dahliawolf.isLoggedIn) {
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
                 that.callback(data);
             }
         });
-    } else {
-        if(this.ignorePop) {
-
-        } else {
-            new_loginscreen();
-        }
+    } else if(this.loginRequired && !dahliawolf.isLoggedIn) {
+        new_loginscreen();
     }
-    this.loginRequired = true;
+    else {
+        $.getJSON(url, data, function(data) {
+            if(typeof that.callback === 'function') {
+                that.callback(data);
+            }
+        });
+    }
+    if(this.analArray);
+    _gaq.push(this.analArray);
 }
 //************************************************************************************ MEMBER
 Member.prototype = new Api();
@@ -255,6 +279,8 @@ function Member() {
 
 Member.prototype.follow = function(id, callback) {
     this.apiFunction = 'follow';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent','Social', 'User Followed Another Member'];
     this.callback = callback;
     this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
     return this;
@@ -262,6 +288,8 @@ Member.prototype.follow = function(id, callback) {
 
 Member.prototype.unfollow = function(id, callback) {
     this.apiFunction = 'unfollow';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Social', 'User Unfollowed Another Member'];
     this.callback = callback;
     this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
     return this;
@@ -275,6 +303,8 @@ Post.prototype.constructor = Post;
 
 Post.prototype.get = function(config, callback) {
     this.apiFunction = 'get_all';
+    this.loginRequired = false;
+    this.analArray = ['_trackEvent', 'System', 'Got posts for feed'];
     this.callback = callback;
     this.loginRequired = false;
     this.callApi(config);
@@ -283,6 +313,7 @@ Post.prototype.get = function(config, callback) {
 
 Post.prototype.get_by_user = function(config, callback) {
     this.apiFunction = 'get_by_user';
+    this.loginRequired = false;
     this.callback = callback;
     this.callApi(config);
     return this;
@@ -290,6 +321,8 @@ Post.prototype.get_by_user = function(config, callback) {
 
 Post.prototype.love = function(id, callback) {
     this.apiFunction = 'add_like';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'User loved a post'];
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;
@@ -297,6 +330,8 @@ Post.prototype.love = function(id, callback) {
 
 Post.prototype.unlove = function(id, callback) {
     this.apiFunction = 'delete_like';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'User unloved a post'];
     this.callback = callback;
     this.posting_id = id;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
@@ -305,12 +340,15 @@ Post.prototype.unlove = function(id, callback) {
 
 Post.prototype.deleteMe = function(id, callback) {
     this.apiFunction = 'delete';
+    this.loginRequired = true;
     this.callApi();
     return this;
 }
 
 Post.prototype.promote = function(id, callback) {
     this.apiFunction = 'promote';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'User promoted a post'];
     this.callback = callback;
     this.callApi({posting_id : id, user_id : dahliawolf.userId});
     return this;
@@ -318,6 +356,8 @@ Post.prototype.promote = function(id, callback) {
 
 Post.prototype.addToFaves = function(id, callback) {
     this.apiFunction = 'fave';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'User added a post to faves'];
     this.callback = callback;
     this.callApi({posting_id: id, user_id : dahliawolf.userId});
     return this;
@@ -325,6 +365,8 @@ Post.prototype.addToFaves = function(id, callback) {
 
 Post.prototype.delFromFaves = function(id, callback) {
     this.apiFunction = 'remove_fave';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'User removed a post from faves'];
     this.callback = callback;
     this.callApi({posting_id: id, user_id:dahliawolf.userId });
     return this;
@@ -332,6 +374,8 @@ Post.prototype.delFromFaves = function(id, callback) {
 
 Post.prototype.getLovers = function(id, limit, offset, callback) {
     this.apiFunction = 'get_lovers';
+    this.loginRequired = false;
+    this.analArray = ['_trackEvent', 'Post', 'User is viewing post lovers'];
     this.callback = callback;
     this.callApi({ posting_id : id, viewer_user_id : dahliawolf.userId, offset : offset, limit : limit});
 
@@ -385,6 +429,8 @@ Post.prototype.shareOnFacebook = function(URL) {
 
 Post.prototype.addTag = function(id, p_x, p_y, note, callback) {
     this.apiFunction = 'add_tag';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'User added a tag to post'];
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id: id, x:p_x, y:p_y, message: note });
     return this;
@@ -392,6 +438,8 @@ Post.prototype.addTag = function(id, p_x, p_y, note, callback) {
 
 Post.prototype.editTag = function(id, note, callback) {
     this.apiFunction = 'edit_tag';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'User edited a tag to post'];
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, message: note });
     return this;
@@ -399,6 +447,8 @@ Post.prototype.editTag = function(id, note, callback) {
 
 Post.prototype.delTag = function(id, post_id, callback) {
     this.apiFunction = 'remove_tag';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'User removed a tag from post'];
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, posting_id:post_id});
     return this;
@@ -406,6 +456,7 @@ Post.prototype.delTag = function(id, post_id, callback) {
 
 Post.prototype.getTags = function(id, callback) {
     this.apiFunction = 'get_tags';
+    this.loginRequired = false;
     this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id: id});
     return this;
@@ -421,6 +472,7 @@ Shop.prototype.constructor = Shop;
 
 Shop.prototype.getProducts = function(callback) {
     this.apiFunction = 'get_products';
+    this.loginRequired = false;
     this.callback = callback;
     this.callApi({viewer_user_id : dahliawolf.userId, id_shop:3, id_lang:1});
     ///api/commerce/product.json?function=get_products'+(theUser.id ? '&viewer_user_id='+theUser.id : '')+'&use_hmac_check=0&id_shop=3&id_lang=1
@@ -438,6 +490,8 @@ Share.prototype.constructor = Share;
 Share.prototype.add = function(id, net, type, posting_owner, callback) {
     this.callback = callback;
     this.apiFunction = 'add_share';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Social', 'User is sharing a post', net];
     if(type === 'posting') {
         this.callApi({posting_id : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
     } else {
@@ -448,6 +502,7 @@ Share.prototype.add = function(id, net, type, posting_owner, callback) {
 Share.prototype.get = function(id, type, callback) {
     this.callback = callback;
     this.apiFunction = 'get_shares';
+    this.loginRequired = true;
     this.callApi({posting_id : id, user_id : dahliawolf.userId, type : type});
 }
 

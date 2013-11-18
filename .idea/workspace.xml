@@ -1,132 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="add paxton to vip">
+    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="new home slider">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/post_feed_image.php" afterPath="$PROJECT_DIR$/action/post_feed_image.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <list id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
-    <list id="a9f4fa54-afa6-4150-b73f-38e5198c78f4" name="Failed commit: Default" comment="faqs take 300" />
-    <list id="05982a6d-2072-4dfa-b1de-8c3fc2ba0f98" name="Failed commit: Default (2)" comment="add_pin debug" />
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383268454466" ignored="false" />
+    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1384747061496" ignored="false" />
     <file path="/test.geoff" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1371574380940" ignored="false" />
-    <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379109807429" ignored="false" />
-    <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383086163288" ignored="false" />
-    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383236612284" ignored="false" />
-    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380316049566" ignored="false" />
+    <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379653295666" ignored="false" />
+    <file path="/header_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374511981085" ignored="false" />
+    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375398076074" ignored="false" />
+    <file path="/functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375469244418" ignored="false" />
     <file path="/Spine-1.1.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374534549200" ignored="false" />
     <file path="/a.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184379967" ignored="false" />
     <file path="/a.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372184397202" ignored="false" />
-    <file path="/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382555083794" ignored="false" />
+    <file path="/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375485371282" ignored="false" />
     <file path="/explore_popup.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374512429568" ignored="false" />
-    <file path="/profile.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383265199608" ignored="false" />
+    <file path="/profile.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374105947639" ignored="false" />
     <file path="/userProfile.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372287370523" ignored="false" />
     <file path="/explore.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373928286982" ignored="false" />
-    <file path="/theGrid.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379637985193" ignored="false" />
+    <file path="/theGrid.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372290387376" ignored="false" />
     <file path="/api.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374531486320" ignored="false" />
-    <file path="/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382661645273" ignored="false" />
-    <file path="/post_slideout_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380063297351" ignored="false" />
-    <file path="/invite.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379444165276" ignored="false" />
+    <file path="/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375723275465" ignored="false" />
+    <file path="/post_slideout_template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375736030853" ignored="false" />
+    <file path="/invite.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375746118037" ignored="false" />
     <file path="/invite-email.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372363821211" ignored="false" />
     <file path="/sendInviteEmails.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1372369565761" ignored="false" />
-    <file path="/postDetailPosts.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379606878142" ignored="false" />
+    <file path="/postDetailPosts.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373675982092" ignored="false" />
     <file path="/spine-1.1.css.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373925214199" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/explore.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373929389418" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/profile.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383265404958" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/css/main_mobile.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383268167892" ignored="false" />
-    <file path="/main_mobile.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383268167502" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/js/dahliawolf.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383265711328" ignored="false" />
-    <file path="/dahliawolf.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383265707040" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/common/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383239126158" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/common/header.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383251038690" ignored="false" />
-    <file path="/header.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383245766067" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/profile.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374105947956" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/css/main_mobile.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374255220699" ignored="false" />
+    <file path="/main_mobile.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373990445027" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/js/dahliawolf.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375403137962" ignored="false" />
+    <file path="/dahliawolf.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374738291089" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/common/head.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374255089290" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/common/header.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374733533316" ignored="false" />
+    <file path="/header.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374733415363" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/wolf-pack.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374100228418" ignored="false" />
     <file path="/wolf-pack.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373930848154" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/account/settings.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383255960224" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/feed.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383257249321" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/postdetails.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383252828273" ignored="false" />
-    <file path="/feed.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383257249321" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/account/settings.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374733850100" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/feed.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374097335533" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/postdetails.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373991759605" ignored="false" />
+    <file path="/feed.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374097190492" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/js/inspire.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731310440" ignored="false" />
     <file path="/inspire.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1373999424138" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/js/m_functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374279444723" ignored="false" />
     <file path="/m_functions.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374085254592" ignored="false" />
-    <file path="/a.dummy" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383253489584" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382556118426" ignored="false" />
-    <file path="/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383237559511" ignored="false" />
+    <file path="/a.dummy" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1384749890019" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731311219" ignored="false" />
+    <file path="/product.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374530612390" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/css/form.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374190743742" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/css/main-custom.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374187480744" ignored="false" />
     <file path="/form.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374187518557" ignored="false" />
     <file path="/shop-initial-calls.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374267760604" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/common/footer.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374255095591" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/cart-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382377082341" ignored="false" />
-    <file path="/cart-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381443589249" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/cart-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731311219" ignored="false" />
+    <file path="/cart-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374265255597" ignored="false" />
     <file path="/add_item_to_wishlist.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374530443017" ignored="false" />
-    <file path="/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383251557069" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383251558772" ignored="false" />
+    <file path="/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1376426137559" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731709771" ignored="false" />
     <file path="/cart.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374535657396" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/post-details.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374737305546" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/action/signup.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374731452882" ignored="false" />
     <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/dahliawolf.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374738504957" ignored="false" />
     <file path="/dahliawolf.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374732408234" ignored="false" />
-    <file path="/settings.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380062841817" ignored="false" />
-    <file path="/get_started.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379979056410" ignored="false" />
+    <file path="/settings.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1374733829625" ignored="false" />
+    <file path="/get_started.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375742503334" ignored="false" />
     <file path="/instagramConnect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1375737376917" ignored="false" />
-    <file path="/post_image.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380063517556" ignored="false" />
-    <file path="/inspire.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382116780893" ignored="false" />
-    <file path="/get_feed_from_pinterest.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379354406173" ignored="false" />
-    <file path="/vote.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380067995222" ignored="false" />
-    <file path="/apiClass.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381869116648" ignored="false" />
-    <file path="/add_pin.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379435788848" ignored="false" />
-    <file path="/callback.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379612181314" ignored="false" />
-    <file path="/redirect.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379456030576" ignored="false" />
-    <file path="/sharePost.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379535936978" ignored="false" />
-    <file path="/sharePostOnTwitter.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379542666366" ignored="false" />
-    <file path="/dashboard.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382576475441" ignored="false" />
-    <file path="$PROJECT_DIR$/../wholesale/public_html/app/design/frontend/default/dreamdojo/template/magentothem/custommenu/custommenu.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379725049397" ignored="false" />
-    <file path="/filter.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380748224025" ignored="false" />
-    <file path="$PROJECT_DIR$/../wholesale/public_html/api.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379979564436" ignored="false" />
-    <file path="/vote.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382974374694" ignored="false" />
-    <file path="/getPosts.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380227868224" ignored="false" />
-    <file path="/shop.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383236197160" ignored="false" />
-    <file path="/paxton_me.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380232861561" ignored="false" />
-    <file path="/paxton_it.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380229921779" ignored="false" />
-    <file path="/theLesson.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382657507346" ignored="false" />
-    <file path="/login_pop.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381861490388" ignored="false" />
-    <file path="/vip.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380736924762" ignored="false" />
-    <file path="/viprequest.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380736042150" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/js/shop.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381513013043" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/shipping-options.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381515502906" ignored="false" />
-    <file path="/shipping-options.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381514005220" ignored="false" />
-    <file path="/add_item_to_cart.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381516334196" ignored="false" />
-    <file path="/remove_item_from_cart.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381516680347" ignored="false" />
-    <file path="$PROJECT_DIR$/../crunchbase/crunch/index.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382044059432" ignored="false" />
-    <file path="/index.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382043733023" ignored="false" />
-    <file path="$PROJECT_DIR$/../wholesale/public_html/app/design/frontend/default/dreamdojo/template/catalog/product/view/addtocart.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382034251119" ignored="false" />
-    <file path="$PROJECT_DIR$/../wholesale/public_html/app/design/frontend/default/dreamdojo/template/catalog/product/view.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382034251119" ignored="false" />
-    <file path="$PROJECT_DIR$/../wholesale/public_html/skin/frontend/default/dreamdojo/css/styles.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382394191399" ignored="false" />
-    <file path="/styles.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382394188655" ignored="false" />
-    <file path="$PROJECT_DIR$/../lonely_dot/skin/frontend/default/ma_allure_fashion/css/styles.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382120648254" ignored="false" />
-    <file path="$PROJECT_DIR$/../lonely_dot/skin/frontend/default/ma_allure_fashion/magentothem/css/custommenu.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382120352167" ignored="false" />
-    <file path="/custommenu.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382120346559" ignored="false" />
-    <file path="$PROJECT_DIR$/../lonely_dot/app/design/frontend/default/ma_allure_fashion/template/page/html/header.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382120732805" ignored="false" />
-    <file path="/header.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382120731286" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/customer-success.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382391733011" ignored="false" />
-    <file path="/customer-success.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382391732683" ignored="false" />
-    <file path="$PROJECT_DIR$/../wholesale/public_html/skin/frontend/default/default/css/colorswatch.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382393491838" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/shop/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382394588096" ignored="false" />
-    <file path="/redeem.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382466122289" ignored="false" />
-    <file path="/redeemgift.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382402049371" ignored="false" />
-    <file path="/functions.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382564177065" ignored="false" />
-    <file path="/functions-api.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382575142674" ignored="false" />
-    <file path="/goodies.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382657415751" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/home.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1382974098394" ignored="false" />
-    <file path="/home.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383087112725" ignored="false" />
-    <file path="/spine.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383086817663" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/templates.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383262613931" ignored="false" />
-    <file path="$PROJECT_DIR$/../dahliawolf_mobile/mobile/activity.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383250759257" ignored="false" />
-    <file path="/activity.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1383249225517" ignored="false" />
+    <file path="$PROJECT_DIR$/../dahliawolf_api/public_html/models/Posting.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1378539991702" ignored="false" />
+    <file path="/Posting.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1378537668688" ignored="false" />
+    <file path="$PROJECT_DIR$/../sugarlips.com/public_html/app/code/local/Mage/Adminhtml/Model/System/Config/Source/Email/Smtpauth.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379653169733" ignored="false" />
+    <file path="/.gitignore" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379653248961" ignored="false" />
+    <file path="$PROJECT_DIR$/../sugarlips.com/public_html/.gitignore" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379653633064" ignored="false" />
+    <file path="$PROJECT_DIR$/../sugarlips.com/.gitignore" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379653655583" ignored="false" />
+    <file path="$PROJECT_DIR$/../sugarlips.com/public_html/app/code/local/Mage/Core/Model/Email/Template.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379653904093" ignored="false" />
+    <file path="$PROJECT_DIR$/../sugarlips.com/public_html/app/code/core/Mage/Core/etc/system.xml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1379654955344" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/core/controllers/Request_Controller.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380255757667" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/core/Jk_Request.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380255420959" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/views/mob/index.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1380256791099" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/modules/sms/Sms_Process.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381771836912" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/controllers/Sms_Controller.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381768160161" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/models/sms/Sms.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381768160161" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/models/sms/Sms_Api_Request.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381768160161" ignored="false" />
+    <file path="/Sms_Process.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381771590472" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/models/sms/Sms_Engage.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381772083130" ignored="false" />
+    <file path="/Sms_Engage.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381772082706" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/models/dealer/Dealer_DAO.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381770361433" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/views/admin/new_dealer.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381770787426" ignored="false" />
+    <file path="/new_dealer.phtml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381770786425" ignored="false" />
+    <file path="$PROJECT_DIR$/../migrate.cartext.biz/app/core/Jk_Config.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381771174377" ignored="false" />
+    <file path="/Jk_Config.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1381771173596" ignored="false" />
+    <file path="/post_feed_image.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1384752223839" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +103,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+    <option name="PATCH_PATH" value="" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -151,103 +119,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1647" column="57" selection-start="101022" selection-end="101022" vertical-scroll-proportion="0.0">
+            <state line="212" column="10" selection-start="12294" selection-end="12305" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wolf-pack.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wolf-pack.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="38" selection-start="700" selection-end="700" vertical-scroll-proportion="-16.875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apiClass.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/apiClass.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="16" selection-start="3597" selection-end="3598" vertical-scroll-proportion="-68.07692">
-              <folding>
-                <marker date="1381869122000" expanded="false" signature="4500:4524" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete_post.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/action/delete_post.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="17" selection-start="229" selection-end="239" vertical-scroll-proportion="-5.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userList.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/userList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="10" selection-start="435" selection-end="435" vertical-scroll-proportion="-7.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding>
-                <marker date="1382576811000" expanded="false" signature="11652:11662" placeholder="..." />
-                <marker date="1382576811000" expanded="false" signature="12620:12656" placeholder="..." />
-                <marker date="1382576811000" expanded="false" signature="12765:12795" placeholder="..." />
-                <marker date="1382576811000" expanded="false" signature="12998:13009" placeholder="..." />
-                <marker date="1382576811000" expanded="false" signature="13116:13127" placeholder="..." />
-                <marker date="1382576811000" expanded="false" signature="13236:13247" placeholder="..." />
-                <marker date="1382576811000" expanded="false" signature="13993:14029" placeholder="..." />
-                <marker date="1382576811000" expanded="false" signature="15589:15611" placeholder="..." />
-                <marker date="1382576811000" expanded="false" signature="17594:17618" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shop-initial-calls.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/php/shop-initial-calls.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="12" selection-start="131" selection-end="131" vertical-scroll-proportion="-3.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="initial-calls.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="initial-calls.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/php/initial-calls.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="0" selection-start="2342" selection-end="2342" vertical-scroll-proportion="1.7437106">
+            <state line="11" column="17" selection-start="221" selection-end="221" vertical-scroll-proportion="-0.72727275">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header_template.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/header_template.php">
+      <file leaf-file-name="post_feed_image.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/action/post_feed_image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="61" selection-start="4582" selection-end="4582" vertical-scroll-proportion="-71.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/head.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="110" selection-start="1790" selection-end="1790" vertical-scroll-proportion="46.583332">
+            <state line="43" column="40" selection-start="1267" selection-end="1267" vertical-scroll-proportion="0.74916106">
               <folding />
             </state>
           </provider>
@@ -262,6 +155,12 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
+      <command text="gjit checkout master" />
+      <command text="git checkout master" />
+      <command text="git checkout master" />
+      <command text="git pull" />
+      <command text="git pull" />
+      <command text="git status" />
       <command text="git pull" />
       <command text="rm mobile" />
       <command text="git pull" />
@@ -281,12 +180,6 @@
       <command text="git pull" />
       <command text="git pull" />
       <command text="git status" />
-      <command text="git checkout .idea/workspace.xml" />
-      <command text="git push" />
-      <command text="git checkout .idea/workspace.xml" />
-      <command text="git pull" />
-      <command text="git reset --hard HEAD" />
-      <command text="git pull" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -307,31 +200,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/theLesson.js" />
-        <option value="$PROJECT_DIR$/js/vote.js" />
-        <option value="$PROJECT_DIR$/action/viprequest.php" />
-        <option value="$PROJECT_DIR$/action/redeemgift.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/spine.php" />
-        <option value="$PROJECT_DIR$/explore.php" />
-        <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/js/functions.js" />
-        <option value="$PROJECT_DIR$/js/shop.js" />
-        <option value="$PROJECT_DIR$/themes/header_template.php" />
-        <option value="$PROJECT_DIR$/shop/product.php" />
-        <option value="$PROJECT_DIR$/head.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/userList.js" />
+        <option value="$PROJECT_DIR$/explore_popup.php" />
+        <option value="$PROJECT_DIR$/shop/product.php" />
+        <option value="$PROJECT_DIR$/js/postDetail.js" />
+        <option value="$PROJECT_DIR$/post-details.php" />
+        <option value="$PROJECT_DIR$/social-login.php" />
+        <option value="$PROJECT_DIR$/head.php" />
+        <option value="$PROJECT_DIR$/spine.php" />
+        <option value="$PROJECT_DIR$/instagramConnect.php" />
+        <option value="$PROJECT_DIR$/themes/post_slideout_template.php" />
+        <option value="$PROJECT_DIR$/get_started.php" />
+        <option value="$PROJECT_DIR$/invite.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/php/initial-calls.php" />
+        <option value="$PROJECT_DIR$/action/post_feed_image.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="36" />
-    <option name="y" value="318" />
-    <option name="width" value="2034" />
-    <option name="height" value="1051" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="2578" />
+    <option name="height" value="1410" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -363,17 +256,17 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,61 +278,118 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="true" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="FullScreen" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FullScreen" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="dev_Dahlia" serverId="666cdfd5-cdf3-4d6a-bc43-f5bef4a92f3c" autoUpload="true" uploadOnSaveAll="true">
+  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="dahliawofl.app" serverId="3711162c-c68b-48d9-9ae8-5d402041c7ae" autoUpload="true" uploadOnSaveAll="true">
     <servers>
-      <server id="357ff2a8-fa79-46d8-8ad5-2deb9159e2e0">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </server>
-      <server id="49ea9755-7541-4577-bae7-5626eff2dfa8">
+      <server id="04414e22-be7d-4d36-94f8-3b92f9a21560">
         <serverdata />
       </server>
-      <server id="4f3b0325-5574-4daf-b6a8-c9f23786e413">
+      <server id="0caae917-568c-4600-8e5d-477ec2a751a3">
         <serverdata />
       </server>
-      <server id="666cdfd5-cdf3-4d6a-bc43-f5bef4a92f3c">
+      <server id="14515cce-8789-4af3-aec1-f70d3f9d08bc">
+        <serverdata />
+      </server>
+      <server id="1458a632-ddac-4991-bd1d-fa1c7b77c35c">
+        <serverdata />
+      </server>
+      <server id="1d1028c7-f1b1-4548-bab0-2b21e6fb24e5">
+        <serverdata />
+      </server>
+      <server id="29418d40-c6b8-40ea-b5a6-c6f7273f4f76">
+        <serverdata />
+      </server>
+      <server id="3711162c-c68b-48d9-9ae8-5d402041c7ae">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </server>
-      <server id="8aff326f-19e5-437b-ad47-3c4061b5d4a1">
+      <server id="50da1409-0020-4123-a428-e0c1f7d8c269">
         <serverdata />
       </server>
-      <server id="9412d035-1d04-45ca-97f3-5bcf2a16e1f2">
+      <server id="5892b83e-29db-4c0e-9645-e98b5de2b200">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="5ebfcd67-493d-4188-b762-fada10a4a779">
         <serverdata />
       </server>
-      <server id="b9506bd7-4c0b-431c-b75f-4c1e9ee27d02">
+      <server id="65b876bf-0c18-4922-b20e-b1221685b1f4">
+        <serverdata />
+      </server>
+      <server id="8450d056-6025-4aba-b677-5d2cbec771d2">
+        <serverdata />
+      </server>
+      <server id="8ccbdbdc-e4bf-409f-b8b6-6f193809ec68">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="9a02236b-70db-45b5-b9da-04f0bb099da9">
+        <serverdata />
+      </server>
+      <server id="a4258ab8-a95c-4940-b313-9d1d8221c563">
+        <serverdata />
+      </server>
+      <server id="b2e51f49-6226-4a38-a937-24e0d4171ee7">
+        <serverdata />
+      </server>
+      <server id="bade54b3-5a80-4721-a7d3-0231011d55bf">
+        <serverdata />
+      </server>
+      <server id="bc873490-dd60-4eb3-ad10-59e1046f6400">
+        <serverdata />
+      </server>
+      <server id="c45adf05-47de-4363-ac45-10ec39f353df">
+        <serverdata />
+      </server>
+      <server id="c6f4a8ed-1b81-41f5-b175-d8d484cb6e2b">
+        <serverdata />
+      </server>
+      <server id="c752b0ca-b1f6-41fc-9384-a4d2e6dab52c">
+        <serverdata />
+      </server>
+      <server id="da60a1a3-0dfb-4f10-be2a-834538ff0719">
+        <serverdata />
+      </server>
+      <server id="dfc07239-3811-4dff-a29a-de49b05d16e9">
+        <serverdata />
+      </server>
+      <server id="e1e8c348-69cb-468e-9773-d16552522826">
+        <serverdata />
+      </server>
+      <server id="e41d9344-3160-44b0-bb21-e4042a989b99">
+        <serverdata />
+      </server>
+      <server id="ea3f9677-caee-4b09-a96e-2cb7ee11095a">
         <serverdata />
       </server>
     </servers>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images/video" />
-      <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$/css" />
-      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/images/slider" />
+      <recent name="$PROJECT_DIR$/images/slider/slides" />
     </key>
   </component>
   <component name="RunManager">
@@ -476,7 +426,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="" />
-      <changelist id="40cc6040-65f8-4ad0-a16e-4f2b361ad435" name="New changelist" comment="" />
       <created>1371574325898</created>
       <updated>1371574325898</updated>
     </task>
@@ -652,1074 +601,34 @@
       <created>1376418267833</created>
       <updated>1376418267833</updated>
     </task>
-    <task id="LOCAL-00044" summary="ooohhh gaaaawd">
-      <created>1379109545599</created>
-      <updated>1379109545599</updated>
-    </task>
-    <task id="LOCAL-00045" summary="ooohhh gaaaawd take 2">
-      <created>1379109585483</created>
-      <updated>1379109585483</updated>
-    </task>
-    <task id="LOCAL-00046" summary="faqs take 300">
-      <created>1379109859683</created>
-      <updated>1379109859683</updated>
-    </task>
-    <task id="LOCAL-00047" summary="image upload improvement">
-      <created>1379118215031</created>
-      <updated>1379118215031</updated>
-    </task>
-    <task id="LOCAL-00048" summary="google analytics/ vote on index/ api stuff">
-      <created>1379369602716</created>
-      <updated>1379369602716</updated>
-    </task>
-    <task id="LOCAL-00049" summary="invite section improvemebts">
-      <created>1379376958872</created>
-      <updated>1379376958872</updated>
-    </task>
-    <task id="LOCAL-00050" summary="google analytics/ vote on index/ api stuff">
-      <created>1379377077605</created>
-      <updated>1379377077605</updated>
-    </task>
-    <task id="LOCAL-00051" summary="google analytics/ vote on index/ api stuff">
-      <created>1379377192573</created>
-      <updated>1379377192573</updated>
-    </task>
-    <task id="LOCAL-00052" summary="bezel time">
-      <created>1379378532241</created>
-      <updated>1379378532242</updated>
-    </task>
-    <task id="LOCAL-00053" summary="add pin test">
-      <created>1379380137200</created>
-      <updated>1379380137200</updated>
-    </task>
-    <task id="LOCAL-00054" summary="add pin test">
-      <created>1379380223450</created>
-      <updated>1379380223450</updated>
-    </task>
-    <task id="LOCAL-00055" summary="google analytics/ vote on index/ api stuff">
-      <created>1379380435610</created>
-      <updated>1379380435610</updated>
-    </task>
-    <task id="LOCAL-00056" summary="google analytics/ vote on index/ api stuff">
-      <created>1379380480985</created>
-      <updated>1379380480985</updated>
-    </task>
-    <task id="LOCAL-00057" summary="google analytics/ vote on index/ api stuff">
-      <created>1379380544747</created>
-      <updated>1379380544748</updated>
-    </task>
-    <task id="LOCAL-00058" summary="google analytics/ vote on index/ api stuff">
-      <created>1379380645492</created>
-      <updated>1379380645492</updated>
-    </task>
-    <task id="LOCAL-00059" summary="google analytics/ vote on index/ api stuff">
-      <created>1379380728579</created>
-      <updated>1379380728580</updated>
-    </task>
-    <task id="LOCAL-00060" summary="google analytics/ vote on index/ api stuff">
-      <created>1379380781917</created>
-      <updated>1379380781917</updated>
-    </task>
-    <task id="LOCAL-00061" summary="google analytics/ vote on index/ api stuff">
-      <created>1379434916968</created>
-      <updated>1379434916968</updated>
-    </task>
-    <task id="LOCAL-00062" summary="google analytics/ vote on index/ api stuff">
-      <created>1379435102972</created>
-      <updated>1379435102972</updated>
-    </task>
-    <task id="LOCAL-00063" summary="add_pin debug">
-      <created>1379435158776</created>
-      <updated>1379435158776</updated>
-    </task>
-    <task id="LOCAL-00064" summary="add_pin debug">
-      <created>1379435208863</created>
-      <updated>1379435208865</updated>
-    </task>
-    <task id="LOCAL-00065" summary="add_pin debug">
-      <created>1379435339027</created>
-      <updated>1379435339027</updated>
-    </task>
-    <task id="LOCAL-00066" summary="add_pin debug">
-      <created>1379435389006</created>
-      <updated>1379435389006</updated>
-    </task>
-    <task id="LOCAL-00067" summary="add_pin debug">
-      <created>1379435477400</created>
-      <updated>1379435477400</updated>
-    </task>
-    <task id="LOCAL-00068" summary="add_pin debug">
-      <created>1379435558390</created>
-      <updated>1379435558390</updated>
-    </task>
-    <task id="LOCAL-00069" summary="add_pin debug">
-      <created>1379435642984</created>
-      <updated>1379435642984</updated>
-    </task>
-    <task id="LOCAL-00070" summary="add_pin debug">
-      <created>1379435741959</created>
-      <updated>1379435741959</updated>
-    </task>
-    <task id="LOCAL-00071" summary="add_pin debug">
-      <created>1379435799393</created>
-      <updated>1379435799393</updated>
-    </task>
-    <task id="LOCAL-00072" summary="add_pin debug">
-      <created>1379435843888</created>
-      <updated>1379435843888</updated>
-    </task>
-    <task id="LOCAL-00073" summary="add_pin debug">
-      <created>1379435985984</created>
-      <updated>1379435985989</updated>
-    </task>
-    <task id="LOCAL-00074" summary="twitter awesomeness">
-      <created>1379439190954</created>
-      <updated>1379439190954</updated>
-    </task>
-    <task id="LOCAL-00075" summary="twitter awesomeness">
-      <created>1379439430630</created>
-      <updated>1379439430631</updated>
-    </task>
-    <task id="LOCAL-00076" summary="twitter awesomeness">
-      <created>1379439465164</created>
-      <updated>1379439465164</updated>
-    </task>
-    <task id="LOCAL-00077" summary="twitter awesomeness">
-      <created>1379439613083</created>
-      <updated>1379439613091</updated>
-    </task>
-    <task id="LOCAL-00078" summary="twitter awesomeness">
-      <created>1379439830544</created>
-      <updated>1379439830544</updated>
-    </task>
-    <task id="LOCAL-00079" summary="twitter awesomeness">
-      <created>1379439915711</created>
-      <updated>1379439915712</updated>
-    </task>
-    <task id="LOCAL-00080" summary="twitter awesomeness">
-      <created>1379439960957</created>
-      <updated>1379439960957</updated>
-    </task>
-    <task id="LOCAL-00081" summary="twitter awesomeness">
-      <created>1379440298716</created>
-      <updated>1379440298716</updated>
-    </task>
-    <task id="LOCAL-00082" summary="twitter awesomeness">
-      <created>1379440574269</created>
-      <updated>1379440574269</updated>
-    </task>
-    <task id="LOCAL-00083" summary="twitter awesomeness">
-      <created>1379440687450</created>
-      <updated>1379440687450</updated>
-    </task>
-    <task id="LOCAL-00084" summary="twitter awesomeness">
-      <created>1379440973758</created>
-      <updated>1379440973758</updated>
-    </task>
-    <task id="LOCAL-00085" summary="twitter awesomeness">
-      <created>1379441113760</created>
-      <updated>1379441113761</updated>
-    </task>
-    <task id="LOCAL-00086" summary="twitter awesomeness">
-      <created>1379441474904</created>
-      <updated>1379441474904</updated>
-    </task>
-    <task id="LOCAL-00087" summary="twitter awesomeness">
-      <created>1379441544970</created>
-      <updated>1379441544971</updated>
-    </task>
-    <task id="LOCAL-00088" summary="twitter awesomeness">
-      <created>1379441821433</created>
-      <updated>1379441821434</updated>
-    </task>
-    <task id="LOCAL-00089" summary="twitter awesomeness">
-      <created>1379442115305</created>
-      <updated>1379442115305</updated>
-    </task>
-    <task id="LOCAL-00090" summary="twitter awesomeness">
-      <created>1379443240653</created>
-      <updated>1379443240653</updated>
-    </task>
-    <task id="LOCAL-00091" summary="twitter awesomeness">
-      <created>1379444176810</created>
-      <updated>1379444176811</updated>
-    </task>
-    <task id="LOCAL-00092" summary="twitter awesomeness">
-      <created>1379449904010</created>
-      <updated>1379449904011</updated>
-    </task>
-    <task id="LOCAL-00093" summary="dahlia head mod">
-      <created>1379451542549</created>
-      <updated>1379451542550</updated>
-    </task>
-    <task id="LOCAL-00094" summary="tumblr api">
-      <created>1379457567743</created>
-      <updated>1379457567744</updated>
-    </task>
-    <task id="LOCAL-00095" summary="tumblr api">
-      <created>1379457771459</created>
-      <updated>1379457771459</updated>
-    </task>
-    <task id="LOCAL-00096" summary="tumblr api">
-      <created>1379457820300</created>
-      <updated>1379457820300</updated>
-    </task>
-    <task id="LOCAL-00097" summary="tumblr api">
-      <created>1379457899276</created>
-      <updated>1379457899276</updated>
-    </task>
-    <task id="LOCAL-00098" summary="tumblr api">
-      <created>1379458277542</created>
-      <updated>1379458277542</updated>
-    </task>
-    <task id="LOCAL-00099" summary="tumblr api">
-      <created>1379460834223</created>
-      <updated>1379460834224</updated>
-    </task>
-    <task id="LOCAL-00100" summary="tumblr api">
-      <created>1379461197344</created>
-      <updated>1379461197345</updated>
-    </task>
-    <task id="LOCAL-00101" summary="tumblr api">
-      <created>1379461303616</created>
-      <updated>1379461303617</updated>
-    </task>
-    <task id="LOCAL-00102" summary="tumblr api">
-      <created>1379461365961</created>
-      <updated>1379461365961</updated>
-    </task>
-    <task id="LOCAL-00103" summary="tumblr api">
-      <created>1379461419105</created>
-      <updated>1379461419106</updated>
-    </task>
-    <task id="LOCAL-00104" summary="tumblr api">
-      <created>1379461698727</created>
-      <updated>1379461698727</updated>
-    </task>
-    <task id="LOCAL-00105" summary="tumblr api">
-      <created>1379461808542</created>
-      <updated>1379461808542</updated>
-    </task>
-    <task id="LOCAL-00106" summary="tumblr api">
-      <created>1379461880977</created>
-      <updated>1379461880977</updated>
-    </task>
-    <task id="LOCAL-00107" summary="tumblr api">
-      <created>1379462094452</created>
-      <updated>1379462094453</updated>
-    </task>
-    <task id="LOCAL-00108" summary="tumblr api">
-      <created>1379462174733</created>
-      <updated>1379462174733</updated>
-    </task>
-    <task id="LOCAL-00109" summary="tumblr api">
-      <created>1379462470858</created>
-      <updated>1379462470858</updated>
-    </task>
-    <task id="LOCAL-00110" summary="tumblr api">
-      <created>1379462762378</created>
-      <updated>1379462762379</updated>
-    </task>
-    <task id="LOCAL-00111" summary="tumblr api">
-      <created>1379462820289</created>
-      <updated>1379462820289</updated>
-    </task>
-    <task id="LOCAL-00112" summary="tumblr api">
-      <created>1379463039002</created>
-      <updated>1379463039002</updated>
-    </task>
-    <task id="LOCAL-00113" summary="tumblr api">
-      <created>1379464073012</created>
-      <updated>1379464073013</updated>
-    </task>
-    <task id="LOCAL-00114" summary="tumblr api">
-      <created>1379464415068</created>
-      <updated>1379464415069</updated>
-    </task>
-    <task id="LOCAL-00115" summary="tumblr api">
-      <created>1379464505694</created>
-      <updated>1379464505695</updated>
-    </task>
-    <task id="LOCAL-00116" summary="tumblr api">
-      <created>1379464561564</created>
-      <updated>1379464561564</updated>
-    </task>
-    <task id="LOCAL-00117" summary="tumblr api">
-      <created>1379464675549</created>
-      <updated>1379464675550</updated>
-    </task>
-    <task id="LOCAL-00118" summary="tumblr api">
-      <created>1379464842694</created>
-      <updated>1379464842694</updated>
-    </task>
-    <task id="LOCAL-00119" summary="tumblr api">
-      <created>1379465028984</created>
-      <updated>1379465028984</updated>
-    </task>
-    <task id="LOCAL-00120" summary="tumblr api">
-      <created>1379465099411</created>
-      <updated>1379465099411</updated>
-    </task>
-    <task id="LOCAL-00121" summary="tumblr api">
-      <created>1379465206732</created>
-      <updated>1379465206733</updated>
-    </task>
-    <task id="LOCAL-00122" summary="tumblr api">
-      <created>1379465371401</created>
-      <updated>1379465371402</updated>
-    </task>
-    <task id="LOCAL-00123" summary="tumblr api">
-      <created>1379465617580</created>
-      <updated>1379465617580</updated>
-    </task>
-    <task id="LOCAL-00124" summary="tumblr api">
-      <created>1379465815267</created>
-      <updated>1379465815267</updated>
-    </task>
-    <task id="LOCAL-00125" summary="tumblr api">
-      <created>1379465871439</created>
-      <updated>1379465871439</updated>
-    </task>
-    <task id="LOCAL-00126" summary="tumblr api">
-      <created>1379465960556</created>
-      <updated>1379465960556</updated>
-    </task>
-    <task id="LOCAL-00127" summary="tumblr api">
-      <created>1379466069537</created>
-      <updated>1379466069537</updated>
-    </task>
-    <task id="LOCAL-00128" summary="tumblr api">
-      <created>1379466230077</created>
-      <updated>1379466230077</updated>
-    </task>
-    <task id="LOCAL-00129" summary="tumblr api">
-      <created>1379466284385</created>
-      <updated>1379466284385</updated>
-    </task>
-    <task id="LOCAL-00130" summary="tumblr api">
-      <created>1379466313023</created>
-      <updated>1379466313023</updated>
-    </task>
-    <task id="LOCAL-00131" summary="tumblr share">
-      <created>1379528766431</created>
-      <updated>1379528766431</updated>
-    </task>
-    <task id="LOCAL-00132" summary="shareBalls not yet">
-      <created>1379528937102</created>
-      <updated>1379528937102</updated>
-    </task>
-    <task id="LOCAL-00133" summary="shareBalls not yet">
-      <created>1379529135237</created>
-      <updated>1379529135237</updated>
-    </task>
-    <task id="LOCAL-00134" summary="shareBalls not yet">
-      <created>1379529214236</created>
-      <updated>1379529214236</updated>
-    </task>
-    <task id="LOCAL-00135" summary="shareBalls not yet">
-      <created>1379529475529</created>
-      <updated>1379529475529</updated>
-    </task>
-    <task id="LOCAL-00136" summary="shareBalls not yet">
-      <created>1379529691765</created>
-      <updated>1379529691765</updated>
-    </task>
-    <task id="LOCAL-00137" summary="shareBalls not yet">
-      <created>1379529820542</created>
-      <updated>1379529820542</updated>
-    </task>
-    <task id="LOCAL-00138" summary="shareBalls not yet">
-      <created>1379529905996</created>
-      <updated>1379529905996</updated>
-    </task>
-    <task id="LOCAL-00139" summary="shareBalls not yet">
-      <created>1379529973524</created>
-      <updated>1379529973524</updated>
-    </task>
-    <task id="LOCAL-00140" summary="shareBalls not yet">
-      <created>1379530024429</created>
-      <updated>1379530024429</updated>
-    </task>
-    <task id="LOCAL-00141" summary="shareBalls not yet">
-      <created>1379530247715</created>
-      <updated>1379530247715</updated>
-    </task>
-    <task id="LOCAL-00142" summary="shareBalls not yet">
-      <created>1379530391253</created>
-      <updated>1379530391253</updated>
-    </task>
-    <task id="LOCAL-00143" summary="shareBalls not yet">
-      <created>1379530484802</created>
-      <updated>1379530484802</updated>
-    </task>
-    <task id="LOCAL-00144" summary="shareBalls not yet">
-      <created>1379530577847</created>
-      <updated>1379530577847</updated>
-    </task>
-    <task id="LOCAL-00145" summary="shareBalls not yet">
-      <created>1379530679457</created>
-      <updated>1379530679457</updated>
-    </task>
-    <task id="LOCAL-00146" summary="shareBalls not yet">
-      <created>1379530777005</created>
-      <updated>1379530777006</updated>
-    </task>
-    <task id="LOCAL-00147" summary="shareBalls not yet">
-      <created>1379530935709</created>
-      <updated>1379530935709</updated>
-    </task>
-    <task id="LOCAL-00148" summary="shareBalls not yet">
-      <created>1379531053129</created>
-      <updated>1379531053132</updated>
-    </task>
-    <task id="LOCAL-00149" summary="shareBalls not yet">
-      <created>1379531196864</created>
-      <updated>1379531196864</updated>
-    </task>
-    <task id="LOCAL-00150" summary="shareBalls not yet">
-      <created>1379531309802</created>
-      <updated>1379531309802</updated>
-    </task>
-    <task id="LOCAL-00151" summary="shareBalls not yet">
-      <created>1379531471290</created>
-      <updated>1379531471290</updated>
-    </task>
-    <task id="LOCAL-00152" summary="shareBalls not yet">
-      <created>1379531522194</created>
-      <updated>1379531522194</updated>
-    </task>
-    <task id="LOCAL-00153" summary="shareBalls not yet">
-      <created>1379531605373</created>
-      <updated>1379531605373</updated>
-    </task>
-    <task id="LOCAL-00154" summary="shareBalls not yet">
-      <created>1379531642579</created>
-      <updated>1379531642579</updated>
-    </task>
-    <task id="LOCAL-00155" summary="shareBalls not yet">
-      <created>1379531679422</created>
-      <updated>1379531679422</updated>
-    </task>
-    <task id="LOCAL-00156" summary="shareBalls not yet">
-      <created>1379531702770</created>
-      <updated>1379531702776</updated>
-    </task>
-    <task id="LOCAL-00157" summary="shareBalls not yet">
-      <created>1379531781780</created>
-      <updated>1379531781780</updated>
-    </task>
-    <task id="LOCAL-00158" summary="shareBalls not yet">
-      <created>1379531815310</created>
-      <updated>1379531815310</updated>
-    </task>
-    <task id="LOCAL-00159" summary="shareBalls not yet">
-      <created>1379532270960</created>
-      <updated>1379532270960</updated>
-    </task>
-    <task id="LOCAL-00160" summary="shareBalls not yet">
-      <created>1379532319270</created>
-      <updated>1379532319270</updated>
-    </task>
-    <task id="LOCAL-00161" summary="shareBalls not yet">
-      <created>1379532371323</created>
-      <updated>1379532371324</updated>
-    </task>
-    <task id="LOCAL-00162" summary="shareBalls not yet">
-      <created>1379532458128</created>
-      <updated>1379532458128</updated>
-    </task>
-    <task id="LOCAL-00163" summary="shareBalls not yet">
-      <created>1379535451698</created>
-      <updated>1379535451698</updated>
-    </task>
-    <task id="LOCAL-00164" summary="shareBalls not yet">
-      <created>1379535552107</created>
-      <updated>1379535552107</updated>
-    </task>
-    <task id="LOCAL-00165" summary="shareBalls not yet">
-      <created>1379535591176</created>
-      <updated>1379535591176</updated>
-    </task>
-    <task id="LOCAL-00166" summary="shareBalls not yet">
-      <created>1379535624898</created>
-      <updated>1379535624899</updated>
-    </task>
-    <task id="LOCAL-00167" summary="shareBalls not yet">
-      <created>1379535647255</created>
-      <updated>1379535647255</updated>
-    </task>
-    <task id="LOCAL-00168" summary="shareBalls not yet">
-      <created>1379535882634</created>
-      <updated>1379535882634</updated>
-    </task>
-    <task id="LOCAL-00169" summary="shareBalls not yet">
-      <created>1379535942778</created>
-      <updated>1379535942778</updated>
-    </task>
-    <task id="LOCAL-00170" summary="shareBalls not yet">
-      <created>1379536451383</created>
-      <updated>1379536451383</updated>
-    </task>
-    <task id="LOCAL-00171" summary="shareBalls not yet">
-      <created>1379536699746</created>
-      <updated>1379536699746</updated>
-    </task>
-    <task id="LOCAL-00172" summary="shareBalls not yet">
-      <created>1379536933758</created>
-      <updated>1379536933758</updated>
-    </task>
-    <task id="LOCAL-00173" summary="shareBalls not yet">
-      <created>1379537081670</created>
-      <updated>1379537081670</updated>
-    </task>
-    <task id="LOCAL-00174" summary="shareBalls not yet">
-      <created>1379537175360</created>
-      <updated>1379537175360</updated>
-    </task>
-    <task id="LOCAL-00175" summary="shareBalls not yet">
-      <created>1379537281581</created>
-      <updated>1379537281581</updated>
-    </task>
-    <task id="LOCAL-00176" summary="shareBalls not yet">
-      <created>1379537461664</created>
-      <updated>1379537461664</updated>
-    </task>
-    <task id="LOCAL-00177" summary="shareBalls not yet">
-      <created>1379537557650</created>
-      <updated>1379537557650</updated>
-    </task>
-    <task id="LOCAL-00178" summary="shareBalls not yet">
-      <created>1379537614368</created>
-      <updated>1379537614368</updated>
-    </task>
-    <task id="LOCAL-00179" summary="shareBalls not yet">
-      <created>1379537866209</created>
-      <updated>1379537866209</updated>
-    </task>
-    <task id="LOCAL-00180" summary="shareBalls not yet">
-      <created>1379538125072</created>
-      <updated>1379538125072</updated>
-    </task>
-    <task id="LOCAL-00181" summary="shareBalls not yet">
-      <created>1379540632363</created>
-      <updated>1379540632363</updated>
-    </task>
-    <task id="LOCAL-00182" summary="shareBalls not yet">
-      <created>1379541097976</created>
-      <updated>1379541097976</updated>
-    </task>
-    <task id="LOCAL-00183" summary="shareBalls not yet">
-      <created>1379541324654</created>
-      <updated>1379541324654</updated>
-    </task>
-    <task id="LOCAL-00184" summary="shareBalls not yet">
-      <created>1379541486774</created>
-      <updated>1379541486774</updated>
-    </task>
-    <task id="LOCAL-00185" summary="shareBalls not yet">
-      <created>1379541768074</created>
-      <updated>1379541768074</updated>
-    </task>
-    <task id="LOCAL-00186" summary="shareBalls not yet">
-      <created>1379542027425</created>
-      <updated>1379542027425</updated>
-    </task>
-    <task id="LOCAL-00187" summary="shareBalls not yet">
-      <created>1379542087170</created>
-      <updated>1379542087170</updated>
-    </task>
-    <task id="LOCAL-00188" summary="shareBalls not yet">
-      <created>1379542274553</created>
-      <updated>1379542274553</updated>
-    </task>
-    <task id="LOCAL-00189" summary="shareBalls not yet">
-      <created>1379542457677</created>
-      <updated>1379542457677</updated>
-    </task>
-    <task id="LOCAL-00190" summary="shareBalls not yet">
-      <created>1379542584099</created>
-      <updated>1379542584100</updated>
-    </task>
-    <task id="LOCAL-00191" summary="shareBalls not yet">
-      <created>1379542728919</created>
-      <updated>1379542728919</updated>
-    </task>
-    <task id="LOCAL-00192" summary="shareBalls not yet">
-      <created>1379545195637</created>
-      <updated>1379545195637</updated>
-    </task>
-    <task id="LOCAL-00193" summary="shareBalls not yet">
-      <created>1379545230978</created>
-      <updated>1379545230978</updated>
-    </task>
-    <task id="LOCAL-00194" summary="shareBalls not yet">
-      <created>1379545323426</created>
-      <updated>1379545323426</updated>
-    </task>
-    <task id="LOCAL-00195" summary="shareBalls not yet">
-      <created>1379545681510</created>
-      <updated>1379545681510</updated>
-    </task>
-    <task id="LOCAL-00196" summary="shareBalls not yet">
-      <created>1379545776291</created>
-      <updated>1379545776291</updated>
-    </task>
-    <task id="LOCAL-00197" summary="shareBalls not yet">
-      <created>1379546109763</created>
-      <updated>1379546109763</updated>
-    </task>
-    <task id="LOCAL-00198" summary="shareBalls not yet">
-      <created>1379546200417</created>
-      <updated>1379546200417</updated>
-    </task>
-    <task id="LOCAL-00199" summary="shareBalls not yet">
-      <created>1379546612605</created>
-      <updated>1379546612605</updated>
-    </task>
-    <task id="LOCAL-00200" summary="shareBalls not yet">
-      <created>1379546988176</created>
-      <updated>1379546988176</updated>
-    </task>
-    <task id="LOCAL-00201" summary="shareBalls not yet">
-      <created>1379547255943</created>
-      <updated>1379547255943</updated>
-    </task>
-    <task id="LOCAL-00202" summary="shareBalls not yet">
-      <created>1379547376609</created>
-      <updated>1379547376609</updated>
-    </task>
-    <task id="LOCAL-00203" summary="shareBalls not yet">
-      <created>1379548973379</created>
-      <updated>1379548973379</updated>
-    </task>
-    <task id="LOCAL-00204" summary="shareBalls not yet">
-      <created>1379554766918</created>
-      <updated>1379554766918</updated>
-    </task>
-    <task id="LOCAL-00205" summary="shareBalls 1.0">
-      <created>1379605794055</created>
-      <updated>1379605794056</updated>
-    </task>
-    <task id="LOCAL-00206" summary="shareBalls added to post grid">
-      <created>1379606964357</created>
-      <updated>1379606964358</updated>
-    </task>
-    <task id="LOCAL-00207" summary="shareBalls cloiiping fix">
-      <created>1379609209177</created>
-      <updated>1379609209177</updated>
-    </task>
-    <task id="LOCAL-00208" summary="shareBalls cloiiping fix">
-      <created>1379609380478</created>
-      <updated>1379609380478</updated>
-    </task>
-    <task id="LOCAL-00209" summary="added shareBalls to inspire page">
-      <created>1379610425774</created>
-      <updated>1379610425774</updated>
-    </task>
-    <task id="LOCAL-00210" summary="fb fx for shareBalls">
-      <created>1379610678605</created>
-      <updated>1379610678605</updated>
-    </task>
-    <task id="LOCAL-00211" summary="global callback">
-      <created>1379611613323</created>
-      <updated>1379611613323</updated>
-    </task>
-    <task id="LOCAL-00212" summary="global callback">
-      <created>1379611977015</created>
-      <updated>1379611977015</updated>
-    </task>
-    <task id="LOCAL-00213" summary="global callback">
-      <created>1379612193344</created>
-      <updated>1379612193350</updated>
-    </task>
-    <task id="LOCAL-00214" summary="global callback">
-      <created>1379612217074</created>
-      <updated>1379612217074</updated>
-    </task>
-    <task id="LOCAL-00215" summary="twitter OAuth session storage">
-      <created>1379612413279</created>
-      <updated>1379612413279</updated>
-    </task>
-    <task id="LOCAL-00216" summary="tumblr OAuth session storage">
-      <created>1379613287283</created>
-      <updated>1379613287283</updated>
-    </task>
-    <task id="LOCAL-00217" summary="tumblr OAuth session storage">
-      <created>1379614816526</created>
-      <updated>1379614816526</updated>
-    </task>
-    <task id="LOCAL-00218" summary="tumblr OAuth session storage">
-      <created>1379615626654</created>
-      <updated>1379615626654</updated>
-    </task>
-    <task id="LOCAL-00219" summary="show share balls to public">
-      <created>1379615820254</created>
-      <updated>1379615820254</updated>
-    </task>
-    <task id="LOCAL-00220" summary="shareBalls D-LUX">
-      <created>1379633371744</created>
-      <updated>1379633371744</updated>
-    </task>
-    <task id="LOCAL-00221" summary="shareBallscoolified">
-      <created>1379634349541</created>
-      <updated>1379634349541</updated>
-    </task>
-    <task id="LOCAL-00222" summary="do not show homepage banner if logged in">
-      <created>1379634440896</created>
-      <updated>1379634440897</updated>
-    </task>
-    <task id="LOCAL-00223" summary="do not show homepage banner if logged in">
-      <created>1379635981740</created>
-      <updated>1379635981740</updated>
-    </task>
-    <task id="LOCAL-00224" summary="the all seeing eye">
-      <created>1379638818078</created>
-      <updated>1379638818078</updated>
-    </task>
-    <task id="LOCAL-00225" summary="shop back up and sarker view toggle">
-      <created>1379723688312</created>
-      <updated>1379723688312</updated>
-    </task>
-    <task id="LOCAL-00226" summary="vote page improvements">
-      <created>1379973374421</created>
-      <updated>1379973374421</updated>
-    </task>
-    <task id="LOCAL-00227" summary="lots of various improvements">
-      <created>1379985676841</created>
-      <updated>1379985676841</updated>
-    </task>
-    <task id="LOCAL-00228" summary="massive amounts of changes">
-      <created>1380076364247</created>
-      <updated>1380076364247</updated>
-    </task>
-    <task id="LOCAL-00229" summary="Shop page improvements / tumblr button/ vote filter / pixel pushing">
-      <created>1380157665874</created>
-      <updated>1380157665874</updated>
-    </task>
-    <task id="LOCAL-00230" summary="remove old drop down">
-      <created>1380211075971</created>
-      <updated>1380211075971</updated>
-    </task>
-    <task id="LOCAL-00231" summary="tumblr">
-      <created>1380213768690</created>
-      <updated>1380213768690</updated>
-    </task>
-    <task id="LOCAL-00232" summary="Shop page improvements / tumblr button/ vote filter / pixel pushing">
-      <created>1380213799629</created>
-      <updated>1380213799629</updated>
-    </task>
-    <task id="LOCAL-00233" summary="tumblr business">
-      <created>1380216259481</created>
-      <updated>1380216259481</updated>
-    </task>
-    <task id="LOCAL-00234" summary="Shop page improvements / tumblr button/ vote filter / pixel pushing">
-      <created>1380216387912</created>
-      <updated>1380216387912</updated>
-    </task>
-    <task id="LOCAL-00235" summary="tumblr bizz">
-      <created>1380216499963</created>
-      <updated>1380216499963</updated>
-    </task>
-    <task id="LOCAL-00236" summary="Shop page improvements / tumblr button/ vote filter / pixel pushing">
-      <created>1380216671839</created>
-      <updated>1380216671839</updated>
-    </task>
-    <task id="LOCAL-00237" summary="Shop page improvements / tumblr button/ vote filter / pixel pushing">
-      <created>1380216717139</created>
-      <updated>1380216717139</updated>
-    </task>
-    <task id="LOCAL-00238" summary="get tumblr">
-      <created>1380219967229</created>
-      <updated>1380219967229</updated>
-    </task>
-    <task id="LOCAL-00239" summary="updated script">
-      <created>1380220439440</created>
-      <updated>1380220439443</updated>
-    </task>
-    <task id="LOCAL-00240" summary="tumblFish">
-      <created>1380227885081</created>
-      <updated>1380227885081</updated>
-    </task>
-    <task id="LOCAL-00241" summary="tumblFish">
-      <created>1380228025017</created>
-      <updated>1380228025017</updated>
-    </task>
-    <task id="LOCAL-00242" summary="Shop page improvements / tumblr button/ vote filter / pixel pushing">
-      <created>1380228186181</created>
-      <updated>1380228186182</updated>
-    </task>
-    <task id="LOCAL-00243" summary="paxton repository addition, shop fixes">
-      <created>1380243944924</created>
-      <updated>1380243944924</updated>
-    </task>
-    <task id="LOCAL-00244" summary="light box /">
-      <created>1380316422256</created>
-      <updated>1380316422256</updated>
-    </task>
-    <task id="LOCAL-00245" summary="tumblefish">
-      <created>1380316668730</created>
-      <updated>1380316668730</updated>
-    </task>
-    <task id="LOCAL-00246" summary="more efficient social api hook callbacks">
-      <created>1380317200377</created>
-      <updated>1380317200377</updated>
-    </task>
-    <task id="LOCAL-00247" summary="twitterFish">
-      <created>1380317559441</created>
-      <updated>1380317559441</updated>
-    </task>
-    <task id="LOCAL-00248" summary="krunkBox Madness">
-      <created>1380318263325</created>
-      <updated>1380318263325</updated>
-    </task>
-    <task id="LOCAL-00249" summary="post button">
-      <created>1380320650441</created>
-      <updated>1380320650441</updated>
-    </task>
-    <task id="LOCAL-00250" summary="inspiration fix">
-      <created>1380321224695</created>
-      <updated>1380321224695</updated>
-    </task>
-    <task id="LOCAL-00251" summary="shop avatat css fix">
-      <created>1380322230700</created>
-      <updated>1380322230700</updated>
-    </task>
-    <task id="LOCAL-00252" summary="zommer boomer">
-      <created>1380323057987</created>
-      <updated>1380323057987</updated>
-    </task>
-    <task id="LOCAL-00253" summary="Shop page improvements / tumblr button/ vote filter / pixel pushing">
-      <created>1380324313113</created>
-      <updated>1380324313113</updated>
-    </task>
-    <task id="LOCAL-00254" summary="home page fix, ? fix and more krunkBox">
-      <created>1380330685236</created>
-      <updated>1380330685236</updated>
-    </task>
-    <task id="LOCAL-00255" summary="header control">
-      <created>1380330812191</created>
-      <updated>1380330812191</updated>
-    </task>
-    <task id="LOCAL-00256" summary="header control">
-      <created>1380676624252</created>
-      <updated>1380676624252</updated>
-    </task>
-    <task id="LOCAL-00257" summary="forhot password">
-      <created>1380729896129</created>
-      <updated>1380729896129</updated>
-    </task>
-    <task id="LOCAL-00258" summary="forgot password page css fix">
-      <created>1380730363595</created>
-      <updated>1380730363595</updated>
-    </task>
-    <task id="LOCAL-00259" summary="vip page">
-      <created>1380736995792</created>
-      <updated>1380736995792</updated>
-    </task>
-    <task id="LOCAL-00260" summary="vip page">
-      <created>1380737221726</created>
-      <updated>1380737221726</updated>
-    </task>
-    <task id="LOCAL-00261" summary="vip page">
-      <created>1380737730782</created>
-      <updated>1380737730782</updated>
-    </task>
-    <task id="LOCAL-00262" summary="vip page">
-      <created>1380737779670</created>
-      <updated>1380737779670</updated>
-    </task>
-    <task id="LOCAL-00263" summary="vip page">
-      <created>1380738149140</created>
-      <updated>1380738149141</updated>
-    </task>
-    <task id="LOCAL-00264" summary="vip page">
-      <created>1380740008809</created>
-      <updated>1380740008809</updated>
-    </task>
-    <task id="LOCAL-00265" summary="redirect">
-      <created>1380748312701</created>
-      <updated>1380748312702</updated>
-    </task>
-    <task id="LOCAL-00266" summary="change default to spine">
-      <created>1380817927398</created>
-      <updated>1380817927398</updated>
-    </task>
-    <task id="LOCAL-00267" summary="change default to spine">
-      <created>1381512807295</created>
-      <updated>1381512807295</updated>
-    </task>
-    <task id="LOCAL-00268" summary="change default to spine">
-      <created>1381524247271</created>
-      <updated>1381524247271</updated>
-    </task>
-    <task id="LOCAL-00269" summary="change default to spine">
-      <created>1381795564304</created>
-      <updated>1381795564304</updated>
-    </task>
-    <task id="LOCAL-00270" summary="search without being logged in">
-      <created>1381860814440</created>
-      <updated>1381860814440</updated>
-    </task>
-    <task id="LOCAL-00271" summary="change default to spine">
-      <created>1381869398269</created>
-      <updated>1381869398269</updated>
-    </task>
-    <task id="LOCAL-00272" summary="change default to spine">
-      <created>1381884888774</created>
-      <updated>1381884888775</updated>
-    </task>
-    <task id="LOCAL-00273" summary="change default to spine">
-      <created>1382033588498</created>
-      <updated>1382033588498</updated>
-    </task>
-    <task id="LOCAL-00274" summary="change default to spine">
-      <created>1382051331101</created>
-      <updated>1382051331101</updated>
-    </task>
-    <task id="LOCAL-00275" summary="verified and vip accounts">
-      <created>1382141862514</created>
-      <updated>1382141862514</updated>
-    </task>
-    <task id="LOCAL-00276" summary="change default to spine">
-      <created>1382144611184</created>
-      <updated>1382144611184</updated>
-    </task>
-    <task id="LOCAL-00277" summary="change default to spine">
-      <created>1382370109502</created>
-      <updated>1382370109502</updated>
-    </task>
-    <task id="LOCAL-00278" summary="new redeem page and other tweeks">
-      <created>1382402446516</created>
-      <updated>1382402446516</updated>
-    </task>
-    <task id="LOCAL-00279" summary="new redeem BG">
-      <created>1382402772200</created>
-      <updated>1382402772200</updated>
-    </task>
-    <task id="LOCAL-00280" summary="change default to spine">
-      <created>1382465258612</created>
-      <updated>1382465258613</updated>
-    </task>
-    <task id="LOCAL-00281" summary="appends to post success message">
-      <created>1382466422406</created>
-      <updated>1382466422406</updated>
-    </task>
-    <task id="LOCAL-00282" summary="change default to spine">
-      <created>1382563447252</created>
-      <updated>1382563447252</updated>
-    </task>
-    <task id="LOCAL-00283" summary="change default to spine">
-      <created>1382563612238</created>
-      <updated>1382563612238</updated>
-    </task>
-    <task id="LOCAL-00284" summary="commissions">
-      <created>1382576508882</created>
-      <updated>1382576508882</updated>
-    </task>
-    <task id="LOCAL-00285" summary="change default to spine">
-      <created>1382576823208</created>
-      <updated>1382576823208</updated>
-    </task>
-    <task id="LOCAL-00286" summary="round format">
-      <created>1382627410046</created>
-      <updated>1382627410046</updated>
-    </task>
-    <task id="LOCAL-00287" summary="change default to spine">
-      <created>1382627716769</created>
-      <updated>1382627716769</updated>
-    </task>
-    <task id="LOCAL-00288" summary="change default to spine">
-      <created>1382628243162</created>
-      <updated>1382628243162</updated>
-    </task>
-    <task id="LOCAL-00289" summary="removed footer and created new header">
-      <created>1382647620458</created>
-      <updated>1382647620458</updated>
-    </task>
-    <task id="LOCAL-00290" summary="change default to spine">
-      <created>1382657425379</created>
-      <updated>1382657425379</updated>
-    </task>
-    <task id="LOCAL-00291" summary="change default to spine">
-      <created>1382657518763</created>
-      <updated>1382657518763</updated>
-    </task>
-    <task id="LOCAL-00292" summary="change default to spine">
-      <created>1382657752973</created>
-      <updated>1382657752973</updated>
-    </task>
-    <task id="LOCAL-00293" summary="change default to spine">
-      <created>1382661315127</created>
-      <updated>1382661315127</updated>
-    </task>
-    <task id="LOCAL-00294" summary="change default to spine">
-      <created>1382661676992</created>
-      <updated>1382661676992</updated>
-    </task>
-    <task id="LOCAL-00295" summary="mute video">
-      <created>1382974393088</created>
-      <updated>1382974393088</updated>
-    </task>
-    <task id="LOCAL-00296" summary="add paxton to vip and redeem mail list">
-      <created>1383010765426</created>
-      <updated>1383010765426</updated>
-    </task>
-    <task id="LOCAL-00297" summary="we landed on the moon">
-      <created>1383072355499</created>
-      <updated>1383072355499</updated>
-    </task>
-    <task id="LOCAL-00298" summary="NEW HOMEPAGE AND HEADER UPDATES">
-      <created>1383087453464</created>
-      <updated>1383087453464</updated>
-    </task>
-    <task id="LOCAL-00299" summary="add shop link">
-      <created>1383088172260</created>
-      <updated>1383088172260</updated>
-    </task>
-    <task id="LOCAL-00300" summary="product page">
-      <created>1383097045673</created>
-      <updated>1383097045673</updated>
-    </task>
-    <task id="LOCAL-00301" summary="post details css">
-      <created>1383182059919</created>
-      <updated>1383182059919</updated>
-    </task>
-    <task id="LOCAL-00302" summary="shop final format">
-      <created>1383250023292</created>
-      <updated>1383250023292</updated>
-    </task>
-    <task id="LOCAL-00303" summary="add paxton to vip">
-      <created>1383268462195</created>
-      <updated>1383268462195</updated>
-    </task>
-    <option name="localTasksCounter" value="304" />
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="36" y="318" width="2034" height="1051" extended-state="0" />
-    <editor active="false" />
+    <frame x="-9" y="-9" width="2578" height="1410" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2781955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23308271" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32464454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23510972" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6709887" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2112676" sideWeight="0.7218045" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17422435" sideWeight="0.67535543" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3404941" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490073" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22183098" sideWeight="0.7669173" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18575974" sideWeight="0.67535543" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3289256" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1764,7 +673,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add paxton to vip" />
+    <option name="LAST_COMMIT_MESSAGE" value="new home slider" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1778,156 +687,118 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Shop page improvements / tumblr button/ vote filter / pixel pushing" />
-    <MESSAGE value="home page fix, ? fix and more krunkBox" />
-    <MESSAGE value="header control" />
-    <MESSAGE value="forhot password" />
-    <MESSAGE value="forgot password page css fix" />
-    <MESSAGE value="vip page" />
-    <MESSAGE value="redirect" />
-    <MESSAGE value="search without being logged in" />
-    <MESSAGE value="verified and vip accounts" />
-    <MESSAGE value="new redeem page and other tweeks" />
-    <MESSAGE value="new redeem BG" />
-    <MESSAGE value="appends to post success message" />
-    <MESSAGE value="commissions" />
-    <MESSAGE value="round format" />
-    <MESSAGE value="removed footer and created new header" />
-    <MESSAGE value="change default to spine" />
-    <MESSAGE value="mute video" />
-    <MESSAGE value="add paxton to vip and redeem mail list" />
-    <MESSAGE value="we landed on the moon" />
-    <MESSAGE value="NEW HOMEPAGE AND HEADER UPDATES" />
-    <MESSAGE value="add shop link" />
-    <MESSAGE value="product page" />
-    <MESSAGE value="post details css" />
-    <MESSAGE value="shop final format" />
-    <MESSAGE value="add paxton to vip" />
+    <MESSAGE value="Merge latest changes from server" />
+    <MESSAGE value="More testing from mars" />
+    <MESSAGE value="Chat heads and invite emails" />
+    <MESSAGE value="Adding social pics and stuff" />
+    <MESSAGE value="grid sizing patch" />
+    <MESSAGE value="OnClick Dahlia Head" />
+    <MESSAGE value="testing login" />
+    <MESSAGE value="added wishlist count to explore page" />
+    <MESSAGE value="api mods" />
+    <MESSAGE value="ajax wishlist call" />
+    <MESSAGE value="small fix" />
+    <MESSAGE value="lots a little fixes" />
+    <MESSAGE value="oops fix" />
+    <MESSAGE value="much little things" />
+    <MESSAGE value="shoop" />
+    <MESSAGE value="ooom blop" />
+    <MESSAGE value="get started page" />
+    <MESSAGE value="Final get started page and more analytics" />
+    <MESSAGE value="api not ready" />
+    <MESSAGE value="new user login process post details shows more posts on solo page" />
+    <MESSAGE value="instagram non refresh" />
+    <MESSAGE value="instagram clean up" />
+    <MESSAGE value="get started fixes" />
+    <MESSAGE value="invite facebook" />
+    <MESSAGE value="new home slider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/explore.php">
+    <entry file="file://$PROJECT_DIR$/js/postDetailPosts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="-0.0" />
+        <state line="39" column="26" selection-start="1400" selection-end="1401" vertical-scroll-proportion="0.021037867" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
+    <entry file="file://$PROJECT_DIR$/social-login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="45" selection-start="3971" selection-end="3971" vertical-scroll-proportion="-24.166666" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="907" column="1" selection-start="28942" selection-end="28942" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/shop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="84" selection-start="3550" selection-end="3550" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1383236259000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1383236259000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1383236259000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop/product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="79" selection-start="7034" selection-end="7053" vertical-scroll-proportion="-13.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/header_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="61" selection-start="4582" selection-end="4582" vertical-scroll-proportion="-71.25">
-          <folding />
-        </state>
+        <state line="27" column="48" selection-start="807" selection-end="807" vertical-scroll-proportion="0.59911245" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="110" selection-start="1790" selection-end="1790" vertical-scroll-proportion="46.583332">
-          <folding />
-        </state>
+        <state line="25" column="90" selection-start="983" selection-end="1073" vertical-scroll-proportion="0.3106509" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/js/postDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1382576811000" expanded="false" signature="11652:11662" placeholder="..." />
-            <marker date="1382576811000" expanded="false" signature="12620:12656" placeholder="..." />
-            <marker date="1382576811000" expanded="false" signature="12765:12795" placeholder="..." />
-            <marker date="1382576811000" expanded="false" signature="12998:13009" placeholder="..." />
-            <marker date="1382576811000" expanded="false" signature="13116:13127" placeholder="..." />
-            <marker date="1382576811000" expanded="false" signature="13236:13247" placeholder="..." />
-            <marker date="1382576811000" expanded="false" signature="13993:14029" placeholder="..." />
-            <marker date="1382576811000" expanded="false" signature="15589:15611" placeholder="..." />
-            <marker date="1382576811000" expanded="false" signature="17594:17618" placeholder="..." />
-          </folding>
-        </state>
+        <state line="18" column="80" selection-start="997" selection-end="997" vertical-scroll-proportion="0.021037867" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/php/shop-initial-calls.php">
+    <entry file="file://$PROJECT_DIR$/js/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="131" selection-end="131" vertical-scroll-proportion="-3.75">
-          <folding />
-        </state>
+        <state line="74" column="5" selection-start="2296" selection-end="2296" vertical-scroll-proportion="0.021037867" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
+    <entry file="file://$PROJECT_DIR$/redirect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1647" column="57" selection-start="101022" selection-end="101022" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wolf-pack.php">
+    <entry file="file://$PROJECT_DIR$/themes/post_slideout_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="38" selection-start="700" selection-end="700" vertical-scroll-proportion="-16.875">
-          <folding />
-        </state>
+        <state line="383" column="91" selection-start="13321" selection-end="13321" vertical-scroll-proportion="1.9526627" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/userList.js">
+    <entry file="file://$PROJECT_DIR$/instagramConnect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="435" selection-end="435" vertical-scroll-proportion="-7.5">
-          <folding />
-        </state>
+        <state line="14" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="0.30478954" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/apiClass.js">
+    <entry file="file://$PROJECT_DIR$/spine.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="16" selection-start="3597" selection-end="3598" vertical-scroll-proportion="-68.07692">
-          <folding>
-            <marker date="1381869122000" expanded="false" signature="4500:4524" placeholder="..." />
-          </folding>
-        </state>
+        <state line="3" column="21" selection-start="65" selection-end="65" vertical-scroll-proportion="0.06531204" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/action/delete_post.php">
+    <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="229" selection-end="239" vertical-scroll-proportion="-5.625">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_started.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="57" selection-start="3688" selection-end="3688" vertical-scroll-proportion="1.4423077" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/invite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.25224215" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spine-chunk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="41" selection-start="206" selection-end="206" vertical-scroll-proportion="0.17895609" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="10" selection-start="12294" selection-end="12305" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/php/initial-calls.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="2342" selection-end="2342" vertical-scroll-proportion="1.7437106">
+        <state line="11" column="17" selection-start="221" selection-end="221" vertical-scroll-proportion="-0.72727275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/post_feed_image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="40" selection-start="1267" selection-end="1267" vertical-scroll-proportion="0.74916106">
           <folding />
         </state>
       </provider>

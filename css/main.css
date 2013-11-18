@@ -365,7 +365,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #postUserCommentBox{height: 49px;width: 228px;background-color: #fff;margin-left: 12px;float: left;border: none;padding: 5px;font-size: 12px;}
 #postCommentButton{width: 100%;text-align: right;margin-top: -12px;margin-bottom: 5px;font-size: 13px;margin-left: -1px;cursor: pointer;}
 #postCommentButton:hover{color:#f03d64;}
-#commentContainer{padding-bottom: 10px;overflow: scroll;max-height: 620px;}
+#commentContainer{padding-bottom: 10px;overflow: scroll;max-height: 620px;width: 395px;}
 .postOrigin{position: absolute;bottom: 9px;float: left;font-size: 10px; padding-left: 20px; color: #bebebe;width: 620px;text-align: center;}
 .postOrigin a{color: #bebebe !important;}
 .arrow{ position: absolute;top: 275px;height: 60px;width: 30px;margin-top: -30px;background-image: url(/images/prodPageArrow.png);background-repeat: no-repeat;z-index: 1;overflow: hidden;cursor: pointer;background-size: auto 100%;}
@@ -396,7 +396,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .post-details-container .postTag{position: absolute; height: 30px; width: 30px; background-image: url("/images/tags.png"); background-size: auto 100%; background-position: 0px; background-repeat: no-repeat; display: none;}
 .post-details-container .active{background-position: -35px; display: block !important;}
 .post-details-container .activated{cursor: url("/images/postTagCursor.png"), pointer;}
-.post-details-container .note{height: 50px; width: 100%; margin-top: 5px; background-color: #fff;}
+.post-details-container .note{height: 50px; margin-top: 5px; background-color: #fff; width: 325px;}
 .post-details-container .note li{float: left;}
 .post-details-container .note .userTag{width: 80%;text-align: left;text-indent: 10px;padding-top: 7px;font-size: 11px;}
 .post-details-container .note .tagImg{width: 50px;height: 50px;float: left; background-image: url("/images/tags.png"); background-size: auto 90%;background-position: 0px;background-repeat: no-repeat;}
@@ -404,7 +404,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .post-details-container .note .tagImg img{height: 20px;margin-top: 32px;margin-left: 22px; display: none;}
 .post-details-container .note textarea{width: 265px; margin-left:3%; margin-top: 2%;height: 87%;border: none;line-height: 20px; font-size: 11px; color: #b7b7b7;}
 .post-details-container .note .inputWrap{height: 50px; width: 275px;}
-#tagsSection{height: 220px;overflow: scroll;}
+#tagsSection{height: 220px;overflow: scroll; width: 345px;}
 
 /*********************** HEADER ***************************/
 .marginmiddlebutton1{float: left; margin-right: 8px;}
@@ -629,6 +629,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 
 .float{ position:fixed !important; }
 
+#loginbox #errorBox{margin-top: 23px;font-size: 15px;color: red;}
 
 .right-arrow{
 	height: 241px;
@@ -2786,7 +2787,7 @@ a.CommentUrlDecorate:hover {
   position:fixed;
   left:0;
   top:0;
-  z-index:9000;
+  z-index: 90000000;
   background-color:#ffffff;
   display:none;
   height:100%;
