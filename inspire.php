@@ -316,7 +316,7 @@
     bankPost.prototype.post = function() {
         var description = '';
         this.$button.hide();
-        this.$post.find('img').css('opacity', .6);
+        this.$post.find('img').css('opacity', .2);
 
         if(theUser.id) {
             if(this.data.id) {
@@ -329,12 +329,18 @@
     }
 
     bankPost.prototype.addAfterPostMessage = function(data) {
-        var str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
-        str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')">';
-        str += '<img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
+        var parsed = $.parseJSON(data);
 
-        this.$post.append(str);
-        this.$post.append(new shareBall(data));
+        if(data.posting_id) {
+            var str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
+            str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')">';
+            str += '<img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>';
+
+            this.$post.append(str);
+            this.$post.append(new shareBall(data));
+        } else if(parsed.error){
+            this.$post.append('<div class="inspireError">'+parsed.error+'</div>');
+        }
     }
 
     function foreignPost(url, domain) {

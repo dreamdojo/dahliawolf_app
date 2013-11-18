@@ -142,7 +142,7 @@ if(!IS_LOGGED_IN) {
                 <li>Store Credit</li>
             </div>
             <div>
-                <li class="dahliaPink">$<?= $commision*.05 ?></li>
+                <li class="dahliaPink">$<?= $_data['user']['status'] == 'vip' ? $commision*.1 : $commision*.05 ?></li>
                 <li>Commission</li>
                 <li class="dbButton" style="width: 100px;" onClick="alert('coming soon');">CASH OUT</li>
             </div>

@@ -97,11 +97,11 @@ postDetailGrid.prototype.toggleLove = function(e) {
 			if(loved){
 				$(this).addClass('popGridnotLoved').removeClass('popGridisLoved').html('LOVE');
 				$(this).data('isloved', 0);
-				$.post('/action/unlike?posting_id='+id)
+                dahliawolf.post.love(id);
 			} else {
 				$(this).removeClass('popGridnotLoved').addClass('popGridisLoved').html('LOVED');
 				$(this).data('isloved', 1);
-				$.post('/action/like?posting_id='+id)
+                dahliawolf.post.love(id);
 			}
 		}
 	} else {

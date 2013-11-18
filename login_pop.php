@@ -81,7 +81,8 @@ margin-top: -29px;
                  <div class="texting">or sign up with email:</div>
                            
                     <div class="form-box">
-                    	<form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="/action/signup.php">
+                    	<form id="registrationForm" method="POST" class="Form FancyForm AuthForm" action="/action/signup.php">
+                            <input type="hidden" name="ajax" value="true">
                             <ul style="margin-bottom: -3px;">
                             	<li>
                                     <input class="input_text" type="text" name="user_username" id="user_username" value="" max="30" placeholder="Username" />
@@ -104,6 +105,7 @@ margin-top: -29px;
                                 <input type="hidden" name="r" value="" />
      							<input type="hidden" name="jsub" value="1" />
                         </form>
+                        <div id="r_errorBox"></div>
                     </div>
                     <div>
                         <iframe src="//www.facebook.com/plugins/facepile.php?href=http%3A%2F%2Fwww.facebook.com%2FNASTYGAL&amp;action&amp;size=small&amp;max_rows=1&amp;show_count=false&amp;width=300&amp;colorscheme=dark&amp;appId=133259003395199" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:330px; height: 75px; margin-top: 27px;margin-left: 0px;" allowTransparency="true"></iframe>

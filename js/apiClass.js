@@ -54,6 +54,23 @@ User.prototype.login = function(e) {
     return false;
 }
 
+User.prototype.register = function(e) {
+    var formData = $(this).serialize();
+    $.post('/action/signup', formData, function(data) {
+        var result = $.parseJSON(data);
+
+        if(result[0] == 'success') {
+            location.reload();
+            _gaq.push(['_trackEvent', 'Register', 'Success']);
+        } else {
+            e.data.$errorBox.html('*'+result[0]);
+            _gaq.push(['_trackEvent', 'Register', result[0]]);
+            _gaq.push(['_trackEvent', 'Errors', result[0]]);
+        }
+    });
+    return false;
+}
+
 
 User.prototype.setFriends = function(data) {
     this.friends = data;

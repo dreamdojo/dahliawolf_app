@@ -12,7 +12,6 @@
 </div>
 
 <script type="text/javascript">
-    console.log(<? echo json_encode($_data['cart']) ?> );
     var google_tag_params = {
         ecomm_prodid: 'REPLACE_WITH_VALUE',
         ecomm_pagetype: 'REPLACE_WITH_VALUE',

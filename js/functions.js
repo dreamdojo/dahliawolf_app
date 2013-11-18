@@ -22,7 +22,8 @@ function sendGeoffMessage(msge) {
 //****************************** BINDINGS *********************
 
 $(function() {
-   $('#loginForm').on('submit', {$errorBox : $('#errorBox')}, dahliawolf.login);
+    $('#loginForm').on('submit', {$errorBox : $('#errorBox')}, dahliawolf.login);
+    $('#registrationForm').on('submit', {$errorBox : $('#r_errorBox')}, dahliawolf.register);
 });
 //**********************************************************
 function validateEmail(email) {
