@@ -5,8 +5,15 @@ if (!isset($_POST) || !isset($_POST['id']) || !isset($_SESSION) || !isset($_SESS
 	die();
 }
 
-
-$user_bank_images = api_request('posting', $calls, true);
+$get_bank_images_calls = array(
+    'get_bank_images' => array(
+        'user_id' => $_SESSION['user']['user_id'],
+        'repo_image_id' => $_POST['id'],
+        'use_hmac_check' => 0,
+        'limit_per_day' => 1
+    )
+);
+$user_bank_images = api_request('posting', $get_bank_images_calls, true);
 //echo "<!-- ".var_export($user_bank_images, true). " -->";
 
 if($user_bank_images && $user_bank_images != null && @count($user_bank_images['data']['get_bank_images']['data']) >= 5 )
@@ -39,16 +46,6 @@ if($user_bank_images && $user_bank_images != null && @count($user_bank_images['d
             , 'description' => $_POST['description']
 
             //, 'id' => $_POST['id']
-        );
-
-
-        $calls = array(
-            'get_bank_images' => array(
-                'user_id' => $_SESSION['user']['user_id'],
-                'repo_image_id' => $_POST['id'],
-                'use_hmac_check' => 0,
-                'limit_per_day' => 1
-            )
         );
 
         ////post the image
