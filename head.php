@@ -42,7 +42,7 @@ if ($top_dir == 'shop') {
 <meta property="og:image" content="http://www.dahliawolf.com/images/images/logo_190x190.jpg">
 <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/pin-create-img-picker.css" media="screen" rel="stylesheet" type="text/css">
-<link href="/css/main.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/main.css?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/css/main.css') ?>" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/main-custom.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/font-face.css" rel="stylesheet" type="text/css">
 <link href="/css/jquery.countdown.css" rel="stylesheet" type="text/css">

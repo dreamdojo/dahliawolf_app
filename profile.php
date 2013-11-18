@@ -111,8 +111,8 @@
             </a>
         </ul>
         <div id="togglePostsLove">
-            <a href="/<?= $_data['user']['username'] ?>"><div class="togglePostsButton <?= ( empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">POSTS</div></a>
-            <a href="/<?= $_data['user']['username'] ?>/loves"><div class="togglePostsButton <?= ( !empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">LOVES</div></a>
+            <div data-filter="posts" class="togglePostsButton <?= ( empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">POSTS</div>
+            <div data-filter="loves" class="togglePostsButton <?= ( !empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">LOVES</div>
         </div>
 
     </div>
@@ -123,10 +123,9 @@
 </div>
 
 <script>
-    console.log(<?= json_encode($faves) ?>);
 	$(function() {
         theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
-        var thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= $feedType ?>" );
+        thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= !empty($_GET['view']) ? $_GET['view'] : 'posts' ?>" );
         thePostGrid.setFaves(<?= json_encode($faves) ?>);
     });
 </script>

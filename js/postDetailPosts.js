@@ -56,6 +56,12 @@ postDetailGrid.prototype.destroyLoader = function() {
 	$('#theGridLoader').remove();
 }
 
+postDetailGrid.prototype.resetGrid = function() {
+    this.offset = 0;
+    this.postContainer.empty();
+    this.getPosts();
+}
+
 
 postDetailGrid.prototype.bindScroller = function() {
 	var $this = this;
@@ -119,7 +125,7 @@ postDetailGrid.prototype.getPosts = function() {
 	if(this.refillAvailable && !this.finished && (this.offset % this.limit) == 0){
 		this.refillAvailable = false;
         dahliaLoader.show();
-		$.post('/action/getPostsByUser', {post_user_id : $this.posterId, feed : $this.feedType, offset : this.offset, limit: this.limit}).done(function(data) {
+        $.post('/action/getPostsByUser', {post_user_id : this.posterId, feed : this.feedType, offset : this.offset, limit: this.limit}).done(function(data) {
             dahliaLoader.hide();
 			$.each(data.data, function(index, post){
                 var $post = $('<div class="userGridPostFrame" style="background-image: url(\''+post.image_url+'&width=300\'); background-size:'+(Number(post.height) > Number(post.width) ? '100% auto' : 'auto 100%')+';"></div>').hover(function() {

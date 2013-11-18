@@ -52,6 +52,14 @@ userProfile.prototype.bindFrontEnd = function() {
 	this.followStatus = $('#followingStatus');
 	
 	this.followButton.bind('click', $.proxy(this.toggleFollow, this));
+    $('#togglePostsLove div').on('click', this.toggleFeed);
+}
+
+userProfile.prototype.toggleFeed = function() {
+    $('.toggleSelected').removeClass('toggleSelected');
+    $(this).addClass('toggleSelected');
+    thePostGrid.feedType = $(this).data('filter');
+    thePostGrid.resetGrid();
 }
 
 userProfile.prototype.toggleFollow = function() {
@@ -59,13 +67,13 @@ userProfile.prototype.toggleFollow = function() {
 		if(this.data.is_followed) {
 			this.data.is_followed = false;
 			this.data.followers--;
-			this.followStatus.html('Follow').removeClass('profileFollowing');;
-			$.post('/action/unfollow.php', {user_id : this.data.user_id});
+			this.followStatus.html('Follow').removeClass('profileFollowing');
+            dahliawolf.member.unfollow(this.data.user_id);
 		} else {
 			this.data.is_followed = true;
 			this.data.followers++;
 			this.followStatus.html('Following').addClass('profileFollowing');
-			$.post('/action/follow.php', {user_id : this.data.user_id});
+            dahliawolf.member.follow(this.data.user_id);
 		}
 		this.followerCount.html(this.data.followers);
 	} else {
