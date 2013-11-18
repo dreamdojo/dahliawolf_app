@@ -42,7 +42,11 @@ if (empty($data['errors'])) {
     if($user_bank_images && $user_bank_images != null && @count($user_bank_images['data']['get_bank_images']['data']) >= 5 )
     {
         //sorry pal no mo images fo u!!!
-        echo json_encode(array('error' => "Sorry due to high demand we have temporally limited the number of images you can post from the D\W Image Bank.", 'data' => null));
+        echo json_encode( array(
+                            'error' => "Sorry due to high demand we have temporally limited the number of images you can post from the D\W Image Bank.",
+                            'data' => null,
+                            'posting_id' => null
+        ));
     }else{
 
         ////post the image
