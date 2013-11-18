@@ -1,6 +1,40 @@
 <?
-    $pageTitle = "Profile";
+    $pageTitle = "Profile - ".$_GET['username'];
     include "head.php";
+
+    $params = array(
+        'username' => strtolower($_GET['username']),
+        'limit' => 0
+    );
+
+    if (IS_LOGGED_IN) {
+        $params['viewer_user_id'] = $_SESSION['user']['user_id'];
+    }
+    $data = api_call('user', 'get_user', $params, true);
+    $_data['user'] = $data['data'];
+    if (empty($_data['user'])) {
+        default_redirect();
+    }
+
+    $params = array(
+        'user_id' => $_data['user']['user_id'],
+        'limit' => 12
+    );
+
+    $posts_data = api_call('posting', 'all_posts', $params, true);
+
+    $_data['posts'] = $posts_data['data'];
+
+    define('MY_PROFILE', (!empty($_SESSION['user']) && $_SESSION['user']['user_id'] == $_data['user']['user_id'] ? true : false) );
+
+    $url = 'http://dev.dahliawolf.com/api/1-0/posting.json?function=get_user_faves&use_hmac_check=0&viewer_user_id='.$_SESSION['user']['user_id'].'&user_id='.$_data['user']['user_id'];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
+    $faves = $result->data->get_user_faves;
 
     if(!$_data['user']['user_id']) {
         $_SESSION['errors'][0] = 'You have wandered off the beaten path :(';
@@ -8,13 +42,9 @@
         die();
     }
     include "header.php";
-
-    define('MY_PROFILE', (!empty($_SESSION['user']) && $_SESSION['user']['user_id'] == $_data['user']['user_id'] ? true : false) );
-
-    $feedType = ($_data['view'] == 'wild-4s' ? 'loves' : 'posts');
 ?>
 
-<? if( !MY_PROFILE || isset($_GET['showPublic']) ): ?>
+<? if(!isset($_GET['dashboard']) || !MY_PROFILE): ?>
 <div id="mainProfileColumn">
 	<div id="userPostGallery">
     	<? if(count($_data['posts']) >= 6): ?>
@@ -30,17 +60,19 @@
         	<div class="overlayLayer"></div>
             <div class="levelWrap">
                 <div class="userProfileAvatarHome">
-                    <div class="userProfileAvatarFrame">
-                        <a href="<?= $_data['user']['avatar'] ?>" target="_blank"><img alt="<?= $_SESSION['user']['username'] ?>" src="<?= $_data['user']['avatar'] ?>&width=152"/></a>
-                    </div>
+                    <a href="<?= $_data['user']['avatar'] ?>" target="_blank"><div class="userProfileAvatarFrame" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=252');"></div></a>
                 </div>
                 <ul class="userProfileDeetsList">
-                    <li class="profileUsername"><a href="<?= $_data['user']['user_id'] ?>" rel="message">@<?= $_data['user']['username'] ?></a></li>
+                    <li class="profileUsername"><a href="<?= $_data['user']['user_id'] ?>" style="float: left;" rel="message">@<?= $_data['user']['username'] ?></a>
+                        <?= $_data['user']['verified'] && $_data['user']['membership_level'] != 'VIP' ? '<div class="memberStats"><img src="/images/verified.png"><div class="ms_ro" style="background-image: url(\'/images/verified_RO.png\')"></div></div>' : ''  ?>
+                        <?= $_data['user']['membership_level'] == 'VIP' ? '<div class="memberStats"><img src="/images/vip.png"><div class="ms_ro" style="background-image: url(\'/images/vip_RO.png\')"></div></div>' : ''  ?>
+                        <div style="clear: left;"></div>
+                    </li>
                     <li class="profileLocation"><?= $_data['user']['location'] ?></li>
                     <li class="boutitboutit"><?= $_data['user']['about'] ?></li>
                     <li class="profileLocation"><a href="http://<?= $_data['user']['website'] ?>" target="_blank" style="font-weight: bold !important;"><?= $_data['user']['website'] ?></a></li>
                     <? if(MY_PROFILE): ?> 
-                    	<li><a href="/account/settings"><span class="profileRed">Edit</span></a></li>
+                    	<li style="margin-top: 5px !important;"><a href="/account/settings"><span class="profileRed">Edit</span></a></li>
                     <? endif ?>
                 </ul>
                 <div id="userProfileDeetsRightCol">
@@ -58,20 +90,23 @@
        		</div>
     	</div>
     </div>
+
     <div id="userProfileMenuBar">
     	<ul id="userProfileShareBox">
-        	<li onclick="facebookFeed('http://www.dahliawolf.com/images/logo.png', 'http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>', 'OMGeeezy follow me on Dahliawolf and vote on some of my posts!');" id="profileShareFacebook"></li>
-             <a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>&media=<?= $_data['user']['avatar'] ?>" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.dahliawolf.com/<?= $_data['user']['username']  ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+                <li id="profileShareFacebook"></li>
+            </a>
+             <a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com/<?= $_data['user']['username']  ?>&media=<?= $_data['user']['avatar'] ?>" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
             	<li id="profileSharePinterest"></li>
             </a>
             <li id="profileShareInstagram"></li>
-            <a href="http://www.tumblr.com/share/photo?source=<?= rawurlencode( $_data['user']['avatar'] )?>&caption=<?= rawurlencode( "OMG Check out my profile on Dahliawolf and vote on my posts you LOVE! Thanks smiles:)" )?>&click_thru=<?= rawurlencode( "http://www.dahliawolf.com/".$_SESSION['user']['username'] ) ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <a href="http://www.tumblr.com/share/photo?source=<?= rawurlencode( $_data['user']['avatar'] )?>&caption=<?= rawurlencode( "Check out this profile on #Dahliawolf" )?>&click_thru=<?= rawurlencode( "http://www.dahliawolf.com/".$_data['user']['username'] ) ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
             	<li id="profileShareTumblr"></li>
             </a>
-            <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&url=http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+            <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&url=http://www.dahliawolf.com/<?= $_data['user']['username'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
             	<li id="profileShareTwitter"></li>
             </a>
-            <a href='mailto:?subject=Check out my profile on Dahliawolf&body=Check out my profile on Dahliawolf and vote some of posts and help get my items chosen to make new fashions! Thank you :) http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>'>
+            <a href='mailto:?subject=Check out <?= $_data['user']['username'] ?>'s profile on Dahliawolf&body=http://www.dahliawolf.com/<?= $_SESSION['user']['username'] ?>'>
             	<li id="profileShareEmail"></li>
             </a>
         </ul>
@@ -79,21 +114,24 @@
             <a href="/<?= $_data['user']['username'] ?>"><div class="togglePostsButton <?= ( empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">POSTS</div></a>
             <a href="/<?= $_data['user']['username'] ?>/loves"><div class="togglePostsButton <?= ( !empty($_GET['view']) ? 'toggleSelected' : '' ) ?>">LOVES</div></a>
         </div>
-        
+
     </div>
 
 
-    <div id="userPostGrid"></div>
+    <div id="userPostGrid">
+    </div>
 </div>
 
 <script>
+    console.log(<?= json_encode($faves) ?>);
 	$(function() {
         theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
         var thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= $feedType ?>" );
+        thePostGrid.setFaves(<?= json_encode($faves) ?>);
     });
 </script>
 
-<? elseif(MY_PROFILE): ?>
+<? elseif(MY_PROFILE && isset($_GET['dashboard'])): ?>
     <? include "dashboard.php"; ?>
 <? endif ?>
 <?

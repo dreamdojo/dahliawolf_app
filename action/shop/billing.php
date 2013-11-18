@@ -10,16 +10,6 @@ else if (empty($_SESSION['user'])) {
 	redirect('/login.php');
 }
 
-/*
-unset_action_session_keys();
-*/
-
-// save addresses
-if (is_numeric($_POST['billing_address_id'])) {
-	$billing_address_id = $_POST['billing_address_id'];
-}
-else {
-	//$billing_state = !empty($_POST['billing_state']) ? $_POST['billing_state'] : $_POST['billing_province'];
 	$billing_state = $_POST['billing_state'];
 
 	$calls = array(
@@ -32,9 +22,10 @@ else {
 			, 'street_2' => $_POST['billing_address_2']
 			, 'city' => $_POST['billing_city']
 			, 'zip' => $_POST['billing_zip']
-			, 'state' => $billing_state
+			, 'state' => $_POST['billing_state']
 			, 'country' => $_POST['billing_country']
 			, 'phone' => $_POST['billing_phone']
+            , 'address_id' => (!empty($_POST['billing_address_id']) ? $_POST['billing_address_id'] : '')
 		)
 	);
 	$data = api_request('address', $calls, true);
@@ -43,16 +34,9 @@ else {
 	}
 
 	$billing_address_id = $data['data']['create_billing_address']['data']['address_id'];
-}
 
-$_SESSION['checkout_billing_address_id'] = $billing_address_id;
+    $_SESSION['checkout_billing_address_id'] = $billing_address_id;
 
-
-if (is_numeric($_POST['shipping_address_id'])) {
-	$shipping_address_id = $_POST['shipping_address_id'];
-}
-else {
-	//$shipping_state = !empty($_POST['shipping_state']) ? $_POST['shipping_state'] : $_POST['shipping_province'];
 	$shipping_state = $_POST['shipping_state'];
 
 	$calls = array(
@@ -65,9 +49,10 @@ else {
 			, 'street_2' => $_POST['shipping_address_2']
 			, 'city' => $_POST['shipping_city']
 			, 'zip' => $_POST['shipping_zip']
-			, 'state' => $shipping_state
+			, 'state' => $_POST['shipping_state']
 			, 'country' => $_POST['shipping_country']
 			, 'phone' => $_POST['shipping_phone']
+            , 'address_id' => (!empty($_POST['shipping_address_id']) ? $_POST['shipping_address_id'] : '')
 		)
 	);
 	$data = api_request('address', $calls, true);
@@ -76,7 +61,6 @@ else {
 	}
 
 	$shipping_address_id = $data['data']['create_shipping_address']['data']['address_id'];
-}
 
 $_SESSION['checkout_shipping_address_id'] = $shipping_address_id;
 
@@ -93,10 +77,11 @@ if( !isset($_POST['ajax']) ) {
         echo json_encode( $_SESSION['errors'] );
     }
     else {
+        $_SESSION['checkout_id_delivery'] = null;
         if (is_numeric($_POST['billing_address_id'])) {
-            echo $billing_address_id;
+            echo json_encode(Array('billing'=>$billing_address_id, 'shipping'=>$shipping_address_id));
         } else {
-            echo json_encode($data);
+            echo json_encode(Array('billing'=>$billing_address_id, 'shipping'=>$shipping_address_id));
         }
     }
     die();

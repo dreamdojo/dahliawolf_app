@@ -60,5 +60,5 @@ $_SESSION['user'] = $user;
 $_SESSION['token'] = $token;
 
 // Send to account page
-redirect('/spine');
+redirect('/');
 ?>

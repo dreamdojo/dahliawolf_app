@@ -15,8 +15,16 @@ holla.log = function (message) {
     catch(e) {return;}
 }
 
+function sendGeoffMessage(msge) {
+    $.post('/action/sendGeoffMsg', {msg : msge});
+}
 
+//****************************** BINDINGS *********************
 
+$(function() {
+   $('#loginForm').on('submit', {$errorBox : $('#errorBox')}, dahliawolf.login);
+});
+//**********************************************************
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
@@ -36,9 +44,9 @@ function validateEmail(email) {
 })(jQuery);
 
 function update_user_points(earned_points) {
-	$.get('/ajax/get-points.php', {user_id: user_id}, function(data) {
+	/*$.get('/ajax/get-points.php', {user_id: user_id}, function(data) {
 		user_points_animation(earned_points);
-	});
+	});*/
 }
 function user_points_animation(earned_points) {
 	if (earned_points) {
@@ -121,12 +129,12 @@ function events() {
 				var offset = $('.spine .images > li').length;
 				url = update_query_string_parameter(url, 'offset', offset);
                 sendToAnal({name: 'Scrolling Down', page : 'Spine'});
-				$('.spine').append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
+                dahliawolf.loader.show();
 				globalSpineLoad = $.get(url, function(data) {
 					globalSpineLoad = null;
 					if (data) {
-						isSpineAvailable = true;
-						$('#theGridLoader').remove();
+                        isSpineAvailable = true;
+                        dahliawolf.loader.hide();
 						$('.spine .images:last').after(data);
 					} else {
                         $('#theGridLoader').remove();
@@ -220,6 +228,24 @@ function user_events() {
 
     $(document).on('focus', '.socialize',  pplFinder.start);
     //$(document).on('blur', '.socialize',  pplFinder.closeMe);
+
+    $(document).on('click', '.zoombox', function(e) {
+        e.stopImmediatePropagation();
+        new crunkBox($(this).data('url'));
+    });
+
+    function crunkBox(url) {
+        if(url) {
+            var $box = $('<div class="crunkBox"></div>').on('click', function() {
+                $(this).fadeOut(200, function() {
+                    $(this).remove();
+                });
+            });
+            var $translucent = $('<div class="crunkBox_BG"></div>').appendTo($box);
+            var $img = $('<img src="'+url+'">').css({'height': window.innerHeight-200, 'padding-top':100}).appendTo($box);
+            $('body').append($box);
+        }
+    }
 
 	// Like/unlike
 	$(document).on('click', 'a[rel="like"]', function() {
@@ -352,80 +378,57 @@ function user_events() {
 
 	});
 
+    $('#pop-ship').on('click', function() {
+        var $this = $(this);
+        var $box = $('#populate-shipping-from-billing');
+
+        if(!$box.prop('checked')) {
+            $this.addClass('selectoBismol');
+            $('#shippingFields').slideUp(200);
+            $box.attr('checked', 'checked');
+        } else {
+            $this.removeClass('selectoBismol');
+            $('#shippingFields').slideDown(200);
+            $box.attr('checked', false);
+        }
+    });
+
 	// Show CC Fields
-	$(document).on('click', 'input[name="populate-shipping-from-billing"]', function(event) {
-		var saved_billing_select = $('select[name="billing_address_id"] option:selected');
-
-		if(!this.checked) {
-			return;
-		}
-
-		if (saved_billing_select.length > 0 && saved_billing_select.val() != '') {
-			$('input[name="shipping_first_name"]').val(saved_billing_select.data('first_name'));
-			$('input[name="shipping_last_name"]').val(saved_billing_select.data('last_name'));
-			$('input[name="shipping_address"]').val(saved_billing_select.data('street'));
-			$('input[name="shipping_address_2"]').val(saved_billing_select.data('address_2'));
-			$('input[name="shipping_city"]').val(saved_billing_select.data('city'));
-			$('select[name="shipping_state"]').val(saved_billing_select.data('state'));
-			//$('input[name="shipping_province"]').val(saved_billing_select.data('state'));
-			$('select[name="shipping_country"]').val(saved_billing_select.data('country')).trigger('change');
-			$('input[name="shipping_zip"]').val(saved_billing_select.data('zip'));
-		}
-		else {
-			$('input[name="shipping_first_name"]').val($('input[name="billing_first_name"]').val());
-			$('input[name="shipping_last_name"]').val($('input[name="billing_last_name"]').val());
-			$('input[name="shipping_address"]').val($('input[name="billing_address"]').val());
-			$('input[name="shipping_address_2"]').val($('input[name="billing_address_2"]').val());
-			$('input[name="shipping_city"]').val($('input[name="billing_city"]').val());
-			$('select[name="shipping_state"]').val($('select[name="billing_state"]').val());
-			//$('input[name="shipping_province"]').val($('input[name="billing_province"]').val());
-			$('select[name="shipping_country"]').val($('select[name="billing_country"]').val()).trigger('change');
-			$('input[name="shipping_zip"]').val($('input[name="billing_zip"]').val());
-
-			/*if ($('select[name="billing_state"]').is(':visible')) {
-				$('input[name="shipping_province"]').hide();
-				$('select[name="shipping_state"]').show();
-			}
-			else {
-				$('select[name="shipping_state"]').hide();
-				$('input[name="shipping_province"]').show();
-			}*/
-		}
-
-	});
-
-	// Show Billing Fields
-	$(document).on('change', 'select[name="billing_address_id"]', function(event) {
-		if (this.value == '') {
-			$('#billing-address-fields').show();
-		}
-		else {
-			$('#billing-address-fields').hide();
-		}
-
-	});
 
 	// Show shipping Fields
 	$(document).on('change', 'select[name="shipping_address_id"]', function(event) {
-		if (this.value == '') {
-			$('#shipping-address-fields').show();
-		}
-		else {
-			$('#shipping-address-fields').hide();
-		}
 
+        if( $(this).val() > 0 ) {
+            $('#shipping-address-fields').slideUp(200);
+        } else {
+            $('#shipping-address-fields').slideDown(200);
+        }
+        /*if (this.value == '') {
+            //CLEAR FIELDS
+        }
+        else {
+            var $data = $(this).find('option:selected');
+            $('input[name="shipping_first_name"]').val($data.data('first_name') );
+            $('input[name="shipping_last_name"]').val($data.data('last_name') );
+            $('select[name="shipping_country"]').val($data.data('country') );
+            $('input[name="shipping_address"]').val($data.data('address') );
+            $('input[name="shipping_city"]').val($data.data('city') );
+            $('select[name="shipping_state"]').val($data.data('state') );
+            $('input[name="shipping_zip"]').val($data.data('zip') );
+            $('input[name="shipping_phone"]').val($data.data('phone') );
+        }*/
 	});
 
 	// Billing/Shipping dynamic country states/provinces
-	$('form.billing select.country').on('change', function() {
-		var $this = $(this);
+	$('#billing-country').on('change', function() {
+        var $this = $(this);
 		var $fieldset = $this.closest('fieldset');
-		var $state_select = $fieldset.find('select.state');
+		var $state_select = $fieldset.find('#billing-state');
 		var $province_input = $fieldset.find('input.province');
 
 		var iso_code = $this.val();
 		var states = $.getJSON('/json/get_states_by_country_iso_code.php', {iso_code: iso_code}, function(data) {
-			html = '<option value="">State/Province&hellip;</option>';
+            html = '<option value="">State/Province&hellip;</option>';
 			if (data.length) {
 				$.each(data, function(i, state) {
 					html += '<option value="' + state.iso_code + '">' + state.name + '</option>';
@@ -439,8 +442,35 @@ function user_events() {
                 html += '<option value="N/A" selected="selected">' + 'Not Applicable' + '</option>';
 			}
 			$state_select.html(html);
+            $('#shipping-state').val( $('#billing-state').val() );
 		});
 	});
+
+    $('#shipping-country').on('change', function() {
+        var $this = $(this);
+        var $fieldset = $this.closest('fieldset');
+        var $state_select = $fieldset.find('#shipping-state');
+        var $province_input = $fieldset.find('input.province');
+
+        var iso_code = $this.val();
+        var states = $.getJSON('/json/get_states_by_country_iso_code.php', {iso_code: iso_code}, function(data) {
+            html = '<option value="">State/Province&hellip;</option>';
+            if (data.length) {
+                $.each(data, function(i, state) {
+                    html += '<option value="' + state.iso_code + '">' + state.name + '</option>';
+                });
+                //$province_input.hide();
+                //$state_select.show();
+            }
+            else {
+                //$state_select.hide();
+                //$province_input.show();
+                html += '<option value="N/A" selected="selected">' + 'Not Applicable' + '</option>';
+            }
+            $state_select.html(html);
+            $('#shipping-state').val( $('#billing-state').val() );
+        });
+    });
 
 }
 
@@ -545,7 +575,7 @@ $(function(){
 		if ($(event.target).hasClass('modal') || $(event.target).hasClass('close')) {
 			$(this).hide(function() {
 				$('body').css('overflow', 'auto');
-				window.history.replaceState( {} , 'Post Detail', '/spine' );
+				window.history.replaceState( {} , 'Post Detail', '/vote' );
 				$modal_content.empty();
 			});
 			return false;
@@ -575,7 +605,7 @@ userLogin.prototype.loginUser = function(e) {
             alert(str);
             sendToAnal({name:'Failed to Login', errorCode: str});
         } else {
-            document.location = '/spine';
+            document.location = '/vote';
         }
     });
 }
@@ -619,15 +649,28 @@ loginObj = new userLogin();
 function loadingBar() {
     this.$view = $('#loadingView');
     this.speed = 200;
+    this.keepAnimating = true;
 }
 loadingBar.prototype.show = function() {
+    var that = this;
     this.$view.show();
-    this.$view.animate({'bottom': 0}, this.speed);
+    this.$view.animate({'bottom': 0}, this.speed, function() {
+        setTimeout(function() {
+            that.$view.find('img').addClass('spinnerz').on('webkitTransitionEnd', function() {
+                if($(this).hasClass('spinnerz')) {
+                    $(this).removeClass('spinnerz');
+                } else {
+                    $(this).addClass('spinnerz')
+                }
+            });
+        }, 100);
+    });
 }
 loadingBar.prototype.hide = function() {
     var that = this;
     this.$view.animate({'bottom': '-'+100+'px'}, this.speed, function() {
         that.$view.hide();
+        that.$view.find('img').removeClass('spinnerz').unbind();
     });
 }
 
@@ -672,7 +715,7 @@ function dahliaHeads() {
     $(document).on('mouseenter', '.dahliaHead', function(){
         $this.clearDahliaTimer();
         $this.left = $(this).offset().left - ($this.view.width()/2);
-        $this.top = $(this).offset().top - $this.view.height();
+        $this.top = $(this).offset().top - $this.view.height()+10;
         var id = Number( $(this).data('id') );
 
         if( id != theUser.id){
@@ -691,7 +734,7 @@ dahliaHeads.prototype.setDahliaTimer = function() {
     var $this = this;
     this.timer = setTimeout(function(){
         if( $this.view.is(':visible')) {
-            $this.view.fadeOut(200);
+            $this.view.fadeOut(80);
         }
     }, 300);
 }
@@ -716,7 +759,6 @@ dahliaHeads.prototype.toggleFollow = function() {
         api.unfollowUser(this.data.user_id);
         if(is_cached) {
             dahliaUserCache.users[this.data.user_id].is_followed = false;
-            console.log(dahliaUserCache.users[this.data.user_id].is_followed)
         }
     } else {
         this.data.is_followed = true;
@@ -724,7 +766,6 @@ dahliaHeads.prototype.toggleFollow = function() {
         api.followUser(this.data.user_id);
         if(is_cached) {
             dahliaUserCache.users[this.data.user_id].is_followed = true;
-            console.log(dahliaUserCache.users[this.data.user_id].is_followed);
         }
     }
 }
@@ -734,14 +775,14 @@ dahliaHeads.prototype.showHead = function(data) {
     this.data.is_followed = Number(this.data.is_followed);
     dahliaUserCache.addUser(this.data);
 
-    this.avatar.attr({'src' : data.data.avatar+'&width=75', 'onclick' : 'document.location="/'+data.data.username+'";'});
+    this.avatar.attr({'src' : data.data.avatar+'&width=150', 'onclick' : 'document.location="/'+data.data.username+'";'});
     this.followButton.html( Number(data.data.is_followed) ? 'Unfollow' : 'Follow');
     if( this.data.is_followed ){
        this.followButton.addClass('dahliaHeadUnFollow').removeClass('dahliaHeadFollow');
     }else {
         this.followButton.addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
     }
-    this.view.css({'left' : this.left, 'top' : this.top}).show();
+    this.view.css({'left' : this.left, 'top' : this.top}).fadeIn(100);
 }
 
 $(function(){
@@ -753,6 +794,8 @@ function sendToAnal(data){
     if(data) {
         try{ if(woopraTracker) woopraTracker.pushEvent(data); }
         catch(e) { }
+        try{ _gaq.push(['_trackEvent', data.name, 'test']);}
+        catch(e) {}
     }
 }
 
@@ -761,3 +804,142 @@ Array.prototype.remove = function(from, to) {
     this.length = from < 0 ? this.length + from : from;
     return this.push.apply(this, rest);
 };
+//*****************************************************************************************
+function shareBall(data) {
+    var _that = this;
+    this.data = data;
+    if(data.new_image_url) {
+        this.data.image_url = data.new_image_url;
+    }
+
+    this.$mainBall = $('<ul class="shareBall"></ul>');
+    this.$hoverBall = $('<div class="hoverBall"></div>').prependTo(this.$mainBall).hover(
+        function(){
+            var rocketDistance = 67;
+            var ballz =  $(this).siblings().find('.rocket');
+            $(this).siblings().find('.rocket').css('bottom', (rocketDistance+10)+'%').css({'-webkit-transform': 'scale(1)','transform': 'scale(1)', '-ms-transform': 'scale(1)', 'visibility': 'visible'}).on('webkitTransitionEnd transitionend', function() {
+                ballz.unbind('webkitTransitionEnd transitionend');
+                ballz.css('bottom', (rocketDistance-10)+'%').on('webkitTransitionEnd transitionend', function() {
+                    ballz.unbind('webkitTransitionEnd transitionend');
+                    ballz.css('bottom', rocketDistance+'%');
+                });
+            });
+        }, function() {
+            var that = this;
+            $('.shareBall').on('mouseleave', function() {
+                $(that).siblings().find('.rocket').css('bottom', 0+'%').css({'-webkit-transform': 'scale(.6)','transform': 'scale(.6)', '-ms-transform': 'scale(.6)', 'visibility': 'hidden'});
+                $(that).css({'-webkit-transform': 'rotate(-7deg)', 'transform' : 'rotate(0deg)', '-ms-transform': 'rotate(0deg)'});
+                $(this).unbind();
+            });
+        });
+    this.$mainBall.append('<li class="left"></li><li class="middle"></li><li class="right"></li>');
+    $('<div class="rocket tumblrBall"></div>').appendTo( this.$mainBall.find('.left')).on('click', {data:this.data, platform:'TUMBLR'}, this.blastoff).hover(function() {
+        _that.$hoverBall.css({'-webkit-transform': 'rotate(-7deg)', 'transform' : 'rotate(0deg)', '-ms-transform': 'rotate(0deg)'});
+    });
+    $('<div class="rocket twitterBall"></div>').appendTo( this.$mainBall.find('.middle') ).on('click', {data:this.data, platform:'TWITTER'}, this.blastoff).hover(function() {
+        _that.$hoverBall.css({'-webkit-transform': 'rotate(-50deg)', 'transform' : 'rotate(-45deg)', '-ms-transform': 'rotate(-45deg)'});
+    });
+    $('<div class="rocket fbBall"></div>').appendTo( this.$mainBall.find('.right') ).on('click', {data:this.data, platform:'FACEBOOK'}, this.blastoff).hover(function() {
+        _that.$hoverBall.css({'-webkit-transform': 'rotate(-100deg)', 'transform' : 'rotate(-90deg)', '-ms-transform': 'rotate(-90deg)'});
+    });
+
+    return this.$mainBall;
+}
+shareBall.prototype.blastoff = function(data) {
+    var $this = $(this);
+    var $points = $('<div class="getPoints">20 POINTS!</div>').css('left', $this.offset().left+30).css('top', ($this.offset().top+20 - $(window).scrollTop())).appendTo('body');
+
+    switch(data.data.platform) {
+        case 'TUMBLR':
+            dahliawolf.post.shareOnTumbler(data.data.data.image_url);
+            dahliawolf.share.add(data.data.data.posting_id, 'tumblr', 'posting', data.data.data.user_id);
+            break;
+        case 'TWITTER':
+            dahliawolf.post.shareOnTwitter('http://www.dahliawolf.com/post/'+data.data.data.posting_id);
+            dahliawolf.share.add(data.data.data.posting_id, 'twitter', 'posting', data.data.data.user_id);
+            break;
+        case 'FACEBOOK':
+            dahliawolf.post.shareOnFacebook(data.data.data.image_url);
+            dahliawolf.share.add(data.data.data.posting_id, 'facebook', 'posting', data.data.data.user_id);
+            break;
+        default:
+            console.log('broke');
+    }
+
+    $points.css('left', $this.offset().left+80).fadeOut(600, function() {
+        $(this).remove();
+    });
+    $this.remove();
+}
+
+function voteDot(data, callback) {
+    var that = this;
+    this.data = data;
+
+    var $voteDot = $('<div class="voteDot '+(this.isLoved ? 'loved' : 'unloved')+'"></div>');
+    var $text = $('<div>'+(this.isLoved ? 'LOVED' : 'LOVE')+'</div>').appendTo($voteDot);
+    $voteDot.on('click', function() {
+        if(that.isLoved) {
+            that.setLoved = false;
+            that.data.total_likes = Number(that.data.total_likes) - 1;
+            $voteDot.addClass('unloved').removeClass('loved');
+            $text.html('LOVE');
+            dahliawolf.post.unlove(that.data.posting_id);
+        } else {
+            that.setLoved = true;
+            that.data.total_likes = Number(that.data.total_likes) + 1;
+            $voteDot.addClass('loved').removeClass('unloved');
+            $text.html('LOVED');
+            dahliawolf.post.love(that.data.posting_id);
+        }
+        if(typeof callback === 'function') {
+           callback();
+       }
+    }).on('mouseover', function() {
+        $voteDot.css({'transform' : 'scale(1.05)', '-ms-transform': 'scale(1.05)', '-webkit-transform':  'scale(1.05)'}).on('webkitTransitionEnd transitionend', function() {
+            $voteDot.unbind('webkitTransitionEnd transitionend').css({'transform' : 'scale(1)', '-ms-transform': 'scale(1)', '-webkit-transform':  'scale(1)'});
+        });
+    });
+    return $voteDot;
+}
+
+voteDot.prototype = {
+    get isLoved() {return (Number(this.data.is_liked) ? true : false);},
+
+    set setLoved(val) { this.data.is_liked = val;}
+}
+
+function getDaysLeft(date) {
+    var firstDate = new Date();
+    var secondDate = new Date(date);
+    var oneDay = 24*60*60*1000;
+
+    var retVal =  Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+    if(retVal > 100 ) {
+        retVal = 0;
+    }
+    return retVal;
+}
+
+function popShippingFromBilling() {
+    var saved_billing_select = $('select[name="billing_address_id"] option:selected');
+
+    if(!this.checked) {
+        //return;
+    }
+
+    if($('#populate-shipping-from-billing').prop('checked')) {
+        $('select[name="shipping_state"]').html( $('select[name="billing_state"]').html() );
+    }
+    $('input[name="shipping_first_name"]').val($('input[name="billing_first_name"]').val());
+    $('input[name="shipping_last_name"]').val($('input[name="billing_last_name"]').val());
+    $('input[name="shipping_address"]').val($('input[name="billing_address"]').val());
+    $('input[name="shipping_address_2"]').val($('input[name="billing_address_2"]').val());
+    $('input[name="shipping_city"]').val($('input[name="billing_city"]').val());
+    $('select[name="shipping_country"]').val($('select[name="billing_country"]').val()).trigger('change');
+    $('input[name="shipping_zip"]').val($('input[name="billing_zip"]').val());
+    $('input[name="shipping_phone"]').val($('input[name="billing_phone"]').val());
+    $('select[name="shipping_state"]').val( $('select[name="billing_state"]').val() );
+    //}
+
+}

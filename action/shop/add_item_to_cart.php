@@ -70,7 +70,11 @@ if (!empty($_SESSION['errors'])) {
 	redirect($_SERVER['HTTP_REFERER']);
 }
 else {
-	redirect('/shop/checkout.php');
+	if( !isset($_POST['ajax']) ) {
+        redirect('/shop/cart.php');
+    } else {
+        echo 'success';
+    }
 }
 die();
 ?>

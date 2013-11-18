@@ -15,9 +15,9 @@ if (IS_LOGGED_IN) {
 	
 	// Grab and save remote image
 	$image = @file_get_contents($_GET['url']);
-	
-	if ($image) {
-		file_put_contents($image_url, $image);
+
+    if ($image) {
+        file_put_contents($image_url, $image);
 		$dimensions = @getimagesize($image_url);
 		
 		// make api to add_post_image
@@ -27,7 +27,7 @@ if (IS_LOGGED_IN) {
 			, 'attribution_url' => urldecode($_GET['sourceurl'])
 			, 'source' => $source
 			, 'user_id' => $user_id
-			, 'description' => $_GET['description']
+			, 'description' => !empty($_GET['description']) ? $_GET['description'] : ''
 			, 'dimensionsX' => $dimensions[0]
 			, 'dimensionsY' => $dimensions[1]
 
@@ -36,10 +36,7 @@ if (IS_LOGGED_IN) {
 
         if(isset($_GET['t']))$params['t'] = true;
 
-        //var_dump($_GET);
-        //var_dump($params);
-
-		$data = api_call('posting', 'add_post_image', $params, true);
+        $data = api_call('posting', 'add_post_image', $params, true);
 
 		$data = json_decode($data);
         /*
@@ -82,19 +79,20 @@ body{text-align:center;}
     <div class="dwTitle"><img src="http://www.dahliawolf.com/images/popTitle.png"></div>
     <div class="stuff">
         <div class="imgFrame"><img src="<?= $_GET['url'] ?>" /></div>
-        <div id="timer"><p id="clock">10</p></div>
+        <div id="timer"><p id="clock">5</p></div>
     </div>
     <div class="clickHere">Click <a href="http://www.dahliawolf.com/post/<?= $data['data']['posting_id'] ?>" target="_none">HERE</a> to view post</div>
 </div>
 </body>
 </html>
 <script>
-time = 10;
+time = 5;
 
 setInterval(function(){
 	time--;
 	document.getElementById('clock').innerHTML = time;
-	if(time < 0){
+	console.log('<?= $data ?>');
+    if(time < 0){
 		window.close();
 	}
 }, 1000);

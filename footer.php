@@ -4,32 +4,35 @@
 <div id="sys-profiler"></div>
 <div id="sysMessageDialog" style="display: none;" title="Message"></div>
 
-<div id="dwFooter">
-    <ul>
-        <a href="/help"><li style="padding-top: 20px;">How it Works</li></a>
-        <a href="/tos"><li>Legal</li></a>
-        <a href="/faqs"><li>FAQs</li></a>
-        <a href="/contact"><li>Contact</li></a>
-        <li style="color: #c3c3c3;">© Dahlia Wolf 2013</li>
-    </ul>
-    <p></p>
-    <img src="/images/logo_60x60.png">
-</div>
-<?
-if (!empty($_GET['modal'])) {
-	?>
-<script>loginscreen("<?= $_GET['modal'] ?>")</script>
-	<?
-}
-?>
 <div id="sign-up-modal">
 	<div class="sign-up-business">
-    	<a href="/social-login.php?social_network=facebook"><img src="/skin/img/signinfacebook.png" width="244" height="49"></a>
+    	<a href="/social-login.php?social_network=facebook"><img src="/images/fb_pop_blocker.png" width="244" height="49"></a>
         <a href="/signup"><div class="mailme">or sign up the old school way with email</div></a>
     </div>
 </div>
-<div id="fancybox-tmp"></div>
-<div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="tiptip_holder" style="max-width:200px;"><div id="tiptip_arrow"><div id="tiptip_arrow_inner"></div></div><div id="tiptip_content"></div></div>
+
+<script type="text/javascript">
+    console.log(<? echo json_encode($_data['cart']) ?> );
+    var google_tag_params = {
+        ecomm_prodid: 'REPLACE_WITH_VALUE',
+        ecomm_pagetype: 'REPLACE_WITH_VALUE',
+        ecomm_totalvalue: 'REPLACE_WITH_VALUE',
+    };
+</script>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1020911646;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1020911646/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
 
 </body>
 </html>

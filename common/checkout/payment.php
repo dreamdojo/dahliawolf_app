@@ -1,3 +1,5 @@
+
+
 <form action="/action/shop/select_payment_method.php" class="Form StaticForm payment" method="post">
 	<fieldset>
 		<h3>Payment Method</h3>
@@ -25,59 +27,30 @@
     <fieldset id="credit_card_fields" style="<?= (empty($_SESSION['checkout_payment_method_id']) || $_SESSION['checkout_payment_method_id'] == '1') ? '' : 'display:none"' ?>">
 		<ul class="fields">
 			<li>
-				<label for="billing-first-name">First Name <em>*</em></label>
-				<input type="text" id="billing-first-name" name="billing_first_name" />
+				<input type="text" id="billing-first-name" name="billing_first_name" placeholder="First Name"/>
 			</li>
 			<li>
-				<label for="billing-last-name">Last Name <em>*</em></label>
-				<input type="text" id="billing-last-name" name="billing_last_name" />
+				<input type="text" id="billing-last-name" name="billing_last_name" placeholder="Last Name" />
 			</li>
 			<li>
-				<label for="billing-address">Address <em>*</em></label>
-				<input type="text" id="billing-address" name="billing_address" />
+				<input type="text" id="billing-address" name="billing_address" placeholder="Billing Address" />
 			</li>
 			<li>
-				<label for="billing-address">Address 2</label>
-				<input type="text" id="billing-address" name="billing_address_2" />
+				<input type="text" id="billing-address" name="billing_address_2" placeholder="Apt #" />
 			</li>
 			<li>
-				<label for="billing-city">City <em>*</em></label>
-				<input type="text" id="billing-city" name="billing_city" />
+				<input type="text" id="billing-city" name="billing_city" placeholder="City" />
 			</li>
 			<li>
-				<label for="billing-state">State<em>*</em></label>
-				<select id="billing-state" name="billing_state">
-					<?
-					foreach ($_data['states'] as $state) {
-						?>
-						<option value="<?= $state['code'] ?>"><?= $state['name'] ?></option>
-						<?
-					}
-					?>
-				</select>
+				<input id="billing-state" name="billing_state" placeholder="State">
 			</li>
 			<li>
-				<label for="billing-zip">Zip/Postal Code <em>*</em></label>
-				<input type="text" id="billing-zip" name="billing_zip" />
+				<input type="text" id="billing-zip" name="billing_zip" placeholder="Zip Code"/>
 			</li>
-			<?
-			/*
-			<li>
-				<label for="billing-country">Country <em>*</em></label>
-				<select id="billing-country" name="billing_country">
-					
-				</select>
-			</li>
-			
-			<li>
-				<label for="billing-phone">Telephone <em>*</em></label>
-				<input type="text" id="billing-phone" name="billing_phone" />
-			</li>*/
-			?>
 		</ul>
 	</fieldset>
     
 	<fieldset>
-		<input type="submit" value="Next Step &gt" />
+		<input type="submit" value="Next Step" />
 	</fieldset>
 </form>

@@ -1,3 +1,4 @@
+
 <?
 $is_review = !empty($is_review) ? true : false;
 //print_r($_data['cart']);
@@ -15,7 +16,7 @@ $is_review = !empty($is_review) ? true : false;
 			<tr>
 				<th scope="col" class="image"></th>
 				<th scope="col" class="product">Product Name</th>
-				<th scope="col" class="price monetary">Unit Price</th>
+				<th scope="col" class="price monetary">Price</th>
 				<th scope="col" class="quantity">Qty</th>
 				<th scope="col" class="subtotal monetary">Subtotal</th>
 				<?
@@ -125,7 +126,7 @@ $is_review = !empty($is_review) ? true : false;
 	<?
 	if (!$is_review) {
 		?>
-		<p class="button update"><a onclick="$(this).closest('form').submit()">Update Shopping Cart</a></p>
+		<p class="button update"><a onclick="$(this).closest('form').submit()">Update Shopping Bag</a></p>
 	</form>
 		<?
 	}
@@ -294,11 +295,37 @@ $is_review = !empty($is_review) ? true : false;
 						<fieldset>
 							<label for="cart-store-credit-amount">Enter an amount to redeem:</label>
 							<input type="text" name="amount" id="cart-store-credit-amount" value="<?= !empty($_data['cart']['cart_store_credit']) ? $_data['cart']['cart_store_credit']['amount'] : '0.00' ?>" />
-							<span>/ $<?= $_data['cart']['available_store_credits']['total_credits'] ?> (Store Credits)</span>
-							<p class="button"><a onclick="$(this).closest('form').submit()">Redeem Store Credit</a></p>
+							<span>/ $<?= number_format($_data['cart']['available_store_credits']['total_credits'], 2) ?> (Store Credits)</span>
+							<p class="button"><a id="cart-store-credit-amount-submit">Redeem Store Credit</a></p>
 						</fieldset>
 					</form>
 				</div>
+
+                <script>
+
+                    $('#cart-store-credit-amount-submit').on('click', function()
+                    {
+                        console.log(<?= json_encode($_data['cart']) ?>);
+                        var grant_total         = parseFloat(<?php echo $_data['cart']['cart']['totals']['products']; ?>);
+                        var total_store_credit  = parseFloat(<?php echo $_data['cart']['available_store_credits']['total_credits']; ?>);
+                        var apply_store_credit  = parseFloat( $('#cart-store-credit-amount').val() );
+
+                        if(  (total_store_credit >  grant_total) && (apply_store_credit > grant_total)  )
+                        {
+                            $('#cart-store-credit-amount').val(grant_total);
+                        }
+                        debugger;
+
+                        $(this).closest('form').submit()
+
+                    });
+
+
+
+                </script>
+
+
+
 	            <?
 			}
 		}
@@ -456,7 +483,7 @@ $is_review = !empty($is_review) ? true : false;
 			<tfoot>
 				<tr>
 					<th scope="row">Grand Total</th>
-					<td>$<?= !empty($_data['cart']) ? number_format($_data['cart']['cart']['totals']['grand_total'], 2, '.', ',') : '0.00' ?></td>
+					<td>$<?= !empty($_data['cart']) ? number_format( $_data['cart']['cart']['totals']['grand_total'], 2, '.', ',') : '0.00' ?></td>
 				</tr>
 			</tfoot>
 			<tbody>

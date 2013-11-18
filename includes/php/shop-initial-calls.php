@@ -9,18 +9,19 @@ if (empty($_data)) {
 }
 
 // Get Cart (already gets called in initial-calls.php)
-//$_data['cart'] = get_cart();
+$_data['cart'] = get_cart();
 
 // Get Categories
 $calls = array(
 	'get_shop_categories' => array(
-		'id_shop' 		=> SHOP_ID
-		, 'id_lang' 	=> LANG_ID
+		'id_shop' 		=> SHOP_ID,
+		'id_lang' 	=> LANG_ID
 
 	)
 );
 $data = commerce_api_request('category', $calls, true);
 $_data['categories'] = $data['data']['get_shop_categories']['data'];
+
 
 if ($self == '/shop/index.php') {
     /*
@@ -124,7 +125,7 @@ else if ($self == '/shop/product.php') {
 		}
 	}
 }
-else if ($self == '/shop/checkout.php') {
+else if ($self == '/shop/checkout.php'  || $self == '/shop/product.php' || $self == '/shop/cart.php') {
 	// Set session delivery id
 	if (empty($_SESSION['checkout_id_delivery']) && !empty($_data['cart']['cart']['carrier'])) {
 		$_SESSION['checkout_id_delivery'] = $_data['cart']['cart']['carrier']['id_delivery'];
@@ -138,7 +139,7 @@ else if ($self == '/shop/checkout.php') {
 		}
 		else if (empty($_SESSION['id_cart']) || empty($_data['cart']) || empty($_data['cart']['products'])) {
 			$_SESSION['errors'] = array('Your cart is empty.');
-			redirect('/shop/checkout.php');
+			redirect('/shop/cart.php');
 			die();
 		}
 	}

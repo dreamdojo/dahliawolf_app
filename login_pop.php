@@ -52,7 +52,10 @@ $login_urls = array(
 margin-left: 150px;
 margin-top: -29px;
 }
-
+.tos-statement{color: #fff; text-align: left; font-size: 10px;}
+.tos-statement a{color: #fff;}
+.tos-statement a:hover{color: red;}
+.aac{margin-top: 2px;position: absolute;bottom: 10px;}
 
 
 </style>
@@ -95,23 +98,25 @@ margin-top: -29px;
                                 </li>    
                             </ul>
                             <div class="non_inputs">
+                                <div class="tos-statement">By creating an account, I accept Dahlia Wolf's <a href="/tos">Terms of Service</a> and <a href="/tos">Privacy Policy</a></div>
                                 <input type="image" src="http://www.dahliawolf.com/images/reg.png" id="sysForm_submit" style="float: right;padding-right: 13px;padding-top: 5px;height: 30px;">
                             </div>
                                 <input type="hidden" name="r" value="" />
      							<input type="hidden" name="jsub" value="1" />
                         </form>
-                    </div><div><iframe src="//www.facebook.com/plugins/facepile.php?href=http%3A%2F%2Fwww.facebook.com%2FNASTYGAL&amp;action&amp;size=small&amp;max_rows=1&amp;show_count=false&amp;width=300&amp;colorscheme=dark&amp;appId=133259003395199" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:330px; height: 75px; margin-top: 27px;margin-left: 0px;" allowTransparency="true"></iframe></div>
+                    </div>
+                    <div>
+                        <iframe src="//www.facebook.com/plugins/facepile.php?href=http%3A%2F%2Fwww.facebook.com%2FNASTYGAL&amp;action&amp;size=small&amp;max_rows=1&amp;show_count=false&amp;width=300&amp;colorscheme=dark&amp;appId=133259003395199" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:330px; height: 75px; margin-top: 27px;margin-left: 0px;" allowTransparency="true"></iframe>
+                    </div>
+
                 </div>
-                            
-                            
-                                                      <!-- <div><a href="/signup.php"><img src="/skin/img/signinemail.png" width="244" height="" /></a></div>-->
                             <div style="clear:both;"></div>
-                            <div style="margin-top: 2px">
+                            <div class="aac" style="margin-top: 2px">
                             	<div class="creative">
                             		<img src="/skin/img/alreadycreative.png" width="106" height="12" />
                                 </div>
                                 <div class="email">
-                                	<a href="#" onclick="openlogin();"><img src="/skin/img/logintxt.png" width="55" height="14" /></a>
+                                	<a href="#" onclick="openlogin();"><img style="margin-left: 10px;" src="/skin/img/logintxt.png" width="55" height="14" /></a>
                                 </div>
                                 <div style="clear:both"></div>
                             </div>
@@ -131,19 +136,23 @@ margin-top: -29px;
                                <div style="margin-bottom: 20px;"><a href="<?= $login_urls['facebook'] ?>"><img src="/skin/img/signinfacebook2.png" width="244" height="49" /></a></div>
                                <div style="clear:both;"></div>                        
                            </div>
-                           <div class="texting">or login with email:</div>
+                           <div class="texting">or login with email/username:</div>
                            <div>
-                               <form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="/action/login.php">
+                               <form id="loginForm" method="POST" class="Form FancyForm AuthForm" action="/action/login.php">
+                                   <input type="hidden" name="ajax" value="true">
                                 <ul>
                                     <li>
                                         <input class="input_text" type="text" name="identity" id="sysForm_identity" value="">
-                                        <label for="sysForm_identity">E-Mail</label><span class="fff"></span>
+                                        <label for="sysForm_identity">E-Mail or Username</label><span class="fff"></span>
                                     </li>
                                     <li>
                                         <input class="input_text" type="password" name="credential" id="sysForm_credential" value="">
                                         <label for="sysForm_credential">Password</label>
                                         <span class="fff"></span>
-                                    </li>  
+                                    </li>
+                                    <li style="text-align: left;">
+                                        <a style="color: #888;font-size: 12px;" href="/reset-password-link.php">Forgot password?</a>
+                                    </li>
                                     <li><span class="rememberme">
                                         <input class="checkbox" id="l_remember_me" name="l_remember_me" type="checkbox" value="1">
                                         <span class="texting"> Remember me</span></span>
@@ -155,6 +164,7 @@ margin-top: -29px;
                                  <input type="hidden" name="r" value="">
                                  <input type="hidden" name="sublog" value="1">
                             </form>
+                               <div id="errorBox"></div>
                           </div> 
                           
                         </div>

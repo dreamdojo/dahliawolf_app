@@ -1,7 +1,7 @@
 function shop(user) {
     this.$shop = $('#dahliawolfShop');
     this.products = [];
-    this.shopOwner = user ? user : null;
+    this.shopOwner = (user ? user : {});
 
     $('#sortBar li:not(:first-child)').on('click', this.filterShop);
 
@@ -26,12 +26,17 @@ shop.prototype.loadProducts = function() {
         URL += '&user_id='+this.shopOwner.user_id
     }
 
+    dahliawolf.loader.show();
     $.getJSON(URL, function(data) {
+        console.log(data);
+        dahliawolf.loader.hide();
         if(data.data.get_products.data.length) {
             _this.data = data.data.get_products.data;
             _this.fillShop();
-        } else {
+        } else if(_this.shopOwner.username && _this.shopOwner.username != '') {
             _this.fillEmptyShop();
+        } else {
+            _this.$shop.html('<h2>Our shop is temporarily out of service</h2>');
         }
     });
 }
@@ -59,7 +64,8 @@ shop.prototype.fillShop = function() {
 shop.prototype.filterShop = function() {
     var filter = $(this).data('sort');
 
-    $(this).css('font-weight', 'bolder').siblings().css('font-weight',  'normal')
+    $(this).siblings().removeClass('dahliaPink');
+    $(this).addClass('dahliaPink');
     if(filter === 'Newest') {
         $('.shop-item').removeClass('hidden');
     } else {
@@ -81,14 +87,19 @@ shop.prototype.product = function(item, $shop) {
 }
 
 shop.prototype.product.prototype.addToShop = function() {
-    this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" onclick="document.location=\''+this.data.id_product+'\'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
+    holla.log(this);
+    this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
     //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );
     this.$hover.append( this.getInspirationButton() );
     this.$image_view = $('<div class="product-details"></div>').appendTo(this.$view);
-    this.$inspiration = $('<img class="inspirationImage" src="'+(this.inspirationImage ? this.inspirationImage : '')+'">').appendTo(this.$image_view);
+    this.$inspiration = $('<div class="inspirationImage"><img src="'+this.data.inspiration_image_url+'"></div>');
+    if(this.data.product_images.length > 1) {
+        this.$photoTwo = $('<div class="takeTwo">'+(this.data.status === 'Pre Order' ? '<div class="daysEnd"><span class="dahliaPink">'+getDaysLeft(this.data.commission_from_date)+' Days</span> <span style="font-style: italic; color: #000;"> left to pre-order at 30% OFF</span></div>' : '')+'<img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_images[1].product_file_id+'&width=400"></div>').appendTo(this.$image_view);
+    }
+    this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
-    this.$image_view.append( this.getPrice()).append( this.getImage() );
+    this.$image_view.append( this.getPrice()).append( this.getImage()).wrap( $('<a href="/shop/'+this.data.id_product+'"></a>') );
     this.$inspiration_view.append( this.getInspiration() );
 }
 
@@ -104,11 +115,15 @@ shop.prototype.product.prototype.getStatus = function() {
 }
 
 shop.prototype.product.prototype.getPrice = function() {
-    return '<div class="priceLine"><div class="product-name">'+this.data.product_name+'</div><div class="product-price">$'+Math.floor(this.data.price).toFixed(2)+'</div></div>';
+    var str =  '<ul class="priceBox">' +
+            '<li class="sale-price" style="'+(this.data.status === 'Pre Order' ? '' : 'visibility: hidden;')+'">$'+Math.floor(this.data.sale_price).toFixed(2)+' pre-order price</li>'+
+            '<li style="'+(this.data.status === 'Pre Order' ? 'text-decoration: line-through;' : '')+'">$'+Math.floor(this.data.price).toFixed(2)+'</li>' +
+        '</ul>';
+    return '<div class="priceLine"><div class="product-name"></div>'+str+'</div>';
 }
 
 shop.prototype.product.prototype.getImage = function() {
-    return '<div class="image-frame"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></div>';
+    return '<div class="image-frame"><a href="/shop/'+this.data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></a></div>';
 }
 
 shop.prototype.product.prototype.getInspiration = function() {
@@ -117,7 +132,7 @@ shop.prototype.product.prototype.getInspiration = function() {
     } catch(err) {
         var username = '';
     }
-    return '<ul><li class="avatarFrame avatarShadow"><img src="/avatar.php?user_id='+this.data.user_id+'"></li><li class="inspire"><span class="dahliaPink">Inspired By </span></li><li><a href="/'+username+'">'+username+'</a></li></ul>'
+    return '<div class="prodTitle">'+this.data.product_name+'</div><ul><li class="avatarFrame avatarShadow" style="background-image: url(\''+this.data.avatar+'&width=100\');"></li><li>By <a href="/'+username+'">'+username+'</a></li></ul>'
 }
 
 shop.prototype.product.prototype.getWishlistButton = function() {
@@ -144,7 +159,7 @@ shop.prototype.product.prototype.getBuyButton = function() {
 shop.prototype.product.prototype.getInspirationButton = function() {
     var _this = this;
 
-    this.$inspirationButton = $('<div class="inspirationButton"><span>VIEW INSPIRATION</span></div>').hover(
+    this.$inspirationButton = $('<div class="inspirationButton"><a class="zoombox" data-url="'+this.data.inspiration_image_url+'"><span>VIEW INSPIRATION</span></a></div>').hover(
         function() {
             _this.$inspiration.css('left', 0);
         }, function() {

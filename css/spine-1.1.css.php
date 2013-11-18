@@ -213,7 +213,7 @@ $Spine->output_css();
 
 #modal {
 	position: fixed;
-	z-index: 103;
+    z-index: 100003;
 	width: 100%;
 	height: 100%;
 	top: 0;

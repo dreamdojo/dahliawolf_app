@@ -40,6 +40,10 @@ if (isset($_POST) || isset($_SESSION) || isset($_SESSION['user'])) {
 
                     //
                     $data = api_call('posting', 'add_post_image', $imgParams);
+                    if(isset($_POST['takeMeBack'])) {
+                        redirect($_SERVER['HTTP_REFERER']);
+                        die();
+                    }
                 }
                 else {
                     $data = '{"success": false, "errors" : "IMAGE SIZE IS TOO SMALL"}';

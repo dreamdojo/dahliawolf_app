@@ -85,18 +85,28 @@ setcookie("dahliaUser", serialize($_SESSION['user']), time()+36000000, "/");
 
 // If errors, send user back to login form
 if (!empty($_SESSION['errors'])) {
-	redirect($_SERVER['HTTP_REFERER']);
+    if(empty($_POST['ajax'])) {
+        redirect($_SERVER['HTTP_REFERER']);
+    } else {
+        echo json_encode($_SESSION['errors']);
+        unset($_SESSION['errors']);
+    }
+
 }
 else {
 	// Send to account page
-	if (isset($_SESSION['redirect'])) {
-		$redirect = $_SESSION['redirect'];
-		unset($_SESSION['redirect']);
-		
-		redirect($redirect);
-		die();
-	}
-	redirect('/spine');
+	if(empty($_POST['ajax'])) {
+        if (isset($_SESSION['redirect'])) {
+            $redirect = $_SESSION['redirect'];
+            unset($_SESSION['redirect']);
+
+            redirect($redirect);
+            die();
+        }
+        redirect('/');
+    } else {
+        echo json_encode(array('success', true));
+    }
 }
 die();
 ?>

@@ -22,7 +22,7 @@ a {
 }
 .user-message {
 	width: 575px;
-	margin: 0 auto 10px;
+    margin: 60px auto 15px;
 	padding: 10px 10px 10px 65px;
 	/* 45 x 39 */
 	background-position: 10px center;
@@ -40,6 +40,7 @@ a {
 .user-message p,
 .user-message ul {
 	margin: 10px 0;
+    width: 93%;
 }
 .user-error {
 	background-image: url("../images/ico_alert.png");
@@ -183,7 +184,7 @@ body > .profile {
 .post-details-container {
 	margin-top: 40px;
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 5px;
 }
 .modal .post-details-container {
 	margin-top: 0;

@@ -18,7 +18,8 @@ class Commerce_API {
 		// Initialize
 		$ch = curl_init();
 		$this->set_rest_api_request_options($ch, $api_url, $calls);
-		
+
+
 		// Attempt to connect up to 3 times
 		$attempts = 0;
 		do {

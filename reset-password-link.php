@@ -10,10 +10,9 @@ include "header.php";
     img.bg {
         /* Set rules to fill background */
         min-height: 100%;
-        min-width: 1072px;
+        min-width: 100%;
 
         /* Set up proportionate scaling */
-        width: 100%;
         height: auto;
 
         /* Set up positioning */

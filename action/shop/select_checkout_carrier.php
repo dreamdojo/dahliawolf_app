@@ -17,7 +17,7 @@ else { // Set session delivery id
     if( !isset($_POST['ajax']) ) {
         redirect('/shop/checkout.php?step=confirmation');
     } else {
-        echo $_SESSION['checkout_id_delivery'];
+        echo 'session'.$_SESSION['checkout_id_delivery'];
     }
 	exit();
 }
@@ -26,6 +26,7 @@ if( !isset($_POST['ajax']) ) {
     redirect($_SERVER['HTTP_REFERER']);
     exit();
 } else {
-    echo $_SESSION['checkout_id_delivery'];
+    $_SESSION['checkout_id_delivery'] = $_POST['id_delivery'];
+    echo 'sexxion'.$_SESSION['checkout_id_delivery'];
 }
 ?>

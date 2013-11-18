@@ -24,21 +24,48 @@ if (!empty($_FILES['avatar']['name'])) {
 		rename($uploadResults[0], $destination);
 
 		$avatar_destination = AVATARFILE . $_SESSION['user']['user_id'];
+
+        if(!empty($_GET['ajax'])) {//run if ajax avatar
+
+            $user_params = array(
+                'user_id' => $_SESSION['user']['user_id']
+            );
+
+            if (!empty($avatar_destination)) {
+                $user_params['avatar'] = $avatar_destination;
+            }
+
+            $data = api_call('user', 'update_user', $user_params);
+
+            echo $data;
+            die();
+        }
 	}
+}
+if($_POST['avatarAjax']) {
+    echo "FAIL";
+    die();
+}
+if($_POST['dashboardAvatar']) {
+    redirect($_SERVER['HTTP_REFERER']);
+    die();
 }
 
 // API call
 $calls = array(
 	'save_user' => array(
-		'user_id' => $_SESSION['user']['user_id']
-		, 'first_name' => $_POST['first_name']
-		, 'last_name' => $_POST['last_name']
-		, 'date_of_birth' => !empty($_POST['date_of_birth']) ? date('Y-m-d', strtotime($_POST['date_of_birth'])) : NULL
-		, 'gender' => $_POST['gender']
-		, 'email' => $_POST['email']
-		, 'username' => $_POST['username']
+		'user_id' => $_SESSION['user']['user_id'],
+		'first_name' => $_POST['first_name'],
+		'last_name' => $_POST['last_name'],
+		'date_of_birth' => !empty($_POST['date_of_birth']) ? date('Y-m-d', strtotime($_POST['date_of_birth'])) : NULL,
+		'gender' => $_POST['gender'],
+		'email' => $_POST['email'],
+		'username' => $_POST['username'],
 		//, 'password' => $_POST['user_password']
-		, 'api_website_id' => API_WEBSITE_ID
+        'location' => $_POST['first_name'],
+        'website' => $_POST['website'],
+        'about' => $_POST['about'],
+		'api_website_id' => API_WEBSITE_ID
 	)
 );
 $data = api_request('user', $calls, true);

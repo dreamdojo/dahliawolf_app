@@ -23,18 +23,26 @@ $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['oauth_t
 $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
 
 /* Save the access tokens. Normally these would be saved in a database for future use. */
-$_SESSION['access_token'] = $access_token;
+$_SESSION['twitter']['access_token'] = $access_token;
 
 /* Remove no longer needed request tokens */
 unset($_SESSION['oauth_token']);
 unset($_SESSION['oauth_token_secret']);
 
 /* If HTTP response is 200 continue otherwise send to connect page to retry */
-if (200 == $connection->http_code) {
-  /* The user has been verified and the access tokens can be saved for future use */
-  $_SESSION['status'] = 'verified';
-  header('Location: ./invite?platform=TWITTER');
-} else {
+if (200 == $connection->http_code): ?>
+  <?/* The user has been verified and the access tokens can be saved for future use */
+  $_SESSION['status'] = 'verified';?>
+<? else: ?>
   /* Save HTTP status for error dialog on connnect page.*/
-  header('Location: ./clearsessions.php');
-}
+  <? header('Location: ./clearsessions.php'); ?>
+<? endif ?>
+
+<script>
+    opener.dahliawolf.twitterToken = "<?= $_SESSION['twitter']['access_token'] ?>";
+    if(opener.globalCallback) {
+        opener.globalCallback();
+        opener.globalCallback = false;
+    }
+    close();
+</script>

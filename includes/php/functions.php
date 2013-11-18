@@ -19,8 +19,8 @@ function edit_action_redirect($data, $function_name, $success_msg, $redirect = N
 	die();
 }
 function socialize($str){
-	$hashified = preg_replace('/\#([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/spine?q=$1">#$1</a>',$str);
-    $hashified = preg_replace('/\@([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/profile.php?username=$1">@$1</a>', $hashified);
+	$hashified = preg_replace('/\#([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/vote?q=$1">#$1</a>',$str);
+    $hashified = preg_replace('/\@([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/$1">@$1</a>', $hashified);
 	return $hashified;
 }
 function p_r($array) {
@@ -40,7 +40,12 @@ function unset_action_session_keys() {
 	}
 }
 
+function get_cart_from_db() {
+
+}
+
 function get_cart() {
+
 	$cookie = array();
 	$cart = array();
 	if (!empty($_COOKIE[SITENAME_PREFIX]) && !empty($_COOKIE[SITENAME_PREFIX]['cart'])) {
@@ -56,7 +61,10 @@ function get_cart() {
 			)
 		);
 
+
 		$data = commerce_api_request('cart', $calls, true);
+
+
 		if (!empty($data['errors']) || !empty($data['data']['get_cart_from_cookie']['errors'])) {
 			$_SESSION['errors'] = api_errors_to_array($data, 'get_cart_from_cookie');
 		}
@@ -75,7 +83,10 @@ function get_cart() {
 					, 'id_lang' 	=> LANG_ID
 				)
 			);
+
 			$data = commerce_api_request('cart', $calls, true);
+
+
 			if (!empty($data['errors']) || !empty($data['data']['save_cookie_cart_to_db']['errors'])) {
 				$_SESSION['errors'] = !empty($data['errors']) ? $data['errors'] : $data['data']['save_cookie_cart_to_db']['errors'];
 			}
@@ -105,6 +116,8 @@ function get_cart() {
 			}
 
 			$data = commerce_api_request('cart', $calls, true);
+
+
 			if (!empty($data['errors']) || !empty($data['data']['get_cart_from_db']['errors'])) {
 				$_SESSION['errors'] = api_errors_to_array($data, 'get_cart_from_db');
 			}

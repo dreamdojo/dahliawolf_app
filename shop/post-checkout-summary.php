@@ -20,3 +20,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 <?
 include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 ?>
+<script>
+    sendGeoffMessage('<?= $_SESSION['user']['username'] ?> just placed an order for <?= $_data['order']['products'][0]['product_name'] ?>');
+</script>

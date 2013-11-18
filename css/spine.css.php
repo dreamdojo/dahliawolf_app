@@ -213,6 +213,7 @@ $Spine->output_css();
 	display: none;
 	
 	position: absolute;
+    z-index: 10000000;
 }
 #modal-content {
 	position: absolute;
@@ -220,9 +221,6 @@ $Spine->output_css();
 	top: 0;
 	background: #fff;
 	padding: 25px;
-	-moz-box-shadow:    0 0 5px 0 #ccc;
-	-webkit-box-shadow: 0 0 5px 0 #ccc;
-	box-shadow:         0 0 5px 0 #ccc;
 }
 .modal .close {
 	width: 22px;

@@ -31,14 +31,15 @@ if ($top_dir == 'shop') {
 <meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <meta property="fb:app_id" content="552515884776900" />
 <meta property="og:site_name" content="Dahlia Wolf">
-<meta property="og:description" content="You post fashion images we turn them into clothing." />
+<meta property="og:description" content="Post fashion images. Dahlia Wolf will turn them into clothing." />
 <? if( !empty($_GET['posting_id']) ): ?>
 	<meta property="og:image" content="<?= $_data['post']['image_url'] ?>" />
 <? elseif( !empty($_GET['id_product']) ): ?>
-	<meta property="og:image" content="<?= CDN_IMAGE_SCRIPT . $_data['product']['product']['id_product'] ?>" />
+	<meta property="og:image" content="<?= CDN_IMAGE_SCRIPT . $_data['product']['files'][0]['product_file_id'] ?>" />
 <? else: ?>
-	<meta property="og:image" content="/images/logo_190x190.jpg">
+	<meta property="og:image" content="http://www.dahliawolf.com/images/logo_190x190.jpg">
 <? endif ?>
+<meta property="og:image" content="http://www.dahliawolf.com/images/images/logo_190x190.jpg">
 <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/pin-create-img-picker.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css">
@@ -47,8 +48,8 @@ if ($top_dir == 'shop') {
 <link href="/css/jquery.countdown.css" rel="stylesheet" type="text/css">
 <!--[if IE 7]> <link href="http://www.dahliawolf.com/css/face/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if IE 8]> <link href="http://www.dahliawolf.com/css/face/ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-<link href="/css/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/tipTip.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/spine<?= !empty($_data['spine_version']) ? $_data['spine_version'] : '' ?>.css.php" media="screen" rel="stylesheet" type="text/css">
 <link type="text/css" href="/css/shop.css" rel="stylesheet" media="screen" />
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
@@ -65,14 +66,11 @@ if ($top_dir == 'shop') {
 <script type="text/javascript" src="/js/pin.js"></script>
 <script type="text/javascript" src="/js/pplFinder.js"></script>
 <script type="text/javascript" src="/js/jquery.masonry.min.js"></script>
-<!--<script type="text/javascript" src="/js/jquery.fancybox-1.3.4.pack.js"></script>
-<script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>-->
 <script type="text/javascript" src="/js/jquery.tipTip.minified.js"></script>
 <script type="text/javascript">var base_url = "http://www.dahliawolf.com";</script>
 <script type="text/javascript" src="/js/custom.js"></script>
 <script type="text/javascript" src="/js/postbar.js"></script>
 <script src="/js/jquery.form.js"></script>
-<!--<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>-->
 <link rel="stylesheet" type="text/css" href="/css/facebook-style.css">
 <script src="/js/underscore-min.js" type="text/javascript"></script>
 <script src="/js/functions.js" type="text/javascript"></script>
@@ -87,16 +85,17 @@ if ($top_dir == 'shop') {
 <script src="/js/userList.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>
+<script src="/js/vote.js" type="text/javascript"></script>
 <script src="/js/jquery.countdown.js" type="text/javascript"></script>
 <script type="text/javascript">
 var theUser = new Object();
 var LOVE_REQUIRED = 1000;
 <? if (IS_LOGGED_IN): ?>
-	var userConfig = <?= json_encode($userConfig) ?>;
-	//console.log(userConfig);
-	<? if(INSTAGRAM_IS_LOGGED_IN): ?>
-		userConfig.instagramToken = '<?= $_SESSION['user']['instagramToken'] ?>';
-	<? endif ?>
+	userConfig = <?= json_encode($userConfig) ?>;
+    userSession = <?= json_encode($_SESSION) ?>;
+    userConfig.instagramToken = <?= ($_SESSION['user']['instagramToken'] ? 'true' : 'false') ?>;
+    userConfig.twitterToken = <?= ($_SESSION['twitter']['access_token']['oauth_token'] ? 'true' : 'false') ?>;
+    userConfig.tumblrToken = <?= ($_SESSION['tumblr']['access_token']['oauth_token'] ? 'true' : 'false') ?>;
     theUser.id = <?= $_SESSION['user']['user_id'] ?>;
 	theUser.username = '<?= $_SESSION['user']['username'] ?>';
 	theUser.friends = <? echo json_encode($friends) ?>;
@@ -107,9 +106,11 @@ var LOVE_REQUIRED = 1000;
 	theUser.username = false;
 	var userConfig = new Object();
 <? endif ?>
-    dahliawolf = new User(<? echo json_encode($userConfig) ?>);
+    dahliawolf = new User(userConfig);
     dahliawolf.setFriends(theUser.friends);
+
 <!-- Start of Woopra Code -->
+
     (function(){
         var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
     })("woopra");

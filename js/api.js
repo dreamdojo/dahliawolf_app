@@ -55,7 +55,7 @@ dahliawolfApi.prototype.getFeedPosts = function(data) {
         }
         if(data.sort == 'hot') {
             params += '&order_by=total_likes';
-            params += '&like_day_threshold=30';
+            params += '&like_day_threshold=7';
         }
     }
     if(theUser.id) {

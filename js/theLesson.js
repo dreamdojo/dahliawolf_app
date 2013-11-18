@@ -12,7 +12,10 @@
 																		*/
 
 var theLesson = new Object();
-theLesson.title = {		'/spine.php' : 'DISCOVER AND VOTE', 
+theLesson.title = {		'/index.php' : 'WELCOME TO DAHLIAWOLF',
+                        '/spine.php' : 'DISCOVER AND VOTE',
+                        '/vote.php' : 'DISCOVER AND VOTE',
+                        '/home.php' : 'WELCOME TO DAHLIAWOLF',
 						'/grid.php' : 'DISCOVER AND VOTE', 
 						'/post.php' : 'POST FASHION INSPIRATIONS', 
 						'/explore.php': 'MEMBER INSPIRED SHOP',
@@ -30,7 +33,10 @@ theLesson.title = {		'/spine.php' : 'DISCOVER AND VOTE',
                         '/invite.php' : 'FIND FRIENDS',
                         '/shop/index.php' : 'SHOP AND ENJOY'
 					};	
-theLesson.content = {	'/spine.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!', 
+theLesson.content = {	'/index.php' : 'You post fashion images. We turn your images into clothing! Dahlia Wolf is a fashion inspiration community where the images you post inspire our newest designs.',
+                        '/home.php' : 'You post fashion images. We turn your images into clothing! Dahlia Wolf is a fashion inspiration community where the images you post inspire our newest designs.',
+                        '/spine.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!',
+                        '/vote.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!',
 						'/grid.php' : 'Show some love for your favorite members inspiration images. <br>The most loved images inspire the clothes we make!', 
 						'/post.php' : 'Share your personal style by posting fashion images. <br>Post images you already have or find new images in our D/W bank.', 
 						'/explore.php': 'Shop the newest member inspired designs. <br>Inspired by you. Voted by you. Produced by Dahlia Wolf',

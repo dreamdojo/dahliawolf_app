@@ -37,7 +37,7 @@ if (empty($data['errors'])) {
     );
 
     $user_bank_images = api_request('posting', 'get_bank_images', $bank_images_params, true);
-    echo "<!-- ".var_export($user_bank_images, true). " -->";
+    //echo "<!-- ".var_export($user_bank_images, true). " -->";
 
     if($user_bank_images && $user_bank_images != null && @count($user_bank_images['data']['get_bank_images']['data']) >= 5 )
     {

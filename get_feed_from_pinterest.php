@@ -24,10 +24,10 @@ if (!empty($pinterest_user))	{
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		$data = curl_exec($ch);
 		curl_close($ch);
-		
+
 		$xml = new SimpleXmlElement($data, LIBXML_NOCDATA);
 		$cnt = count($xml->channel->item);
-		
+
 		for($i=0; $i<$cnt; $i++){
 			$img    = $xml->channel->item[$i]->description;
 			$title  = $xml->channel->item[$i]->title;
