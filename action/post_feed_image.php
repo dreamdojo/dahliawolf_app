@@ -20,7 +20,7 @@ if($user_bank_images && $user_bank_images != null && @count($user_bank_images['d
 {
     //sorry pal no mo images fo u!!!
     echo json_encode( array(
-                        'error' => "Sorry due to high demand we have temporally limited the number of images you can post from the D\W Image Bank.",
+                        'error' => "Sorry due to high demand we have temporally limited the number of images you can post from the D\W Image Bank to 5 per day",
                         'data' => null,
                         'posting_id' => null
     ));
