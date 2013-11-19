@@ -13,6 +13,7 @@ $get_bank_images_calls = array(
         'limit_per_day' => 1
     )
 );
+
 $user_bank_images = api_request('posting', $get_bank_images_calls, true);
 //echo "<!-- ".var_export($user_bank_images, true). " -->";
 
