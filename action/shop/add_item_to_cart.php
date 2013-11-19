@@ -67,13 +67,19 @@ else {
 }
 
 if (!empty($_SESSION['errors'])) {
-	redirect($_SERVER['HTTP_REFERER']);
+	if(!isset($_POST['ajax'])) {
+        redirect($_SERVER['HTTP_REFERER']);
+    } else {
+        echo json_encode($_SESSION['errors']);
+        unset($_SESSION['errors']);
+    }
 }
 else {
 	if( !isset($_POST['ajax']) ) {
         redirect('/shop/cart.php');
     } else {
-        echo 'success';
+        unset($_SESSION['success']);
+        echo json_encode(array('success', $_POST['id_product'], $_POST['quantity']));
     }
 }
 die();

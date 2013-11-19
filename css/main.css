@@ -593,7 +593,7 @@ padding: 20px;}
 .winner-tag{ position: absolute; right: 0px;color: #fff;top: 0px;padding: 5px 15px;background-color: #fd7173;bottom: auto !important;font-size: 20px !important;}
 /*********** THE DROP DOWN CART **************/
 #dahliaCart{position: absolute;top: 45px;right: -30px;width: 270px; border: #ccc thin solid; z-index: 100; background-color: #fff; display: none;}
-#shoppingCart:hover ul{display: block;}
+#shoppingCart:hover ul{display: block !important;}
 #dahliaCart div{float: left;}
 #dahliaCart li:first-child{float: left;}
 #dahliaCart li:first-child img{height: 70px;margin-left: 0px; margin-right: 10px;}

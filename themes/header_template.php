@@ -101,7 +101,7 @@ $(document).ready(function()
         <div id="tourButton"></div>
             <div id="shoppingCart" <?= count($_data['cart']['products']) ? 'style="background-image: url(\'/images/shoppingCart_on.png\');"' : '' ?>>
                 <?php if(count($_data['cart']['products'])): ?>
-                    <a href="/shop/cart"><div class="cartCount"><?= count($_data['cart']['products']) ?></div></a>
+                    <a href="/shop/cart"><div class="cartCount"><?= getTotalProductsInCart($_data['cart']['products']) ?></div></a>
                     <ul id="dahliaCart">
                         <div class="cart_bezier"></div>
                         <?php foreach( $_data['cart']['products'] as $product ): ?>
@@ -110,11 +110,13 @@ $(document).ready(function()
                                 <li style="line-height: 20px;"><?= $product['product_info']['product_name'] ?></li>
                                 <li>$<?= money_format('%i', ($product['product_info']['sale_price'] ? $product['product_info']['sale_price'] : $product['product_info']['price'])) ?></li>
                                 <li><?= $product['attributes'] ?></li>
-                                <li>Quantity 1</li>
+                                <li>Quantity <?= $product['quantity'] ?> </li>
                             </ul>
                         <?php endforeach ?>
                         <a href="/shop/cart"><li class="cta">Edit bag/ Check out</li></a>
                     </ul>
+                <? else: ?>
+                    <a href="/shop/cart"><div class="cartCount"></div></a>
                 <? endif ?>
             </div>
         <div id="searchButton"></div>

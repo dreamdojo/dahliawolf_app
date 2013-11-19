@@ -108,6 +108,7 @@ var LOVE_REQUIRED = 1000;
 <? endif ?>
     dahliawolf = new User(userConfig);
     dahliawolf.setFriends(theUser.friends);
+    dahliawolf.cart.set(<?= json_encode($_data['cart']) ?>);
 
 <!-- Start of Woopra Code -->
 

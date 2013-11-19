@@ -176,7 +176,8 @@
             <div class="timeLeft"><span style="font-weight: 700;"><span id="daysLeft">28</span> Days</span> left to pre-order at 30% off</div>
         <? endif ?>
         <div>
-            <form action="/action/shop/add_item_to_cart.php" method="post">
+            <form id="addItemToCartForm" action="/action/shop/add_item_to_cart.php" method="post">
+                <input type="hidden" name="ajax" value="true">
                 <input type="hidden" name="id_product" value="<?= $_data['product']['product']['id_product'] ?>" >
                 <ul id="shopOptions">
                     <li style="height: 45px;line-height: 45px;">
@@ -225,9 +226,6 @@
     <div style="clear: left;"></div>
 </div>
 <script>
-    console.log(<?= json_encode( $_data['product'] ) ?>);
-
-
     $(function() {
         var data = <?= json_encode( $_data['product'] ) ?>;
         $('#daysLeft').html(getDaysLeft(data.product.commission_from_date));
@@ -260,6 +258,8 @@
                 }
             });
         }
+
+        $('#addItemToCartForm').on('submit', dahliawolf.shop.addProductToCart);
     });
 
     $(document).on('click', '.shop-wishlist-button', function() {

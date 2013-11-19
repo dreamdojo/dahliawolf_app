@@ -6,9 +6,9 @@ function User(userData) {
     }
     this.member = new Member();
     this.post = new Post();
-    this.post = new Post();
     this.share = new Share();
     this.shop = new Shop();
+    this.cart = new Cart();
     this.loader = new this.Loader();
 }
 
@@ -486,12 +486,104 @@ function Shop() {
 Shop.prototype = new Api();
 Shop.prototype.constructor = Shop;
 
+Shop.prototype.getProduct = function(id, callback) {
+    this.apiFunction = 'get_product_details';
+    this.loginRequired = false;
+    this.callback = callback;
+    this.callApi({id_product:id, id_shop:3, id_lang:1})
+}
+
 Shop.prototype.getProducts = function(callback) {
     this.apiFunction = 'get_products';
     this.loginRequired = false;
     this.callback = callback;
     this.callApi({viewer_user_id : dahliawolf.userId, id_shop:3, id_lang:1});
     ///api/commerce/product.json?function=get_products'+(theUser.id ? '&viewer_user_id='+theUser.id : '')+'&use_hmac_check=0&id_shop=3&id_lang=1
+}
+
+Shop.prototype.addProductToCart = function(callback) {
+    if( $('[name="id_product_attribute"]:checked').length ) {
+        _gaq.push(['_trackEvent', 'Cart', 'Item added to cart']);
+        $.post($(this).attr('action'), $(this).serialize(), function(data) {
+            dahliawolf.cart.update();
+            if(typeof callback == 'function') {
+                callback();
+            }
+        });
+    } else {
+        _gaq.push(['_trackEvent', 'Cart', 'Size needed']);
+        alert('Please select a size');
+    }
+    return false;
+}
+
+//************************************************************************************* CART
+
+function Cart() {
+    var that = this;
+
+    $(function() {
+        that.$totalCount = $('.cartCount');
+        that.$cart = $('#dahliaCart');
+        that.$cartContainer = $('#shoppingCart');
+        that.$bezier = $('<div class="cart_bezier"></div>');
+    });
+}
+
+Cart.prototype = {
+    get getTotalProducts() {
+        var that = this;
+        return function() {
+        var retVal = 0;
+        $.each(that.data.products, function(x, prod) {
+            retVal += Number(prod.quantity);
+        });
+        return retVal;
+    }},
+    get getStoreCredits() {return this.data.available_store_credits.total_credits;},
+    get getCartTotal() {return this.data.cart.totals.grand_total;}
+}
+
+Cart.prototype.set = function(data) {
+    this.data = data;
+
+    return this;
+}
+
+Cart.prototype.$setTotal = function() {
+    this.$totalCount.html(this.getTotalProducts);
+    return this;
+}
+
+Cart.prototype.update = function(callback) {
+    var that = this;
+
+    $.getJSON('/action/shop/loadCart', function(data) {
+        that.set(data);
+        that.$setTotal();
+        if(data.products.length == 1) {
+            that.$cartContainer.css('background-image', 'url("/images/shoppingCart_on.png")');
+            that.$cart = $('<ul id="dahliaCart"></ul>').appendTo(that.$cartContainer);
+        }
+        that.$cart.empty().append(that.$bezier.clone());
+        $.each(data.products, function(x, item) {
+            that.$cart.append(that.$getItem(item));
+        });
+        that.$cart.fadeIn(300, function() {
+            setTimeout(function() {
+                that.$cart.fadeOut(200);
+            }, 2000);
+        });
+        if(typeof callback == 'function') {
+            callback();
+        }
+    });
+}
+
+Cart.prototype.$getItem = function(data) {
+    return $('<ul><li><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_info.product_file_id+'&width=80"></li>' +
+        '<li style="line-height: 20px;">Enchanting Velvet Pants</li><li>$'+(Number(data.product_info.on_sale) ? data.product_info.sale_price : data.product_info.price )+'</li>' +
+        '<li>'+data.attributes+'</li><li>Quantity '+data.quantity+'</li></ul>');
 }
 
 //**************************************************************************************** SHARING

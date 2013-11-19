@@ -1,4 +1,12 @@
 <?
+function getTotalProductsInCart($prods) {
+    $retVal = 0;
+    foreach($prods as $prod ) {
+        $retVal += $prod['quantity'];
+    }
+    return $retVal;
+}
+
 function edit_action_redirect($data, $function_name, $success_msg, $redirect = NULL) {
 	// Failed edit
 	if (!empty($data)) {
