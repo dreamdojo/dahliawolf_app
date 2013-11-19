@@ -211,11 +211,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
         }
 
         if(!fail) {
-            console.log('Saving Address');
+            _gaq.push(['_trackEvent', 'Checkout', 'Saving Address']);
             dahliawolfCheckout.saveAddress();
             return false;
         } else {
-            console.log('Check address and FAILED VALIDATION');
             return false;
         }
     }
@@ -250,6 +249,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
     }
 
     dahliaCheckout.prototype.updateShippingOptions = function(options) {
+        _gaq.push(['_trackEvent', 'Checkout', 'Updating shipping options']);
         var $options = $('#shippingOptions');
         $options.empty();
         $options.addClass('fail').append('<option slected="selected">PLEASE SELECT A SHIPPING METHOD</option>');
@@ -296,7 +296,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
     }
 
     $(function() {
-        dahliawolfCheckout = new dahliaCheckout(<?= json_encode($_data['cart']) ?>);
-        console.log(<?= json_encode($_SESSION) ?>);
+        dahliawolfCheckout = new dahliaCheckout(<?= json_encode($_data['cart']) ?>); 
     });
 </script>
