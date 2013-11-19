@@ -163,7 +163,7 @@ if(!IS_LOGGED_IN) {
             <li data-filter="products">Products</li>
         </ul>
         <ul id="postSelector" class="dbposts" style="width: 38%; margin-left: 1%;">
-            <div class="menuTitle">Sort</div>
+            <div class="menuTitle">Active(<?= $_data['user']['posts_active'] ?>)</div>
             <li class="onlyPosts" data-filter="is_active">Active(<?= $_data['user']['posts_active'] ?>)</li>
             <li class="onlyPosts" data-filter="is_expired">Expired(<?= $_data['user']['posts_expired'] ?>)</li>
             <li class="onlyPosts" data-filter="is_winner">Winners(<?= $_data['user']['winner_posts'] ?>)</li>
@@ -171,7 +171,7 @@ if(!IS_LOGGED_IN) {
             <li class="onlyProducts" data-filter="Pre Order">Pre Order</li>
         </ul>
         <ul id="viewSelector" class="dbposts" style="width: 38%;margin-left: 1%;">
-            <div class="menuTitle">View</div>
+            <div class="menuTitle">Loves</div>
             <li class="onlyPosts" data-filter="total_likes">Loves</li>
             <li class="onlyPosts" data-filter="total_views">Views</li>
             <li class="onlyPosts" data-filter="total_shares">Shares</li>
@@ -192,7 +192,13 @@ if(!IS_LOGGED_IN) {
     dashboard.feed = "posts";
     dashboard.$bin = $('#postBin');
     dashboard.isAvailable = true;
+    dashboard.defaultPostFilter = ['Active', 'is_active'];
+    dashboard.defaultPostSorter = ['Loves', 'total_likes'];
+    dashboard.defaultProductFilter = 'Live';
+    dashboard.defaultProductSorter = 'Sales';
     dashboard.mode = 'post';
+    dashboard.filter = 'is_active';
+    dashboard.sorter = 'total_likes';
     dashboard.progressEnum = {'Submitted':1, 'Designed':2, 'Sample Made':3, 'Sample Shipped':4};
 
     dashboard.init = function() {
@@ -223,15 +229,22 @@ if(!IS_LOGGED_IN) {
 
     dashboard.bindFilter = function() {
         $('#typeSelector li').on('click', function() {
+            var _this = dashboard;
             var filter = $(this).data('filter');
             var $menus = $('#filters ul').removeClass().addClass('db'+filter);
-            dashboard.feed = filter;
+            _this.feed = filter;
             $(this).siblings('.menuTitle').html($(this).html());
-            dashboard.resetBin();
-            if(dashboard.feed === 'posts') {
-                dashboard.getPosts();
+            _this.resetBin();
+            if(_this.feed === 'posts') {
+                _this.filter = _this.defaultPostFilter[1];
+                $('#postSelector .menuTitle').html(_this.defaultPostFilter[0]);
+                _this.sorter = _this.defaultPostSorter[1];
+                $('#viewSelector .menuTitle').html(_this.defaultPostSorter[0]);
+                _this.getPosts();
             } else {
-                dashboard.getProducts();
+                $('#postSelector .menuTitle').html(_this.defaultProductFilter);
+                $('#viewSelector .menuTitle').html(_this.defaultProductSorter);
+                _this.getProducts();
             }
         });
 
@@ -373,8 +386,16 @@ if(!IS_LOGGED_IN) {
         }
         $img.appendTo(this.$post);
         $('<li><p>Views..... '+this.data.total_views+'</p><p></p></li>').appendTo(this.$post);
-        $('<li><p>Loves...... '+this.data.total_likes+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(this.getLovers, this));;
-        $('<li><p>Shares.... '+this.data.total_shares+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(dashboard.showShares, this));
+        if(Number(this.data.total_likes)) {
+            $('<li><p>Loves...... '+this.data.total_likes+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(this.getLovers, this));
+        } else {
+            $('<li><p>Loves...... '+this.data.total_likes+'</p><p></p></li>').appendTo(this.$post);
+        }
+        if(Number(this.data.total_shares)) {
+            $('<li><p>Shares.... '+this.data.total_shares+'</p><p>VIEW</p></li>').appendTo(this.$post).on('click', $.proxy(dashboard.showShares, this));
+        } else {
+            $('<li><p>Shares.... '+this.data.total_shares+'</p><p></p></li>').appendTo(this.$post);
+        }
         $('<li><p>Expires... '+this.data.expiration_date+'</p><p></p></li>').appendTo(this.$post);
 
         return this.$post;

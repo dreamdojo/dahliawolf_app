@@ -1,5 +1,5 @@
 <?
-    $pageTitle = "Profile - ".$_GET['username'];
+    $pageTitle =  !empty($_GET['dashboard']) ? 'Dashboard' : 'Profile' ." - ".$_GET['username'];
     include "head.php";
 
     $params = array(
