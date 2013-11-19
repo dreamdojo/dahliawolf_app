@@ -136,11 +136,10 @@
             data = data.data;
             postBank.$bank.css({'background-color': '#ff787d', 'color' : '#fff'});
             postBank.$bankMsg.html('Upload Successful!');
-            sendToAnal({name:'Uploaded Image from other browser', type:'x-browser'});
             var str = '<div class="postFrame grid" draggable="true" ondragstart="drag(event);"><div class="postButton" style="display: none;">POST</div>';
             str+= '<img src="'+postBank.url+'" style="opacity: 0.6;"><div class="postPostingWrap"><div class="bankPosted">' +
                 '<p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>' +
-                '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+dahliawolf.username+'">profile</a>' +
+                '<div class="bankExplain">Congratulations you have successfully posted a new design inspiration. To see all your posts visit your <a href="/'+dahliawolf.username+'">profile</a>' +
                 '<p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')"><img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a>' +
                 '<a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#">' +
                 '<img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div></div>';
