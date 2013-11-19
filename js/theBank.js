@@ -10,19 +10,6 @@
 (_______)(_______/(_______)|/       |/       |/   \__/(_______/   \_/   
                                                                         
 																		*/
-function new_loginscreen(){
-    this.analArray = ['_trackEvent', 'Nag', 'Join'];
-	$('#mask').fadeIn(200, function(){
-		$('#sign-up-modal').show();
-		$('#mask').bind('click', close_new_loginscreen);
-	});
-}
-function close_new_loginscreen(){
-    this.analArray = ['_trackEvent', 'Nag', 'Ignored'];
-	$('#mask').fadeOut(100);
-	$('#sign-up-modal').fadeOut(100);
-	$('#mask').unbind('click');
-}
 
 $('body').on('dragover', function(e){
 	e.preventDefault();

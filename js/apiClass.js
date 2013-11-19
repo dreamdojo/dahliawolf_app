@@ -60,8 +60,8 @@ User.prototype.register = function(e) {
         var result = $.parseJSON(data);
 
         if(result[0] == 'success') {
-            location.reload();
             _gaq.push(['_trackEvent', 'Register', 'Success']);
+            location.reload();
         } else {
             e.data.$errorBox.html('*'+result[0]);
             _gaq.push(['_trackEvent', 'Register', result[0]]);

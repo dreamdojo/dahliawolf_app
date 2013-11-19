@@ -757,14 +757,14 @@ dahliaHeads.prototype.toggleFollow = function() {
     if(this.data.is_followed) {
         this.data.is_followed = false;
         this.followButton.html('Follow').addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
-        api.unfollowUser(this.data.user_id);
+        dahliawolf.member.unfollow(this.data.user_id);
         if(is_cached) {
             dahliaUserCache.users[this.data.user_id].is_followed = false;
         }
     } else {
         this.data.is_followed = true;
         this.followButton.html('Unfollow').removeClass('dahliaHeadFollow').addClass('dahliaHeadUnFollow');
-        api.followUser(this.data.user_id);
+        dahliawolf.member.follow(this.data.user_id);
         if(is_cached) {
             dahliaUserCache.users[this.data.user_id].is_followed = true;
         }

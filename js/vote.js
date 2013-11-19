@@ -11,7 +11,7 @@ function voteFeed(config) {
     this.$gridButton = $('#selectGrid');
     this.isApiAvailable = true;
     this.setOrder = 'total_likes';
-    this.like_day_threshold = 7;
+    this.like_day_threshold = 1;
 
     this.prepBucket();
     this.getPostsFromApi();
@@ -70,13 +70,22 @@ voteFeed.prototype.bindButtons = function() {
         $('.sort-option').removeClass('filter-select');
         $(this).addClass('filter-select');
         e.preventDefault();
-        if(!that.isOrderSet && that.getOrder !== 'hot') {
-            that.setFilter = null;
-            that.setOrder = 'total_likes';
-            that.like_day_threshold = 7;
-            that.resetFeed();
-            that.getPostsFromApi();
-        }
+        that.setFilter = null;
+        that.setOrder = 'total_likes';
+        that.like_day_threshold = 1;
+        that.resetFeed();
+        that.getPostsFromApi();
+    });
+
+    $('#filterPopular').on('click', function(e) {
+        $('.sort-option').removeClass('filter-select');
+        $(this).addClass('filter-select');
+        e.preventDefault();
+        that.setFilter = null;
+        that.setOrder = 'total_likes';
+        that.like_day_threshold = 30;
+        that.resetFeed();
+        that.getPostsFromApi();
     });
 
     $('#filterFollowing').on('click', function(e) {

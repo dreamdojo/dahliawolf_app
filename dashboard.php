@@ -71,7 +71,7 @@ if(!IS_LOGGED_IN) {
     .menuTitle{border: #c2c2c2 thin solid; background-image: url("/images/dropDownArrow.png"); background-size: auto 47%; background-position: 98%; background-repeat: no-repeat;}
 
     #postBin{width: 100%; padding-bottom: 120px; padding-top: 35px;}
-    .dbPost{height: 400px; width: 32%; background-color: #fff; float: left; margin-top: 10px; overflow: hidden; border: #c2c2c2 thin solid; margin-left: 1%;}
+    .dbPost{height: 400px; width: 32%; background-color: #fff; float: left; margin-top: 10px; overflow: hidden; border: #c2c2c2 thin solid; margin-left: 1%; position: relative;}
     .dbPost:hover a{color: #666;}
     .dbPost li{ width: 90%; margin:0px auto;text-align: left;font-size: 12px;position: relative;height: 22px;line-height: 22px;}
     .dbPost .image{height: 70%; width: 90%;margin: 15px auto; background-size: 100% auto; background-color: #F5F5F5; background-position: 50%;background-repeat: no-repeat; border: none; position: relative;}
@@ -120,6 +120,8 @@ if(!IS_LOGGED_IN) {
     #postLoversBin .lover .FOLLOWING{color: #c2c2c2; border: #c2c2c2 thin solid;}
 
     #postFaves{position: relative;display: inline-block;width: 900px;left: 50%;margin-left: -450px;}
+    #postBin .noProducts{width: 100%;text-align: center;font-size: 15px;margin-top: 25px;}
+    .dbPost #pieStatus{position: absolute;width: 80px; height: 79px;bottom: 9px;right: 10px;}
 
 </style>
 
@@ -191,6 +193,7 @@ if(!IS_LOGGED_IN) {
     dashboard.$bin = $('#postBin');
     dashboard.isAvailable = true;
     dashboard.mode = 'post';
+    dashboard.progressEnum = {'Submitted':1, 'Designed':2, 'Sample Made':3, 'Sample Shipped':4};
 
     dashboard.init = function() {
         dashboard.bindScroll();
@@ -302,27 +305,35 @@ if(!IS_LOGGED_IN) {
             dahliawolf.post.get_by_user(data, function(data) {
                 dashboard.isAvailable = true;
                 dahliawolf.loader.hide();
-                $.each(data.data.get_by_user.posts, function(index, post) {
-                    that.$bin.append(new dashboardPost(post));
-                });
-                that.$bin.append('<div style="clear:left"></div>');
-                that.offset += data.data.get_by_user.posts.length;
+                if(data.data.get_by_user.posts && data.data.get_by_user.posts.length) {
+                    $.each(data.data.get_by_user.posts, function(index, post) {
+                        that.$bin.append(new dashboardPost(post));
+                    });
+                    that.$bin.append('<div style="clear:left"></div>');
+                    that.offset += data.data.get_by_user.posts.length;
+                } else {
+                    that.unbindScroll();
+                }
             });
         }
     }
 
     dashboard.getProducts = function() {
         var that = this;
-        var URL = '/api/commerce/product.json?function=get_products&user_id='+dahliawolf.userId+'&viewer_user_id='+dahliawolf.userId+'&use_hmac_check=0&id_shop=3&id_lang=1';
+        var URL = '/api/commerce/product.json?function=get_products&user_id='+dahliawolf.userId+'&viewer_user_id='+dahliawolf.userId+'&use_hmac_check=0&id_shop=3&id_lang=1&filter_status=0&filter_active=0';
 
         if(dashboard.isAvailable) {
             dashboard.isAvailable = false;
-            holla.log(URL);
             $.getJSON(URL, function(data) {
                 dashboard.isAvailable = true;
-                $.each(data.data.get_products.data, function(index, product) {
-                    that.$bin.append(new dashboardProduct(product, false, index));
-                });
+                if(data.data.get_products.data && data.data.get_products.data.length) {
+                    $.each(data.data.get_products.data, function(index, product) {
+                        that.$bin.append(new dashboardProduct(product, false, index));
+                    });
+                } else {
+                    that.$bin.append('<div class="noProducts">Unfortunately you have not had any products made yet. Keep posting images and share them to get products made.</div>');
+                }
+
                 dashboard.unbindScroll();
             });
         }
@@ -370,7 +381,7 @@ if(!IS_LOGGED_IN) {
     }
 
     function dashboardProduct(data) {
-        console.log(data);
+        console.log(dashboard.progressEnum[data.status]/4);
         this.data = data;
         this.$product = $('<ul class="dbPost"></ul>');
         var $img = $('<div class="image" style="background-image: url(\'http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=300\')"><p class="needs">Status: '+data.status+'</p></div>').appendTo(this.$product);
@@ -380,10 +391,11 @@ if(!IS_LOGGED_IN) {
             $('<li><p>Shares.... 0</p><p>VIEW</p></li>').appendTo(this.$product);
             $('<li><p>Sales..... 0</p><p>VIEW</p></li>').appendTo(this.$product);
         } else {
-            $('<li><p>1. Submitted</p><p></p></li>').appendTo(this.$product);
-            $('<li><p>2. Designed</p><p></p></li>').appendTo(this.$product);
-            $('<li><p>3. Produced</p><p></p></li>').appendTo(this.$product);
-            $('<li><p>4. Shipped</p><p></p></li>').appendTo(this.$product);
+            $('<li><p class="'+(data.status === 'Submitted' ? 'dahliaPink' : '')+'">1. Submitted</p><p></p></li>').appendTo(this.$product);
+            $('<li><p class="'+(data.status === 'Designed' ? 'dahliaPink' : '')+'">2. Designed</p><p></p></li>').appendTo(this.$product);
+            $('<li><p class="'+(data.status === 'Sample Made' ? 'dahliaPink' : '')+'">3. Produced</p><p></p></li>').appendTo(this.$product);
+            $('<li><p class="'+(data.status === 'Sample Shipped' ? 'dahliaPink' : '')+'">4. Shipped</p><p></p></li>').appendTo(this.$product);
+            $('<div id="pieStatus"><img src="/images/prodStatus_'+dashboard.progressEnum[data.status]+'.png"></div>').appendTo(this.$product);
         }
 
         return this.$product;
@@ -393,7 +405,7 @@ if(!IS_LOGGED_IN) {
         $('body').scrollTop(0);
         this.$bin.empty();
         this.offset = 0;
-        dashboard.bindScroll();
+        this.bindScroll();
     }
 
     dashboard.toggleBin = function() {

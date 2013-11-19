@@ -632,6 +632,9 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 
 #loginbox #errorBox{margin-top: 23px;font-size: 15px;color: red;}
 #r_errorBox{margin-top: 45px;font-size: 15px;color: red;}
+.mainCol{width: 1000px; margin: 0px auto;font-size: 14px;}
+.copyrightForm li{margin: 20px 0px;width: 700px;}
+.copyrightForm h2{width: 100%; text-align: center;}
 
 .right-arrow{
 	height: 241px;
@@ -1660,8 +1663,8 @@ width: 174px;
   .StaticForm label {float: left; width: 180px; padding-top: 7px; vertical-align: top;}
   .StaticForm label.radio { padding-top: 24px; } /* If the list item holds a radio, it needs more spacing to be consistent */
   .StaticForm .ButtonLabel {padding-top: 15px;}
-  .StaticForm .Left {width: 150px; float: left;}
-  .StaticForm .Right {float: left;}
+  .StaticForm .Left {}
+  .StaticForm .Right {}
   .StaticForm .Right li {border-width: 0;}
   .StaticForm .Right label {float: none; display: block; width: auto; padding: 4px 0; font-size: 18px; border-width: 0; cursor: pointer;}
   .StaticForm .NoInput {padding: 6px 0;}

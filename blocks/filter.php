@@ -6,6 +6,9 @@
         </span> /
         <span class="">
             <a id="filterTrending" class="sort-option filter-select <?= ($_GET['sort'] == 'hot' ? 'filter-select' : '') ?>" href="/vote?sort=hot"> trending</a>
+        </span> /
+        <span class="">
+            <a id="filterPopular" class="sort-option"> Popular</a>
         </span>
         <? if (IS_LOGGED_IN): ?>
              / <span class="">
