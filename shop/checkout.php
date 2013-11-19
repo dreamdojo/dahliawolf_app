@@ -32,6 +32,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
     #carrierForm{position: relative;}
     #alisBeeper{position: absolute;margin-top: 1px;margin-left: 1px;width: 74%; display: none;}
     #alisBeeper img{width: 100%;}
+    @-moz-document url-prefix() {
+        .shop select{padding-top: 9px;text-indent: 10px;font-size: 15px;}
+    }
 </style>
 
 <div class="shop body checkout">

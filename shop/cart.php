@@ -491,19 +491,16 @@ $is_review = !empty($is_review) ? true : false;
 			</tbody>
 		</table>
 
-		<?
-		if (!$is_review) {
-			?>
-			<p class="button checkout"><a href="<?= empty($_SESSION['user']) ? HEADER_LOCATION_PREFIX . '/login.php' : 'checkout.php'?>">Proceed To Checkout</a></p>
-			<?
-		}
-		else {
-			?>
-			<p class="button checkout" style="<?= $paypal_payment && empty($_data['cart']['cart']['paypal_token']) ? 'display: none;' : '' ?>"><a onclick="$('#place_order_form').submit()">Place Order</a></p>
-            </form>
-			<?
-		}
-		?>
+		<? if (empty($_SESSION['user'])) : ?>
+            <p class="button checkout">
+                <a href="#" onclick="loginscreen('login');return false;">Proceed To Checkout</a>
+            </p>
+        <?  else: ?>
+            <p class="button checkout">
+                <a href="/shop/checkout">Proceed To Checkout</a>
+            </p>
+        <? endif ?>
+        </form>
 	</div>
 </div>
 </div>
