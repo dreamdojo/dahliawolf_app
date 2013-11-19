@@ -28,7 +28,6 @@ shop.prototype.loadProducts = function() {
 
     dahliawolf.loader.show();
     $.getJSON(URL, function(data) {
-        console.log(data);
         dahliawolf.loader.hide();
         if(data.data.get_products.data.length) {
             _this.data = data.data.get_products.data;

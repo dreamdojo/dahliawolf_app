@@ -86,7 +86,7 @@ User.prototype.isFacebookFriend = function(id) {
             }
         });
     } else {
-        holla.log('no friends set');
+        //
     }
     return retVal;
 }
@@ -266,7 +266,6 @@ Api.prototype.callApi = function(data) {
     data['function'] = this.apiFunction;
     var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
 
-    console.log(this.loginRequired +' '+ dahliawolf.isLoggedIn);
     if(this.loginRequired && dahliawolf.isLoggedIn) {
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
@@ -402,7 +401,7 @@ Post.prototype.getLovers = function(id, limit, offset, callback) {
 Post.prototype.shareOnTumbler = function(URL) {
     if(dahliawolf.areYouLoggedIntoTumblr) {
         $.getJSON('/lib/TumblrOAuth/sharePost.php',{url:URL}, function(data) {
-           holla.log(data);
+           //
         });
     } else {
         dahliawolf.logIntoTumblr(function() {
@@ -414,7 +413,7 @@ Post.prototype.shareOnTumbler = function(URL) {
 Post.prototype.shareOnTwitter = function(URL) {
     if(dahliawolf.areYouLoggedIntoTwitter) {
         $.getJSON('/action/sharePostOnTwitter.php',{url:URL}, function(data) {
-            holla.log(data);
+            //
         });
     } else {
         dahliawolf.logIntoTwitter(function() {
@@ -429,7 +428,7 @@ Post.prototype.shareOnFacebook = function(URL) {
             var params = {message : 'Love this on Dahliawolf', url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
-                    holla.log(response);
+                    //
                 }
             });
         } else if (response.status === 'not_authorized') {

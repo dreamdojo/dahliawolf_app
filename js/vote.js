@@ -64,6 +64,7 @@ voteFeed.prototype.bindButtons = function() {
         that.like_day_threshold = null;
         that.resetFeed();
         that.getPostsFromApi();
+        _gaq.push(['_trackEvent', 'Feedfilter', 'Changed to Newest']);
     });
 
     $('#filterTrending').on('click', function(e) {
@@ -75,6 +76,7 @@ voteFeed.prototype.bindButtons = function() {
         that.like_day_threshold = 1;
         that.resetFeed();
         that.getPostsFromApi();
+        _gaq.push(['_trackEvent', 'Feedfilter', 'Changed to Trending']);
     });
 
     $('#filterPopular').on('click', function(e) {
@@ -86,6 +88,7 @@ voteFeed.prototype.bindButtons = function() {
         that.like_day_threshold = 30;
         that.resetFeed();
         that.getPostsFromApi();
+        _gaq.push(['_trackEvent', 'Feedfilter', 'Changed to Popular']);
     });
 
     $('#filterFollowing').on('click', function(e) {
@@ -98,6 +101,7 @@ voteFeed.prototype.bindButtons = function() {
             that.setFilter = 'following';
             that.resetFeed();
             that.getPostsFromApi();
+            _gaq.push(['_trackEvent', 'Feedfilter', 'Changed to Following']);
         }
     });
 
@@ -159,7 +163,6 @@ voteFeed.prototype.get$Post = function(id, index) {
     $post.append($userBar);
 
     var video = ( post.image_url.split('.').pop() === 'mp4' );
-    console.log(video);
 
     if(this.isSpineMode) {
         var img_url = post.image_url+'&height='+postDims[index % 16][1];
@@ -199,7 +202,6 @@ voteFeed.prototype.getPostsFromApi = function() {
         dahliawolf.loader.show();
 
         dahliawolf.post.get(this.url, function(data){
-            holla.log(data);
             var tempArray = new Array();
             that.isApiAvailable = true;
             dahliawolf.loader.hide();
@@ -292,6 +294,7 @@ voteFeed.prototype.prepBucket = function() {
 
 voteFeed.prototype.bindScroll = function() {
     var that = this
+    $(window).unbind('scroll');
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
             that.getPostsFromApi();

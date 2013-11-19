@@ -81,7 +81,7 @@ if ($top_dir == 'shop') {
 <script src="/js/postDetail.js" type="text/javascript"></script>
 <script src="/js/postDetailPosts.js" type="text/javascript"></script>
 <script src="/js/shop.js" type="text/javascript"></script>
-<script src="/js/apiClass.js" type="text/javascript"></script>
+<script src="/js/apiClass.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/css/main.css') ?>" type="text/javascript"></script>
 <script src="/js/userList.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>
