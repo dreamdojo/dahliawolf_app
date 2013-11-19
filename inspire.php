@@ -109,7 +109,9 @@
 
     function drop(ev) {
         ev.preventDefault();
+        _gaq.push(['_trackEvent', 'Inspire', 'Drag and dropped something']);
         if(postBank.$draggedItem) {
+            _gaq.push(['_trackEvent', 'Inspire', 'Dragged from D/W feed']);
             postBank.$draggedItem.find('.postButton').click();
             postBank.$draggedItem = null;
         } else {
@@ -121,6 +123,7 @@
                 postBank.$bank = $('<div class="xDomainStatus"></div>').appendTo(postBank.$bankOptions);
                 postBank.$bankMsg = $('<p>Uploading...</p>').appendTo(postBank.$bank);
                 $.post('/action/uploadPost.php', {image_src : url, description: 'WOW', domain : domain, sourceurl : this.url}, postBank.crossBrowserUpload);
+                _gaq.push(['_trackEvent', 'Inspire', 'Drag and Drop uploaded their own image']);
             } else {
                 new_loginscreen();
             }
@@ -145,7 +148,7 @@
         } else {
             postBank.$bank.css('background-color', '#666666');
             postBank.$bankMsg.html('Upload Failed.'+data.error);
-            sendToAnal({name:'Error:Uploaded Image', type:'x-browser', error:data.error})
+            _gaq.push(['_trackEvent', 'Inspire', 'Error Uploading Image', data.error]);
         }
 
         setTimeout(function() {
@@ -220,6 +223,7 @@
     }
 
     postBank.getImagesFromInstagram = function() {
+        _gaq.push(['_trackEvent', 'Inspire', 'Loaded images from Instagram']);
         if(userConfig.instagramToken) {
             postBank.clearBank();
             $(window).unbind('scroll');
@@ -240,6 +244,7 @@
         }
     }
     postBank.getImagesFromTumblr = function() {
+        _gaq.push(['_trackEvent', 'Inspire', 'Load images from Tumblr']);
         if(dahliawolf.areYouLoggedIntoTumblr) {
             dahliawolf.loader.show();
             $.getJSON('/lib/TumblrOAuth/getPosts', function(data) {
@@ -321,7 +326,7 @@
         if(theUser.id) {
             if(this.data.id) {
                 $.post('/action/post_feed_image.php', { id: this.data.id, description: description}, $.proxy(this.addAfterPostMessage, this) );
-                sendToAnal({name:'Uploaded Image From Feed', type:'dahliawolf feed'});
+                _gaq.push(['_trackEvent', 'Inspire', 'Posted image from D/W Feed']);
             }
         } else {
             new_loginscreen();
@@ -360,6 +365,7 @@
             this.$button.remove();
             this.$post.find('img').css('opacity', .6);
             if(theUser.id) {
+                _gaq.push(['_trackEvent', 'Inspire', 'Posted image from '+this.domain]);
                 $.post('/action/uploadPost.php', {image_src : this.url, description: 'WOW', domain : this.domain, sourceurl : this.url}, $.proxy(this.addAfterPostMessage, this));
             } else {
                 new_loginscreen();

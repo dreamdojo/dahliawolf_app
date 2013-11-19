@@ -49,32 +49,6 @@ function update_user_points(earned_points) {
 		user_points_animation(earned_points);
 	});*/
 }
-function user_points_animation(earned_points) {
-	if (earned_points) {
-		$point_board = $('#point-board');
-		$point_board.addClass('updating');
-		setTimeout(function() {
-			$point_board.removeClass('updating');
-		}, 5000);
-	}
-}
-
-function update_num_post_likes(posting_id, selector) {
-	$.get('/ajax/get-num-post-likes.php', {posting_id: posting_id}, function(data) {
-		if (!data) {
-			data = '0';
-		}
-		$(selector).html(data);
-	});
-}
-function update_num_post_votes(posting_id, vote_period_id, selector) {
-	$.get('/ajax/get-num-post-votes.php', {posting_id: posting_id, vote_period_id: vote_period_id}, function(data) {
-		if (!data) {
-			data = '0';
-		}
-		$(selector).html(data);
-	});
-}
 
 function update_query_string_parameter(uri, key, value) {
 	var re = new RegExp("([?|&])" + key + "=.*?(&|$)", "i");
@@ -596,7 +570,6 @@ userLogin.prototype.loginUser = function(e) {
     var password = formdata[1].value.trim();
 
     $.post( $(e.target).attr('action'), {identity : username, credential : password, ajax : true}, function(data){
-        console.log(data);
         var result = $.parseJSON(data);
         if (!result.success) {
             var str = '';
@@ -792,12 +765,7 @@ $(function(){
 });
 
 function sendToAnal(data){
-    if(data) {
-        try{ if(woopraTracker) woopraTracker.pushEvent(data); }
-        catch(e) { }
-        try{ _gaq.push(['_trackEvent', data.name, 'test']);}
-        catch(e) {}
-    }
+
 }
 
 Array.prototype.remove = function(from, to) {
