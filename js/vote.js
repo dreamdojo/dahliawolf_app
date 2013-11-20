@@ -154,7 +154,7 @@ voteFeed.prototype.get$Post = function(id, index) {
         that.updateLoveStats(post, $heartBG, $heartCount)
     }));
 
-    var $userBar = $('<div class="userBar"><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
+    var $userBar = $('<div class="userBar"><div class="tpVoteCity"></div><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
     var $counts = $('<ul></ul>').appendTo($userBar).on('click', function() {
         $post.find('.voteDot').click();
     });

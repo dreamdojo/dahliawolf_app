@@ -254,13 +254,14 @@ User.prototype.dahliaHead = function($data) {
     dahliawolf.member.get($data.data(), function(data) {
         data = data.data.get_user;
         var $dahliaHead = $('<ul class="dahliaHeadAva avatarShutters"></ul>').css('background-image', 'url("'+data.avatar+'&width=85")');
-        $('<li>Follow</li>').appendTo($dahliaHead).on('click', function(e) {
+        console.log(data);
+        $('<li>'+(Number(data.is_following) ? 'Following' : 'Follow')+'</li>').appendTo($dahliaHead).on('click', function(e) {
             e.preventDefault();
             //do follow ish
         });
         $('<li>Message</li>').appendTo($dahliaHead).on('click', function(e) {
             e.preventDefault();
-            //do msg ish
+            dahliaMessenger.newMessage(data.username);
         });
         $('<li>Profile</li>').appendTo($dahliaHead);
         $data.append($dahliaHead).on('mouseleave', function() {
@@ -269,6 +270,9 @@ User.prototype.dahliaHead = function($data) {
                     $(this).remove();
                 });
             }, 200);
+        });
+        $dahliaHead.animate({bottom: 24},
+            {duration:600, specialEasing:{bottom:'easeOutBounce'}
         });
     });
 }
@@ -323,7 +327,7 @@ Member.prototype.get = function(data, callback) {
     this.loginRequired = false;
     this.analArray = ['_trackEvent','Dahliahead', 'Dahlia head appeared'];
     this.callback = callback;
-    this.callApi({user_id:data.id, username:data.username});
+    this.callApi({user_id:data.id, username:data.username, viewer_user_id:dahliawolf.userId});
     return this;
 }
 
