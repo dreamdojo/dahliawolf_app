@@ -169,7 +169,13 @@
                 this.oReq.addEventListener("load", function() {
                     _gaq.push(['_trackEvent', 'Inspire', 'Upload completed']);
                     that.data = $.parseJSON(this.responseText);
-                    that.$post.css('background-image', 'url("'+that.data.data.new_image_url+'")').removeClass('loading').empty().html(that.$getPost(that.data));
+                    if(that.data.success) {
+                        that.$post.css('background-image', 'url("'+that.data.data.new_image_url+'")').removeClass('loading').empty().html(that.$getPost(that.data));
+                    } else {
+                        that.$post.remove();
+                        alert(that.data.errors);
+                    }
+
                 }, false);
             }
 

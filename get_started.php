@@ -150,7 +150,6 @@ getStarted.prototype.animateLeft = function(pic) {
 getStarted.prototype.moveToStepTwo = function() {
     var _this = this;
 
-    sendToAnal({name:'Step One completed'});
     this.$inspire.fadeOut(200);
     setTimeout(function() {
         _this.animateLeft( _this.$frames.first() );
