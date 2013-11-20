@@ -11,7 +11,7 @@ function voteFeed(config) {
     this.$gridButton = $('#selectGrid');
     this.isApiAvailable = true;
     this.setOrder = 'total_likes';
-    this.like_day_threshold = 1;
+    this.like_day_threshold = (config.search ? 0 : 1);
 
     this.prepBucket();
     this.getPostsFromApi();

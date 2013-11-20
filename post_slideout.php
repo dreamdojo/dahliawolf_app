@@ -1,1 +1,0 @@
-<?php include "themes/post_slideout_template.php" ?>

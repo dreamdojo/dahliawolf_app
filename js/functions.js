@@ -32,6 +32,21 @@ $(function() {
             new dahliawolf.dahliaHead($(this));
         }
     });
+    $('#searchButton').bind('click', function() {
+        $('#searchBar').slideToggle(200);
+        $('#searchBar input').focus();
+        $('#searchBar input').unbind('keydown').bind('keydown', function(e){
+            if(e.keyCode == 13) {
+                var s_key = $(this).val();
+                document.location = '/vote?q='+s_key;
+                $('#searchBar').slideUp(200, function() {
+                    if(!$(this).is(':visible')) {
+                        $('#searchBar input').blur();
+                    }
+                });
+            }
+        });
+    });
 });
 //**********************************************************
 function new_loginscreen(){
