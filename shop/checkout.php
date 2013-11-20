@@ -285,7 +285,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
         $products.appendTo($cart);
 
         var $cartTotals = $('<ul class="cartTotals"></ul>');
-        $cartTotals.append('<li><div class="lefty">Subtotal</div><div class="righty">$'+subtotal.toFixed(2)+'</div></li>');
+        $cartTotals.append('<li><div class="lefty">Subtotal</div><div class="righty">$'+this.data.cart.totals.products.toFixed(2)+'</div></li>');
         $cartTotals.append('<li><div class="lefty">Store Credit Used</div><div class="righty">($'+(this.data.cart_store_credit.amount ? this.data.cart_store_credit.amount : '0.00')+')</div></li>');
         $cartTotals.append('<li><div class="lefty">Tax</div><div class="righty">$'+this.data.cart.totals.product_tax.toFixed(2)+'</div></li>');
         $cartTotals.append('<li><div class="lefty">Shipping </div><div class="righty">$'+Number(this.data.cart.totals.shipping).toFixed(2)+'</div></li>');

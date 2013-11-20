@@ -5,10 +5,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
 ?>
 <div class="shop body checkout">
-	<?
-	include $_SERVER['DOCUMENT_ROOT'] . "/common/cart-summary.php";
-	?>
-
 	<h2>My Orders</h2>
 
 	<?

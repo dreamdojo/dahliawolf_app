@@ -63,7 +63,7 @@
                     <a href="<?= $_data['user']['avatar'] ?>" target="_blank"><div class="userProfileAvatarFrame" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=252');"></div></a>
                 </div>
                 <ul class="userProfileDeetsList">
-                    <li class="profileUsername"><a href="<?= $_data['user']['user_id'] ?>" style="float: left;" rel="message">@<?= $_data['user']['username'] ?></a>
+                    <li class="profileUsername"><a href="@<?= $_data['user']['username'] ?>" style="float: left;" rel="message">@<?= $_data['user']['username'] ?></a>
                         <?= $_data['user']['verified'] && $_data['user']['membership_level'] != 'VIP' ? '<div class="memberStats"><img src="/images/verified.png"><div class="ms_ro" style="background-image: url(\'/images/verified_RO.png\')"></div></div>' : ''  ?>
                         <?= $_data['user']['membership_level'] == 'VIP' ? '<div class="memberStats"><img src="/images/vip.png"><div class="ms_ro" style="background-image: url(\'/images/vip_RO.png\')"></div></div>' : ''  ?>
                         <div style="clear: left;"></div>

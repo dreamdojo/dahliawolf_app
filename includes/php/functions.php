@@ -26,11 +26,13 @@ function edit_action_redirect($data, $function_name, $success_msg, $redirect = N
 	header('location: ' . $redirect);
 	die();
 }
+
 function socialize($str){
-	$hashified = preg_replace('/\#([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/vote?q=$1">#$1</a>',$str);
-    $hashified = preg_replace('/\@([a-z0-9]+)/i', '<a href="http://www.dahliawolf.com/$1">@$1</a>', $hashified);
+	$hashified = preg_replace('/\#([a-z0-9_]+)/i', '<a href="http://www.dahliawolf.com/vote?q=$1">#$1</a>',$str);
+    $hashified = preg_replace('/\@([a-z0-9_]+)/i', '<a href="http://www.dahliawolf.com/$1">@$1</a>', $hashified);
 	return $hashified;
 }
+
 function p_r($array) {
 	echo '<pre style="text-align: left; font: 10px/125% Arial, Helvetica, sans-serif;">';
 	print_r($array);

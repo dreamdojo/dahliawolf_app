@@ -478,6 +478,10 @@ Post.prototype.getTags = function(id, callback) {
     return this;
 }
 
+Post.prototype.addComment = function() {
+
+}
+
 //****************************************************************************************** Product
 function Shop() {
     this.apiApi = 'product.json';
@@ -527,6 +531,7 @@ function Cart() {
         that.$cart = $('#dahliaCart');
         that.$cartContainer = $('#shoppingCart');
         that.$bezier = $('<div class="cart_bezier"></div>');
+        that.$checkoutButton = $('<a href="/shop/cart"><li class="cta">Edit bag/ Check out</li></a>');
     });
 }
 
@@ -569,6 +574,7 @@ Cart.prototype.update = function(callback) {
         $.each(data.products, function(x, item) {
             that.$cart.append(that.$getItem(item));
         });
+        that.$cart.append(that.$checkoutButton.clone());
         that.$cart.fadeIn(300, function() {
             setTimeout(function() {
                 that.$cart.fadeOut(200);

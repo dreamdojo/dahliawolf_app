@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	$('body').addClass('loaded');
-	events();
 
 	if (typeof user_id !== 'undefined') {
 		update_user_points();
@@ -24,6 +23,10 @@ function sendGeoffMessage(msge) {
 $(function() {
     $('#loginForm').on('submit', {$errorBox : $('#errorBox')}, dahliawolf.login);
     $('#registrationForm').on('submit', {$errorBox : $('#r_errorBox')}, dahliawolf.register);
+    $(document).on('click', 'a[rel="message"]', function(e) {
+        e.preventDefault();
+        dahliaMessenger.newMessage( $(this).attr('href') );
+    });
 });
 //**********************************************************
 function validateEmail(email) {
@@ -50,6 +53,12 @@ function update_user_points(earned_points) {
 	});*/
 }
 
+function socialize(str){
+    str = str.replace(/#([A-Za-z0-9_]+)/g, '<a href="/vote?q=$1">#$1</a>');
+    str = str.replace(/@([A-Za-z0-9_]+)/g, '<a href="/$1">@$1</a>');
+    return str;
+}
+
 function update_query_string_parameter(uri, key, value) {
 	var re = new RegExp("([?|&])" + key + "=.*?(&|$)", "i");
 	separator = uri.indexOf('?') !== -1 ? "&" : "?";
@@ -62,145 +71,8 @@ function update_query_string_parameter(uri, key, value) {
 }
 var globalSpineLoad = null;
 var isSpineAvailable = true;
-function events() {
-	$(document).on('click', 'a[rel="scroll"]', function(event) {
-		var offset = $(this).data('offset') || 0;
-		var hash = '#' + this.href.substring(this.href.indexOf('#') + 1);
-		$('html, body').animate({
-			scrollTop: $(hash).offset().top - offset
-		}, 500);
-		return false;
-	});
-
-    $(document).on('click', 'a[rel="message"]', function(e) {
-        e.preventDefault();
-        dahliaMessenger.newMessage( $(this).html() );
-    });
-
-    $(document).on('click', 'a[rel="addWishlist"]', function(event) {
-        event.preventDefault();
-        api.addItemToWishlist({call : this.href, obj : this});
-    });
-
-	// Spine load
-	var $spine = $('.spine');
-	if ($spine.length) {
-		var $window = $(window);
-		var $document = $(document);
-
-		//var url = $spine.data('url') + window.location.search + (window.location.search? '&' : '?') + 'ajax=1';
-		var url = $spine.data('url');
-
-		url += (window.location.search.length ? (url.indexOf('?') == -1 ? '?' : '&') : '') + window.location.search.substring(1);
-		url += (url.indexOf('?') == -1 ? '?' : '&') + 'ajax=1';
-
-		if ($('body').hasClass('mobile')) {
-			url += '&bare=1';
-		}
-
-		$window.scroll(function() {
-			if ($window.scrollTop() == $document.height() - $window.height() && isSpineAvailable) {
-				isSpineAvailable = false;
-				var offset = $('.spine .images > li').length;
-				url = update_query_string_parameter(url, 'offset', offset);
-                sendToAnal({name: 'Scrolling Down', page : 'Spine'});
-                dahliawolf.loader.show();
-				globalSpineLoad = $.get(url, function(data) {
-					globalSpineLoad = null;
-					if (data) {
-                        isSpineAvailable = true;
-                        dahliawolf.loader.hide();
-						$('.spine .images:last').after(data);
-					} else {
-                        $('#theGridLoader').remove();
-                    }
-				});
-			}
-		});
-	}
-
-	// Posting scroll events
-	var $scroll_src = $('#scroll-src');
-	if ($scroll_src.length) {
-		// Dynamic loading
-		$scroll_src.scroll(function() {
-			if ($scroll_src.scrollLeft() == $scroll_src[0].scrollWidth - $scroll_src.width()) {
-				refillImages(current_domain_keyword, current_user_id);
-			}
-		});
-
-		// Hover scroll
-		function hover_scroll_right() {
-			$scroll_src.stop().animate({scrollLeft: '+=250'}, 1000, 'linear', hover_scroll_right);
-		}
-		function hover_scroll_left() {
-			$scroll_src.stop().animate({scrollLeft: '-=250'}, 1000, 'linear', hover_scroll_left);
-		}
-		function hover_scroll_stop() {
-			$scroll_src.stop();
-		}
-
-		$("#scroll-control .left-arrow").hover(function () {
-			hover_scroll_left();
-		},function () {
-			hover_scroll_stop();
-		});
-
-		$("#scroll-control .right-arrow").hover(function () {
-			hover_scroll_right();
-		},function () {
-			hover_scroll_stop();
-		});
-	}
-
-	// Shop image hover
-	$('.product .thumbnails a').on('mouseover', function(event) {
-		$(this).trigger('click');
-	});
-}
 
 function user_events() {
-    //delete post
-    $('a[rel="delete"]').on('click', function(e) {
-        e.preventDefault();
-        id = parseInt($(this).data('id'));
-        api.deletePost(id, function(){
-            $('#post-'+id).css('opacity', .4);
-        });
-    });
-
-	// Follow
-	$('a[rel="follow"]').on('click', function() {
-		var $this = $(this);
-
-		$.get(this.href, function(data) {
-			// Toggle button state
-			var $button = $this.closest('.sysBoardFollowAllButton');
-			$button.hide();
-			$button.next('.sysBoardUnFollowAllButton').show();
-
-			//update_user_points();
-		});
-
-		return false;
-	});
-
-	// Unfollow
-	$('a[rel="unfollow"]').on('click', function() {
-		var $this = $(this);
-
-		$.get(this.href, function(data) {
-			// Toggle button state
-			var $button = $this.closest('.sysBoardUnFollowAllButton');
-			$button.hide();
-			$button.prev('.sysBoardFollowAllButton').show();
-
-			//update_user_points();
-		});
-
-		return false;
-	});
-
     $(document).on('focus', '.socialize',  pplFinder.start);
     //$(document).on('blur', '.socialize',  pplFinder.closeMe);
 
@@ -248,44 +120,6 @@ function user_events() {
 
 					update_user_points();
 					update_num_post_likes(posting_id, '.like-count-' + posting_id);
-				});
-			}
-		}
-
-		return false;
-	});
-
-	// Vote/unvote
-	$(document).on('click', 'a[rel="vote"]', function() {
-		if (this.href) {
-			var $this = $(this);
-			var $container = $this.closest('.vote-prod, ul.posts > li');
-			var posting_id = $container.data('posting_id');
-			var vote_period_id = $container.data('vote_period_id');
-
-			var index = $container.index();
-
-			if (!$container.hasClass('voted')) {
-				$.getJSON(this.href + '&ajax=1', function(data) {
-					$container.addClass('voted');
-
-					update_user_points(data.data.points_earned);
-					update_num_post_votes(posting_id, vote_period_id, '#vote-count-' + posting_id);
-
-					products[index].isliked = true;
-					$('#wild4').attr('src', '/skin/img/wild_like.png');
-				});
-			}
-			else {
-				var undo_href = $this.data('undo_href');
-				$.get(undo_href + '&ajax=1', function(data) {
-					$container.removeClass('voted');
-
-					update_user_points();
-					update_num_post_votes(posting_id, vote_period_id, '#vote-count-' + posting_id);
-
-					products[index].isliked = false;
-					$('#wild4').attr('src', '/skin/img/like.png');
 				});
 			}
 		}
@@ -449,19 +283,6 @@ function user_events() {
 
 }
 
-function ATF(id,nhide,nshow) {
-	$('#'+nhide).addClass('hidden');
-	$.post("http://www.dahliawolf.com/fav.php",{"id":id},function(html) {
-		$('#'+nshow).removeClass('hidden');
-	});
-}
-function RFF(id,nhide,nshow) {
-	$('#'+nhide).addClass('hidden');
-	$.post("http://www.dahliawolf.com/fav2.php",{"id":id},function(html) {
-		$('#'+nshow).removeClass('hidden');
-	});
-}
-
 function facebookFeed(postImage, postLink, caption) {
 	FB.ui(
 	  {
@@ -515,37 +336,31 @@ $(function(){
 	var $modal = $('#modal');
 	var $modal_content = $('#modal-content');
 	$(document).on('click', 'a[rel~="modal"]', function(event) {
-		if (!$('body').hasClass('mobile')) {
-			if(globalSpineLoad){
-				$('#theGridLoader').remove();
-				globalSpineLoad.abort();
-				globalSpineLoad = null;
-				isSpineAvailable = true;
-			}
-			var href = this.href + '&ajax=1';
-			$modal_content.data('href', href);
+        var href = this.href + '&ajax=1';
+        $modal.fadeIn(200, function() {
+            $modal_content.data('href', href);
 
-			$modal_content.load(href, function() {
-				var margin_left = -1 * Math.floor($modal_content.outerWidth() / 2);
+            $modal_content.load(href, function() {
+                var margin_left = -1 * Math.floor($modal_content.outerWidth() / 2);
 
-				$modal.show(0, function() {
-					var margin_top = $(document).scrollTop() + 85;
-					var margin_left = -1 * Math.floor($modal_content.outerWidth() / 2);
-					var modalHeight = $(window).height() - 135;
-					$modal_content.css({
-						'margin-top': margin_top
-						, 'margin-left': margin_left
-						, 'height' : modalHeight
-						, 'overflow' : 'auto'
-					});
+                $modal.show(0, function() {
+                    var margin_top = $(document).scrollTop() + 85;
+                    var margin_left = -1 * Math.floor($modal_content.outerWidth() / 2);
+                    var modalHeight = $(window).height() - 135;
+                    $modal_content.css({
+                        'margin-top': margin_top
+                        , 'margin-left': margin_left
+                        , 'height' : modalHeight
+                        , 'overflow' : 'auto'
+                    });
 
-					$modal.height($('body').height());
-				});
-			});
-
-			return false;
-		}
+                    $modal.height($('body').height());
+                });
+            });
+        });
+        return false;
 	});
+
 	$modal.on('click', function(event) {
 		if ($(event.target).hasClass('modal') || $(event.target).hasClass('close')) {
 			$(this).hide(function() {

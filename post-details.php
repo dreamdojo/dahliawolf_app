@@ -51,13 +51,16 @@
 <? if(!isset( $_GET['ajax'] )): ?>
     <div id="modal-content" style="margin-left: -500px;">
 <? endif ?>
+
 <div class="pdWrap">
 <div class="post-details-container posting-<?= $_data['post']['posting_id'] ?><?= !empty($_data['post']['is_liked']) ? ' liked' : '' ?>" data-posting_id="<?= $_data['post']['posting_id'] ?>">
 
     <div id="postDetailTopRow">
-        <a href="/<?= $_data['post']['username'] ?>">
-            <div class="postDetailAvatarFrame" style='background-image: url("<?= $_data['post']['avatar'] ?>&width=200")'></div>
-        </a>
+        <ul class="postDetailAvatarFrame avatarShutters" style='background-image: url("<?= $_data['post']['avatar'] ?>&width=200")'>
+            <li id="postDetailFollowButton"><?= $_data['post']['is_following'] ? 'Following' : 'Follow' ?></li>
+            <li><a href="@<?= $_data['post']['username'] ?>" rel="message">Message</a></li>
+            <li><a href="/<?= $_data['post']['username'] ?>">Profile</a></li>
+        </ul>
         <ul class="deetsList">
         	<li class="postDetailUsername name"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
             <li class="postDetailUserLocation"><?= $posterData['location'] ?></li>

@@ -38,7 +38,7 @@ postDetail.prototype.bindFrontend = function() {
 	
 	this.followerCount = parseInt( this.smallFollowCount.html() );
 	
-	$('#postDetailFollowButton').on('click', $.proxy(this.toggleFollow, this));
+	$('#postDetailFollowButton').on('click', this.toggleFollow);
 	$('#postDetailLoveButton').on('click', $.proxy(this.toggleLove, this));
 	$('#postCommentButton').on('click', $.proxy(this.publishComment, this));
     $('.shareButton').on('click', this.recordShare);
@@ -56,10 +56,11 @@ postDetail.prototype.publishComment = function() {
 		if(theUser.id){
 			this.commentData.val('');
 			$.post('/action/comment.php', {ajax : true, comment : comment, posting_id : this.data.posting_id}).done(function(data){
-				data = $.parseJSON(data);
+				console.log(socialize(comment));
+                data = $.parseJSON(data);
 				data = data.data;
 				str = '<div id="newComment-'+data.comment_id+'" class="postDetailCommentBox hidden"><div class="postCommentAvatarFrame"><img src="'+userConfig.avatar+'"></div>';
-                str += '<div class="postCommentComment"><p class="name"><a href="/'+theUser.id+'">'+theUser.username+'</a></p><p>'+comment+'</p></div></div>';
+                str += '<div class="postCommentComment"><p class="name"><a href="/'+theUser.id+'">'+theUser.username+'</a></p><p>'+socialize(comment)+'</p></div></div>';
 				$this.commentContainer.prepend(str);
 				$('#newComment-'+data.comment_id).slideDown(400);
 			});
@@ -71,7 +72,6 @@ postDetail.prototype.recordShare = function() {
     var platform = $(this).data('platform');
     var str = '/api/1-0/sharing.json?function=add_share&posting_id='+thePostDetail.data.posting_id+'&type=posting&network='+platform+'&posting_owner_user_id='+thePostDetail.data.user_id+'&sharing_user_id='+dahliawolf.userId+'&use_hmac_check=0';
 
-    sendToAnal({name:'Shared Post on '+platform, id : thePostDetail.data.posting_id});
     $.getJSON(str, function(data) {
        //holla.log(data);
     });
@@ -82,25 +82,16 @@ postDetail.prototype.sendFacebook = function() {
 }
 
 postDetail.prototype.toggleFollow = function() {
-	if(theUser.id) {
-		isFollowing = this.followButton.data('isfollowing');
-		
-		if( isFollowing ) {
-			this.followerCount--;
-			this.followButton.data('isfollowing', false);
-			this.followButton.addClass('notFollowing').removeClass('isFollowing');
-			//$.post('/action/unfollow.php', {user_id : this.data.user_id});
-            dahliawolf.member.unfollow(this.data.user_id);
-			this.followStatus.html('FOLLOW');
+	if(dahliawolf.isLoggedIn) {
+        if( Number(thePostDetail.data.is_following) ) {
+            thePostDetail.data.is_following = 0;
+            dahliawolf.member.unfollow(thePostDetail.data.user_id);
+            $(this).html('Follow');
 		} else {
-			this.followerCount++
-			this.followButton.data('isfollowing', true);
-			this.followButton.removeClass('notFollowing').addClass('isFollowing');
-			//$.post('/action/follow.php', {user_id : this.data.user_id});
-            dahliawolf.member.follow(this.data.user_id)
-			this.followStatus.html('UNFOLLOW');
+            thePostDetail.data.is_following = 1;
+            dahliawolf.member.follow(thePostDetail.data.user_id);
+            $(this).html('Following');
 		}
-		this.smallFollowCount.html(this.followerCount);
 	} else {
 		new_loginscreen();
 	}
