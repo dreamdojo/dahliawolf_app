@@ -1,10 +1,24 @@
 <?php if(!IS_LOGGED_IN): ?>
-<?php include "login_pop.php"; ?>
+    <?php include "login_pop.php"; ?>
 <?php endif ?>
-<?php include "post_slideout.php" ?>
 <?php include "themes/header_template.php" ?>
+
+<form action="action/post_image.php" id="thePinForm" method="POST" class="Form PinForm" enctype="multipart/form-data">
+
+
+<div id="post-me">
+	<div id="u-clsr" onclick="imgUpload.closeMe()">X</div>
+    <div class="uploader-frame">
+    	<img id="user-uploaded-img" />
+    </div>
+
+        <input type="hidden" name="subpin" value="1">
+        <div style="text-align: center;"><textarea name="description" id="comment">#dahliawolf</textarea></div>
+        <div style="text-align: center;padding-bottom: 25px; margin-top: 10px;"><input name="submit" type="image" src="/images/postitbtn2.png" onclick="$(this).hide()" id="image-sub"></div>
+</div>
+</form>
+
 <?
-// Errors
 if (!empty($_SESSION['errors'])): ?>
     <script>
         _gaq.push(['_trackEvent','Errors' , '<?= $_SESSION['errors'][0] ?>']);

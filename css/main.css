@@ -16,7 +16,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}
 iframe{height:0px;}
 
-body { font-family: futura; font-size:10px;color:#666; margin-top: 50px;}
+body { font-family: futura, arial; font-size:10px;color:#666; margin-top: 50px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -109,7 +109,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover #theDropdown{display: block;}
-#userMenu ul{position: absolute;width: 292px; margin-top: 30px; text-align: left; color: #636363; display: none;padding-top: 16px; border-bottom: #292929 thin solid; right: -110.5px;}
+#userMenu ul{position: absolute;width: 292px; margin-top: 30px; text-align: left; color: #636363; display: none;padding-top: 16px; border-bottom: #292929 thin solid; right: -110.5px; z-index: 1000000;}
 #userMenu li{font-size: 13px; font-family: arial; border-top: #292929 1px solid; background-color: #000;color: #B1B1B1;border-left: #292929 thin solid;border-right: #292929 thin solid;width: 290px; height: 30px;line-height: 30px;text-indent: 20px;}
 #userMenu ul .header-bezier{position: absolute; width: 291px; background-image: url("/images/menu-bezier.png"); background-repeat: no-repeat; background-size: 100%;background-position: 0px 0px;height: 15px;top: -7px;margin-top: 9px;}
 #userMenu .top-menu-footer{ background-color: #2e2e2e; color: #b1b1b1; text-indent: 0px; text-align: center; font-size: 11px;}
@@ -229,7 +229,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #voteBucket{width: 1000px; margin: 0px auto;padding-bottom: 200px;}
 #voteBucket .gridMode{max-width: 300px; overflow: hidden; float: left; margin: 16px 2px;}
 #voteBucket .userBar{bottom: 0; top: auto;position: absolute; width: 100%; z-index: 1;}
-#voteBucket .tpVoteCity{position: absolute;left: 0px;top: 0px;background-color: #e9e9e9;height: 100%;width: 100%;z-index: -1;opacity: .8;}
+.tpVoteCity{position: absolute;left: 0px;top: 0px;background-color: #e9e9e9;height: 100%;width: 100%;z-index: -1;opacity: .8;}
 #voteBucket .spineMode{margin: 10px;}
 .spineMode  .post .innerwrap{position: relative;}
 .spineMode  .post .innerwrap img{position: absolute; min-height: 100%; min-width: 100% !important; width: auto !important;}
@@ -407,7 +407,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .post-details-container .note .inputWrap{height: 50px; width: 275px;}
 #tagsSection{height: 220px;overflow: scroll; width: 345px;}
 /********************* SHUTTERs **************************/
-.dahliaHeadAva{position: absolute;height: 85px !important; width: 85px;bottom: -100px; border-radius:45px; overflow: hidden; background-repeat: no-repeat; background-position: 50%; background-size: 100% auto;}
+.dahliaHeadAva{position: absolute;height: 85px !important; width: 85px;left: 5px; bottom: 25px; border-radius:45px; overflow: hidden; background-repeat: no-repeat; background-position: 50%; background-size: 100% auto; border: #fff 2px solid; display: none;}
 
 .avatarShutters li{background-color: #fff;height: 28.5px; width:100%; line-height: 28.5px;color: #666; font-size: 12px; position: relative;transition: left .2s;-webkit-transition: left .2s; cursor: pointer; text-align: center; text-indent: 0px;}
 .avatarShutters li:hover{color: #f03d64;}
@@ -456,8 +456,37 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .postfromanywhere a{text-decoration:underline;}
 .inspire-title{ }
 .inspireError{position: absolute;top: 50%;margin-top: -50px;z-index: 12;color: red;width: 80%;margin-left: 10%;text-align: center;font-size: 14px;}
+
+/***************** INSPIRE ****************************************/
+.bank-frame{position:relative;min-height: 200px;}
+.bankPosted{position: relative;top: 27%;width: 100%;font-family: futura, Arial, Helvetica, sans-serif; margin-left: 12px;}
+.bankInnerPosted{font-size: 40px;margin-bottom: -10px; }
+.bankshare{font-size: 20px;margin-top: 30px;}
+.bankExplain{position: relative;top: 42%;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
+.banklink{ font-size: 16px;margin-top: 10px;}
+.banklink a{color: #fff;background-color: #ff406d;padding: 4px 32px;margin-top: 0px;}
+#thePercentageContainer{position: absolute;height: 100%;top: 0px;background-color: #c2c2c2;left: 0px;width: 100%;}
+#thePercentageBar{position: absolute;height: 100%;background-color: #FA9B9B;width: 100%;top: 0px; width: 0%;}
+#PercentageCounter{position: absolute; width: 100px; left: 50%; margin-left: -50px;font-size: 27px;line-height: 55px;color: #fff; z-index: 1;}
+#PercentageCounter p{margin-bottom: 0px;height: 60px;}
+#closeUpload{position: absolute;top: 7px;background-color: #000;color: #fff;right: 10px;font-size: 20px;border: #fff 3px solid;z-index: 10;padding: 8px 15px;border-radius: 42px;z-index: 1; cursor: pointer;}
+.uploadPreview-frame img{ width:100%;}
+.view-upload-button{float: left;background-color: #ff416d;font-size: 15px;color: #fff;height: 21px;margin-top: -24px;line-height: 20px;padding: 0px 10px;}
+.bar-frame{height: 45px;background-color: #fff;float: left;width: 750px;margin-top: 6px;margin-left: 10px;}
+.gridzy{height: 350px;width: 325px;overflow: hidden;float: left;}
+.gridzy .b-roll-img{min-height: 100%;width: 100%;}
+.gridzy .tag{height: 60px; margin-left: -55px;position: absolute;top: 35px; left: 95%;}
+.first{ margin-top:55px;}
+.toggleViewGrid{ background-image:url(/images/view_toggle.png); background-size:100% 100%;}
+.toggleViewLine{ background-image:url(/images/view_toggle2.png); background-size:100% 100%;}
+#inspireBackButton{ position: absolute;left: 20px;height: 30px;width: 70px;margin-top: -3px;background-image: url(/images/inspireBackButton.png);background-size: 100% 100%;background-repeat: no-repeat; cursor:pointer;}
+#inspireBackButton:hover{ opacity:.7;}
+.bankExplain a{color:#ff406d;}
+.postPostingWrap{position: absolute;width: 100%;text-align: center;top: 25%;}
+#sparticus{ position: fixed; height: 500px; width: 300px;}
+
 /***************** THE OVERLAY ************************************/
-#theOverlay{position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; background-color: #FFF; opacity: .8; display: none;}
+#theOverlay{position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; background-color: #FFF; opacity: .8; display: none; z-index: 100000;}
 
 /****************** LESSONS STEPS **********************************************/
 #postTitleContent{font-family: futura;}

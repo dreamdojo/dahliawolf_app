@@ -34,6 +34,21 @@ $(function() {
     });
 });
 //**********************************************************
+function new_loginscreen(){
+    _gaq.push(['_trackEvent', 'Nag', 'Join']);
+    $('#mask').fadeIn(200, function(){
+        $('#sign-up-modal').show();
+        $('#mask').bind('click', close_new_loginscreen);
+    });
+}
+
+function close_new_loginscreen(){
+    _gaq.push(['_trackEvent', 'Nag', 'Ignored']);
+    $('#mask').fadeOut(100);
+    $('#sign-up-modal').fadeOut(100);
+    $('#mask').unbind('click');
+}
+
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);

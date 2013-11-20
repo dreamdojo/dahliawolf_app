@@ -86,7 +86,6 @@ shop.prototype.product = function(item, $shop) {
 }
 
 shop.prototype.product.prototype.addToShop = function() {
-    holla.log(this);
     this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
     //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );
@@ -178,7 +177,6 @@ shop.prototype.product.prototype.addToWishlist = function() {
         this.$wishlistButton.removeClass('inWishlist').html('Add To Wishlist');
         this.data.wishlist_id = null;
         $.getJSON(URL, function(data) {
-            holla.log(data);
         });
     } else {
         var URL =  '/api/commerce/wishlist.json?function=add_wishlist&user_id='+theUser.id+'&id_product='+this.data.id_product+'&id_shop=3&use_hmac_check=0';
@@ -188,7 +186,6 @@ shop.prototype.product.prototype.addToWishlist = function() {
             if(data.data.add_wishlist.data) {
                 _this.data.wishlist_id = data.data.add_wishlist.data;
             }
-            holla.log(data);
         });
     }
 }

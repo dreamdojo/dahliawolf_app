@@ -73,7 +73,7 @@ if ($top_dir == 'shop') {
 <script src="/js/jquery.form.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/facebook-style.css">
 <script src="/js/underscore-min.js" type="text/javascript"></script>
-<script src="/js/functions.js" type="text/javascript"></script>
+<script src="/js/functions.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/js/functions.js') ?>" type="text/javascript"></script>
 <script src="/js/lazyload.js" type="text/javascript"></script>
 <script src="/js/theLesson.js" type="text/javascript"></script>
 <script src="/js/theGrid.js" type="text/javascript"></script>
@@ -81,7 +81,7 @@ if ($top_dir == 'shop') {
 <script src="/js/postDetail.js" type="text/javascript"></script>
 <script src="/js/postDetailPosts.js" type="text/javascript"></script>
 <script src="/js/shop.js" type="text/javascript"></script>
-<script src="/js/apiClass.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/css/main.css') ?>" type="text/javascript"></script>
+<script src="/js/apiClass.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/js/apiClass.js') ?>" type="text/javascript"></script>
 <script src="/js/userList.js" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>

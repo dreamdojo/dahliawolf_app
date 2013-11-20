@@ -44,7 +44,7 @@ if (IS_LOGGED_IN) {
             $data = '{"error" : "Invalid image."}';
         }
     } else {
-        $data = '{"error" : "Invalid file type."}';
+        $data = '{"error" : "'.$fileParts['extension'].' is invalid file type."}';
     }
     header('Content-Type: application/json');
     echo json_encode($data);

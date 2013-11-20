@@ -19,7 +19,7 @@
     #thePinterestName{height: 75%;margin-top: 2%;margin-left: 2%;width: 75%;font-size: 14px;text-indent: 3px; float:left;}
     #goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
     #bankBucket{width: 100%;max-width: 960px; margin: 0px auto; height: 100%;padding-top: 57px; padding-bottom: 100px;}
-    #bankBucket .postFrame{overflow: hidden; position: relative;}
+    #bankBucket .postFrame{overflow: hidden; position: relative;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
     #bankBucket .postFrame:hover .postButton{display: block;}
     #bankBucket .grid{float: left; width: 300px;height: 300px; margin: 10px;}
     #bankBucket .line{width: 80%; margin: 10px auto;overflow: hidden;margin-bottom: 10px;margin-top: 10px; max-width: 500px;}
@@ -34,6 +34,9 @@
     .xDomainStatus{position: absolute;height: 100%;width: 100%;background-color: #c2c2c2;z-index: 111;top: 0px;left: 0px;}
     .xDomainStatus p{width: 1000px;margin: 0px auto;font-size: 27px;text-align: center;line-height: 60px;}
     #postTitleContent{font-size:15px; line-height: 35px;}
+
+    .postFrame .progressCount{font-size: 20px; color: red;line-height: 300px; text-align: center; width: 100%;}
+    .loading{background-size: 70% auto;}
 </style>
 
 
@@ -42,7 +45,7 @@
         <div class="bankSection">
             <img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
             <form id="postUploadForm" action="/action/post_image.php" method="post" enctype="multipart/form-data">
-                <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="imgUpload.submitImage(this.files[0]);">
+                <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="new postUpload(this.files[0]);">
                 <input type="hidden" name="takeMeBack" value="takemehome">
             </form>
         </div>
@@ -69,25 +72,26 @@
 
 
 <script>
-    postBank = new Object();
-    postBank.$bucket = $('#bankBucket');
-    postBank.$dropBox = $('#dndeezy');
-    postBank.$bankOptions = $('#bankOptions');
-    postBank.posts = [];
-    postBank.offset = 0;
-    postBank.limit = 12;
-    postBank.isRefillAvailable = true;
-    postBank.mode = 'grid';
+    $('body').on('dragover', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+    });
+    $('body').on('dragenter', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    });
 
-    postBank.init = function() {
-        postBank.bindScroll();
-        postBank.getImages();
-        $('#importFromPinterest').on('click', postBank.getImagesFromTumblr);
-        $('#importFromInstagram').on('click', postBank.getImagesFromInstagram);
-        postBank.adjustMargins();
-        $(window).resize(postBank.adjustMargins);
-        $('#viewToggle').on('click', this.toggleMode);
-    }
+    $('body').on('drop', function(e){
+        if(e.originalEvent.dataTransfer.files){
+            if(e.originalEvent.dataTransfer.files.length) {
+                e.preventDefault();
+                e.stopPropagation();
+                new postUpload(e.originalEvent.dataTransfer.files[0]);
+            }
+        } else {
+            alert('Drag and Drop not supported in your browser');
+        }
+    });
 
     function drag(ev)
     {
@@ -129,10 +133,120 @@
             }
         }
     }
+
+    /**************************** UPLOADER *************************/
+    function postUpload(file) {
+        if(dahliawolf.isLoggedIn) {
+            _gaq.push(['_trackEvent', 'Inspire', 'Upload initialized']);
+            var that = this;
+            this.maxSize = 5000000;
+            this.minSize = 1000;
+            this.file = file;
+            this.action = 'action/post_image.php?ajax=true';
+
+            if(!this.validateFile()) {
+                return 0;
+            }
+
+            if($('.inspireMsg').length) {
+                $('.inspireMsg').remove();
+            }
+
+            this.MyForm = new FormData();
+            this.MyForm.append("iurl", file);
+
+            this.oReq = new XMLHttpRequest();
+
+            if(postBank) {
+                this.oReq.upload.addEventListener("loadstart", function() {
+                    _gaq.push(['_trackEvent', 'Inspire', 'Upload Started']);
+                    that.$post = $('<div class="postFrame grid loading" style=\'background-image: url("/images/inspireLoader.gif");\'></div>').prependTo(postBank.$bucket);
+                    that.$progress = $('<div class="progressCount"></div>').appendTo(that.$post);
+                }, false);
+                this.oReq.upload.addEventListener("progress", function(e) {
+                    that.$progress.html(Math.ceil((e.loaded/e.total)*100)+'%');
+                }, false);
+                this.oReq.addEventListener("load", function() {
+                    _gaq.push(['_trackEvent', 'Inspire', 'Upload completed']);
+                    that.data = $.parseJSON(this.responseText);
+                    that.$post.css('background-image', 'url("'+that.data.data.new_image_url+'")').removeClass('loading').empty().html(that.$getPost(that.data));
+                }, false);
+            }
+
+            this.oReq.open("POST", this.getAction);
+            this.oReq.send(this.MyForm);
+        } else {
+            new_loginscreen();
+        }
+    }
+
+    postUpload.prototype = {
+        get getName() {return this.file.name;},
+        get getSize() {return this.file.size;},
+        get getExt() {return this.file.name.split('.').pop().toLowerCase(); },
+        get getAction() {return this.action;}
+    }
+
+    postUpload.prototype.$getPost = function(data) {
+        data = data.data;
+        var $post = $('<div class="tpVoteCity" style="z-index: 0;"></div><div class="postPostingWrap"><div class="bankPosted">' +
+            '<p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>' +
+            '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+dahliawolf.username+'">profile</a>' +
+            '<p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')"><img src="http://www.dahliawolf.com/skin/img/btn/facebook-dahlia-share.png"></a>' +
+            '<a href="#"><img src="http://www.dahliawolf.com/skin/img/btn/twitter-dahlia-share.png"></a> <a href="#">' +
+            '<img src="http://www.dahliawolf.com/skin/img/btn/pinterest-dahlia-share.png"></a></p></div></div>');
+        return $post;
+    }
+
+    postUpload.prototype.validateFile = function() {
+        if(this.getExt !== 'jpg' && this.getExt !== 'gif' && this.getExt !== 'png' && this.getExt !== 'jpeg' ) {
+            alert('.'+ext+' is an invalid File Type');
+            _gaq.push(['_trackEvent', 'Inspire', '.'+this.getExt+' is an invalid File Type']);
+            _gaq.push(['_trackEvent', 'Errors', '.'+this.getExt+' is an invalid File Type']);
+            return false;
+        } else if(this.getSize < this.minSize) {
+            alert('File is too small');
+            _gaq.push(['_trackEvent', 'Inspire', 'File is too small']);
+            _gaq.push(['_trackEvent', 'Errors', 'File is too small']);
+            return false;
+        } else if(this.getSize > this.maxSize) {
+            alert('File is too large');
+            _gaq.push(['_trackEvent', 'Inspire', 'File is too big']);
+            _gaq.push(['_trackEvent', 'Errors', 'File is too big']);
+        }
+        return true;
+    }
+
+    /*********************************** BANK ***********************/
+
+    postBank = new Object();
+    postBank.$bucket = $('#bankBucket');
+    postBank.$dropBox = $('#dndeezy');
+    postBank.$bankOptions = $('#bankOptions');
+    postBank.posts = [];
+    postBank.offset = 0;
+    postBank.limit = 12;
+    postBank.isRefillAvailable = true;
+    postBank.mode = 'grid';
+
+    postBank.init = function() {
+        postBank.bindScroll();
+        postBank.getImages();
+        $('#importFromPinterest').on('click', postBank.getImagesFromTumblr);
+        $('#importFromInstagram').on('click', postBank.getImagesFromInstagram);
+        postBank.adjustMargins();
+        $(window).resize(postBank.adjustMargins);
+        $('#viewToggle').on('click', this.toggleMode);
+    }
+
+
     postBank.crossBrowserUpload = function(data) {
         var data = $.parseJSON(data);
 
         if(!data.error) {
+            if($('.inspireMsg').length) {
+                $('.inspireMsg').remove();
+            }
             data = data.data;
             postBank.$bank.css({'background-color': '#ff787d', 'color' : '#fff'});
             postBank.$bankMsg.html('Upload Successful!');
@@ -199,6 +313,10 @@
         });
     }
 
+    postBank.unbindScroll = function() {
+        $(window).unbind('scroll');
+    }
+
     postBank.getImages = function() {
         var _this = this;
         if(postBank.isRefillAvailable) {
@@ -207,13 +325,13 @@
             api.getBankPosts(this.offset, this.limit, function(data) {
                 dahliawolf.loader.hide()
                 postBank.isRefillAvailable = true;
-                console.log(data);
                 if(data.data.length) {
                     $.each(data.data, function(index, post) {
                         postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
                     });
                 } else if(!$('#bankBucket h2').length) {
-                    $('#bankBucket').append('<h2>Choose from one of the options above and start inspiring new fashions.</h2>');
+                    $('#bankBucket').append('<h2 class="inspireMsg">Choose from one of the options above and start inspiring new fashions.</h2>');
+                    postBank.unbindScroll();
                 }
 
                 postBank.$bucket.append('<div style="clear:left"></div>');
@@ -272,7 +390,6 @@
             $(window).unbind('scroll');
             dahliawolf.loader.show();
             postBank.ajaxCall = $.post('/get_feed_from_pinterest', {pinterest_user : userConfig.pinterest_username }, function(data) {
-                console.log(data);
                 postBank.ajaxCall = null;
                 dahliawolf.loader.hide();
                 if(data.data) {

@@ -10,6 +10,7 @@ function User(userData) {
     this.shop = new Shop();
     this.cart = new Cart();
     this.loader = new this.Loader();
+    this.userStack = [];
 }
 
 User.prototype = {
@@ -251,32 +252,44 @@ User.prototype.uploadAvatar.prototype.closeShop = function() {
 //*********************************************************************************** DAHLIA HEADS
 
 User.prototype.dahliaHead = function($data) {
-    dahliawolf.member.get($data.data(), function(data) {
-        data = data.data.get_user;
-        var $dahliaHead = $('<ul class="dahliaHeadAva avatarShutters"></ul>').css('background-image', 'url("'+data.avatar+'&width=85")');
-        console.log(data);
-        $('<li>'+(Number(data.is_following) ? 'Following' : 'Follow')+'</li>').appendTo($dahliaHead).on('click', function(e) {
-            e.preventDefault();
-            //do follow ish
+    var id = $data.data('id');
+    if(dahliawolf.userStack[id]) {
+        dahliawolf.displayHead($data, dahliawolf.userStack[id]);
+    } else {
+        dahliawolf.member.get($data.data(), function(data) {
+            data = data.data.get_user;
+            dahliawolf.displayHead($data, data);
         });
-        $('<li>Message</li>').appendTo($dahliaHead).on('click', function(e) {
-            e.preventDefault();
-            dahliaMessenger.newMessage(data.username);
-        });
-        $('<li>Profile</li>').appendTo($dahliaHead);
-        $data.append($dahliaHead).on('mouseleave', function() {
-            setTimeout(function() {
-                $dahliaHead.fadeOut(200, function() {
-                    $(this).remove();
-                });
-            }, 200);
-        });
-        $dahliaHead.animate({bottom: 24},
-            {duration:600, specialEasing:{bottom:'easeOutBounce'}
-        });
-    });
+    }
 }
 
+User.prototype.displayHead = function($data, data) {
+    dahliawolf.userStack[data.user_id] = data;
+    var $dahliaHead = $('<ul class="dahliaHeadAva avatarShutters"></ul>').css('background-image', 'url("'+data.avatar+'&width=85")');
+    $('<li>'+(Number(data.is_following) ? 'Following' : 'Follow')+'</li>').appendTo($dahliaHead).on('click', function(e) {
+        e.preventDefault();
+        if(data.is_following) {
+            data.is_following = 0;
+            $(this).html('Follow');
+        } else {
+            data.is_following = 1;
+            $(this).html('Following');
+        }
+    });
+    $('<li>Message</li>').appendTo($dahliaHead).on('click', function(e) {
+        e.preventDefault();
+        dahliaMessenger.newMessage(data.username);
+    });
+    $('<li>Profile</li>').appendTo($dahliaHead);
+    $data.append($dahliaHead).on('mouseleave', function() {
+        setTimeout(function() {
+            $dahliaHead.fadeOut(200, function() {
+                $(this).remove();
+            });
+        }, 200);
+    });
+    $dahliaHead.fadeIn(100);
+}
 
 
 //************************************************************************************ API
