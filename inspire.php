@@ -172,6 +172,8 @@
                     if(that.data.success) {
                         that.$post.css('background-image', 'url("'+that.data.data.new_image_url+'")').removeClass('loading').empty().html(that.$getPost(that.data));
                     } else {
+                        _gaq.push(['_trackEvent', 'Inspire', 'Failed back end validation']);
+                        _gaq.push(['_trackEvent', 'Errors', that.data.errors]);
                         that.$post.remove();
                         alert(that.data.errors);
                     }
