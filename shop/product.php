@@ -228,6 +228,7 @@
 <script>
     $(function() {
         var data = <?= json_encode( $_data['product'] ) ?>;
+        console.log(data);
         $('#daysLeft').html(getDaysLeft(data.product.commission_from_date));
 
         var thumbs = $('#thumbs li');

@@ -248,6 +248,31 @@ User.prototype.uploadAvatar.prototype.closeShop = function() {
         $(this).empty().remove();
     });
 }
+//*********************************************************************************** DAHLIA HEADS
+
+User.prototype.dahliaHead = function($data) {
+    dahliawolf.member.get($data.data(), function(data) {
+        data = data.data.get_user;
+        var $dahliaHead = $('<ul class="dahliaHeadAva avatarShutters"></ul>').css('background-image', 'url("'+data.avatar+'&width=85")');
+        $('<li>Follow</li>').appendTo($dahliaHead).on('click', function(e) {
+            e.preventDefault();
+            //do follow ish
+        });
+        $('<li>Message</li>').appendTo($dahliaHead).on('click', function(e) {
+            e.preventDefault();
+            //do msg ish
+        });
+        $('<li>Profile</li>').appendTo($dahliaHead);
+        $data.append($dahliaHead).on('mouseleave', function() {
+            setTimeout(function() {
+                $dahliaHead.fadeOut(200, function() {
+                    $(this).remove();
+                });
+            }, 200);
+        });
+    });
+}
+
 
 
 //************************************************************************************ API
@@ -291,6 +316,15 @@ Member.prototype.constructor = Member;
 
 function Member() {
     this.apiApi = 'user.json';
+}
+
+Member.prototype.get = function(data, callback) {
+    this.apiFunction = 'get_user';
+    this.loginRequired = false;
+    this.analArray = ['_trackEvent','Dahliahead', 'Dahlia head appeared'];
+    this.callback = callback;
+    this.callApi({user_id:data.id, username:data.username});
+    return this;
 }
 
 Member.prototype.follow = function(id, callback) {

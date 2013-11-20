@@ -27,6 +27,11 @@ $(function() {
         e.preventDefault();
         dahliaMessenger.newMessage( $(this).attr('href') );
     });
+    $(document).on('mouseenter', '.dahliaHead', function() {
+        if(!$(this).find('ul').length) {
+            new dahliawolf.dahliaHead($(this));
+        }
+    });
 });
 //**********************************************************
 function validateEmail(email) {
@@ -489,93 +494,7 @@ userCache.prototype.getUser = function(id) {
     }
 }
 
-function dahliaHeads() {
-    $this = this;
-
-    this.view = $('#dahliaHead');
-    this.avatar = $('#dahliaHeadAvatarSrc');
-    this.followButton = $('#dahliaHeadFollowToggle');
-    this.left = 0;
-    this.top = 0;
-    this.timer = null;
-
-    this.followButton.bind('click', $.proxy(this.toggleFollow, this) );
-
-    $(document).on('mouseenter', '.dahliaHead', function(){
-        $this.clearDahliaTimer();
-        $this.left = $(this).offset().left - ($this.view.width()/2);
-        $this.top = $(this).offset().top - $this.view.height()+10;
-        var id = Number( $(this).data('id') );
-
-        if( id != theUser.id){
-            if( dahliaUserCache.checkForUser(id) ) {
-                $this.showHead({ data : dahliaUserCache.getUser(id) });
-            } else {
-                api.getUserDetails( id, $.proxy($this.showHead, $this) );
-            }
-        }
-    }).on('mouseleave', '.dahliaHead', $.proxy($this.setDahliaTimer, $this) );
-
-    this.view.on('mouseenter', $.proxy($this.clearDahliaTimer, $this) ).on('mouseleave', $.proxy($this.setDahliaTimer, $this) );
-}
-
-dahliaHeads.prototype.setDahliaTimer = function() {
-    var $this = this;
-    this.timer = setTimeout(function(){
-        if( $this.view.is(':visible')) {
-            $this.view.fadeOut(80);
-        }
-    }, 300);
-}
-
-dahliaHeads.prototype.clearDahliaTimer = function() {
-    if(this.timer) {
-        clearTimeout(this.timer);
-        this.timer = null;
-    }
-}
-
-dahliaHeads.prototype.toggleFollow = function() {
-    var is_cached = false;
-
-    if( dahliaUserCache.checkForUser(this.data.user_id) ) {
-        is_cached = true;
-    }
-
-    if(this.data.is_followed) {
-        this.data.is_followed = false;
-        this.followButton.html('Follow').addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
-        dahliawolf.member.unfollow(this.data.user_id);
-        if(is_cached) {
-            dahliaUserCache.users[this.data.user_id].is_followed = false;
-        }
-    } else {
-        this.data.is_followed = true;
-        this.followButton.html('Unfollow').removeClass('dahliaHeadFollow').addClass('dahliaHeadUnFollow');
-        dahliawolf.member.follow(this.data.user_id);
-        if(is_cached) {
-            dahliaUserCache.users[this.data.user_id].is_followed = true;
-        }
-    }
-}
-
-dahliaHeads.prototype.showHead = function(data) {
-    this.data = data.data;
-    this.data.is_followed = Number(this.data.is_followed);
-    dahliaUserCache.addUser(this.data);
-
-    this.avatar.attr({'src' : data.data.avatar+'&width=150', 'onclick' : 'document.location="/'+data.data.username+'";'});
-    this.followButton.html( Number(data.data.is_followed) ? 'Unfollow' : 'Follow');
-    if( this.data.is_followed ){
-       this.followButton.addClass('dahliaHeadUnFollow').removeClass('dahliaHeadFollow');
-    }else {
-        this.followButton.addClass('dahliaHeadFollow').removeClass('dahliaHeadUnFollow');
-    }
-    this.view.css({'left' : this.left, 'top' : this.top}).fadeIn(100);
-}
-
 $(function(){
-    dahliaHead = new dahliaHeads();
     dahliaUserCache = new userCache();
 });
 
