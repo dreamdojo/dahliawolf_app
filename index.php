@@ -88,7 +88,7 @@
     function SetTheater() {
         var $vid  = document.getElementById("dwvideo");
         var op = (1 - ((($('#joinBanner').offset().top - $(window).scrollTop()))/$('#joinBanner').offset().top));
-        $('#movieCurtain').css('opacity', (op - .1));
+        $('#movieCurtain').css('opacity', (op - .4));
         $('#joinBanner').css('opacity', op);
         console.log(op);
         if((1-op) < 0 && $vid.volume > 0) {
