@@ -265,14 +265,17 @@ User.prototype.dahliaHead = function($data) {
 
 User.prototype.displayHead = function($data, data) {
     dahliawolf.userStack[data.user_id] = data;
-    var $dahliaHead = $('<ul class="dahliaHeadAva avatarShutters"></ul>').css('background-image', 'url("'+data.avatar+'&width=85")');
-    $('<li>'+(Number(data.is_following) ? 'Following' : 'Follow')+'</li>').appendTo($dahliaHead).on('click', function(e) {
+    var $dahliaHead = $('<ul class="dahliaHeadAva avatarShutters"></ul>');
+    $('<div class="shutterAvatar"></div>').css('background-image', 'url("'+data.avatar+'&width=85")').appendTo($dahliaHead);
+    $('<li>'+(Number(data.is_followed) ? 'Following' : 'Follow')+'</li>').appendTo($dahliaHead).on('click', function(e) {
         e.preventDefault();
-        if(data.is_following) {
-            data.is_following = 0;
+        if(Number(data.is_followed)) {
+            data.is_followed = 0;
             $(this).html('Follow');
+            dahliawolf.member.unfollow(data.user_id);
         } else {
-            data.is_following = 1;
+            dahliawolf.member.follow(data.user_id);
+            data.is_followed = 1;
             $(this).html('Following');
         }
     });
@@ -288,6 +291,7 @@ User.prototype.displayHead = function($data, data) {
             });
         }, 200);
     });
+    $('<div class="headPadding"></div>').appendTo($data);
     $dahliaHead.fadeIn(100);
 }
 

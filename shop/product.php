@@ -142,28 +142,30 @@
         <? endif ?>
     </div>
     <div class="rightCol">
-        <div id="postShareSection">
+        <div id="postDetailTopRow">
+        <div id="postShareSection" style="width: 100%;">
             <ul class="shareButts">
                 <? $image_url = CDN_IMAGE_SCRIPT . $_data['product']['files'][0]['product_file_id'] . '&width=' . $width . '&height=' . $height; ?>
 
-                <li class="cursor" id="shareFacebook"></li>
+                <li class="cursor" style="width: 40px;" id="shareFacebook"></li>
                 <a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com;media=<?= $image_url ?>" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
-                    <li id="sharePinterest"></li>
+                    <li style="width: 40px;" id="sharePinterest"></li>
                 </a>
                 <a href="http://www.tumblr.com/share/photo?source=<?= rawurlencode( $image_url ) ?>&caption=<?= rawurlencode( "Check this out at #Dahliawolf" )?>&click_thru=<?= rawurlencode( "http://www.dahliawolf.com/shop/".$_data['product']['product']['id_product']) ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                    <li id="shareTumbler"></li>
+                    <li style="width: 40px;" id="shareTumbler"></li>
                 </a>
                 <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&amp;url=http://www.dahliawolf.com/shop/<?= $_data['product']['product']['id_product'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
-                    <li id="shareTwitter"></li>
+                    <li style="width: 40px;" id="shareTwitter"></li>
                 </a>
                 <a href="https://plus.google.com/share?url=http://www.dahliawolf.com/shop/<?= $_data['product']['product']['id_product'] ?>"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
-                    <li id="shareGplus"></li>
+                    <li style="width: 40px;" id="shareGplus"></li>
                 </a>
                 <a href='mailto:?subject=Check out Dahliawolf.com&body=Check this out at http://www.dahliawolf.com/shop/<?= $_data['product']['product']['id_product'] ?>.'>
-                    <li id="shareEmail"></li>
+                    <li style="width: 40px;" id="shareEmail"></li>
                 </a>
             </ul>
             <div style="clear: left;"></div>
+        </div>
         </div>
 
         <ul class="regularPrice">

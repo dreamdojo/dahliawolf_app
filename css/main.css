@@ -407,8 +407,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .post-details-container .note .inputWrap{height: 50px; width: 275px;}
 #tagsSection{height: 220px;overflow: scroll; width: 345px;}
 /********************* SHUTTERs **************************/
-.dahliaHeadAva{position: absolute;height: 85px !important; width: 85px;left: 5px; bottom: 25px; border-radius:45px; overflow: hidden; background-repeat: no-repeat; background-position: 50%; background-size: 100% auto; border: #fff 2px solid; display: none;}
+.dahliaHeadAva{position: absolute;height: 85px !important; width: 85px;left: 5px; bottom: 30px; border-radius:45px; overflow: hidden; border: #fff 2px solid; display: none; z-index: 100;}
 
+.avatarShutters .shutterAvatar{background-repeat: no-repeat; background-position: 50%; background-size: 100% auto; position: absolute; height: 100%; width: 100%;}
 .avatarShutters li{background-color: #fff;height: 28.5px; width:100%; line-height: 28.5px;color: #666; font-size: 12px; position: relative;transition: left .2s;-webkit-transition: left .2s; cursor: pointer; text-align: center; text-indent: 0px;}
 .avatarShutters li:hover{color: #f03d64;}
 .avatarShutters li:nth-child(even){left: 100%;}
@@ -416,6 +417,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .avatarShutters li:first-child{border-bottom: #c2c2c2 thin solid; line-height: 32px;}
 .avatarShutters li:last-child{border-top: #c2c2c2 thin solid;line-height: 21px;}
 .avatarShutters:hover li{left: 0;}
+.headPadding{left: 0px;height: 50px; width: 100px; position: absolute;bottom: 99%; background-color: transparent;border: 0px;z-index: 1;}
 
 /*********************** HEADER ***************************/
 .marginmiddlebutton1{float: left; margin-right: 8px;}
