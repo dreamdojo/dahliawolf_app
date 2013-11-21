@@ -35,8 +35,8 @@
     .xDomainStatus p{width: 1000px;margin: 0px auto;font-size: 27px;text-align: center;line-height: 60px;}
     #postTitleContent{font-size:15px; line-height: 35px;}
 
-    .postFrame .progressCount{font-size: 20px; color: red;line-height: 300px; text-align: center; width: 100%;}
-    .loading{background-size: 70% auto;}
+    .postFrame .progressCount{font-size: 20px; color: red;line-height: 150px; text-align: center; width: 100%;}
+    .loading{background-size: 70% auto !important;}
 </style>
 
 
@@ -167,12 +167,12 @@
                     that.$progress.html(Math.ceil((e.loaded/e.total)*100)+'%');
                 }, false);
                 this.oReq.addEventListener("load", function() {
-                    _gaq.push(['_trackEvent', 'Inspire', 'Upload completed']);
                     that.data = $.parseJSON(this.responseText);
                     if(that.data.success) {
+                        _gaq.push(['_trackEvent', 'Inspire', 'Upload completed successfully']);
                         that.$post.css('background-image', 'url("'+that.data.data.new_image_url+'")').removeClass('loading').empty().html(that.$getPost(that.data));
                     } else {
-                        _gaq.push(['_trackEvent', 'Inspire', 'Failed back end validation']);
+                        _gaq.push(['_trackEvent', 'Inspire', 'Failed back end validation', that.data.errors]);
                         _gaq.push(['_trackEvent', 'Errors', that.data.errors]);
                         that.$post.remove();
                         alert(that.data.errors);

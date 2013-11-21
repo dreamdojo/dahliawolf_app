@@ -267,7 +267,7 @@ User.prototype.displayHead = function($data, data) {
     dahliawolf.userStack[data.user_id] = data;
     var $dahliaHead = $('<ul class="dahliaHeadAva avatarShutters"></ul>');
     $('<div class="shutterAvatar"></div>').css('background-image', 'url("'+data.avatar+'&width=85")').appendTo($dahliaHead);
-    $('<li>'+(Number(data.is_followed) ? 'Following' : 'Follow')+'</li>').appendTo($dahliaHead).on('click', function(e) {
+    $('<li style="border-bottom: #c2c2c2 thin solid">'+(Number(data.is_followed) ? 'Following' : 'Follow')+'</li>').appendTo($dahliaHead).on('click', function(e) {
         e.preventDefault();
         if(Number(data.is_followed)) {
             data.is_followed = 0;
