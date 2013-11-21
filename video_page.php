@@ -5,7 +5,7 @@
     .theBox .header{position: relative;z-index: 1;}
     .strange-clouds{opacity: 0.5;background-color: #000; position:absolute; height:100%; width:100%; top:0px; left:0px;z-index: -1;}
 
-    #slideshow-frame{width: 100%;height: 100%;position: fixed;left: 0px;top: 0px;overflow: hidden; font-family: Futura, Arial, sans-serif}
+    #slideshow-frame{width: 100%;left: 0px;top: 0px;overflow: hidden; font-family: Futura, Arial, sans-serif}
     #slideshow-frame video{position: relative;  }
     .boxCTA{width: 100%; text-align: center;font-size: 24px;padding-bottom: 6%;padding-top: 6%;}
     .nativeBox{width: 93%;display: inline-block;}
@@ -18,7 +18,7 @@
 <body>
 
 <div id="slideshow-frame">
-    <video id="dwvideo" controls style="min-width: 100%; min-height: 100%;" autoplay loop>
+    <video id="dwvideo" style="width:100%;" loop>
         <source src="http://dev.dahliawolf.com/images/video/story.mp4" type="video/mp4">
         <source src="http://dev.dahliawolf.com/images/video/story.ogv" type="video/ogg">
     </video>
@@ -28,36 +28,29 @@
 </html>
 <script>
     $(function(){
-        centerVideo();
+        var $video = $('#slideshow-frame video');
+        var vid  = document.getElementById("dwvideo");
 
-        $('#slideshow-frame video').on('play', centerVideo);
         $(window).resize(centerVideo);
 
         $('#dwvideo').bind('ended', function() {
             //document.location = '/home';
         });
+        vid.addEventListener('progress', function(evt)   { onVideoProgress(evt) }, false);
+        vid.addEventListener('timeupdate', function(evt) { onVideoProgress(evt) }, false);
+        vid.addEventListener('ratechange', function(evt) { resetTickers(evt) }, false);
+
+        addVideoListeners(vid);
+
     });
 
 
     function centerVideo($this) {
         var $video = $('#slideshow-frame video');
 
-        if($video.height() > window.innerHeight){
-            $video.css('top', '-'+(($video.height() - window.innerHeight)/2)+'px');
-        }
-
-        if($video.width() > window.innerWidth) {
-            $video.css('left', '-'+(($video.width() - window.innerWidth)/2)+'px');
-        }
-
-        $video.volume = .25;
-
         var vid  = document.getElementById("dwvideo");
-        vid.addEventListener('progress', function(evt)   { onVideoProgress(evt) }, false);
-        vid.addEventListener('timeupdate', function(evt) { onVideoProgress(evt) }, false);
-        vid.addEventListener('ratechange', function(evt) { resetTickers(evt) }, false);
 
-        //addVideoListeners(vid);
+
 
         var font_size = $video.width()*$video.height()/20000;
         $('#slideshow-frame').css({'font-size': font_size+'px'})
@@ -208,7 +201,10 @@
 
         vid.addEventListener('abort', function(evt) { logEvent(evt,'red'); }, false);
         vid.addEventListener('emptied', function(evt) { logEvent(evt,'red'); }, false);
-        vid.addEventListener('error', function(evt) { logEvent(evt,'red'); }, false);
+        vid.addEventListener('error', function(evt) {
+            vid.currentTime = evt.target.currentTime;
+            vid.play();
+        }, false);
         vid.addEventListener('stalled', function(evt) { logEvent(evt,'red'); }, false);
         vid.addEventListener('suspend', function(evt) { logEvent(evt,'red'); }, false);
         vid.addEventListener('waiting', function(evt) { logEvent(evt,'red'); }, false);
@@ -241,7 +237,7 @@
 
     function logEvent(event, color)
     {
-        console.log(event.type)
+        //console.log(event.type)
     };
 
 </script>
