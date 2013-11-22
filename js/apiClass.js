@@ -546,6 +546,13 @@ Post.prototype.addComment = function() {
 // plaease buliod me
 }
 
+Post.prototype.getComments = function(id, callback) {
+    this.apiFunction = 'get_comments';
+    this.loginRequired = false;
+    this.callback = callback;
+    this.callApi({posting_id:id});
+}
+
 //****************************************************************************************** Product
 function Shop() {
     this.apiApi = 'product.json';
