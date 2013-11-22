@@ -73,7 +73,7 @@ margin-top: -29px;
                         	<img src="/skin/img/signup_title.png" width="288" height="48" />
                             </div>
                             
-                            <div class="fb-butt"><a href="<?= $login_urls['facebook'] ?>"><img src="/skin/img/signinfacebook.png" width="244" height="49" /></a>
+                            <div class="fb-butt"><a class="fbsignup" href="<?= $login_urls['facebook'] ?>"><img src="/skin/img/signinfacebook.png" width="244" height="49" /></a>
                             </div>
                             
                             

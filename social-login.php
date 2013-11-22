@@ -26,7 +26,7 @@ if (!empty($_GET['authen'])) {
 			$_SESSION['guide_vote'] = true;
             header('location: ' . CR . '/mobile/dahliawolf');
 		}
-		header('location: ' . CR . '/get_started');
+		header('location: ' . CR . '/?facebookregistration=true');
 	}
 	// Else regular login
 	else {

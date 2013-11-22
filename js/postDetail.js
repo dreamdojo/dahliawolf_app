@@ -56,7 +56,7 @@ postDetail.prototype.publishComment = function() {
 		if(theUser.id){
 			this.commentData.val('');
 			$.post('/action/comment.php', {ajax : true, comment : comment, posting_id : this.data.posting_id}).done(function(data){
-				console.log(socialize(comment));
+                _gaq.push(['_trackEvent', 'Post', 'Added comment']);
                 data = $.parseJSON(data);
 				data = data.data;
 				str = '<div id="newComment-'+data.comment_id+'" class="postDetailCommentBox hidden"><div class="postCommentAvatarFrame"><img src="'+userConfig.avatar+'"></div>';

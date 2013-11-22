@@ -63,11 +63,13 @@
         SetTheater();
         $(window).scroll(function() {
            SetTheater();
-           if($(this).scrollTop() > $('#movieTheatre').height()) {
-               $head.css('position', 'fixed');
-           } else {
-               $head.css('position', 'relative');
-           }
+            if($(this).scrollTop() > $('#movieTheatre').height()) {
+                $head.css('position', 'fixed');
+                document.getElementById("dwvideo").pause();
+            } else {
+                $head.css('position', 'relative');
+                document.getElementById("dwvideo").play();
+            }
        });
 
        $('.hiw').on('click', function() {

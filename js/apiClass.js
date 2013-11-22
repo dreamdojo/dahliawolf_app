@@ -404,14 +404,23 @@ Post.prototype.unlove = function(id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User unloved a post'];
     this.callback = callback;
-    this.posting_id = id;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
     return this;
+}
+
+Post.prototype.dislike = function(id, callback) {
+    this.apiFunction = 'add_post_dislike';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'Added dislike'];
+    this.callback = callback;
+    this.callApi();
+    this.callApi({user_id: dahliawolf.userId, posting_id : id});
 }
 
 Post.prototype.deleteMe = function(id, callback) {
     this.apiFunction = 'delete';
     this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'Post deleted'];
     this.callApi();
     return this;
 }
@@ -534,7 +543,7 @@ Post.prototype.getTags = function(id, callback) {
 }
 
 Post.prototype.addComment = function() {
-
+// plaease buliod me
 }
 
 //****************************************************************************************** Product

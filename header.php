@@ -1,6 +1,7 @@
 <?php if(!IS_LOGGED_IN): ?>
     <?php include "login_pop.php"; ?>
 <?php endif ?>
+<?php require_once 'blocks/analytics.php'; ?>
 
 <body style="overflow-x: hidden;">
 
