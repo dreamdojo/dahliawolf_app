@@ -23,10 +23,6 @@
     $data = api_call('posting', 'get_post', $params, true);
     $_data['post'] = $data['data'];
 
-    // Likes
-    $data = api_call('posting', 'get_post_likes', $params, true);
-    $_data['post_likes'] = $data['data'];
-
     // Comments
     $data = api_call('comment', 'get_post_comments', $params, true);
     $_data['comments'] = $data['data'];

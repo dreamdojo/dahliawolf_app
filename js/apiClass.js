@@ -382,6 +382,14 @@ Post.prototype.get = function(config, callback) {
     return this;
 }
 
+Post.prototype.getDetails = function(id, callback) {
+    this.apiFunction = 'get_posting';
+    this.loginRequired = false;
+    this.callback = callback;
+    this.callApi({posting_id:id, viewer_user_id:dahliawolf.userId});
+    return this;
+}
+
 Post.prototype.get_by_user = function(config, callback) {
     this.apiFunction = 'get_by_user';
     this.loginRequired = false;

@@ -62,7 +62,7 @@ if (isset($_POST) || isset($_SESSION) || isset($_SESSION['user'])) {
 echo $data;
 
 if( empty($_GET['ajax']) ) {
-	redirect($_SERVER['HTTP_REFERER']);
+    redirect($_SERVER['HTTP_REFERER']);
 }
 die();
 
