@@ -58,7 +58,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .facebook{font-size: 14px;margin-top: 4px; cursor:pointer;}
 
 /*--------------- SORT SECTION ----------------*/
-.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 2px; color: #ACACAC; font-family: futura; text-transform: lowercase;}
+.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 2px; color: #ACACAC; font-family: futura; text-transform: lowercase;text-align: left;}
 #sort-bar{ width:100%;border-bottom: #DBDBDB thin dotted; margin: 0px auto;padding: 3px 0px;font-size: 12px; margin-top: 53px; padding-bottom: 5px;line-height: 25px; }
 .bold{ font-weight:bold !important; }
 .sort-option{ font-weight:normal;color: #ACACAC  }

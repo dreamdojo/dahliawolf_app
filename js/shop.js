@@ -2,12 +2,38 @@ function shop(user) {
     this.$shop = $('#dahliawolfShop');
     this.products = [];
     this.shopOwner = (user ? user : {});
+    this.sort = null;
 
     $('#sortBar li:not(:first-child)').on('click', this.filterShop);
 
     this.loadProducts();
     this.centerShop();
+    this.bindFilters();
     $(window).resize($.proxy(this.centerShop, this));
+}
+
+shop.prototype = {
+    get getUrl() {
+        var str = '/api/commerce/product.json?';
+        str += 'function='+(this.sort ? 'get_category_products&id_category='+this.sort : 'get_products');
+        str += (dahliawolf.isLoggedIn ? '&viewer_user_id='+dahliawolf.userId : '');
+        str +=(this.shopOwner.user_id ? '&user_id='+this.shopOwner.user_id : '');
+        str += '&use_hmac_check=0&id_shop=3&id_lang=1';
+        return str;
+    }
+}
+
+shop.prototype.bindFilters = function() {
+    var that = this;
+    $('#sort-bar a').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        $('.filter-select').removeClass('filter-select');
+        $this.addClass('filter-select');
+        that.sort = $this.data('sort');
+        that.$shop.empty();
+        that.loadProducts();
+    });
 }
 
 shop.prototype.centerShop = function() {
@@ -19,23 +45,21 @@ shop.prototype.centerShop = function() {
 }
 
 shop.prototype.loadProducts = function() {
-    var _this = this
-
-    var URL = '/api/commerce/product.json?function=get_products'+(theUser.id ? '&viewer_user_id='+theUser.id : '')+'&use_hmac_check=0&id_shop=3&id_lang=1';
-    if(this.shopOwner.user_id) {
-        URL += '&user_id='+this.shopOwner.user_id
-    }
+    var that = this
 
     dahliawolf.loader.show();
-    $.getJSON(URL, function(data) {
+    $.getJSON(this.getUrl, function(data) {
         dahliawolf.loader.hide();
-        if(data.data.get_products.data.length) {
-            _this.data = data.data.get_products.data;
-            _this.fillShop();
-        } else if(_this.shopOwner.username && _this.shopOwner.username != '') {
-            _this.fillEmptyShop();
+        if(data.data.get_products && data.data.get_products.data.length) {
+            that.data = data.data.get_products.data;
+            that.fillShop();
+        } else if(data.data.get_category_products && data.data.get_category_products.data.length){
+            that.data = data.data.get_category_products.data;
+            that.fillShop();
+        } else if(that.shopOwner.username && _this.shopOwner.username != '') {
+            that.fillEmptyShop();
         } else {
-            _this.$shop.html('<h2>Our shop is temporarily out of service</h2>');
+            that.$shop.html('<h2>Our shop is temporarily out of service</h2>');
         }
     });
 }
@@ -54,9 +78,8 @@ shop.prototype.fillShop = function() {
     var _this = this;
 
     $.each(this.data, function(i, item) {
-        if(Number(item.active) && !_this.products[item.id_product]) {
-            _this.products[item.id_product] = new _this.product(item, _this.$shop)
-        }
+        console.log(Number(item.active) && !_this.products[item.id_product]);
+        _this.products[item.id_product] = new _this.product(item, _this.$shop)
     });
 }
 
@@ -86,6 +109,7 @@ shop.prototype.product = function(item, $shop) {
 }
 
 shop.prototype.product.prototype.addToShop = function() {
+    console.log(this.data);
     this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
     //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );

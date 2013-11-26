@@ -24,8 +24,14 @@
     $_data['post'] = $data['data'];
 
     // Comments
-    $data = api_call('comment', 'get_post_comments', $params, true);
-    $_data['comments'] = $data['data'];
+    $url = 'http://dev.dahliawolf.com/api/1-0/posting.json?function=get_comments&use_hmac_check=0&posting_id='.$_GET['posting_id'];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
+    $_data['comments'] = $result->data->get_comments;
 	
 	$params = array(
 		'user_id' => $_data['post']['user_id']
@@ -114,14 +120,14 @@
                     <div id="postCommentButton">ADD COMMENT</div>
                 <? endif ?>
                 <div id="commentContainer" style="height: <?= $_data['post']['total_tags'] ? '227px' : '100%'?>;">
-					<? foreach($_data['comments'] as $comment): ?>
-                        <? $hashified = socialize($comment['comment']); ?>
+                    <? foreach($_data['comments'] as $comment): ?>
+                        <? $hashified = socialize($comment->comment); ?>
                         <div class="postDetailCommentBox">
-                            <a href="/<?= $comment['username'] ?>">
-                                <div class="postCommentAvatarFrame" style="background-image: url('<?= $comment['avatar'] ?>&width=75');"></div>
+                            <a href="/<?= $comment->username ?>">
+                                <div class="postCommentAvatarFrame" style="background-image: url('<?= $comment->avatar ?>&width=75');"></div>
                             </a>
                             <div class="postCommentComment">
-                                <p class="name"><a href="/<?= $comment['username'] ?>"><?= $comment['username'] ?></a></p>
+                                <p class="name"><a href="/<?= $comment->username ?>"><?= $comment->username ?></a></p>
                                 <p><?= $hashified ?></p>
                             </div>
                         </div>
@@ -148,7 +154,7 @@
 <script>
 
     $(function() {
-        console.log(<?= json_encode($_data['post']) ?>);
+        console.log(<?= json_encode($_data['comments']) ?>);
         window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
         window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
 

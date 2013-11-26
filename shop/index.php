@@ -10,8 +10,9 @@
         $data = api_call('user', 'get_user', $user_params, true);
         $user = $data['data'];
     }
-    //var_dump($user);
+    include $_SERVER['DOCUMENT_ROOT'] . "/blocks/shopFilter.php";
 ?>
+
 <style>
     #emptyShop li{margin: 15px 1px; float: left;}
     #emptyShop li:hover{opacity: .7;}
@@ -24,19 +25,6 @@
     .takeTwo img{width: 70%; margin-left: 15%;}
     .product-details:hover .takeTwo{left: 0%;}
 </style>
-<!--<a href="/inspire"><img style="text-align: center; margin: 0px auto; width: 80%; max-width: 1200px;" src="/images/COMINGSOON.png"></a>-->
-
-<? if( empty($user['user_id']) ): ?>
-    <div id="sortBar-wrap">
-        <ul id="sortBar">
-            <li>sort products by: </li>
-            <li data-sort="Newest">newest / </li>
-            <!--<li data-sort="Coming Soon">samples / </li>
-            <li data-sort="Live">available / </li>-->
-            <li data-sort="Pre Order" class="dahliaPink">pre-order 30% off</li>
-        </ul>
-    </div>
-<? endif ?>
 
 <? if( !empty($user['username']) ): ?>
     <div id="shopOwnerHeader">
