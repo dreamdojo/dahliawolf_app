@@ -17,10 +17,12 @@ shop.prototype = {
         var str = '/api/commerce/product.json?';
         str += 'function='+(this.sort ? 'get_category_products&id_category='+this.sort : 'get_products');
         str += (dahliawolf.isLoggedIn ? '&viewer_user_id='+dahliawolf.userId : '');
-        str +=(this.shopOwner.user_id ? '&user_id='+this.shopOwner.user_id : '');
+        str += (this.hasShopOwner ? '&user_id='+this.shopOwner.user_id : '');
         str += '&use_hmac_check=0&id_shop=3&id_lang=1';
         return str;
-    }
+    },
+
+    get hasShopOwner() {return (this.shopOwner.user_id ? true : false);}
 }
 
 shop.prototype.bindFilters = function() {
@@ -78,7 +80,6 @@ shop.prototype.fillShop = function() {
     var _this = this;
 
     $.each(this.data, function(i, item) {
-        console.log(Number(item.active) && !_this.products[item.id_product]);
         _this.products[item.id_product] = new _this.product(item, _this.$shop)
     });
 }
@@ -109,13 +110,12 @@ shop.prototype.product = function(item, $shop) {
 }
 
 shop.prototype.product.prototype.addToShop = function() {
-    console.log(this.data);
     this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
     //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );
     this.$hover.append( this.getInspirationButton() );
     this.$image_view = $('<div class="product-details"></div>').appendTo(this.$view);
-    this.$inspiration = $('<div class="inspirationImage"><img src="'+this.data.inspiration_image_url+'"></div>');
+    this.$inspiration = $('<div class="inspirationImage"><img src="'+this.data.inspiration_image_url+'&width=400"></div>');
     if(this.data.product_images.length > 1) {
         this.$photoTwo = $('<div class="takeTwo">'+(this.data.status === 'Pre Order' ? '<div class="daysEnd"><span class="dahliaPink">'+getDaysLeft(this.data.commission_from_date)+' Days</span> <span style="font-style: italic; color: #000;"> left to pre-order at 30% OFF</span></div>' : '')+'<img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_images[1].product_file_id+'&width=400"></div>').appendTo(this.$image_view);
     }
