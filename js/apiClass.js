@@ -9,6 +9,7 @@ function User(userData) {
     this.share = new Share();
     this.shop = new Shop();
     this.cart = new Cart();
+    this.activity = new Activity();
     this.loader = new this.Loader();
     this.userStack = [];
 }
@@ -550,8 +551,13 @@ Post.prototype.getTags = function(id, callback) {
     return this;
 }
 
-Post.prototype.addComment = function() {
-// plaease buliod me
+Post.prototype.addComment = function(id, com, callback) {
+    this.apiFunction = 'add_comment';
+    this.loginRequired = true;
+    this.callback = callback
+    this.analArray = ['_trackEvent', 'Post', 'Comment added'];
+    this.callApi({user_id:dahliawolf.userId, posting_id:id, comment:com});
+    return this;
 }
 
 Post.prototype.getComments = function(id, callback) {
@@ -699,3 +705,21 @@ Share.prototype.get = function(id, type, callback) {
     this.callApi({posting_id : id, user_id : dahliawolf.userId, type : type});
 }
 
+//******************************************************************************************* ACTIVITY
+
+function Activity() {
+    this.apiApi = 'activity_log.json';
+}
+Activity.prototype = new Api();
+Activity.prototype.constructor = Activity;
+
+Activity.prototype.getNew = function() {
+
+}
+
+Activity.prototype.getCategory = function(t, callback) {
+    this.apiFunction = 'get_by_type';
+    this.loginRequired = true;
+    this.callback = callback;
+    this.callApi({type:t, user_id:dahliawolf.userId})
+}

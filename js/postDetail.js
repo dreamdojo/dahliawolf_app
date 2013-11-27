@@ -50,19 +50,16 @@ postDetail.prototype.bindFrontend = function() {
 }
 
 postDetail.prototype.publishComment = function() {
-	comment = this.commentData.val().trim();
-	$this = this;
+	var comment = this.commentData.val().trim();
+	var that = this;
 	if(comment && comment != '' && comment != ' ') {
-		if(theUser.id){
+		if(dahliawolf.isLoggedIn){
 			this.commentData.val('');
-			$.post('/action/comment.php', {ajax : true, comment : comment, posting_id : this.data.posting_id}).done(function(data){
-                _gaq.push(['_trackEvent', 'Post', 'Added comment']);
-                data = $.parseJSON(data);
-				data = data.data;
-				str = '<div id="newComment-'+data.comment_id+'" class="postDetailCommentBox hidden"><div class="postCommentAvatarFrame"><img src="'+userConfig.avatar+'"></div>';
-                str += '<div class="postCommentComment"><p class="name"><a href="/'+theUser.id+'">'+theUser.username+'</a></p><p>'+socialize(comment)+'</p></div></div>';
-				$this.commentContainer.prepend(str);
-				$('#newComment-'+data.comment_id).slideDown(400);
+			dahliawolf.post.addComment(this.data.posting_id, comment, function(data) {
+				var $com = $('<div class="postDetailCommentBox hidden"><div class="postCommentAvatarFrame"><img src="'+dahliawolf.avatar+'"></div>' +
+                    '<div class="postCommentComment"><p class="name"><a href="/'+dahliawolf.userId+'">'+dahliawolf.username+'</a></p><p>'+socialize(comment)+'</p></div></div>');
+				that.commentContainer.prepend($com);
+				$com.slideDown(400);
 			});
 		}
 	}
@@ -70,10 +67,8 @@ postDetail.prototype.publishComment = function() {
 
 postDetail.prototype.recordShare = function() {
     var platform = $(this).data('platform');
-    var str = '/api/1-0/sharing.json?function=add_share&posting_id='+thePostDetail.data.posting_id+'&type=posting&network='+platform+'&posting_owner_user_id='+thePostDetail.data.user_id+'&sharing_user_id='+dahliawolf.userId+'&use_hmac_check=0';
+    dahliawolf.share.add(thePostDetail.data.posting_id, platform, 'posting', thePostDetail.data.user_id, function() {
 
-    $.getJSON(str, function(data) {
-       //holla.log(data);
     });
 }
 

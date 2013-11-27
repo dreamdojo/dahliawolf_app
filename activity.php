@@ -28,306 +28,144 @@
 	if( empty($_SESSION['user']['user_id']) ){
 		die();
 	}
-	$params = array(
-			'user_id' => $_SESSION['user']['user_id'],
-		);
-	
-	$calls = array(
-		'get_grouped_log' => array(
-			'user_id' => $_SESSION['user']['user_id']
-			, 'api_website_id' => 2
-		)
-	);
 
-	$g_data = api_request('activity_log', $calls, true);
+    $url = 'http://dev.dahliawolf.com/api/1-0/activity_log.json?&function=get_last_activity&user_id='.$_SESSION['user']['user_id'].'&use_hmac_check=0';
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
 
-    $categories['messages'] = $g_data['data']['get_grouped_log']['data']['messages'];
-    $categories['messages']['title'] = 'Messages';
-    $categories['messages']['img_src'] = 'icon_messages.png';
-    $categories['messages']['statement'] = 'Sent you a message';
+    $result = $result->data->get_last_activity->data;
 
-    $categories['comments'] = $g_data['data']['get_grouped_log']['data']['comments'];
-	$categories['comments']['title'] = 'Comments';
-	$categories['comments']['img_src'] = 'icon_comments.png';
-	$categories['comments']['statement'] = 'SAYS';
-	
-	$categories['likes'] = $g_data['data']['get_grouped_log']['data']['likes'];
-	$categories['likes']['title'] = 'Likes';
-	$categories['likes']['img_src'] = 'icon_likes.png';
-	$categories['likes']['statement'] = "LIKES ONE OF YOUR IMAGES";
-	
-	$categories['followers'] = $g_data['data']['get_grouped_log']['data']['followers'];
-	$categories['followers']['title'] = 'Followers';
-	$categories['followers']['img_src'] = 'icon_followers.png';
-	$categories['followers']['statement'] = 'IS NOW FOLLOWING YOU';
-	
-	$categories['posts'] = $g_data['data']['get_grouped_log']['data']['posts'];
-	$categories['posts']['title'] = 'Posts';
-	$categories['posts']['img_src'] = 'icon_posts.png';
-	$categories['posts']['statement'] = 'ONE OF YOUR POSTS HAS WON!';
-
-	if (IS_LOGGED_IN) {
-		$params['viewer_user_id'] = $_SESSION['user']['user_id'];
-	}
-	$user = api_call('user', 'get_user', $params, true);
-	$user = $user['data'];
-	
-	$menu = array(
-                    array('title' => 'RANK', 'img' => 'icon_rank.png', 'stat' => $user['rank'], 'new' => NULL),
-					array('title' => 'POINTS', 'img' => 'icon_points.png', 'stat' => $user['points'], 'new' => NULL),
-                    array('title' => 'MESSAGES', 'img' => 'icon_messages.png', 'stat' => NULL, 'new' => getNew($categories['messages']) ),
-					array('title' => 'POSTS', 'img' => 'icon_posts.png', 'stat' => NULL, 'new' => getNew($categories['posts']) ), 
-					array('title' => 'COMMENTS', 'img' => 'icon_comments.png', 'stat' => NULL, 'new' => getNew($categories['comments']) ), 
-					array('title' => 'LIKES', 'img' => 'icon_likes.png', 'stat' => NULL, 'new' => getNew($categories['likes']) ), 
-					array('title' => 'FOLLOWERS', 'img' => 'icon_followers.png', 'stat' => NULL, 'new' => getNew($categories['followers']) )
-				);
-	
-	//var_dump($categories['comments']);
-	//var_dump($data);
+    $categories = array();
+    $categories['messages'] = $result->messages;
+    $categories['comments'] = $result->comments;
+	$categories['likes'] = $result->likes;
+	$categories['followers'] = $result->followers;
 ?>
+<style>
+    #messageCol{border-top: #F03E63 30px solid; margin-top: 20px;}
+    #catHeader{width: 100%; display: inline-block; margin: 50px 180px;}
+    #catHeader li{width: 85px;float: left; margin-left:50px; height: 85px;line-height: 200px; text-transform:capitalize; text-align: center;
+        font-size: 16px; position: relative; background-size: auto 100%; background-repeat: no-repeat; background-image: url("/images/activityIcons.png"); cursor: pointer;}
+    #catHeader li .count{position: absolute; right: 0px; top: 0px; border: #fff 3px solid; border-radius: 20px; height: 20px; width: 20px;
+        color: #fff; background-color: #F03E63;font-size: 9px;text-align: center;line-height: 20px;}
+    .activityLog{width: 100%;height: 95px;line-height: 85px;padding-top: 10px;}
+    .activityLog li{float: left;}
+    #messageCol ul:nth-child(even){background-color: #f5f6f8;}
+    #messageCol .message a{margin-left: 10px; color: #F03E63;}
+    #messageCol .date{margin-right: 10px;}
+    #messageCol .postImg{height: 85px;width: 85px;background-position: 50%;background-size: auto 100%;background-repeat: no-repeat;}
+    .act-comments{background-position: -348px;}
+    .comments_on{background-position: -929px;}
+    .act-likes{background-position: -464px;}
+    .likes_on{background-position: -1045px;}
+    .act-messages{background-position: -232px;}
+    .messages_on{background-position: -813px;}
+    .followers_on{background-position: -581px;}
+    #messageCol h2{width: 100%;text-align: center;margin-top: 20px;font-size: 18px;}
+</style>
 
-<div id="theShaft">
-	<div id="leftCol">
-		<? foreach($menu as $item): ?>
-        	<div id="activity-menu-<?= $item['title'] ?>" class="activity-menu cursor <?= ( !is_null($item['new']) ? 'highlightable' : '') ?>" data-title="<?= $item['title'] ?>">
-            	<div class="activity-menu-icon" style="background-image: url(images/<?= $item['img'] ?>)">
-                </div>
-                <div class="activity-menu-title">
-                	<?= $item['title'] ?>
-                    <span><?= $item['stat'] ?></span>
-                    <? if($item['new'] && $item['new'] > 0): ?>
-                    	<div class="new-bubs"><p id="new-count-<?= $item['title'] ?>"><span style="color: #fff !important; padding: 5px;background-color: #f9095e;"><?= $item['new'] ?></span></p></div>
-                    <? endif ?>
-                </div>
-            </div>
-		<? endforeach ?>
+<div class="mainCol">
+     <ul id="catHeader">
+        <? foreach($categories as $title=>$category): ?>
+            <li data-cat="<?= $title ?>" class="act-<?= $title ?>">
+                <div class="count"><?= count($category) ?></div>
+                <?= $title ?>
+            </li>
+        <? endforeach ?>
+     </ul>
+    <div id="messageCol">
     </div>
-    <div id="mainCol">
-    	<? foreach($categories as $category): ?>
-			<div class="notification-title">
-				<img src="/images/<?= $category['img_src'] ?>" />
-				<div class="title-bar-title"><?= $category['title'] ?></div>
-                <div class="clearCategory" data-cat="<?= $category[0]['entity'] ?>" >X</div>
-             </div>
-			<? foreach($category as $message): ?>
-                <?php if($message['read'] == NULL): ?>
-                <? $date = explode(" ", $message['created']) ?>
-
-                <? $img_url = getUrl( (!empty($message['posting_id']) ? $message['posting_id'] : '') ) ?>
-                    <div id="note-<?= $message['activity_log_id'] ?>" data-read="false" data-id="<?= $message['activity_log_id'] ?>" data-cat="<?= strtoupper($category['title']) ?>" class="notification <?= $message['entity'] ?>">
-                        <div class="open-me" data-id="<?= $message['activity_log_id'] ?>" data-cat="<?= strtoupper($category['title']) ?>">
-                            <div id="light-<?= $message['activity_log_id'] ?>" class="notification-light on"></div>
-                            <div class="content"><?= $message['username'].' '.$category['statement'].' '. ( !empty($message['comment']) ? $message['comment'] : (!empty($message['body']) ? $message['body'] : '') ) ?></div>
-                            <div class="note-timestamp"><?= $date[0] ?></div>
-                        </div>
-                        <div class="close-me" data-cat="<?= strtoupper($category['title']) ?>" data-id="<?= $message['activity_log_id'] ?>">X</div>
-                    </div>
-                    <div id="note-detail-<?= $message['activity_log_id'] ?>" class="note-detail <?= $message['entity'] ?>">
-                        <div class="avatar-frame">
-                            <a href="#" rel="message"><img src="http://www.dahliawolf.com/avatar.php?user_id=<?= $message['user_id'] ?>&width=150"></a>
-                        </div>
-                        <div class="note-detail-content">
-                            <div class="note-activity">
-                            	<a href="http://www.dahliawolf.com/<?= $message['username'] ?>"><?= $message['username'] ?></a>
-								<?= $category['statement'].' '.(!empty($message['comment']) ? $message['comment'] : $message['body']) ?></div>
-                        </div>
-                        <?php if($img_url != "" && isset($img_url) ): ?>
-                            <div class="avatar-frame">
-                                <a href="/post/<?= $message['posting_id'] ?>"><img src="<?= $img_url ?>&width=150" /></a>
-                            </div>
-                        <? endif ?>
-                    </div>	
-                <? endif ?>
-            <? endforeach ?>
-      	<? endforeach ?>
-    </div>
-	<div style="clear:both"></div>
 </div>
 
-<?php include "footer.php" ?>
 <script>
-var messages = new Object();
-messages['message'] = new Array();
-messages['message']['posting_like'] = "LIKES ONE OF YOUR IMAGES";
-messages['message']['follow'] = 'IS NOW FOLLOWING YOU';
-messages['message']['comment'] = 'SAYS';
-messages['message']['posts'] = '';
-messages['message']['message'] = 'SAID';
+    $(function() {
+        var that = this;
+        var $view = $('#messageCol');
 
-messages['COMMENTS'] = <?= json_encode($categories['comments']) ?>;
-messages['LIKES'] = <?= json_encode($categories['likes']) ?>;
-messages['POSTS'] = <?= json_encode($categories['posts']) ?>;
-messages['FOLLOWERS'] = <?= json_encode($categories['followers']) ?>;
-messages['MESSAGES'] = <?= json_encode($categories['messages']) ?>;
+        $.each(<?= json_encode($categories['messages']) ?>, function(x, act) {
+            $('#messageCol').append(new activity(act));
+        });
+        $.each(<?= json_encode($categories['likes']) ?>, function(x, act) {
+            $('#messageCol').append(new activity(act));
+        });
+        $.each(<?= json_encode($categories['comments']) ?>, function(x, act) {
+            $('#messageCol').append(new activity(act));
+        });
+        $.each(<?= json_encode($categories['followers']) ?>, function(x, act) {
+            $('#messageCol').append(new activity(act));
+        });
 
-
-
-//****************************************
-
-var theNote = new Object();
-theNote.isAvailable = true;
-
-theNote.menuClicked = function(title){
-	theNote.fillDisplay( messages[title], title );
-}
-
-theNote.fillDisplay = function(messages, cat){
-	$.each(messages, function(index, message){
-		theNote.displayNote(message, cat);
-	});
-	theNote.bindMessages();
-}
-
-theNote.displayNote = function(note, cat){
-	if(typeof note == 'object'){
-        date = note.created.split(' ')[0];
-		str = '<div id="note-'+note.activity_log_id+'" data-read="'+(note.read ? true : false)+'" data-id="'+note.activity_log_id+'" data-cat="'+cat+'" class="notification">';
-		str += '<div class="open-me" data-id="'+note.activity_log_id+'" data-cat="'+cat+'">';
-		str += '<div id="light-'+note.activity_log_id+'" class="notification-light '+(note.read ? 'off' : 'on')+'"></div>';
-		str += '<div class="content">'+note.username+' '+messages['message'][note.entity]+' '+(note.entity === 'comment' ? note.comment : (note.entity === 'message' ? note.body : '') )+' </div>';
-		str += '<div class="note-timestamp">'+date+'</div>';
-		str += '</div>';
-		str += '<div class="close-me" src="images/x_light.png" data-cat="'+cat+'" data-id="'+note.activity_log_id+'">X</div>';
-		str += '</div>';
-		str += '<div id="note-detail-'+note.activity_log_id+'" class="note-detail">';                    
-		str += '<div class="avatar-frame">';
-		str += '<a href="/'+note.username+'"><img src="http://www.dahliawolf.com/avatar.php?user_id='+note.user_id+'&amp;width=150"></a>';
-		str += '</div>'
-		str += '<div class="note-detail-content">';
-		str += '<div class="note-activity">';
-		str += '<a href="#" rel="message">'+note.username+' </a>';
-		str += messages['message'][note.entity]+' '+(note.entity == 'comment' ? note.comment : (note.entity === 'message' ? note.body : '') )+' </div>';
-		str += '</div>';
-		if(note.image_url) {
-            str += '<div class="avatar-frame">';
-            str += '<a href="/post/'+note.posting_id+'"><img src="'+note.image_url+'"></a>';
-            str += '</div>';
+        if(!$('.activityLog').length) {
+            $view.append('<h2>No new activity for you</h2>');
         }
 
-        str += '</div>';
-		theNote.display.append(str);
-	}
-}
 
-theNote.clearDisplay = function(){
-	theNote.display.empty();
-}
+        $('#catHeader').on('click', 'li', function() { //THIS IS BOOOOTY PLEASE FIX
+            var cat = $(this).data('cat');
+            $('.comments_on').removeClass('comments_on');
+            $('.messages_on').removeClass('messages_on');
+            $('.followers_on').removeClass('followers_on');
+            $('.likes_on').removeClass('likes_on')
+            $(this).addClass(cat+'_on');
+            $view.empty();
+            dahliawolf.activity.getCategory($(this).data('cat'), function(data){
+                if(data.data.get_by_type.length) {
+                    $.each(data.data.get_by_type, function(x, msg) {
+                        $view.append(new activity(msg));
+                    });
+                } else {
+                    $view.append('<h2>No activity found for '+cat+'</h2>');
+                }
 
-theNote.toggleDeets = function(){
-	detail = $('#note-detail-'+parseInt($(this).data('id')));
-	if( !detail.is(':visible') ){
-		theNote.markAsRead(parseInt($(this).data('id')), $(this).data('cat'),  false);
-		detail.slideDown(200);
-	}else{
-		detail.slideUp(200);
-	}
-}
-theNote.toggleLight = function(id){
-	$('#light-'+id).removeClass('on').addClass('off');
-}
-theNote.removeNote = function(id){
-	$('#note-detail-'+id).slideUp(100, function(){
-		$('#note-'+id).slideUp(200, function(){
-			$('#note-'+id).remove();
-			$('#note-detail-'+id).remove();
-		});
-	});
-}
-theNote.deleteNote = function(){
-	id = parseInt($(this).data('id'));
-	theNote.markAsRead(id, $(this).data('cat'), true);
-}
-
-theNote.markAsRead = function(id, cat, remove){
-	if(id && id > 0 && theUser.id && theNote.isAvailable){
-		theNote.isAvailable = false;
-		URL = '/api/1-0/activity_log.json?function=mark_read&user_id='+theUser.id+'&activity_log_id='+id+'&use_hmac_check=0';
-		$.ajax(URL).done(function(){
-			theNote.isAvailable = true;
-			if( $('#note-'+id).data('read') == false ){
-				newCounts.update(cat);
-				$('#note-'+id).data('read', true)
-			}
-			if(remove){
-				theNote.removeNote(id);
-			}else{
-				theNote.toggleLight(id);
-			}
-		})
-	}
-}
-
-theNote.markCategoryAsRead = function() {
-    var cat = $(this).data('cat');
-    if(cat && cat !== '') {
-        var URL = '/api/1-0/activity_log.json?function=mark_read&user_id='+theUser.id+'&entity='+cat+'&use_hmac_check=0';
-        $.ajax(URL, function() {
-            //console.log('done');
+            });
         });
-        $.each( $('.'+cat), function(index, note) {
-            newCounts.update( $(note).data('cat') );
-            $(note).remove();
+
+    });
+
+    function activity(data) {
+
+        console.log(data);
+
+        var $view = $('<ul class="activityLog"></ul>');
+        var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=100\')">');
+        $('<li id="postDetailFollowButton">Follow</li>').appendTo($avatar).on('click', function() {
+
         });
-    } else {
-        alert('No Entity Selected');
+        $('<li><a href="'+data.username+'" rel="message">Message</a></li>').appendTo($avatar).on('click', function() {
+
+        });
+        $('<li><a href="/'+data.username+'">Profile</a></li>').appendTo($avatar);
+        $avatar.appendTo($view);
+
+        switch(data.entity) {
+            case 'follow' :
+                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> is now following you</li>').appendTo($view);
+                break;
+            case 'posting_like' :
+                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> liked your post</li>').appendTo($view);
+                //var $post = $('<li class="postImg"></li>').css('background-image', 'url("'+data.image_url+'&width=85")').appendTo($view);
+                break;
+            case 'message' :
+                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> says '+socialize(data.body)+'</li>').appendTo($view);
+                break;
+            case 'comment' :
+                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> says '+socialize(data.comment)+'</li>').appendTo($view);
+                break;
+            case 'sale' :
+                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> purchased your product</li>').appendTo($view);
+                break;
+        }
+        var $data = $('<li class="date">'+data.created+'</li>').css('float', 'right').appendTo($view);
+
+        return $view;
     }
-}
 
-theNote.toggleHeight = function(){
-	if($('#theShaft').height() < $(window).height() ){
-		$('#theShaft').css('height', 103+'%');
-	}else{
-		$('#theShaft').css('height', 'auto');
-	}
-}
-theNote.bindMessages = function(){
-	$('.open-me').bind('click', this.toggleDeets);
-	$('.close-me').bind('click', this.deleteNote);
-}
-
-theNote.init = function(){
-	theNote.bindMessages();
-
-    $('.activity-menu').bind('click', function(){
-        var title = $(this).data('title');
-        if(title !== 'POINTS' && title !== 'RANK') {
-            theNote.clearDisplay();
-            theNote.menuClicked( title );
-            $('.activity-menu').removeClass('invite-selected');
-            $(this).addClass('invite-selected');
-            theNote.toggleHeight();
-        }
-	});
-
-    $('#theShaft').on('click', '.clearCategory', theNote.markCategoryAsRead);
-	//theNote.toggleHeight();
-	theNote.display = $('#mainCol');
-	
-}
-//***************************************
-var newCounts = new Object();
-
-newCounts.init = function(){
-	this.counts = new Array()
-	this.counts = {	"LIKES" : parseInt( $('#new-count-LIKES').html() ),
-					"COMMENTS" : parseInt( $('#new-count-COMMENTS').html() ),
-					"FOLLOWERS" : parseInt( $('#new-count-FOLLOWERS').html() ),
-					"POSTS" : parseInt( $('#new-count-POSTS').html() ),
-                    "MESSAGES" : parseInt( $('#new-count-MESSAGES').html() )
-	};
-}
-
-newCounts.update = function(cat){
-	this.counts[cat]--;
-	$('#new-count-'+cat).html(this.counts[cat]);
-}
-
-//********************************************
-
-newCounts.init();
-
-$(function(){
-	theNote.init();
-});
-
+    activity.prototype = {
+        get getDate() {return '';},
+        get getMessage() {return '';}
+    }
 </script>
