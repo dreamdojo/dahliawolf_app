@@ -75,6 +75,15 @@ User.prototype.register = function(e) {
     return false;
 }
 
+User.prototype.checkNewActivity = function() {
+    var $home = $('.menuBars');
+    if(dahliawolf.isLoggedIn) {
+        dahliawolf.activity.getNew(function(data) {
+            $('<div class="newActivityCount"></div>').appendTo($home);
+        });
+    }
+}
+
 
 User.prototype.setFriends = function(data) {
     this.friends = data;
@@ -810,6 +819,7 @@ Share.prototype.get = function(id, type, callback) {
     this.apiFunction = 'get_shares';
     this.loginRequired = true;
     this.callApi({posting_id : id, user_id : dahliawolf.userId, type : type});
+    return this;
 }
 
 //******************************************************************************************* ACTIVITY
@@ -817,11 +827,17 @@ Share.prototype.get = function(id, type, callback) {
 function Activity() {
     this.apiApi = 'activity_log.json';
 }
+
 Activity.prototype = new Api();
 Activity.prototype.constructor = Activity;
 
-Activity.prototype.getNew = function() {
-
+Activity.prototype.getNew = function(callback) {
+    this.apiFunction = "get_grouped_log_count";
+    this.callback = callback;
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Activity', 'Checking New'];
+    this.callApi({user_id:dahliawolf.userId});
+    return this;
 }
 
 Activity.prototype.getCategory = function(t, callback) {
@@ -829,7 +845,9 @@ Activity.prototype.getCategory = function(t, callback) {
     this.loginRequired = true;
     this.callback = callback;
     this.callApi({type:t, user_id:dahliawolf.userId});
+    return this;
 }
+
 
 //********************************************************************************************** Message
 

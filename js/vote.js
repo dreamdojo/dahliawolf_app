@@ -251,6 +251,7 @@ voteFeed.prototype.getPostsFromApi = function() {
                 var tempArray = new Array();
                 that.isApiAvailable = true;
                 dahliawolf.loader.hide();
+
                 that.offset += data.data.get_all.posts.length;
 
                 if(data.data.get_all && data.data.get_all.posts.length) {
