@@ -41,8 +41,8 @@ directMessage.prototype.submitMessage = function() {
         recipients = this.getRecipients(recipients);
     }
 
-    this.apiCall( 'send_message', {to_user_name : recipients, from_user_id: theUser.id, header : msgHead, body : theMsg, use_hmac_check : 0}, function(data) {
-        //alert('Message Sent');
+    dahliawolf.message.send(recipients, theMsg, function(data) {
+        holla.log(data);
     });
 
     this.close();
@@ -69,7 +69,7 @@ directMessage.prototype.error = function(msg) {
 }
 
 directMessage.prototype.newMessage = function(username) {
-    if(theUser.id) {
+    if(dahliawolf.isLoggedIn) {
         var _this = this;
         this.$overlay.fadeIn(300, function() {
             _this.createBox(username);

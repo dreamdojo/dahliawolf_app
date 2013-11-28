@@ -9,7 +9,9 @@ function User(userData) {
     this.share = new Share();
     this.shop = new Shop();
     this.cart = new Cart();
+    this.search = new Search();
     this.activity = new Activity();
+    this.message = new Message();
     this.loader = new this.Loader();
     this.userStack = [];
 }
@@ -125,6 +127,86 @@ User.prototype.logIntoFacebook = function(callback) {
             // User cancelled login or did not fully authorize
         }
     }, {scope: 'email'});
+}
+
+//****************************************************************** $VIEWS
+
+User.prototype.$post = function(data) {
+    this.data = data;
+
+    var $post = $('<div class="post gridMode"></div>');
+    var $image = $('<div class="innerwrap"><a href="/post-details?posting_id='+this.id+'" class="image color-4" rel="modal"><img src="'+this.image+'width=300"></a></div>');
+
+    return $post;
+}
+
+User.prototype.$post.prototype = {
+    get id() {return this.data.posting_id;},
+    get image() {return this.data.image_url}
+}
+//*********************************************** PRODUCT
+User.prototype.$product = function(data) {
+    this.data = data;
+
+    var $product = $('<div class="shop-item" id="item-'+this.id+'"></div>');
+    var $imageFrame = $('<ul class="imageFrame"></ul>');
+    var $productShot = $('<li class="productShot"></li>').css('background-image', 'url("'+this.productShot+'")').appendTo($imageFrame);
+    var $bloggerShot = $('<li class="bloggerShot"></li>').css('background-image', 'url("'+this.bloggerShot+'")');
+    if(this.isOnSale) {
+        $('<div class="daysEnd"><span class="dahliaPink">'+getDaysLeft(this.data.commission_from_date)+' Days</span> <span style="font-style: italic; color: #000;"> left to pre-order at 30% OFF</span></div>').appendTo($bloggerShot);
+    }
+    $bloggerShot.appendTo($imageFrame);
+    var $inspirationShot = $('<li class="inspirationShot"></li>').css('background-image', 'url("'+this.inspirationImage+'&width=300")').appendTo($imageFrame);
+    $imageFrame.appendTo($product).wrap('<a href="/shop/'+this.id+'"></a>');
+    var $productDetails = $('<ul class="productDetails"><li class="productName">'+this.name+'</li><li class="productAvatar" style="background-image: url(\''+this.avatar+'&width=25\')"></li><li class="productUsername">'+this.username+'</li></ul>').appendTo($product);
+    var $productPrice = $('<ul class="productPrice"></ul>');
+    $('<li class="preorderPrice"></li>').html( this.isOnSale ? '$'+this.presalePrice+' pre-order price' : ' ').appendTo($productPrice);
+    var $regPrice = $('<li class="regularPrice">$'+this.price+'</li>')
+    if(this.isOnSale) {
+        $regPrice.css('text-decoration', 'line-through');
+    }
+    $regPrice.appendTo($productPrice);
+    $inspirationImage = $('<li class="inspirationButton"><span>VIEW INSPIRATION</span></li>').hover(function() {
+        $inspirationShot.css('left', 0);
+    }, function() {
+        $inspirationShot.css('left', 100+'%');
+    }).appendTo($productPrice).wrap('<a class="zoombox" data-url="'+this.inspirationImage+'"></a>');
+    $productPrice.appendTo($product);
+
+    return $product;
+}
+
+User.prototype.$product.prototype = {
+    get id() {return this.data.id_product;},
+    get status() {return this.data.status;},
+    get isActive() {return Number(this.data.active);},
+    get inspirationImage() {return this.data.inspiration_image_url;},
+    get productShot() {return 'http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=300';},
+    get bloggerShot() {return 'http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_images[1].product_file_id+'&width=300';},
+    get name() {return this.data.product_name;},
+    get avatar() {return this.data.avatar;},
+    get username() {return this.data.username;},
+    get isOnSale() {return Number(this.data.on_sale);},
+    get presalePrice() {return Math.floor(this.data.sale_price).toFixed(2);},
+    get price() {return Math.floor(this.data.price).toFixed(2);}
+}
+//*********************************************** USER
+User.prototype.$user = function(data) {
+    var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=85\')">');
+    $('<li id="postDetailFollowButton">Follow</li>').on('click', function() {
+
+    }).appendTo($avatar);
+    $('<li><a href="@'+data.username+'" rel="message">Message</a></li>').on('click', function() {
+
+    }).appendTo($avatar);
+    $('<li><a href="/'+data.username+'">Profile</a></li>').appendTo($avatar);
+
+    return $avatar;
+}
+
+//************************************************ Avatar
+User.prototype.$avatar = function(data) {
+    this.data = data;
 }
 
 /******************************************* SPINNING LOADER **********/
@@ -567,6 +649,21 @@ Post.prototype.getComments = function(id, callback) {
     this.callApi({posting_id:id});
 }
 
+//****************************************************************************************** SEARCH
+function Search() {
+    this.apiApi = 'search.json';
+}
+Search.prototype = new Api();
+Search.prototype.constructor = Search;
+
+Search.prototype.searchAll = function(call, callback) {
+    this.apiFunction = 'search_all';
+    this.loginRequired = false;
+    this.callback = callback;
+    this.callApi(call);
+    return this;
+}
+
 //****************************************************************************************** Product
 function Shop() {
     this.apiApi = 'product.json';
@@ -579,7 +676,8 @@ Shop.prototype.getProduct = function(id, callback) {
     this.apiFunction = 'get_product_details';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({id_product:id, id_shop:3, id_lang:1})
+    this.callApi({id_product:id, id_shop:3, id_lang:1});
+    return this;
 }
 
 Shop.prototype.getProducts = function(callback) {
@@ -721,5 +819,23 @@ Activity.prototype.getCategory = function(t, callback) {
     this.apiFunction = 'get_by_type';
     this.loginRequired = true;
     this.callback = callback;
-    this.callApi({type:t, user_id:dahliawolf.userId})
+    this.callApi({type:t, user_id:dahliawolf.userId});
+}
+
+//********************************************************************************************** Message
+
+function Message() {
+    this.apiApi = 'message.json';
+}
+
+Message.prototype = new Api();
+Message.prototype.constructor = Message;
+
+Message.prototype.send = function(to, message, callback) {
+    this.apiFunction = 'send_message';
+    this.loginRequired = true;
+    this.callback = callback;
+    this.analArray = ['_trackEvent', 'Message', 'Direct message sent'];
+    this.callApi({to_user_name:to, from_user_id:dahliawolf.userId, header:'Personal message from '+dahliawolf.username, body:message});
+    return this;
 }

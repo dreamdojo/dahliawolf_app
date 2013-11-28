@@ -137,7 +137,7 @@
                 <? if(IS_LOGGED_IN): ?>
                     <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
                     <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
-                    <!--<a href="/activity"><li>Activity</li></a>-->
+                    <a href="/activity"><li>Activity</li></a>
                     <a href="/invite"><li>Grow My Clique</li></a>
                     <a href="/account/settings"><li>Settings</li></a>
                     <a href="/shop/my-orders"><li>Orders</li></a>

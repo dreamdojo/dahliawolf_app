@@ -34,6 +34,19 @@ $(function() {
     });
     $('#searchButton').bind('click', function() {
         $('#searchBar').slideToggle(200);
+        if(!$('#tooltip-overlay').length) {
+            this.$overlay = $('<div id="tooltip-overlay"></div>').appendTo('body').fadeIn(200).on('click', function() {
+                $('#searchBar').slideToggle(200);
+                $('#searchBar input').unbind('keydown');
+                $(this).fadeOut(100, function() {
+                    $(this).remove();
+                });
+            });
+        } else {
+            this.$overlay.fadeOut(100, function() {
+               $(this).remove();
+            });
+        }
         $('#searchBar input').focus();
         $('#searchBar input').unbind('keydown').bind('keydown', function(e){
             if(e.keyCode == 13) {

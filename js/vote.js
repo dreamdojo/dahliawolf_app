@@ -21,7 +21,12 @@ function voteFeed(config) {
 
 voteFeed.prototype = {
     get url() {
-        var config = {limit: this.limit[this.feedMode], offset: this.offset};
+        var config = {offset: this.offset};
+        if(!this.search) {
+            config.limit = this.limit[this.feedMode];
+        } else {
+            config.limit = 100;
+        }
         if(dahliawolf.isLoggedIn) {
             config.viewer_user_id = dahliawolf.userId;
         }
@@ -46,6 +51,7 @@ voteFeed.prototype = {
     get getOrder() {return this.order;},
     get isFilterSet() {return (this.filter ? true : false);},
     get getFilter() {return this.filter;},
+    get isSearchSet() {return this.search ? true : false},
  
     set setFeedMode(mode) {this.feedMode = mode;},
     set setOrder(order) {this.order = order;},
@@ -201,22 +207,63 @@ voteFeed.prototype.getPostsFromApi = function() {
         this.isApiAvailable = false;
         dahliawolf.loader.show();
 
-        dahliawolf.post.get(this.url, function(data){
-            var tempArray = new Array();
-            that.isApiAvailable = true;
-            dahliawolf.loader.hide();
-            that.offset += data.data.get_all.posts.length;
+        if(this.isSearchSet) {
+            dahliawolf.search.searchAll(this.url, function(data) {
+                console.log(data);
+                dahliawolf.loader.hide();
+                that.isApiAvailable = true;
+                if(data.data.search_all.products.data.get_products.data.length || !data.data.search_all.posts.error || data.data.search_all.users.length) {
+                    var tempArray = new Array();
 
-            if(data.data.get_all && data.data.get_all.posts.length) {
-                $.each(data.data.get_all.posts, function(index, post) {
-                    that.addPostData(post);
-                    tempArray.push(post.posting_id);
-                });
-                that.addToBucket(tempArray);
-            } else {
+                    if(data.data.search_all.products && data.data.search_all.products.data.get_products.data && data.data.search_all.products.data.get_products.data.length) {// LOAD PRODUCTS
+                        var $prodBucket = $('<div id="productResults"></div>').css('width', data.data.search_all.products.data.get_products.data.length*330).prependTo(that.$bucket).wrap('<div class="resWrap"></div>');
+                        $.each(data.data.search_all.products.data.get_products.data, function(x, prod) {
+                            $prodBucket.append(new dahliawolf.$product(prod));
+                        });
+                        $('<h1>Products</h1>').prependTo(that.$bucket);
+                    }
+
+                    if(data.data.search_all.posts.posts && data.data.search_all.posts.posts.length) {
+                        $($('.GridCol0')).before('<h1>Posts</h1>');
+                        $.each(data.data.search_all.posts.posts, function(x, post) {
+                            that.addPostData(post);
+                            tempArray.push(post.posting_id);
+                        });
+                        that.addToBucket(tempArray);
+                    }
+
+                    if(data.data.search_all.users && data.data.search_all.users.length) {
+                        var $title = $('<h1>Members</h1>').prependTo(that.$bucket);
+                        var $membersSection = $('<div id="memberResults"></div>');
+                        $($title).after($membersSection);
+                        $.each(data.data.search_all.users, function(x, user) {
+                            var $userRes = $('<div class="userSearchRes"></div>').append(new dahliawolf.$user(user)).append('<div class="username"><a href="/'+user.username+'">'+user.username+'</a></div>');
+                            $membersSection.append($userRes);
+                        });
+                    }
+                } else {
+                    $('<h1>No results for '+that.search+'</h1>').prependTo(that.$bucket);
+                }
                 that.unbindScroll();
-            }
-        });
+            });
+        } else {
+            dahliawolf.post.get(this.url, function(data){
+                var tempArray = new Array();
+                that.isApiAvailable = true;
+                dahliawolf.loader.hide();
+                that.offset += data.data.get_all.posts.length;
+
+                if(data.data.get_all && data.data.get_all.posts.length) {
+                    $.each(data.data.get_all.posts, function(index, post) {
+                        that.addPostData(post);
+                        tempArray.push(post.posting_id);
+                    });
+                    that.addToBucket(tempArray);
+                } else {
+                    that.unbindScroll();
+                }
+            });
+        }
     }
 }
 

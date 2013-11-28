@@ -77,10 +77,11 @@ shop.prototype.fillEmptyShop = function() {
 }
 
 shop.prototype.fillShop = function() {
-    var _this = this;
+    var that = this;
 
     $.each(this.data, function(i, item) {
-        _this.products[item.id_product] = new _this.product(item, _this.$shop)
+        //_this.products[item.id_product] = new _this.product(item, _this.$shop)
+        that.$shop.append(new dahliawolf.$product(item));
     });
 }
 
@@ -110,6 +111,7 @@ shop.prototype.product = function(item, $shop) {
 }
 
 shop.prototype.product.prototype.addToShop = function() {
+    console.log(this.data);
     this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
     //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );

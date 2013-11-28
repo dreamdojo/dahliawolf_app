@@ -112,7 +112,9 @@
             $('.likes_on').removeClass('likes_on')
             $(this).addClass(cat+'_on');
             $view.empty();
+            dahliawolf.loader.show();
             dahliawolf.activity.getCategory($(this).data('cat'), function(data){
+                dahliawolf.loader.hide();
                 if(data.data.get_by_type.length) {
                     $.each(data.data.get_by_type, function(x, msg) {
                         $view.append(new activity(msg));
