@@ -110,7 +110,13 @@ var LOVE_REQUIRED = 1000;
     dahliawolf.setFriends(theUser.friends);
     dahliawolf.cart.set(<?= json_encode($_data['cart']) ?>);
     $(function() {
-        //dahliawolf.checkNewActivity();
+        if(dahliawolf.isLoggedIn) {
+            dahliawolf.activity.getNew(function(data) {
+                if(data.data.get_grouped_log_count.activity_count) {
+                    $('<div class="newActivityCount"></div>').appendTo($('.menuBars'));
+                }
+            });
+        }
     });
 
 <!-- Start of Woopra Code -->

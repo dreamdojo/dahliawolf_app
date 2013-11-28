@@ -75,16 +75,6 @@ User.prototype.register = function(e) {
     return false;
 }
 
-User.prototype.checkNewActivity = function() {
-    var $home = $('.menuBars');
-    if(dahliawolf.isLoggedIn) {
-        dahliawolf.activity.getNew(function(data) {
-            $('<div class="newActivityCount"></div>').appendTo($home);
-        });
-    }
-}
-
-
 User.prototype.setFriends = function(data) {
     this.friends = data;
 }
@@ -206,7 +196,6 @@ User.prototype.$user = function(data) {
 
 //************************************************ Avatar
 User.prototype.$hoverAvatar = function(data) {
-    console.log(data);
     var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=85\')">');
     $('<li id="postDetailFollowButton">'+(Number(data.is_followed) ? 'Unfollow' : 'Follow')+'</li>').on('click', function() {
         if(Number(data.is_followed)) {
@@ -408,7 +397,7 @@ function Api() {
 }
 
 Api.prototype.callApi = function(data) {
-    that = this;
+    var that = this;
     data.use_hmac_check = 0;
     data['function'] = this.apiFunction;
     var url = (this.commerceApi ? this.baseCommerceUrl : this.baseUrl)+this.apiApi;
@@ -429,8 +418,9 @@ Api.prototype.callApi = function(data) {
             }
         });
     }
-    if(this.analArray);
-    _gaq.push(this.analArray);
+    if(this.analArray) {
+        _gaq.push(this.analArray);
+    }
 }
 //************************************************************************************ MEMBER
 Member.prototype = new Api();

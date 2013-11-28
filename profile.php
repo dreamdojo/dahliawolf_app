@@ -18,7 +18,7 @@
 
     $params = array(
         'user_id' => $_data['user']['user_id'],
-        'limit' => 12
+        'limit' => 8
     );
 
     $posts_data = api_call('posting', 'all_posts', $params, true);
