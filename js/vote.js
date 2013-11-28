@@ -237,7 +237,7 @@ voteFeed.prototype.getPostsFromApi = function() {
                         var $membersSection = $('<div id="memberResults"></div>');
                         $($title).after($membersSection);
                         $.each(data.data.search_all.users, function(x, user) {
-                            var $userRes = $('<div class="userSearchRes"></div>').append(new dahliawolf.$user(user)).append('<div class="username"><a href="/'+user.username+'">'+user.username+'</a></div>');
+                            var $userRes = $('<div class="userSearchRes"></div>').append(new dahliawolf.$hoverAvatar(user)).append('<div class="username"><a href="/'+user.username+'">'+user.username+'</a></div>');
                             $membersSection.append($userRes);
                         });
                     }

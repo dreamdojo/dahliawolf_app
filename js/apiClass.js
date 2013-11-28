@@ -192,9 +192,23 @@ User.prototype.$product.prototype = {
 }
 //*********************************************** USER
 User.prototype.$user = function(data) {
-    var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=85\')">');
-    $('<li id="postDetailFollowButton">Follow</li>').on('click', function() {
 
+}
+
+//************************************************ Avatar
+User.prototype.$hoverAvatar = function(data) {
+    console.log(data);
+    var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=85\')">');
+    $('<li id="postDetailFollowButton">'+(Number(data.is_followed) ? 'Unfollow' : 'Follow')+'</li>').on('click', function() {
+        if(Number(data.is_followed)) {
+            data.is_followed = 0;
+            dahliawolf.member.unfollow(data.user_id);
+            $(this).html('Follow');
+        } else {
+            $(this).html('Unfollow');
+            data.is_followed = 1;
+            dahliawolf.member.follow(data.user_id);
+        }
     }).appendTo($avatar);
     $('<li><a href="@'+data.username+'" rel="message">Message</a></li>').on('click', function() {
 
@@ -202,11 +216,6 @@ User.prototype.$user = function(data) {
     $('<li><a href="/'+data.username+'">Profile</a></li>').appendTo($avatar);
 
     return $avatar;
-}
-
-//************************************************ Avatar
-User.prototype.$avatar = function(data) {
-    this.data = data;
 }
 
 /******************************************* SPINNING LOADER **********/
