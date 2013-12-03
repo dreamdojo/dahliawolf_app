@@ -235,11 +235,26 @@ voteFeed.prototype.getPostsFromApi = function() {
                     if(data.data.search_all.users && data.data.search_all.users.length) {
                         var $title = $('<h1>Members</h1>').prependTo(that.$bucket);
                         var $membersSection = $('<div id="memberResults"></div>');
+                        var rowHt = 165;
+
                         $($title).after($membersSection);
                         $.each(data.data.search_all.users, function(x, user) {
                             var $userRes = $('<div class="userSearchRes"></div>').append(new dahliawolf.$hoverAvatar(user)).append('<div class="username"><a href="/'+user.username+'">'+user.username+'</a></div>');
                             $membersSection.append($userRes);
                         });
+                        if(data.data.search_all.users.length > 5) {
+                            var $loadMore = $('<div class="loadMore">SHOW MORE</div>').on('click', function() {
+                                if(Number($membersSection.css('max-height').replace(/[^-\d\.]/g, '')) <  rowHt+100) {
+                                    $membersSection.css('max-height', (Math.ceil((data.data.search_all.users.length/5)*rowHt)+rowHt) );
+                                    $loadMore.html('HIDE');
+                                } else {
+                                    $membersSection.css('max-height', 185);
+                                    $loadMore.html('SHOW MORE');
+                                }
+
+                            });
+                            $membersSection.after($loadMore);
+                        }
                     }
                 } else {
                     $('<h1>No results for '+that.search+'</h1>').prependTo(that.$bucket);

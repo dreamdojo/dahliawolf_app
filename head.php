@@ -112,8 +112,20 @@ var LOVE_REQUIRED = 1000;
     $(function() {
         if(dahliawolf.isLoggedIn) {
             dahliawolf.activity.getNew(function(data) {
-                if(data.data.get_grouped_log_count.activity_count) {
-                    $('<div class="newActivityCount"></div>').appendTo($('.menuBars'));
+                var activity_count = Number(data.data.get_grouped_log_count.activity_count);
+                console.log(activity_count);
+                if(activity_count) {
+                    if(activity_count > sessionStorage.newActivity) {
+                        $('.menuBars').addClass('menuBarsActive');
+                    }
+
+                    $('#menuActivity').append('<div class="newActivityCountMod">'+activity_count+'</div>');
+                    $('#userMenu').one('mouseenter', function() {
+                        $('.menuBarsActive').removeClass('menuBarsActive');
+                        sessionStorage.newActivity = activity_count;
+                    });
+                } else {
+                    sessionStorage.newActivity = 0;
                 }
             });
         }
