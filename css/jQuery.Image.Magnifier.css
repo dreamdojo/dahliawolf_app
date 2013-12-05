@@ -1,0 +1,16 @@
+.jim-container { position:absolute; z-index:100; overflow:visible; top:0; left:0; border:0px solid red; }
+.jim-container .jim-container-inner { background-color:#FFFFFF; opacity:0.01; filter:alpha(opacity=1); }
+.jim-cursor { position:absolute; z-index:102; overflow:hidden; top:0; left:0; display:none; }
+.jim-cursor img { display:block; }
+.jim-zoom { cursor:crosshair; }
+.jim-nocursor { cursor:none; }
+
+.jim-cursor.c-rounded { -webkit-border-radius:50%; -moz-border-radius:50%; border-radius:50%; -khtml-border-radius:50%; }
+
+.jim-cursor.c-shadow {
+	-webkit-box-shadow: 7px 9px 9px -5px #000000;
+	   -moz-box-shadow: 7px 9px 9px -5px #000000;
+	        box-shadow: 7px 9px 9px -5px #000000;
+}
+
+.jim-cursor.c-border { border:3px solid #FFFFFF; }

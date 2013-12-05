@@ -1,5 +1,5 @@
 function userList(user, action) {
-    this.limit = 10;
+    this.limit = 6;
     this.offset = 0;
     this.index = 0;
     this.users = [];
@@ -36,15 +36,16 @@ userList.prototype.getUsers = function() {
     var _this = this;
 
     dahliaLoader.show();
-    $.getJSON('/api/?api=user&function='+this.urls[this.action]+'&user_id='+(this.action !== '/wolf-pack.php' ? this.user.user_id : '')+'&viewer_user_id='+theUser.id+'&limit='+this.limit+'&offset='+this.offset, function(data) {
+    dahliawolf.member.getTopFollowing(_this.limit, _this.offset, function(data) {
+        console.log(data);
         dahliaLoader.hide();
         try {
-            if(data.data.length != _this.limit) {
+            if(!data.data.get_top_following) {
                 $(window).unbind('scroll');
             }
-            _this.offset += data.data.length;
+            _this.offset += data.data.get_top_following.length;
             _this.isReloadAvailable = true;
-            _this.addUsersToStack(data.data);
+            _this.addUsersToStack(data.data.get_top_following);
         } catch(e) {
             //no users
         }
@@ -75,7 +76,7 @@ userList.prototype.user.prototype.addMeToBucket = function() {
     }
 
     this.$userFrame = $('<div class="userFrame"></div>').appendTo( dahliawolfUserList.$bucket );
-    this.$userFrame.append('<div class="avatarFrame avatarShadow" style="background-image: url(\''+this.data.avatar+'&width=150\')"><a href="/'+this.data.username+'"></a></div>');
+    this.$userFrame.append( new dahliawolf.$hoverAvatar(this.data) );
     this.$userFrame.append('<ul class="dataList"><li class="dlUsername"><a href="/'+this.data.username+'">'+this.data.username+'</a>'+( this.data.membership_level === 'VIP' ? '<div class="memberStats"><img src="/images/vip.png"></div>' : '')+'</li><li>'+this.data.points+' pts</li></ul>');
     this.$userFrame.append('<ul class="postList">'+str+'</ul>');
     if(dahliawolfUserList.isWolfpack) this.$userFrame.append('<div class="rankBox">'+this.rank+'</div>');

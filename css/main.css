@@ -337,20 +337,20 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #postShareSection{width: 260px;margin-right: 40px;}
 .shareButts{height: 50px; width:104%;}
 .shareButts li{width: 39.4px;height:40%; float:left;background-color: #FFF; margin-top: 5px;margin-right: 5px; cursor:pointer;}
-#shareFacebook{background-position: -147px;}
-#shareFacebook:hover{background-position: -97px;}
-#sharePinterest{background-position: -735px;}
-#sharePinterest:hover{background-position: -686px;}
+#shareFacebook{background-position: -2px;}
+#shareFacebook:hover{background-position: -365px;}
+#sharePinterest{background-position: -67px;}
+#sharePinterest:hover{background-position: -429px;}
 #shareInstagram{background-position: -380px;}
 #shareInstagram:hover{background-position: -380px;}
-#shareTumbler{background-position: -344px;}
-#shareTumbler:hover{background-position: -295px;}
-#shareTwitter{background-position: -442px;}
-#shareTwitter:hover{background-position: -393px;}
-#shareEmail{background-position: -49px;}
-#shareEmail:hover{background-position: -1px;}
-#shareGplus{background-position: -637px;}
-#shareGplus:hover{background-position: -587px;}
+#shareTumbler{background-position: -187px;}
+#shareTumbler:hover{background-position: -550px;}
+#shareTwitter{background-position: -129px;}
+#shareTwitter:hover{background-position: -492px;}
+#shareEmail{background-position: -311px;}
+#shareEmail:hover{background-position: -674px;}
+#shareGplus{background-position: -248px;}
+#shareGplus:hover{background-position: -611px;}
 #postDetailMainRow{height: 620px;width: 100%;margin-top: 5px;}
 .socialCol{width: 325px;height: 620px; overflow:hidden; float: left;color: #b7b7b7;margin-left: 20px;}
 .commentSectionTitle{width:100%; height:20px; text-align:center;font-size: 12px;background-color: #fff;padding-top: 3px; text-transform: uppercase;}
@@ -371,9 +371,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #commentContainer{padding-bottom: 10px;overflow: scroll;max-height: 620px;width: 395px;}
 .postOrigin{position: absolute;bottom: 9px;float: left;font-size: 10px; padding-left: 20px; color: #bebebe;width: 620px;text-align: center;}
 .postOrigin a{color: #bebebe !important;}
-.arrow{ position: absolute;top: 275px;height: 60px;width: 30px;margin-top: -30px;background-image: url(/images/prodPageArrow.png);background-repeat: no-repeat;z-index: 1;overflow: hidden;cursor: pointer;background-size: auto 100%;}
-#leftArrow{background-position: 4px; }
-#rightArrow{right: -5px;background-position: -22px; }
+.arrow{ position: absolute;top: 275px;height: 40px;width: 40px;margin-top: 17px;background-image: url(/images/prodPagesArrow.png);background-repeat: no-repeat;z-index: 1;overflow: hidden;cursor: pointer;background-size: auto 100%;}
+#leftArrow{background-position: -33px; left: 20px; }
+#rightArrow{right: 60px; background-position:4px; }
 #userPostGrid{ width: 964px; margin-left: 7px; padding-left: 13px; padding-bottom: 25px; display: inline-block;}
 .userGridPostFrame{ float: left;width: 303px; overflow: hidden; height: 315px; border: #FFF 9px solid; position: relative;background-size: 100% auto;background-position: 50%;background-repeat: no-repeat;}
 .userGridPostFrame .profFeat{width: 60px;position: absolute;z-index: 12;right: 0px;top: 0px;}
@@ -563,6 +563,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userListCol .dlUsername a{float: left;}
 #userListCol .toggleFollow{font-size: 14px;padding: 1px 8px;float: left;cursor: pointer;margin-top: 5px;}
 #userListCol .rankBox{position: absolute;height: 40px;width: 40px;font-size: 25px;text-align: center;line-height: 40px;color: #4E4646;font-weight: 700;}
+#userListCol .postDetailAvatarFrame{margin-top: 25px;}
 /******************** LOADER *************************/
 #loadingView{display:none;width: 100%;position: fixed;bottom: -100px;text-align: center;z-index: 10000000000;height: 65px;}
 #loadingView img{-webkit-transition-duration: 1s; -moz-transition-duration: 1s; position: relative;}

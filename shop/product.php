@@ -7,235 +7,245 @@
         redirect('/shop');
     }
 
-    if(!empty($_SESSION['user'])) {
-        $wl_calls = array(
-            'does_product_exist_in_wishlist' => array(
-                'id_customer' => $_SESSION['user']['user_id']
-            , 'id_product' => $_GET['id_product']
-            , 'id_shop' => SHOP_ID
-            , 'id_lang' => LANG_ID
-            )
-        );
-        $wl_data = commerce_api_request('wishlist', $wl_calls, true);
-        $_data['show_add_to_wishlist'] = empty($wl_data['data']['does_product_exist_in_wishlist']['data']) ? true : false;
-    } else $_data['show_add_to_wishlist'] =  false;
+    $url = 'http://dev.commerce.offlinela.com/1-0/product.json?function=get_product_details&id_product='.$_GET['id_product'].'&use_hmac_check=0';
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
 
-    $calls = array(
-        'get_product_details' => array(
-            'id_product' => $_GET['id_product']
-        , 'id_shop' => SHOP_ID
-        , 'id_lang' => LANG_ID
-        , 'user_id' => !empty($_GET['user_id']) ? $_GET['user_id'] : NULL
-        )
-    );
+    $_data = $result->data->get_product_details->data;
 
-    $data = commerce_api_request('product', $calls, true);
-
-    // Failed
-    if (!empty($data['errors']) || !empty($data['data']['get_product_details']['errors'])) {
-        $_SESSION['errors'] = api_errors_to_array($data, 'get_product_details');
-    }
-    else {
-        $_data['product'] = $data['data']['get_product_details']['data'];
-
-        if (empty($_data['product']) || empty($_data['product']['product'])) {
-            $_SESSION['errors'] = array('Product not found');
-        }
+    if (empty($_data->product)) {
+        $_SESSION['errors'] = array('Product not found');
     }
 
-    if( isset($_GET['username']) && !empty($_data['product']['product']['posts'][0]['username']) && $_GET['username'] != $_data['product']['product']['posts'][0]['username'] ) {
+    if( isset($_GET['username']) && !empty($_data->product->posts[0]->username) && $_GET['username'] != $_data['product']['product']['posts'][0]['username'] ) {
         echo 'This not '.$_GET['username'].'\'s Product';
         die();
     }
 
-    $status = $_data['product']['product']['status'];
+    $status = $_data->product->status;
+    $total_sales = $_data->product->total_sales;
+    $percentage = round(($total_sales/20)*100);
+    $sales_needed = 20 - $total_sales;
 ?>
 
 <style>
-    .shop-wishlist-button{padding: 12px 1px;font-size: 18px;text-align: center; color: #fff; cursor: pointer;}
-    .not-in-wishlist{background-color: #363636;}
-    .is-in-wishlist{background-color: #f4a5b4;}
-    .shop-section{width: 1000px; margin: 70px auto; position: relative;}
-    #shopHeader{height: 130px;padding-top: 15px;}
-    #shopContent #shopUserData{float: left; margin-top: 20px; margin-left: 10px;}
-    #shopContent #shopUserData li{float: left; width: 100px; width: 200px; width: 100%;}
-    #shopContent .avatarFrame{float: left; overflow: hidden; border-radius: 50px; height: 100px; width: 100px; background-size: auto 100%; background-repeat: no-repeat; background-position: 50%;}
-    #shopContent .avatarFrame img{width: 100%;}
-
-    #shopContent{clear: left;}
-    #shopContent .leftCol{float: left; width: 300px;margin-top: 30px;}
-    #shopContent .leftCol .follow{height: 30px;line-height: 30px;font-size: 15px;cursor: pointer;width: 90px;text-align: left;color: #A3A3A3;text-indent: 20px;}
-    #shopContent .leftCol .isfollowing{color: #c2c2c2;}
-    #shopContent .leftCol .isnotfollowing{color: #fc2c71;}
-    #shopContent .leftCol .story{font-size: 27px;padding-top: 10px;margin-bottom: 10px;}
-    #shopContent .leftCol .content{font-size: 12px;line-height: 17px;}
-    #shopContent .leftCol h2{font-size: 18px;margin-top: 10px;}
-    #shopContent .centerCol{float: left;width: 400px;margin-left: 20px;margin-top: 30px; position: relative;}
-    #shopContent .rightCol{float: left; width: 260px; margin-left: 20px;padding-top: 30px;}
-    #shopContent .rightCol h3{height: 30px;color: #000;font-size: 16px;line-height: 20px;}
-    #shopContent .rightCol .regularPrice{color: #000;line-height: 30px;font-size: 17px;text-indent: 10px;text-align: right;}
-    #shopContent .rightCol .presalePrice{color: #000;line-height: 30px;font-size: 17px;text-indent: 10px;}
-    #shopContent .productImagesFrame{width: 100%; height: 600px; position: relative; overflow: hidden;}
-    #shopContent .productImagesFrame li{width: 100%;overflow: hidden;position: absolute; display: none; text-align: center;}
-    #shopContent .productImagesFrame li:first-child{display: block;}
-    #shopContent .productImagesFrame li img{width: 80%;}
-    #shopContent .rightCol .preOrderPrice{color: #fc0964;margin-left: 10px;}
-    #shopContent .rightCol .strike{text-decoration:line-through;color: #fc0964; }
-    #theCountdown li{float: left;width: 25%;text-align: center;font-size: 14px;color: #c7c7c7;background-color: #f4f4f4;}
-    #theCountdown li p{height: 50px;line-height: 50px;font-size: 30px;}
-    #theCountdown li p:first-child{height: 58px; border-bottom: #fff thin solid; line-height: 50px;font-size: 15px;}
-    #theCountdown li p:last-child{color: #000;}
-    #theCountdown{width: 100%;height: 65px; padding-top: 12px; color: #888888;}
-    #shopOptions li{width: 100%; height: 30px; font-size: 13px; line-height: 30px;}
-    .options li{float: left;width: 65px !important;text-align: center;}
-    .scribble{font-family: 'Shadows Into Light', cursive;}
-    #addToCart{background-color: #fc0964;text-align: center;padding: 10px 10px;font-size: 20px;width: 92%; color: #fff;margin-top: 25px;}
-    #nextImage{position: absolute;right: 0px;height: 100px;width: 50px;top: 50%;z-index: 1;margin-top: -50px;font-size: 60px;text-align: center;font-weight: 100;}
-    .product{ color: #c5bfbf;}
-    #shopOptions .options li{border: #000 thin solid;width: 40px !important;text-align: center; margin-left: 15px;}
-    #shopOptions .options li input{display: none;}
-    #postShareSection{margin-right: 0px;}
-    .timeLeft{text-align: right;font-size: 15px;line-height: 50px;}
-    .timeLeft span{font-weight: 700;}
-    #thumbs{width: 100%; margin-top: 10px;}
-    #thumbs li{width: 20%; float: left;border: #c2c2c2 thin solid;margin-left: 10px; max-height: 121px;overflow: hidden;}
+    .shopCol{width: 900px; margin: 0px auto; margin-top: 90px; padding-bottom: 200px;}
+    .shopCol a{color: #666;}
+    .productDetails{width: 60%; float: left; position: relative;}
+    .productCTA{width: 40%; float: left;}
+    .productDeets{margin-top: 7px;}
+    .productDeets .prodName{font-size: 18px;}
+    .productDeets .inspBy{font-size: 12px;}
+    .productImagesFrame{width: 100%; position: relative;height: 600px;}
+    .productImagesFrame li{position: absolute; width: 70%;text-align: center;margin-left: 15%; display: none;}
+    .productImagesFrame li img{width: 100%;}
+    #thumbs{position: relative; width: 86%; margin-left: 14%; display: inline-block;}
+    #thumbs li{float: left;width: 75px;}
     #thumbs li img{width: 100%;}
+    #nextImage{position: absolute;right: 0px;top: 50%;z-index: 2;}
+    .needSection li{padding: 6px 0px;}
+
+    .productCTA{text-align: center;}
+    .needSection .nMo{font-size: 25px;padding-bottom: 0px;}
+    .needSection .nMoDesc{font-style: italic;color: #c2c2c2;font-size: 13px;}
+
+    #needsBar{position: relative;height: 40px;background-color: #c2c2c2;border-radius: 12px;line-height: 40px;box-shadow: inset 0 0 8px #858585;}
+    #needsBar li{padding: 0px;}
+    #needsBar .pComp{position: absolute;text-align: right;width: 80%;background: #f03e63; /* Old browsers */
+        background: -moz-linear-gradient(left,  #f03e63 0%, #f9b3b3 0%, #f03e63 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f03e63), color-stop(0%,#f9b3b3), color-stop(100%,#f03e63)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left,  #f03e63 0%,#f9b3b3 0%,#f03e63 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left,  #f03e63 0%,#f9b3b3 0%,#f03e63 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(left,  #f03e63 0%,#f9b3b3 0%,#f03e63 100%); /* IE10+ */
+        background: linear-gradient(to right,  #f03e63 0%,#f9b3b3 0%,#f03e63 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f03e63', endColorstr='#f03e63',GradientType=1 ); /* IE6-9 */
+        border-radius: inherit;color: #fff;font-size: 15px;z-index: 3;direction: rtl;text-indent: 14px;letter-spacing: 2px;
+        overflow: hidden;
+    }
+    #needsBar .pMo{position: absolute;text-align: right;width: 100%;direction: rtl;text-indent: 20px;font-size: 12px;}
+    .optionsSection{display: inline-block;width: 100%;padding: 10px 0px;}
+    .optionsSection li input{display: none;}
+    .optionsSection .options li{width: 31.333%; color: #c2c2c2; height: 40px;border: #d3d3d3 thin solid;line-height: 40px;text-align: center;text-indent: 0px;float: left;font-size: 18px; margin-right: 2%; cursor: pointer;}
+    .optionsSection .options li:last-child{margin-right: 0px;}
+    .optionsSection .optionLabel{float: left;width: 100%;text-align: left;font-size: 15px;height: 25px;}
+
+    #addToCart{height: 60px;line-height: 60px; background-color: #f03e63;color: #fff;font-size: 18px;margin-top: 10px; text-transform: uppercase;}
+    .etaDate{font-style: italic;}
+
+    .prodStyle{width: 60%;float: left;}
+
+    .prodStyle .storyHeader{width: 90%;height: 86px;margin: 0px auto;margin-top: 10px;margin-bottom: 10px;position: relative;}
+    .prodStyle .storyHeader p{line-height: 50px;font-size: 14px;text-transform: uppercase;background-color: #F1F1F1;float: left;margin-top: 18px;position: absolute;width: 90%;text-indent: 66px;z-index: -1;margin-left: 10%;color: #A5A5A5;}
+    .prodStyle .storyDetails{width: 90%; margin: 0px auto;}
+    .prodStyle .uName{font-size: 18px;margin-top: -8px;margin-bottom: 5px;}
+    .prodStyle .postDetailAvatarFrame{margin-left: 0px !important;}
+    .prodStyle .storyBehind{line-height: 20px;}
+
+    .prodInfo{width: 40%; float: left;}
+    .prodInfo ul{padding: 2% 6%;border-left: #c2c2c2 thin solid;border-bottom: #c2c2c2 thin solid;min-height: 40px;}
+    .prodInfo ul:last-child{border-bottom: none;}
+    .prodInfo ul:first-child{padding: 7% 6%;}
+    .prodInfo .title{font-size: 13px;color: #969696;padding-bottom: 5px;}
+    .bottomCol{border-top: #c2c2c2 thin solid;margin-top: 20px; color: #c2c2c2;}
+    .prodInfo .showChart{cursor: pointer; color: #666;}
+
+    .priceSection{border-top: #c2c2c2 thin solid;border-bottom: #c2c2c2 thin solid;padding-bottom: 10px;margin-top: 10px;margin-bottom: 5px;}
+    .priceSection .productPrice{font-size: 25px;height: 50px;line-height: 50px;}
+    .priceSection .regPrice{color: #c2c2c2;}
+    .showing{display: block !important;}
+
+    .scribble{font-family: 'Shadows Into Light', cursive;}
+
+    #sizeChart{display: none; position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; z-index: 10; display: none;}
+    .theHaze{position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color: #fff; opacity: .7;}
+    #sizeChart img{position: absolute;width: 700px;top: 50%;margin-top: -300px;left: 50%;margin-left: -350px;z-index: 11;}
+
+    .prodShareButts{display: inline-block;}
+    .prodShareButts li{height: 50px; width: 60px; float: left; background-image: url("/images/prodShare.png"); background-repeat: no-repeat;background-size: auto 94%;}
 </style>
 
-<div id="shopContent" class="shop-section">
-    <div class="leftCol">
-        <div class="avatarFrame avatarShadow" style="background-image: url('<?= $_data['product']['product']['posts'][0]['avatar'] ?>&width=300');"></div>
-        <ul id="shopUserData">
-            <li style="font-size: 13px;">Inspiration by</li>
-            <li style="font-size: 25px;" class="scribble"><a href="/<?= $_data['product']['product']['posts'][0]['username']?>"><?= $_data['product']['product']['posts'][0]['username']?></a></li>
+<div class="shopCol">
+    <div class="productDetails">
+        <ul class="productDeets">
+            <li class="prodName"><?= $_data->product->product_name ?></li>
+            <li class="inspBy"><span class="dahliaPink">Inpiration by</span> <a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></li>
         </ul>
-        <div style="clear: left;"></div>
-        <ul>
-            <li id="prodFollow" class="follow isnotfollowing">FOLLOW+</li>
-            <li>
-                <p class="scribble story">Story behind <?= $_data['product']['product']['product_name'] ?></p>
-                <p class="content"><?= $_data['product']['product']['story_behind_design'] ?></p>
-            </li>
-        </ul>
-    </div>
-    <div class="centerCol">
-        <? if (!empty($_data['product']) && !empty($_data['product']['files'])): ?>
-            <!--<div id="nextImage">></div>-->
+        <? if (!empty($_data->product) && !empty($_data->files)): ?>
             <ul class="productImagesFrame" id="prodImgFrame">
-                <? foreach ($_data['product']['files'] as $i => $file): ?>
-                    <? $image_url = CDN_IMAGE_SCRIPT . $file['product_file_id'] . '&width=' . $width . '&height=' . $height; ?>
+                <? foreach ($_data->files as $i => $file): ?>
+                    <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . $width . '&height=' . $height; ?>
                     <li <?= $i == 0 ? 'class="showing"' : '' ?> >
-                        <img src="<?= $image_url ?>" width="<?= $width ?>" />
+                        <img id="image-<?= $i ?>" src="<?= $image_url ?>" width="<?= $width ?>" />
                     </li>
                 <? endforeach ?>
             </ul>
-            <? if (!empty($_data['product']) && !empty($_data['product']['files'])): ?>
+            <? if (!empty($_data->product) && !empty($_data->files)): ?>
                 <ul id="thumbs">
-                    <? foreach ($_data['product']['files'] as $i => $file): ?>
-                    <? $image_url = CDN_IMAGE_SCRIPT . $file['product_file_id'] . '&width=100&height=' . $height; ?>
-                    <li>
-                        <img src="<?= $image_url ?>" />
-                    </li>
+                    <? foreach ($_data->files as $i => $file): ?>
+                        <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=100&height=' . $height; ?>
+                        <li>
+                            <img src="<?= $image_url ?>" />
+                        </li>
                     <? endforeach ?>
                 </ul>
             <? endif ?>
         <? endif ?>
     </div>
-    <div class="rightCol">
-        <div id="postDetailTopRow">
-        <div id="postShareSection" style="width: 100%;">
-            <ul class="shareButts">
-                <? $image_url = CDN_IMAGE_SCRIPT . $_data['product']['files'][0]['product_file_id'] . '&width=' . $width . '&height=' . $height; ?>
-
-                <li class="cursor" style="width: 40px;" id="shareFacebook"></li>
-                <a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com;media=<?= $image_url ?>" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
-                    <li style="width: 40px;" id="sharePinterest"></li>
+    <div class="productCTA">
+        <div class="needSection">
+            <ul class="prodShareButts">
+                <li class="cursor" id="shareFacebook"></li>
+                <a href="http://pinterest.com/pin/create/button/?url=http://www.dahliawolf.com;media=http://content.dahliawolf.com/shop/product/image.php?file_id=<?= $_data->product->product_file_id ?>&amp;width=&amp;height=" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+                    <li id="sharePinterest"></li>
                 </a>
-                <a href="http://www.tumblr.com/share/photo?source=<?= rawurlencode( $image_url ) ?>&caption=<?= rawurlencode( "Check this out at #Dahliawolf" )?>&click_thru=<?= rawurlencode( "http://www.dahliawolf.com/shop/".$_data['product']['product']['id_product']) ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                    <li style="width: 40px;" id="shareTumbler"></li>
+                <a href="http://www.tumblr.com/share/photo?source=http%3A%2F%2Fcontent.dahliawolf.com%2Fshop%2Fproduct%2Fimage.php%3Ffile_id=<?= $_data->product->product_file_id ?>%26width%3D%26height%3D&amp;caption=Check%20this%20out%20at%20%23Dahliawolf&amp;click_thru=http%3A%2F%2Fwww.dahliawolf.com%2Fshop%2F<?= $_data->product->id_product ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                    <li id="shareTumbler"></li>
                 </a>
-                <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&amp;url=http://www.dahliawolf.com/shop/<?= $_data['product']['product']['id_product'] ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
-                    <li style="width: 40px;" id="shareTwitter"></li>
+                <a href="https://twitter.com/intent/tweet?original_referer=http://www.dahliawolf.com&amp;url=http://www.dahliawolf.com/shop/<?= $_data->product->id_product ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+                    <li id="shareTwitter"></li>
                 </a>
-                <a href="https://plus.google.com/share?url=http://www.dahliawolf.com/shop/<?= $_data['product']['product']['id_product'] ?>"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
-                    <li style="width: 40px;" id="shareGplus"></li>
+                <a href="https://plus.google.com/share?url=http://www.dahliawolf.com/shop/<?= $_data->product->id_product ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+                    <li id="shareGplus"></li>
                 </a>
-                <a href='mailto:?subject=Check out Dahliawolf.com&body=Check this out at http://www.dahliawolf.com/shop/<?= $_data['product']['product']['id_product'] ?>.'>
-                    <li style="width: 40px;" id="shareEmail"></li>
+                <a href="mailto:?subject=Check out Dahliawolf.com&amp;body=Check this out at http://www.dahliawolf.com/shop/<?= $_data->product->id_product ?>.">
+                    <li id="shareEmail"></li>
                 </a>
             </ul>
-            <div style="clear: left;"></div>
-        </div>
-        </div>
 
-        <ul class="regularPrice">
-            <li><span <?= $status == 'Pre Order' ? 'style="text-decoration:line-through"' : '' ?>>$<?= number_format( ($_data['product']['product']['price']), 2, '.', ',') ?></span></li>
-            <? if( $_data['product']['product']['status'] == 'Pre Order'): ?>
-                <li><span class="preOrderPrice"><?= $status == 'Pre Order' ? '30% OFF PRE-ORDER' : ''?></span> $<?= number_format($_data['product']['product']['sale_price'], 2, '.', ',') ?></li>
-            <? endif ?>
-        </ul>
-        <? if( $status == 'Pre Order'): ?>
-            <div class="timeLeft"><span style="font-weight: 700;"><span id="daysLeft">28</span> Days</span> left to pre-order at 30% off</div>
-        <? endif ?>
-        <div>
-            <form id="addItemToCartForm" action="/action/shop/add_item_to_cart.php" method="post">
-                <input type="hidden" name="ajax" value="true">
-                <input type="hidden" name="id_product" value="<?= $_data['product']['product']['id_product'] ?>" >
-                <ul id="shopOptions">
-                    <li style="height: 45px;line-height: 45px;">
-                        <label>Quantity</label>
-                        <select name="quantity" value="1" style="font-size: 20px;" />
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label style="float: left;">Sizes</label>
-                        <? if (!empty($_data['product']['combinations'])): ?>
-                            <ul class="options">
-                                <? foreach($_data['product']['combinations'] as $i => $combination): ?>
-                                    <li>
-                                        <input type="radio" name="id_product_attribute" id="id_product_attribute-<?= $i ?>" value="<?= $combination['id_product_attribute'] ?>"<?= ($combination['default_on'] == 1) ? ' checked="checked"' : '' ?>>
-                                        <label for="id_product_attribute-<?= $i ?>"><?= str_replace('Size: ', '', $combination['attribute_names']) ?></label>
-                                    </li>
-                                <? endforeach ?>
-                            </ul>
-                        <? endif ?>
-                    </li>
-                </ul>
-                <a onclick="$(this).closest('form').submit()">
-                    <p id="addToCart" class="button">Add to Cart</p>
-                </a>
-            </form>
-            <li>
-                <h3>Product Description</h3>
-                <p class="content"><?= $_data['product']['product']['design_description'] ?></p>
-            </li>
-            <li class="product">
-                <dl class="additional-info accordion">
-                    <dt>Size & Fit</dt>
-                    <dd><img class="sizeAndFit"src=/images/dahliawolf_sizechart.jpg></dd>
-                    <dt>Shipping &amp; Returns</dt>
-                    <dd></dd>
-                    <dt>Fabric</dt>
-                    <dd></dd>
-                </dl>
-            </li>
+            <!--<ul>
+                <li class="nMo"><?= $percentage ?>% OF GOAL</li>
+                <li class="nMoDesc">20 pre sales needed to begin production on this item</li>
+                <li>
+                    <ul id="needsBar">
+                        <li class="pComp" style="width: <?php echo ($total_sales/20)*100 ?>%;"><?= $total_sales ?>/20</li>
+                        <li class="pMo">only <?= $sales_needed ?> MORE</li>
+                    </ul>
+                </li>
+            </ul>-->
         </div>
+        <div class="priceSection">
+            <ul>
+                <li class="productPrice">$<?= $_data->product->on_sale ? number_format((float)$_data->product->sale_price, 2, '.', '') : number_format((float)$_data->product->price, 2, '.', '') ?></li>
+                <?php if($_data->product->on_sale): ?>
+                    <li class="regPrice">Regular Price $<?=  number_format((float)$_data->product->price, 2, '.', '') ?> SAVE 30%</li>
+                <? endif ?>
+            </ul>
+        </div>
+        <form id="addItemToCartForm" action="/action/shop/add_item_to_cart.php" method="post">
+            <input type="hidden" name="ajax" value="true">
+            <input type="hidden" name="id_product" value="<?= $_data->product->id_product ?>" >
+            <input type="hidden" name="quantity" value="1" style="font-size: 20px;" />
+            <div class="optionsSection">
+                <? if (!empty($_data->combinations)): ?>
+                    <ul class="options">
+                        <? foreach($_data->combinations as $i => $combination): ?>
+                            <li>
+                                <input type="radio" name="id_product_attribute" id="id_product_attribute-<?= $i ?>" value="<?= $combination->id_product_attribute ?>"<?= ($combination->default_on == 1) ? ' checked="checked"' : '' ?>>
+                                <label for="id_product_attribute-<?= $i ?>"><?= str_replace('Size: ', '', $combination->attribute_names) ?></label>
+                            </li>
+                        <? endforeach ?>
+                    </ul>
+                <? endif ?>
+            </div>
+            <div class="orderButton">
+                <a onclick="$(this).closest('form').submit()">
+                    <p id="addToCart" class="button"><?= $_data->product->on_sale ? 'Pre Order Now' : 'Add To Bag' ?></p>
+                </a>
+            </div>
+            <div class="etaDate">*Estimated Shipping Date: <?= $_data->product->commission_to_date ? $_data->product->commission_to_date : ' Immediately' ?></div>
+        </form>
+    </div>
+    <div style="clear: left;"></div>
+
+    <div class="prodStyle bottomCol">
+        <ul class="storyHeader">
+            <li></li>
+            <li id="avatarSpot"><p><span class="scribble">THE STORY</span>: <?= $_data->product->product_name ?></p></li>
+        </ul>
+        <ul class="storyDetails">
+            <li class="dahliaPink scribble" style="font-size: 13px;">inpiration by</li>
+            <li class="uName"><a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></li>
+            <li class="storyBehind"><?= $_data->product->story_behind_design ?></li>
+        </ul>
+    </div>
+    <div class="prodInfo bottomCol">
+        <ul>
+            <li class="title">Product Details</li>
+            <li><?= $_data->product->design_description ?></li>
+        </ul>
+        <ul>
+            <li class="title">Size & Fit</li>
+            <li>Take a look at our awesome <span class="showChart">chart</span> to make sure its the perfect fit</li>
+        </ul>
+        <ul>
+            <li class="title">Shipping & Returns</li>
+            <li>14 days after purchase</li>
+        </ul>
+        <ul>
+            <li class="title">Fabric</li>
+            <li><?= $_data->product->reference ?></li>
+        </ul>
     </div>
     <div style="clear: left;"></div>
 </div>
+<div id="sizeChart">
+    <div class="theHaze"></div>
+    <img src="/images/dahliawolf_sizechart.jpg">
+</div>
+
 <script>
     $(function() {
-        var data = <?= json_encode( $_data['product'] ) ?>;
-        console.log(data);
-        $('#daysLeft').html(getDaysLeft(data.product.commission_from_date));
+        var data = <?= json_encode( $_data->product ) ?>;
+        $('#daysLeft').html(getDaysLeft(data.commission_from_date));
 
         var thumbs = $('#thumbs li');
         var lengtho = 200;
         if(thumbs.length) {
+            //$(thumbs[0]).addClass('showing');
             $.each(thumbs, function(x, thumb) {
                 $(thumb).hover(function() {
                     if(!$($('.productImagesFrame li')[x]).hasClass('showing')) {
@@ -246,13 +256,13 @@
                     //console.log('df');
                 });
             });
-            $('<div id="leftArrow" class="arrow"></div>').prependTo( $('.centerCol')).on('click', function() {
+            $('<div id="leftArrow" class="arrow"></div>').prependTo( $('.productDetails')).on('click', function() {
                 var $sel = $('.showing');
                 if($sel.prev().length) {
                     $sel.removeClass('showing').fadeOut(lengtho).prev().addClass('showing').fadeIn(lengtho);
                 }
             });
-            $('<div id="rightArrow" class="arrow"></div>').appendTo( $('.centerCol')).on('click', function() {
+            $('<div id="rightArrow" class="arrow"></div>').appendTo( $('.productDetails')).on('click', function() {
                 var $sel = $('.showing');
                 if($sel.next().length) {
                     $sel.removeClass('showing').fadeOut(lengtho).next().addClass('showing').fadeIn(lengtho);
@@ -263,6 +273,15 @@
         }
 
         $('#addItemToCartForm').on('submit', dahliawolf.shop.addProductToCart);
+        dahliawolf.member.get({user_id:data.user_id, username:data.username, viewer_user_id:(dahliawolf.isLoggedIn ? dahliawolf.userId : '')}, function(data) {
+            $('#avatarSpot').prepend(new dahliawolf.$hoverAvatar(data.data.get_user));
+        });
+
+        $('.showChart').on('click', function() {
+             $('#sizeChart').fadeIn(200).on('click', function() {
+                 $(this).fadeOut(200);
+             });
+        });
     });
 
     $(document).on('click', '.shop-wishlist-button', function() {
@@ -278,7 +297,7 @@
         }
     });
 
-    $('#shopOptions .options li').on('click', function() {
+    $('.optionsSection .options li').on('click', function() {
         $(this).css('background-color', '#e4e4e4').siblings().css('background-color', '#fff');
         $(this).find('input').attr('checked', 'checked');
     });

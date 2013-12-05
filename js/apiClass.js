@@ -229,7 +229,7 @@ User.prototype.Loader.prototype.show = function() {
     $view.show();
     $view.animate({'bottom': 0}, this.speed, function() {
         setTimeout(function() {
-            $view.find('img').addClass('spinnerz').on('webkitTransitionEnd', function() {
+            $view.find('img').addClass('spinnerz').on('transitionEnd webkitTransitionEnd', function() {
                 if($(this).hasClass('spinnerz')) {
                     $(this).removeClass('spinnerz');
                 } else {
@@ -454,6 +454,14 @@ Member.prototype.unfollow = function(id, callback) {
     this.analArray = ['_trackEvent', 'Social', 'User Unfollowed Another Member'];
     this.callback = callback;
     this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
+    return this;
+}
+
+Member.prototype.getTopFollowing = function(lim, off, callback) {
+    this.apiFunction = 'get_top_following';
+    this.loginRequired = false;
+    this.callback = callback;
+    this.callApi({limit:lim, viewer_user_id:dahliawolf.userId, offset:off});
     return this;
 }
 //************************************************************************************ POST
