@@ -50,7 +50,7 @@ if(!IS_LOGGED_IN) {
     #dashboardHeader .stats li{padding: 3px 2px;}
     .choosed{border: #000 thin solid;}
 
-    #dataCol{margin: 0px auto; width: 900px; margin-top: 15px; position: relative;}
+    #dataCol{margin: 0px auto; width: 900px; margin-top: 30px; position: relative;}
     #dataCol .menuToggle{width: 202px; margin: 0px auto; height: 60px;}
     #dataCol .menuToggle li{width: 75px; margin-top: 13px; float: left; background-color: #fff; padding: 9px; font-size: 13px; text-align: center; cursor: pointer;}
     #dataCol #filters{ width: 100%; background-color: #fff; height: 25px; line-height: 25px; position: absolute; z-index: 1; height: 30px;line-height: 28px;}
@@ -70,7 +70,7 @@ if(!IS_LOGGED_IN) {
     #dataCol #postSelector{ width: 98%;}
     .menuTitle{border: #c2c2c2 thin solid; background-image: url("/images/dropDownArrow.png"); background-size: auto 47%; background-position: 98%; background-repeat: no-repeat;}
 
-    #postBin{width: 100%; padding-bottom: 120px; padding-top: 35px;}
+    #postBin{width: 100%; padding-bottom: 120px; padding-top: 60px;}
     .dbPost{height: 400px; width: 32%; background-color: #fff; float: left; margin-top: 10px; overflow: hidden; border: #c2c2c2 thin solid; margin-left: 1%; position: relative;}
     .dbPost:hover a{color: #666;}
     .dbPost li{ width: 90%; margin:0px auto;text-align: left;font-size: 12px;position: relative;height: 22px;line-height: 22px;}

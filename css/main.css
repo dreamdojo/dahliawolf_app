@@ -351,6 +351,20 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #shareEmail:hover{background-position: -674px;}
 #shareGplus{background-position: -248px;}
 #shareGplus:hover{background-position: -611px;}
+.shareButts #shareFacebook{background-position: -147px;}
+.shareButts #shareFacebook:hover{background-position: -97px;}
+.shareButts #sharePinterest{background-position: -734px;}
+.shareButts #sharePinterest:hover{background-position: -685px;}
+.shareButts #shareInstagram{background-position: -380px;}
+.shareButts #shareInstagram:hover{background-position: -380px;}
+.shareButts #shareTumbler{background-position: -343px;}
+.shareButts #shareTumbler:hover{background-position: -294px;}
+.shareButts #shareTwitter{background-position: -441px;}
+.shareButts #shareTwitter:hover{background-position: -392px;}
+.shareButts #shareEmail{background-position: -49px;}
+.shareButts #shareEmail:hover{background-position: -1px;}
+.shareButts #shareGplus{background-position: -636px;}
+.shareButts #shareGplus:hover{background-position: -586px;}
 #postDetailMainRow{height: 620px;width: 100%;margin-top: 5px;}
 .socialCol{width: 325px;height: 620px; overflow:hidden; float: left;color: #b7b7b7;margin-left: 20px;}
 .commentSectionTitle{width:100%; height:20px; text-align:center;font-size: 12px;background-color: #fff;padding-top: 3px; text-transform: uppercase;}
