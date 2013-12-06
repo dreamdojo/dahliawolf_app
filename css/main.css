@@ -1851,6 +1851,9 @@ width: 174px;
 
 /* SHOP PAGE ***********************/
 #dahliawolfShop{ width: auto; margin: 0 auto; position: relative; margin-top: 10px;}
+.showLive .Order{display: none;}
+.showPreorder .Live{display: none;}
+.view-select{color: #F03E63 !important;}
 
 .daysEnd{position: absolute; bottom: 0px;width: 100%;text-align: center;line-height: 30px;background-color: #fff;}
 
@@ -1859,6 +1862,7 @@ width: 174px;
 #sortBar{width: 100%;max-width: 1000px;height: 30px;margin: 0px auto;text-indent: 12px;line-height: 30px; color: #ACACAC;}
 #sortBar li:not(:first-child){ cursor: pointer;}
 #sortBar li{float: left;font-size: 12px;}
+#viewFilters a{color: #ACACAC;}
 
 
 /* LOGIN PAGE

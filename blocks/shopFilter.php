@@ -11,14 +11,18 @@
 <div id="sort-bar">
     <div class="filter-wrap">
         Sort Products By:
-        <?php foreach($result->data->get_categories as $category): ?>
-            <span class="">
-                <a class="sort-option" data-sort="<?= $category->category_id ?>" href="/"><?= $category->name ?></a>
-            </span> /
-        <? endforeach ?>
+        <span id="sortFilters">
+            <?php foreach($result->data->get_categories as $category): ?>
+                <span class="">
+                    <a class="sort-option" data-sort="<?= $category->category_id ?>" href="/"><?= $category->name ?></a>
+                </span> /
+            <? endforeach ?>
+        </span>
 
-        <!--<span style="float: right;width: 150px;margin-right: -3px;">View: <span class=""><a id="selectSpine" class="sort-option" href="/vote">two</a></span> /
-        <span class=""><a id="selectGrid" class="sort-option filter-select" href="/vote"> three</a></span>
-        </span>-->
+        <span id="viewFilters" style="float: right;width: 200px;margin-right: -3px;">View:
+            <span class=""><a data-view="all" class="view-option view-select" href="/vote">All</a></span> /
+            <span class=""><a data-view="preorder" class="view-option" href="/vote"> Pre Order</a></span> /
+            <span class=""><a data-view="available" class="view-option" href="/vote"> Available Now</a></span>
+        </span>
     </div>
 </div>

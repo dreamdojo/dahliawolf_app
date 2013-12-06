@@ -27,7 +27,7 @@ shop.prototype = {
 
 shop.prototype.bindFilters = function() {
     var that = this;
-    $('#sort-bar a').on('click', function(e) {
+    $('#sortFilters a').on('click', function(e) {
         e.preventDefault();
         var $this = $(this);
         $('.filter-select').removeClass('filter-select');
@@ -35,6 +35,25 @@ shop.prototype.bindFilters = function() {
         that.sort = $this.data('sort');
         that.$shop.empty();
         that.loadProducts();
+    });
+
+    $('#viewFilters a').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        $('.view-select').removeClass('view-select');
+        $this.addClass('view-select');
+
+        that.$shop.removeClass('showLive showPreorder');
+
+        switch($this.data('view')) {
+            case 'available' :
+                that.$shop.addClass('showLive');
+                break;
+            case 'preorder' :
+                that.$shop.addClass('showPreorder');
+                break;
+        }
+
     });
 }
 

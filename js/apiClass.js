@@ -147,7 +147,7 @@ User.prototype.$post.prototype = {
 User.prototype.$product = function(data) {
     this.data = data;
 
-    var $product = $('<div class="shop-item" id="item-'+this.id+'"></div>');
+    var $product = $('<div class="shop-item '+this.status+'" id="item-'+this.id+'"></div>');
     var $imageFrame = $('<ul class="imageFrame"></ul>');
     var $productShot = $('<li class="productShot"></li>').css('background-image', 'url("'+this.productShot+'")').appendTo($imageFrame);
     var $bloggerShot = $('<li class="bloggerShot"></li>').css('background-image', 'url("'+this.bloggerShot+'")');
