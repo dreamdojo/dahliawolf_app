@@ -31,7 +31,8 @@
 
     $url = 'http://dev.dahliawolf.com/api/1-0/activity_log.json?&function=get_last_activity&user_id='.$_SESSION['user']['user_id'].'&use_hmac_check=0';
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_URL,$url);crunchbase
+
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $result = json_decode(curl_exec ($ch));
@@ -47,7 +48,7 @@
 ?>
 <style>
     #messageCol{border-top: #F03E63 30px solid; margin-top: 20px;}
-    #catHeader{width: 100%; display: inline-block; margin: 50px 180px;}
+    #catHeader{display: inline-block; margin: 50px 180px;}
     #catHeader li{width: 85px;float: left; margin-left:50px; height: 85px;line-height: 200px; text-transform:capitalize; text-align: center;
         font-size: 16px; position: relative; background-size: auto 100%; background-repeat: no-repeat; background-image: url("/images/activityIcons.png"); cursor: pointer;}
     #catHeader li .count{position: absolute; right: 0px; top: 0px; border: #fff 3px solid; border-radius: 20px; height: 20px; width: 20px;
