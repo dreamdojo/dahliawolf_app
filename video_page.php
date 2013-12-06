@@ -18,7 +18,7 @@
 <body>
 
 <div id="slideshow-frame">
-    <video id="dwvideo" style="width:100%;" loop>
+    <video id="dwvideo" muted style="width:100%;" loop>
         <source src="http://dev.dahliawolf.com/images/video/story.mp4" type="video/mp4">
         <source src="http://dev.dahliawolf.com/images/video/story.ogv" type="video/ogg">
     </video>

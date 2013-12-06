@@ -27,6 +27,7 @@
     #bankBucket .postButton{position: absolute; display:none; right: 50%;top: 50%;background-color: #353535; width: 90px;height: 90px;border-radius: 50px;text-align: center;line-height: 90px;margin-top: -45px;margin-right: -45px;font-size: 15px;cursor: pointer;font-family: futura;font-weight: bolder;color: #fff;}
     #bankBucket .postButton:hover{opacity: .7;}
     #bankBucket h2{text-align: center;width: 80%;margin: 30px auto;}
+    #bankBucket .postSource{position: absolute;bottom: 0px;width: 100%;text-align: center;font-size: 12px;height: 25px;line-height: 25px;background-color: #fff;opacity: .7;color: #000;}
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
     #viewToggle{background-image: url("/images/inspireToggle_BG.png");background-position: 0%;position: absolute;right: -11px;width: 45px;background-repeat: no-repeat;overflow: hidden; height: 30px;margin-right: 20px;top: 2px; cursor: pointer;}
@@ -437,6 +438,7 @@
         this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" ondragleave="undrag(event)" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
         this.$image = $('<a class="zoombox" data-url="'+this.data.source+this.data.imageURL+'" rel="modal"><img src="'+this.data.source+this.data.imageURL+'"></a>').appendTo(this.$post);
+        this.$source = $('<div class="postSource"><a href="http://'+this.data.attribution_url+'" target="_new">'+this.data.attribution_url+'</a></div>').appendTo(this.$post);
         this.$post.appendTo(postBank.$bucket);
 
         return this;
