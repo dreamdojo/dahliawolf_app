@@ -123,6 +123,9 @@
 </div>
 
 <script>
+    <?php if(!IS_LOGGED_IN): ?>
+        new_loginscreen();
+    <? endif ?>
 	$(function() {
         theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
         thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= !empty($_GET['view']) ? $_GET['view'] : 'posts' ?>" );

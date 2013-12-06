@@ -76,7 +76,6 @@ if ($top_dir == 'shop') {
 <script src="/js/functions.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/js/functions.js') ?>" type="text/javascript"></script>
 <script src="/js/lazyload.js" type="text/javascript"></script>
 <script src="/js/theLesson.js" type="text/javascript"></script>
-<script src="/js/theGrid.js" type="text/javascript"></script>
 <script src="/js/directMessager.js" type="text/javascript"></script>
 <script src="/js/postDetail.js" type="text/javascript"></script>
 <script src="/js/postDetailPosts.js" type="text/javascript"></script>
@@ -86,7 +85,6 @@ if ($top_dir == 'shop') {
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>
 <script src="/js/vote.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/js/vote.js') ?>" type="text/javascript"></script>
-<script src="/js/jquery.countdown.js" type="text/javascript"></script>
 <script type="text/javascript">
 var theUser = new Object();
 var LOVE_REQUIRED = 1000;

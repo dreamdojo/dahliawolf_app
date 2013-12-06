@@ -73,7 +73,9 @@
      <ul id="catHeader">
         <? foreach($categories as $title=>$category): ?>
             <li data-cat="<?= $title ?>" class="act-<?= $title ?>">
-                <div class="count"><?= count($category) ?></div>
+                <?php if(count($category)): ?>
+                    <div class="count"><?= count($category) ?></div>
+                <?php endif ?>
                 <?= $title ?>
             </li>
         <? endforeach ?>
