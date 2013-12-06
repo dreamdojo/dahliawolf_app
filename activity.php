@@ -31,7 +31,7 @@
 
     $url = 'http://dev.dahliawolf.com/api/1-0/activity_log.json?&function=get_last_activity&user_id='.$_SESSION['user']['user_id'].'&use_hmac_check=0';
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,$url);crunchbase
+    curl_setopt($ch, CURLOPT_URL,$url);
 
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
