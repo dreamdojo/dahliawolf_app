@@ -22,7 +22,7 @@
         <span id="viewFilters" style="float: right;width: 200px;margin-right: -3px;">View:
             <span class=""><a data-view="all" class="view-option view-select" href="/vote">All</a></span> /
             <span class=""><a data-view="preorder" class="view-option" href="/vote"> Pre Order</a></span> /
-            <span class=""><a data-view="available" class="view-option" href="/vote"> Available Now</a></span>
+            <span class=""><a data-view="available" class="view-option" href="/vote"> Available</a></span>
         </span>
     </div>
 </div>
