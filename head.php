@@ -111,7 +111,6 @@ var LOVE_REQUIRED = 1000;
         if(dahliawolf.isLoggedIn) {
             dahliawolf.activity.getNew(function(data) {
                 var activity_count = Number(data.data.get_grouped_log_count.activity_count);
-                console.log(activity_count);
                 if(activity_count) {
                     if(activity_count > sessionStorage.newActivity) {
                         $('.menuBars').addClass('menuBarsActive');

@@ -1,4 +1,5 @@
 function User(userData) {
+    holla.log('Hello, Welcome to Dahlia/Wolf');
     if(userData) {
         this.data = userData;
     } else {
