@@ -29,7 +29,7 @@
 		die();
 	}
 
-    $url = 'http://www.dahliawolf.com/api/1-0/activity_log.json?&function=get_last_activity&user_id='.$_SESSION['user']['user_id'].'&use_hmac_check=0';
+    $url = 'http://www.dahliawolf.com/api/1-0/activity_log.json?&function=get_last_activity&viewer_user_id='.$_SESSION['user']['user_id'].'&user_id='.$_SESSION['user']['user_id'].'&use_hmac_check=0';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
 
@@ -136,7 +136,7 @@
         console.log(data);
 
         var $view = $('<ul class="activityLog"></ul>');
-        var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=100\')">');
+        /*var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=100\')">');
         $('<li id="postDetailFollowButton">Follow</li>').appendTo($avatar).on('click', function() {
 
         });
@@ -144,7 +144,8 @@
 
         });
         $('<li><a href="/'+data.username+'">Profile</a></li>').appendTo($avatar);
-        $avatar.appendTo($view);
+        $avatar.appendTo($view);*/
+        $view.append(new dahliawolf.$hoverAvatar(data));
 
         switch(data.entity) {
             case 'follow' :
@@ -155,10 +156,10 @@
                 //var $post = $('<li class="postImg"></li>').css('background-image', 'url("'+data.image_url+'&width=85")').appendTo($view);
                 break;
             case 'message' :
-                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> says '+socialize(data.body)+'</li>').appendTo($view);
+                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> says '+socialize(decodeURI(data.body))+'</li>').appendTo($view);
                 break;
             case 'comment' :
-                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> says '+socialize(data.comment)+'</li>').appendTo($view);
+                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> says '+socialize(decodeURI(data.comment))+'</li>').appendTo($view);
                 break;
             case 'sale' :
                 var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> purchased your product</li>').appendTo($view);

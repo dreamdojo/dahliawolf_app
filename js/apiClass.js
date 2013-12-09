@@ -843,7 +843,7 @@ Activity.prototype.getCategory = function(t, callback) {
     this.apiFunction = 'get_by_type';
     this.loginRequired = true;
     this.callback = callback;
-    this.callApi({type:t, user_id:dahliawolf.userId});
+    this.callApi({type:t, user_id:dahliawolf.userId, viewer_user_id:dahliawolf.userId});
     return this;
 }
 
