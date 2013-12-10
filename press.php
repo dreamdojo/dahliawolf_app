@@ -19,4 +19,22 @@
 
 ?>
 
-<h1>AS SEEN ON</h1>
+<div class="transCol">
+    <div class="goodieGrad"></div>
+    <h1>AS SEEN ON</h1>
+    <?php foreach($asa as $img): ?>
+        <ul>
+            <li><?= $img[0] ?></li>
+            <li><?= $img[1] ?></li>
+            <li><?= $img[2] ?></li>
+            <li><?= $img[3] ?></li>
+         </ul>
+    <?php endforeach ?>
+    <?php foreach($press as $img): ?>
+        <ul>
+            <li><?= $img[0] ?></li>
+            <li><?= $img[1] ?></li>
+            <li><?= $img[2] ?></li>
+        </ul>
+    <?php endforeach ?>
+</div>

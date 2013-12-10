@@ -136,15 +136,6 @@
         console.log(data);
 
         var $view = $('<ul class="activityLog"></ul>');
-        /*var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=100\')">');
-        $('<li id="postDetailFollowButton">Follow</li>').appendTo($avatar).on('click', function() {
-
-        });
-        $('<li><a href="'+data.username+'" rel="message">Message</a></li>').appendTo($avatar).on('click', function() {
-
-        });
-        $('<li><a href="/'+data.username+'">Profile</a></li>').appendTo($avatar);
-        $avatar.appendTo($view);*/
         $view.append(new dahliawolf.$hoverAvatar(data));
 
         switch(data.entity) {

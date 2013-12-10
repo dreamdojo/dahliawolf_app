@@ -689,6 +689,36 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 
 .float{ position:fixed !important; }
 
+
+/****************************** GOODIES **********************************/
+.goodiesCol{width: 900px; margin: 0px auto; text-align: center; color: #464646; position: relative; z-index: 1;}
+.goodiesCol .goodHead{ width: 100%; margin-top: 100px; font-size: 24px; margin-bottom: 55px;}
+.buttRow{width: auto; display: inline-block; margin: 0px auto;}
+.buttRow li{float: left;}
+.pic1{width: 100%;margin-top: 60px;}
+.picDescript{float: left; padding-bottom: 60px; margin-left: 20px;}
+.goodiesCol h1{font-size: 22px;-webkit-margin-after: 5px;}
+.goodiesCol h3{text-align: left;}
+.lbeezy{width: 100%; border-bottom: #464646 thin solid;}
+.toolCTA{color: #fff; padding: 10px 40px; margin-top: 36px; margin-left: 50px; text-align: center; background-color: #ed577e;float: left;}
+.goodieGrad{position: absolute;background-image: url("/images/goodieGrad.png");z-index: -1;height: 400px;width: 100%;top: -52px;background-repeat: no-repeat;}
+
+/********************************** THE PAGE ******************************/
+.transCol{width: 900px;margin: 0px auto;text-align: center;color: #464646;position: relative; z-index: 1;}
+.transCol h1{width: 100%;margin-top: 100px;font-size: 24px;margin-bottom: 55px;}
+.transCol h2{width: 100%;margin-top: 55px;font-size: 20px;margin-bottom: 55px;}
+.transCol h3{width: 100%;margin-top: 55px;font-size: 18px;margin-bottom: 55px;}
+.transCol .steppingStone{width: 700px;border: #c2c2c2 thin solid;margin: 0px auto;display: inline-block;padding: 30px 0px;}
+.transCol .steppingStone li{width: 350px;float: left;}
+.transCol .stepTitle{height: 30px;line-height: 31px;font-size: 18px;color: #c2c2c2;margin-top: 11px;}
+.transCol .wyg{height: 30px;line-height: 31px;font-size: 18px;}
+.transCol .learns{font-size: 13px;color: #c2c2c2;}
+.transCol .dahliaButton{background-color: #f03e63;padding: 10px 25px;color: #fff;width: 98px;margin: 0px auto;font-size: 12px;margin-bottom: 20px;}
+.transCol .vipEx{width: 200px;float: left;margin-left: 72px;}
+.transCol .justTheFacts{margin-top: 20px;}
+.transCol .listOfFacts{float: left;text-align: left;font-size: 13px;line-height: 24px; }
+.transCol .listOfFacts h3{margin-top: 10px; margin-bottom: 10px;}
+
 #loginbox #errorBox{margin-top: 23px;font-size: 15px;color: red;}
 #r_errorBox{margin-top: 45px;font-size: 15px;color: red;}
 .mainCol{width: 1000px; margin: 0px auto;font-size: 14px;}

@@ -144,7 +144,7 @@
                     <a href="/shop/my-orders"><li>Orders</li></a>
                 <? endif ?>
                 <a href="/goodies"><li>Goodies</li></a>
-                <a href="http://blog.dahliawolf.com/"><li>Blog</li></a>
+                <a href="http://blog.dahliawolf.com/" target="_blank"><li>Blog</li></a>
                 <!--<a href="/shop/my-wishlist"><li>Wishlist</li></a>-->
                 <a href="/pinit"><li>Inspire Tool</li></a>
                 <a href="/wolf-pack"><li style="border-bottom: none;">Pack Leaders</li></a>

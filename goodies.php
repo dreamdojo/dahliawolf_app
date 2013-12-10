@@ -4,19 +4,6 @@
     include "header.php";
 ?>
 
-<style>
-    .goodiesCol{width: 900px; margin: 0px auto; text-align: center; color: #464646; position: relative; z-index: 1;}
-    .goodiesCol .goodHead{ width: 100%; margin-top: 100px; font-size: 24px; margin-bottom: 55px;}
-    .buttRow{width: auto; display: inline-block; margin: 0px auto;}
-    .buttRow li{float: left;}
-    .pic1{width: 100%;margin-top: 60px;}
-    .picDescript{float: left; padding-bottom: 60px; margin-left: 20px;}
-    .goodiesCol h1{font-size: 22px;-webkit-margin-after: 5px;}
-    .goodiesCol h3{text-align: left;}
-    .lbeezy{width: 100%; border-bottom: #464646 thin solid;}
-    .toolCTA{color: #fff; padding: 10px 40px; margin-top: 36px; margin-left: 50px; text-align: center; background-color: #ed577e;float: left;}
-    .goodieGrad{position: absolute;background-image: url("/images/goodieGrad.png");z-index: -1;height: 400px;width: 100%;top: -52px;background-repeat: no-repeat;}
-</style>
 <div class="goodiesCol">
     <div class="goodieGrad"></div>
     <div class="goodHead">Go next level with Apps, Widgets and More!</div>
