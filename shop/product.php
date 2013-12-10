@@ -7,7 +7,7 @@
         redirect('/shop');
     }
 
-    $url = 'http://www.commerce.offlinela.com/1-0/product.json?function=get_product_details&id_product='.$_GET['id_product'].'&use_hmac_check=0';
+    $url = 'http://dev.commerce.offlinela.com/1-0/product.json?function=get_product_details&id_product='.$_GET['id_product'].'&use_hmac_check=0';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_POST, 1);
