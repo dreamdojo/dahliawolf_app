@@ -6,35 +6,40 @@ include "header.php";
 ?>
 <style>
 .top-spacing li {margin-top:90px;}
+.faqHeader{width: 230px;margin: 0px auto;font-size: 18px;color: #7E7E7E;margin-bottom: 30px;}
+.transCol ul{width: 89%;text-align: left;margin: 0px auto;padding: 10px 0px;}
+.transCol ul .question{text-transform: uppercase; font-size: 18px; color: #c2c2c2;padding-bottom: 10px;}
+.transCol ul .answer{color: #666; font-size: 12px;}
+.transCol h3{margin-top: 35px; margin-bottom: 35px;}
+.transCol h1{margin-bottom: 35px;}
+.AboutContent{font-size: 12px;}
 </style>
 
+    <div class="transCol">
+    <div class="goodieGrad"></div>
+    <h1>FAQS</h1>
+    <h3>Below is a list of frequently asked questions about DAHLIA\WOLF</h3>
+    <div class="faqHeader">MOST COMMONLY ASKED QUESTIONS</div>
+
+    <ul>
+        <li class="question">HOW DO MY INSPIRATIONS BECOME CLOTHING?</li>
+        <li class="answer">The winning inspiration images are given to our design team, where they first create a mood board around your inspiration image and then use that and only instructions you have to create a completely new style.</li>
+    </ul>
+    <ul>
+        <li class="question">HOW DO MY IMAGES GET PICKED TO INSPIRE NEW CLOTHES?</li>
+        <li class="answer">Get 1,000 LOVES on your inspiration image and we will use it to create a completely new and original design. Also if your inspiration catches the eye of the community leaders or our design team, we will pick your image to inspire a new design.</li>
+    </ul>
+    <ul>
+        <li class="question">WHAT DO POINTS DO?</li>
+        <li class="answer">Points determine your rank on Dahlia\Wolf. The higher the membership level, the more discounts you get in the shop</li>
+    </ul>
+    <ul>
+        <li class="question">HOW DO I EARN COMMISSION?</li>
+        <li class="answer">If your inspiration image inspires a new design, you will earn a 5% commission on all items sold in the shop.</li>
+    </ul>
+</div>
+
 <div class="AboutContent">
-	<div style="font-family:Futura, Arial, Helvetica, sans-serif; font-size:15px !important; color: rgb(92, 92, 92);">
-
-		<h1>FAQs</h1>
-
-<h3>BELOW IS A LIST OF FREQUENTLY ASKED QUESTIONS ABOUT DAHLIA WOLF</h3>
-<br />
-<div style="background-color:rgb(241, 241, 241); width:770px;margin:0px; padding:20px;">
-
-<H2><center>MOST COMMONLY ASKED QUESTIONS</center></H2>
-<br />
-
-<table>
-<tr >
-<td><img style="padding-left: 20px; padding-bottom: 30px;" src="/images/faq-most-asked.jpg" />
-</td>
-</tr>
-</table>
-<br />
-</div>
-
-
-<div style="background-color:rgb(230, 230, 230);; text-align:center; width:730px;margin:20px; padding:20px;">
-<h3>WHAT IF I HAVE MORE QUESTIONS?</h3></br>
-<p>If you don't find the answer you need on the FAQ page, there are many other ways you can contact us. If you have other questions or concerns about anything, please email us to help [at] dahliawolf.com</p>
-</div>
-</br>
 
 <H3><u>GETTING STARTED</u></H3>
 <br />
@@ -356,10 +361,11 @@ Orders for sale items are final and cannot be returned or exchanged. </li></br>
 
 
 
-        
+
         <div class="clear message"></div>
 	</div>
 </div>
+
 <?
 include "footer.php";
 ?>

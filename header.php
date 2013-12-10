@@ -152,7 +152,7 @@
                 <? if(IS_LOGGED_IN): ?>
                     <a href="/action/logout"><li>Logout</li></a>
                 <? endif ?>
-                <li class="top-menu-footer"><a href="/help">How it Works</a> - <a href="/tos">Legal</a> - <a href="/contact">Contact</a> - <bold>© Dahlia Wolf 2013</bold></li>
+                <li class="top-menu-footer"><a href="/hiw">How it Works</a> - <a href="/tos">Legal</a> - <a href="/contact">Contact</a> - <bold>© Dahlia Wolf 2013</bold></li>
             </ul>
         </div>
         <? if(!IS_LOGGED_IN): ?>
