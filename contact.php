@@ -32,19 +32,19 @@ include "header.php";
     </a>
     <div class="row1">
         <ul>
-            <li>image</li>
+            <li><img src="/images/conMail.png"></li>
             <li><h3>EMAIL US A QUESTION</h3></li>
             <li>Expect to hear back from us in 24 hours</li>
             <li><a href="mailto:cs@dahliawolf.com">EMAIL NOW</a></li>
         </ul>
         <ul>
-            <li>image</li>
+            <li><img src="/images/conTel.png"></li>
             <li><h3>CALL US TOLL FREE</h3></li>
             <li>1-800-9302 8am -6pm PT</li>
             <li>5 days a week</li>
         </ul>
         <ul>
-            <li>image</li>
+            <li><img src="/images/conCom.png"></li>
             <li><h3>CHAT LIVE WITH AN EXPERT</h3></li>
             <li>6am - 6pm PT Mon-Fri</li>
             <li>COMING SOON</li>
