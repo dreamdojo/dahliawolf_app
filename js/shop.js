@@ -3,6 +3,7 @@ function shop(user) {
     this.products = [];
     this.shopOwner = (user ? user : {});
     this.sort = null;
+    this.priceSort = null;
 
     $('#sortBar li:not(:first-child)').on('click', this.filterShop);
 
@@ -19,6 +20,7 @@ shop.prototype = {
         str += (dahliawolf.isLoggedIn ? '&viewer_user_id='+dahliawolf.userId : '');
         str += (this.hasShopOwner ? '&user_id='+this.shopOwner.user_id : '');
         str += '&use_hmac_check=0&id_shop=3&id_lang=1';
+        str += (this.priceSort ? '&sort=price-'+this.priceSort : '');
         return str;
     },
 
@@ -51,6 +53,16 @@ shop.prototype.bindFilters = function() {
                 break;
             case 'preorder' :
                 that.$shop.addClass('showPreorder');
+                break;
+            case 'asc' :
+                that.priceSort = $this.data('view');
+                that.$shop.empty();
+                that.loadProducts();
+                break;
+            case 'desc' :
+                that.priceSort = $this.data('view');
+                that.$shop.empty();
+                that.loadProducts();
                 break;
         }
 
