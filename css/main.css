@@ -1,4 +1,5 @@
 /* RESET
+font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 --------------------------------------------------------------------------------------- */
 html{background: #fff;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin: 0;padding: 0;}
@@ -16,7 +17,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}
 iframe{height:0px;}
 
-body { font-family: futura, arial; font-size:10px;color:#666; margin-top: 50px;}
+body { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size:10px;color:#666; margin-top: 50px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}

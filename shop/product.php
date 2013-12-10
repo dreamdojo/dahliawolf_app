@@ -81,16 +81,15 @@
     .prodStyle .storyHeader{width: 90%;height: 86px;margin: 0px auto;margin-top: 10px;margin-bottom: 10px;position: relative;}
     .prodStyle .storyHeader p{line-height: 50px;font-size: 14px;text-transform: uppercase;background-color: #F1F1F1;float: left;margin-top: 18px;position: absolute;width: 90%;text-indent: 66px;z-index: -1;margin-left: 10%;color: #A5A5A5;}
     .prodStyle .storyDetails{width: 90%; margin: 0px auto;}
-    .prodStyle .uName{font-size: 18px;margin-top: -8px;margin-bottom: 5px;}
+    .prodStyle .uName{font-size: 18px;margin-top: -2px;margin-bottom: 5px;}
     .prodStyle .postDetailAvatarFrame{margin-left: 0px !important;}
     .prodStyle .storyBehind{line-height: 20px;}
 
     .prodInfo{width: 40%; float: left;}
-    .prodInfo ul{padding: 2% 6%;border-left: #c2c2c2 thin solid;border-bottom: #c2c2c2 thin solid;min-height: 40px;}
+    .prodInfo ul{padding: 2% 6%;border-left: #c2c2c2 thin solid;border-bottom: #c2c2c2 thin solid;min-height: 40px;padding: 7% 6%;}
     .prodInfo ul:last-child{border-bottom: none;}
-    .prodInfo ul:first-child{padding: 7% 6%;}
-    .prodInfo .title{font-size: 13px;color: #969696;padding-bottom: 5px;}
-    .bottomCol{border-top: #c2c2c2 thin solid;margin-top: 20px; color: #c2c2c2;}
+    .prodInfo .title{font-size: 13px;color: #666;padding-bottom: 5px;}
+    .bottomCol{border-top: #c2c2c2 thin solid;margin-top: 20px; color: #9e9e9e; font-size: 12px;}
     .prodInfo .showChart{cursor: pointer; color: #666;}
 
     .priceSection{border-top: #c2c2c2 thin solid;border-bottom: #c2c2c2 thin solid;padding-bottom: 10px;margin-top: 10px;margin-bottom: 5px;}
