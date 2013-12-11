@@ -39,7 +39,7 @@ if (200 == $connection->http_code): ?>
 <? endif ?>
 <?= var_dump($_SESSION['twitter']) ?>
 <script>
-    opener.dahliawolf.twitterToken = "<?= $_SESSION['twitter']['access_token'] ?>";
+    opener.dahliawolf.twitterToken = <?= json_encode($_SESSION['twitter']['access_token']) ?>;
     if(opener.globalCallback) {
         opener.globalCallback();
         opener.globalCallback = false;
