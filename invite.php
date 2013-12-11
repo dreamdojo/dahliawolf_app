@@ -221,7 +221,9 @@ partyLine.getUsers['TWITTER'] = function(cursor, keepGoing){
                 }
             });
         }else{
-            dahliawolf.logIntoTwitter();
+            dahliawolf.logIntoTwitter(function() {
+                partyLine.getUsers['TWITTER']();
+            });
         }
     }
 }
