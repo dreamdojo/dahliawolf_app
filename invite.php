@@ -203,23 +203,27 @@ partyLine.getUsers['TWITTER'] = function(cursor, keepGoing){
         partyLine.displayUsers();
     } else {
         if(dahliawolf.areYouLoggedIntoTwitter){
-            $.post(partyLine.twitterUrl, {'cursor' : cursor, 'screen_name' : partyLine.twitterUsername }).done(function(data){
-                obj = JSON.parse(data);
-                if(!obj.errors){
-                    cursor = obj.next_cursor;
-                    obj = obj['users'];
-                    $.each(obj,function(index,friend) {
-                        partyLine.twitterUsers.push(friend);
-                        partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
-                    });
-                    partyLine.displayUsers();
-                    if(cursor != 0){
-                        partyLine.getUsers['TWITTER'](cursor, true);
+            if(partyLine.twitterUsername != null){
+                $.post(partyLine.twitterUrl, {'cursor' : cursor, 'screen_name' : partyLine.twitterUsername }).done(function(data){
+                    obj = JSON.parse(data);
+                    if(!obj.errors){
+                        cursor = obj.next_cursor;
+                        obj = obj['users'];
+                        $.each(obj,function(index,friend) {
+                            partyLine.twitterUsers.push(friend);
+                            partyLine.users[index] = new partyLine.user(friend.name, friend.screen_name, friend.profile_image_url, 'TWITTER');
+                        });
+                        partyLine.displayUsers();
+                        if(cursor != 0){
+                            partyLine.getUsers['TWITTER'](cursor, true);
+                        }
+                    }else{
+                        alert(obj.errors[0].message);
                     }
-                }else{
-                    alert(obj.errors[0].message);
-                }
-            });
+                });
+            }else{
+                partyLine.setTwitterAccount();
+            }
         }else{
             dahliawolf.logIntoTwitter(function() {
                 partyLine.getUsers['TWITTER']();

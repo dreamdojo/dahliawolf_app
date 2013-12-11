@@ -37,7 +37,6 @@ if (200 == $connection->http_code): ?>
   /* Save HTTP status for error dialog on connnect page.*/
   <? header('Location: ./clearsessions.php'); ?>
 <? endif ?>
-
 <script>
     opener.dahliawolf.twitterToken = <?= json_encode($_SESSION['twitter']['access_token']['oauth_token']) ?>;
     if(opener.globalCallback) {
