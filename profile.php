@@ -69,17 +69,13 @@
                         <div style="clear: left;"></div>
                     </li>
                     <li class="profileLocation"><?= $_data['user']['location'] ?></li>
-                    <li class="boutitboutit"><?= $_data['user']['about'] ?></li>
                     <li class="profileLocation"><a href="http://<?= $_data['user']['website'] ?>" target="_blank" style="font-weight: bold !important;"><?= $_data['user']['website'] ?></a></li>
+                    <li class="boutitboutit"><?= $_data['user']['about'] ?></li>
                     <? if(MY_PROFILE): ?> 
                     	<li style="margin-top: 5px !important;"><a href="/account/settings"><span class="profileRed">Edit</span></a></li>
                     <? endif ?>
                 </ul>
                 <div id="userProfileDeetsRightCol">
-                        <div class="followersLink" <?= (MY_PROFILE ? 'style="opacity:0;"' : '' ) ?> >
-                            <p id="followingStatus" class="<?= ($_data['user']['is_followed']  ? 'profileFollowing' : '') ?>"><?= ($_data['user']['is_followed']  ? 'Following' : 'Follow+' ) ?></p>
-                        </div>
-                    
                     <ul class="userProfileStatList">
                         <li id="profileStatRank"><p class="statTitle">Rank</p><p class="profileRed statPoints"><?= $_data['user']['rank'] ?></p></li>
                         <li id="profileStatPoints"><p class="statTitle">Points</p><p class="profileRed statPoints"><?= $_data['user']['points'] ?></p></li>

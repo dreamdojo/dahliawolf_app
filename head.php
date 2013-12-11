@@ -128,39 +128,6 @@ var LOVE_REQUIRED = 1000;
         }
     });
 
-<!-- Start of Woopra Code -->
 
-    (function(){
-        var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
-    })("woopra");
-
-    woopra.config({
-        domain: 'dahliawolf.com',
-        idle_timeout: 1800000
-    });
-    woopra.track('pv', {
-        url: window.location.pathname+window.location.search,
-        title: document.title
-    });
-
-    function woopraReady(tracker){
-        tracker.setDomain('dahliawolf.com');
-        tracker.setIdleTimeout(300000);
-
-        tracker.addVisitorProperty('email', userConfig.email_address);
-        tracker.addVisitorProperty('name', userConfig.username);
-
-        return false;
-    }
-
-    (function(){
-        var wsc=document.createElement('script');
-        wsc.type='text/javascript';
-        wsc.src=document.location.protocol+'//static.woopra.com/js/woopra.js';
-        wsc.async=true;
-        var ssc = document.getElementsByTagName('script')[0];
-        ssc.parentNode.insertBefore(wsc, ssc);
-    })();
-<!-- End of Woopra Code -->
 </script>
 </head>
