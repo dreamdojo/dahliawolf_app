@@ -10,6 +10,7 @@ define('API_KEY_DEVELOPER', 'b968a167feba0990b283f0cd65757a60');
 define('PRIVATE_KEY_DEVELOPER', '796323f65ce5f0178dc15e8181c17247');
 define('API_WEBSITE_ID', 2);
 
+//twitter
 define('CONSUMER_KEY', 'xVzOVRVsutyv6M5zTBblVg');
 define('CONSUMER_SECRET', 'QgiSMOFeNLOrpJdIl7ejZeDU6vFCUqMPTKzu66r5wk');
 define('OAUTH_CALLBACK', 'http://www.dahliawolf.com/callback.php');
