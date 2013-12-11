@@ -100,6 +100,7 @@ User.prototype.isFriend = function(id) {
 }
 
 User.prototype.logIntoTwitter = function(callback) {
+    console.log('here');
     globalCallback = callback;
     var win = window.open(
         "/redirect.php",

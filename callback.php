@@ -45,5 +45,5 @@ if (200 == $connection->http_code): ?>
         opener.globalCallback();
         opener.globalCallback = false;
     }
-    close();
+    //close();
 </script>
