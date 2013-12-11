@@ -83,7 +83,8 @@ partyLine.removeUser = function(id){
 
 partyLine.setTwitterAccount = function(){
 	$.ajax('/action/getTwitterUserInfo.php').done(function(data){
-		data = JSON.parse(data);
+		console.log(data);
+        data = JSON.parse(data);
 		partyLine.twitterUsername = data.screen_name;
 		partyLine.getUsers['TWITTER']();
 	});

@@ -24,7 +24,7 @@
     $_data['post'] = $data['data'];
 
     // Comments
-    $url = 'http://dev.dahliawolf.com/api/1-0/posting.json?function=get_comments&use_hmac_check=0&posting_id='.$_GET['posting_id'];
+    $url = 'http://www.dahliawolf.com/api/1-0/posting.json?function=get_comments&use_hmac_check=0&posting_id='.$_GET['posting_id'];
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_POST, 1);

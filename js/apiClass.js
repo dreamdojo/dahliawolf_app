@@ -197,6 +197,7 @@ User.prototype.$user = function(data) {
 
 //************************************************ Avatar
 User.prototype.$hoverAvatar = function(data) {
+    console.log(data);
     var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=85\')">');
     $('<li id="postDetailFollowButton">'+(Number(data.is_followed) ? 'Unfollow' : 'Follow')+'</li>').on('click', function() {
         if(Number(data.is_followed)) {
