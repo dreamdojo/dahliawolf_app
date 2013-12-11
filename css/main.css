@@ -1807,10 +1807,11 @@ width: 174px;
 #userPostGallery{ width:520%; height:350px; position:relative; overflow:hidden; background-color:#000;}
 #userPostGallery img{height:100%; float:left;}
 #userProfileDeets{height:140px; width: 98.5%;margin-left: .75%; position: relative;}
-#userProfileDeetsOverlay{width:100%; height: 129%; bottom:0px; position:absolute;}
+#userProfileDeetsOverlay{width:100%; height: 100%; bottom:0px; position:absolute;}
 #userProfileMenuBar{ margin-top: 10px;height: 47px;width: 998px; border: #C2C2C2 thin solid;margin-bottom: 10px;}
 #profilePostBin{}
-.userProfileAvatarHome{width: 140px; height:100%; float:left;padding-top: 10px;margin-left: 10px;}
+.userProfileAvatarHome{width: 80px;height: 100%;float: left;padding-top: 25px;}
+.userProfileAvatarHome .postDetailAvatarFrame{margin-left: 0px;}
 .userProfileAvatarFrame{overflow: hidden;border-radius: 110px; margin-top:10px; border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
 .userProfileAvatarFrame img{width:100%;}
 #userProfileDeetsRightCol{float:right; height:100%; width:500px;}
@@ -1828,7 +1829,7 @@ width: 174px;
 #postsGridToggleButton{ height:100%; float:right; width:100px; margin-right:10px; position:absolute; top:0px;}
 .profileUsername{font-size: 22px;margin-top: 12px;}
 .profileLocation{font-size: 16px; margin-bottom: 2px !important;text-transform: uppercase;color: #000;font-size: 14px;}
-.profileRed{ color: #ff2e6e;font-size: 16px;}
+.profileRed{ color: #ff2e6e; font-size: 16px;}
 .toggleSelected{color: #ff2e6e;}
 .overlayLayer{ position:absolute; left:-1%; top:0px; height:100%; width:102%; background-color:#fff;}
 .levelWrap{position:relative;}
@@ -1844,7 +1845,7 @@ width: 174px;
 #profileStatShare{ background-image:url(/images/profile/D.png); background-repeat:no-repeat; background-size:auto 50%; background-position: 50% 0;}
 .statTitle{margin-top: 16px;text-align: center;color: rgb(99, 99, 99);font-size: 18px;font-weight: 100;}
 .statPoints{margin-top: -11px;text-align: center;}
-.boutitboutit{color:#969696;font-size: 14px;max-height: 63px;overflow: hidden;text-overflow: ellipsis;width: 350px;margin-bottom: -2px !important;}
+.boutitboutit{color:#969696;font-size: 14px;max-height: 63px;overflow: hidden;text-overflow: ellipsis;width: 400px;margin-bottom: -2px !important;}
 .profileFollowing{color: #c2c2c2 !important; border: #c2c2c2 thin solid !important;}
 
 #SendMessage {margin: 0 -15px; padding: 12px 15px; font-size: 13px; border-top: 1px solid #e1dfdf; overflow: hidden;}

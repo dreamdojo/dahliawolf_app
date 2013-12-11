@@ -230,7 +230,7 @@ User.prototype.Loader.prototype.show = function() {
     $view.show();
     $view.animate({'bottom': 0}, this.speed, function() {
         setTimeout(function() {
-            $view.find('img').addClass('spinnerz').on('transitionEnd webkitTransitionEnd', function() {
+            $view.find('img').addClass('spinnerz').on('webkitTransitionEnd', function() {
                 if($(this).hasClass('spinnerz')) {
                     $(this).removeClass('spinnerz');
                 } else {
@@ -834,7 +834,7 @@ Activity.prototype.getNew = function(callback) {
     this.apiFunction = "get_grouped_log_count";
     this.callback = callback;
     this.loginRequired = true;
-    this.analArray = ['_trackEvent', 'Activity', 'Checking New'];
+    this.analArray = ['_trackEvent', 'System', 'Checking New'];
     this.callApi({user_id:dahliawolf.userId});
     return this;
 }

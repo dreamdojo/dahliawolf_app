@@ -211,7 +211,7 @@ $Spine->output_css();
 	bottom: 0;
 	background: rgba(255, 255, 255, 0.75);
 	display: none;
-	
+
 	position: absolute;
     z-index: 10000000;
 }

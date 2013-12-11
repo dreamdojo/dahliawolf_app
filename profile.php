@@ -59,8 +59,8 @@
     	<div id="userProfileDeetsOverlay">
         	<div class="overlayLayer"></div>
             <div class="levelWrap">
-                <div class="userProfileAvatarHome">
-                    <a href="<?= $_data['user']['avatar'] ?>" target="_blank"><div class="userProfileAvatarFrame" style="background-image: url('<?= $_data['user']['avatar'] ?>&width=252');"></div></a>
+                <div id="avatarHome" class="userProfileAvatarHome">
+
                 </div>
                 <ul class="userProfileDeetsList">
                     <li class="profileUsername"><a href="@<?= $_data['user']['username'] ?>" style="float: left;" rel="message">@<?= $_data['user']['username'] ?></a>
@@ -118,20 +118,94 @@
     </div>
 </div>
 
-<script>
-    <?php if(!IS_LOGGED_IN): ?>
-        new_loginscreen();
-    <? endif ?>
-	$(function() {
-        theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
-        thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= !empty($_GET['view']) ? $_GET['view'] : 'posts' ?>" );
-        thePostGrid.setFaves(<?= json_encode($faves) ?>);
-    });
-</script>
-
 <? elseif(MY_PROFILE && isset($_GET['dashboard'])): ?>
     <? include "dashboard.php"; ?>
 <? endif ?>
 <?
-include "footer.php";
+    include "footer.php";
 ?>
+
+
+<script>
+    <?php if(!IS_LOGGED_IN): ?>
+        new_loginscreen();
+    <? endif ?>
+    $(function() {
+        theUserProfileData = new userProfile(<?= json_encode($_data['posts']) ?>, <?= json_encode($_data['user']) ?>);
+        thePostGrid = new postDetailGrid( theUserProfileData.data.user_id, $(window), true, "<?= !empty($_GET['view']) ? $_GET['view'] : 'posts' ?>" );
+        thePostGrid.setFaves(<?= json_encode($faves) ?>);
+    });
+
+    function userProfile(posts, data) {
+        this.posts = posts;
+        this.data = data;
+        this.data.is_followed = parseInt(this.data.is_followed);
+        this.animationIndex = 7;
+        this.bindFrontEnd();
+
+        if(this.posts.length >= 6) {
+            setTimeout($.proxy(this.doUserPostBarMagic, this), 10000);
+        }
+
+        $('#avatarHome').append(new dahliawolf.$hoverAvatar(data));
+
+    }
+
+    userProfile.prototype.doUserPostBarMagic = function() {
+        if(this.animationIndex >= (this.posts.length-1)) {
+            this.animationIndex = 0;
+        }
+        $this = this;
+        this.animationIndex++;
+        $.each( $('#userPostGallery img'), function(index, element){
+            $(element).css('left' , $(element).position().left);
+        });
+        $('.titlePostImage').css('position', 'absolute');
+        $.each( $('#userPostGallery img'), function(index, element){
+            $(element).animate({left: ( $(element).position().left - $('.titlePostImage').eq(0).width() )}, 700, function() {
+                if(index == ($('.titlePostImage').length - 1) ) {
+                    $('.titlePostImage').eq(0).remove();
+                    $('.titlePostImage').css('position', 'static');
+                    $('#userPostGallery img').last().fadeIn(300);
+                    $('#userPostGallery').append('<img class="titlePostImage" style="display:none;" src="'+$this.posts[$this.animationIndex].image_url+'">');
+                    setTimeout($.proxy($this.doUserPostBarMagic, $this), 10000);
+                }
+            });
+        });
+    }
+
+    userProfile.prototype.bindFrontEnd = function() {
+        this.followButton = $('.followersLink');
+        this.followerCount = $('#followersCount');
+        this.followStatus = $('#followingStatus');
+
+        this.followButton.bind('click', $.proxy(this.toggleFollow, this));
+        $('#togglePostsLove div').on('click', this.toggleFeed);
+    }
+
+    userProfile.prototype.toggleFeed = function() {
+        $('.toggleSelected').removeClass('toggleSelected');
+        $(this).addClass('toggleSelected');
+        thePostGrid.feedType = $(this).data('filter');
+        thePostGrid.resetGrid();
+    }
+
+    userProfile.prototype.toggleFollow = function() {
+        if(theUser.id){
+            if(this.data.is_followed) {
+                this.data.is_followed = false;
+                this.data.followers--;
+                this.followStatus.html('Follow').removeClass('profileFollowing');
+                dahliawolf.member.unfollow(this.data.user_id);
+            } else {
+                this.data.is_followed = true;
+                this.data.followers++;
+                this.followStatus.html('Following').addClass('profileFollowing');
+                dahliawolf.member.follow(this.data.user_id);
+            }
+            this.followerCount.html(this.data.followers);
+        } else {
+            new_loginscreen();
+        }
+    }
+</script>
