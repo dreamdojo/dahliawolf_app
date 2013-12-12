@@ -1,9 +1,13 @@
 function shop(user) {
+    var that = this;
     this.$shop = $('#dahliawolfShop');
     this.products = [];
     this.shopOwner = (user ? user : {});
     this.sort = null;
     this.priceSort = null;
+    this.offset = 0;
+    this.limit = 9;
+    this.isShopBusy = false;
 
     $('#sortBar li:not(:first-child)').on('click', this.filterShop);
 
@@ -11,6 +15,11 @@ function shop(user) {
     this.centerShop();
     this.bindFilters();
     $(window).resize($.proxy(this.centerShop, this));
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+            that.loadProducts();
+        }
+    });
 }
 
 shop.prototype = {
@@ -21,6 +30,8 @@ shop.prototype = {
         str += (this.hasShopOwner ? '&user_id='+this.shopOwner.user_id : '');
         str += '&use_hmac_check=0&id_shop=3&id_lang=1';
         str += (this.priceSort ? '&sort=price-'+this.priceSort : '');
+        str += '&limit='+this.limit;
+        str += '&offset='+this.offset;
         return str;
     },
 
@@ -78,23 +89,30 @@ shop.prototype.centerShop = function() {
 }
 
 shop.prototype.loadProducts = function() {
-    var that = this
+    var that = this;
 
-    dahliawolf.loader.show();
-    $.getJSON(this.getUrl, function(data) {
-        dahliawolf.loader.hide();
-        if(data.data.get_products && data.data.get_products.data.length) {
-            that.data = data.data.get_products.data;
-            that.fillShop();
-        } else if(data.data.get_category_products && data.data.get_category_products.data.length){
-            that.data = data.data.get_category_products.data;
-            that.fillShop();
-        } else if(that.shopOwner.username && _this.shopOwner.username != '') {
-            that.fillEmptyShop();
-        } else {
-            that.$shop.html('<h2>Our shop is temporarily out of service</h2>');
-        }
-    });
+    if(!this.isShopBusy) {
+        this.isShopBusy = true;
+        dahliawolf.loader.show();
+        $.getJSON(this.getUrl, function(data) {
+            that.isShopBusy = false;
+            dahliawolf.loader.hide();
+            if(data.data.get_products && data.data.get_products.data.length) {
+                that.offset += data.data.get_products.data.length;
+                that.data = data.data.get_products.data;
+                that.fillShop();
+            } else if(data.data.get_category_products && data.data.get_category_products.data.length){
+                that.offset += data.data.get_products.data.length;
+                that.data = data.data.get_category_products.data;
+                that.fillShop();
+            } else if(that.shopOwner.username && _this.shopOwner.username != '') {
+                that.fillEmptyShop();
+            } else {
+                $(window).unbind('scroll');
+                //that.$shop.html('<h2>Our shop is temporarily out of service</h2>');
+            }
+        });
+    }
 }
 
 shop.prototype.fillEmptyShop = function() {
@@ -111,7 +129,6 @@ shop.prototype.fillShop = function() {
     var that = this;
 
     $.each(this.data, function(i, item) {
-        //_this.products[item.id_product] = new _this.product(item, _this.$shop)
         that.$shop.append(new dahliawolf.$product(item));
     });
 }
@@ -142,7 +159,6 @@ shop.prototype.product = function(item, $shop) {
 }
 
 shop.prototype.product.prototype.addToShop = function() {
-    console.log(this.data);
     this.$view = $('<div class="shop-item" id="item-'+this.data.id_product+'" rel="'+this.data.status+'"></div>').appendTo(this.$shop);
     this.$hover = $('<div class="hoverData"></div>').appendTo(this.$view);
     //this.$hover./*append( this.getWishlistButton() ).append( this.getBuyButton() ).append('<div class="itemOverlay"></div>')*/.append( this.getInspirationButton() );
