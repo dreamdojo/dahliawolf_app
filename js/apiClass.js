@@ -884,3 +884,12 @@ Social.prototype.setToken = function(network, toke, callback) {
     this.callApi({user_id:dahliawolf.userId, social_network_id:network, token:toke});
     return this;
 }
+
+Social.prototype.getToken = function(network, toke, callback) {
+    this.apiFunction = 'save_link';
+    this.loginRequired = true;
+    this.callback = callback;
+    this.analArray = ['_trackEvent', 'Social', 'Saved token'];
+    this.callApi({user_id:dahliawolf.userId, social_network_id:network, token:toke});
+    return this;
+}

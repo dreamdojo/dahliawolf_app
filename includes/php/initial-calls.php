@@ -14,12 +14,6 @@ $_data = array();
 $_data['cart'] = get_cart();
 
 if (IS_LOGGED_IN) {
-	/*$params = array(
-		'user_id' => $_SESSION['user']['user_id'],
-	);
-	$data = api_call('activity_log', 'get_num_grouped_unread', $params, true);
-	$new_activity = $data['data'];*/
-
 	$friends = array();
 	$params = array(
 		'username' => $_SESSION['user']['username'],
@@ -34,6 +28,19 @@ if (IS_LOGGED_IN) {
 	);
 	$userConfig = api_call('user', 'get_user', $params, true);
 	$userConfig = $userConfig['data'];
+
+    $url = 'http://dev.api.dahliawolf.com/1-0/social_network.json?use_hmac_check=0&function=get_user_link&user_id='.$_SESSION['user']['user_id'];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
+    foreach($result->data->get_user_link->social_links as $network) {
+           if($network->social_network_id == 6) {//twitter
+               $_SESSION['twitter']['access_token'] = $network->token;
+           }
+    }
 }
 
 ?>

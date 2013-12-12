@@ -66,8 +66,19 @@ if (200 == $tum_oauth->http_code) {
 
 // find primary blog.  Display its name.
 
+$url = 'http://dev.api.dahliawolf.com/1-0/social_network.json?use_hmac_check=0&function=save_link&user_id='.$_SESSION['user']['user_id'].'&social_network_id=6&token='.$access_token['oauth_token'].'&token_secret='.$access_token['oauth_token_secret'];
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$url);
+
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result = json_decode(curl_exec ($ch));
+curl_close ($ch);
+
 $_SESSION['tumblr']['access_token']['oauth_token'] = $access_token['oauth_token'];
 $_SESSION['tumblr']['access_token']['oauth_token_secret'] = $access_token['oauth_token_secret'];
+
+
 // And that's that.  Hopefully it will help.
 ?>
 <script>
