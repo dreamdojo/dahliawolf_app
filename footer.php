@@ -15,7 +15,7 @@
     var google_tag_params = {
         ecomm_prodid: 'REPLACE_WITH_VALUE',
         ecomm_pagetype: 'REPLACE_WITH_VALUE',
-        ecomm_totalvalue: 'REPLACE_WITH_VALUE',
+        ecomm_totalvalue: 'REPLACE_WITH_VALUE'
     };
 </script>
 <script type="text/javascript">
@@ -35,3 +35,6 @@
 
 </body>
 </html>
+<script>
+    console.log(<?= json_encode($_SESSION) ?>);
+</script>

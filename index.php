@@ -43,7 +43,7 @@
     include "blocks/filter.php";
 ?>
     <div id="voteBucket"></div>
-<?php include "/footer.php"; ?>
+<?php include "footer.php"; ?>
 <script>
     $(window).scrollTop($('#joinBanner').offset().top);
     SetTheater();
