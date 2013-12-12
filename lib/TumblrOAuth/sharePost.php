@@ -11,7 +11,7 @@ $tum_oauth = new TumblrOAuth($consumer_key, $consumer_secret, $_SESSION['tumblr'
 // Make an API call with the TumblrOAuth instance.  There's also a post and delete method too.
 $userinfo = $tum_oauth->get('http://api.tumblr.com/v2/user/info');
 
-$params = array(data => file_get_contents( $_GET['url'] ), type => "photo", source=>urlencode($_GET['url']) );
+$params = array(data => file_get_contents( $_GET['url'] ), type => "photo", source=>urlencode($_GET['url']), tags => 'dahliawolf', caption=>'Love this on Dahlia\wolf', link=>urlencode('http://www.dahliawolf.com') );
 $newPost = $tum_oauth->post('http://api.tumblr.com/v2/blog/'.$userinfo->response->user->name.'.tumblr.com/post',$params);
 
 echo json_encode($newPost);
