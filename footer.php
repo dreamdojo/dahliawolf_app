@@ -35,6 +35,3 @@
 
 </body>
 </html>
-<script>
-    console.log(<?= json_encode($_SESSION) ?>);
-</script>

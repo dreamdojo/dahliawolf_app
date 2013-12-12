@@ -40,7 +40,7 @@ if (IS_LOGGED_IN) {
            if($network->social_network_id == 6) {//twitter
                $_SESSION['twitter']['access_token']['oauth_token'] = $network->token;
                $_SESSION['twitter']['access_token']['oauth_token_secret'] = $network->token_secret;
-           } else if($network->social_network_id == 14) {
+           } else if($network->social_network_id == 14) {//tumblr
                $_SESSION['tumblr']['access_token']['oauth_token'] = $network->token;
                $_SESSION['tumblr']['access_token']['oauth_token_secret'] = $network->token_secret;
            }
