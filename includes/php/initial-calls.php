@@ -39,6 +39,9 @@ if (IS_LOGGED_IN) {
     foreach($result->data->get_user_link->social_links as $network) {
            if($network->social_network_id == 6) {//twitter
                $_SESSION['twitter']['access_token'] = $network->token;
+           } else if($network->social_network_id == 14) {
+               $_SESSION['tumblr']['access_token']['oauth_token'] = $network->token;
+               $_SESSION['tumblr']['access_token']['oauth_token_secret'] = $network->token_secret;
            }
     }
 }

@@ -66,7 +66,7 @@ if (200 == $tum_oauth->http_code) {
 
 // find primary blog.  Display its name.
 
-$url = 'http://dev.api.dahliawolf.com/1-0/social_network.json?use_hmac_check=0&function=save_link&user_id='.$_SESSION['user']['user_id'].'&social_network_id=6&token='.$access_token['oauth_token'].'&token_secret='.$access_token['oauth_token_secret'];
+$url = 'http://dev.api.dahliawolf.com/1-0/social_network.json?use_hmac_check=0&function=save_link&user_id='.$_SESSION['user']['user_id'].'&social_network_id=14&token='.$access_token['oauth_token'].'&token_secret='.$access_token['oauth_token_secret'];
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 
