@@ -25,6 +25,15 @@ $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
 /* Save the access tokens. Normally these would be saved in a database for future use. */
 $_SESSION['twitter']['access_token'] = $access_token;
 
+$url = 'http://dev.api.dahliawolf.com/1-0/social_network.json?use_hmac_check=0&function=save_link&user_id='.$_SESSION['user']['user_id'].'&social_network_id=6&token='.$_SESSION['twitter']['access_token']['oauth_token'];
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$url);
+
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result = json_decode(curl_exec ($ch));
+curl_close ($ch);
+
 /* Remove no longer needed request tokens */
 unset($_SESSION['oauth_token']);
 unset($_SESSION['oauth_token_secret']);

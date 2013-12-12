@@ -866,3 +866,21 @@ Message.prototype.send = function(to, message, callback) {
     this.callApi({to_user_name:to, from_user_id:dahliawolf.userId, header:'Personal message from '+dahliawolf.username, body:message});
     return this;
 }
+
+//************************************************************************************************** SOCIAL NETWORKS
+
+function Social() {
+    this.apiApi = 'social_network';
+}
+
+Social.prototype = new Api();
+Social.prototype.constructor = Social;
+
+Social.prototype.setToken = function(network, toke, callback) {
+    this.apiFunction = 'save_link';
+    this.loginRequired = true;
+    this.callback = callback;
+    this.analArray = ['_trackEvent', 'Social', 'Saved token'];
+    this.callApi({user_id:dahliawolf.userId, social_network_id:network, token:toke});
+    return this;
+}
