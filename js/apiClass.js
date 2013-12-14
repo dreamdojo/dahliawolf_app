@@ -14,6 +14,8 @@ function User(userData) {
     this.activity = new Activity();
     this.message = new Message();
     this.loader = new this.Loader();
+    this.social = new Social();
+    this.bank = new Bank();
     this.userStack = [];
 }
 
@@ -197,7 +199,6 @@ User.prototype.$user = function(data) {
 
 //************************************************ Avatar
 User.prototype.$hoverAvatar = function(data) {
-    console.log(data);
     var $avatar = $('<ul class="postDetailAvatarFrame avatarShutters" style="background-image: url(\''+data.avatar+'&width=85\')">');
     $('<li id="postDetailFollowButton">'+(Number(data.is_followed) ? 'Unfollow' : 'Follow')+'</li>').on('click', function() {
         if(Number(data.is_followed)) {
@@ -891,5 +892,37 @@ Social.prototype.getToken = function(network, toke, callback) {
     this.callback = callback;
     this.analArray = ['_trackEvent', 'Social', 'Saved token'];
     this.callApi({user_id:dahliawolf.userId, social_network_id:network, token:toke});
+    return this;
+}
+Social.prototype.unsetPlatform = function(platform_id, callback) {
+    if(platform_id) {
+        $.post('/action/unsetPlatform', {platform:platform_id}, callback);
+    }
+}
+
+//*************************************************************************************************** IMAGE BANK
+
+function Bank() {
+    this.apiApi = 'image_bank.json';
+}
+
+Bank.prototype = new Api();
+Bank.prototype.constructor = Bank;
+
+Bank.prototype.get = function(off, lim, callback) {
+    this.apiFunction = 'get_feed';
+    this.loginRequired = false;
+    this.callback = callback;
+    this.analArray = ['_trackEvent', 'System', 'Loaded Imgs from Bank'];
+    this.callApi({offset:off, limit:lim});
+    return this;
+}
+
+Bank.prototype.post = function(repo_id, obj_id, callback) {
+    this.apiFunction = 'post_image';
+    this.loginRequired = true;
+    this.callback = callback;
+    this.analArray = ['_trackEvent', 'Inspire', 'Posted image from bank'];
+    this.callApi({user_id:dahliawolf.userId, repo_image_id:repo_id, object_id:obj_id});
     return this;
 }

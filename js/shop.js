@@ -38,6 +38,11 @@ shop.prototype = {
     get hasShopOwner() {return (this.shopOwner.user_id ? true : false);}
 }
 
+shop.prototype.resetShop = function() {
+    this.offset = 0;
+    this.$shop.empty();
+}
+
 shop.prototype.bindFilters = function() {
     var that = this;
     $('#sortFilters a').on('click', function(e) {
@@ -46,7 +51,7 @@ shop.prototype.bindFilters = function() {
         $('.filter-select').removeClass('filter-select');
         $this.addClass('filter-select');
         that.sort = $this.data('sort');
-        that.$shop.empty();
+        that.resetShop();
         that.loadProducts();
     });
 
@@ -67,12 +72,12 @@ shop.prototype.bindFilters = function() {
                 break;
             case 'asc' :
                 that.priceSort = $this.data('view');
-                that.$shop.empty();
+                that.resetShop();
                 that.loadProducts();
                 break;
             case 'desc' :
                 that.priceSort = $this.data('view');
-                that.$shop.empty();
+                that.shop.resetShop();
                 that.loadProducts();
                 break;
         }
@@ -102,7 +107,7 @@ shop.prototype.loadProducts = function() {
                 that.data = data.data.get_products.data;
                 that.fillShop();
             } else if(data.data.get_category_products && data.data.get_category_products.data.length){
-                that.offset += data.data.get_products.data.length;
+                that.offset += data.data.get_category_products.data.length;
                 that.data = data.data.get_category_products.data;
                 that.fillShop();
             } else if(that.shopOwner.username && _this.shopOwner.username != '') {

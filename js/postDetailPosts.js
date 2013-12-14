@@ -125,9 +125,9 @@ postDetailGrid.prototype.getPosts = function() {
 	if(this.refillAvailable && !this.finished && (this.offset % this.limit) == 0){
 		this.refillAvailable = false;
         dahliaLoader.show();
-        $.post('/action/getPostsByUser', {post_user_id : this.posterId, feed : this.feedType, offset : this.offset, limit: this.limit}).done(function(data) {
+        dahliawolf.post.get_by_user({user_id : this.posterId, viewer_user_id:dahliawolf.userId, feed : this.feedType, offset : this.offset, limit: this.limit}, function(data) {
             dahliaLoader.hide();
-			$.each(data.data, function(index, post){
+			$.each(data.data.get_by_user.posts, function(index, post){
                 var $post = $('<div class="userGridPostFrame" style="background-image: url(\''+post.image_url+'&width=300\'); background-size:'+(Number(post.height) > Number(post.width) ? '100% auto' : 'auto 100%')+';"></div>').hover(function() {
                     $(this).find('.option').fadeIn(50);
                     $(this).find('.shareBall').fadeIn(50);
@@ -145,10 +145,10 @@ postDetailGrid.prototype.getPosts = function() {
                 $this.postContainer.append( $post.append(str));
 			});
 			$this.resetBindings();
-			if(data.data.length == 0){
+			if(data.data.get_by_user.posts.length == 0){
 				$this.finished = true;
 			}
-			$this.offset += data.data.length;
+			$this.offset += data.data.get_by_user.posts.length;
 			$this.refillAvailable = true;
 		});
 	}

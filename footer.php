@@ -32,6 +32,16 @@
         <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1020911646/?value=0&amp;guid=ON&amp;script=0"/>
     </div>
 </noscript>
+<script type="text/javascript">
+    (function() {
+        var s = document.createElement('script');
+        var c = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//www.fashiolista.com/button/js/';
+        c.parentNode.insertBefore(s, c);
+    })();
+</script>
 
 </body>
 </html>

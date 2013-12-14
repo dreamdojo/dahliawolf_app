@@ -327,16 +327,18 @@
     }
 
     postBank.getImages = function() {
-        var _this = this;
+        var that = this;
         if(postBank.isRefillAvailable) {
             dahliawolf.loader.show()
             postBank.isRefillAvailable = false;
-            api.getBankPosts(this.offset, this.limit, function(data) {
+            dahliawolf.bank.get(this.offset, this.limit, function(data) {
+                console.log(data);
                 dahliawolf.loader.hide()
                 postBank.isRefillAvailable = true;
-                if(data.data.length) {
-                    $.each(data.data, function(index, post) {
-                        postBank.posts.push(new bankPost(post, (postBank.mode == 'line' ? index : '') ));
+                if(data.data.get_feed.images && data.data.get_feed.images.length) {
+                    that.offset += data.data.get_feed.images.length;
+                    $.each(data.data.get_feed.images, function(index, post) {
+                        postBank.$bucket.append(new bankPost(post, data.data.get_feed.object_id, (postBank.mode == 'line' ? index : '') ));
                     });
                 } else if(!$('#bankBucket h2').length) {
                     $('#bankBucket').append('<h2 class="inspireMsg">Choose from one of the options above and start inspiring new fashions.</h2>');
@@ -432,8 +434,9 @@
         postBank.init();
     });
 
-    function bankPost(data, index) {
+    function bankPost(data, oi,  index) {
         this.data = data;
+        this.data.object_id = oi;
         var widths = [500, 300, 400];
         this.$post = $('<div class="postFrame '+postBank.mode+'" draggable="true" ondragstart="drag(event);" ondragleave="undrag(event)" '+(index != '' ? 'style="width:'+widths[index%widths.length]+'px;"' : '')+'></div>');
         this.$button = $('<div class="postButton">POST</div>').appendTo(this.$post).on('click', $.proxy(this.post, this) );
@@ -448,19 +451,11 @@
         var description = '';
         this.$button.hide();
         this.$post.find('img').css('opacity', .2);
-
-        if(theUser.id) {
-            if(this.data.id) {
-                $.post('/action/post_feed_image.php', { id: this.data.id, description: description}, $.proxy(this.addAfterPostMessage, this) );
-                _gaq.push(['_trackEvent', 'Inspire', 'Posted image from D/W Feed']);
-            }
-        } else {
-            new_loginscreen();
-        }
+        dahliawolf.bank.post(this.data.id, this.data.object_id, $.proxy(this.addAfterPostMessage, this) );
     }
 
     bankPost.prototype.addAfterPostMessage = function(data) {
-        var parsed = $.parseJSON(data);
+        data = data.data.post_image;
 
         if(data.posting_id) {
             var str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
@@ -469,8 +464,8 @@
 
             this.$post.append(str);
             this.$post.append(new shareBall(data));
-        } else if(parsed.error){
-            this.$post.append('<div class="inspireError">'+parsed.error+'</div>');
+        } else if(data.error){
+            this.$post.append('<div class="inspireError">'+data.error+'</div>');
         }
     }
 

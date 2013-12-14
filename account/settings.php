@@ -14,19 +14,54 @@ $data = api_call('user', 'get_user', $params, true);
 $_data['user'] = $data['data'];
 
 ?>
-<div class="FixedContainer settings-wrap">
-    <div class="title-section">
-		<div class='section-title'>ACCOUNT SETTINGS</div>
-	</div>
+<style>
+    .SettingsCol{width: 1000px;margin: 0px auto;}
+    #syncSocial{display: none;}
+    .syncSection li:first-child{background-image: url("/images/postDeetsIcons.png"); background-size: auto 100%; background-repeat: no-repeat; width: 75px; height: 75px; float: left;}
+    .syncSection li:last-child{font-size: 25px;height: 80px;line-height: 80px; cursor: pointer;}
+    .syncFacebook li:first-child{background-position: -191px;}
+    .syncTwitter li:first-child{background-position: -583px;}
+    .syncTumblr li:first-child{background-position: -451px;}
+    .socialTitle{font-size: 20px;width: 100%;text-align: center;height: 100px;line-height: 100px;}
+</style>
+    <div id="sort-bar">
+        <div class="filter-wrap">
+            Settings:
+            <span class="">
+                <a id="showProfile" class="sort-option filter-select" href="/vote?sort=new">Profile</a>
+            </span> /
+            <span class="">
+                <a id="showSocial" class="sort-option" href="/vote?sort=hot"> Sharing</a>
+            </span>
+        </div>
+    </div>
+
+<div class="SettingsCol">
     <form id="profileEdit" class="Form StaticForm" action="/action/settings.php" method="POST" style="padding-top:20px;" enctype="multipart/form-data">
+    <label for="id_img">Username: </label> <h1><?= $_data['user']['username'] ?></h1>
+    <ul>
+        <li>
+            <label for="id_img">Current Avatar</label>
+            <div class="Right">
 
-        <ul>
+                <div class="current_avatar_wrapper">
+                    <img src="<?= $_data['user']['avatar'] ?>" class="current_avatar floatLeft" />
+                </div>
+            </div>
+        </li>
 
-            <li>
+        <li>
+            <label for="id_img">Change Avatar</label>
+            <div class="Right">
+                <p><input id="gphoto" name="avatar" type="file" size="6" onchange="this.form.submit();" /></p>
+            </div>
+            <span class="help_text">Accepted Formats: jpeg, jpg, gif and png</span>
+        </li>
+
+        <li>
                 <label for="id_link">Email</label>
                 <div class="Right">
                 	<input type="text" name="email" value="<?= $_data['user']['email_address'] ?>" id="email" />
-                    <span class="help_text">Not shown publicly</span>
                 </div>
             </li>
 
@@ -44,13 +79,13 @@ $_data['user'] = $data['data'];
                 </div>
             </li>
 
-            <li>
+            <!--<li>
                 <label for="id_link">Username</label>
                 <div class="Right">
                 	<input type="text" name="username" value="<?= $_data['user']['username'] ?>" id="username" />
                     <span class="help_text">Only letters A-Z and numbers 0-9 allowed.</span>
                 </div>
-            </li>
+            </li>-->
 
             <li>
                 <label for="dob">Date of Birth</label>
@@ -96,7 +131,7 @@ $_data['user'] = $data['data'];
                 <label for="id_location">Location</label>
                 <div class="Right">
                     <input type="text" name="location" id="id_location" value="<?= $_data['user']['location'] ?>" />
-                    <span class="help_text">e.g. Las Vegas</span>
+                    <span class="help_text">e.g. Los Angeles</span>
 
                 </div>
             </li>
@@ -110,120 +145,25 @@ $_data['user'] = $data['data'];
             </li>
 
             <li>
-                <label for="id_img">Current Image</label>
-                <div class="Right">
-
-                    <div class="current_avatar_wrapper">
-                      <img src="<?= $_data['user']['avatar'] ?>" class="current_avatar floatLeft" />
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <label for="id_img">Change Image</label>
-                <div class="Right">
-                    <p><input id="gphoto" name="avatar" type="file" size="6" onchange="this.form.submit();" /></p>
-                </div>
-                <span class="help_text">Accepted Formats: jpeg, jpg, gif and png</span>
-            </li>
-
-            <li>
                 <label>Password</label>
                 <div class="Right">
                 	<a href="/account/password.php" class="Button WhiteButton Button18"><strong>Change Password</strong><span></span></a>
                 </div>
             </li>
 
-                        <li>
-                <label for="post_fb">Post to facebook</label>
-                <div class="Right">
-                    <p>
-                    	<?
-                    	$facebook_post = !empty($_data['user']['facebook_post']);
-                    	?>
-                    	<select name="facebook_post" id="post_fb">
-                        	<option value="0" <?= !$facebook_post ? 'selected="selected"' : '' ?>>No</option>
-                            <option value="1" <?= $facebook_post ? 'selected="selected"' : '' ?>>Yes</option>
-                        </select>
-                    </p>
-                </div>
-                <span class="help_text">Posts your activity to facebook when you are logged in via facebook</span>
-            </li>
 
-                        <li>
-                <label for="post_fb">Import images from Instagram</label>
-                <div class="Right">
-                    <p>
-                    	<?
-                    	$instagram_import = !empty($_data['user']['instagram_import']);
-                    	?>
-                    	<select name="instagram_import" id="instagram_pt">
-                        	<option value="0" <?= !$instagram_import ? 'selected="selected"' : '' ?>>No</option>
-                            <option value="1" <?= $instagram_import ? 'selected="selected"' : '' ?>>Yes</option>
-                        </select>
-                    </p>
-                </div>
-                <span class="help_text">Imports images with hashtag
-                <br />
-                                </span>
-            </li>
-                        <li>
+             <li>
                 <label for="instagram_user">Instagram Username</label>
                 <div class="Right">
                 	<input type="text" name="instagram_username" value="<?= $_data['user']['instagram_username'] ?>" id="instagram_user" />
-                    <span class="help_text" style="max-width: 400px;">This will enable us to import your Instragram pictures<br />(Please note: it may take a minute to scrape your pictures)
-                    <span></span>
-                	</a>
-
-                    </span>
                 </div>
             </li>
-                        <li>
+             <li>
                 <label for="pinterest_user">Pinterest Username</label>
                 <div class="Right">
                 	<input type="text" name="pinterest_username" value="<?= $_data['user']['pinterest_username'] ?>" id="pinterest_user" />
-                    <span class="help_text" style="max-width: 400px;">This will enable us to import your Pinterest pictures<br />(Please note: it may take a minute to scrape your pictures)
-                    <span></span>
-                	</a>
-
-                    </span>
                 </div>
             </li>
-            <?
-            /*
-            <li>
-                <label for="mail_like">Comment notifications</label>
-                <div class="Right">
-                    <p>
-                    	<?
-                    	$comment_notifications = !empty($_data['user']['comment_notifications']);
-                    	?>
-                    	<select name="comment_notifications" id="mail_like">
-                        	<option value="0" <?= !$comment_notifications ? 'selected="selected"' : '' ?>>No</option>
-                            <option value="1" <?= $comment_notifications ? 'selected="selected"' : '' ?>>Yes</option>
-                        </select>
-                    </p>
-                </div>
-                <span class="help_text">Receive an e-mail when someone comments on your pins.</span>
-            </li>
-
-            <li>
-                <label for="mail_com">Like Notifications</label>
-                <div class="Right">
-                    <p>
-                    	<?
-                    	$like_notifications = !empty($_data['user']['like_notifications']);
-                    	?>
-                    	<select name="like_notifications" id="mail_com">
-                        	<option value="0" <?= !$like_notifications ? 'selected="selected"' : '' ?>>No</option>
-                            <option value="1" <?= $like_notifications ? 'selected="selected"' : '' ?>>Yes</option>
-                        </select>
-                    </p>
-                </div>
-                <span class="help_text">Receive an e-mail when someone likes your pins.</span>
-            </li>
-			*/
-			?>
             <li>
                 <label for="mail_like">Email Notifications</label>
                 <div class="Right">
@@ -254,15 +194,90 @@ $_data['user'] = $data['data'];
 
         <div class="Submit">
             <p>
-                <a href="#" class="Button OrangeButton Button24" onclick="$('#profileEdit').submit(); return false">
-                	<strong>Submit</strong>
+                <a href="#" class="dahliaButton" onclick="$('#profileEdit').submit(); return false">
+                	<strong>Save Changes</strong>
                 	<span></span>
                 </a>
             </p>
         </div>
         <input type="hidden" name="esub" value="1" />
     </form>
+    <div id="syncSocial">
+        <div class="socialTitle">Sync Dahlia\Wolf with your social media accounts to share with your friends!</div>
+        <ul class="syncSection syncFacebook">
+            <li></li>
+            <li class="toggleButton"><?= $_SESSION['facebook']['access_token'] ? '<span data-platform="facebook" data-synced="true" class="dahliaPink">ON</span>' : '<span data-synced="false">OFF</span>' ?></li>
+        </ul>
+        <ul class="syncSection syncTwitter">
+            <li></li>
+            <li class="toggleButton"><?= $_SESSION['twitter']['access_token'] ? '<span data-platform="twitter" data-synced="true" class="dahliaPink">ON</span>' : '<span data-synced="false">OFF</span>' ?></li>
+        </ul>
+        <ul class="syncSection syncTumblr">
+            <li></li>
+            <li class="toggleButton"><?= $_SESSION['tumblr']['access_token'] ? '<span data-platform="tumble" data-synced="true" class="dahliaPink">ON</span>' : '<span data-synced="false">OFF</span>' ?></li>
+        </ul>
+    </div>
 </div>
+
 <?
 include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 ?>
+
+<script>
+    $(function() {
+        $('#showProfile').on('click', function(e) {
+            e.preventDefault();
+            $('.filter-select').removeClass('filter-select');
+            $(this).addClass('filter-select');
+            $('#syncSocial').hide();
+            $('#profileEdit').show();
+        });
+        $('#showSocial').on('click', function(e) {
+            e.preventDefault();
+            $('.filter-select').removeClass('filter-select');
+            $(this).addClass('filter-select');
+            $('#syncSocial').show();
+            $('#profileEdit').hide();
+        });
+        $('.toggleButton span').on('click', function() {
+            var $this = $(this);
+            if($(this).data('synced')) {
+                switch($this.data('platform')) {
+                    case 'facebook' :
+                        dahliawolf.social.unsetPlatform(3, function() {
+                            $this.html('OFF').data('synced', false).removeClass('dahliaPink');
+                        });
+                        break;
+                    case 'twitter' :
+                        dahliawolf.social.unsetPlatform(6, function() {
+                            $this.html('OFF').data('synced', false).removeClass('dahliaPink');
+                        });
+                        break;
+                    case 'tumblr' :
+                        dahliawolf.social.unsetPlatform(14, function() {
+                            $this.html('OFF').data('synced', false).removeClass('dahliaPink');
+                        });
+                        break;
+                }
+            } else {
+                switch($this.data('platform')) {
+                    case 'facebook' :
+                        dahliawolf.logIntoFacebook(function() {
+                            $this.html('ON').data('synced', true).addClass('dahliaPink');
+                        });
+                        break;
+                    case 'twitter' :
+                        dahliawolf.logIntoTwitter(function() {
+                            $this.html('ON').data('synced', true).addClass('dahliaPink');
+                        });
+                        break;
+                    case 'tumblr' :
+                        dahliawolf.logIntoTumblr(function() {
+                            $this.html('ON').data('synced', true).addClass('dahliaPink');
+                        });
+                        break;
+                }
+            }
+        });
+    });
+</script>

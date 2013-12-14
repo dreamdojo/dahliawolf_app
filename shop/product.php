@@ -41,8 +41,8 @@
     .productDeets .prodName{font-size: 18px;}
     .productDeets .inspBy{font-size: 12px;}
     .productImagesFrame{width: 100%; position: relative;height: 600px;}
-    .productImagesFrame li{position: absolute; width: 70%;text-align: center;margin-left: 15%; display: none;}
-    .productImagesFrame li img{width: 100%;}
+    .productImagesFrame li{position: absolute; width: 100%;text-align: center; display: none;}
+    .productImagesFrame li img{width: 70%;margin: 0px auto;}
     #thumbs{position: relative; width: 86%; margin-left: 14%; display: inline-block;}
     #thumbs li{float: left;width: 75px;}
     #thumbs li img{width: 100%;}
@@ -110,18 +110,18 @@
 <div class="shopCol">
     <div class="productDetails">
         <ul class="productDeets">
-            <li class="prodName"><?= $_data->product->product_name ?></li>
+            <li class="prodName"><?= $_data->product->product_name ?><a class="fashiolista-love-button" href="http://www.fashiolista.com/item_add_oe/" data-url="http://www.dahliawolf.com/shop/<?= $_data->product->id_product ?>" data-version="simple" data-layout="2" data-counter="0"><img style="margin-left: 10px;" src="http://u.fashiocdn.com/images/fashiolista-button-2.png" alt="Love it" width="24" height="24"></a></li>
             <li class="inspBy"><span class="dahliaPink">Inpiration by</span> <a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></li>
         </ul>
         <? if (!empty($_data->product) && !empty($_data->files)): ?>
-            <ul class="productImagesFrame" id="prodImgFrame">
-                <? foreach ($_data->files as $i => $file): ?>
-                    <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . $width . '&height=' . $height; ?>
-                    <li <?= $i == 0 ? 'class="showing"' : '' ?> >
-                        <img id="image-<?= $i ?>" src="<?= $image_url ?>" width="<?= $width ?>" />
-                    </li>
-                <? endforeach ?>
-            </ul>
+                <ul class="productImagesFrame" id="prodImgFrame">
+                    <? foreach ($_data->files as $i => $file): ?>
+                        <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
+                        <li <?= $i == 0 ? 'class="showing"' : '' ?> >
+                            <img class="small" id="image-<?= $i ?>" src="<?= $image_url ?>" />
+                        </li>
+                    <? endforeach ?>
+                </ul>
             <? if (!empty($_data->product) && !empty($_data->files)): ?>
                 <ul id="thumbs">
                     <? foreach ($_data->files as $i => $file): ?>
@@ -134,6 +134,7 @@
             <? endif ?>
         <? endif ?>
     </div>
+
     <div class="productCTA">
         <div class="needSection">
             <ul class="prodShareButts">

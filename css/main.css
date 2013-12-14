@@ -719,6 +719,8 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 .transCol .justTheFacts{margin-top: 20px;}
 .transCol .listOfFacts{float: left;text-align: left;font-size: 13px;line-height: 24px; }
 .transCol .listOfFacts h3{margin-top: 10px; margin-bottom: 10px;}
+.dahliaButton{background-color: #f03e63;padding: 10px 25px;color: #fff;width: 98px;margin: 0px auto;font-size: 12px;margin-bottom: 20px;}
+
 
 #loginbox #errorBox{margin-top: 23px;font-size: 15px;color: red;}
 #r_errorBox{margin-top: 45px;font-size: 15px;color: red;}
@@ -1764,7 +1766,7 @@ width: 174px;
   .StaticForm textarea {min-width: 375px;}
   .StaticForm select {width: 375px;}
   .StaticForm input[type=checkbox] {}
-  .StaticForm .help_text {display: inline-block; margin-top: 5px; color: #8C7e7e; font-size: 13px; max-width: 199px; margin-left: 10px;}
+  .StaticForm .help_text {display: inline-block;margin-top: 5px;color: #8C7e7e;font-size: 13px;width: 600px;margin-left: 10px;text-align: center;margin-bottom: 10px;}
   .StaticForm .error {font-size: 13px; float: left; clear: both; margin-top: 5px; color: #cb2027;}
   .StaticForm .Submit {padding-top: 24px; padding-left: 180px; border-top: 1px solid rgba(255,255,255,0.7); float: left; margin-bottom: 20px;} /* Float for IE */
   .StaticForm ul.pinability {border-top: none;}
@@ -3079,3 +3081,24 @@ a.CommentUrlDecorate:hover {
 .shop-item .inspirationButton span{background-color: #666;padding: 5px 13px;color: #fff;}
 .resWrap{width: 1000px;overflow-x: auto;overflow-y: hidden;}
 
+/*Some CSS*/
+* {margin: 0; padding: 0;}
+.magnify {width: 200px; margin: 50px auto; position: relative; cursor: none}
+
+/*Lets create the magnifying glass*/
+.large {
+    width: 175px; height: 175px;
+    position: absolute;
+    border-radius: 100%;
+
+    /*Multiple box shadows to achieve the glass effect*/
+	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85),
+	0 0 7px 7px rgba(0, 0, 0, 0.25),
+	inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+
+	/*hide the glass by default*/
+	display: none;
+}
+
+/*To solve overlap bug at the edges during magnification*/
+.small { display: block; }

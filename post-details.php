@@ -76,6 +76,7 @@
         <div id="postDetailLoveButton" class="postDetailLikes cursor <?= ($_data['post']['is_liked'] ? 'pd-Loved' : 'pd-unLoved') ?>">
         	<div id="loveCount" class="buttonText"><?= $_data['post']['likes'] ?></div>
         </div>
+
         <div id="postShareSection">
         	<div class="postShareTitle">SHARE THIS POST</div>
             <ul class="shareButts">
