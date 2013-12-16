@@ -155,7 +155,6 @@
 <script>
 
     $(function() {
-        console.log(<?= json_encode($_data['comments']) ?>);
         window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
         window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
 

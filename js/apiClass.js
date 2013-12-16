@@ -409,7 +409,9 @@ Api.prototype.callApi = function(data) {
     if(this.loginRequired && dahliawolf.isLoggedIn) {
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
+                console.log('v 1');
                 that.callback(data);
+                that.callback = null;
             }
         });
     } else if(this.loginRequired && !dahliawolf.isLoggedIn) {
@@ -418,7 +420,9 @@ Api.prototype.callApi = function(data) {
     else {
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
+                console.log('v 1');
                 that.callback(data);
+                that.callback = null;
             }
         });
     }

@@ -121,11 +121,12 @@ postDetailGrid.prototype.resetBindings = function() {
 }
 
 postDetailGrid.prototype.getPosts = function() {
-	var $this = this;
+    var $this = this;
 	if(this.refillAvailable && !this.finished && (this.offset % this.limit) == 0){
 		this.refillAvailable = false;
         dahliaLoader.show();
         dahliawolf.post.get_by_user({user_id : this.posterId, viewer_user_id:dahliawolf.userId, feed : this.feedType, offset : this.offset, limit: this.limit}, function(data) {
+            console.log(data);
             dahliaLoader.hide();
 			$.each(data.data.get_by_user.posts, function(index, post){
                 var $post = $('<div class="userGridPostFrame" style="background-image: url(\''+post.image_url+'&width=300\'); background-size:'+(Number(post.height) > Number(post.width) ? '100% auto' : 'auto 100%')+';"></div>').hover(function() {
