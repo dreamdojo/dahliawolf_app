@@ -400,7 +400,7 @@ function Api() {
     this.analArray = [];
 }
 
-Api.prototype.callApi = function(data) {
+Api.prototype.callApi = function(data, callback) {
     var that = this;
     data.use_hmac_check = 0;
     data['function'] = this.apiFunction;
@@ -408,10 +408,9 @@ Api.prototype.callApi = function(data) {
 
     if(this.loginRequired && dahliawolf.isLoggedIn) {
         $.getJSON(url, data, function(data) {
-            if(typeof that.callback === 'function') {
-                console.log('v 1');
-                that.callback(data);
-                that.callback = null;
+            if(typeof callback === 'function') {
+                callback(data);
+                callback = null;
             }
         });
     } else if(this.loginRequired && !dahliawolf.isLoggedIn) {
@@ -420,9 +419,8 @@ Api.prototype.callApi = function(data) {
     else {
         $.getJSON(url, data, function(data) {
             if(typeof that.callback === 'function') {
-                console.log('v 1');
-                that.callback(data);
-                that.callback = null;
+                callback(data);
+                callback = null;
             }
         });
     }
@@ -443,7 +441,7 @@ Member.prototype.get = function(data, callback) {
     this.loginRequired = false;
     this.analArray = ['_trackEvent','Dahliahead', 'Dahlia head appeared'];
     this.callback = callback;
-    this.callApi({user_id:data.id, username:data.username, viewer_user_id:dahliawolf.userId});
+    this.callApi({user_id:data.id, username:data.username, viewer_user_id:dahliawolf.userId}, callback);
     return this;
 }
 
@@ -452,7 +450,7 @@ Member.prototype.follow = function(id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent','Social', 'User Followed Another Member'];
     this.callback = callback;
-    this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
+    this.callApi({user_follow_id : id, user_id : dahliawolf.userId}, callback);
     return this;
 }
 
@@ -461,7 +459,7 @@ Member.prototype.unfollow = function(id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Social', 'User Unfollowed Another Member'];
     this.callback = callback;
-    this.callApi({user_follow_id : id, user_id : dahliawolf.userId});
+    this.callApi({user_follow_id : id, user_id : dahliawolf.userId}, callback);
     return this;
 }
 
@@ -469,7 +467,7 @@ Member.prototype.getTopFollowing = function(lim, off, callback) {
     this.apiFunction = 'get_top_following';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({limit:lim, viewer_user_id:dahliawolf.userId, offset:off});
+    this.callApi({limit:lim, viewer_user_id:dahliawolf.userId, offset:off}, callback);
     return this;
 }
 //************************************************************************************ POST
@@ -485,7 +483,7 @@ Post.prototype.get = function(config, callback) {
     this.analArray = ['_trackEvent', 'System', 'Got posts for feed'];
     this.callback = callback;
     this.loginRequired = false;
-    this.callApi(config);
+    this.callApi(config, callback);
     return this;
 }
 
@@ -493,7 +491,7 @@ Post.prototype.getDetails = function(id, callback) {
     this.apiFunction = 'get_posting';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({posting_id:id, viewer_user_id:dahliawolf.userId});
+    this.callApi({posting_id:id, viewer_user_id:dahliawolf.userId}, callback);
     return this;
 }
 
@@ -501,7 +499,7 @@ Post.prototype.get_by_user = function(config, callback) {
     this.apiFunction = 'get_by_user';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi(config);
+    this.callApi(config, callback);
     return this;
 }
 
@@ -510,7 +508,7 @@ Post.prototype.love = function(id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User loved a post'];
     this.callback = callback;
-    this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
+    this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1}, callback);
     return this;
 }
 
@@ -519,7 +517,7 @@ Post.prototype.unlove = function(id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User unloved a post'];
     this.callback = callback;
-    this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1});
+    this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1}, callback);
     return this;
 }
 
@@ -529,7 +527,7 @@ Post.prototype.dislike = function(id, callback) {
     this.analArray = ['_trackEvent', 'Post', 'Added dislike'];
     this.callback = callback;
     this.callApi();
-    this.callApi({user_id: dahliawolf.userId, posting_id : id});
+    this.callApi({user_id: dahliawolf.userId, posting_id : id}, callback);
 }
 
 Post.prototype.deleteMe = function(id, callback) {
@@ -545,7 +543,7 @@ Post.prototype.promote = function(id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User promoted a post'];
     this.callback = callback;
-    this.callApi({posting_id : id, user_id : dahliawolf.userId});
+    this.callApi({posting_id : id, user_id : dahliawolf.userId}, callback);
     return this;
 }
 
@@ -554,7 +552,7 @@ Post.prototype.addToFaves = function(id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User added a post to faves'];
     this.callback = callback;
-    this.callApi({posting_id: id, user_id : dahliawolf.userId});
+    this.callApi({posting_id: id, user_id : dahliawolf.userId}, callback);
     return this;
 }
 
@@ -563,7 +561,7 @@ Post.prototype.delFromFaves = function(id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User removed a post from faves'];
     this.callback = callback;
-    this.callApi({posting_id: id, user_id:dahliawolf.userId });
+    this.callApi({posting_id: id, user_id:dahliawolf.userId }, callback);
     return this;
 }
 
@@ -572,7 +570,7 @@ Post.prototype.getLovers = function(id, limit, offset, callback) {
     this.loginRequired = false;
     this.analArray = ['_trackEvent', 'Post', 'User is viewing post lovers'];
     this.callback = callback;
-    this.callApi({ posting_id : id, viewer_user_id : dahliawolf.userId, offset : offset, limit : limit});
+    this.callApi({ posting_id : id, viewer_user_id : dahliawolf.userId, offset : offset, limit : limit}, callback);
 
     return this;
 }
@@ -636,7 +634,7 @@ Post.prototype.editTag = function(id, note, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User edited a tag to post'];
     this.callback = callback;
-    this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, message: note });
+    this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, message: note }, callback);
     return this;
 }
 
@@ -645,7 +643,7 @@ Post.prototype.delTag = function(id, post_id, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User removed a tag from post'];
     this.callback = callback;
-    this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, posting_id:post_id});
+    this.callApi({user_id: dahliawolf.userId, posting_tag_id:id, posting_id:post_id}, callback);
     return this;
 }
 
@@ -653,7 +651,7 @@ Post.prototype.getTags = function(id, callback) {
     this.apiFunction = 'get_tags';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({user_id: dahliawolf.userId, posting_id: id});
+    this.callApi({user_id: dahliawolf.userId, posting_id: id}, callback);
     return this;
 }
 
@@ -662,7 +660,7 @@ Post.prototype.addComment = function(id, com, callback) {
     this.loginRequired = true;
     this.callback = callback
     this.analArray = ['_trackEvent', 'Post', 'Comment added'];
-    this.callApi({user_id:dahliawolf.userId, posting_id:id, comment:com});
+    this.callApi({user_id:dahliawolf.userId, posting_id:id, comment:com}, callback);
     return this;
 }
 
@@ -670,7 +668,7 @@ Post.prototype.getComments = function(id, callback) {
     this.apiFunction = 'get_comments';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({posting_id:id});
+    this.callApi({posting_id:id}, callback);
 }
 
 //****************************************************************************************** SEARCH
@@ -684,7 +682,7 @@ Search.prototype.searchAll = function(call, callback) {
     this.apiFunction = 'search_all';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi(call);
+    this.callApi(call, callback);
     return this;
 }
 
@@ -700,7 +698,7 @@ Shop.prototype.getProduct = function(id, callback) {
     this.apiFunction = 'get_product_details';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({id_product:id, id_shop:3, id_lang:1});
+    this.callApi({id_product:id, id_shop:3, id_lang:1}, callback);
     return this;
 }
 
@@ -708,7 +706,7 @@ Shop.prototype.getProducts = function(callback) {
     this.apiFunction = 'get_products';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({viewer_user_id : dahliawolf.userId, id_shop:3, id_lang:1});
+    this.callApi({viewer_user_id : dahliawolf.userId, id_shop:3, id_lang:1}, callback);
     ///api/commerce/product.json?function=get_products'+(theUser.id ? '&viewer_user_id='+theUser.id : '')+'&use_hmac_check=0&id_shop=3&id_lang=1
 }
 
@@ -814,9 +812,9 @@ Share.prototype.add = function(id, net, type, posting_owner, callback) {
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Social', 'User is sharing a post', net];
     if(type === 'posting') {
-        this.callApi({posting_id : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
+        this.callApi({posting_id : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner }, callback);
     } else {
-        this.callApi({id_product : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner });
+        this.callApi({id_product : id, sharing_user_id : dahliawolf.userId, network : net, type : type, posting_owner_user_id : posting_owner }, callback);
     }
 }
 
@@ -824,7 +822,7 @@ Share.prototype.get = function(id, type, callback) {
     this.callback = callback;
     this.apiFunction = 'get_shares';
     this.loginRequired = true;
-    this.callApi({posting_id : id, user_id : dahliawolf.userId, type : type});
+    this.callApi({posting_id : id, user_id : dahliawolf.userId, type : type}, callback);
     return this;
 }
 
@@ -842,7 +840,7 @@ Activity.prototype.getNew = function(callback) {
     this.callback = callback;
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'System', 'Checking New'];
-    this.callApi({user_id:dahliawolf.userId});
+    this.callApi({user_id:dahliawolf.userId}, callback);
     return this;
 }
 
@@ -850,7 +848,7 @@ Activity.prototype.getCategory = function(t, callback) {
     this.apiFunction = 'get_by_type';
     this.loginRequired = true;
     this.callback = callback;
-    this.callApi({type:t, user_id:dahliawolf.userId, viewer_user_id:dahliawolf.userId});
+    this.callApi({type:t, user_id:dahliawolf.userId, viewer_user_id:dahliawolf.userId}, callback);
     return this;
 }
 
@@ -869,7 +867,7 @@ Message.prototype.send = function(to, message, callback) {
     this.loginRequired = true;
     this.callback = callback;
     this.analArray = ['_trackEvent', 'Message', 'Direct message sent'];
-    this.callApi({to_user_name:to, from_user_id:dahliawolf.userId, header:'Personal message from '+dahliawolf.username, body:message});
+    this.callApi({to_user_name:to, from_user_id:dahliawolf.userId, header:'Personal message from '+dahliawolf.username, body:message}, callback);
     return this;
 }
 
@@ -887,7 +885,7 @@ Social.prototype.setToken = function(network, toke, callback) {
     this.loginRequired = true;
     this.callback = callback;
     this.analArray = ['_trackEvent', 'Social', 'Saved token'];
-    this.callApi({user_id:dahliawolf.userId, social_network_id:network, token:toke});
+    this.callApi({user_id:dahliawolf.userId, social_network_id:network, token:toke}, callback);
     return this;
 }
 
@@ -896,7 +894,7 @@ Social.prototype.getToken = function(network, toke, callback) {
     this.loginRequired = true;
     this.callback = callback;
     this.analArray = ['_trackEvent', 'Social', 'Saved token'];
-    this.callApi({user_id:dahliawolf.userId, social_network_id:network, token:toke});
+    this.callApi({user_id:dahliawolf.userId, social_network_id:network, token:toke}, callback);
     return this;
 }
 Social.prototype.unsetPlatform = function(platform_id, callback) {
@@ -919,7 +917,7 @@ Bank.prototype.get = function(off, lim, callback) {
     this.loginRequired = false;
     this.callback = callback;
     this.analArray = ['_trackEvent', 'System', 'Loaded Imgs from Bank'];
-    this.callApi({offset:off, limit:lim});
+    this.callApi({offset:off, limit:lim}, callback);
     return this;
 }
 
@@ -928,6 +926,6 @@ Bank.prototype.post = function(repo_id, obj_id, callback) {
     this.loginRequired = true;
     this.callback = callback;
     this.analArray = ['_trackEvent', 'Inspire', 'Posted image from bank'];
-    this.callApi({user_id:dahliawolf.userId, repo_image_id:repo_id, object_id:obj_id});
+    this.callApi({user_id:dahliawolf.userId, repo_image_id:repo_id, object_id:obj_id}, callback);
     return this;
 }
