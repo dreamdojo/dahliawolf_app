@@ -94,6 +94,7 @@ var LOVE_REQUIRED = 1000;
     userConfig.instagramToken = <?= ($_SESSION['user']['instagramToken'] ? 'true' : 'false') ?>;
     userConfig.twitterToken = <?= ($_SESSION['twitter']['access_token']['oauth_token'] ? 'true' : 'false') ?>;
     userConfig.tumblrToken = <?= ($_SESSION['tumblr']['access_token']['oauth_token'] ? 'true' : 'false') ?>;
+    userConfig.facebookToken = <?= ($_SESSION['facebook']['access_token']['oauth_token'] ? 'true' : 'false') ?>;
     theUser.id = <?= $_SESSION['user']['user_id'] ?>;
 	theUser.username = '<?= $_SESSION['user']['username'] ?>';
 	theUser.friends = <? echo json_encode($friends) ?>;

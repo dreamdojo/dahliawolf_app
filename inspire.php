@@ -248,9 +248,15 @@
         $('#viewToggle').on('click', this.toggleMode);
     }
 
-    postBank.checkSyncedAccounts = function(url) {
+    postBank.checkSyncedAccounts = function(url, img_url) {
         if(dahliawolf.areYouLoggedIntoTwitter){
             dahliawolf.post.shareOnTwitter(url);
+        }
+        if(dahliawolf.areYouLoggedIntoTumblr) {
+            dahliawolf.post.shareOnTumbler(img_url);
+        }
+        if(dahliawolf.areYouLoggedIntoFacebook) {
+            dahliawolf.post.shareOnFacebook(img_url);
         }
     }
 
@@ -463,6 +469,7 @@
     bankPost.prototype.addAfterPostMessage = function(data) {
         data = data.data.post_image;
 
+        console.log(data);
         if(data.posting_id) {
             var str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
             str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')">';
@@ -470,7 +477,7 @@
 
             this.$post.append(str);
             this.$post.append(new shareBall(data));
-            postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+data.posting_id);
+            postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+data.posting_id, data.new_image_url );
         } else if(data.error){
             this.$post.append('<div class="inspireError">'+data.error+'</div>');
         }

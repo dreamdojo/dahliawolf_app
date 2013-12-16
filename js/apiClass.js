@@ -37,6 +37,7 @@ User.prototype = {
     get hi() {return 'hello!';},
     get areYouLoggedIntoTwitter() {return this.data.twitterToken;},
     get areYouLoggedIntoTumblr() {return this.data.tumblrToken;},
+    get areYouLoggedIntoFacebook() {return this.data.facebookToken;},
 
     getAttribute : function(attr) {return (this.data[attr] ? this.data[attr] : 'Invalid');},
 
