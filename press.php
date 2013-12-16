@@ -11,11 +11,13 @@
 
     $press = Array();
     $press[0] = Array('/images/press/lifeandstyle.jpg', 'Life & Style', 'Chatting with co-owners Charles Park and Justin Mavandi at the Dahlia Wolf Launch party' );
-    $press[1] = Array('/images/press/ok.jpg', 'OMG!', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party');
+    $press[1] = Array('/images/press/omg.jpg', 'OMG!', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party');
     $press[2] = Array('/images/press/yahoo.jpg', 'YAHOO!', 'The most stylish starts all came out for the launch of Dahlia Wolf. Which just goes to show fashion really does bring people together');
     $press[3] = Array('/images/press/aol.jpg', 'AOL', 'Mischa Barton, attends Dahlia Wolf launch party');
     $press[4] = Array('/images/press/wonderwall.jpg', 'WONDERWALL', 'Mena Suvari attends a party to launch the fashion website, Dahlia Wolf, Fashion Made By You at Graffiti Cafe in Hollywood');
     $press[5] = Array('/images/press/nick.jpg', 'NICKUTOPIA', 'Gorgeous! Jennette McCurdy wore an adorable Dahlia Wolf outfit to the Dahlia Wolf clothing line launch on October 22, 2013. Jennette shared the photo and video here from her night!');
+    $press[6] = Array('/images/press/extra.jpg', 'EXTRA', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party.');
+    $press[7] = Array('/images/press/hp.jpg', 'HUFFINGTON POST', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party');
 
 ?>
 <style>
