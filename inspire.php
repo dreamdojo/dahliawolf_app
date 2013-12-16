@@ -248,6 +248,12 @@
         $('#viewToggle').on('click', this.toggleMode);
     }
 
+    postBank.checkSyncedAccounts = function(url) {
+        if(dahliawolf.areYouLoggedIntoTwitter){
+            dahliawolf.post.shareOnTwitter(url);
+        }
+    }
+
 
     postBank.crossBrowserUpload = function(data) {
         var data = $.parseJSON(data);
@@ -464,6 +470,7 @@
 
             this.$post.append(str);
             this.$post.append(new shareBall(data));
+            postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+data.posting_id);
         } else if(data.error){
             this.$post.append('<div class="inspireError">'+data.error+'</div>');
         }
