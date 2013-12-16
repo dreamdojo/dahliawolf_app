@@ -172,6 +172,7 @@
                     if(that.data.success) {
                         _gaq.push(['_trackEvent', 'Inspire', 'Upload completed successfully']);
                         that.$post.css('background-image', 'url("'+that.data.data.new_image_url+'")').removeClass('loading').empty().html(that.$getPost(that.data));
+                        postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+that.data.data.posting_id, that.data.data.new_image_url);
                     } else {
                         _gaq.push(['_trackEvent', 'Inspire', 'Failed back end validation', that.data.errors]);
                         _gaq.push(['_trackEvent', 'Errors', that.data.errors]);
@@ -468,8 +469,6 @@
 
     bankPost.prototype.addAfterPostMessage = function(data) {
         data = data.data.post_image;
-
-        console.log(data);
         if(data.posting_id) {
             var str = '<div class="postPostingWrap"><div class="bankPosted"><p class="bankInnerPosted">POSTED</p><p class="banklink"><a href="/post/'+data.posting_id+'">VIEW POST</a></p></div>';
             str += '<div class="bankExplain">Congratulations you have successfully posted new design inspiration. To see all your post visit your <a href="/'+theUser.username+'">profile</a><p class="bankshare"><a href="#" onclick="sendMessageProduct('+data.posting_id+')">';

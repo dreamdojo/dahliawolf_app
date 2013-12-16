@@ -125,7 +125,7 @@
     include "footer.php";
 ?>
 
-
+<? if(!isset($_GET['dashboard'])): ?>
 <script>
     <?php if(!IS_LOGGED_IN): ?>
         new_loginscreen();
@@ -209,3 +209,4 @@
         }
     }
 </script>
+<? endif ?>

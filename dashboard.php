@@ -184,8 +184,6 @@ if(!IS_LOGGED_IN) {
     <p style="clear: left;"></p>
 </div>
 <script>
-    console.log(<?= json_encode($_data['user']) ?>);
-
     var dashboard = new Object();
     dashboard.limit = 12;
     dashboard.offset = 0;
@@ -314,7 +312,7 @@ if(!IS_LOGGED_IN) {
         if(dashboard.isAvailable) {
             dahliawolf.loader.show();
             dashboard.isAvailable = false;
-            //$.post('/action/getPostsByUser', data).done(function(data) {
+            console.log('once');
             dahliawolf.post.get_by_user(data, function(data) {
                 dashboard.isAvailable = true;
                 dahliawolf.loader.hide();

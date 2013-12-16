@@ -11,7 +11,7 @@
                                                                         
 																		*/
 function postDetailGrid(id, parentContainer, profile, feedType) {
-	this.offset = 0;
+    this.offset = 0;
 	this.limit = 12;
 	this.posterId = id;
 	this.refillAvailable = true;
