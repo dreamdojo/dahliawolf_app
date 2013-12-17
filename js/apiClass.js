@@ -577,8 +577,9 @@ Post.prototype.getLovers = function(id, limit, offset, callback) {
 
 Post.prototype.shareOnTumbler = function(URL) {
     if(dahliawolf.areYouLoggedIntoTumblr) {
+        _gaq.push(['_trackEvent', 'Social', 'Pushed to Tumblr API']);
         $.getJSON('/lib/TumblrOAuth/sharePost.php',{url:URL}, function(data) {
-            _gaq.push(['_trackEvent', 'Social', 'Pushed to Tumblr API']);
+
         });
     } else {
         dahliawolf.logIntoTumblr(function() {
@@ -589,8 +590,9 @@ Post.prototype.shareOnTumbler = function(URL) {
 
 Post.prototype.shareOnTwitter = function(URL) {
     if(dahliawolf.areYouLoggedIntoTwitter) {
+        _gaq.push(['_trackEvent', 'Social', 'Pushed to Twitter API']);
         $.getJSON('/action/sharePostOnTwitter.php',{url:URL}, function(data) {
-            _gaq.push(['_trackEvent', 'Social', 'Pushed to Twitter API']);
+
         });
     } else {
         dahliawolf.logIntoTwitter(function() {
@@ -602,7 +604,7 @@ Post.prototype.shareOnTwitter = function(URL) {
 Post.prototype.shareOnFacebook = function(URL) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            var params = {message : 'Love this on Dahliawolf', url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
+            var params = {message : 'Love this on #Dahliawolf', url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
             _gaq.push(['_trackEvent', 'Social', 'Pushed to Facebook API']);
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
