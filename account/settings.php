@@ -206,15 +206,15 @@ $_data['user'] = $data['data'];
         <div class="socialTitle">Sync Dahlia\Wolf with your social media accounts to share with your friends!</div>
         <ul class="syncSection syncFacebook">
             <li></li>
-            <li class="toggleButton"><?= $_SESSION['facebook']['access_token'] ? '<span data-platform="facebook" data-synced="true" class="dahliaPink">ON</span>' : '<span data-synced="false">OFF</span>' ?></li>
+            <li class="toggleButton"><?= $_SESSION['facebook']['access_token'] ? '<span data-platform="facebook" data-synced="true" class="dahliaPink">ON</span>' : '<span data-platform="facebook" data-synced="false">OFF</span>' ?></li>
         </ul>
         <ul class="syncSection syncTwitter">
             <li></li>
-            <li class="toggleButton"><?= $_SESSION['twitter']['access_token'] ? '<span data-platform="twitter" data-synced="true" class="dahliaPink">ON</span>' : '<span data-synced="false">OFF</span>' ?></li>
+            <li class="toggleButton"><?= $_SESSION['twitter']['access_token'] ? '<span data-platform="twitter" data-synced="true" class="dahliaPink">ON</span>' : '<span data-platform="twitter" data-synced="false">OFF</span>' ?></li>
         </ul>
         <ul class="syncSection syncTumblr">
             <li></li>
-            <li class="toggleButton"><?= $_SESSION['tumblr']['access_token'] ? '<span data-platform="tumble" data-synced="true" class="dahliaPink">ON</span>' : '<span data-synced="false">OFF</span>' ?></li>
+            <li class="toggleButton"><?= $_SESSION['tumblr']['access_token'] ? '<span data-platform="tumble" data-synced="true" class="dahliaPink">ON</span>' : '<span data-platform="tumble" data-synced="false">OFF</span>' ?></li>
         </ul>
     </div>
 </div>
