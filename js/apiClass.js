@@ -482,9 +482,11 @@ Post.prototype.get = function(config, callback) {
     this.loginRequired = false;
     this.analArray = ['_trackEvent', 'System', 'Got posts for feed'];
     this.loginRequired = false;
+    this.callback = callback;
     this.callApi(config, callback);
     return this;
 }
+
 Post.prototype.getDetails = function(id, callback) {
     this.apiFunction = 'get_posting';
     this.loginRequired = false;
