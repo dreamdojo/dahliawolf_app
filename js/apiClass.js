@@ -481,9 +481,14 @@ Post.prototype.get = function(config, callback) {
     this.apiFunction = 'get_all';
     this.loginRequired = false;
     this.analArray = ['_trackEvent', 'System', 'Got posts for feed'];
-    this.callback = callback;
     this.loginRequired = false;
     this.callApi(config, callback);
+    return this;
+}
+Post.prototype.getDetails = function(id, callback) {
+    this.apiFunction = 'get_posting';
+    this.loginRequired = false;
+    this.callApi({posting_id:id, viewer_user_id:dahliawolf.userId}, callback);
     return this;
 }
 
@@ -491,7 +496,7 @@ Post.prototype.getDetails = function(id, callback) {
     this.apiFunction = 'get_posting';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({posting_id:id, viewer_user_id:dahliawolf.userId}, callback);
+    this.callApi({posting_id:id, user_id:dahliawolf.userId}, callback);
     return this;
 }
 
@@ -604,7 +609,7 @@ Post.prototype.shareOnTwitter = function(URL) {
 Post.prototype.shareOnFacebook = function(URL) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            var params = {message : 'Love this on #Dahliawolf', url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
+            var params = {message : 'Love this on #Dahliawolf '+URL, url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
             _gaq.push(['_trackEvent', 'Social', 'Pushed to Facebook API']);
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
