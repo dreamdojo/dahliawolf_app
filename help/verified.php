@@ -1,5 +1,5 @@
 <?php
-    $pageTitle = "Help - VIP";
+    $pageTitle = "Help - Verfied";
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 ?>

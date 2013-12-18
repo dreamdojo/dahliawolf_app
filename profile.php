@@ -64,7 +64,7 @@
                 </div>
                 <ul class="userProfileDeetsList">
                     <li class="profileUsername"><a href="@<?= $_data['user']['username'] ?>" style="float: left;" rel="message">@<?= $_data['user']['username'] ?></a>
-                        <?= $_data['user']['verified'] && $_data['user']['membership_level'] != 'VIP' ? '<div class="memberStats"><img src="/images/verified.png"><div class="ms_ro" style="background-image: url(\'/images/verified_RO.png\')"></div></div>' : ''  ?>
+                        <?= $_data['user']['verified'] && $_data['user']['membership_level'] != 'VIP' ? '<div class="memberStats"><a href="/help/verified"><img src="/images/verified.png"></a><div class="ms_ro" style="background-image: url(\'/images/verified_RO.png\')"></div></div>' : ''  ?>
                         <?= $_data['user']['membership_level'] == 'VIP' ? '<div class="memberStats"><a href="/help/vip"><img src="/images/vip.png"></a><div class="ms_ro" style="background-image: url(\'/images/vip_RO.png\')"></div></div>' : ''  ?>
                         <div style="clear: left;"></div>
                     </li>
