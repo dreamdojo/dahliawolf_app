@@ -125,33 +125,63 @@ postDetailGrid.prototype.getPosts = function() {
 	if(this.refillAvailable && !this.finished && (this.offset % this.limit) == 0){
 		this.refillAvailable = false;
         dahliaLoader.show();
-        dahliawolf.post.get_by_user({user_id : this.posterId, viewer_user_id:dahliawolf.userId, feed : this.feedType, offset : this.offset, limit: this.limit}, function(data) {
-            console.log(data);
-            dahliaLoader.hide();
-			$.each(data.data.get_by_user.posts, function(index, post){
-                var $post = $('<div class="userGridPostFrame" style="background-image: url(\''+post.image_url+'&width=300\'); background-size:'+(Number(post.height) > Number(post.width) ? '100% auto' : 'auto 100%')+';"></div>').hover(function() {
-                    $(this).find('.option').fadeIn(50);
-                    $(this).find('.shareBall').fadeIn(50);
-                }, function() {
-                    $(this).find('.option').fadeOut(50);
-                    $(this).find('.shareBall').fadeOut(50);
+        if(this.feedType !== 'loves') {
+            dahliawolf.post.get_by_user({user_id : this.posterId, viewer_user_id:dahliawolf.userId, filter : this.feedType, offset : this.offset, limit: this.limit}, function(data) {
+                dahliaLoader.hide();
+                $.each(data.data.get_by_user.posts, function(index, post){
+                    var $post = $('<div class="userGridPostFrame" style="background-image: url(\''+post.image_url+'&width=300\'); background-size:'+(Number(post.height) > Number(post.width) ? '100% auto' : 'auto 100%')+';"></div>').hover(function() {
+                        $(this).find('.option').fadeIn(50);
+                        $(this).find('.shareBall').fadeIn(50);
+                    }, function() {
+                        $(this).find('.option').fadeOut(50);
+                        $(this).find('.shareBall').fadeOut(50);
+                    });
+                    var $linkLayer = $('<a class="linkLayer" href="/post-details?posting_id='+post.posting_id+'" rel="modal"></a>').appendTo($post);
+                    var str = '';
+                    str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'">'+(parseInt(post.is_liked) ? 'LOVED' : 'LOVE')+'</div>';
+                    if(post.user_id == theUser.id) {
+                        $('<div data-id="'+post.posting_id+'" class="delButton option">X</div>').appendTo($post).on('click', $this.delPost);
+                    }
+                    $post.append(new shareBall(post));
+                    $this.postContainer.append( $post.append(str));
                 });
-                var $linkLayer = $('<a class="linkLayer" href="/post-details?posting_id='+post.posting_id+'" rel="modal"></a>').appendTo($post);
-				var str = '';
-                str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'">'+(parseInt(post.is_liked) ? 'LOVED' : 'LOVE')+'</div>';
-                if(post.user_id == theUser.id) {
-                    $('<div data-id="'+post.posting_id+'" class="delButton option">X</div>').appendTo($post).on('click', $this.delPost);
+                $this.resetBindings();
+                if(data.data.get_by_user.posts.length == 0){
+                    $this.finished = true;
                 }
-                $post.append(new shareBall(post));
-                $this.postContainer.append( $post.append(str));
-			});
-			$this.resetBindings();
-			if(data.data.get_by_user.posts.length == 0){
-				$this.finished = true;
-			}
-			$this.offset += data.data.get_by_user.posts.length;
-			$this.refillAvailable = true;
-		});
+                $this.offset += data.data.get_by_user.posts.length;
+                $this.refillAvailable = true;
+            });
+        } else {
+            dahliawolf.post.get({user_id : this.posterId, viewer_user_id:dahliawolf.userId, filter : this.feedType, offset : this.offset, limit: this.limit}, function(data) {
+
+                dahliaLoader.hide();
+                $.each(data.data.get_all.posts, function(index, post){
+                    var $post = $('<div class="userGridPostFrame" style="background-image: url(\''+post.image_url+'&width=300\'); background-size:'+(Number(post.height) > Number(post.width) ? '100% auto' : 'auto 100%')+';"></div>').hover(function() {
+                        $(this).find('.option').fadeIn(50);
+                        $(this).find('.shareBall').fadeIn(50);
+                    }, function() {
+                        $(this).find('.option').fadeOut(50);
+                        $(this).find('.shareBall').fadeOut(50);
+                    });
+                    var $linkLayer = $('<a class="linkLayer" href="/post-details?posting_id='+post.posting_id+'" rel="modal"></a>').appendTo($post);
+                    var str = '';
+                    str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'">'+(parseInt(post.is_liked) ? 'LOVED' : 'LOVE')+'</div>';
+                    if(post.user_id == theUser.id) {
+                        $('<div data-id="'+post.posting_id+'" class="delButton option">X</div>').appendTo($post).on('click', $this.delPost);
+                    }
+                    $post.append(new shareBall(post));
+                    $this.postContainer.append( $post.append(str));
+                });
+                $this.resetBindings();
+                if(data.data.get_all.posts.length == 0){
+                    $this.finished = true;
+                }
+                $this.offset += data.data.get_all.posts.length;
+                $this.refillAvailable = true;
+            });
+        }
+
 	}
 }
 

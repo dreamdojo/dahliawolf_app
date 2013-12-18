@@ -25,15 +25,22 @@
         <div id="loader">IM WORKING ON IT FOO!!!</div>
         <div class="talkBubble">I AM GEOBOT!!!</div>
         <img class="robot" src="images/robot.jpg" width="30%;">
+
         <ul id="showLoveInput" class="actionInput">
             <li><label>POST: </label><input id="posting_id"></li>
             <li><label>BOTS: </label><input id="posting_love_bot_count"></li>
             <li><button id="submitLoves">DO IT</button></li>
         </ul>
 
+        <ul id="followUserInput" class="actionInput">
+            <li><label>USER: </label><input id="follow_user_id"></li>
+            <li><label>BOTS: </label><input id="follow_user_bot_count"></li>
+            <li><button id="submitFollow">DO IT</button></li>
+        </ul>
+
         <ul id="geoBotCommands">
             <li id="postAddLoves">LOVE POST</li>
-            <li>FOLLOW</li>
+            <li id="followUserButton">FOLLOW</li>
             <li>COMMENT</li>
             <li>MAKE BOTS</li>
         </ul>
@@ -47,7 +54,12 @@
         $('#postAddLoves').on('click', function() {
             $('#showLoveInput').fadeIn(200);
         });
+        $('#followUserButton').on('click', function() {
+            $('#followUserInput').fadeToggle(200);
+        });
+
         $('#submitLoves').on('click', this.lovePost);
+        $('#submitFollow').on('click', this.followUser);
     }
 
     geobot.prototype = {
@@ -75,6 +87,23 @@
             $('#posting_love_bot_count').val('');
             Geobot.showLoader();
             $.post('addLikes.php',{posting_id:id, limit:count}, function(data) {
+                Geobot.hideLoader();
+            });
+        } else {
+            alert('YOU FORGOT SUMPIN PUMPAH');
+        }
+    }
+
+    geobot.prototype.followUser = function() {
+        var id = Number( $('#follow_user_id').val() );
+        var count = Number( $('#follow_user_bot_count').val() );
+
+        if(id && count && count < Geobot.bots.length) {
+            Geobot.showLoader();
+            $('#followUserInput').hide();
+            $('#follow_user_id').val('');
+            $('#follow_user__bot_count').val('');
+            $.post('followUser.php', {user_id:id, limit:count}, function(data) {
                 Geobot.hideLoader();
             });
         } else {
