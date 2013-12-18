@@ -201,4 +201,5 @@ $geobots = Array(
     11725,
     11727
     );
+shuffle($geobots);
 ?>

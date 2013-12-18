@@ -40,6 +40,12 @@
     .loading{background-size: 70% auto !important;}
 </style>
 
+<?php
+    if(!empty($_GET['fashiolista'])) {
+        include_once 'blocks/fashiolista.php';
+    }
+?>
+
 
 <div id="bankOptions" class="drop-shadow" <?= isset($_GET['get_started']) ? 'style="display:none"' : '' ?>>
     <div id="bankCenter">
