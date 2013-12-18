@@ -239,6 +239,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
             $('#syncSocial').show();
             $('#profileEdit').hide();
         });
+        <?if(isset($_GET['social']))://rooty poo bootleg hack ?>
+            $('#showSocial').click();
+        <? endif ?>
         $('.toggleButton span').on('click', function() {
             var $this = $(this);
             if($(this).data('synced')) {

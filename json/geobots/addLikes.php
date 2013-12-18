@@ -2,8 +2,8 @@
 
 include_once "bots.php";
 
-$posting_id = $_GET['posting_id'];
-$limit = $_GET['limit'];
+$posting_id = $_POST['posting_id'];
+$limit = $_POST['limit'];
 
 
 if( !empty($posting_id) ) {

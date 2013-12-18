@@ -12,7 +12,8 @@
 																		*/
                                                                         
 function postDetail(data){
-	this.data = data;
+	console.log(data);
+    this.data = data;
 	this.data.total_likes = parseInt(this.data.total_likes);
 	this.bindFrontend();
 	window.history.replaceState( {} , 'Post Detail', '/post/'+data.posting_id );
@@ -93,23 +94,19 @@ postDetail.prototype.toggleFollow = function() {
 }
 
 postDetail.prototype.toggleLove = function() {
-	if(theUser.id){
-		if( parseInt(this.data.is_liked) ) {
+	if(dahliawolf.isLoggedIn){
+        if( Number(this.data.is_liked) ) {
 			this.loveButton.addClass('pd-unLoved').removeClass('pd-Loved');
 			this.data.is_liked = 0;
 			this.data.total_likes--;
             $('#totalVotesNeed').html( Number( $('#totalVotesNeed').html() ) + 1 );
-			$.post('/action/unlike?posting_id='+this.data.posting_id).done(function(){
-				
-			});
+			dahliawolf.post.unlove(this.data.posting_id);
 		} else {
 			this.loveButton.removeClass('pd-unLoved').addClass('pd-Loved');
 			this.data.is_liked = 1;
 			this.data.total_likes++;
             $('#totalVotesNeed').html( Number( $('#totalVotesNeed').html() ) - 1 );
-			$.post('/action/like?posting_id='+this.data.posting_id).done(function(){
-			
-			});
+			dahliawolf.post.love(this.data.posting_id);
 		}
 		this.loveCount.html(this.data.total_likes);
 	} else {

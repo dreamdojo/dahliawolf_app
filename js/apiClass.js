@@ -418,7 +418,7 @@ Api.prototype.callApi = function(data, callback) {
     }
     else {
         $.getJSON(url, data, function(data) {
-            if(typeof that.callback === 'function') {
+            if(typeof callback === 'function') {
                 callback(data);
                 callback = null;
             }
@@ -482,7 +482,6 @@ Post.prototype.get = function(config, callback) {
     this.loginRequired = false;
     this.analArray = ['_trackEvent', 'System', 'Got posts for feed'];
     this.loginRequired = false;
-    this.callback = callback;
     this.callApi(config, callback);
     return this;
 }
@@ -497,7 +496,6 @@ Post.prototype.getDetails = function(id, callback) {
 Post.prototype.getDetails = function(id, callback) {
     this.apiFunction = 'get_posting';
     this.loginRequired = false;
-    this.callback = callback;
     this.callApi({posting_id:id, user_id:dahliawolf.userId}, callback);
     return this;
 }
