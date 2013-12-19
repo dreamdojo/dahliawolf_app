@@ -23,7 +23,7 @@
     </ul>
     <ul class="followLand">
         <li><a href="/<?= $user['username'] ?>/followers">Followers <?= $user['followers'] ?></a></li>
-        <li><a href="/<?= $user['username'] ?>/following">Following <?= $user['following'] ?></a></li>
+        <li><a href="/<?= $user['username'] ?>/following" class="dahliaPink">Following <?= $user['following'] ?></a></li>
     </ul>
 </div>
 <div id="userListCol"></div>
@@ -34,7 +34,6 @@
 
 <script>
     $(function() {
-        dahliawolfUserList = new userList(<?= json_encode($user) ?>, '<?= $self ?>');
-        dahliawolfUserList.getUsers();
+        dahliawolfUserList = new userList({user:<?= json_encode($user) ?>, api:'get_top_following'});
     });
 </script>

@@ -22,7 +22,7 @@ $user = $data['data'];
         <li><?= $userConfig['location'] ?></li>
     </ul>
     <ul class="followLand">
-        <li><a href="/<?= $user['username'] ?>/followers">Followers <?= $user['followers'] ?></a></li>
+        <li><a href="/<?= $user['username'] ?>/followers" class="dahliaPink">Followers <?= $user['followers'] ?></a></li>
         <li><a href="/<?= $user['username'] ?>/following">Following <?= $user['following'] ?></a></li>
     </ul>
 </div>
@@ -34,7 +34,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 
 <script>
     $(function() {
-        dahliawolfUserList = new userList(<?= json_encode($user) ?>, '<?= $self ?>');
-        dahliawolfUserList.getUsers();
+        dahliawolfUserList = new userList({user:<?= json_encode($user) ?>, api:'get_top_followers'});
     });
 </script>

@@ -463,11 +463,25 @@ Member.prototype.unfollow = function(id, callback) {
     return this;
 }
 
-Member.prototype.getTopFollowing = function(lim, off, callback) {
+Member.prototype.getTopFollowing = function(userId, lim, off, callback) {
     this.apiFunction = 'get_top_following';
     this.loginRequired = false;
     this.callback = callback;
-    this.callApi({limit:lim, viewer_user_id:dahliawolf.userId, offset:off}, callback);
+    this.callApi({user_id:userId, viewer_user_id:dahliawolf.userId, limit:lim, offset:off}, callback);
+    return this;
+}
+
+Member.prototype.getTopFollowers = function(userId, lim, off, callback) {
+    this.apiFunction = 'get_top_followers';
+    this.loginRequired = false;
+    this.callApi({user_id:userId, viewer_user_id:dahliawolf.userId, limit:lim, offset:off}, callback);
+    return this;
+}
+
+Member.prototype.getTopUsers = function(userId, lim, off, callback) {
+    this.apiFunction = 'get_top_users';
+    this.loginRequired = false;
+    this.callApi({user_id:userId, viewer_user_id:dahliawolf.userId, limit:lim, offset:off}, callback);
     return this;
 }
 //************************************************************************************ POST

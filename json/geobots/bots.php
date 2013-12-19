@@ -202,4 +202,24 @@ $geobots = Array(
     11727
     );
 shuffle($geobots);
+
+/*
+$handle = opendir('.');
+
+$geobots_i = 0;
+while( $image = readdir($handle) )
+{
+    if(strpos($image, 'jpg') > -1)
+    {
+        $botid = $geobots[$geobots_i];
+        rename($image, $botid);
+        $geobots_i++;
+    };
+}
+
+foreach($geobots as $botid)
+{
+    echo $botid;
+}
+*/
 ?>
