@@ -23,6 +23,15 @@
     $data = api_call('posting', 'get_post', $params, true);
     $_data['post'] = $data['data'];
 
+    $url = 'http://www.dahliawolf.com/api/1-0/posting.json?function=get_posting&use_hmac_check=0&posting_id='.$_GET['posting_id'];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $result = json_decode(curl_exec ($ch));
+    curl_close ($ch);
+    $_data['post'] = (Array)$result->data->get_posting;
+
     // Comments
     $url = 'http://www.dahliawolf.com/api/1-0/posting.json?function=get_comments&use_hmac_check=0&posting_id='.$_GET['posting_id'];
     $ch = curl_init();
@@ -155,6 +164,7 @@
 <script>
 
     $(function() {
+        console.log(<?= json_encode($_data['post']) ?>);
         window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
         window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
 
