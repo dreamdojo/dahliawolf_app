@@ -67,6 +67,8 @@
     .messages_on{background-position: -813px;}
     .followers_on{background-position: -581px;}
     #messageCol h2{width: 100%;text-align: center;margin-top: 20px;font-size: 18px;}
+    #messageCol .postFrame{float: right; margin-right:25px; width: 85px; height: 85px; overflow: hidden;}
+    #messageCol .message p{height: 84px;line-height: 85px;margin-right: 10px;}
 </style>
 
 <div class="mainCol">
@@ -119,8 +121,32 @@
             dahliawolf.activity.getCategory($(this).data('cat'), function(data){
                 dahliawolf.loader.hide();
                 if(data.data.get_by_type.length) {
-                    $.each(data.data.get_by_type, function(x, msg) {
-                        $view.append(new activity(msg));
+                    var that = this;
+                    this.data = data.data.get_by_type;
+                    this.offset = 0;
+                    this.limit = 20;
+                    var count = 0;
+
+                    for(x = this.offset; x < (this.offset + this.limit); x++) {
+                        if(this.data[x]) {
+                            $view.append(new activity(that.data[x]));
+                            count++
+                        }
+                    }
+                    this.offset += count;
+
+                    $(window).unbind('scroll');
+                    $(window).scroll(function() {
+                        if($(window).scrollTop() + $(window).height() > $(document).height() - 200 && that.offset < that.data.length) {
+                            var count = 0;
+                            for(x = that.offset; x < (that.offset + that.limit); x++) {
+                                if(that.data[x]) {
+                                    $view.append(new activity(that.data[x]));
+                                    count++
+                                }
+                            }
+                            that.offset += count;
+                        }
                     });
                 } else {
                     $view.append('<h2>No activity found for '+cat+'</h2>');
@@ -141,22 +167,27 @@
         switch(data.entity) {
             case 'follow' :
                 var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> is now following you</li>').appendTo($view);
+                var $data = $('<li class="date">'+data.created+'</li>').css('float', 'right').appendTo($view);
                 break;
             case 'posting_like' :
-                var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> liked your post</li>').appendTo($view);
-                //var $post = $('<li class="postImg"></li>').css('background-image', 'url("'+data.image_url+'&width=85")').appendTo($view);
+                var $message = $('<li class="message"><p><a href="/'+data.username+'">'+data.username+'</a> liked your post</p></li>');
+                $message.appendTo($view);
+                var $data = $('<li class="date">'+data.created+'</li>').css('float', 'right').appendTo($view);
+                $('<div class="postFrame"><a href="/post/'+data.posting_id+'"><img src="'+data.image_url+'" width="100px"></a></div>').appendTo($view);
                 break;
             case 'message' :
                 var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> says '+socialize(decodeURI(data.body))+'</li>').appendTo($view);
+                var $data = $('<li class="date">'+data.created+'</li>').css('float', 'right').appendTo($view);
                 break;
             case 'comment' :
                 var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> says '+socialize(decodeURI(data.comment))+'</li>').appendTo($view);
+                var $data = $('<li class="date">'+data.created+'</li>').css('float', 'right').appendTo($view);
                 break;
             case 'sale' :
                 var $message = $('<li class="message"><a href="/'+data.username+'">'+data.username+'</a> purchased your product</li>').appendTo($view);
+                var $data = $('<li class="date">'+data.created+'</li>').css('float', 'right').appendTo($view);
                 break;
         }
-        var $data = $('<li class="date">'+data.created+'</li>').css('float', 'right').appendTo($view);
 
         return $view;
     }

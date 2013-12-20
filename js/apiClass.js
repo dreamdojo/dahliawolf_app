@@ -594,7 +594,7 @@ Post.prototype.getLovers = function(id, limit, offset, callback) {
     return this;
 }
 
-Post.prototype.shareOnTumbler = function(URL) {
+Post.prototype.shareOnTumbler = function(URL, id) {
     if(dahliawolf.areYouLoggedIntoTumblr) {
         _gaq.push(['_trackEvent', 'Social', 'Pushed to Tumblr API']);
         $.getJSON('/lib/TumblrOAuth/sharePost.php',{url:URL}, function(data) {
@@ -602,12 +602,12 @@ Post.prototype.shareOnTumbler = function(URL) {
         });
     } else {
         dahliawolf.logIntoTumblr(function() {
-            dahliawolf.post.shareOnTumbler(URL);
+            dahliawolf.post.shareOnTumbler(URL, id);
         });
     }
 }
 
-Post.prototype.shareOnTwitter = function(URL) {
+Post.prototype.shareOnTwitter = function(URL, id) {
     if(dahliawolf.areYouLoggedIntoTwitter) {
         _gaq.push(['_trackEvent', 'Social', 'Pushed to Twitter API']);
         $.getJSON('/action/sharePostOnTwitter.php',{url:URL}, function(data) {
@@ -615,15 +615,15 @@ Post.prototype.shareOnTwitter = function(URL) {
         });
     } else {
         dahliawolf.logIntoTwitter(function() {
-            dahliawolf.post.shareOnTwitter(URL);
+            dahliawolf.post.shareOnTwitter(URL, id);
         });
     }
 }
 
-Post.prototype.shareOnFacebook = function(URL) {
+Post.prototype.shareOnFacebook = function(URL, id) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            var params = {message : 'Love this on #Dahliawolf www.dahliawolf.com', url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
+            var params = {message : 'Love this on #Dahliawolf www.dahliawolf.com/post/'+id, url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
             _gaq.push(['_trackEvent', 'Social', 'Pushed to Facebook API']);
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
@@ -632,11 +632,11 @@ Post.prototype.shareOnFacebook = function(URL) {
             });
         } else if (response.status === 'not_authorized') {
             dahliawolf.logIntoFacebook(function() {
-                dahliawolf.post.shareOnFacebook(URL);
+                dahliawolf.post.shareOnFacebook(URL, id);
             });
         } else {
             dahliawolf.logIntoFacebook(function() {
-                dahliawolf.post.shareOnFacebook(URL);
+                dahliawolf.post.shareOnFacebook(URL, id);
             });
         }
     });

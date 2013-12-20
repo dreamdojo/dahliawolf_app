@@ -178,7 +178,7 @@
                     if(that.data.success) {
                         _gaq.push(['_trackEvent', 'Inspire', 'Upload completed successfully']);
                         that.$post.css('background-image', 'url("'+that.data.data.new_image_url+'")').removeClass('loading').empty().html(that.$getPost(that.data));
-                        postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+that.data.data.posting_id, that.data.data.new_image_url);
+                        postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+that.data.data.posting_id, that.data.data.new_image_url, that.data.data.posting_id);
                     } else {
                         _gaq.push(['_trackEvent', 'Inspire', 'Failed back end validation', that.data.errors]);
                         _gaq.push(['_trackEvent', 'Errors', that.data.errors]);
@@ -255,15 +255,15 @@
         $('#viewToggle').on('click', this.toggleMode);
     }
 
-    postBank.checkSyncedAccounts = function(url, img_url) {
+    postBank.checkSyncedAccounts = function(url, img_url, id) {
         if(dahliawolf.areYouLoggedIntoTwitter){
-            dahliawolf.post.shareOnTwitter(url);
+            dahliawolf.post.shareOnTwitter(url, id);
         }
         if(dahliawolf.areYouLoggedIntoTumblr) {
-            dahliawolf.post.shareOnTumbler(img_url);
+            dahliawolf.post.shareOnTumbler(img_url, id);
         }
         if(dahliawolf.areYouLoggedIntoFacebook) {
-            dahliawolf.post.shareOnFacebook(img_url);
+            dahliawolf.post.shareOnFacebook(img_url, id);
         }
     }
 
