@@ -15,7 +15,7 @@
             <p class="stepTitle">STEP 1</p>
             <p class="wyg">VERIFY YOUR ACCOUNT</p>
             <p class="learns">Simply click below <br> to verify you account</p>
-            <a href="/vip"><div class="dahliaButton">VERIFY NOW</div></a>
+            <a href="/help/verified.php"><div class="dahliaButton">VERIFY NOW</div></a>
         </li>
         <li>
             <p class="stepTitle">STEP 1</p>

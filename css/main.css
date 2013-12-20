@@ -716,7 +716,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 .transCol .learns{font-size: 13px;color: #c2c2c2;}
 .transCol .dahliaButton{background-color: #f03e63;padding: 10px 25px;color: #fff;width: 98px;margin: 0px auto;font-size: 12px;margin-bottom: 20px;}
 .transCol .vipEx{width: 200px;float: left;margin-left: 72px;}
-.transCol .justTheFacts{margin-top: 20px;}
+.transCol .justTheFacts{margin-top: 20px;display: inline-block;padding-bottom: 200px;}
 .transCol .listOfFacts{float: left;text-align: left;font-size: 13px;line-height: 24px; }
 .transCol .listOfFacts h3{margin-top: 10px; margin-bottom: 10px;}
 .dahliaButton{background-color: #f03e63;padding: 10px 25px;color: #fff;width: 98px;margin: 0px auto;font-size: 12px;margin-bottom: 20px;}
