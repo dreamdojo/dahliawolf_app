@@ -482,7 +482,7 @@
 
             this.$post.append(str);
             this.$post.append(new shareBall(data));
-            postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+data.posting_id, data.new_image_url );
+            postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+data.posting_id, data.new_image_url, data.posting_id);
         } else if(data.error){
             this.$post.append('<div class="inspireError">'+data.error+'</div>');
         }
