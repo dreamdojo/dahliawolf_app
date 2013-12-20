@@ -45,6 +45,10 @@
     <div id="voteBucket"></div>
 <?php include "footer.php"; ?>
 <script>
+    var canPlay = false;
+    var v = document.createElement('video');
+    if(v.canPlayType && v.canPlayType('video/mp4').replace(/no/, '')) {
+
     $(window).scrollTop($('#joinBanner').offset().top);
     SetTheater();
     $(function() {
@@ -86,6 +90,9 @@
 
         new learnEm();
     });
+    } else {
+        $('#movieTheatre').remove();
+    }
 
     function SetTheater() {
         var $vid  = document.getElementById("dwvideo");
