@@ -45,54 +45,48 @@
     <div id="voteBucket"></div>
 <?php include "footer.php"; ?>
 <script>
-    var canPlay = false;
-    var v = document.createElement('video');
-    if(v.canPlayType && v.canPlayType('video/mp4').replace(/no/, '')) {
 
-    $(window).scrollTop($('#joinBanner').offset().top);
-    SetTheater();
-    $(function() {
+        $(window).scrollTop($('#joinBanner').offset().top);
         SetTheater();
-        setTimeout(function() {
-            window.scroll(0, $('#joinBanner').offset().top);
+        $(function() {
             SetTheater();
-            document.getElementById("dwvideo").play();
-        }, 2000);
-        window.scroll(0, $('#joinBanner').offset().top);
-        dahliawolfFeed = new voteFeed({mode:'grid' <? !empty($_GET['sort']) ? ', filter: "'.$_GET['sort'].'"' : '' ?> <? !empty($_GET['q']) ? ', search: "'.$_GET['q'].'"' : '' ?>});
-    });
-
-    $(function() {
-       var $head = $('#dahliaHeader');
-        SetTheater();
-        $(window).scroll(function() {
-           SetTheater();
-            if($(this).scrollTop() > $('#movieTheatre').height()) {
-                $head.css('position', 'fixed');
-                document.getElementById("dwvideo").pause();
-            } else {
-                $head.css('position', 'relative');
+            setTimeout(function() {
+                window.scroll(0, $('#joinBanner').offset().top);
+                SetTheater();
                 document.getElementById("dwvideo").play();
-            }
-       });
+            }, 2000);
+            window.scroll(0, $('#joinBanner').offset().top);
+            dahliawolfFeed = new voteFeed({mode:'grid' <? !empty($_GET['sort']) ? ', filter: "'.$_GET['sort'].'"' : '' ?> <? !empty($_GET['q']) ? ', search: "'.$_GET['q'].'"' : '' ?>});
+        });
 
-       $('.hiw').on('click', function() {
-           var $movieScreen = $('<div id="tooltip-overlay"></div>').css({'opacity': 1}).appendTo($('body')).fadeIn(1000,function() {
-               $movieScreen.load('/video_page.php');
-               var $closer = $('<div class="closeMovie"><img src="/images/movieClose.png"></div>').appendTo($('body')).on('click', function(){
-                   $closer.remove();
-                   $movieScreen.empty().fadeOut(500, function() {
-                        $movieScreen.remove();
-                    });
+        $(function() {
+           var $head = $('#dahliaHeader');
+            SetTheater();
+            $(window).scroll(function() {
+               SetTheater();
+                if($(this).scrollTop() > $('#movieTheatre').height()) {
+                    $head.css('position', 'fixed');
+                    document.getElementById("dwvideo").pause();
+                } else {
+                    $head.css('position', 'relative');
+                    document.getElementById("dwvideo").play();
+                }
+           });
+
+           $('.hiw').on('click', function() {
+               var $movieScreen = $('<div id="tooltip-overlay"></div>').css({'opacity': 1}).appendTo($('body')).fadeIn(1000,function() {
+                   $movieScreen.load('/video_page.php');
+                   var $closer = $('<div class="closeMovie"><img src="/images/movieClose.png"></div>').appendTo($('body')).on('click', function(){
+                       $closer.remove();
+                       $movieScreen.empty().fadeOut(500, function() {
+                            $movieScreen.remove();
+                        });
+                   });
                });
            });
-       });
 
-        new learnEm();
-    });
-    } else {
-        $('#movieTheatre').remove();
-    }
+            new learnEm();
+        });
 
     function SetTheater() {
         var $vid  = document.getElementById("dwvideo");
