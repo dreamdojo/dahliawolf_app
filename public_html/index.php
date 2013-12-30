@@ -98,7 +98,7 @@
         }
         if((1-op) >= 0 && (1-op) <= 1) {
             $vid.volume = (Math.abs(.5-op));
-            console.log($vid.volume);
+            //console.log($vid.volume);
         }
 
     }
