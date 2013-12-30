@@ -661,7 +661,7 @@ padding: 20px;}
 #dahliaCart ul:last-child{border-bottom: none;}
 #dahliaCart ul li{color: #666;font-size: 12px;line-height: 16px; text-align: left;}
 #dahliaCart .cta{background-color: #F03E63;color: #fff;width: 225px;margin: 0px auto;margin-top: 10px;margin-bottom: 25px;text-align: center;padding: 10px 0px;font-size: 15px;text-transform: uppercase;float: none !important;}
-#shoppingCart .cartCount{width: 30px;text-align: center;line-height: 37px;font-size: 13px; color: #fff;}
+#shoppingCart .cartCount{width: 30px;text-align: center;line-height: 37px;font-size: 13px; color: #fff;height: 30px;}
 .cart_bezier{position: absolute;width: 29px;background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 29px;}
 
 /********** THE LESSON ************************/
@@ -1188,7 +1188,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 
 /* COMPONENTS
 --------------------------------------------------------------------------------------- */
-.Button.Indicator {position: fixed; z-index: 3; display: block; text-align: center; font-size: 15px; border-width: 0; box-shadow: 0 0 #fff; -moz-box-shadow: 0 0 #fff; -webkit-box-shadow: 0 0 #fff;}
+.Button.Indicator {position: fixed; z-index: 103; display: block; text-align: center; font-size: 15px; border-width: 0; box-shadow: 0 0 #fff; -moz-box-shadow: 0 0 #fff; -webkit-box-shadow: 0 0 #fff;}
 .Button.Indicator span {border-width: 0; box-shadow: 0 1px 3px rgba(34,25,25,0.5); -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.5); -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.5);}
 
 .NewIndicator {top: 88px; left: -3px; width: 145px; padding: 10px; -moz-transition: left 1s ease-in-out; -webkit-transition: left 1s ease-in-out;}

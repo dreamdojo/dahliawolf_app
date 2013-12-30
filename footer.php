@@ -3,6 +3,7 @@
 <div id="theOverlay"></div>
 <div id="sys-profiler"></div>
 <div id="sysMessageDialog" style="display: none;" title="Message"></div>
+<div id="modal" class="modal"><div id="modal-content"><img id="modal-image" /></div></div>
 
 <div id="sign-up-modal">
 	<div class="sign-up-business">

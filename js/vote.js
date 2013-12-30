@@ -358,8 +358,9 @@ voteFeed.prototype.prepBucket = function() {
 voteFeed.prototype.bindScroll = function() {
     var that = this
     $(window).unbind('scroll');
-    $(window).scroll(function() {
-        if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+    $(window).on('scroll touchmove', function() {
+        console.log($(window).scrollTop());
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 800) {
             that.getPostsFromApi();
         }
     });

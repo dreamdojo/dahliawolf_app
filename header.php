@@ -31,30 +31,6 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-
-    $(document).ready(function()
-    {
-        $("#ScrollToTop").click(function()
-        {
-            $(window).scrollTop(0);
-
-            return false;
-        });
-        function scrollToTopCheck() {
-            if ($(window).scrollTop() > 500) $("#ScrollToTop").show();
-            else $("#ScrollToTop").hide();
-        }
-        $(window).scroll(scrollToTopCheck);
-        scrollToTopCheck();
-        // Fancy Form
-        $(".FancyForm input[type=text], .FancyForm input[type=password], .FancyForm textarea").each(function() {
-            if ($(this).val()) $(this).addClass("NotEmpty");
-        }).change(function() {
-                if ($(this).val()) $(this).addClass("NotEmpty");
-                else  $(this).removeClass("NotEmpty");
-            });
-    });
-
     //Google Aanalytics
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-34564940-1']);
@@ -67,12 +43,6 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 </script>
-
-<div id="modal" class="modal">
-    <div id="modal-content">
-        <img id="modal-image" />
-    </div>
-</div>
 
 <a name="top"></a>
 
@@ -166,11 +136,6 @@
     <div id="searchBar">
         <input type="text" placeholder="Start typing to search...">
     </div>
-</div>
-
-<div id="dahliaHead">
-    <div id="dahliaHeadAvatar"><img id="dahliaHeadAvatarSrc" src="" /></div>
-    <div id="dahliaHeadFollowToggle"></div>
 </div>
 
 <div id="theLesson" class="lessonBox">

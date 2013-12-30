@@ -157,6 +157,7 @@
 
 <? if(!isset( $_GET['ajax'] )): ?>
     </div>
+    <?php include "footer.php" ?>
 <? endif ?>
 
 
@@ -164,7 +165,6 @@
 <script>
 
     $(function() {
-        console.log(<?= json_encode($_data['post']) ?>);
         window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
         window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
 
