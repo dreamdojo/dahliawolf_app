@@ -227,11 +227,11 @@ theBank.refreshPage = false;
 theBank.topDistance = 60;
 theBank.trainingTopDistance = 314;
 theBank.dragndrop = '<div id="d-n-drop"><div class="inpiration-text">Drag and drop inpiration images here<br>or</div>';
-theBank.dragndrop += '<img class="fork-img" id="uploadButton" src="/public_html/images/select-files.png" />';
+theBank.dragndrop += '<img class="fork-img" id="uploadButton" src="/images/select-files.png" />';
 theBank.dragndrop += '<input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onchange="imgUpload.submitImage(this.files[0]);"></div>';
 theBank.dragndrop += '<div class="postfromanywhere">Post from anywhere on the web: <a href="/pinit">Get the Inspire Button</a></div>';
 theBank.dragndrop += '<div id="upload-container"></div>'
-theBank.dragndrop += '<img class="inspire-title" src="/public_html/images/inspire_title.png">';
+theBank.dragndrop += '<img class="inspire-title" src="/images/inspire_title.png">';
 theBank.isAvailable = true;
 theBank.slide = false;
 
@@ -253,7 +253,7 @@ theBank.finishPost = _finishPost;
 theBank.activateDragndrop = _activateDragndrop;
 
 theBank.showLoader = function() {
-	theBank.outlet.append('<div id="theGridLoader"><img src="/public_html/images/loading-feed.gif"></div>');
+	theBank.outlet.append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
 }
 theBank.destroyLoader = function() {
 	theBank.outlet.remove();

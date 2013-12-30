@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
     .cartTotals li{font-size: 16px;width: 100%;text-align: center;height: 25px;line-height: 25px; margin-bottom: 5px;}
     .cartTotals .lefty{width: 50%; float: left; text-align: right;color: #AFAFAF;}
     .cartTotals .righty{width: 50%; float: left; text-align: left; text-indent: 10px;}
-    .shop select{background-image: url("/public_html/images/checkoutArrow.png");background-size: auto 50%;background-repeat: no-repeat;background-position: 96%;font-size: 13px; text-indent: 22px;font-family: futura;}
+    .shop select{background-image: url("/images/checkoutArrow.png");background-size: auto 50%;background-repeat: no-repeat;background-position: 96%;font-size: 13px; text-indent: 22px;font-family: futura;}
     .coTitle{width: 100%; text-align: center; font-size: 25px;}
     .shop input{font-size: 12px;height: 37px;text-indent: 10px;}
     .shop .StaticForm{margin: 20px 0;}
@@ -147,7 +147,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
         }
 
         var data = $('#carrierForm').serialize();
-        $('.cartTotals').empty().append('<div class="totalLoader"><img src="/public_html/images/loading-transparent.gif"></div>');
+        $('.cartTotals').empty().append('<div class="totalLoader"><img src="/images/loading-transparent.gif"></div>');
         $.post('/action/shop/select_checkout_carrier.php', data, function(data) {
             dahliawolfCheckout.loadCart(function(data) {
                 dahliawolfCheckout.updateCart(data);

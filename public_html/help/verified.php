@@ -16,7 +16,7 @@
 
     <ul>
         <li>What is a verified account?</li>
-        <li style="margin-top: 0px;">Verified accounts are accounts that have the verified badge <img src="/public_html/images/verified.png"></li>
+        <li style="margin-top: 0px;">Verified accounts are accounts that have the verified badge <img src="/images/verified.png"></li>
     </ul>
 
     <ul>
@@ -28,7 +28,7 @@
         <li>How to verify your account.</li>
         <li>If you want verify your account and receive a verified badge on your profile, please complete the steps below...</li>
     </ul>
-    <a href="/account/settings.php"><img src="/public_html/images/Verified-Explaination.png" style="margin-bottom: 10px;"></a>
+    <a href="/account/settings.php"><img src="/images/Verified-Explaination.png" style="margin-bottom: 10px;"></a>
     <p>1. Upload a profile pic and post at least one inspiration image to your account</p>
     <p>2. Connect your Dahlia Wolf account with your official Twitter, Facebook and/or Tumblr from your account settings page or by clicking <a href="/account/settings.php?social=true">here</a></p>
     <p>3. Email us at <a href="mailto:verify@dahliawolf.com">verify@dahliawolf.com</a> and included your Dahlia Wolf username along with links to the verification messages posted on each of your official accounts</p>

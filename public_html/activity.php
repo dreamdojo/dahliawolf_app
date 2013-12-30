@@ -50,7 +50,7 @@
     #messageCol{border-top: #F03E63 30px solid; margin-top: 20px;}
     #catHeader{display: inline-block; margin: 50px 180px;}
     #catHeader li{width: 85px;float: left; margin-left:50px; height: 85px;line-height: 200px; text-transform:capitalize; text-align: center;
-        font-size: 16px; position: relative; background-size: auto 100%; background-repeat: no-repeat; background-image: url("/public_html/images/activityIcons.png"); cursor: pointer;}
+        font-size: 16px; position: relative; background-size: auto 100%; background-repeat: no-repeat; background-image: url("/images/activityIcons.png"); cursor: pointer;}
     #catHeader li .count{position: absolute; right: 0px; top: 0px; border: #fff 3px solid; border-radius: 20px; height: 20px; width: 20px;
         color: #fff; background-color: #F03E63;font-size: 9px;text-align: center;line-height: 20px;}
     .activityLog{width: 100%;height: 95px;line-height: 85px;padding-top: 10px;}

@@ -68,7 +68,7 @@ if(!IS_LOGGED_IN) {
     #dataCol #filters li{float: left; text-align: center; width: 33%; font-size: 11px; color: #666666; width: 100%;background-color: #fff;}
     #dataCol #filters li:hover{background-color: #c2c2c2;}
     #dataCol #postSelector{ width: 98%;}
-    .menuTitle{border: #c2c2c2 thin solid; background-image: url("/public_html/images/dropDownArrow.png"); background-size: auto 47%; background-position: 98%; background-repeat: no-repeat;}
+    .menuTitle{border: #c2c2c2 thin solid; background-image: url("/images/dropDownArrow.png"); background-size: auto 47%; background-position: 98%; background-repeat: no-repeat;}
 
     #postBin{width: 100%; padding-bottom: 120px; padding-top: 60px;}
     .dbPost{height: 400px; width: 32%; background-color: #fff; float: left; margin-top: 10px; overflow: hidden; border: #c2c2c2 thin solid; margin-left: 1%; position: relative;}
@@ -81,7 +81,7 @@ if(!IS_LOGGED_IN) {
     .dbPost li p{padding: 0px; margin: 0px; width: 60%; float: left;}
     .dbPost li p:last-child{text-align: right; width: 40%;}
     .dbPost .needs{position: absolute;bottom: 0px;width: 100%;text-align: center;background-color: #e7e7e7;height: 25px;line-height: 25px;opacity: .8;font-size: 13px;margin: 0px;}
-    .fave{background-image: url("/public_html/images/favesBG.jpg"); background-size: 100%; background-position: 50%;}
+    .fave{background-image: url("/images/favesBG.jpg"); background-size: 100%; background-position: 50%;}
     .sSteez{font-size: 12px;color: #666666;font-size: 15px;font-weight: 100;}
 
     #dbModal{ position: fixed; width: 700px; height: 300px; border: #c2c2c2 thin solid; background-color: #fff; display: none; left: 50%; top: 50%; margin-top: -150px; margin-left: -350px; z-index: 1000010;overflow: scroll;}
@@ -366,14 +366,14 @@ if(!IS_LOGGED_IN) {
                         $first.remove();
                         $(that).remove();
                         $rank.remove();
-                        $img.append('<img class="ribbon" src="/public_html/images/featuredRibbon.png">');
+                        $img.append('<img class="ribbon" src="/images/featuredRibbon.png">');
                     } else if(data.data.fave.errors) {
                         alert(data.data.fave.errors[0]);
                     }
                 });
             });
         } else {
-            $img.append('<img class="ribbon" src="/public_html/images/featuredRibbon.png">');
+            $img.append('<img class="ribbon" src="/images/featuredRibbon.png">');
             var $feature = $('<div class="feature">UNFEATURE</div>').appendTo($img).on('click', function() {
                 $(this).closest('.dbPost').remove();
                 $('#postFaves').append( new dashboard.getPlaceHolder() );

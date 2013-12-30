@@ -250,7 +250,7 @@ class Spine {
 							}
 							else {
 								?>
-								<img class="lazy" src="/public_html/images/blank.gif" data-src="<?= $image['url'] ?>" width="<?= $width ?>" height="<?= $height ?>" alt="<?= $image['description'] ?>" style="margin-top: -<?= floor(($height - $target_height) / 2) ?>px; margin-left: -<?= floor(($width - $target_width) / 2) ?>px;" />
+								<img class="lazy" src="/images/blank.gif" data-src="<?= $image['url'] ?>" width="<?= $width ?>" height="<?= $height ?>" alt="<?= $image['description'] ?>" style="margin-top: -<?= floor(($height - $target_height) / 2) ?>px; margin-left: -<?= floor(($width - $target_width) / 2) ?>px;" />
 								<?
 							}
 							?>

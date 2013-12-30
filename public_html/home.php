@@ -20,7 +20,7 @@
     </style>
 
 <div id="joinBanner">
-    <img class="hiw" src="/public_html/images/howitworks.png">
+    <img class="hiw" src="/images/howitworks.png">
     <div id="hiw-slide">
         <div id="theCloser">X</div>
         <video id="hiwVideo" controls poster="http://www.dahliawolf.com/images/how-it-works-video.png" >
@@ -36,9 +36,9 @@
         <p class="earn">FOR EVERY ITEM THAT YOU INSPIRE</br>YOU GET A CHECK FOR 5% OF ALL SALES OF THAT ITEM!!</p>
     </div>
     <ul id="theMethod">
-        <li data-section="inspire"><img src="/public_html/images/hb_insp.png"></li>
-        <li data-section="design"><img src="/public_html/images/hb_des.png"></li>
-        <li data-section="earn"><img src="/public_html/images/hb_earn.png"></li>
+        <li data-section="inspire"><img src="/images/hb_insp.png"></li>
+        <li data-section="design"><img src="/images/hb_des.png"></li>
+        <li data-section="earn"><img src="/images/hb_earn.png"></li>
     </ul>
 </div>
 

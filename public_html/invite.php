@@ -293,7 +293,7 @@ $(function(){
                     // the user is logged in to Facebook,
                     // but has not authenticated your app
                 } else {
-                    partyLine.userTank.append('<img class="defaulto" src="/public_html/images/invite_default.jpg">');
+                    partyLine.userTank.append('<img class="defaulto" src="/images/invite_default.jpg">');
                 }
             });
         }, 1000);

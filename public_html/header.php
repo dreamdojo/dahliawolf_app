@@ -58,12 +58,12 @@
     <ul class="native_head">
         <li>
             <a href="https://itunes.apple.com/us/app/dahlia-wolf-fashion/id718253685?ls=1&mt=8">
-                <img src="/public_html/images/nh_ios.png">
+                <img src="/images/nh_ios.png">
             </a>
         </li>
         <li>
             <a href="https://play.google.com/store/apps/details?id=com.zyonnetworks.dahliawolf2&hl=en">
-                <img src="/public_html/images/nh_droid.png">
+                <img src="/images/nh_droid.png">
             </a>
         </li>
     </ul>
@@ -148,7 +148,7 @@
 </div>
 
 <div id="loadingView">
-    <img src="/public_html/images/dw-logo.png">
+    <img src="/images/dw-logo.png">
 </div>
 
 <script>
@@ -171,7 +171,7 @@
 
         <input type="hidden" name="subpin" value="1">
         <div style="text-align: center;"><textarea name="description" id="comment">#dahliawolf</textarea></div>
-        <div style="text-align: center;padding-bottom: 25px; margin-top: 10px;"><input name="submit" type="image" src="/public_html/images/postitbtn2.png" onclick="$(this).hide()" id="image-sub"></div>
+        <div style="text-align: center;padding-bottom: 25px; margin-top: 10px;"><input name="submit" type="image" src="/images/postitbtn2.png" onclick="$(this).hide()" id="image-sub"></div>
 </div>
 </form>
 

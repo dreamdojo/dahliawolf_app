@@ -256,7 +256,7 @@ class Spine {
 							}
 							else {
 								?>
-								<img class="lazy" src="/public_html/images/blank.gif" data-src="<?= $image['url'] ?>" width="<?= $image['width'] ?>" height="<?= $image['height'] ?>" alt="<?= $image['description'] ?>" />
+								<img class="lazy" src="/images/blank.gif" data-src="<?= $image['url'] ?>" width="<?= $image['width'] ?>" height="<?= $image['height'] ?>" alt="<?= $image['description'] ?>" />
 								<?
 							}
 							?>

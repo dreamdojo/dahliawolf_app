@@ -70,11 +70,11 @@ include "post_slideout.php";
 <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"></div>
 <div class="header">
  <div class="HeaderContents">
-    <img src="/public_html/images/logo.png">
+    <img src="/images/logo.png">
  </div>
 </div>
 
-<img class="helper" src="/public_html/images/post_help_pop.jpg" />
+<img class="helper" src="/images/post_help_pop.jpg" />
 
 <div class="main-col">
      <div class="wtb-title-box">
@@ -98,7 +98,7 @@ include "post_slideout.php";
 				<ul class="images mod-0">
                 	<li class="posting-227 image-0" data-posting_id="227">
                         <div class="image">
-                                <img id="w-img-1" class="lazy" src="/public_html/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -12px; margin-left: -0px;">
+                                <img id="w-img-1" class="lazy" src="/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -12px; margin-left: -0px;">
                         </div>                      
                         <p class="username"><a href="#"></a></p>                         
                         <p class="like">
@@ -108,7 +108,7 @@ include "post_slideout.php";
 					</li>
                     <li class="posting-226 image-1" data-posting_id="226">
                         <div class="image">
-                             <img id="w-img-2" class="lazy" src="/public_html/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -0px; margin-left: -0px;">
+                             <img id="w-img-2" class="lazy" src="/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -0px; margin-left: -0px;">
                         </div>					
 						<p class="username"><a href="#"></a></p>										
 						<p class="like">
@@ -118,7 +118,7 @@ include "post_slideout.php";
 					</li>
                     <li class="posting-225 image-2" data-posting_id="225">
 						<div class="image">
-								<img id="w-img-3" class="lazy" src="/public_html/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -0px; margin-left: -3px;">
+								<img id="w-img-3" class="lazy" src="/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -0px; margin-left: -3px;">
 						</div>
 						<p class="username">
                         	<a href="#"></a></p>
@@ -129,7 +129,7 @@ include "post_slideout.php";
 					</li>
                     <li class="posting-224 image-3" data-posting_id="224">
 						<div class="image">						
-								<img id="w-img-4" class="lazy" src="/public_html/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -0px; margin-left: -0px;">
+								<img id="w-img-4" class="lazy" src="/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -0px; margin-left: -0px;">
 						</div>
 						<p class="username"><a href="#"></a></p>
 						<p class="like">
@@ -139,7 +139,7 @@ include "post_slideout.php";
 					</li>
                     <li class="posting-223 image-4" data-posting_id="223">
 						<div class="image">
-								<img id="w-img-5" class="lazy" src="/public_html/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -0px; margin-left: -0px;">
+								<img id="w-img-5" class="lazy" src="/images/fake-img.png" height="100%" alt="Rep Yo Steez" style="margin-top: -0px; margin-left: -0px;">
 						</div>
 						<p class="username"><a href="#"></a></p>
 						<p class="like">

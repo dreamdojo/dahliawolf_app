@@ -104,7 +104,7 @@
     #sizeChart img{position: absolute;width: 700px;top: 50%;margin-top: -300px;left: 50%;margin-left: -350px;z-index: 11;}
 
     .prodShareButts{display: inline-block;}
-    .prodShareButts li{height: 50px; width: 60px; float: left; background-image: url("/public_html/images/prodShare.png"); background-repeat: no-repeat;background-size: auto 94%;}
+    .prodShareButts li{height: 50px; width: 60px; float: left; background-image: url("/images/prodShare.png"); background-repeat: no-repeat;background-size: auto 94%;}
 </style>
 
 <div class="shopCol">
@@ -234,7 +234,7 @@
 </div>
 <div id="sizeChart">
     <div class="theHaze"></div>
-    <img src="/public_html/images/dahliawolf_sizechart.jpg">
+    <img src="/images/dahliawolf_sizechart.jpg">
 </div>
 
 <script>

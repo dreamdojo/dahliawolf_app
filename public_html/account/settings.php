@@ -17,7 +17,7 @@ $_data['user'] = $data['data'];
 <style>
     .SettingsCol{width: 1000px;margin: 0px auto;}
     #syncSocial{display: none;}
-    .syncSection li:first-child{background-image: url("/public_html/images/postDeetsIcons.png"); background-size: auto 100%; background-repeat: no-repeat; width: 75px; height: 75px; float: left;}
+    .syncSection li:first-child{background-image: url("/images/postDeetsIcons.png"); background-size: auto 100%; background-repeat: no-repeat; width: 75px; height: 75px; float: left;}
     .syncSection li:last-child{font-size: 25px;height: 80px;line-height: 80px; cursor: pointer;}
     .syncFacebook li:first-child{background-position: -191px;}
     .syncTwitter li:first-child{background-position: -583px;}

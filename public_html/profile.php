@@ -52,7 +52,7 @@
                 echo '<a href="/post-details?posting_id='.$_data['posts'][$x]['posting_id'].'" rel="modal"><img class="titlePostImage" src="'.$_data['posts'][$x]['image_url'].'"/></a>';
             }?>
         <? else: ?>
-        	<img src="/public_html/images/profileFiller.jpg" />
+        	<img src="/images/profileFiller.jpg" />
 		<? endif ?>
 	</div>
     <div id="userProfileDeets">
@@ -64,8 +64,8 @@
                 </div>
                 <ul class="userProfileDeetsList">
                     <li class="profileUsername"><a href="@<?= $_data['user']['username'] ?>" style="float: left;" rel="message">@<?= $_data['user']['username'] ?></a>
-                        <?= $_data['user']['verified'] && $_data['user']['membership_level'] != 'VIP' ? '<div class="memberStats"><a href="/help/verified"><img src="/public_html/images/verified.png"></a><div class="ms_ro" style="background-image: url(\'/images/verified_RO.png\')"></div></div>' : ''  ?>
-                        <?= $_data['user']['membership_level'] == 'VIP' ? '<div class="memberStats"><a href="/help/vip"><img src="/public_html/images/vip.png"></a><div class="ms_ro" style="background-image: url(\'/images/vip_RO.png\')"></div></div>' : ''  ?>
+                        <?= $_data['user']['verified'] && $_data['user']['membership_level'] != 'VIP' ? '<div class="memberStats"><a href="/help/verified"><img src="/images/verified.png"></a><div class="ms_ro" style="background-image: url(\'/images/verified_RO.png\')"></div></div>' : ''  ?>
+                        <?= $_data['user']['membership_level'] == 'VIP' ? '<div class="memberStats"><a href="/help/vip"><img src="/images/vip.png"></a><div class="ms_ro" style="background-image: url(\'/images/vip_RO.png\')"></div></div>' : ''  ?>
                         <div style="clear: left;"></div>
                     </li>
                     <li class="profileLocation"><?= $_data['user']['location'] ?></li>

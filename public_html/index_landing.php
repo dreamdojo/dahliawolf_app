@@ -100,7 +100,7 @@ if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
 <div class="enterTheDragon"><a href="/home">ENTER SITE</a></div>
 
 <div class="theBox">
-    <a href="/home"><img class="header loggle-toggle" src="/public_html/images/homeTitle.png" /></a>
+    <a href="/home"><img class="header loggle-toggle" src="/images/homeTitle.png" /></a>
 </div>
 
 </body>

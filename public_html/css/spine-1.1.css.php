@@ -198,12 +198,12 @@ ul.images .like {
 .spine .liked .wild-4 a {
 	background-image: url("../images/wild_like.png");
 }
-.spine-alien{background-image: url(/public_html/images/alien-bg.png);background-size: cover;width: 36px;height: 100%;bottom: auto; float: left; position:static !important;}
+.spine-alien{background-image: url(/images/alien-bg.png);background-size: cover;width: 36px;height: 100%;bottom: auto; float: left; position:static !important;}
 .spine-social-box{position: absolute;left: 0px;top: 0px;height: 36px;width: 76px;display: none;}
 .image:hover .spine-social-box{display:block;}
-.spine-comment{ background-image:url(/public_html/images/spine-comment-bg.png); background-size:cover; width:36px; height:100%; bottom:auto;float: left; position:static !important;line-height: 35px !important;font-size: 11px !important;}
+.spine-comment{ background-image:url(/images/spine-comment-bg.png); background-size:cover; width:36px; height:100%; bottom:auto;float: left; position:static !important;line-height: 35px !important;font-size: 11px !important;}
 .spine-social-box:hover .share{display:block;}
-.divot{background-image:url(/public_html/images/divot.png); background-size:cover; position:absolute; width: 10px;height: 9px;left: 13px;top: -9px;}
+.divot{background-image:url(/images/divot.png); background-size:cover; position:absolute; width: 10px;height: 9px;left: 13px;top: -9px;}
 .bridge{position: absolute;height: 20px;width: 100%;margin-top: -10px;}
 <?
 require $_SERVER['DOCUMENT_ROOT'] . '/includes/php/classes/Spine-1.1.php';

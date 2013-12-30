@@ -31,9 +31,9 @@
             <p class="earn">FOR EVERY ITEM THAT YOU INSPIRE</br>YOU GET A CHECK FOR 5% OF ALL SALES OF THAT ITEM!!</p>
         </div>
         <ul id="theMethod">
-            <li data-section="inspire"><a href="/public_html/help"><img src="/public_html/images/hb_insp.png"></a></li>
-            <li data-section="design"><a href="/public_html/help"><img src="/public_html/images/hb_des.png"></a></li>
-            <li data-section="earn"><a href="/public_html/help"><img src="/public_html/images/hb_earn.png"></a></li>
+            <li data-section="inspire"><a href="/public_html/help"><img src="/images/hb_insp.png"></a></li>
+            <li data-section="design"><a href="/public_html/help"><img src="/images/hb_des.png"></a></li>
+            <li data-section="earn"><a href="/public_html/help"><img src="/images/hb_earn.png"></a></li>
         </ul>
     </div>
 </div>
@@ -76,7 +76,7 @@
            $('.hiw').on('click', function() {
                var $movieScreen = $('<div id="tooltip-overlay"></div>').css({'opacity': 1}).appendTo($('body')).fadeIn(1000,function() {
                    $movieScreen.load('/video_page.php');
-                   var $closer = $('<div class="closeMovie"><img src="/public_html/images/movieClose.png"></div>').appendTo($('body')).on('click', function(){
+                   var $closer = $('<div class="closeMovie"><img src="/images/movieClose.png"></div>').appendTo($('body')).on('click', function(){
                        $closer.remove();
                        $movieScreen.empty().fadeOut(500, function() {
                             $movieScreen.remove();

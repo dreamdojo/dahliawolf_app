@@ -324,7 +324,7 @@ class Spine {
 							}
 							else {
 								?>
-								<img class="lazy zoom-in" src="/public_html/images/loading3.gif" data-src="<?= $image['url'] ?>&amp;width=<?= $width ?>&amp;height=<?= $height ?>" width="<?= $width ?>" height="<?= $height ?>" alt="<?= $image['description'] ?>" style="margin-top: -<?= floor(($height - $target_height) / 2) ?>px; margin-left: -<?= floor(($width - $target_width) / 2) ?>px;" />
+								<img class="lazy zoom-in" src="/images/loading3.gif" data-src="<?= $image['url'] ?>&amp;width=<?= $width ?>&amp;height=<?= $height ?>" width="<?= $width ?>" height="<?= $height ?>" alt="<?= $image['description'] ?>" style="margin-top: -<?= floor(($height - $target_height) / 2) ?>px; margin-left: -<?= floor(($width - $target_width) / 2) ?>px;" />
 								<?
 							}
 							?>

@@ -166,7 +166,7 @@ postDetail.prototype.getTags = function() {
             });
 
             if(that.isSelfPost) {
-                var $delTag = $('<img src="/public_html/images/deleteTag.png">').on('click', function() {
+                var $delTag = $('<img src="/images/deleteTag.png">').on('click', function() {
                     dahliawolf.post.delTag(tag.posting_tag_id, that.data.posting_id);
                     $tag.remove();
                     $note.slideUp(200, function() {
@@ -219,7 +219,7 @@ postDetail.prototype.createNewTag = function(x, y) {
             $noteImg.css('background-position', 0);
         });
         dahliawolf.post.addTag(thePostDetail.data.posting_id, x, y, $input.find('textarea').val(), function(data) {
-            var $delTag = $('<img src="/public_html/images/deleteTag.png">').on('click', function() {
+            var $delTag = $('<img src="/images/deleteTag.png">').on('click', function() {
                 dahliawolf.post.delTag(data.data.add_tag.posting_tag_id, thePostDetail.data.posting_id);
                 $tag.remove();
                 $note.slideUp(200, function() {

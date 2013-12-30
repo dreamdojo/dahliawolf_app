@@ -10,7 +10,7 @@
     #fashiolistaPop .avatar{width: 100px;height: 100px;background-color: #fff;border-radius: 50px;margin: 10px auto;}
     #fashiolistaPop #getStarted{width: 200px;height: 35px;color: #000;background-color: #fff;margin: 0px auto;line-height: 35px;font-size: 17px;margin-top: 40px; cursor: pointer;}
 
-    #contestCongrats{background-image: url("/public_html/images/contest-congrats-bg.jpg");
+    #contestCongrats{background-image: url("/images/contest-congrats-bg.jpg");
         background-size: cover;
         background-position: 50%;
         background-repeat: no-repeat;
@@ -29,7 +29,7 @@
 </style>
 <div id="fashioOverlay" class="overlay"></div>
 <div id="fashiolistaPop">
-    <img class="logo" src="/public_html/images/fashiolist_welcome.jpg">
+    <img class="logo" src="/images/fashiolist_welcome.jpg">
     <div class="members">MEMBERS</div>
     <ul class="enter">
         <li>TO ENTER THE CONTEST</li>
@@ -44,9 +44,9 @@
 </div>
 
 <div id="contestCongrats">
-    <div style="margin-top: 37px;margin-bottom: 120px;"><img src="/public_html/images/contest-logos.png"></div>
-    <div><img src="/public_html/images/contest-message.png"></div>
-    <div style="margin-top: 127px;"><img id="closePop" src="/public_html/images/contest-close-button.png"></div>
+    <div style="margin-top: 37px;margin-bottom: 120px;"><img src="/images/contest-logos.png"></div>
+    <div><img src="/images/contest-message.png"></div>
+    <div style="margin-top: 127px;"><img id="closePop" src="/images/contest-close-button.png"></div>
 </div>
 
 <script>

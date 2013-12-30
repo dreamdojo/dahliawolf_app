@@ -63,7 +63,7 @@ if (IS_LOGGED_IN) {
 body{text-align:center;}
 #contentFrame{width:100%; height:95%; margin: 0px auto; background-color:#e6e6e6; border:#b9b9b9 thin solid;}
 .titleHead{margin-top: 10px;font-size: 20px; color:#838383;}
-#timer{ right: 20px;color: red;font-size: 40px;background-image: url(/public_html/images/popCountCircle.png);background-size: 100% 100%;float: left;height: 100px;width: 90px;background-repeat: no-repeat;margin-left: 29px; text-align:center;}
+#timer{ right: 20px;color: red;font-size: 40px;background-image: url(/images/popCountCircle.png);background-size: 100% 100%;float: left;height: 100px;width: 90px;background-repeat: no-repeat;margin-left: 29px; text-align:center;}
 .dwTitle{height: 47px; margin-top:5px;}
 .dwTitle img{height: 22px;margin-top: 8px;}
 .stuff{text-align: left;width: 280px;margin: 0px auto; height:100px; overflow:hidden;}

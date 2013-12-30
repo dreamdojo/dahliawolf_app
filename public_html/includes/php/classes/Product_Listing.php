@@ -1,7 +1,7 @@
 <?
 class Product_Listing {
 	private $class = 'products';
-	private $empty_msg = '<img src="/public_html/images/pre-order-placeholder.png" alt="Empty" width="100%" />';
+	private $empty_msg = '<img src="/images/pre-order-placeholder.png" alt="Empty" width="100%" />';
 	
 	private $options = array(
 		'image_dimensions' => array(240, 360)

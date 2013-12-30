@@ -124,7 +124,7 @@ shop.prototype.fillEmptyShop = function() {
     this.$shop.append('<div class="shopEmpty">'+(this.shopOwner.username === theUser.username ? 'Your shop is empty:( Start posting fashion images and getting votes right away!' : this.shopOwner.username + '\'s shop is empty')+'</div>');
     var str = '<ul id="emptyShop">';
     for(var x = 0; x < 8; x++) {
-        str += '<li><img src="/public_html/images/shopExample.png"></li>';
+        str += '<li><img src="/images/shopExample.png"></li>';
     }
     str += '</ul>';
     this.$shop.append(str);

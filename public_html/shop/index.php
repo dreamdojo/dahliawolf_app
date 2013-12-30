@@ -29,7 +29,7 @@
 <? if( !empty($user['username']) ): ?>
     <div id="shopOwnerHeader">
         <div class="shopOwnerTitle"><a href="/<?= $user['username'] ?>"><?= $user['username'] ?>'s</a> boutique </div>
-        <img src="/public_html/images/emptyShopBanner.jpg">
+        <img src="/images/emptyShopBanner.jpg">
     </div>
 <? endif ?>
 

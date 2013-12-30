@@ -70,7 +70,7 @@ userList.prototype.user.prototype.addMeToBucket = function() {
 
     var $userFrame = $('<div class="userFrame"></div>');
     $userFrame.append( new dahliawolf.$hoverAvatar(this.data) );
-    $userFrame.append('<ul class="dataList"><li class="dlUsername"><a href="/'+this.data.username+'">'+this.data.username+'</a>'+( this.data.membership_level === 'VIP' ? '<div class="memberStats"><a href="/help/vip"><img src="/public_html/images/vip.png"></a></div>' : '')+'</li><li>'+this.data.points+' pts</li></ul>');
+    $userFrame.append('<ul class="dataList"><li class="dlUsername"><a href="/'+this.data.username+'">'+this.data.username+'</a>'+( this.data.membership_level === 'VIP' ? '<div class="memberStats"><a href="/help/vip"><img src="/images/vip.png"></a></div>' : '')+'</li><li>'+this.data.points+' pts</li></ul>');
     $userFrame.append('<ul class="postList">'+str+'</ul>');
     if(dahliawolfUserList.isWolfpack) this.$userFrame.append('<div class="rankBox">'+this.rank+'</div>');
     //var $followButton = $('<div class="toggleFollow '+(Number(this.data.is_followed) ? 'dahliaHeadUnFollow' : 'dahliaHeadFollow' )+'">'+ (Number(this.data.is_followed) ? 'FOLLOWING' : 'FOLLOW' )+'</div>').appendTo($userFrame.find('.dataList')).on('click', $.proxy(this.toggleFollowers, this) );

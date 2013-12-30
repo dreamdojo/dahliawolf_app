@@ -63,7 +63,7 @@ $Spine = new Spine(array('bare' => 1));
 
 <div class="header">
  <div class="HeaderContents">
-    <img src="/public_html/images/logo.png">
+    <img src="/images/logo.png">
  </div>
 </div>
 <div class="main-col">

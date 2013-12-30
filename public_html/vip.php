@@ -13,7 +13,7 @@
     #vipBox img{width: 100%;}
     .vipCode{height: 45px;width: 100%;margin-top: 45px;font-size: 30px;text-align: center;}
     .subButt{background-color: #000;border: #fff thin solid;margin-top: 40px; width: 101%; color: #fff;text-align: center;height: 50px;font-size: 12px; cursor: pointer;}
-    .bg_image{position: fixed; left: 0px; top: 290px; width: 100%; height: 100%; background-position: 50%; background-repeat: no-repeat; background-size: 100% auto; background-image: url('/public_html/images/DW-slide-1.jpg');}
+    .bg_image{position: fixed; left: 0px; top: 290px; width: 100%; height: 100%; background-position: 50%; background-repeat: no-repeat; background-size: 100% auto; background-image: url('/images/DW-slide-1.jpg');}
     .thankz{font-size: 40px;width: 100%;text-align: center;color: #F03D64;margin-top: 150px;}
     .conf{width: 100%;text-align: center;margin-top: 10px;color: #F03D64;font-size: 18px;}
 </style>
@@ -23,7 +23,7 @@
     <h1>YOU HAVE BEEN INVITED TO BECOME A VIP</h1>
     <h3>Someone must really think highly of you, VIP membership is reserved for<br>special members only. Activate yours by entering your unique vip code below</h3>
     <ul id="vipBox">
-        <img src="/public_html/images/logo_600x150.jpg">
+        <img src="/images/logo_600x150.jpg">
         <form id="vipForm">
             <li><input class="vipCode" placeholder="ENTER VIP CODE"></li>
             <li><input class="subButt" type="submit" value="SUBMIT"></li>

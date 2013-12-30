@@ -25,7 +25,7 @@
         </li>
     </ul>
     <div class="justTheFacts">
-        <div class="vipEx"><img src="/public_html/images/vip_ex.png"></div>
+        <div class="vipEx"><img src="/images/vip_ex.png"></div>
         <ul class="listOfFacts">
             <li><h3>VIP BENIFITS</h3></li>
             <li>Need 100 loves (vs 1000 loves) to win. (limit 1 item per month)</li>

@@ -42,14 +42,14 @@ postDetailGrid.prototype.setFaves = function(posts) {
         str += '<a href="/post-details?posting_id='+post.posting_data.posting_id+'" class="image color-'+x % 5+'" rel="modal">';
         str += '<img src = "'+post.posting_data.image_url+'&width=300" class="lazy zoom-in" data-src="'+post.posting_data.image_url+'&width=300" '+(parseInt(post.posting_data.width) >= parseInt(post.posting_data.height) ? $this.htText : '')+'>';
         str += '</a>';
-        str += '<img class="profFeat" src="/public_html/images/featProf.png">';
+        str += '<img class="profFeat" src="/images/featProf.png">';
         $post.append(new shareBall(post.posting_data));
         $this.postContainer.append( $post.append(str) );
     });
 }
 
 postDetailGrid.prototype.showLoader = function() {
-	this.postContainer.append('<div id="theGridLoader"><img src="/public_html/images/loading-feed.gif"></div>');
+	this.postContainer.append('<div id="theGridLoader"><img src="/images/loading-feed.gif"></div>');
 }
 
 postDetailGrid.prototype.destroyLoader = function() {

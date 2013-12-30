@@ -35,7 +35,7 @@ include "header.php";
     .user-message{position: relative;z-index: 111;}
 </style>
 
-<img src="/public_html/images/passwordBG.jpg" class="bg">
+<img src="/images/passwordBG.jpg" class="bg">
 
 <div id="passwordResetBox">
     <div class="coolBG"></div>

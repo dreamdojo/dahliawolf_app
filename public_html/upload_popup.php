@@ -20,7 +20,7 @@
 				<img name="submit" src="/skin/img/postitbtn2.png" style="border:none;margin-top: 10px; cursor: pointer" onclick="$(this).closest('form').submit()" id="import-butt">
         		*/
         		?>
-        		<input type="image" src="/public_html/images/btn/post-image-red.jpg" id="sub-pop-butt" style="width: 200px; border:none;margin-top: 10px; cursor: pointer" />
+        		<input type="image" src="/images/btn/post-image-red.jpg" id="sub-pop-butt" style="width: 200px; border:none;margin-top: 10px; cursor: pointer" />
         	</div>
             <input type="submit" style="display:none" id="form-sub">
    		</div>
