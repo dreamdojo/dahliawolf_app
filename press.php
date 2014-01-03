@@ -9,15 +9,16 @@
     $asa[3] = Array('/images/press/04.jpg', '/images/press/D.jpg', 'Dani Thorne', 'Dani Thorne looked gorgeous showing her love in a  <a href="/shop">Silver Brocade Dress</a>' );
     $asa[4] = Array('/images/press/05.jpg', '/images/press/E.jpg', 'Jenette McCurdy', 'Carly star, Jennette McCurdy ,wore the chic,  <a href="/shop">Silver Ties Top</a> from the DW Collection.' );
 
-    $press = Array();
-    $press[0] = Array('/images/press/lifeandstyle.jpg', 'Life & Style', 'Chatting with co-owners Charles Park and Justin Mavandi at the Dahlia Wolf Launch party' );
-    $press[1] = Array('/images/press/omg.jpg', 'OMG!', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party');
-    $press[2] = Array('/images/press/yahoo.jpg', 'YAHOO!', 'The most stylish starts all came out for the launch of Dahlia Wolf. Which just goes to show fashion really does bring people together');
-    $press[3] = Array('/images/press/aol.jpg', 'AOL', 'Mischa Barton, attends Dahlia Wolf launch party');
-    $press[4] = Array('/images/press/wonderwall.jpg', 'WONDERWALL', 'Mena Suvari attends a party to launch the fashion website, Dahlia Wolf, Fashion Made By You at Graffiti Cafe in Hollywood');
-    $press[5] = Array('/images/press/nick.jpg', 'NICKUTOPIA', 'Gorgeous! Jennette McCurdy wore an adorable Dahlia Wolf outfit to the Dahlia Wolf clothing line launch on October 22, 2013. Jennette shared the photo and video here from her night!');
-    $press[6] = Array('/images/press/extra.jpg', 'EXTRA', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party.');
-    $press[7] = Array('/images/press/hp.jpg', 'HUFFINGTON POST', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party');
+$press = Array();
+$press[0] = Array('/images/press/omg.jpg', 'OMG!', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party', 'http://omg.yahoo.com/video/mischa-barton-audrina-patridge-more-220639806.html');
+$press[1] = Array('/images/press/yahoo.jpg', 'YAHOO!', 'The most stylish starts all came out for the launch of Dahlia Wolf. Which just goes to show fashion really does bring people together', 'http://movies.yahoo.com/video/mischa-barton-audrina-patridge-more-220639806.html');
+$press[2] = Array('/images/press/aol.jpg', 'AOL', 'Mischa Barton, attends Dahlia Wolf launch party', 'http://on.aol.com/video/mischa-barton--audrina-patridge-and-more-attend-dahlia-wolf-launch-517986606');
+$press[3] = Array('/images/press/wonderwall.jpg', 'WONDERWALL', 'Mena Suvari attends a party to launch the fashion website, Dahlia Wolf, Fashion Made By You at Graffiti Cafe in Hollywood', 'http://wonderwall.msn.com/movies/week-in-photos-for-oct-25-2013-26860.gallery?photoId=124047');
+$press[4] = Array('/images/press/nick.jpg', 'NICKUTOPIA', 'Gorgeous! Jennette McCurdy wore an adorable Dahlia Wolf outfit to the Dahlia Wolf clothing line launch on October 22, 2013. Jennette shared the photo and video here from her night!', 'http://www.nickutopia.com/2013/10/23/jennette-mccurdy-wears-dahlia-wolf-for-the-clothing-line-launch/');
+$press[5] = Array('/images/press/extra.jpg', 'EXTRA', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party.', 'http://www.youtube.com/watch?v=MOCpY7LgmOc&feature=youtu.be&a');
+$press[6] = Array('/images/press/hp.jpg', 'HUFFINGTON POST', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party', 'http://videos.huffingtonpost.com/entertainment/mischa-barton-audrina-patridge-and-more-attend-dahlia-wolf-launch-517986606');
+$press[7] = Array('/images/press/lifeandstyle.jpg', 'Life & Style', 'Chatting with co-owners Charles Park and Justin Mavandi at the Dahlia Wolf Launch party');
+
 
 ?>
 <style>
@@ -43,6 +44,7 @@
     <?php endforeach ?>
     <h1 style="margin-top: 25px;">PRESS</h1>
     <?php foreach($press as $img): ?>
+    <a href="<?= $img[3] ?>" target="_blank">
         <ul>
             <li style="width: 500px; float: left; margin-right: 15px;"><img src="<?= $img[0] ?>"></li>
             <div class="theBottomLine">
@@ -50,6 +52,7 @@
                 <li><?= $img[2] ?></li>
             </div>
         </ul>
+        </a>
     <?php endforeach ?>
 </div>
 
