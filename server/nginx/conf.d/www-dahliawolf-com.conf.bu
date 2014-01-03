@@ -1,0 +1,176 @@
+server {
+        listen       80;
+        server_name  www.dahliawolf.com;
+
+        location / {
+                root   /var/www/www.dahliawolf.com/public_html;
+                index  index.php index.html index.htm;
+        }
+
+        error_page  404              /404.html;
+        location = /404.html {
+                root   /var/www/www.dahliawolf.com/public_html;
+        }
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+                root   /var/www/www.dahliawolf.com/public_html;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ \.php$ {
+                root           /var/www/www.dahliawolf.com/public_html;
+                #fastcgi_pass   127.0.0.1:9000;
+		fastcgi_pass   unix:/var/run/php-fpm.sock;
+                fastcgi_index  index.php;
+                fastcgi_param  SCRIPT_FILENAME  /var/www/www.dahliawolf.com/public_html$fastcgi_script_name;
+                include        /etc/nginx/fastcgi_params;
+        }
+
+}
+
+
+
+server {
+        listen       80;
+        server_name  dev.dahliawolf.com dev.zyonnetworks.com;
+
+        location / {
+                root   /var/www/dev.dahliawolf.com/public_html;
+                index  index.php index.html index.htm;
+        }
+
+        error_page  404              /404.html;
+        location = /404.html {
+                root   /var/www/dev.dahliawolf.com/public_html/error_pages;
+        }
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+                root   /var/www/dev.dahliawolf.com/public_html/error_pages;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ \.php$ {
+                root           /var/www/dev.dahliawolf.com/public_html;
+                #fastcgi_pass   127.0.0.1:9000;
+		fastcgi_pass   unix:/var/run/php-fpm.sock;
+                fastcgi_index  index.php;
+                fastcgi_param  SCRIPT_FILENAME  /var/www/dev.dahliawolf.com/public_html$fastcgi_script_name;
+                include        /etc/nginx/fastcgi_params;
+        }
+
+}
+
+
+
+server {
+        listen       80;
+        server_name  mobile.dahliawolf.com;
+
+        location / {
+                root   /var/www/www.dahliawolf.com/public_html/mobile;
+                index  index.php index.html index.htm;
+        }
+
+        error_page  404              /404.html;
+        location = /404.html {
+                root   /var/www/www.dahliawolf.com/public_html/mobile;
+        }
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+                root   /var/www/www.dahliawolf.com/public_html/mobile;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ \.php$ {
+                root           /var/www/www.dahliawolf.com/public_html/mobile;
+                #fastcgi_pass   127.0.0.1:9000;
+                fastcgi_pass   unix:/var/run/php-fpm.sock;
+                fastcgi_index  index.php;
+                fastcgi_param  SCRIPT_FILENAME  /var/www/www.dahliawolf.com/public_html/mobile$fastcgi_script_name;
+                include        /etc/nginx/fastcgi_params;
+        }
+
+}
+
+
+server {
+        listen       80;
+        server_name  dev-mobile.dahliawolf.com;
+
+        location / {
+                root   /var/www/dev.dahliawolf.com/public_html/mobile;
+                index  index.php index.html index.htm;
+        }
+
+        error_page  404              /404.html;
+        location = /404.html {
+                root   /var/www/dev.dahliawolf.com/public_html/mobile;
+        }
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+                root   /var/www/dev.dahliawolf.com/public_html/mobile;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ \.php$ {
+                root           /var/www/dev.dahliawolf.com/public_html/mobile;
+                #fastcgi_pass   127.0.0.1:9000;
+                fastcgi_pass   unix:/var/run/php-fpm.sock;
+                fastcgi_index  index.php;
+                fastcgi_param  SCRIPT_FILENAME  /var/www/dev.dahliawolf.com/public_html/mobile$fastcgi_script_name;
+                include        /etc/nginx/fastcgi_params;
+        }
+
+}
+
+
+server {
+        listen       80;
+        server_name  content.dahliawolf.com;
+
+        location / {
+                root   /var/www/content.dahliawolf.com/public_html;
+                index  index.php index.html index.htm;
+        }
+
+        error_page  404              /404.html;
+        location = /404.html {
+                root   /var/www/content.dahliawolf.com/public_html;
+        }
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+                root   /var/www/content.dahliawolf.com/public_html;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ \.php$ {
+                root           /var/www/content.dahliawolf.com/public_html;
+                #fastcgi_pass   127.0.0.1:9000;
+                fastcgi_pass   unix:/var/run/php-fpm.sock;
+                fastcgi_index  index.php;
+                fastcgi_param  SCRIPT_FILENAME  /var/www/content.dahliawolf.com/public_html$fastcgi_script_name;
+                include        /etc/nginx/fastcgi_params;
+        }
+
+}
+

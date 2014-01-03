@@ -1,0 +1,274 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@charset "UTF-8";
+/* CSS Document */
+
+header#guestHeader {
+	display: none;
+}
+
+.promoPage .galleryContainer {
+	width: 100%;
+	position: relative;
+}
+
+.promoPage a {
+	color: #fff;
+	text-decoration: none;
+}
+
+body.auth .promoPage a:hover {
+	text-decoration: underline !important;
+}
+
+.promoPage .slideshowContainer {
+
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.promoPage .slideshowContainer li span {
+	left: 0;
+	top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    display: none;
+    z-index: 0;
+}
+
+.promoPage .slideshowContainer li span p {
+	position: absolute;
+	bottom: 15px;
+	left: 20px;
+	color: #404040;
+	opacity: 0.5;
+	font-size: 12px;
+}
+
+.promoPage .slideshowContainer li:nth-child(1) span {
+	background-image: url(http://content.dahliawolf.com/home/DW-slide-1.jpg);
+	display: block;
+	border-width:0;
+	opacity: 1;
+}
+
+.promoPage .slideshowContainer li:nth-child(2) span {
+	background-image: url(http://content.dahliawolf.com/home/DW-slide-2.jpg);
+}
+
+.promoPage .slideshowContainer li:nth-child(3) span {
+	background-image: url(http://content.dahliawolf.com/home/DW-slide-3.jpg);
+}
+
+.promoPage .infoContainer {
+	width: 425px;
+height: 366px;
+background: #1a1a1a url("http://content.dahliawolf.com/home/dahlia-wolf-logo.png") 96px 36px no-repeat;
+padding: 50px 30px 40px 30px;
+border-radius: 3px;
+position: absolute;
+top: 69px;
+left: 60px;
+z-index: 1;
+color: #fff;
+font-size: 13px;
+color: #C5C9CC;
+box-shadow: 0 0 3px #1A1A1A;
+opacity: 0.9;
+}
+
+.promoPage .infoContainer .loginModule {
+	font-size: 13px;
+}
+
+.promoPage .infoContainer .loginModule button {
+	margin-left: 10px;
+}
+
+.promoPage .infoContainer h1 {
+	clear: both;
+text-transform: uppercase;
+line-height: 27px;
+font-size: 20px;
+margin: 50px 0 10px;
+font-weight: normal;
+height: 108px;
+letter-spacing: 1px;
+color: white;
+background: url(http://content.dahliawolf.com/home/promo-title.gif) 0 6px no-repeat;
+padding-top: 100px;
+font-family: Geneva, sans-serif;
+}
+
+.promoPage .infoContainer p {
+	line-height: 30px;
+}
+
+.promoPage .infoContainer p img {
+	background: url(http://content.dahliawolf.com/home/images/promo-logos.png) no-repeat;
+	display: block;
+}
+
+.promoPage .infoContainer p.text2 img {
+	background-position: 0 -4px;
+width: 56px;
+margin-left: 91px;
+margin-top: -24px;
+height: 21px;
+}
+
+.promoPage .infoContainer p.text1 img {
+	width: 74px;
+	height: 21px;
+	background-position: 0 -33px;
+}
+
+.promoPage .infoContainer p.text2 {
+	position: absolute;
+bottom: 47px;
+left: 172px;
+}
+
+.promoPage .social {
+	margin-left: 100px;
+	margin-top:-10px;
+
+}
+
+.promoPage .social input {
+	width: 232px;
+	height: 40px;
+	line-height: 22px;
+    display: block;
+    padding:0;
+    margin-bottom: 8px;
+}
+
+.promoPage .social input:hover {
+	opacity: 0.75;
+}
+
+.promoPage .slideshowContainer li div {
+	right: 50px;
+	bottom: 50px;
+	position: absolute;
+	z-index: 1;
+	color: #fff;
+	display: none;
+	opacity: 0;
+}
+
+.promoPage .slideshowContainer li.slide1 div {
+	width: 605px;
+	text-align: right;
+	display: block;
+	opacity: 1;
+
+}
+#ie-img{
+	display:block !important;
+	width:100%;
+}
+.galleryContainer{
+	display:none !important;
+}
+.promoPage .slideshowContainer li.slide2 div {
+    width: 523px;
+    text-align: right;
+
+}
+
+.promoPage .slideshowContainer li.slide3 div {
+	width: 640px;
+	text-align: right;
+}
+
+.promoPage .slideshowContainer li.slide1 div h2 {
+    background-position: 45px -20px;
+}
+
+.promoPage .slideshowContainer li.slide2 div h2 {
+    background-position: 35px -212px;
+}
+
+.promoPage .slideshowContainer li.slide3 div h2 {
+	background-position: 49px -407px;
+}
+
+.promoPage .slideshowContainer li div h2 {
+    line-height: 21px;
+    font-size: 26px;
+    color: white;
+	font-family: Geneva, sans-serif;
+	}
+
+.promoPage .slideshowContainer li div h4 {
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 0px;
+	opacity: 0.8;
+}
+
+.promoPage .slideshowContainer li div p {
+	font-size: 16px;
+line-height: 5px;
+font-family: arial;
+opacity: 0.8;
+}
+
+.promoPage .whyJoinContainer {
+	background: 0 0 repeat-x url(http://content.dahliawolf.com/home/promo-bg-1.gif);
+	}
+
+.promoPage .whyJoinContainerContent {
+    height: 2900px;
+    position: relative;
+    width: 945px;
+    margin: 0 auto;
+    background: 50% 0 no-repeat url(http://content.dahliawolf.com/home/DW-how-it-works2.jpg);
+    background-size: cover;
+}
+
+
+.promoPage .whyJoinContainerContent div {
+	width: 570px;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	color: #404040;
+	font-size: 13px;
+}
+
+.promoPage .whyJoinContainerContent div h4 {
+	font-weight: bold;
+	line-height: 45px;
+}
+
+.promoPage .whyJoinContainerContent div.text1 {
+    top: 145px
+}
+
+.promoPage .whyJoinContainerContent div.text2 {
+    top:885px
+}
+
+.promoPage .whyJoinContainerContent div.text3 {
+    top: 1576px
+}
+
+.promoPage .signUpFacebook {
+	text-align: center;
+
+background: BLACK;
+padding-bottom: 100px;
+}
+
+

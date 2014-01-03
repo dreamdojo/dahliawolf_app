@@ -1,10 +1,990 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="more compatability compliance">
+    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="pushing into teal">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/Dahlia-Wolf---Fashion-Made-By-You.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/Dahlia-Wolf-Pinterest-.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/Dahlia-Wolf-Pinterest.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/Dahlia-Wolf.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/Download-Our-App.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/Follow-Dahlia-Wolf-on-Twitter.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/Like-Us-on-Facebook.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/The-Dahlia-Wolf-Goodies.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/download-our-app-05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/download-our-app-06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/download_our_app_02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/download_our_app_03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/download_our_app_06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/download_our_app_08.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/download_our_app_14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/images/spacer.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/spacer.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_06.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_07.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_09.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_15.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_17.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_18.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_19.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/images/start_posing_choppedup_20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/lib/php/API.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/lib/php/Commerce_API.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/lib/php/Mobile_Detect.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/classes/PayPalExpressCheckout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/classes/Product_Listing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/classes/Spine-1.1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/classes/Spine-1.1a.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/classes/Spine.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/activity.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/add_discount.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/add_item_to_cart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/add_item_to_wishlist.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/add_paxton.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/add_pin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/apiClass.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/avatar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/background_rotator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/billing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout/billing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/old/checkout/billing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/cancel_return.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/order/canceled.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/captcha.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/cart-summary.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/old/cart-summary.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout/cart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/old/checkout/cart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/cart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout-nav.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/old/checkout-nav.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/checkout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/old/checkout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/combined-1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/combined-2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout/confirmation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/old/checkout/confirmation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/contact.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/cools-vars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout/creditcard.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/dashboard.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/delete_item_from_wishlist.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/delete_post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/order/delivered.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_download_our_app/download_our_app.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/facebook-style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/blocks/fashiolista.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/feedback.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/feedback.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/follow.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/footer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/functions-api.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/functions-format.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/functions-markup.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/functions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/functions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/lib/php/functions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout/paypal-express-checkout/get-details.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/ajax/get-membership-level.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/ajax/get-num-post-likes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/ajax/get-num-post-votes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/ajax/get-points.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/json/get_states_by_country_iso_code.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/head.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/header.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/heading-cart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/home.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/home1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/ie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/ieSUCKS.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/index-old.php-BAK" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/index2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/index_landing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/initial-calls.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/inspire.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/invite.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/invite.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/account/invites.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/jquery-ui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/jquery.autocomplete.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/jquery.caret.1.02.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/jquery.form.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/jquery.masonry.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/jquery.tipTip.minified.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/login_pop.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/logout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/includes/php/m_ajax_getFeed.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/config/mobile-detect.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/my-orders.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/my-runway.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/my-wishlist.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/nav.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/order/new.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/order-details.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/order-nav.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/order-return.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/order_return.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/account/password.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/password.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout/payment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/old/checkout/payment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/pin-create-img-picker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/pin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/place_order.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/post-checkout-summary.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/post-inline-jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/postDetail.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/postDetailPosts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/account/posts.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/press.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/process-cc.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/order/processing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/product.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/old/product.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/profile.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/redeem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/remove_discount.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/remove_item_from_cart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/remove_item_from_wishlist.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/reset-password-link.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/reset-password-link.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/reset-password.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/reset-password.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/shop/return-shipping-label.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/paypal-express-checkout/return.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/order/returned.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/save_cart_commission.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/save_cart_store_credit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/save_social_username.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/ajax/scrape-username.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/select_checkout_carrier.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/select_payment_method.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout/paypal-express-checkout/set.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/set_user_cart_rule.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/account/settings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/settings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/checkout/shipping.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/old/checkout/shipping.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/common/order/shipping.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/shop.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/shop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/signup-2013-03-19.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/signup.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/spine-1.1.css.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/ajax/spine-chunk.php.del" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/email_content/11082013_start_posting/start_posing_choppedup.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/style-home.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/theBank.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/css/tipTip.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/unfollow.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/unvote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/shop/update_cart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/action/update_post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/upload_popup.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/js/userList.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/help/verified.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/vip.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/help/vip.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/vote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/welcome_one.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/welcome_two.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/account/invites.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/account/password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/account/posts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/account/settings.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/delete_post.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/feedback.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/follow.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/invite.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/reset-password-link.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/reset-password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/save_social_username.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/settings.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/add_discount.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/add_item_to_cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/add_item_to_wishlist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/billing.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/cancel_return.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/delete_item_from_wishlist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/order_return.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/paypal-express-checkout/return.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/place_order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/remove_discount.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/remove_item_from_cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/remove_item_from_wishlist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/save_cart_commission.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/save_cart_store_credit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/select_checkout_carrier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/select_payment_method.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/set_user_cart_rule.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/shop/update_cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/signup-2013-03-19.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/unfollow.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/unvote.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/action/update_post.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/activity.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/add_paxton.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/add_pin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/get-membership-level.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/get-num-post-likes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/get-num-post-votes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/get-points.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/scrape-username.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/spine-chunk.php.del" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/avatar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/blocks/fashiolista.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/cart-summary.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout-nav.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout/billing.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout/cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout/confirmation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout/creditcard.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout/payment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout/paypal-express-checkout/get-details.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout/paypal-express-checkout/set.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/checkout/shipping.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/old/cart-summary.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/old/checkout-nav.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/old/checkout/billing.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/old/checkout/cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/old/checkout/confirmation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/old/checkout/payment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/old/checkout/shipping.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/order-nav.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/order/canceled.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/order/delivered.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/order/new.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/order/processing.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/order/returned.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/common/order/shipping.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/mobile-detect.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/contact.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/facebook-style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/ieSUCKS.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/pin-create-img-picker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/shop.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/spine-1.1.css.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style-home.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/tipTip.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/feedback.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/footer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/head.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/help/verified.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/help/vip.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/home.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/home1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/image.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/classes/PayPalExpressCheckout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/classes/Product_Listing.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/classes/Spine-1.1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/classes/Spine-1.1a.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/classes/Spine.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/functions-api.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/functions-format.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/functions-markup.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/functions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/initial-calls.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/php/m_ajax_getFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index-old.php-BAK" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index_landing.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/inspire.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/invite.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/apiClass.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/background_rotator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/combined-1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/combined-2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/cools-vars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.autocomplete.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.caret.1.02.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.form.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.masonry.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.tipTip.minified.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/nav.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/pin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/post-inline-jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/postDetail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/postDetailPosts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/shop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/theBank.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/userList.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/json/get_states_by_country_iso_code.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/php/API.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/php/Commerce_API.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/php/Mobile_Detect.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/php/functions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/login_pop.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/my-runway.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/press.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/profile.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/redeem.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/reset-password-link.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/reset-password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/checkout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/heading-cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/my-orders.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/my-wishlist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/old/checkout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/old/product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/order-details.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/order-return.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/post-checkout-summary.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/process-cc.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shop/return-shipping-label.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/signup.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload_popup.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vip.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vote.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/welcome_one.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/welcome_two.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/account/followers.php" afterPath="$PROJECT_DIR$/public_html/account/followers.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/account/following.php" afterPath="$PROJECT_DIR$/public_html/account/following.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/account/shop.php" afterPath="$PROJECT_DIR$/public_html/account/shop.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/account/wild-4s.php" afterPath="$PROJECT_DIR$/public_html/account/wild-4s.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/ajax_post_image.php" afterPath="$PROJECT_DIR$/public_html/action/ajax_post_image.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/comment.php" afterPath="$PROJECT_DIR$/public_html/action/comment.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/dislike.php" afterPath="$PROJECT_DIR$/public_html/action/dislike.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/getFeedGrid.php" afterPath="$PROJECT_DIR$/public_html/action/getFeedGrid.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/getPostsByUser.php" afterPath="$PROJECT_DIR$/public_html/action/getPostsByUser.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/getTwitterFollowers.php" afterPath="$PROJECT_DIR$/public_html/action/getTwitterFollowers.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/getTwitterUserInfo.php" afterPath="$PROJECT_DIR$/public_html/action/getTwitterUserInfo.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/like.php" afterPath="$PROJECT_DIR$/public_html/action/like.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/m_post_feed_image.php" afterPath="$PROJECT_DIR$/public_html/action/m_post_feed_image.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/markasread.php" afterPath="$PROJECT_DIR$/public_html/action/markasread.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/post_feed_image.php" afterPath="$PROJECT_DIR$/public_html/action/post_feed_image.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/post_image.php" afterPath="$PROJECT_DIR$/public_html/action/post_image.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/redeemgift.php" afterPath="$PROJECT_DIR$/public_html/action/redeemgift.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/sendGeoffMsg.php" afterPath="$PROJECT_DIR$/public_html/action/sendGeoffMsg.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/sendInviteEmails.php" afterPath="$PROJECT_DIR$/public_html/action/sendInviteEmails.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/sendTwitterInvite.php" afterPath="$PROJECT_DIR$/public_html/action/sendTwitterInvite.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/setInstagramToken.php" afterPath="$PROJECT_DIR$/public_html/action/setInstagramToken.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/sharePostOnTwitter.php" afterPath="$PROJECT_DIR$/public_html/action/sharePostOnTwitter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/shop/loadCart.php" afterPath="$PROJECT_DIR$/public_html/action/shop/loadCart.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/signup.php" afterPath="$PROJECT_DIR$/public_html/action/signup.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/unlike.php" afterPath="$PROJECT_DIR$/public_html/action/unlike.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/unsetPlatform.php" afterPath="$PROJECT_DIR$/public_html/action/unsetPlatform.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/uploadPost.php" afterPath="$PROJECT_DIR$/public_html/action/uploadPost.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/upload_resized_image.php" afterPath="$PROJECT_DIR$/public_html/action/upload_resized_image.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/viprequest.php" afterPath="$PROJECT_DIR$/public_html/action/viprequest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/action/vote.php" afterPath="$PROJECT_DIR$/public_html/action/vote.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ajax_getFeed.php" afterPath="$PROJECT_DIR$/public_html/ajax_getFeed.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blocks/analytics.php" afterPath="$PROJECT_DIR$/public_html/blocks/analytics.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blocks/filter.php" afterPath="$PROJECT_DIR$/public_html/blocks/filter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/blocks/shopFilter.php" afterPath="$PROJECT_DIR$/public_html/blocks/shopFilter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/callback.php" afterPath="$PROJECT_DIR$/public_html/callback.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/channel.html" afterPath="$PROJECT_DIR$/public_html/channel.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/clearsessions.php" afterPath="$PROJECT_DIR$/public_html/clearsessions.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/config/config.php" afterPath="$PROJECT_DIR$/public_html/config/config.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/copyright/report.php" afterPath="$PROJECT_DIR$/public_html/copyright/report.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/dahlia-home.css" afterPath="$PROJECT_DIR$/public_html/css/dahlia-home.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/font-face.css" afterPath="$PROJECT_DIR$/public_html/css/font-face.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/jQuery.Image.Magnifier.css" afterPath="$PROJECT_DIR$/public_html/css/jQuery.Image.Magnifier.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/jquery.countdown.css" afterPath="$PROJECT_DIR$/public_html/css/jquery.countdown.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/jquery.fancybox-1.3.4.css" afterPath="$PROJECT_DIR$/public_html/css/jquery.fancybox-1.3.4.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/jquery.fancybox.css" afterPath="$PROJECT_DIR$/public_html/css/jquery.fancybox.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/main-custom.css" afterPath="$PROJECT_DIR$/public_html/css/main-custom.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/spine-1.1a.css.php" afterPath="$PROJECT_DIR$/public_html/css/spine-1.1a.css.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/spine-2013-03-05.css" afterPath="$PROJECT_DIR$/public_html/css/spine-2013-03-05.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/css/spine.css.php" afterPath="$PROJECT_DIR$/public_html/css/spine.css.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/error_pages/404.html" afterPath="$PROJECT_DIR$/public_html/error_pages/404.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/error_pages/50x.html" afterPath="$PROJECT_DIR$/public_html/error_pages/50x.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/error_pages/oops.png" afterPath="$PROJECT_DIR$/public_html/error_pages/oops.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/explore.php" afterPath="$PROJECT_DIR$/public_html/explore.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/faqs.php" afterPath="$PROJECT_DIR$/public_html/faqs.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="$PROJECT_DIR$/public_html/favicon.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/arial.ttf" afterPath="$PROJECT_DIR$/public_html/fonts/arial.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/get_feed_from_instagram.php" afterPath="$PROJECT_DIR$/public_html/get_feed_from_instagram.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/get_feed_from_pinterest.php" afterPath="$PROJECT_DIR$/public_html/get_feed_from_pinterest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/get_started.php" afterPath="$PROJECT_DIR$/public_html/get_started.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/goodies.php" afterPath="$PROJECT_DIR$/public_html/goodies.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/grid.php" afterPath="$PROJECT_DIR$/public_html/grid.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hiw.php" afterPath="$PROJECT_DIR$/public_html/hiw.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/icon.png" afterPath="$PROJECT_DIR$/public_html/icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/1Back.png" afterPath="$PROJECT_DIR$/public_html/images/1Back.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/1left.png" afterPath="$PROJECT_DIR$/public_html/images/1left.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/1right.png" afterPath="$PROJECT_DIR$/public_html/images/1right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/COMINGSOON.png" afterPath="$PROJECT_DIR$/public_html/images/COMINGSOON.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/DAHLIA_NEWSLIDE.jpg" afterPath="$PROJECT_DIR$/public_html/images/DAHLIA_NEWSLIDE.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/DW-slide-1.jpg" afterPath="$PROJECT_DIR$/public_html/images/DW-slide-1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/DW-slide-2.jpg" afterPath="$PROJECT_DIR$/public_html/images/DW-slide-2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/DW-slide-3.jpg" afterPath="$PROJECT_DIR$/public_html/images/DW-slide-3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/DW-slide-artinourblood.jpg" afterPath="$PROJECT_DIR$/public_html/images/DW-slide-artinourblood.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/DownArrowGray7.png" afterPath="$PROJECT_DIR$/public_html/images/DownArrowGray7.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/FEEDBACK.png" afterPath="$PROJECT_DIR$/public_html/images/FEEDBACK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/GRRR.JPG" afterPath="$PROJECT_DIR$/public_html/images/GRRR.JPG" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Splash-Enter.jpg" afterPath="$PROJECT_DIR$/public_html/images/Splash-Enter.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Splash-Page-three.jpg" afterPath="$PROJECT_DIR$/public_html/images/Splash-Page-three.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Splash-Page-three.png" afterPath="$PROJECT_DIR$/public_html/images/Splash-Page-three.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Tag_red.png" afterPath="$PROJECT_DIR$/public_html/images/Tag_red.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Verified-Explaination.png" afterPath="$PROJECT_DIR$/public_html/images/Verified-Explaination.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/activityIcons.png" afterPath="$PROJECT_DIR$/public_html/images/activityIcons.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/alien-bg.png" afterPath="$PROJECT_DIR$/public_html/images/alien-bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/alreadyamember.png" afterPath="$PROJECT_DIR$/public_html/images/alreadyamember.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/alreadycreative.png" afterPath="$PROJECT_DIR$/public_html/images/alreadycreative.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/apple.png" afterPath="$PROJECT_DIR$/public_html/images/apple.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/asaBar.jpg" afterPath="$PROJECT_DIR$/public_html/images/asaBar.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/bank-instagram.png" afterPath="$PROJECT_DIR$/public_html/images/bank-instagram.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/bank-pinterest.png" afterPath="$PROJECT_DIR$/public_html/images/bank-pinterest.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/barMenu.png" afterPath="$PROJECT_DIR$/public_html/images/barMenu.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/blank.gif" afterPath="$PROJECT_DIR$/public_html/images/blank.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/broken.png" afterPath="$PROJECT_DIR$/public_html/images/broken.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/btn/dw-image-bank-butt.jpg" afterPath="$PROJECT_DIR$/public_html/images/btn/dw-image-bank-butt.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/btn/f_prof_butt.png" afterPath="$PROJECT_DIR$/public_html/images/btn/f_prof_butt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/btn/g_prof_butt.png" afterPath="$PROJECT_DIR$/public_html/images/btn/g_prof_butt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/btn/my-images-butt.jpg" afterPath="$PROJECT_DIR$/public_html/images/btn/my-images-butt.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/btn/post-image-red.jpg" afterPath="$PROJECT_DIR$/public_html/images/btn/post-image-red.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/btn/s_slash_butt.png" afterPath="$PROJECT_DIR$/public_html/images/btn/s_slash_butt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/btn/t_prof_butt.png" afterPath="$PROJECT_DIR$/public_html/images/btn/t_prof_butt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/buy_bg.jpg" afterPath="$PROJECT_DIR$/public_html/images/buy_bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/cam-bam.jpg" afterPath="$PROJECT_DIR$/public_html/images/cam-bam.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/cam-bam.png" afterPath="$PROJECT_DIR$/public_html/images/cam-bam.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/cart-menu-bezier.png" afterPath="$PROJECT_DIR$/public_html/images/cart-menu-bezier.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/checkoutArrow.png" afterPath="$PROJECT_DIR$/public_html/images/checkoutArrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/checkoutLoad.gif" afterPath="$PROJECT_DIR$/public_html/images/checkoutLoad.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/choosetitle.png" afterPath="$PROJECT_DIR$/public_html/images/choosetitle.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/close.png" afterPath="$PROJECT_DIR$/public_html/images/close.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/closepin.png" afterPath="$PROJECT_DIR$/public_html/images/closepin.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/closetxtbtn.png" afterPath="$PROJECT_DIR$/public_html/images/closetxtbtn.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/closewhite.png" afterPath="$PROJECT_DIR$/public_html/images/closewhite.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/conCom.png" afterPath="$PROJECT_DIR$/public_html/images/conCom.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/conMail.png" afterPath="$PROJECT_DIR$/public_html/images/conMail.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/conTel.png" afterPath="$PROJECT_DIR$/public_html/images/conTel.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/contest-close-button.png" afterPath="$PROJECT_DIR$/public_html/images/contest-close-button.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/contest-congrats-bg.jpg" afterPath="$PROJECT_DIR$/public_html/images/contest-congrats-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/contest-logos.png" afterPath="$PROJECT_DIR$/public_html/images/contest-logos.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/contest-message.png" afterPath="$PROJECT_DIR$/public_html/images/contest-message.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dahlia-contact.jpg" afterPath="$PROJECT_DIR$/public_html/images/dahlia-contact.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dahlia-wolf-welcome.jpg" afterPath="$PROJECT_DIR$/public_html/images/dahlia-wolf-welcome.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dahliawolf_sizechart.jpg" afterPath="$PROJECT_DIR$/public_html/images/dahliawolf_sizechart.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/default.png" afterPath="$PROJECT_DIR$/public_html/images/default.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/default_invite.jpg" afterPath="$PROJECT_DIR$/public_html/images/default_invite.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/deleteTag.png" afterPath="$PROJECT_DIR$/public_html/images/deleteTag.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/divot.png" afterPath="$PROJECT_DIR$/public_html/images/divot.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dmnd.png" afterPath="$PROJECT_DIR$/public_html/images/dmnd.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dmnd_on.gif" afterPath="$PROJECT_DIR$/public_html/images/dmnd_on.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/drag-drop.png" afterPath="$PROJECT_DIR$/public_html/images/drag-drop.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/droid.png" afterPath="$PROJECT_DIR$/public_html/images/droid.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/droid_trans_bg.png" afterPath="$PROJECT_DIR$/public_html/images/droid_trans_bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dropDownArrow.png" afterPath="$PROJECT_DIR$/public_html/images/dropDownArrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dw-copyright.png" afterPath="$PROJECT_DIR$/public_html/images/dw-copyright.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dw-launch-mailer.jpg" afterPath="$PROJECT_DIR$/public_html/images/dw-launch-mailer.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dw-logo.png" afterPath="$PROJECT_DIR$/public_html/images/dw-logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/dw-post-poster.jpg" afterPath="$PROJECT_DIR$/public_html/images/dw-post-poster.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/edit_prof.png" afterPath="$PROJECT_DIR$/public_html/images/edit_prof.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/emptyShopBanner.jpg" afterPath="$PROJECT_DIR$/public_html/images/emptyShopBanner.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/enter-icon.png" afterPath="$PROJECT_DIR$/public_html/images/enter-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/f-share.png" afterPath="$PROJECT_DIR$/public_html/images/f-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/facebook-dahlia-share.png" afterPath="$PROJECT_DIR$/public_html/images/facebook-dahlia-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/facebook-signup.png" afterPath="$PROJECT_DIR$/public_html/images/facebook-signup.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/facebook.png" afterPath="$PROJECT_DIR$/public_html/images/facebook.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/fake-img.png" afterPath="$PROJECT_DIR$/public_html/images/fake-img.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/faq-most-asked.jpg" afterPath="$PROJECT_DIR$/public_html/images/faq-most-asked.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/faq-most-asked.png" afterPath="$PROJECT_DIR$/public_html/images/faq-most-asked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/fashiolist_welcome.jpg" afterPath="$PROJECT_DIR$/public_html/images/fashiolist_welcome.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/favesBG.jpg" afterPath="$PROJECT_DIR$/public_html/images/favesBG.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/fb_connect.gif" afterPath="$PROJECT_DIR$/public_html/images/fb_connect.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/fb_pop_blocker.png" afterPath="$PROJECT_DIR$/public_html/images/fb_pop_blocker.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/featProf.png" afterPath="$PROJECT_DIR$/public_html/images/featProf.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/featuredRibbon.png" afterPath="$PROJECT_DIR$/public_html/images/featuredRibbon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/filterby.png" afterPath="$PROJECT_DIR$/public_html/images/filterby.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/filterinstagram.png" afterPath="$PROJECT_DIR$/public_html/images/filterinstagram.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/filterpinterest.png" afterPath="$PROJECT_DIR$/public_html/images/filterpinterest.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/getstarted.png" afterPath="$PROJECT_DIR$/public_html/images/getstarted.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/goodieGrad.png" afterPath="$PROJECT_DIR$/public_html/images/goodieGrad.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/goodie_pic_1.png" afterPath="$PROJECT_DIR$/public_html/images/goodie_pic_1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/goodie_pic_2.png" afterPath="$PROJECT_DIR$/public_html/images/goodie_pic_2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/gototop.jpg" afterPath="$PROJECT_DIR$/public_html/images/gototop.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hb_des.png" afterPath="$PROJECT_DIR$/public_html/images/hb_des.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hb_earn.png" afterPath="$PROJECT_DIR$/public_html/images/hb_earn.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hb_insp.png" afterPath="$PROJECT_DIR$/public_html/images/hb_insp.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/heart.png" afterPath="$PROJECT_DIR$/public_html/images/heart.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hearts_BG.png" afterPath="$PROJECT_DIR$/public_html/images/hearts_BG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/helper-message.png" afterPath="$PROJECT_DIR$/public_html/images/helper-message.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hiw-hp-butt.png" afterPath="$PROJECT_DIR$/public_html/images/hiw-hp-butt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hiwClickme.png" afterPath="$PROJECT_DIR$/public_html/images/hiwClickme.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/homeTitle.png" afterPath="$PROJECT_DIR$/public_html/images/homeTitle.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/how-dahliawolf-works-commission.jpg" afterPath="$PROJECT_DIR$/public_html/images/how-dahliawolf-works-commission.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/how-dahliawolf-works.jpg" afterPath="$PROJECT_DIR$/public_html/images/how-dahliawolf-works.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/how-it-works-get-started.png" afterPath="$PROJECT_DIR$/public_html/images/how-it-works-get-started.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/how-it-works-video.png" afterPath="$PROJECT_DIR$/public_html/images/how-it-works-video.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/how_it_works_01.jpg" afterPath="$PROJECT_DIR$/public_html/images/how_it_works_01.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/howitworks.png" afterPath="$PROJECT_DIR$/public_html/images/howitworks.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/howitworksbtn.png" afterPath="$PROJECT_DIR$/public_html/images/howitworksbtn.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hpBG-1.jpg" afterPath="$PROJECT_DIR$/public_html/images/hpBG-1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hpBG-2.jpg" afterPath="$PROJECT_DIR$/public_html/images/hpBG-2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hpBG-3.jpg" afterPath="$PROJECT_DIR$/public_html/images/hpBG-3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hpVideoBanner.jpg" afterPath="$PROJECT_DIR$/public_html/images/hpVideoBanner.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hp_cam.jpg" afterPath="$PROJECT_DIR$/public_html/images/hp_cam.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hp_cta_bg.jpg" afterPath="$PROJECT_DIR$/public_html/images/hp_cta_bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hp_hiw_poster.jpg" afterPath="$PROJECT_DIR$/public_html/images/hp_hiw_poster.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hp_inspire_img.jpg" afterPath="$PROJECT_DIR$/public_html/images/hp_inspire_img.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hp_overlay%20working.jpg" afterPath="$PROJECT_DIR$/public_html/images/hp_overlay%20working.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hp_post_vote.jpg" afterPath="$PROJECT_DIR$/public_html/images/hp_post_vote.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hp_shop_img.jpg" afterPath="$PROJECT_DIR$/public_html/images/hp_shop_img.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/hp_sponsor_img.jpg" afterPath="$PROJECT_DIR$/public_html/images/hp_sponsor_img.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/ico_alert.png" afterPath="$PROJECT_DIR$/public_html/images/ico_alert.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/ico_info.png" afterPath="$PROJECT_DIR$/public_html/images/ico_info.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/icon_comments.png" afterPath="$PROJECT_DIR$/public_html/images/icon_comments.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/icon_followers.png" afterPath="$PROJECT_DIR$/public_html/images/icon_followers.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/icon_likes.png" afterPath="$PROJECT_DIR$/public_html/images/icon_likes.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/icon_messages.png" afterPath="$PROJECT_DIR$/public_html/images/icon_messages.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/icon_points.png" afterPath="$PROJECT_DIR$/public_html/images/icon_points.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/icon_posts.png" afterPath="$PROJECT_DIR$/public_html/images/icon_posts.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/icon_rank.png" afterPath="$PROJECT_DIR$/public_html/images/icon_rank.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-28-50_front(1).png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-28-50_front(1).png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-28-50_front.png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-28-50_front.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-29-51_front(1).png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-29-51_front(1).png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-29-51_front.png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-29-51_front.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-30-09_front(1).png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-30-09_front(1).png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-30-09_front.png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-30-09_front.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-30-25_front(1).png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-30-25_front(1).png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-30-25_front.png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-30-25_front.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-31-58_front(1).png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-31-58_front(1).png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-31-58_front.png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-31-58_front.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-32-19_front(1).png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-32-19_front(1).png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/image2013-01-10-23-32-19_front.png" afterPath="$PROJECT_DIR$/public_html/images/image2013-01-10-23-32-19_front.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/images.png" afterPath="$PROJECT_DIR$/public_html/images/images.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/indicator.png" afterPath="$PROJECT_DIR$/public_html/images/indicator.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/inspireBackButton.png" afterPath="$PROJECT_DIR$/public_html/images/inspireBackButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/inspireLoader.gif" afterPath="$PROJECT_DIR$/public_html/images/inspireLoader.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/inspireToggle_BG.png" afterPath="$PROJECT_DIR$/public_html/images/inspireToggle_BG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/inspire_title.png" afterPath="$PROJECT_DIR$/public_html/images/inspire_title.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/instagram-off.png" afterPath="$PROJECT_DIR$/public_html/images/instagram-off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/instagram-off1.png" afterPath="$PROJECT_DIR$/public_html/images/instagram-off1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/instagram-on.png" afterPath="$PROJECT_DIR$/public_html/images/instagram-on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/instagram-on1.png" afterPath="$PROJECT_DIR$/public_html/images/instagram-on1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/invite_default.jpg" afterPath="$PROJECT_DIR$/public_html/images/invite_default.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/iosButt.png" afterPath="$PROJECT_DIR$/public_html/images/iosButt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/ios_trans_bg.png" afterPath="$PROJECT_DIR$/public_html/images/ios_trans_bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/joinBanner.jpg" afterPath="$PROJECT_DIR$/public_html/images/joinBanner.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/land2.jpg" afterPath="$PROJECT_DIR$/public_html/images/land2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/land3.jpg" afterPath="$PROJECT_DIR$/public_html/images/land3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/land4.jpg" afterPath="$PROJECT_DIR$/public_html/images/land4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/legalDisclaimer.png" afterPath="$PROJECT_DIR$/public_html/images/legalDisclaimer.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/lesson1.png" afterPath="$PROJECT_DIR$/public_html/images/lesson1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/lesson2.png" afterPath="$PROJECT_DIR$/public_html/images/lesson2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/lesson3.png" afterPath="$PROJECT_DIR$/public_html/images/lesson3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/like.png" afterPath="$PROJECT_DIR$/public_html/images/like.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/loading-feed.gif" afterPath="$PROJECT_DIR$/public_html/images/loading-feed.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/loading-transparent.gif" afterPath="$PROJECT_DIR$/public_html/images/loading-transparent.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/loading.gif" afterPath="$PROJECT_DIR$/public_html/images/loading.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/loading3.gif" afterPath="$PROJECT_DIR$/public_html/images/loading3.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/login.png" afterPath="$PROJECT_DIR$/public_html/images/login.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logintxt.png" afterPath="$PROJECT_DIR$/public_html/images/logintxt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo.png" afterPath="$PROJECT_DIR$/public_html/images/logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo_120x60.jpg" afterPath="$PROJECT_DIR$/public_html/images/logo_120x60.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo_128x128.png" afterPath="$PROJECT_DIR$/public_html/images/logo_128x128.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo_190x190.jpg" afterPath="$PROJECT_DIR$/public_html/images/logo_190x190.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo_600x150.jpg" afterPath="$PROJECT_DIR$/public_html/images/logo_600x150.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo_600x150.png" afterPath="$PROJECT_DIR$/public_html/images/logo_600x150.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo_60x60.png" afterPath="$PROJECT_DIR$/public_html/images/logo_60x60.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo_no_beta.png" afterPath="$PROJECT_DIR$/public_html/images/logo_no_beta.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/magnify.cur" afterPath="$PROJECT_DIR$/public_html/images/magnify.cur" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/menu-bars.png" afterPath="$PROJECT_DIR$/public_html/images/menu-bars.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/menu-bezier.png" afterPath="$PROJECT_DIR$/public_html/images/menu-bezier.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/menu_BG.png" afterPath="$PROJECT_DIR$/public_html/images/menu_BG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/menu_bg.jpg" afterPath="$PROJECT_DIR$/public_html/images/menu_bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/menu_custom.png" afterPath="$PROJECT_DIR$/public_html/images/menu_custom.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/menu_fb.png" afterPath="$PROJECT_DIR$/public_html/images/menu_fb.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/menu_google.png" afterPath="$PROJECT_DIR$/public_html/images/menu_google.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/menu_twitter.png" afterPath="$PROJECT_DIR$/public_html/images/menu_twitter.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/minilogo.png" afterPath="$PROJECT_DIR$/public_html/images/minilogo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/modal-popup-bg.jpg" afterPath="$PROJECT_DIR$/public_html/images/modal-popup-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/movieClose.png" afterPath="$PROJECT_DIR$/public_html/images/movieClose.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/my-comp-butt.png" afterPath="$PROJECT_DIR$/public_html/images/my-comp-butt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/new_msg_off.png" afterPath="$PROJECT_DIR$/public_html/images/new_msg_off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/new_msg_on.png" afterPath="$PROJECT_DIR$/public_html/images/new_msg_on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/next-arrow.png" afterPath="$PROJECT_DIR$/public_html/images/next-arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/nh_droid.png" afterPath="$PROJECT_DIR$/public_html/images/nh_droid.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/nh_ios.png" afterPath="$PROJECT_DIR$/public_html/images/nh_ios.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/passwordBG.jpg" afterPath="$PROJECT_DIR$/public_html/images/passwordBG.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pi-tag.png" afterPath="$PROJECT_DIR$/public_html/images/pi-tag.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pint-share.png" afterPath="$PROJECT_DIR$/public_html/images/pint-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pint_logo.png" afterPath="$PROJECT_DIR$/public_html/images/pint_logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pint_sub.png" afterPath="$PROJECT_DIR$/public_html/images/pint_sub.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pinterest-dahlia-share.png" afterPath="$PROJECT_DIR$/public_html/images/pinterest-dahlia-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pinterest-off.png" afterPath="$PROJECT_DIR$/public_html/images/pinterest-off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pinterest-on.png" afterPath="$PROJECT_DIR$/public_html/images/pinterest-on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pinterest.png" afterPath="$PROJECT_DIR$/public_html/images/pinterest.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pinterestGo.png" afterPath="$PROJECT_DIR$/public_html/images/pinterestGo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/playButt.png" afterPath="$PROJECT_DIR$/public_html/images/playButt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/popCountCircle.png" afterPath="$PROJECT_DIR$/public_html/images/popCountCircle.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/popTitle.png" afterPath="$PROJECT_DIR$/public_html/images/popTitle.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/post.png" afterPath="$PROJECT_DIR$/public_html/images/post.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDeetsIcons.png" afterPath="$PROJECT_DIR$/public_html/images/postDeetsIcons.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailFollowButton.jpg" afterPath="$PROJECT_DIR$/public_html/images/postDetailFollowButton.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailFollowButton.png" afterPath="$PROJECT_DIR$/public_html/images/postDetailFollowButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailIsFollowButton.png" afterPath="$PROJECT_DIR$/public_html/images/postDetailIsFollowButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailsLeftArrow.png" afterPath="$PROJECT_DIR$/public_html/images/postDetailsLeftArrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailsLoveButton.jpg" afterPath="$PROJECT_DIR$/public_html/images/postDetailsLoveButton.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailsLoveButton.png" afterPath="$PROJECT_DIR$/public_html/images/postDetailsLoveButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailsLoveButtonLoved.jpg" afterPath="$PROJECT_DIR$/public_html/images/postDetailsLoveButtonLoved.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailsLoveButtonLoved.png" afterPath="$PROJECT_DIR$/public_html/images/postDetailsLoveButtonLoved.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postDetailsRightArrow.png" afterPath="$PROJECT_DIR$/public_html/images/postDetailsRightArrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postTagCursor.png" afterPath="$PROJECT_DIR$/public_html/images/postTagCursor.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/post_help_pop.jpg" afterPath="$PROJECT_DIR$/public_html/images/post_help_pop.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postit-bg.png" afterPath="$PROJECT_DIR$/public_html/images/postit-bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/postitbtn2.png" afterPath="$PROJECT_DIR$/public_html/images/postitbtn2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/posts_off.png" afterPath="$PROJECT_DIR$/public_html/images/posts_off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/posts_on.png" afterPath="$PROJECT_DIR$/public_html/images/posts_on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pre-order-placeholder.png" afterPath="$PROJECT_DIR$/public_html/images/pre-order-placeholder.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/01.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/01.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/02.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/02.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/03.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/03.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/04.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/04.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/05.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/05.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/A.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/A.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/B.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/B.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/C.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/C.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/D.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/D.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/E.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/E.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/aol.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/aol.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/extra.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/extra.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/hp.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/hp.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/lifeandstyle.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/lifeandstyle.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/nick.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/nick.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/ok.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/ok.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/omg.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/omg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/wonderwall.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/wonderwall.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/press/yahoo.jpg" afterPath="$PROJECT_DIR$/public_html/images/press/yahoo.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/prodPageArrow.png" afterPath="$PROJECT_DIR$/public_html/images/prodPageArrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/prodPagesArrow.png" afterPath="$PROJECT_DIR$/public_html/images/prodPagesArrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/prodShare.png" afterPath="$PROJECT_DIR$/public_html/images/prodShare.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/prodStatus_1.png" afterPath="$PROJECT_DIR$/public_html/images/prodStatus_1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/prodStatus_2.png" afterPath="$PROJECT_DIR$/public_html/images/prodStatus_2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/prodStatus_3.png" afterPath="$PROJECT_DIR$/public_html/images/prodStatus_3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/prodStatus_4.png" afterPath="$PROJECT_DIR$/public_html/images/prodStatus_4.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/1.png" afterPath="$PROJECT_DIR$/public_html/images/profile/1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/2.png" afterPath="$PROJECT_DIR$/public_html/images/profile/2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/3.png" afterPath="$PROJECT_DIR$/public_html/images/profile/3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/4.png" afterPath="$PROJECT_DIR$/public_html/images/profile/4.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/5-1.png" afterPath="$PROJECT_DIR$/public_html/images/profile/5-1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/5.png" afterPath="$PROJECT_DIR$/public_html/images/profile/5.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/6.png" afterPath="$PROJECT_DIR$/public_html/images/profile/6.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/A.png" afterPath="$PROJECT_DIR$/public_html/images/profile/A.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/B.png" afterPath="$PROJECT_DIR$/public_html/images/profile/B.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/C.png" afterPath="$PROJECT_DIR$/public_html/images/profile/C.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profile/D.png" afterPath="$PROJECT_DIR$/public_html/images/profile/D.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/profileFiller.jpg" afterPath="$PROJECT_DIR$/public_html/images/profileFiller.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/rank.png" afterPath="$PROJECT_DIR$/public_html/images/rank.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/reg.png" afterPath="$PROJECT_DIR$/public_html/images/reg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/s_mag.png" afterPath="$PROJECT_DIR$/public_html/images/s_mag.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/search.gif" afterPath="$PROJECT_DIR$/public_html/images/search.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/search.png" afterPath="$PROJECT_DIR$/public_html/images/search.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/select-files.png" afterPath="$PROJECT_DIR$/public_html/images/select-files.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/selectbg.png" afterPath="$PROJECT_DIR$/public_html/images/selectbg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/share.png" afterPath="$PROJECT_DIR$/public_html/images/share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shareBall.png" afterPath="$PROJECT_DIR$/public_html/images/shareBall.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shareBalls_BG.png" afterPath="$PROJECT_DIR$/public_html/images/shareBalls_BG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shareBalls_FB_off.png" afterPath="$PROJECT_DIR$/public_html/images/shareBalls_FB_off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shareBalls_FB_on.png" afterPath="$PROJECT_DIR$/public_html/images/shareBalls_FB_on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shareBalls_TUMBLR_off.png" afterPath="$PROJECT_DIR$/public_html/images/shareBalls_TUMBLR_off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shareBalls_TUMBLR_on.png" afterPath="$PROJECT_DIR$/public_html/images/shareBalls_TUMBLR_on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shareBalls_TWITTER_off.png" afterPath="$PROJECT_DIR$/public_html/images/shareBalls_TWITTER_off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shareBalls_TWITTER_on.png" afterPath="$PROJECT_DIR$/public_html/images/shareBalls_TWITTER_on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shop/arr_down.png" afterPath="$PROJECT_DIR$/public_html/images/shop/arr_down.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shop/arr_down2.png" afterPath="$PROJECT_DIR$/public_html/images/shop/arr_down2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shop/btn_remove.png" afterPath="$PROJECT_DIR$/public_html/images/shop/btn_remove.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shop/tot-bag.png" afterPath="$PROJECT_DIR$/public_html/images/shop/tot-bag.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shopExample.png" afterPath="$PROJECT_DIR$/public_html/images/shopExample.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shoppingCart.jpg" afterPath="$PROJECT_DIR$/public_html/images/shoppingCart.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shoppingCart.png" afterPath="$PROJECT_DIR$/public_html/images/shoppingCart.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/shoppingCart_on.png" afterPath="$PROJECT_DIR$/public_html/images/shoppingCart_on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signinemail.png" afterPath="$PROJECT_DIR$/public_html/images/signinemail.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signinemail2.png" afterPath="$PROJECT_DIR$/public_html/images/signinemail2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signinfacebook.png" afterPath="$PROJECT_DIR$/public_html/images/signinfacebook.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signinfacebook2.png" afterPath="$PROJECT_DIR$/public_html/images/signinfacebook2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signininstagram.png" afterPath="$PROJECT_DIR$/public_html/images/signininstagram.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signininstagram2.png" afterPath="$PROJECT_DIR$/public_html/images/signininstagram2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signintwitter.png" afterPath="$PROJECT_DIR$/public_html/images/signintwitter.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signintwitter2.png" afterPath="$PROJECT_DIR$/public_html/images/signintwitter2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/signup_title.png" afterPath="$PROJECT_DIR$/public_html/images/signup_title.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slash.png" afterPath="$PROJECT_DIR$/public_html/images/slash.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/artinourblood.jpeg" afterPath="$PROJECT_DIR$/public_html/images/slider/artinourblood.jpeg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/blazer.jpg" afterPath="$PROJECT_DIR$/public_html/images/slider/blazer.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/dw2.jpg" afterPath="$PROJECT_DIR$/public_html/images/slider/dw2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/ellemay.jpg" afterPath="$PROJECT_DIR$/public_html/images/slider/ellemay.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/modern_native_dress.jpg" afterPath="$PROJECT_DIR$/public_html/images/slider/modern_native_dress.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/neon-jacket.jpg" afterPath="$PROJECT_DIR$/public_html/images/slider/neon-jacket.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/rubilove.jpg" afterPath="$PROJECT_DIR$/public_html/images/slider/rubilove.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/slider_handle.gif" afterPath="$PROJECT_DIR$/public_html/images/slider/slider_handle.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/slider_rail.gif" afterPath="$PROJECT_DIR$/public_html/images/slider/slider_rail.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/slides/dw1.jpg" afterPath="$PROJECT_DIR$/public_html/images/slider/slides/dw1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/slider/stuffshelikes_slider.jpg" afterPath="$PROJECT_DIR$/public_html/images/slider/stuffshelikes_slider.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/small_comment.png" afterPath="$PROJECT_DIR$/public_html/images/small_comment.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/small_followers.png" afterPath="$PROJECT_DIR$/public_html/images/small_followers.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/small_heart.png" afterPath="$PROJECT_DIR$/public_html/images/small_heart.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/small_posts.png" afterPath="$PROJECT_DIR$/public_html/images/small_posts.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/spine-comment-bg.png" afterPath="$PROJECT_DIR$/public_html/images/spine-comment-bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/splash_post_design.png" afterPath="$PROJECT_DIR$/public_html/images/splash_post_design.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/t-share.png" afterPath="$PROJECT_DIR$/public_html/images/t-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/tags.png" afterPath="$PROJECT_DIR$/public_html/images/tags.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_cart.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_cart.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_checkout.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_checkout.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_follow.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_follow.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_like.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_like.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_my_rewards.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_my_rewards.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_my_wishlist.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_my_wishlist.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_share.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_share.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_unfollow.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_unfollow.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/td_unlike.jpg" afterPath="$PROJECT_DIR$/public_html/images/td_unlike.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/thanks.png" afterPath="$PROJECT_DIR$/public_html/images/thanks.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/the-process.jpg" afterPath="$PROJECT_DIR$/public_html/images/the-process.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/thedot.png" afterPath="$PROJECT_DIR$/public_html/images/thedot.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/top_desings_close.jpg" afterPath="$PROJECT_DIR$/public_html/images/top_desings_close.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/tourIcon.png" afterPath="$PROJECT_DIR$/public_html/images/tourIcon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/transparen-howitworks.png" afterPath="$PROJECT_DIR$/public_html/images/transparen-howitworks.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/tumblr_logo.png" afterPath="$PROJECT_DIR$/public_html/images/tumblr_logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/twitter-dahlia-share.png" afterPath="$PROJECT_DIR$/public_html/images/twitter-dahlia-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/uploading_3.gif" afterPath="$PROJECT_DIR$/public_html/images/uploading_3.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/uploadmsg.png" afterPath="$PROJECT_DIR$/public_html/images/uploadmsg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/verified.png" afterPath="$PROJECT_DIR$/public_html/images/verified.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/verified_RO.png" afterPath="$PROJECT_DIR$/public_html/images/verified_RO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/video/dahliawolf_logo.svg" afterPath="$PROJECT_DIR$/public_html/images/video/dahliawolf_logo.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/video/dahliawolf_logo_color.svg" afterPath="$PROJECT_DIR$/public_html/images/video/dahliawolf_logo_color.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/video/hiw_mobile.mp4" afterPath="$PROJECT_DIR$/public_html/images/video/hiw_mobile.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/video/hiw_mobile.ogg" afterPath="$PROJECT_DIR$/public_html/images/video/hiw_mobile.ogg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/video/intro.mp4" afterPath="$PROJECT_DIR$/public_html/images/video/intro.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/video/story.mp4" afterPath="$PROJECT_DIR$/public_html/images/video/story.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/video/story.ogv" afterPath="$PROJECT_DIR$/public_html/images/video/story.ogv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/video/story_bars.ogv" afterPath="$PROJECT_DIR$/public_html/images/video/story_bars.ogv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/view_toggle.png" afterPath="$PROJECT_DIR$/public_html/images/view_toggle.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/view_toggle2.png" afterPath="$PROJECT_DIR$/public_html/images/view_toggle2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/viewallbtn.png" afterPath="$PROJECT_DIR$/public_html/images/viewallbtn.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/views.png" afterPath="$PROJECT_DIR$/public_html/images/views.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/vip.png" afterPath="$PROJECT_DIR$/public_html/images/vip.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/vip_RO.png" afterPath="$PROJECT_DIR$/public_html/images/vip_RO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/vip_ex.png" afterPath="$PROJECT_DIR$/public_html/images/vip_ex.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/vote-hover-red.png" afterPath="$PROJECT_DIR$/public_html/images/vote-hover-red.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/vote-hover.png" afterPath="$PROJECT_DIR$/public_html/images/vote-hover.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/vote-white.png" afterPath="$PROJECT_DIR$/public_html/images/vote-white.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/watchMovie.png" afterPath="$PROJECT_DIR$/public_html/images/watchMovie.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/wel_stat_one.png" afterPath="$PROJECT_DIR$/public_html/images/wel_stat_one.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/wel_stat_two.png" afterPath="$PROJECT_DIR$/public_html/images/wel_stat_two.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/welcomeback.png" afterPath="$PROJECT_DIR$/public_html/images/welcomeback.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/wild4_off.png" afterPath="$PROJECT_DIR$/public_html/images/wild4_off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/wild4_on.png" afterPath="$PROJECT_DIR$/public_html/images/wild4_on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/wild_hover.png" afterPath="$PROJECT_DIR$/public_html/images/wild_hover.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/wild_like.png" afterPath="$PROJECT_DIR$/public_html/images/wild_like.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/x.png" afterPath="$PROJECT_DIR$/public_html/images/x.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/x_light.png" afterPath="$PROJECT_DIR$/public_html/images/x_light.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/import/db.php" afterPath="$PROJECT_DIR$/public_html/import/db.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/import/import-likes.php" afterPath="$PROJECT_DIR$/public_html/import/import-likes.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/import/import-member-avatars.php" afterPath="$PROJECT_DIR$/public_html/import/import-member-avatars.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/import/import-posts.php" afterPath="$PROJECT_DIR$/public_html/import/import-posts.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/import/update-posting-created.php" afterPath="$PROJECT_DIR$/public_html/import/update-posting-created.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/import/update-user-created.php" afterPath="$PROJECT_DIR$/public_html/import/update-user-created.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/includes/php/ajax_getFeed.php" afterPath="$PROJECT_DIR$/public_html/includes/php/ajax_getFeed.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/includes/php/m-spine-chunk.php" afterPath="$PROJECT_DIR$/public_html/includes/php/m-spine-chunk.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/includes/php/shop-initial-calls.php" afterPath="$PROJECT_DIR$/public_html/includes/php/shop-initial-calls.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/index-cools.php-BAK" afterPath="$PROJECT_DIR$/public_html/index-cools.php-BAK" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/instagramConnect.php" afterPath="$PROJECT_DIR$/public_html/instagramConnect.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/all.js" afterPath="$PROJECT_DIR$/public_html/js/all.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/api.js" afterPath="$PROJECT_DIR$/public_html/js/api.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/app.min.js" afterPath="$PROJECT_DIR$/public_html/js/app.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/combined.js" afterPath="$PROJECT_DIR$/public_html/js/combined.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/custom.js" afterPath="$PROJECT_DIR$/public_html/js/custom.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/directMessager.js" afterPath="$PROJECT_DIR$/public_html/js/directMessager.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/ga.js" afterPath="$PROJECT_DIR$/public_html/js/ga.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/homes.js" afterPath="$PROJECT_DIR$/public_html/js/homes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/isotope.min.js" afterPath="$PROJECT_DIR$/public_html/js/isotope.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jQuery.Image.Magnifier.min.js" afterPath="$PROJECT_DIR$/public_html/js/jQuery.Image.Magnifier.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.color-2.1.1.min.js" afterPath="$PROJECT_DIR$/public_html/js/jquery.color-2.1.1.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.countdown.js" afterPath="$PROJECT_DIR$/public_html/js/jquery.countdown.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.domwindow.min.js" afterPath="$PROJECT_DIR$/public_html/js/jquery.domwindow.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.fancybox.js" afterPath="$PROJECT_DIR$/public_html/js/jquery.fancybox.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.lazyload.js" afterPath="$PROJECT_DIR$/public_html/js/jquery.lazyload.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.pageless.min.js" afterPath="$PROJECT_DIR$/public_html/js/jquery.pageless.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.url.packed.js" afterPath="$PROJECT_DIR$/public_html/js/jquery.url.packed.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/lazyload.js" afterPath="$PROJECT_DIR$/public_html/js/lazyload.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/paxton_me.js" afterPath="$PROJECT_DIR$/public_html/js/paxton_me.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/pinme.js" afterPath="$PROJECT_DIR$/public_html/js/pinme.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/plusone.js" afterPath="$PROJECT_DIR$/public_html/js/plusone.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/post-inline-js.js" afterPath="$PROJECT_DIR$/public_html/js/post-inline-js.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/postPop.js" afterPath="$PROJECT_DIR$/public_html/js/postPop.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/postbar-2013-03-07.js" afterPath="$PROJECT_DIR$/public_html/js/postbar-2013-03-07.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/postbar.js" afterPath="$PROJECT_DIR$/public_html/js/postbar.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/pplFinder.js" afterPath="$PROJECT_DIR$/public_html/js/pplFinder.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/theGrid.js" afterPath="$PROJECT_DIR$/public_html/js/theGrid.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/theLesson.js" afterPath="$PROJECT_DIR$/public_html/js/theLesson.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/tumblr.js" afterPath="$PROJECT_DIR$/public_html/js/tumblr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/underscore-min.js" afterPath="$PROJECT_DIR$/public_html/js/underscore-min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/userProfile.js" afterPath="$PROJECT_DIR$/public_html/js/userProfile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/vote.js" afterPath="$PROJECT_DIR$/public_html/js/vote.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/www-widgetapi-vflmz-CfK.js" afterPath="$PROJECT_DIR$/public_html/js/www-widgetapi-vflmz-CfK.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/json/geobots/addLikes.php" afterPath="$PROJECT_DIR$/public_html/json/geobots/addLikes.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/json/geobots/bots.php" afterPath="$PROJECT_DIR$/public_html/json/geobots/bots.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/json/geobots/createBots.php" afterPath="$PROJECT_DIR$/public_html/json/geobots/createBots.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/json/geobots/css/main.css" afterPath="$PROJECT_DIR$/public_html/json/geobots/css/main.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/json/geobots/css/normalize.css" afterPath="$PROJECT_DIR$/public_html/json/geobots/css/normalize.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/json/geobots/followUser.php" afterPath="$PROJECT_DIR$/public_html/json/geobots/followUser.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/json/geobots/images/robot.jpg" afterPath="$PROJECT_DIR$/public_html/json/geobots/images/robot.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/json/geobots/index.php" afterPath="$PROJECT_DIR$/public_html/json/geobots/index.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/callback.php" afterPath="$PROJECT_DIR$/public_html/lib/TumblrOAuth/callback.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/connect.php" afterPath="$PROJECT_DIR$/public_html/lib/TumblrOAuth/connect.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/getPosts.php" afterPath="$PROJECT_DIR$/public_html/lib/TumblrOAuth/getPosts.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/sharePost.php" afterPath="$PROJECT_DIR$/public_html/lib/TumblrOAuth/sharePost.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/tumblroauth/OAuth.php" afterPath="$PROJECT_DIR$/public_html/lib/TumblrOAuth/tumblroauth/OAuth.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/TumblrOAuth/tumblroauth/tumblroauth.php" afterPath="$PROJECT_DIR$/public_html/lib/TumblrOAuth/tumblroauth/tumblroauth.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Base.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Base.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Config.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Config.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Db.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Db.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Dispatcher.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Dispatcher.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Functions.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Functions.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Loader.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Loader.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Logger.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Logger.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Mail.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Mail.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Model.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Model.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Request.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Request.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Root.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Root.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_Session.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_Session.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/Jk_User.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/Jk_User.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/controllers/Jk_Access_Controller.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/controllers/Jk_Access_Controller.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/controllers/Jk_Controller.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/controllers/Jk_Controller.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/controllers/Request_Controller.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/controllers/Request_Controller.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/controllers/SSL_Controller.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/controllers/SSL_Controller.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/interfaces/IController.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/interfaces/IController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/interfaces/IDTO.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/interfaces/IDTO.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/interfaces/IExecutable.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/interfaces/IExecutable.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/response/Abstract_Response.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/response/Abstract_Response.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/response/Html_Response.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/response/Html_Response.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/response/Json_Response.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/response/Json_Response.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/response/Response.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/response/Response.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/response/Response_Command.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/response/Response_Command.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/response/Response_Route.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/response/Response_Route.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/response/Response_View.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/response/Response_View.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/services/Facade.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/services/Facade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/utils/Crypt.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/utils/Crypt.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/utils/Error_Handler.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/utils/Error_Handler.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/jk07/utils/Router.php" afterPath="$PROJECT_DIR$/public_html/lib/jk07/utils/Router.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/php/resize-image.php" afterPath="$PROJECT_DIR$/public_html/lib/php/resize-image.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/twitteroauth/OAuth.php" afterPath="$PROJECT_DIR$/public_html/lib/twitteroauth/OAuth.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/twitteroauth/twitteroauth.php" afterPath="$PROJECT_DIR$/public_html/lib/twitteroauth/twitteroauth.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mobile" afterPath="$PROJECT_DIR$/public_html/mobile" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/paxton_it.php" afterPath="$PROJECT_DIR$/public_html/paxton_it.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pinit.php" afterPath="$PROJECT_DIR$/public_html/pinit.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pinterest-854da.html" afterPath="$PROJECT_DIR$/public_html/pinterest-854da.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/post-details.php" afterPath="$PROJECT_DIR$/public_html/post-details.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/post_slideout.php" afterPath="$PROJECT_DIR$/public_html/post_slideout.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/postings" afterPath="$PROJECT_DIR$/public_html/postings" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/redirect.php" afterPath="$PROJECT_DIR$/public_html/redirect.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/shop/order-success.php" afterPath="$PROJECT_DIR$/public_html/shop/order-success.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/shop/prep_check.php" afterPath="$PROJECT_DIR$/public_html/shop/prep_check.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/alreadycreative.png" afterPath="$PROJECT_DIR$/public_html/skin/img/alreadycreative.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/arrow.png" afterPath="$PROJECT_DIR$/public_html/skin/img/arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/arrow_rollover.png" afterPath="$PROJECT_DIR$/public_html/skin/img/arrow_rollover.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/bar.png" afterPath="$PROJECT_DIR$/public_html/skin/img/bar.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/bgpostit.png" afterPath="$PROJECT_DIR$/public_html/skin/img/bgpostit.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/facebook-dahlia-share-color.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/facebook-dahlia-share-color.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/facebook-dahlia-share.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/facebook-dahlia-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/instagram-off.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/instagram-off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/instagram-on.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/instagram-on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/instagram-on1.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/instagram-on1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/my-comp-butt.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/my-comp-butt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/pinterest-dahlia-share-color.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/pinterest-dahlia-share-color.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/pinterest-dahlia-share.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/pinterest-dahlia-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/pinterest-off.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/pinterest-off.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/pinterest-on.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/pinterest-on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/pinterest-on1.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/pinterest-on1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/twitter-dahlia-share-color.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/twitter-dahlia-share-color.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/btn/twitter-dahlia-share.png" afterPath="$PROJECT_DIR$/public_html/skin/img/btn/twitter-dahlia-share.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/closegray.png" afterPath="$PROJECT_DIR$/public_html/skin/img/closegray.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/closewhite.png" afterPath="$PROJECT_DIR$/public_html/skin/img/closewhite.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/exp_w4.png" afterPath="$PROJECT_DIR$/public_html/skin/img/exp_w4.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/feedback-dahlia-thanks.jpg" afterPath="$PROJECT_DIR$/public_html/skin/img/feedback-dahlia-thanks.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/feedback-dahlia.jpg" afterPath="$PROJECT_DIR$/public_html/skin/img/feedback-dahlia.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/gototop.jpg" afterPath="$PROJECT_DIR$/public_html/skin/img/gototop.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/leaveacomment.png" afterPath="$PROJECT_DIR$/public_html/skin/img/leaveacomment.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/like.png" afterPath="$PROJECT_DIR$/public_html/skin/img/like.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/loading2.gif" afterPath="$PROJECT_DIR$/public_html/skin/img/loading2.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/logintxt.png" afterPath="$PROJECT_DIR$/public_html/skin/img/logintxt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/postitbtn2.png" afterPath="$PROJECT_DIR$/public_html/skin/img/postitbtn2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/right.png" afterPath="$PROJECT_DIR$/public_html/skin/img/right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signinemail.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signinemail.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signinemail2.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signinemail2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signinfacebook.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signinfacebook.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signinfacebook2.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signinfacebook2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signininstagram.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signininstagram.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signininstagram2.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signininstagram2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signintwitter.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signintwitter.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signintwitter2.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signintwitter2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/signup_title.png" afterPath="$PROJECT_DIR$/public_html/skin/img/signup_title.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/vote-soon.jpg" afterPath="$PROJECT_DIR$/public_html/skin/img/vote-soon.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/welcomeback.png" afterPath="$PROJECT_DIR$/public_html/skin/img/welcomeback.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/wild_like.png" afterPath="$PROJECT_DIR$/public_html/skin/img/wild_like.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/img/yourrank.png" afterPath="$PROJECT_DIR$/public_html/skin/img/yourrank.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/landingpage/calltoactionbg.png" afterPath="$PROJECT_DIR$/public_html/skin/landingpage/calltoactionbg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/slides/slide1.jpg" afterPath="$PROJECT_DIR$/public_html/skin/slides/slide1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/slides/slide2.jpg" afterPath="$PROJECT_DIR$/public_html/skin/slides/slide2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/slides/slide3.jpg" afterPath="$PROJECT_DIR$/public_html/skin/slides/slide3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/slides/slide4.jpg" afterPath="$PROJECT_DIR$/public_html/skin/slides/slide4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/skin/slides/slide5.jpg" afterPath="$PROJECT_DIR$/public_html/skin/slides/slide5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/social-login.php" afterPath="$PROJECT_DIR$/public_html/social-login.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/spine.php" afterPath="$PROJECT_DIR$/public_html/spine.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stats/apc.php" afterPath="$PROJECT_DIR$/public_html/stats/apc.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stats/info.php" afterPath="$PROJECT_DIR$/public_html/stats/info.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stats/memcache.php" afterPath="$PROJECT_DIR$/public_html/stats/memcache.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/invite-email.php" afterPath="$PROJECT_DIR$/public_html/templates/invite-email.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/4b3e2bbe83a9ebf443933bcae496d2a1 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/4b3e2bbe83a9ebf443933bcae496d2a1 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/58b6f458627109f051603d74fe18bd62 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/58b6f458627109f051603d74fe18bd62 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/72ef253046c08c45cd1edad0cc5b23bd 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/72ef253046c08c45cd1edad0cc5b23bd 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/7f7fe41686e4e592c32493f5a791c02c7f2f13ef 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/7f7fe41686e4e592c32493f5a791c02c7f2f13ef 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/8e1c1ebdaca8f111dc12b995d7048f27 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/8e1c1ebdaca8f111dc12b995d7048f27 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/a8244c8e796276988bdf71e00f677ef3 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/a8244c8e796276988bdf71e00f677ef3 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/c4062c7b7766df58353137f2c4b09362 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/c4062c7b7766df58353137f2c4b09362 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/fbe2d997fab36dd25bd75b3a64c1dbbe (1) 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/fbe2d997fab36dd25bd75b3a64c1dbbe (1) 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/getColor.php" afterPath="$PROJECT_DIR$/public_html/test/getColor.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/image.jpg" afterPath="$PROJECT_DIR$/public_html/test/image.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/x2bac942bbef2f1a7e496d9e6043434029e1124ce.jpg.pagespeed.ic.ZfZsuafqPJ (1) 2.jpg" afterPath="$PROJECT_DIR$/public_html/test/x2bac942bbef2f1a7e496d9e6043434029e1124ce.jpg.pagespeed.ic.ZfZsuafqPJ (1) 2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tos.php" afterPath="$PROJECT_DIR$/public_html/tos.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/upload" afterPath="$PROJECT_DIR$/public_html/upload" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/uploads" afterPath="$PROJECT_DIR$/public_html/uploads" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/video_page.php" afterPath="$PROJECT_DIR$/public_html/video_page.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wolf-pack.php" afterPath="$PROJECT_DIR$/public_html/wolf-pack.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <list id="77b7b8f6-18ac-4a16-8c1e-7606407c3ece" name="DONT FUCK WIT" comment="" />
+    <list id="418d1633-1ce1-4ffd-8a74-5facbca12c0c" name="Failed commit: Default" comment="Merge remote-tracking branch 'remotes/origin/master' into dev&#10;&#10;Conflicts:&#10;&#9;css/main.css&#10;&#9;images&#10;&#9;images/image.php&#10;&#9;import/import-likes.php&#10;&#9;import/import-member-avatars.php&#10;&#9;import/import-posts.php&#10;&#9;import/pics/image.php&#10;&#9;import/update-posting-created.php&#10;&#9;import/update-user-created.php&#10;&#9;includes/php/classes/Spine-1.1.php&#10;&#9;index.php&#10;&#9;js/functions.js&#10;&#9;postings&#10;&#9;themes/header_template.php&#10;&#9;upload&#10;&#9;uploads&#10;" />
+    <list id="92a64a04-ccf8-4dbc-a174-50012b3dc64f" name="do_not_commit" comment="" />
+    <list id="18fd6551-e441-4685-8764-4b731798f9e6" name="do not commit" comment="do not commit" />
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
@@ -16,7 +996,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -30,62 +1010,6 @@
   <component name="FavoritesManager">
     <favorites_list name="dahliawolf_app" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="head.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/head.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="35" selection-start="7377" selection-end="7377" vertical-scroll-proportion="-1.625" vertical-offset="1776" max-vertical-offset="2565">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="160" column="17" selection-start="11707" selection-end="11707" vertical-scroll-proportion="0.0" vertical-offset="1805" max-vertical-offset="46365">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apiClass.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/apiClass.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="35" selection-start="381" selection-end="381" vertical-scroll-proportion="0.398773" vertical-offset="0" max-vertical-offset="13080">
-              <folding>
-                <marker date="1386650917000" expanded="false" signature="5224:5256" placeholder="..." />
-                <marker date="1386650917000" expanded="false" signature="5740:5764" placeholder="..." />
-                <marker date="1386650917000" expanded="false" signature="7824:7848" placeholder="..." />
-                <marker date="1386650917000" expanded="false" signature="10312:10336" placeholder="..." />
-                <marker date="1386650917000" expanded="false" signature="13706:13739" placeholder="..." />
-                <marker date="1386650917000" expanded="false" signature="27841:27859" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="152" selection-end="272" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10440">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vote.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/vote.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="225" column="33" selection-start="8701" selection-end="8701" vertical-scroll-proportion="0.0" vertical-offset="3121" max-vertical-offset="5640">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
@@ -93,38 +1017,39 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git checkout master" />
       <command text="git pull" />
-      <command text="git pull" />
+      <command text="git reset --hard" />
       <command text="git status" />
+      <command text="git checkout master " />
+      <command text="rm .DS_Store" />
+      <command text="rm .idea/scopes/scope_settings.xml" />
+      <command text=".idea/workspace.xml" />
+      <command text="git checkout master " />
+      <command text="rm .idea/workspace.xml" />
+      <command text="git checkout master " />
       <command text="git pull" />
-      <command text="rm mobile" />
       <command text="git pull" />
-      <command text="rmdir mobile" />
-      <command text="cd mobiel" />
-      <command text="ls" />
-      <command text="rm mobile -rf" />
-      <command text="cd .." />
-      <command text="ll" />
-      <command text="rm -rf mobile" />
-      <command text="git pull" />
+      <command text="git add ." />
       <command text="pwd" />
-      <command text="cd dev_dahliawolf_app/" />
-      <command text="ll" />
-      <command text="ls" />
-      <command text="rm -rf mobile" />
+      <command text="git rm --cached .idea/workspace.xml" />
+      <command text="git update-index --assume-unchanged .idea/workspace.xml" />
       <command text="git pull" />
+      <command text="git reset hard" />
+      <command text="git reset --hard" />
       <command text="git pull" />
+      <command text="git staus" />
       <command text="git status" />
-      <command text="git fetch --all" />
-      <command text="git reset --hard origin/master" />
+      <command text="git pull" />
+      <command text="ls" />
+      <command text="ls .idea" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="temp" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -135,34 +1060,36 @@
       <MyDateState />
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/includes/php/functions.php" />
+        <option value="$PROJECT_DIR$/common/checkout/cart.php" />
+        <option value="$PROJECT_DIR$/home.php" />
+        <option value="$PROJECT_DIR$/themes/header_template.php" />
+        <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/action/signup.php" />
-        <option value="$PROJECT_DIR$/login_pop.php" />
-        <option value="$PROJECT_DIR$/action/login.php" />
-        <option value="$PROJECT_DIR$/post-details.php" />
-        <option value="$PROJECT_DIR$/js/theBank.js" />
-        <option value="$PROJECT_DIR$/shop/cart.php" />
-        <option value="$PROJECT_DIR$/common/checkout/shipping.php" />
-        <option value="$PROJECT_DIR$/shop/checkout.php" />
-        <option value="$PROJECT_DIR$/dashboard.php" />
-        <option value="$PROJECT_DIR$/js/vote.js" />
-        <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
-        <option value="$PROJECT_DIR$/profile.php" />
-        <option value="$PROJECT_DIR$/js/userProfile.js" />
-        <option value="$PROJECT_DIR$/head.php" />
-        <option value="$PROJECT_DIR$/js/apiClass.js" />
+        <option value="$PROJECT_DIR$/images/video/dahliawolf_logo_color.svg" />
+        <option value="$PROJECT_DIR$/action/settings.php" />
+        <option value="$PROJECT_DIR$/email_content/11082013_download_our_app/download_our_app.html" />
+        <option value="$PROJECT_DIR$/email_content/11082013_start_posting/start_posing_choppedup.html" />
+        <option value="$PROJECT_DIR$/action/post_feed_image.php" />
+        <option value="$PROJECT_DIR$/index_landing.php" />
+        <option value="$PROJECT_DIR$/video_page.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/public_html/index.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
-    <option name="y" value="154" />
-    <option name="width" value="1701" />
-    <option name="height" value="949" />
+    <option name="y" value="22" />
+    <option name="width" value="2560" />
+    <option name="height" value="1414" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -190,49 +1117,51 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dev_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="190" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="207" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="428" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="429" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="201" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="429" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dahliawolf_mobile" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="210" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1005" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1001" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="207" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dahlia_content" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="439" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1221" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1223" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="435" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="430" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="203" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.splitter.details.proportions" value="0.33613446" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
@@ -243,33 +1172,101 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="Dahlia-DEV" serverId="8b23f12c-8037-474f-a18a-db76c25da55f" autoUpload="true" uploadOnSaveAll="true">
+  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="dev_dahliawolf_app" serverId="f842d144-7736-410c-8123-3744a6b3b9f6" createEmptyFolders="true" autoUpload="true">
     <servers>
-      <server id="4511759f-11b5-4e95-90da-389a63515d25">
+      <server id="10f6059e-b7ff-418b-8e93-d7ec19895ac9">
         <serverdata />
       </server>
-      <server id="8b23f12c-8037-474f-a18a-db76c25da55f">
+      <server id="12607245-9c7d-4bf3-9f96-1c24f961f1e0">
+        <serverdata />
+      </server>
+      <server id="12a6cc3f-8f59-4791-b728-ca8022a6a3dc">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" />
+            <mapping deploy="/app/core" local="$PROJECT_DIR$/lib/jk07" />
           </mappings>
-          <excludedPaths>
-            <ExcludedPath>
-              <option name="path" value="/tests" />
-            </ExcludedPath>
-          </excludedPaths>
         </serverdata>
       </server>
-      <server id="d5b4aeb1-0d99-4ded-972c-914b5f7b84de">
-        <serverdata />
+      <server id="1df94d70-8972-4d20-9dc4-3ef9873fff5d">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/" />
+          </mappings>
+        </serverdata>
       </server>
-      <server id="e18487a9-f106-4ed0-8985-776f0f16d8f9">
-        <serverdata />
-      </server>
-      <server id="e467846b-4155-4031-bfd5-217189230278">
+      <server id="29ce1c17-add5-4c83-9661-48d11dbfb91c">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="4188f0f4-5d34-45c2-a7e3-8510c7934c98">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="47556bb6-abf3-43eb-8472-fa7dc2873998">
+        <serverdata />
+      </server>
+      <server id="598e02cf-9844-490f-aef5-83045be44fab">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="62de779a-6527-42ea-a980-e9b337455ac5">
+        <serverdata />
+      </server>
+      <server id="6e84c6bc-a137-48d4-8a91-12efda91d2db">
+        <serverdata />
+      </server>
+      <server id="71f54bde-ea2e-4f0d-b0cc-b02ee0bca28d">
+        <serverdata />
+      </server>
+      <server id="71ffd2f9-2059-4303-9fca-f01312f2782e">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="81fe9bbc-646d-433f-ad1d-3b7fc3fff2ff">
+        <serverdata />
+      </server>
+      <server id="913ba6bf-699e-436a-b849-a130dfb2aba3">
+        <serverdata />
+      </server>
+      <server id="9899e07e-afd1-445a-80b3-048f558a4f5a">
+        <serverdata />
+      </server>
+      <server id="a009cdae-1ca7-4a5d-b68f-dfa3af72f1c6">
+        <serverdata />
+      </server>
+      <server id="c35297eb-548d-4751-82b2-3e2564b1d92f">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="c3db5f85-a179-4ce3-9d42-a6365960d919">
+        <serverdata />
+      </server>
+      <server id="e1cad2e2-9e07-4368-a2e9-9937b21d9f30">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="f842d144-7736-410c-8123-3744a6b3b9f6">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/" />
           </mappings>
         </serverdata>
       </server>
@@ -277,14 +1274,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/video" />
+      <recent name="$PROJECT_DIR$/includes/php" />
+      <recent name="$PROJECT_DIR$/lib/php" />
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public_html" />
       <recent name="$PROJECT_DIR$/images/video" />
-      <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/test" />
-      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/images/slider" />
+      <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/account" />
     </key>
   </component>
   <component name="RunManager">
@@ -324,7 +1325,8 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="" />
-      <changelist id="77b7b8f6-18ac-4a16-8c1e-7606407c3ece" name="DONT FUCK WIT" comment="" />
+      <changelist id="92a64a04-ccf8-4dbc-a174-50012b3dc64f" name="do_not_commit" comment="" />
+      <changelist id="18fd6551-e441-4685-8764-4b731798f9e6" name="do not commit" comment="" />
       <created>1371574325898</created>
       <updated>1371574325898</updated>
     </task>
@@ -380,339 +1382,435 @@
       <created>1372378424699</created>
       <updated>1372378424699</updated>
     </task>
-    <task id="LOCAL-00014" summary="grid sizing patch">
-      <created>1373676284781</created>
-      <updated>1373676284781</updated>
-    </task>
-    <task id="LOCAL-00015" summary="added wishlist count to explore page">
-      <created>1373925736861</created>
-      <updated>1373925736861</updated>
-    </task>
-    <task id="LOCAL-00016" summary="OnClick Dahlia Head">
-      <created>1373934814296</created>
-      <updated>1373934814296</updated>
-    </task>
-    <task id="LOCAL-00017" summary="testing login">
-      <created>1374081725531</created>
-      <updated>1374081725531</updated>
-    </task>
-    <task id="LOCAL-00018" summary="added wishlist count to explore page">
-      <created>1374081964591</created>
-      <updated>1374081964591</updated>
-    </task>
-    <task id="LOCAL-00019" summary="added wishlist count to explore page">
-      <created>1374082404909</created>
-      <updated>1374082404909</updated>
-    </task>
-    <task id="LOCAL-00020" summary="api mods">
-      <created>1374109225777</created>
-      <updated>1374109225777</updated>
-    </task>
-    <task id="LOCAL-00021" summary="ajax wishlist call">
-      <created>1374281180314</created>
-      <updated>1374281180314</updated>
-    </task>
-    <task id="LOCAL-00022" summary="small fix">
-      <created>1374281578187</created>
-      <updated>1374281578187</updated>
-    </task>
-    <task id="LOCAL-00023" summary="lots a little fixes">
-      <created>1374513554588</created>
-      <updated>1374513554588</updated>
-    </task>
-    <task id="LOCAL-00024" summary="oops fix">
-      <created>1374513708376</created>
-      <updated>1374513708376</updated>
-    </task>
-    <task id="LOCAL-00025" summary="much little things">
-      <created>1374533030111</created>
-      <updated>1374533030111</updated>
-    </task>
-    <task id="LOCAL-00026" summary="shoop">
-      <created>1374533284891</created>
-      <updated>1374533284891</updated>
-    </task>
-    <task id="LOCAL-00027" summary="shoop">
-      <created>1374533353487</created>
-      <updated>1374533353487</updated>
-    </task>
-    <task id="LOCAL-00028" summary="shoop">
-      <created>1374533466670</created>
-      <updated>1374533466670</updated>
-    </task>
-    <task id="LOCAL-00029" summary="shoop">
-      <created>1374533630604</created>
-      <updated>1374533630604</updated>
-    </task>
-    <task id="LOCAL-00030" summary="ooom blop">
-      <created>1374535081349</created>
-      <updated>1374535081349</updated>
-    </task>
-    <task id="LOCAL-00031" summary="get started page">
-      <created>1375405635786</created>
-      <updated>1375405635786</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Final get started page and more analytics">
-      <created>1375469662639</created>
-      <updated>1375469662639</updated>
-    </task>
-    <task id="LOCAL-00033" summary="api not ready">
-      <created>1375469780339</created>
-      <updated>1375469780339</updated>
-    </task>
-    <task id="LOCAL-00034" summary="new user login process post details shows more posts on solo page">
-      <created>1375487545865</created>
-      <updated>1375487545865</updated>
-    </task>
-    <task id="LOCAL-00035" summary="new user login process post details shows more posts on solo page">
-      <created>1375737210124</created>
-      <updated>1375737210124</updated>
-    </task>
-    <task id="LOCAL-00036" summary="instagram non refresh">
-      <created>1375737402890</created>
-      <updated>1375737402890</updated>
-    </task>
-    <task id="LOCAL-00037" summary="instagram clean up">
-      <created>1375737852255</created>
-      <updated>1375737852255</updated>
-    </task>
-    <task id="LOCAL-00038" summary="instagram clean up">
-      <created>1375738001251</created>
-      <updated>1375738001251</updated>
-    </task>
-    <task id="LOCAL-00039" summary="get started fixes">
-      <created>1375742685675</created>
-      <updated>1375742685675</updated>
-    </task>
-    <task id="LOCAL-00040" summary="invite facebook">
-      <created>1375746160701</created>
-      <updated>1375746160701</updated>
-    </task>
-    <task id="LOCAL-00041" summary="new home slider">
-      <created>1375815821963</created>
-      <updated>1375815821963</updated>
-    </task>
-    <task id="LOCAL-00042" summary="new home slider">
-      <created>1375835767922</created>
-      <updated>1375835767922</updated>
-    </task>
-    <task id="LOCAL-00043" summary="new home slider">
-      <created>1376418267833</created>
-      <updated>1376418267833</updated>
-    </task>
-    <task id="LOCAL-00044" summary="ie fix">
-      <created>1376459742553</created>
-      <updated>1376459742553</updated>
-    </task>
-    <task id="LOCAL-00045" summary="post glitch fix">
-      <created>1376809245142</created>
-      <updated>1376809245142</updated>
-    </task>
-    <task id="LOCAL-00046" summary="shop redirect">
-      <created>1376809496117</created>
-      <updated>1376809496117</updated>
-    </task>
-    <task id="LOCAL-00047" summary="new inspire page">
-      <created>1377668836343</created>
-      <updated>1377668836343</updated>
-    </task>
-    <task id="LOCAL-00048" summary="new api class">
-      <created>1377668988538</created>
-      <updated>1377668988538</updated>
-    </task>
-    <task id="LOCAL-00049" summary="api class improvements">
-      <created>1377845685145</created>
-      <updated>1377845685145</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Better interface for avatar uploads unstyled">
-      <created>1378687801947</created>
-      <updated>1378687801947</updated>
-    </task>
-    <task id="LOCAL-00051" summary="color detection tests">
-      <created>1379057765016</created>
-      <updated>1379057765017</updated>
-    </task>
-    <task id="LOCAL-00052" summary="add dash to menu">
-      <created>1379090704339</created>
-      <updated>1379090704339</updated>
-    </task>
-    <task id="LOCAL-00053" summary="add dash to menu take 2">
-      <created>1379100890087</created>
-      <updated>1379100890088</updated>
-    </task>
-    <task id="LOCAL-00054" summary="UI addition to share">
-      <created>1379568963594</created>
-      <updated>1379568963594</updated>
-    </task>
-    <task id="LOCAL-00055" summary="attached event handler to child window close">
-      <created>1379570772869</created>
-      <updated>1379570772869</updated>
-    </task>
-    <task id="LOCAL-00056" summary="new Vote page madness!!!">
-      <created>1379839773508</created>
-      <updated>1379839773509</updated>
-    </task>
-    <task id="LOCAL-00057" summary="vote page additonal">
-      <created>1379913520047</created>
-      <updated>1379913520047</updated>
-    </task>
-    <task id="LOCAL-00058" summary="vote page grid fixxx">
-      <created>1379917425341</created>
-      <updated>1379917425341</updated>
-    </task>
-    <task id="LOCAL-00059" summary="more compatability compliance">
-      <created>1380089914775</created>
-      <updated>1380089914775</updated>
-    </task>
-    <task id="LOCAL-00060" summary="tighter api hooks with tumblr and twitter">
-      <created>1380264402167</created>
-      <updated>1380264402168</updated>
-    </task>
-    <task id="LOCAL-00061" summary="changed vote to mp view and css fix to unblock profile link shop">
-      <created>1380783036848</created>
-      <updated>1380783036848</updated>
-    </task>
-    <task id="LOCAL-00062" summary="new landing page">
-      <created>1382903561407</created>
-      <updated>1382903561408</updated>
-    </task>
-    <task id="LOCAL-00063" summary="fix cropping">
-      <created>1382909452649</created>
-      <updated>1382909452650</updated>
-    </task>
-    <task id="LOCAL-00064" summary="more compatability compliance">
-      <created>1382909676853</created>
-      <updated>1382909676854</updated>
-    </task>
-    <task id="LOCAL-00065" summary="clipping">
-      <created>1382910507355</created>
-      <updated>1382910507356</updated>
-    </task>
-    <task id="LOCAL-00066" summary="add help for new home page">
-      <created>1382911183621</created>
-      <updated>1382911183621</updated>
-    </task>
-    <task id="LOCAL-00067" summary="added title to landing">
-      <created>1382931851806</created>
-      <updated>1382931851806</updated>
-    </task>
-    <task id="LOCAL-00068" summary="very cool product page">
-      <created>1383110038604</created>
-      <updated>1383110038604</updated>
-    </task>
-    <task id="LOCAL-00069" summary="More checkout freshness">
-      <created>1383890663866</created>
-      <updated>1383890663867</updated>
-    </task>
-    <task id="LOCAL-00070" summary="more compatability compliance">
-      <created>1384017821288</created>
-      <updated>1384017821289</updated>
-    </task>
-    <task id="LOCAL-00071" summary="mprofile optimise">
-      <created>1384018409280</created>
-      <updated>1384018409280</updated>
-    </task>
-    <task id="LOCAL-00072" summary="inspire message">
-      <created>1384065070555</created>
-      <updated>1384065070555</updated>
-    </task>
-    <task id="LOCAL-00073" summary="pop fix">
-      <created>1384666330134</created>
-      <updated>1384666330134</updated>
-    </task>
-    <task id="LOCAL-00074" summary="layeers">
-      <created>1384666647341</created>
-      <updated>1384666647341</updated>
-    </task>
-    <task id="LOCAL-00075" summary="analytics and login business">
-      <created>1384673864682</created>
-      <updated>1384673864682</updated>
-    </task>
-    <task id="LOCAL-00076" summary="more compatability compliance">
-      <created>1384674130251</created>
-      <updated>1384674130251</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Analytics">
-      <created>1384674982899</created>
-      <updated>1384674982899</updated>
-    </task>
-    <task id="LOCAL-00078" summary="analyze">
-      <created>1384675569124</created>
-      <updated>1384675569124</updated>
-    </task>
-    <task id="LOCAL-00079" summary="fix scrollbar post details issue when not on mac">
-      <created>1384676523926</created>
-      <updated>1384676523926</updated>
-    </task>
-    <task id="LOCAL-00080" summary="css fixes for firefox checkout..&#10;address loading bar fixed to show everytime reloading..&#10;">
-      <created>1384839533682</created>
-      <updated>1384839533682</updated>
-    </task>
-    <task id="LOCAL-00081" summary="tieing up loose ends.. dashboard edition">
-      <created>1384841763258</created>
-      <updated>1384841763259</updated>
-    </task>
-    <task id="LOCAL-00082" summary="your royal headness">
-      <created>1384929578346</created>
-      <updated>1384929578346</updated>
-    </task>
-    <task id="LOCAL-00083" summary="fixie fixie">
-      <created>1385615831895</created>
-      <updated>1385615831895</updated>
-    </task>
-    <task id="LOCAL-00084" summary="more compatability compliance">
-      <created>1386651133468</created>
-      <updated>1386651133468</updated>
-    </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00014" summary="Merge remote-tracking branch 'remotes/origin/master' into dev&#10;&#10;Conflicts:&#10;&#9;css/main.css&#10;&#9;images&#10;&#9;images/image.php&#10;&#9;import/import-likes.php&#10;&#9;import/import-member-avatars.php&#10;&#9;import/import-posts.php&#10;&#9;import/pics/image.php&#10;&#9;import/update-posting-created.php&#10;&#9;import/update-user-created.php&#10;&#9;includes/php/classes/Spine-1.1.php&#10;&#9;index.php&#10;&#9;js/functions.js&#10;&#9;postings&#10;&#9;themes/header_template.php&#10;&#9;upload&#10;&#9;uploads&#10;">
+      <created>1372381055647</created>
+      <updated>1372381055647</updated>
+    </task>
+    <task id="LOCAL-00015" summary="remove test">
+      <created>1372381236925</created>
+      <updated>1372381236925</updated>
+    </task>
+    <task id="LOCAL-00016" summary="resize avatar in dahliahead">
+      <created>1372381338637</created>
+      <updated>1372381338637</updated>
+    </task>
+    <task id="LOCAL-00017" summary="javascript api calls">
+      <created>1372434550060</created>
+      <updated>1372434550060</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added more api calls and changed some dahliahead stuff">
+      <created>1372441380504</created>
+      <updated>1372441380504</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added ajax delete post functuality">
+      <created>1372443456244</created>
+      <updated>1372443456244</updated>
+    </task>
+    <task id="LOCAL-00020" summary="grid social actions bar">
+      <created>1372446191468</created>
+      <updated>1372446191468</updated>
+    </task>
+    <task id="LOCAL-00021" summary="api fixes">
+      <created>1372455660781</created>
+      <updated>1372455660781</updated>
+    </task>
+    <task id="LOCAL-00022" summary="vote fixes">
+      <created>1372457544583</created>
+      <updated>1372457544583</updated>
+    </task>
+    <task id="LOCAL-00023" summary="api call fix">
+      <created>1372457889708</created>
+      <updated>1372457889708</updated>
+    </task>
+    <task id="LOCAL-00024" summary="api call fix #2">
+      <created>1372458095725</created>
+      <updated>1372458095725</updated>
+    </task>
+    <task id="LOCAL-00025" summary="image src dev replace">
+      <created>1372459726041</created>
+      <updated>1372459726041</updated>
+    </task>
+    <task id="LOCAL-00026" summary="image src dev replace 2">
+      <created>1372459883267</created>
+      <updated>1372459883268</updated>
+    </task>
+    <task id="LOCAL-00027" summary="add_pin mods">
+      <created>1372461651258</created>
+      <updated>1372461651258</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add_pin mods">
+      <created>1372462199692</created>
+      <updated>1372462199692</updated>
+    </task>
+    <task id="LOCAL-00029" summary="comment out var_dump">
+      <created>1372698360797</created>
+      <updated>1372698360797</updated>
+    </task>
+    <task id="LOCAL-00030" summary="added presale tab">
+      <created>1372702430023</created>
+      <updated>1372702430023</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fixed desc on product page">
+      <created>1372703277119</created>
+      <updated>1372703277119</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Profile link to website">
+      <created>1372719221771</created>
+      <updated>1372719221772</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added whoopra">
+      <created>1372723793507</created>
+      <updated>1372723793507</updated>
+    </task>
+    <task id="LOCAL-00034" summary="added whoopra take 2">
+      <created>1372723932505</created>
+      <updated>1372723932506</updated>
+    </task>
+    <task id="LOCAL-00035" summary="seetings website example">
+      <created>1372799787736</created>
+      <updated>1372799787736</updated>
+    </task>
+    <task id="LOCAL-00036" summary="added woopra to homepage">
+      <created>1372805306467</created>
+      <updated>1372805306467</updated>
+    </task>
+    <task id="LOCAL-00037" summary="woopra customization">
+      <created>1372806582685</created>
+      <updated>1372806582685</updated>
+    </task>
+    <task id="LOCAL-00038" summary="new login on homepage and justins faq stuff">
+      <created>1372811956167</created>
+      <updated>1372811956167</updated>
+    </task>
+    <task id="LOCAL-00039" summary="api login screen">
+      <created>1372812414449</created>
+      <updated>1372812414449</updated>
+    </task>
+    <task id="LOCAL-00040" summary="remove loader when end of images">
+      <created>1372812723466</created>
+      <updated>1372812723466</updated>
+    </task>
+    <task id="LOCAL-00041" summary="woopra stiuff">
+      <created>1372813624484</created>
+      <updated>1372813624484</updated>
+    </task>
+    <task id="LOCAL-00042" summary="woopra undo stiuff">
+      <created>1372813874102</created>
+      <updated>1372813874102</updated>
+    </task>
+    <task id="LOCAL-00043" summary="woopra mods">
+      <created>1372814083600</created>
+      <updated>1372814083600</updated>
+    </task>
+    <task id="LOCAL-00044" summary="woopra mods">
+      <created>1372814250509</created>
+      <updated>1372814250509</updated>
+    </task>
+    <task id="LOCAL-00045" summary="add * to ignores">
+      <created>1372883858824</created>
+      <updated>1372883858824</updated>
+    </task>
+    <task id="LOCAL-00046" summary="pre sale price strikethrough">
+      <created>1372884423647</created>
+      <updated>1372884423647</updated>
+    </task>
+    <task id="LOCAL-00047" summary="product page repairs">
+      <created>1372885936835</created>
+      <updated>1372885936835</updated>
+    </task>
+    <task id="LOCAL-00048" summary="product page repairs font size">
+      <created>1372886220108</created>
+      <updated>1372886220108</updated>
+    </task>
+    <task id="LOCAL-00049" summary="console dahliahead">
+      <created>1372887189042</created>
+      <updated>1372887189042</updated>
+    </task>
+    <task id="LOCAL-00050" summary="console dahliahead">
+      <created>1373307365617</created>
+      <updated>1373307365617</updated>
+    </task>
+    <task id="LOCAL-00051" summary="api adjustment&#10;">
+      <created>1373307553451</created>
+      <updated>1373307553451</updated>
+    </task>
+    <task id="LOCAL-00052" summary="api adjustment&#10;">
+      <created>1373307997590</created>
+      <updated>1373307997591</updated>
+    </task>
+    <task id="LOCAL-00053" summary="api adjustment">
+      <created>1373308574243</created>
+      <updated>1373308574243</updated>
+    </task>
+    <task id="LOCAL-00054" summary="api change">
+      <created>1373322826231</created>
+      <updated>1373322826231</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fixed pre order button">
+      <created>1373502727130</created>
+      <updated>1373502727131</updated>
+    </task>
+    <task id="LOCAL-00056" summary="login and register bug fix">
+      <created>1373505880967</created>
+      <updated>1373505880967</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Modified user messages layout">
+      <created>1373562483417</created>
+      <updated>1373562483417</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Modified user messages to close on click">
+      <created>1373563819356</created>
+      <updated>1373563819356</updated>
+    </task>
+    <task id="LOCAL-00059" summary="added winner tag on posts">
+      <created>1373564897510</created>
+      <updated>1373564897510</updated>
+    </task>
+    <task id="LOCAL-00060" summary="profile glitch patch">
+      <created>1373565932867</created>
+      <updated>1373565932868</updated>
+    </task>
+    <task id="LOCAL-00061" summary="adding attribution urls to posts from pinterest and instagram">
+      <created>1373567752181</created>
+      <updated>1373567752182</updated>
+    </task>
+    <task id="LOCAL-00062" summary="adding attribution urls to pathc">
+      <created>1373568084114</created>
+      <updated>1373568084115</updated>
+    </task>
+    <task id="LOCAL-00063" summary="add jk library">
+      <created>1373936438954</created>
+      <updated>1373936438954</updated>
+    </task>
+    <task id="LOCAL-00064" summary="add jk library">
+      <created>1374698005463</created>
+      <updated>1374698005463</updated>
+    </task>
+    <task id="LOCAL-00065" summary="adding stats files, memcache, apc, info">
+      <created>1375220621062</created>
+      <updated>1375220621062</updated>
+    </task>
+    <task id="LOCAL-00066" summary="fix missing country, lng constants">
+      <created>1375460470901</created>
+      <updated>1375460470901</updated>
+    </task>
+    <task id="LOCAL-00067" summary="move country up to after last name">
+      <created>1375461045889</created>
+      <updated>1375461045889</updated>
+    </task>
+    <task id="LOCAL-00068" summary="add US as first country.. ad n/a for undefined states, move country up in billing section">
+      <created>1375463256790</created>
+      <updated>1375463256790</updated>
+    </task>
+    <task id="LOCAL-00069" summary="adding api_domain to fb_login">
+      <created>1375980002969</created>
+      <updated>1375980002969</updated>
+    </task>
+    <task id="LOCAL-00070" summary="udpate jklib">
+      <created>1375981438141</created>
+      <updated>1375981438141</updated>
+    </task>
+    <task id="LOCAL-00071" summary="move files to account">
+      <created>1376323865868</created>
+      <updated>1376323865868</updated>
+    </task>
+    <task id="LOCAL-00072" summary="adding account shop.php">
+      <created>1376581142638</created>
+      <updated>1376581142638</updated>
+    </task>
+    <task id="LOCAL-00073" summary="adding account shop.php">
+      <created>1376583833714</created>
+      <updated>1376583833714</updated>
+    </task>
+    <task id="LOCAL-00074" summary="adding account shop.php..">
+      <created>1376583978102</created>
+      <updated>1376583978102</updated>
+    </task>
+    <task id="LOCAL-00075" summary="adding stuff she likes home slider">
+      <created>1376673333709</created>
+      <updated>1376673333709</updated>
+    </task>
+    <task id="LOCAL-00076" summary="adding neon jacket slider..">
+      <created>1376677880760</created>
+      <updated>1376677880760</updated>
+    </task>
+    <task id="LOCAL-00077" summary="adding display none to slider elements to fix transition bug">
+      <created>1376678028465</created>
+      <updated>1376678028465</updated>
+    </task>
+    <task id="LOCAL-00078" summary="change speed in homepage slider">
+      <created>1376679367827</created>
+      <updated>1376679367827</updated>
+    </task>
+    <task id="LOCAL-00079" summary="change speed in homepage slider">
+      <created>1376679818573</created>
+      <updated>1376679818573</updated>
+    </task>
+    <task id="LOCAL-00080" summary="remove height:100% from spine/grid.. images were getting stretched weird">
+      <created>1376945645012</created>
+      <updated>1376945645012</updated>
+    </task>
+    <task id="LOCAL-00081" summary="change width to 101 to fully hide the color background">
+      <created>1376946463745</created>
+      <updated>1376946463745</updated>
+    </task>
+    <task id="LOCAL-00082" summary="remove double jquery script">
+      <created>1377797042925</created>
+      <updated>1377797042925</updated>
+    </task>
+    <task id="LOCAL-00083" summary="adding geoffs color taggin script">
+      <created>1379369710831</created>
+      <updated>1379369710831</updated>
+    </task>
+    <task id="LOCAL-00084" summary="adding geoffs color taggin script, adding spiral samples">
+      <created>1379380400972</created>
+      <updated>1379380400972</updated>
+    </task>
+    <task id="LOCAL-00085" summary="damm bugs bugs bugs..">
+      <created>1381451273198</created>
+      <updated>1381451273198</updated>
+    </task>
+    <task id="LOCAL-00086" summary="damm bugs bugs bugs..">
+      <created>1381451428810</created>
+      <updated>1381451428810</updated>
+    </task>
+    <task id="LOCAL-00087" summary="damm bugs bugs bugs..">
+      <created>1381454074533</created>
+      <updated>1381454074533</updated>
+    </task>
+    <task id="LOCAL-00088" summary="damm bugs bugs bugs..">
+      <created>1381454213613</created>
+      <updated>1381454213613</updated>
+    </task>
+    <task id="LOCAL-00089" summary="damm bugs bugs bugs..">
+      <created>1381455524991</created>
+      <updated>1381455524991</updated>
+    </task>
+    <task id="LOCAL-00090" summary="damm bugs bugs bugs..">
+      <created>1381455927659</created>
+      <updated>1381455927659</updated>
+    </task>
+    <task id="LOCAL-00091" summary="damm bugs bugs bugs..">
+      <created>1381456052523</created>
+      <updated>1381456052523</updated>
+    </task>
+    <task id="LOCAL-00092" summary="remove error logging">
+      <created>1381513359783</created>
+      <updated>1381513359783</updated>
+    </task>
+    <task id="LOCAL-00093" summary="remove error logging">
+      <created>1381513395130</created>
+      <updated>1381513395130</updated>
+    </task>
+    <task id="LOCAL-00094" summary="fix broken apply greater than grant total store credit">
+      <created>1383098476954</created>
+      <updated>1383098476954</updated>
+    </task>
+    <task id="LOCAL-00095" summary="add barless video.. adding video text tickers">
+      <created>1383174101014</created>
+      <updated>1383174101014</updated>
+    </task>
+    <task id="LOCAL-00096" summary="adding blog before Grow my clique">
+      <created>1383174649789</created>
+      <updated>1383174649789</updated>
+    </task>
+    <task id="LOCAL-00097" summary="shitballs">
+      <created>1383175041707</created>
+      <updated>1383175041707</updated>
+    </task>
+    <task id="LOCAL-00098" summary="capitalize zzeee blog">
+      <created>1383177062063</created>
+      <updated>1383177062063</updated>
+    </task>
+    <task id="LOCAL-00099" summary="remove old queues">
+      <created>1383181885339</created>
+      <updated>1383181885340</updated>
+    </task>
+    <task id="LOCAL-00100" summary="cleanup blank lines..">
+      <created>1383182282675</created>
+      <updated>1383182282675</updated>
+    </task>
+    <task id="LOCAL-00101" summary="video from better source.">
+      <created>1383264636039</created>
+      <updated>1383264636039</updated>
+    </task>
+    <task id="LOCAL-00102" summary="videos no titles and no logos">
+      <created>1383786264156</created>
+      <updated>1383786264156</updated>
+    </task>
+    <task id="LOCAL-00103" summary="adding svg image for video">
+      <created>1383790787823</created>
+      <updated>1383790787823</updated>
+    </task>
+    <task id="LOCAL-00104" summary="new ipad compatible video..">
+      <created>1383792703864</created>
+      <updated>1383792703864</updated>
+    </task>
+    <task id="LOCAL-00105" summary="adding back auto removes for video ticks">
+      <created>1383792857589</created>
+      <updated>1383792857589</updated>
+    </task>
+    <task id="LOCAL-00106" summary="fix settings.. add ignores for email_content">
+      <created>1383959311844</created>
+      <updated>1383959311844</updated>
+    </task>
+    <task id="LOCAL-00107" summary="fix settings.. add ignores for email_content">
+      <created>1384571629925</created>
+      <updated>1384571629925</updated>
+    </task>
+    <task id="LOCAL-00108" summary="adding limit per day 5post limit">
+      <created>1384796554634</created>
+      <updated>1384796554634</updated>
+    </task>
+    <task id="LOCAL-00109" summary="adding limit per day 5post limit.. move the func call to before the image is get.. should avoid calls">
+      <created>1384797383940</created>
+      <updated>1384797383940</updated>
+    </task>
+    <task id="LOCAL-00110" summary="adding limit per day 5post limit.. move the func call to before the image is get.. should avoid calls">
+      <created>1384797508879</created>
+      <updated>1384797508879</updated>
+    </task>
+    <task id="LOCAL-00111" summary="adding limit per day 5post limit.. move the func call to before the image is get.. should avoid calls">
+      <created>1384799621785</created>
+      <updated>1384799621785</updated>
+    </task>
+    <task id="LOCAL-00112" summary="adding limit per day 5post limit.. move the func call to before the image is get.. should avoid calls">
+      <created>1384818722311</created>
+      <updated>1384818722311</updated>
+    </task>
+    <task id="LOCAL-00113" summary="add video vol">
+      <created>1388111925021</created>
+      <updated>1388111925021</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="0">
-    <todo-panel id="selected-file">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-    <todo-panel id="default-changelist">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="154" width="1701" height="949" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="22" width="2560" height="1414" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2291918" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12965722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58466214" sideWeight="0.606603" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6709887" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19335347" sideWeight="0.67068756" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21460506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1546875" sideWeight="0.7749627" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5822368" sideWeight="0.39339697" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3381468" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21933535" sideWeight="0.67068756" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22503726" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1789976" sideWeight="0.67122245" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17890625" sideWeight="0.7749627" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24068554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287827" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -725,137 +1823,154 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="new Vote page madness!!!" />
-    <MESSAGE value="vote page additonal" />
-    <MESSAGE value="vote page grid fixxx" />
-    <MESSAGE value="tighter api hooks with tumblr and twitter" />
-    <MESSAGE value="changed vote to mp view and css fix to unblock profile link shop" />
-    <MESSAGE value="new landing page" />
-    <MESSAGE value="fix cropping" />
-    <MESSAGE value="clipping" />
-    <MESSAGE value="add help for new home page" />
-    <MESSAGE value="added title to landing" />
-    <MESSAGE value="very cool product page" />
-    <MESSAGE value="More checkout freshness" />
-    <MESSAGE value="mprofile optimise" />
-    <MESSAGE value="inspire message" />
-    <MESSAGE value="pop fix" />
-    <MESSAGE value="layeers" />
-    <MESSAGE value="analytics and login business" />
-    <MESSAGE value="Analytics" />
-    <MESSAGE value="analyze" />
-    <MESSAGE value="fix scrollbar post details issue when not on mac" />
-    <MESSAGE value="css fixes for firefox checkout..&#10;address loading bar fixed to show everytime reloading..&#10;" />
-    <MESSAGE value="tieing up loose ends.. dashboard edition" />
-    <MESSAGE value="your royal headness" />
-    <MESSAGE value="fixie fixie" />
-    <MESSAGE value="more compatability compliance" />
-    <option name="LAST_COMMIT_MESSAGE" value="more compatability compliance" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
+    <MESSAGE value="adding display none to slider elements to fix transition bug" />
+    <MESSAGE value="change speed in homepage slider" />
+    <MESSAGE value="remove height:100% from spine/grid.. images were getting stretched weird" />
+    <MESSAGE value="change width to 101 to fully hide the color background" />
+    <MESSAGE value="remove double jquery script" />
+    <MESSAGE value="adding geoffs color taggin script" />
+    <MESSAGE value="adding geoffs color taggin script, adding spiral samples" />
+    <MESSAGE value="damm bugs bugs bugs.." />
+    <MESSAGE value="remove error logging" />
+    <MESSAGE value="fix broken apply greater than grant total store credit" />
+    <MESSAGE value="add barless video.. adding video text tickers" />
+    <MESSAGE value="adding blog before Grow my clique" />
+    <MESSAGE value="shitballs" />
+    <MESSAGE value="capitalize zzeee blog" />
+    <MESSAGE value="remove old queues" />
+    <MESSAGE value="cleanup blank lines.." />
+    <MESSAGE value="video from better source." />
+    <MESSAGE value="videos no titles and no logos" />
+    <MESSAGE value="adding svg image for video" />
+    <MESSAGE value="new ipad compatible video.." />
+    <MESSAGE value="adding back auto removes for video ticks" />
+    <MESSAGE value="fix settings.. add ignores for email_content" />
+    <MESSAGE value="adding limit per day 5post limit" />
+    <MESSAGE value="adding limit per day 5post limit.. move the func call to before the image is get.. should avoid calls" />
+    <MESSAGE value="add video vol" />
+    <option name="LAST_COMMIT_MESSAGE" value="add video vol" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/action/post_feed_image.php">
+    <entry file="file://$PROJECT_DIR$/public_html/paxton_it.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="1" selection-start="2026" selection-end="2026" vertical-scroll-proportion="0.8638743" vertical-offset="405" max-vertical-offset="1170" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="49" selection-start="3121" selection-end="3121" vertical-scroll-proportion="1.6099477" vertical-offset="375" max-vertical-offset="1755" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/post-details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="60" selection-start="8547" selection-end="8547" vertical-scroll-proportion="0.64659685" vertical-offset="1831" max-vertical-offset="2595">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="623" max-vertical-offset="1558">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login_pop.php">
+    <entry file="file://$PROJECT_DIR$/public_html/lib/php/API.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="48" selection-start="8934" selection-end="8942" vertical-scroll-proportion="0.5876963" vertical-offset="2071" max-vertical-offset="2835" />
+        <state line="52" column="4" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.36936235" vertical-offset="513" max-vertical-offset="3667" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop/checkout.php">
+    <entry file="file://$PROJECT_DIR$/public_html/email_content/11082013_start_posting/start_posing_choppedup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="56" selection-start="2267" selection-end="2267" vertical-scroll-proportion="0.57723576" vertical-offset="99" max-vertical-offset="4605" />
+        <state line="31" column="17" selection-start="1943" selection-end="1943" vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="2166" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop/cart.php">
+    <entry file="file://$PROJECT_DIR$/public_html/action/reset-password-link.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="500" column="16" selection-start="18445" selection-end="18445" vertical-scroll-proportion="0.7251309" vertical-offset="6421" max-vertical-offset="7200" />
+        <state line="12" column="24" selection-start="250" selection-end="269" vertical-scroll-proportion="0.17729394" vertical-offset="0" max-vertical-offset="1286" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/checkout/shipping.php">
+    <entry file="file://$PROJECT_DIR$/public_html/js/paxton_me.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="4" selection-start="214" selection-end="214" vertical-scroll-proportion="0.09816754" vertical-offset="0" max-vertical-offset="1710" />
+        <state line="48" column="22" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.6863951" vertical-offset="19" max-vertical-offset="4313" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/public_html/reset-password.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="245" column="78" selection-start="15047" selection-end="15047" vertical-scroll-proportion="4.8102093" vertical-offset="0" max-vertical-offset="8130" />
+        <state line="30" column="36" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="779">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/userProfile.js">
+    <entry file="file://$PROJECT_DIR$/public_html/action/post_feed_image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="722" selection-end="722" vertical-scroll-proportion="0.056962024" vertical-offset="135" max-vertical-offset="1305">
+        <state line="33" column="50" selection-start="1104" selection-end="1118" vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/action/getPostsByUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="74" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="893">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/action/post_image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="63" selection-start="1988" selection-end="2002" vertical-scroll-proportion="-23.535715" vertical-offset="120" max-vertical-offset="1406">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/includes/php/initial-calls.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="10" selection-start="316" selection-end="316" vertical-scroll-proportion="-10.178572" vertical-offset="57" max-vertical-offset="1102">
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <marker date="1388111463000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388111463000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile.php">
+    <entry file="file://$PROJECT_DIR$/public_html/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="20" selection-start="574" selection-end="574" vertical-scroll-proportion="0.27415144" vertical-offset="90" max-vertical-offset="2145" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/vote.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="33" selection-start="8701" selection-end="8701" vertical-scroll-proportion="0.0" vertical-offset="3121" max-vertical-offset="5640">
+        <state line="45" column="26" selection-start="1735" selection-end="1735" vertical-scroll-proportion="-16.75" vertical-offset="386" max-vertical-offset="1672">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
+    <entry file="file://$PROJECT_DIR$/public_html/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="17" selection-start="11707" selection-end="11707" vertical-scroll-proportion="0.0" vertical-offset="1805" max-vertical-offset="46365">
+        <state line="36" column="10" selection-start="1872" selection-end="1872" vertical-scroll-proportion="-12.185185" vertical-offset="26" max-vertical-offset="2166">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/head.php">
+    <entry file="file://$PROJECT_DIR$/public_html/video_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="35" selection-start="7377" selection-end="7377" vertical-scroll-proportion="-1.625" vertical-offset="1776" max-vertical-offset="2565">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="152" selection-end="272" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10440">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/apiClass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="35" selection-start="381" selection-end="381" vertical-scroll-proportion="0.398773" vertical-offset="0" max-vertical-offset="13080">
+        <state line="20" column="23" selection-start="1216" selection-end="1216" vertical-scroll-proportion="-1.1204944" vertical-offset="1468" max-vertical-offset="4731">
           <folding>
-            <marker date="1386650917000" expanded="false" signature="5224:5256" placeholder="..." />
-            <marker date="1386650917000" expanded="false" signature="5740:5764" placeholder="..." />
-            <marker date="1386650917000" expanded="false" signature="7824:7848" placeholder="..." />
-            <marker date="1386650917000" expanded="false" signature="10312:10336" placeholder="..." />
-            <marker date="1386650917000" expanded="false" signature="13706:13739" placeholder="..." />
-            <marker date="1386650917000" expanded="false" signature="27841:27859" placeholder="..." />
+            <element signature="n#style#0;n#video#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <marker date="1388111756000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1388111756000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1388111756000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1388111756000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1388111756000" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/index_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="205" column="0" selection-start="8366" selection-end="8366" vertical-scroll-proportion="0.36663234" vertical-offset="3539" max-vertical-offset="5453">
+          <folding>
+            <element signature="n#style#0;n#video#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1388429824000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1388429824000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1388429824000" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="12" selection-start="942" selection-end="942" vertical-scroll-proportion="-5.9814816" vertical-offset="57" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="12" selection-start="137" selection-end="137" vertical-scroll-proportion="0.13142292" vertical-offset="0" max-vertical-offset="1012">
+          <folding />
         </state>
       </provider>
     </entry>
