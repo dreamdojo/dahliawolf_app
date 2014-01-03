@@ -39,7 +39,7 @@
                 <li><h3><?= $img[2] ?></h3></li>
                 <li><?= $img[3] ?></li>
             </div>
-         </ul>
+         </ul
     <?php endforeach ?>
     <h1 style="margin-top: 25px;">PRESS</h1>
     <?php foreach($press as $img): ?>
