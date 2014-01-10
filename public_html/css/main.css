@@ -17,7 +17,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}
 iframe{height:0px;}
 
-body { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size:10px;color:#666; margin-top: 50px;}
+body { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size:10px;color:#666; margin-top: 100px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -32,7 +32,7 @@ h2 {padding: 0 0 8px; font-size: 2.5em;}
 h1, h2 {letter-spacing: -0.0125em; font-weight: bold;overflow: hidden;}
 p {margin: 0 0 .8em; line-height: 1.35em;}
 a {font-weight: 100; color: #221919; text-decoration: none !important; outline: none;}
-a:hover {color: #cb2027; text-decoration: underline;}
+a:hover {color: #74bf00; text-decoration: underline;}
 /*textarea, input {padding: 5px; line-height: 1em; color: #8c7e7e; background: #fcf9f9; border: 1px solid; border-color: #ddd #e1dfdf #d1cdcd; box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.75);}
 textarea:focus, input:focus {background-color: #fff; box-shadow: inset 0 1px 1px rgba(34,29,29,0.1); -moz-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1); -webkit-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1);}
 */
@@ -63,7 +63,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #sort-bar{ width:100%;border-bottom: #DBDBDB thin dotted; margin: 0px auto;padding: 3px 0px;font-size: 12px; margin-top: 53px; padding-bottom: 5px;line-height: 25px; }
 .bold{ font-weight:bold !important; }
 .sort-option{ font-weight:normal;color: #ACACAC  }
-.filter-select{color: #F03E63 !important;}
+.filter-select{color: #168795 !important;}
 .light{color: #E0E0E0;}
 
 /*---------------- Home Banner --------------*/
@@ -74,46 +74,39 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #hiw-slide{display: none; left: 100%; height: 100%; background-color: #000; z-index: 1; position: absolute; width: 100%; text-align: center;}
 #hiw-slide video{height: 95%;margin-top: 10px;}
 #theCloser{position: absolute;right: 18px;top: 10px;font-size: 29px;color: #fff;cursor: pointer;font-family: helvetica;font-weight: 100;}
+
 @media screen and (max-width: 770px) {
     #joinBanner .hiw{display: none;}
     #joinBanner .swf{display: none;}
 }
 
 /*************************** HEADER ********************/
-#dahliaHeader{position: fixed; height: 50px; width: 100%; background-color: #000; left: 0px; top: 0px;z-index: 1111100; min-width: 420px; font-family: futura;
-    background: #3f3f3f; /* Old browsers */
-    background: -moz-linear-gradient(top,  #3f3f3f 0%, #131313 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f3f3f), color-stop(100%,#131313)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #3f3f3f 0%,#131313 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #3f3f3f 0%,#131313 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #3f3f3f 0%,#131313 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #3f3f3f 0%,#131313 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
-}
+#dahliaHeader{position: fixed; height: 70px; width: 100%; left: 0px; top: 0px;z-index: 1111100;}
 .native_head{float: left;display: inline-block;margin-left: 15px;}
 .native_head li{float: left;margin-top: 14px;margin-left: 10px;}
 
-#tourButton{float: right; background: url('/images/tourIcon.png'); background-size: 200%;height: 40px;width: 40px;background-repeat: no-repeat;background-position: 0%;margin-top: 7px; margin-left:1px; overflow: hidden;}
 #dahliaHeader a{color: #fff !important;}
+#headerBody a{color: #fff !important;}
 /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
-#dahliaHeader #dahliaLogo{width: 160px;height: 80%;background-image: url("/images/logo_no_beta.png");background-size: 100%;background-repeat: no-repeat;background-position: 46% 50%;margin-top: 7px;margin-left: 20px;overflow: hidden; float: left; cursor: pointer;}
+#dahliaHeader #dahliaLogo{width: 280px;height: 73px; background-image: url("/images/logo_no_beta.png");background-size: auto 77%;background-repeat: no-repeat;background-position: 0% 50%;margin-left: 20px;overflow: hidden; float: left; cursor: pointer; position: relative; z-index: 10;transition: width.3s; -webkit-transition: width .3s;}
+#dahliaHeader .logoTransformed{background-position: 94% 50% !important; width: 82px !important;}
 #dahliaHeader #userMenu{float: right; padding-right: 20px; position: relative; height: 40px; margin-top: 10px; margin-right: 4px;}
-#dahliaHeader .avatarFrame{width: 25px;height: 25px;overflow: hidden; margin-top: 3px; border-radius: 30px;float: right;}
+#dahliaHeader .avatarFrame{width: 50px;height: 50px;overflow: hidden; margin-top: -2px;border-radius: 30px;float: right;border: #fff 3px solid;}
 #dahliaHeader .avatarFrame img{width: 100%;}
-#dahliaHeader .userName{float: right;color: #fff;font-size: 12px;line-height: 32px; margin-right: 9px;}
-#dahliaHeader #mainMenu{position: absolute;width: 260px; left: 50%;margin-left: -130px; color: #fff;height: 60px;line-height: 50px;font-size: 18px;text-align: center;}
+#dahliaHeader .userName{float: right;color: #fff;font-size: 17px;line-height: 51px; margin-right: 13px;}
+#dahliaHeader #mainMenu{width: 300px; color: #fff; line-height: 73px; font-size: 24px;text-align: center;float: left;}
 #dahliaHeader #mainMenu li{float: left; margin: 0px 10px; position: relative;}
-#dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 30px;height: 30px;background-size: 54%; background-repeat: no-repeat; background-position: 7px 4px; margin-top: 10px; position: relative; padding-bottom: 50px;}
-#dahliaHeader #searchButton{ float:right; background-image: url("/images/s_mag.png"); width: 30px; height: 30px; background-size: 76%;background-position: 3px 5px; background-repeat: no-repeat;margin-top: 10px; margin-right: 0px;}
-#dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 10px;}
+#dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 30px;height: 73px;background-size: 54%; background-repeat: no-repeat; background-position: 7px 14px; margin-top: 10px; position: relative; padding-bottom: 50px;}
+#dahliaHeader #searchButton{ float:right; background-image: url("/images/s_mag.png"); width: 30px; height: 73px; background-size: 76%;background-position: 3px 15px; background-repeat: no-repeat;margin-top: 10px; margin-right: 0px;}
+#dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 10px; position: relative;}
 #dahliaMainMenuButton{float: left; height: 48px; width: 50px;  display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 86%; background-repeat: no-repeat;margin-top: 2px;}
 #dahliaMainMenuButton:hover .theMainMenu{display: block;}
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover #theDropdown{display: block;}
-#userMenu ul{position: absolute;width: 292px; margin-top: 30px; text-align: left; color: #636363; display: none;padding-top: 16px; border-bottom: #292929 thin solid; right: -110.5px; z-index: 1000000;}
-#userMenu li{font-size: 13px; font-family: arial; border-top: #292929 1px solid; background-color: #000;color: #B1B1B1;border-left: #292929 thin solid;border-right: #292929 thin solid;width: 290px; height: 30px;line-height: 30px;text-indent: 20px; position: relative;}
-#userMenu ul .header-bezier{position: absolute; width: 291px; background-image: url("/images/menu-bezier.png"); background-repeat: no-repeat; background-size: 100%;background-position: 0px 0px;height: 15px;top: -7px;margin-top: 9px;}
+#userMenu ul{position: absolute;width: 292px; margin-top: 56px; text-align: left; color: #636363; display: none;padding-top: 16px; border-bottom: #292929 thin solid; right: -58.5px; z-index: 1000000;}
+#userMenu li{font-size: 13px; font-family: arial; border-top: #fff 1px solid; background-color: #168795; color: #fff; border-left: #292929 thin solid;border-right: #292929 thin solid;width: 290px; height: 30px;line-height: 30px;text-indent: 20px; position: relative;}
+#userMenu ul .header-bezier{position: absolute; width: 266px; background-image: url("/images/menu-bezier.png"); background-repeat: no-repeat; background-size: 100%;background-position: 39px 0px;height: 15px;top: -6px;margin-top: 9px;}
 #userMenu .top-menu-footer{ background-color: #2e2e2e; color: #b1b1b1; text-indent: 0px; text-align: center; font-size: 11px;}
 #userMenu .top-menu-footer a{color: #b1b1b1 !important;}
 #userMenu .top-menu-footer a:hover{color: #F03E63 !important;}
@@ -122,8 +115,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userMenu li:hover{background-color: #1a1a1a;}
 #userMenu li:first-child{}
 #userMenu li:last-child{}
-.loginDept{color: #fff;font-size: 13px;width: 270px;line-height: 50px;}
-.loginDept li{float: left;margin-right: 10px; position: relative;margin-left: 8px;}
+.loginDept{color: #fff;font-size: 18px;width: 251px;line-height: 73px;}
+.loginDept li{float: left; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 400; letter-spacing: 0.5px; font-family: helvetica;}
+.loginDept li:last-child{background-color: #78fff4; height: 16px; padding: 8px 18px; color: #00818c; line-height: 18px; margin-top: 21px; font-weight: bold;}
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
 .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
 .mmBorder{border-right: #666666 thin solid;position: absolute; height: 30px;right: -10px; top: 10px;
@@ -135,7 +129,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 
 #searchBar{width: 100%;position: absolute;height: 60px;left: 0px;background-color: #000;top: 100%; z-index: 123;border-top: #fff thin solid;display: none;}
 #searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center; font-family: futura;}
-.pinkMe{color: #F03E63;}
+.pinkMe{color: #78fff4;}
 .newActivityCountMod{color: #fff;background-color: #F03E63;text-align: center;height: 20px;line-height: 21px;position: absolute;right: 15px;border-radius: 16px;margin-top: 5px;text-indent: -1px; min-width: 20px;top: 0px;}
 
 #mobNative{float: left;margin-top: 40px;margin-left: 6%;}
@@ -143,21 +137,36 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #mobNative li:last-child{margin-left: 10px;}
 #mobNative li img{width: 100%;}
 
-@media screen and (max-width: 1000px) {
+#headerFooter{background-color: #fff;height: 30px; display: none;}
+#headerFooter ul{background-color: #fff;max-width: 400px; width:100%; margin: 0px auto;}
+#headerFooter ul li{background-color: #fff;font-size: 18px;line-height: 30px;width: 33%;float: left;text-align: center;}
+
+.dahliaColor{color: #168795 !important;}
+.dahliaBGColor{background-color: #0bb6c5 !important;}
+
+@media screen and (max-width: 1100px) { /******************* IPAD *******************/*
     #dahliaHeader .userName{display: none;}
     #mobNative{display: none;}
+    #searchButton{display: none;}
+    #userMenu{display: none;}
+    .loginDept{display: none;}
+    #dahliaMainMenuButton{display: block;}
+    #headerFooter{display: block;}
+    #hpWrapper .bgWrap{top: 90px;}
+    #dahliaHeader #mainMenu{display: none;}
+    #headerHeader{display: none;}
+    #dahliaHeader #dahliaLogo{float: none;position: absolute;left: 50%;margin-left: -80px;}
 }
 
-@media screen and (max-width: 700px) {
-    #dahliaHeader #mainMenu{display: none;}
-    #dahliaMainMenuButton{display: block;}
-    #dahliaHeader #dahliaLogo{float: none;position: absolute;left: 50%;margin-left: -120px;}
+@media screen and (max-width: 700px) {/********************* PHONE *******************/
     #userMenu ul{position: fixed;right: 0px;width: 130px;}
     .bankSection p{display: none;}
     .title-roll .preHeader{display: none;}
     .bankSection img:not(.fork-img){left: 50%;position: relative;margin-left: -19px;}
     #tourButton{display: none;}
 }
+
+
 .closeMovie{position: fixed;right: 20px;font-size: 45px;z-index: 1000000;color: #fff;top: 10px;cursor: pointer;}
 .newActivityCount{position: absolute; height: 10px; width: 10px; border-radius: 5px; background-color: #F03E63;right: 1px;top: 2px;}
 /*   POST BAR ******************************************/
@@ -258,7 +267,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     transition: all .2s; -webkit-transition: all .2s; opacity: .8;z-index: 1; font-family: futura;}
 .voteDot:hover{opacity: 1;}
 #voteBucket .unloved{background-color: #000;}
-#voteBucket .loved{background-color: #ff2e6e;}
+#voteBucket .loved{background-color: #168795;}
 .voteDot div{line-height: 125px;}
 
 /************************ ACTIVITY ****************/
@@ -676,7 +685,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 .lesson-steps{margin-top:5px; font-size:15px}
 .lesson-steps img{cursor:pointer;}
 .faded{opacity:.4;}
-#tour-button{float: right;width: 100px;font-size: 11px;margin-top: 20px;cursor: pointer;color: #c86362;}
+#tour-button{float: right;width: 100px;font-size: 11px;margin-top: 20px;cursor: pointer;color: #c86362; cursor: pointer;}
 #lessonCloser{position: absolute;right: 28px;color: rgb(112, 112, 112);font-size: 13px;font-family: arial;text-shadow: 1px 1px rgb(219, 219, 219);cursor: pointer;font-weight:none !important;margin-top: 207px;}
 
 #lessonCloser a{color: rgb(95, 95, 95);font-weight:none !important;}
@@ -1878,7 +1887,7 @@ width: 174px;
 .selectoBismol{background-image: url("/images/x.png");background-size: 68%;background-position: 50%;background-repeat: no-repeat;}
 
 /* SHOP PAGE ***********************/
-#dahliawolfShop{ width: auto; margin: 0 auto; position: relative; margin-top: 10px;}
+#dahliawolfShop{ width: auto; margin: 0 auto; position: relative; margin-top: 10px;display: inline-block; min-height: 500px;}
 .showLive .Order{display: none;}
 .showPreorder .Live{display: none;}
 .view-select{color: #F03E63 !important;}

@@ -45,98 +45,205 @@
 </script>
 
 <a name="top"></a>
-
-<div id="dahliaHeader" class="avatarShadow">
-    <div id="dahliaMainMenuButton">
-        <ul class="theMainMenu">
-            <li><a href="/inspire">INSPIRE</a></li>
-            <li><a href="/spine">VOTE</a></li>
-            <li><a href="/public_html/shop">SHOP</a></li>
+<style>
+    #headerHeader{height: 28px;  color: #fff; background-color: #a5a5a5;font-size: 14px;}
+    #headerBody{height: 73px; position: relative;}
+    #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .85;}
+    #headerFooter{height: 30px; background-color: #fff;}
+    #headerHeader .native{width: 25px;height: 29px;background-repeat: no-repeat;background-position: 50%; padding: 0px !important;}
+    #headerHeader .right{float: right; margin-right: 10px;}
+    #headerHeader .right li{float: left; line-height: 28px;padding: 0px 10px;}
+    #headerHeader .left{float: left; width: 300px;}
+    #headerHeader .left li{float: left; line-height: 28px; padding: 0px 10px;}
+    #headerHeader .nativeWrap{margin-left: 20px;margin-right: 10px;}
+    #headerHeader .hhDropdown{height: 30px;float: left;line-height: 30px;text-indent: 10px; cursor: pointer;}
+    #headerHeader .hhDropdown:hover{color: #fff;}
+    #headerHeader .hhDropdown ul{display: none; position: absolute; background-color: #ccc;}
+    #headerHeader .hhDropdown ul li{float: none; color: #666; text-align: left;}
+    #headerHeader .hhDropdown ul li:hover{color: #fff;}
+    #headerHeader .hhDropdown:hover ul{display: block;}
+    #headerBody #inspireButt{cursor: pointer;float: right;height: 100%;margin-right: 10px;position: relative;line-height: 68px;font-size: 47px;color: #fff;font-family: ariel;}
+</style>
+<div id="dahliaHeader">
+    <div id="headerHeader">
+        <ul class="left">
+            <li>SIGN UP TODAY AND GET $10</li>
+        </ul>
+        <ul class="right">
+            <li><a href="/contests">CONTESTS</a></li>
+            <li><a href="/goodies">GOODIES</a></li>
+            <li><a href="/hiw">HOW IT WORKS</a></li>
+            <li><a href="/wolf-pack">PACK LEADERS</a></li>
+            <li id="tourButton">HELP</li>
         </ul>
     </div>
-    <a href="/"><div id="dahliaLogo"></div></a>
-    <ul class="native_head">
-        <li>
-            <a href="https://itunes.apple.com/us/app/dahlia-wolf-fashion/id718253685?ls=1&mt=8">
-                <img src="/images/nh_ios.png">
-            </a>
-        </li>
-        <li>
-            <a href="https://play.google.com/store/apps/details?id=com.zyonnetworks.dahliawolf2&hl=en">
-                <img src="/images/nh_droid.png">
-            </a>
-        </li>
-    </ul>
-    <ul id="mainMenu">
-        <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE+</a><div class="mmBorder"></div></li>
-        <li><a href="/vote"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/vote.php'  || $self == '/index.php' ? 'pinkMe' : '' ?>">VOTE</a><div class="mmBorder"></div></li>
-        <li><a href="/public_html/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
-    </ul>
+    <div id="headerBody">
+        <div class="hBG dahliaBGColor"></div>
+        <div id="dahliaMainMenuButton"></div>
+        <a href="/"><div id="dahliaLogo"></div></a>
+        <ul id="mainMenu">
+            <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE</a></li>
+            <li><a href="/vote"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/vote.php'  || $self == '/index.php' ? 'pinkMe' : '' ?>">VOTE</a></li>
+            <li><a href="/public_html/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
+        </ul>
 
-    <div id="rightHandMenu">
-        <div id="tourButton"></div>
-        <div id="shoppingCart" <?= count($_data['cart']['products']) ? 'style="background-image: url(\'/images/shoppingCart_on.png\');"' : '' ?>>
-            <?php if(count($_data['cart']['products'])): ?>
-                <a href="/shop/cart"><div class="cartCount"><?= getTotalProductsInCart($_data['cart']['products']) ?></div></a>
-                <ul id="dahliaCart">
-                    <div class="cart_bezier"></div>
-                    <?php foreach( $_data['cart']['products'] as $product ): ?>
-                        <ul>
-                            <li><img src="http://content.dahliawolf.com/shop/product/image.php?file_id=<?= $product['product_info']['product_file_id'] ?>&width=80"></li>
-                            <li style="line-height: 20px;"><?= $product['product_info']['product_name'] ?></li>
-                            <li>$<?= money_format('%i', ($product['product_info']['sale_price'] ? $product['product_info']['sale_price'] : $product['product_info']['price'])) ?></li>
-                            <li><?= $product['attributes'] ?></li>
-                            <li>Quantity <?= $product['quantity'] ?> </li>
-                        </ul>
-                    <?php endforeach ?>
-                    <a href="/shop/cart"><li class="cta">Edit bag/ Check out</li></a>
-                </ul>
-            <? else: ?>
-                <a href="/shop/cart"><div class="cartCount"></div></a>
-            <? endif ?>
-        </div>
-        <div id="searchButton"></div>
-        <div id="userMenu">
-            <div class="rtBorder"></div>
-            <div class="menuBars"></div>
+        <div id="rightHandMenu">
+            <div id="shoppingCart" <?= count($_data['cart']['products']) ? 'style="background-image: url(\'/images/shoppingCart_on.png\');"' : '' ?>>
+                <?php if(count($_data['cart']['products'])): ?>
+                    <a href="/shop/cart"><div class="cartCount"><?= getTotalProductsInCart($_data['cart']['products']) ?></div></a>
+                    <ul id="dahliaCart">
+                        <div class="cart_bezier"></div>
+                        <?php foreach( $_data['cart']['products'] as $product ): ?>
+                            <ul>
+                                <li><img src="http://content.dahliawolf.com/shop/product/image.php?file_id=<?= $product['product_info']['product_file_id'] ?>&width=80"></li>
+                                <li style="line-height: 20px;"><?= $product['product_info']['product_name'] ?></li>
+                                <li>$<?= money_format('%i', ($product['product_info']['sale_price'] ? $product['product_info']['sale_price'] : $product['product_info']['price'])) ?></li>
+                                <li><?= $product['attributes'] ?></li>
+                                <li>Quantity <?= $product['quantity'] ?> </li>
+                            </ul>
+                        <?php endforeach ?>
+                        <a href="/shop/cart"><li class="cta">Edit bag/ Check out</li></a>
+                    </ul>
+                <? else: ?>
+                    <a href="/shop/cart"><div class="cartCount"></div></a>
+                <? endif ?>
+            </div>
+            <div id="searchButton"></div>
             <? if(IS_LOGGED_IN): ?>
-                <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
-                <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #B1B1B1 !important;"><?= $_SESSION['user']['username'] ?></a></div>
+                <div id="userMenu">
+                    <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
+                    <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #fff !important;"><?= $_SESSION['user']['username'] ?></a></div>
+                    <ul id="theDropdown">
+                        <div class="header-bezier"></div>
+                        <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
+                        <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
+                        <a href="/activity"><li id="menuActivity">Activity</li></a>
+                        <a href="/invite"><li id="menuClique">Grow My Clique</li></a>
+                        <a href="/account/settings"><li>Settings</li></a>
+                        <a href="/shop/my-orders"><li>Orders</li></a>
+                        <a href="/action/logout"><li>Logout</li></a>
+                    </ul>
+                </div>
+            <? else: ?>
+                <ul class="loginDept">
+                    <li onclick="loginscreen('login')">Login</li>
+                    <li onclick="loginscreen('signup')">Signup</li>
+                </ul>
             <? endif ?>
-            <ul id="theDropdown">
-                <div class="header-bezier"></div>
-                <? if(IS_LOGGED_IN): ?>
-                    <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
-                    <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
-                    <a href="/activity"><li id="menuActivity">Activity</li></a>
-                    <a href="/invite"><li id="menuClique">Grow My Clique</li></a>
-                    <a href="/account/settings"><li>Settings</li></a>
-                    <a href="/shop/my-orders"><li>Orders</li></a>
-                <? endif ?>
-                <a href="/goodies"><li>Goodies</li></a>
-                <a href="/press"><li>Press</li></a>
-                <a href="http://blog.dahliawolf.com/" target="_blank"><li>Blog</li></a>
-                <!--<a href="/shop/my-wishlist"><li>Wishlist</li></a>-->
-                <a href="/pinit"><li>Inspire Tool</li></a>
-                <a href="/wolf-pack"><li style="border-bottom: none;">Pack Leaders</li></a>
-                <a href="/faqs"><li>FAQ</li></a>
-                <? if(IS_LOGGED_IN): ?>
-                    <a href="/action/logout"><li>Logout</li></a>
-                <? endif ?>
-                <li class="top-menu-footer"><a href="/hiw">How it Works</a> - <a href="/tos">Legal</a> - <a href="/contact">Contact</a> - <bold>© Dahlia Wolf 2013</bold></li>
-            </ul>
         </div>
-        <? if(!IS_LOGGED_IN): ?>
-            <ul class="loginDept">
-                <li onclick="loginscreen('login')">Login<div class="mmBorder"></div></li>
-                <li onclick="loginscreen('signup')" style="margin-right: 20px; color: #F03E63;">Signup</li>
-            </ul>
-        <? endif ?>
+        <div id="inspireButt">+</div>
+        <div id="searchBar">
+            <input type="text" placeholder="Start typing to search...">
+        </div>
     </div>
-    <div id="searchBar">
-        <input type="text" placeholder="Start typing to search...">
+    <div id="headerFooter">
+        <ul>
+            <li><a href="/inspire">INSPIRE</a></li>
+            <li><a href="/shop">SPONSOR</a></li>
+            <li>SHOP</li>
+        </ul>
     </div>
 </div>
+
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            var $headerHeader = $('#headerHeader');
+            var $header = $('#dahliaHeader');
+            var $dahliaLogo = $('#dahliaLogo');
+
+            if( $(window).scrollTop() > 20 && $headerHeader.is(':visible') && !$headerHeader.is(':animated') ) {
+                $headerHeader.slideUp(200);
+                $dahliaLogo.addClass('logoTransformed');
+            }
+            if($(window).scrollTop() < 20 && !$headerHeader.is(':visible') && !$headerHeader.is(':animated')) {
+                $headerHeader.slideDown(200);
+                $dahliaLogo.removeClass('logoTransformed');
+            }
+
+            if($(window).scrollTop() < 0) {
+                $header.css('top' , Math.abs($(window).scrollTop())+'px');
+            } else {
+                $header.css('top' , 0+'px');
+            }
+        });
+        var position = $(window).scrollTop();
+        var $footer = $('#footer');
+        var rate = 35;
+        var footerHeight = $footer.height() + 650;
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            var $footerPos = parseFloat($footer.css('bottom'));
+            if(position - rate < 35) {
+                rate = position - rate;
+            } else {
+                rate = 35;
+            }
+
+            if(scroll > position && $footerPos > -footerHeight && scroll > 0) { //SCROLL DOWN
+                if($footerPos > -footerHeight) {
+                    if($footerPos - rate > -footerHeight)
+                        $footer.css('bottom', $footerPos - rate);
+                    else
+                        $footer.css('bottom', -footerHeight);
+                }
+            } else if(scroll < position && $footerPos <= 0 && scroll > 0) { //SCROLL UP
+                if($footerPos + rate < 0)
+                    $footer.css('bottom', ($footerPos + rate));
+                else
+                    $footer.css('bottom', 0);
+            } else if(scroll < 0) {
+                $footer.css('bottom', 0);
+            }
+            position = scroll;
+        });
+    });
+</script>
+
+<style>
+    #mobile_Menu{position: fixed; height: 100%; width: 80%;top: 0px; left: -80%; z-index: 100000000; display: none;}
+    #mobile_Menu li{height: 50px;line-height: 50px;font-size: 13px;color: #fff;text-indent: 5%; border-bottom: #fff thin solid;}
+    #mobile_Menu ul ul{min-height: 50px;line-height: 50px;font-size: 13px;color: #fff;text-indent: 5%; border-bottom: #fff thin solid;}
+    #mobile_Menu .hasSubs{background-color: #c2c2c2; background-image: url("/images/mobileNavChev.jpg");background-repeat: no-repeat;background-size: auto 50px;background-position: 115% 0px;}
+    #mobile_Menu .hasSubs li{display: none;}
+    #mobile_Menu .showSubs li{display: block !important; border-bottom: none !important; border-top: #fff thin solid;}
+</style>
+<div id="mobile_Menu" class="dahliaBGColor">
+    <ul>
+        <li>SEARCH ITEMS & PEOPLE</li>
+        <li>LOGIN | SIGNUP</li>
+        <li>CONTESTS</li>
+        <li>GOODIES</li>
+        <li>HOW IT WORKS</li>
+        <li>CONNECT</li>
+        <ul class="hasSubs">FAQ
+                <li>BLOAH</li>
+                <li>POOTY</li>
+        </ul>
+        <li>INFO</li>
+        <li>LEGAL</li>
+        <li>ABOUT</li>
+        <li>PRESS</li>
+    </ul>
+</div>
+<script>
+    $(function() {
+        $('#dahliaMainMenuButton').on('click', function() {
+            if( !$('#mobile_Menu').is(':visible') ) {
+                $('#mobile_Menu').show().animate({left:0});
+                $('#dahliaHeader').animate({left:80+'%'});
+            } else {
+                $('#mobile_Menu').animate({left:'-'+80+'%'}, function() {
+                    $(this).hide();
+                });
+                $('#dahliaHeader').animate({left:0});
+            }
+        });
+        $('.hasSubs').on('click', function() {
+            $(this).toggleClass('showSubs');
+        });
+    });
+</script>
 
 <div id="theLesson" class="lessonBox">
     <div id="lesson-title" class="lesson-section"></div>
@@ -175,37 +282,4 @@
 </div>
 </form>
 
-<?
-if (!empty($_SESSION['errors'])): ?>
-    <script>
-        _gaq.push(['_trackEvent','Errors' , '<?= $_SESSION['errors'][0] ?>']);
-    </script>
-	<div class="user-message user-error ui-state-error ui-corner-all">
-        <div class='user-message-close'>X</div>
-        <?php if (count($_SESSION['errors']) == 1 && trim($_SESSION['errors'][0]) != '' ): ?>
-			<?php if (!empty($_SESSION['errors'][0])): ?>
-				<p><?= $_SESSION['errors'][0] ?></p>
-                <script>_gaq.push(['_trackEvent','Errors' , '<?= $_SESSION['errors'][0] ?>']);</script>
-		    <?php endif ?>
-		<?php else: ?>
-			<ul>
-				<?php foreach ($_SESSION['errors'] as $error): ?>
-                    <script>_gaq.push(['_trackEvent','Errors' , '<?= $error ?>']);</script>
-					<li><?= $error ?></li>
-				<?php endforeach ?>
-			</ul>
-		<?php endif ?>
-	</div>
-	<?php unset($_SESSION['errors']); ?>
-<?php endif ?>
-
-<?php if( !empty($_SESSION['success']) ): ?>
-    <script>
-        _gaq.push(['_trackEvent','Success' , '<?= $_SESSION['success'] ?>']);
-    </script>
-    <div class="user-message user-success ui-state-highlight ui-corner-all">
-        <div class='user-message-close'>X</div>
-        <p><?= $_SESSION['success'] ?></p>
-    </div>
-    <?php unset($_SESSION['success']) ?>
-<?php endif ?>
+<?php require_once 'blocks/system_messages.php'; ?>

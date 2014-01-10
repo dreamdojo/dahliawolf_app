@@ -1,3 +1,78 @@
+<style>
+    #footer{height: 333px;background-position: 50% 0px;z-index: 100000;position: relative; font-family: helvetica;position: fixed;bottom: -400px; width: 100%; color: #fff;}
+    #footer .contentWrap{max-width: 1000px; width: 100%; margin: 0px auto;padding-top: 25px;}
+    #footer .contentWrap ul{width: 150px; float: left; font-size: 15px; color: #fff;}
+    #footer .contentWrap ul li:first-child{font-size: 22px;font-weight: bolder;}
+    #footer .pressBanner{width: 100%;margin: 0px auto;padding-top: 10px;padding-bottom: 10px;background-color: #1ebcca;text-align: center;}
+    #footer .copyright{position: absolute; bottom: 0px; width: 100%; text-align: center;line-height: 30px;font-size: 13px;}
+    #footer .socialRow img{width: 45px;margin-right: 5px;padding-bottom: 5px;}
+</style>
+<div id="footer" class="dahliaBGColor">
+    <div class="pressBanner">
+        <a href="/press.php"><img style="width: 1000px;" src="/images/asa_logos.png"></a>
+    </div>
+    <div class="contentWrap">
+        <ul>
+            <li>My Account</li>
+            <li>Profile</li>
+            <li>Dashboard</li>
+            <li>Activity</li>
+            <li>Find Friends</li>
+            <li>Orders & Returns</li>
+            <li>Cart / Checkout</li>
+            <li>Settings</li>
+        </ul>
+        <ul>
+            <li>Help</li>
+            <li>What is Dahlia\Wolf</li>
+            <li>How it works</li>
+            <li>Basics</li>
+            <li>How to Win</li>
+            <li>How to Earn Points</li>
+            <li>What is Hype</li>
+            <li>What is Sponsoring</li>
+        </ul>
+        <ul>
+            <li>Info</li>
+            <li>About</li>
+            <li>Shipping & Returns</li>
+            <li>Legal</li>
+            <li>Report Abuse</li>
+            <li>DMCA Copyright</li>
+            <li>Verified Accounts</li>
+            <li>VIP Accounts</li>
+            <li>Careers</li>
+        </ul>
+        <ul>
+            <li>More</li>
+            <li>Contest</li>
+            <li>Pack Leaders</li>
+            <li>Press / As Seen On</li>
+            <li>Testimonials</li>
+            <li>Goodies</li>
+            <li>Apps</li>
+            <li>Widgets</li>
+            <li>Inspire Button</li>
+        </ul>
+        <ul>
+            <li>Contact</li>
+            <li>Customer Service</li>
+            <li>Collaborations</li>
+            <li>Business Opportunities</li>
+            <li>Feedback</li>
+            <li>Live Chat</li>
+            <li>Contact Us</li>
+        </ul>
+        <ul>
+            <li>Find Us On</li>
+            <li class="socialRow"><img src="/images/foot_facebook.png"><img src="/images/foot_instagram.png"><img src="/images/foot_twitter.png"></li>
+            <li><img src="/images/foot_apple.png" style="margin-top: 5px;"></li>
+            <li><img src="/images/foot_apple.png" style="margin-top: 10px;"></li>
+        </ul>
+    </div>
+    <div class="copyright">Copyright 2014 Dahlia Wolf Inc. Dahlia Wolf logo and related marks are registered trademarks of Dahlia Wolf.</div>
+</div>
+
 <a class="Button WhiteButton Indicator" href="#" id="ScrollToTop" style="display: none;"><img src="/skin/img/gototop.jpg" width="61" height="64"></a>
 <div class="cl"></div>
 <div id="theOverlay"></div>

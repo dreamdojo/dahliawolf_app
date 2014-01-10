@@ -5,126 +5,146 @@
         $_SESSION['token'] = $_COOKIE["token"];
     }
     include "head.php";
+    include "header.php";
 ?>
-    <style>
-        #dahliaHeader{position: relative;}
-        body{margin-top: 0px;}
-        #sort-bar{margin-top: 5px;}
-        #joinBanner span{color: #F03E63;}
-        #joinBanner ul{width: 450px;display: inline-block;margin: 0px auto;text-align: center;}
-        #joinBanner li{float: left; width: 33%;}
-        .bits{font-size: 18px;padding: 40px;color: #acacac; min-height: 50px;}
-        .bits p{position: absolute;width: 100%;left: 0; display: none;}
-        .bits .default{display: block;}
-        #theMethod li{cursor: pointer;}
-        #movieCurtain{position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; background-color: #000; opacity: .8; z-index: 100;}
-    </style>
+<style>
+    #hpWrapper .paraBG{}
+    #hpWrapper #movieFrame video{width: 100%;}
+    #hpWrapper .top{background-color: #fff; position: relative; z-index: 10; background-position: 50%;}
+    #hpWrapper .top img{width: 100%;}
+    #hpWrapper .infoCol{width: 1000px; margin: 0px auto; padding-top: 50px; padding-bottom: 100px;}
+    #hpWrapper .infoCol ul{width: 50%; float: left;}
+    #hpWrapper .infoCol .leftCol{padding-top: 50px; border-top: #666 5px solid;}
+    #hpWrapper .infoCol .rightCol{text-align: center;}
+    #hpWrapper .infoCol .rightCol li{margin-left: 25px; text-align: left;}
+    #hpWrapper .infoCol .rightCol .subHead{padding-top: 15px;}
+    #hpWrapper .infoCol .leftCol li{font-size: 50px;border-bottom: #c2c2c2 thin solid;}
+    #pressBanner{border-bottom: #c2c2c2 thin solid; text-align: center;position: relative;z-index: 108;background-color: #fff;}
+    #pressBanner ul{width: 1000px;margin: 0px auto;height: 50px;line-height: 50px;}
+    #pressBanner ul li{float: left; width: 20%;}
+    section{min-height: 500px; background-color: #fff;}
+    .expSect{position: relative; z-index: 10;}
 
-<div id="movieTheatre">
-    <div id="movieCurtain"></div>
-    <?php include "video_page.php" ?>
-    <div id="joinBanner">
-        <div class="bits">
-            <p class="default">YOU POST FASHION IMAGES</BR>WE TURN YOUR IMAGES INTO CLOTHING</p>
-            <p class="inspire">YOU POST IMAGES AND THE COMMUNITY VOTES<br>GET ENOUGH VOTES AND WE DESIGN AN ITEM FOR THE SHOP</p>
-            <p class="design">BASED ON THE IMAGES YOU POST AND RECEIVE ENOUGH VOTES</br>WE CREATE A FASHION ITEM JUST FOR YOU TO BE SOLD IN OUR SHOP</p>
-            <p class="earn">FOR EVERY ITEM THAT YOU INSPIRE</br>YOU GET A CHECK FOR 5% OF ALL SALES OF THAT ITEM!!</p>
-        </div>
-        <ul id="theMethod">
-            <li data-section="inspire"><a href="/public_html/help"><img src="/images/hb_insp.png"></a></li>
-            <li data-section="design"><a href="/public_html/help"><img src="/images/hb_des.png"></a></li>
-            <li data-section="earn"><a href="/public_html/help"><img src="/images/hb_earn.png"></a></li>
-        </ul>
+    .bgWrap{position: fixed;overflow: hidden;height: 100%;width: 100%;z-index: -1;top: 0px;left: 0px;}
+    .paraBG{background-size: cover; position: absolute; top:0px; left: 0px; z-index: -1; background-repeat: no-repeat; height: 100%;width: 100%; background-position: 50% 0px;}
+
+    .noBG{background-color: transparent !important;}
+    #hpWrapper .smallIcon{width: 25px; float: left;}
+    #hpWrapper h1{margin: 0px;line-height: 30px;text-indent: 10px; font-size: 23px;}
+    .explanation{font-size: 16px; color: #a5a5a5; margin-top: 10px;}
+    .hp_cta{background-image: url("/images/hp_cta_bg.jpg"); text-align: center; width: 100%; height: 250px;}
+    .hp_cta li:first-child{font-size: 30px;padding-top: 20px;padding-bottom: 20px;}
+    .hp_cta .gs_button{background-color: #666;color: #fff;width: 200px;height: 50px;line-height: 50px;border-radius: 12px;margin: 35px auto; font-size: 16px;}
+</style>
+
+<div id="hpWrapper">
+    <section class="top" style="background-image: url('/images/hpVideoBanner.jpg');">
+    </section>
+    <div id="pressBanner">
+        <img style="width: 1000px;" src="/images/asaBar.jpg">
     </div>
+    <section class="expSect">
+        <div class="infoCol">
+            <ul class="leftCol">
+                <li class="dahliaColor">WHAT IS IT?</li>
+                <li>INSPIRE</li>
+                <li>SPONSOR</li>
+                <li>SHOP</li>
+            </ul>
+            <ul class="rightCol">
+                <li><img style="width: 100%;" src="/images/hp_hiw_poster.jpg"></li>
+                <li><img class="smallIcon" src="/images/hp_cam.jpg"><h1>Watch the How It Works video</h1></li>
+                <li class="explanation">Dahlia Wolf a platform that allows user to create their own fashion brand without the difficulty of having to learn how to sketch or navigating the complexities of working with manufacturers. By allowing users to upload images of items they love or by hand selecting images of items in our truly innovative image bank they can inspire a new design. If selected to be manufactured by our community of fashionista’s we create an entirely new product to be sold on our site and the profits are then shared with the members who inspired the products.</li>
+            </ul>
+            <div style="clear: left;"></div>
+        </div>
+    </section>
+    <div id="bgWrap1" class="bgWrap" style="z-index: 4;"><div id="BG1" class="paraBG" style="background-image: url('/images/hpBG-1.jpg')"></div></div>
+    <div id="bgWrap2" class="bgWrap" style="z-index: 3;"><div id="BG2" class="paraBG" style="background-image: url('/images/hpBG-2.jpg')"></div></div>
+    <div id="bgWrap3" class="bgWrap" style="z-index: 2;"><div id="BG3" class="paraBG" style="background-image: url('/images/hpBG-3.jpg')"></div></div>
+    <section class="noBG">
+    </section>
+    <section class="expSect">
+        <div class="infoCol" >
+            <ul class="leftCol">
+                <li>WHAT IS IT?</li>
+                <li class="dahliaColor">INSPIRE</li>
+                <li>SPONSOR</li>
+                <li>SHOP</li>
+            </ul>
+            <ul class="rightCol">
+                <li><img style="width: 100%;" src="/images/hp_post_vote.jpg"></li>
+                <li class="subHead"><img class="smallIcon" src="/images/hp_inspire_img.jpg"><h1>Inspire new fashion by posting images</h1></li>
+                <li class="explanation">Inspire new fashion by posting images of clothes you want to bring to life. It’s simple post an image and let other members vote on it. If it gets enough votes we will turn it into a one of a kind original piece of clothing & send it to you for FREE! </li>
+            </ul>
+            <div style="clear: left;"></div>
+        </div>
+    </section>
+    <section class="noBG">
+
+    </section>
+    <section class="expSect">
+        <div class="infoCol" >
+            <ul class="leftCol">
+                <li>WHAT IS IT?</li>
+                <li>INSPIRE</li>
+                <li class="dahliaColor">SPONSOR</li>
+                <li>SHOP</li>
+            </ul>
+            <ul class="rightCol">
+                <li><img style="width: 100%;" src="/images/hp_sponsor_img.jpg"></li>
+                <li class="subHead"><img class="smallIcon" src="/images/hp_inspire_img.jpg"><h1>What does it mean to sponsor an item?</h1></li>
+                <li class="explanation">Sponser members designs to have them sold in the shop. Earn commission when they sell Once an image has inspired new clothing members will have the oppurtunity to sponser the item. Sponsers will then make commision everytime that item sells in the shop.</li>
+            </ul>
+            <div style="clear: left;"></div>
+        </div>
+    </section>
+    <section class="noBG">
+
+    </section>
+    <section class="expSect">
+        <div class="infoCol" >
+            <ul class="leftCol">
+                <li>WHAT IS IT?</li>
+                <li>INSPIRE</li>
+                <li>SPONSOR</li>
+                <li class="dahliaColor">SHOP</li>
+            </ul>
+            <ul class="rightCol">
+                <li><img style="width: 100%;" src="/images/hp_shop_img.jpg"></li>
+                <li class="subHead"><img class="smallIcon" src="/images/hp_inspire_img.jpg"><h1>Not just another online shop</h1></li>
+                <li class="explanation">All the designs in our shop are made by the people for the people Experience a truly unique shop, browse designs made by our community and manufactured with with the highest quality in the industry.</li>
+            </ul>
+            <div style="clear: left;"></div>
+        </div>
+    </section>
+    <section class="expSect" style="min-height: 250px;">
+        <ul class="hp_cta">
+            <li>This is your chance to design your own fashion</li>
+            <li><h2>it all starts with simply posting an image, so what are you are waiting for?</h2></li>
+            <li class="gs_button">GET STARTED</li>
+        </ul>
+    </section>
 </div>
 
-<?
-    include "header.php";
-    include "blocks/filter.php";
-?>
-    <div id="voteBucket"></div>
 <?php include "footer.php"; ?>
+
 <script>
-
-        $(window).scrollTop($('#joinBanner').offset().top);
-        SetTheater();
-        $(function() {
-            SetTheater();
-            setTimeout(function() {
-                window.scroll(0, $('#joinBanner').offset().top);
-                SetTheater();
-                document.getElementById("dwvideo").play();
-            }, 2000);
-            window.scroll(0, $('#joinBanner').offset().top);
-            dahliawolfFeed = new voteFeed({mode:'grid' <? !empty($_GET['sort']) ? ', filter: "'.$_GET['sort'].'"' : '' ?> <? !empty($_GET['q']) ? ', search: "'.$_GET['q'].'"' : '' ?>});
+    $(function() {
+        $('.paraBG').height(window.innerHeight);
+        $(window).scroll(function() {
+           var scrollPos = $(window).scrollTop();
+           console.log(scrollPos);
+            $('.paraBg').height(window.innerHeight);
+           $('#bgWrap1').height( $('.expSect').eq(1).offset().top - $(window).scrollTop() );
+           $('#bgWrap2').height( $('.expSect').eq(2).offset().top - $(window).scrollTop() );
+           if(scrollPos > 300 && scrollPos < 2000) {
+                $('#BG1').css('background-position', 50+'%'+' '+-scrollPos *.1+'px');
+           } else if(scrollPos > 2000 && scrollPos < 4000) {
+               $('#BG2').css('background-position', 50+'%'+' '+-scrollPos *.01+'px');
+           }
+        }).resize(function() {
+            $('.paraBg').height(window.innerHeight);
         });
-
-        $(function() {
-           var $head = $('#dahliaHeader');
-            SetTheater();
-            $(window).scroll(function() {
-               SetTheater();
-                if($(this).scrollTop() > $('#movieTheatre').height()) {
-                    $head.css('position', 'fixed');
-                    document.getElementById("dwvideo").pause();
-                } else {
-                    $head.css('position', 'relative');
-                    document.getElementById("dwvideo").play();
-                }
-           });
-
-           $('.hiw').on('click', function() {
-               var $movieScreen = $('<div id="tooltip-overlay"></div>').css({'opacity': 1}).appendTo($('body')).fadeIn(1000,function() {
-                   $movieScreen.load('/video_page.php');
-                   var $closer = $('<div class="closeMovie"><img src="/images/movieClose.png"></div>').appendTo($('body')).on('click', function(){
-                       $closer.remove();
-                       $movieScreen.empty().fadeOut(500, function() {
-                            $movieScreen.remove();
-                        });
-                   });
-               });
-           });
-
-            new learnEm();
-        });
-
-    function SetTheater() {
-        var $vid  = document.getElementById("dwvideo");
-        var op = (1 - ((($('#joinBanner').offset().top - $(window).scrollTop()))/$('#joinBanner').offset().top));
-        $('#movieCurtain').css('opacity', (op - .4));
-        $('#joinBanner').css('opacity', op);
-        if((1-op) < 0 && $vid.volume > 0) {
-            $vid.volume = 0;
-        }
-        if((1-op) >= 0 && (1-op) <= 1) {
-            $vid.volume = (Math.abs(.5-op));
-            //console.log($vid.volume);
-        }
-
-    }
-
-    function learnEm() {
-        var text = {'default': 'YOU <span>POST</span> FASHION IMAGES</BR>WE TURN YOUR IMAGES INTO <span>CLOTHING</span>',
-            'inspire' : 'YOU POST IMAGES AND THE COMMUNITY VOTES<br>GET ENOUGH VOTES AND WE DESIGN AN ITEM FOR THE SHOP',
-            'design' : 'BASED ON THE IMAGES THAT RECIEVE ENOUGH VOTES</br>WE CREATE A FASHION ITEM JUST FOR YOU TO BE SOLD IN OUR SHOP',
-            'earn' : 'FOR EVERY ITEM THAT YOU INSPIRE</br>YOU GET A CHECK FOR 5% OF ALL SALES OF THAT ITEM!!'
-        };
-        var $view = $('.bits');
-        var $def = $('.bits .default');
-        var timer = 100;
-        var $last = null;
-
-        $('#theMethod li').hover(function() {
-            if($last && $last.is(':visible')) {
-                $last.hide();
-            }
-            $def.fadeOut(timer);
-            $('.'+$(this).data('section')).fadeIn(timer);
-        }, function() {
-            $last = $('.'+$(this).data('section')).fadeOut(timer);
-        });
-        $('#theMethod').on('mouseleave', function() {
-            $def.fadeIn(timer);
-        });
-    }
+    })
 </script>

@@ -5,15 +5,10 @@ if(isset($_COOKIE["dahliaUser"]) && !isset($_SESSION['user']) ){
 }
 
 require_once 'config/config.php';
-require_once 'config/mobile-detect.php';
 require_once 'includes/php/initial-calls.php';
 
 $path_parts = explode('/', $_SERVER['REQUEST_URI']);
 $top_dir = $path_parts[1];
-
-if ($top_dir == 'mobile') {
-	$top_dir = $path_parts[2];
-}
 
 if ($top_dir == 'shop') {
 	require 'includes/php/shop-initial-calls.php';

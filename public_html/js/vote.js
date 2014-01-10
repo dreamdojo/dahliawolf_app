@@ -357,15 +357,16 @@ voteFeed.prototype.prepBucket = function() {
 
 voteFeed.prototype.bindScroll = function() {
     var that = this
-    $(window).unbind('scroll');
-    $(window).on('scroll touchmove', function() {
-        console.log($(window).scrollTop());
-        if($(window).scrollTop() + $(window).height() > $(document).height() - 800) {
-            that.getPostsFromApi();
-        }
-    });
+    $(window).unbind('scroll', this.scrollFunct);
+    $(window).on('scroll touchmove', this.scrollFunct);
+}
+
+voteFeed.prototype.scrollFunct = function() {
+    if($(window).scrollTop() + $(window).height() > $(document).height() - 800) {
+        dahliawolfFeed.getPostsFromApi();
+    }
 }
 
 voteFeed.prototype.unbindScroll = function() {
-    $(window).unbind('scroll');
+    $(window).unbind('scroll', this.scrollFunct);
 }
