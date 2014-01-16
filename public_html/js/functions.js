@@ -647,19 +647,19 @@ function voteDot(data, callback) {
     this.data = data;
 
     var $voteDot = $('<div class="voteDot '+(this.isLoved ? 'loved' : 'unloved')+'"></div>');
-    var $text = $('<div>'+(this.isLoved ? 'LOVED' : 'LOVE')+'</div>').appendTo($voteDot);
+    var $text = $('<div>'+(this.isLoved ? 'HYPED' : 'HYPE')+'</div>').appendTo($voteDot);
     $voteDot.on('click', function() {
         if(that.isLoved) {
             that.setLoved = false;
             that.data.total_likes = Number(that.data.total_likes) - 1;
             $voteDot.addClass('unloved').removeClass('loved');
-            $text.html('LOVE');
+            $text.html('HYPE');
             dahliawolf.post.unlove(that.data.posting_id);
         } else {
             that.setLoved = true;
             that.data.total_likes = Number(that.data.total_likes) + 1;
             $voteDot.addClass('loved').removeClass('unloved');
-            $text.html('LOVED');
+            $text.html('HYPED');
             dahliawolf.post.love(that.data.posting_id);
         }
         if(typeof callback === 'function') {
