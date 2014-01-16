@@ -1848,8 +1848,8 @@ width: 174px;
 #postsGridToggleButton{ height:100%; float:right; width:100px; margin-right:10px; position:absolute; top:0px;}
 .profileUsername{font-size: 22px;margin-top: 12px;}
 .profileLocation{font-size: 16px; margin-bottom: 2px !important;text-transform: uppercase;color: #000;font-size: 14px;}
-.profileRed{ color: #ff2e6e; font-size: 16px;}
-.toggleSelected{color: #ff2e6e;}
+.profileRed{ color: #008caf; font-size: 16px;}
+.toggleSelected{color: #008caf;}
 .overlayLayer{ position:absolute; left:-1%; top:0px; height:100%; width:102%; background-color:#fff;}
 .levelWrap{position:relative;}
 #profileShareFacebook{ background-image:url(/images/profile/1.png); background-repeat: no-repeat; background-size:auto 100%;}
