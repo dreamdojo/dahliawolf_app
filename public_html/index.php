@@ -22,7 +22,7 @@
     #pressBanner{border-bottom: #c2c2c2 thin solid; text-align: center;position: relative;z-index: 108;background-color: #fff;}
     #pressBanner ul{width: 1000px;margin: 0px auto;height: 50px;line-height: 50px;}
     #pressBanner ul li{float: left; width: 20%;}
-    section{min-height: 500px; background-color: #fff;}
+    section{min-height: 500px; background-color: #fff; color: #666;}
     .expSect{position: relative; z-index: 10;}
 
     .bgWrap{position: fixed;overflow: hidden;height: 100%;width: 100%;z-index: -1;top: 0px;left: 0px;}
@@ -135,14 +135,14 @@
         $(window).scroll(function() {
            var scrollPos = $(window).scrollTop();
            console.log(scrollPos);
-            $('.paraBg').height(window.innerHeight);
+           $('.paraBg').height(window.innerHeight);
            $('#bgWrap1').height( $('.expSect').eq(1).offset().top - $(window).scrollTop() );
            $('#bgWrap2').height( $('.expSect').eq(2).offset().top - $(window).scrollTop() );
-           if(scrollPos > 300 && scrollPos < 2000) {
+           /*if(scrollPos > 300 && scrollPos < 2000) {
                 $('#BG1').css('background-position', 50+'%'+' '+-scrollPos *.1+'px');
            } else if(scrollPos > 2000 && scrollPos < 4000) {
                $('#BG2').css('background-position', 50+'%'+' '+-scrollPos *.01+'px');
-           }
+           }*/
         }).resize(function() {
             $('.paraBg').height(window.innerHeight);
         });

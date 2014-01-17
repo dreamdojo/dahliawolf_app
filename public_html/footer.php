@@ -1,5 +1,5 @@
 <style>
-    #footer{height: 333px;background-position: 50% 0px;z-index: 100000;position: relative; font-family: helvetica;position: fixed;bottom: -400px; width: 100%; color: #fff;}
+    #footer{height: 333px;background-position: 50% 0px;z-index: 100000;position: relative; font-family: helvetica; width: 100%; color: #fff;}
     #footer .contentWrap{max-width: 1000px; width: 100%; margin: 0px auto;padding-top: 25px;}
     #footer .contentWrap ul{width: 150px; float: left; font-size: 15px; color: #fff;}
     #footer .contentWrap ul li:first-child{font-size: 22px;font-weight: bolder;}

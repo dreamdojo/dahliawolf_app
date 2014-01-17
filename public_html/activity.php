@@ -47,11 +47,11 @@
 	$categories['followers'] = $result->followers;
 ?>
 <style>
-    #messageCol{border-top: #F03E63 30px solid; margin-top: 20px;}
+    #messageCol{border-top: #168795 30px solid; margin-top: 20px;color: #666;}
     #catHeader{display: inline-block; margin: 50px 180px;}
     #catHeader li{width: 85px;float: left; margin-left:50px; height: 85px;line-height: 200px; text-transform:capitalize; text-align: center;
         font-size: 16px; position: relative; background-size: auto 100%; background-repeat: no-repeat; background-image: url("/images/activityIcons.png"); cursor: pointer;}
-    #catHeader li .count{position: absolute; right: 0px; top: 0px; border: #fff 3px solid; border-radius: 20px; height: 20px; width: 20px;
+    #catHeader li .count{position: absolute; right: 0px; top: 0px; border: #fff 3px solid; background-color: #008caf; border-radius: 20px; height: 20px; width: 20px;
         color: #fff; background-color: #F03E63;font-size: 9px;text-align: center;line-height: 20px;}
     .activityLog{width: 100%;height: 95px;line-height: 85px;padding-top: 10px;}
     .activityLog li{float: left;}
@@ -59,13 +59,14 @@
     #messageCol .message a{margin-left: 10px; color: #F03E63;}
     #messageCol .date{margin-right: 10px;}
     #messageCol .postImg{height: 85px;width: 85px;background-position: 50%;background-size: auto 100%;background-repeat: no-repeat;}
-    .act-comments{background-position: -348px;}
-    .comments_on{background-position: -929px;}
-    .act-likes{background-position: -464px;}
-    .likes_on{background-position: -1045px;}
-    .act-messages{background-position: -232px;}
-    .messages_on{background-position: -813px;}
-    .followers_on{background-position: -581px;}
+    .act-comments{background-position: -353px;}
+    .comments_on{background-position: -919px;}
+    .act-likes{background-position: -468px;}
+    .likes_on{background-position: -1033px;}
+    .act-messages{background-position: -243px;}
+    .messages_on{background-position: -808px;}
+    .act-followers{background-position: -20px;}
+    .followers_on{background-position: -585px;}
     #messageCol h2{width: 100%;text-align: center;margin-top: 20px;font-size: 18px;}
     #messageCol .postFrame{float: right; margin-right:25px; width: 85px; height: 85px; overflow: hidden;}
     #messageCol .message p{height: 84px;line-height: 85px;margin-right: 10px;}
@@ -85,6 +86,8 @@
     <div id="messageCol">
     </div>
 </div>
+
+<?php include "footer.php" ?>
 
 <script>
     $(function() {

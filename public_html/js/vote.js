@@ -155,17 +155,16 @@ voteFeed.prototype.get$Post = function(id, index) {
     var postDims = {0:[330, 496], 1:[300, 450], 2:[390, 390], 3:[360, 540], 4:[420, 633], 5:[450, 645], 6:[300, 450], 7:[334, 334], 8:[390, 519], 9:[360, 450], 10:[450, 450], 11:[420, 560], 12:[300, 533], 13:[334, 346], 14:[390, 390], 15:[365, 548]};
 
     var $post = $('<div class="post '+(this.isSpineMode ? 'spineMode' : 'gridMode')+'"></div>');
-    $post.append(new shareBall(post));
     $post.append(new voteDot(post, function() {
-        that.updateLoveStats(post, $heartBG, $heartCount)
+        //$post.find('.voteDot').addClass('showOnHover');
+        //console.log($post.find('.voteDot'));
     }));
-
-    var $userBar = $('<div class="userBar"><div class="tpVoteCity"></div><a href="/'+post.username+'" class="dahliaHead" data-id="'+post.user_id+'">'+post.username+'</a></div>');
-    var $counts = $('<ul></ul>').appendTo($userBar).on('click', function() {
-        $post.find('.voteDot').click();
-    });
-    var $heartBG = $('<li class="loveHeart" style="background-position: '+(Number(post.is_liked) ? 1 : '-'+21)+'px;"></li>').appendTo($counts);
-    var $heartCount = $('<li class="loveCount">'+post.total_likes+'</li>').appendTo($counts);
+    $post.find('.voteDot').addClass('showOnHover');
+    console.log($post.find('.voteDot'));
+    var $postAvatar = $('<a href="/'+post.username+'"><div class="voteAvatar showOnHover" style="background-image: url(\''+post.avatar+'&width=60\');"></div></a>').appendTo($post);
+    var $userBar = $('<div class="userBar dahliaBGColor">'+(Number(post.total_likes)+Number(post.comments)+Number(post.total_shares))+' HYPE</div>');
+    var $hypeBar = $('<ul class="hypeBar dahliaBGColor showOnHover"></ul>');
+    $hypeBar.append('<li class="highlight"><div class="spriteBG hypes"></div>'+post.total_likes+'</li>').append('<li class="highlight"><div class="spriteBG hbComments"></div>'+post.comments+'</li>').append('<li class="highlight"><div class="spriteBG hbShares"></div>'+post.total_shares+'</li>').appendTo($post);
     $post.append($userBar);
 
     var video = ( post.image_url.split('.').pop() === 'mp4' );

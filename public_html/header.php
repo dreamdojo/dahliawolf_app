@@ -47,7 +47,7 @@
 <a name="top"></a>
 <style>
     #headerHeader{height: 28px;  color: #fff; background-color: #a5a5a5;font-size: 14px;}
-    #headerBody{height: 73px; position: relative;}
+    #headerBody{height: 73px; position: relative; color: #666;}
     #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .85;}
     #headerFooter{height: 30px; background-color: #fff;}
     #headerHeader .native{width: 25px;height: 29px;background-repeat: no-repeat;background-position: 50%; padding: 0px !important;}
@@ -62,7 +62,14 @@
     #headerHeader .hhDropdown ul li{float: none; color: #666; text-align: left;}
     #headerHeader .hhDropdown ul li:hover{color: #fff;}
     #headerHeader .hhDropdown:hover ul{display: block;}
-    #headerBody #inspireButt{cursor: pointer;float: right;height: 100%;margin-right: 10px;position: relative;line-height: 68px;font-size: 47px;color: #fff;font-family: ariel;}
+    #headerBody #inspireButt{cursor: pointer;float: right;height: 100px;margin-right: 10px;position: relative;line-height: 68px;font-size: 47px;color: #fff;font-family: ariel; width: 65px; text-align: right;}
+    #headerBody #inspireButt:hover #inspireMenu{display: block;}
+    #headerBody #inspireMenu{position: absolute; width: 300px; right: -17px; margin-top: 30px;display: none;}
+    #headerBody #inspireMenu li{font-size: 18px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl;}
+    #headerBody #inspireMenu .subMenuBG{position: absolute;right: 0px;width: 30px;height: 30px;background-size: 464px;top: 0px;}
+    #headerBody #inspireMenu .gtiTool{font-size: 14px; text-align: center;text-indent: 0px;}
+    .arrow-up {width: 0;height: 0;border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 25px solid #008caf; position: absolute;bottom: 100%;right: 15px;}
+    #theDropPad{position: fixed; background-color: #000; width: 100%; height: 100%; top: 0px; left: 0px;z-index: 1000000; opacity: .8; display: none;}
 </style>
 <div id="dahliaHeader">
     <div id="headerHeader">
@@ -83,8 +90,8 @@
         <a href="/"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
             <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE</a></li>
-            <li><a href="/vote"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/vote.php'  || $self == '/index.php' ? 'pinkMe' : '' ?>">VOTE</a></li>
-            <li><a href="/public_html/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
+            <li><a href="/sponsor"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/vote.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>
+            <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
         </ul>
 
         <div id="rightHandMenu">
@@ -113,8 +120,8 @@
                 <div id="userMenu">
                     <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
                     <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #fff !important;"><?= $_SESSION['user']['username'] ?></a></div>
-                    <ul id="theDropdown">
-                        <div class="header-bezier"></div>
+                    <ul id="theDropdown" class="dahliaBGColor">
+                        <div class="arrow-up"></div>
                         <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
                         <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
                         <a href="/activity"><li id="menuActivity">Activity</li></a>
@@ -131,7 +138,18 @@
                 </ul>
             <? endif ?>
         </div>
-        <div id="inspireButt">+</div>
+        <div id="inspireButt">+
+            <ul id="inspireMenu" class="dahliaBGColor">
+                <div class="arrow-up"></div>
+                <li><a href="/bank?feed=upload">UPLOAD A PICTURE<div class="spriteBG subMenuBG" style="background-position: -43px 305px;"></div></a></li>
+                <li><a href="/bank?feed=tumblr">TUMBLR<div class="spriteBG subMenuBG" style="background-position: -108px 305px;"></div></a></li>
+                <li><a href="/bank?feed=pinterest">PINTEREST<div class="spriteBG subMenuBG" style="background-position: -237px 305px;"></div></a></li>
+                <li><a href="/bank?feed=instagram">INSTAGRAM<div class="spriteBG subMenuBG" style="background-position: -173px 305px;"></div></a></li>
+                <li><a href="/bank?feed=dwolf">D/W IMAGE BANK<div class="spriteBG subMenuBG" style="background-position: -304px 304px;"></div></a></li>
+                <li><a href="/bank?feed=web">ADD FROM WEBSITE<div class="spriteBG subMenuBG" style="background-position: -369px 305px;"></div></a></li>
+                <li class="gtiTool"><a href="/pinit">GET THE INSPIRE TOOL</a></li>
+            </ul>
+        </div>
         <div id="searchBar">
             <input type="text" placeholder="Start typing to search...">
         </div>
@@ -144,6 +162,8 @@
         </ul>
     </div>
 </div>
+
+<div id="theDropPad"></div>
 
 <script>
     $(function() {
@@ -166,7 +186,7 @@
             } else {
                 $header.css('top' , 0+'px');
             }
-        });
+        });/*
         var position = $(window).scrollTop();
         var $footer = $('#footer');
         var rate = 35;
@@ -187,7 +207,7 @@
                     else
                         $footer.css('bottom', -footerHeight);
                 }
-            } else if(scroll < position && $footerPos <= 0 && scroll > 0) { //SCROLL UP
+            } else if(scroll < position && $footerPos <= 0 && scroll > 0 && !($(window).scrollTop() + $(window).height() > $(document).height())) { //SCROLL UP
                 if($footerPos + rate < 0)
                     $footer.css('bottom', ($footerPos + rate));
                 else
@@ -196,7 +216,7 @@
                 $footer.css('bottom', 0);
             }
             position = scroll;
-        });
+        });*/
     });
 </script>
 
@@ -241,6 +261,35 @@
         });
         $('.hasSubs').on('click', function() {
             $(this).toggleClass('showSubs');
+        });
+
+        $('body').on('dragover', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $('#theDropPad').fadeIn(100);
+        });
+
+        $('body').on('dragleave', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $('#theDropPad').fadeOut(100);
+        });
+
+        /*$('body').on('dragenter', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });*/
+
+        $('body').on('drop', function(e){
+            if(e.originalEvent.dataTransfer.files){
+                if(e.originalEvent.dataTransfer.files.length) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    new postUpload(e.originalEvent.dataTransfer.files[0]);
+                }
+            } else {
+                alert('Drag and Drop not supported in your browser');
+            }
         });
     });
 </script>
