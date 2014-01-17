@@ -150,33 +150,49 @@ User.prototype.$post.prototype = {
 //*********************************************** PRODUCT
 User.prototype.$product = function(data) {
     this.data = data;
-
-    var $product = $('<div class="shop-item '+this.status+'" id="item-'+this.id+'"></div>');
+    var $prodInfo = $('<ul class="prodInfo"></ul>');
+    var $product = $('<div class="shop-item '+($('.shop-item').length % 3 === 1 ? 'middle' : '')+' '+this.status+'" id="item-'+this.id+'"></div>');
     var $imageFrame = $('<ul class="imageFrame"></ul>');
     var $productShot = $('<li class="productShot"></li>').css('background-image', 'url("'+this.productShot+'")').appendTo($imageFrame);
-    var $bloggerShot = $('<li class="bloggerShot"></li>').css('background-image', 'url("'+this.bloggerShot+'")');
-    if(this.isOnSale) {
-        $('<div class="daysEnd"><span class="dahliaPink">'+getDaysLeft(this.data.commission_from_date)+' Days</span> <span style="font-style: italic; color: #000;"> left to pre-order at 30% OFF</span></div>').appendTo($bloggerShot);
-    }
-    $bloggerShot.appendTo($imageFrame);
-    var $inspirationShot = $('<li class="inspirationShot"></li>').css('background-image', 'url("'+this.inspirationImage+'&width=300")').appendTo($imageFrame);
-    $imageFrame.appendTo($product).wrap('<a href="/public_html/shop/'+this.id+'"></a>');
-    var $productDetails = $('<ul class="productDetails"><li class="productName">'+this.name+'</li><li class="productAvatar" style="background-image: url(\''+this.avatar+'&width=25\')"></li><li class="productUsername">'+this.username+'</li></ul>').appendTo($product);
-    var $productPrice = $('<ul class="productPrice"></ul>');
-    $('<li class="preorderPrice"></li>').html( this.isOnSale ? '$'+this.presalePrice+' pre-order price' : ' ').appendTo($productPrice);
-    var $regPrice = $('<li class="regularPrice">$'+this.price+'</li>')
-    if(this.isOnSale) {
-        $regPrice.css('text-decoration', 'line-through');
-    }
-    $regPrice.appendTo($productPrice);
-    $inspirationImage = $('<li class="inspirationButton"><span>VIEW INSPIRATION</span></li>').hover(function() {
-        $inspirationShot.css('left', 0);
-    }, function() {
-        $inspirationShot.css('left', 100+'%');
-    }).appendTo($productPrice).wrap('<a class="zoombox" data-url="'+this.inspirationImage+'"></a>');
-    $productPrice.appendTo($product);
+    var $avatar = $('<li class="avatar" style="background-image: url('+data.avatar+'&width=85);"></li>').appendTo($prodInfo);
+    $('<li class="prodname">'+data.product_name+'</li>').appendTo($prodInfo);
+    $('<li class="username">Inspiration by <a href="/'+data.username+'">'+data.username+'</a></li>').appendTo($prodInfo);
+    $imageFrame.appendTo($product).wrap('<a href="/shop/'+data.id_product+'" rel="product"></a>');
+
+    $product.append($prodInfo);
 
     return $product;
+}
+
+User.prototype.$sponsor = function(d) {
+    var data = d;
+    var TOTAL_SPONSORS_NEEDED = 10;
+    var $sponsorItem = $('<div class="sponsorItem"></div>');
+    var $itemImage = $('<div class="imgFrame"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></div>').appendTo($sponsorItem);
+    var $sponsorDeets = $('<ul class="sponsorDetails"></ul>');
+    var $title = $('<li>'+data.product_name+'</li>').appendTo($sponsorDeets);
+    var $inspireBy = $('<li class="inspBy">Inspiration by <a href="/'+data.username+'" style="color: #76bd22">'+data.username+'</a></li>').appendTo($sponsorDeets);
+    var $sponsor = $('<li class="lrgText">'+data.total_sales+'</li>').appendTo($sponsorDeets);
+    $('<li>SPONSORS</li>').appendTo($sponsorDeets);
+    var $total_sales = $('<li class="lrgText">$'+Number(data.total_sales) * Number(data.sale_price)+'</li>').appendTo($sponsorDeets);
+    $('<li>SPONSORED AMOUNT</li>').appendTo($sponsorDeets);
+    var $spotsLeft = $('<li class="lrgText">'+(TOTAL_SPONSORS_NEEDED - Number(data.total_sales))+'</li>').appendTo($sponsorDeets);
+    $('<li>SPOTS LEFT</li>').appendTo($sponsorDeets);
+    $('<a href="/shop/'+data.id_product+'"><li class="greenbutton">SPONSOR $'+Math.floor(data.sale_price).toFixed(2)+'</li></a>').appendTo($sponsorDeets);
+    var $sponsorBottom = $('<div class="sponsorBottom"></div>');
+    var $left = $('<ul class="bLeft"></ul>');
+    $('<li>Behind the Design <a href="/'+data.username+'" class="dahliaPink">'+data.username+'</a></li>').appendTo($sponsorBottom).appendTo($left);
+    $('<li class="avatar" style="background-image: url('+data.avatar+');"></li>').appendTo($left);
+    $('<li class="about">'+data.story_behind_design+'</li>').appendTo($left);
+    $('<div class="rtLine"></div>').appendTo($left);
+    var $right = $('<ul class="bRight"></ul>');
+    $('<li>Each sponsor will get:</li>').appendTo($right);
+
+    $sponsorItem.append($sponsorDeets);
+    $sponsorBottom.append($left);
+    $sponsorBottom.append($right);
+    $sponsorItem.append($sponsorBottom);
+    return $sponsorItem;
 }
 
 User.prototype.$product.prototype = {

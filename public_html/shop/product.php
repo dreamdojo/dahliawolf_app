@@ -1,7 +1,11 @@
 <?
     $pageTitle = "Shop - Product";
-    include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
+    if( !isset($_GET['ajax']) ) {
+        include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
+        include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
+    } else {
+        define('CDN_IMAGE_SCRIPT', 'http://content.dahliawolf.com/shop/product/image.php?file_id=');
+    }
 
     if (empty($_GET['id_product'])) {
         redirect('/shop');
@@ -73,7 +77,7 @@
     .optionsSection .options li:last-child{margin-right: 0px;}
     .optionsSection .optionLabel{float: left;width: 100%;text-align: left;font-size: 15px;height: 25px;}
 
-    #addToCart{height: 60px;line-height: 60px; background-color: #f03e63;color: #fff;font-size: 18px;margin-top: 10px; text-transform: uppercase;}
+    #addToCart{height: 60px;line-height: 60px; background-color: #76bd22;color: #fff;font-size: 18px;margin-top: 10px; text-transform: uppercase;}
     .etaDate{font-style: italic;}
 
     .prodStyle{width: 60%;float: left;}
@@ -175,7 +179,7 @@
                 <? endif ?>
             </ul>
         </div>
-        <form id="addItemToCartForm" action="/public_html/action/shop/add_item_to_cart.php" method="post">
+        <form id="addItemToCartForm" action="/action/shop/add_item_to_cart.php" method="post">
             <input type="hidden" name="ajax" value="true">
             <input type="hidden" name="id_product" value="<?= $_data->product->id_product ?>" >
             <input type="hidden" name="quantity" value="1" style="font-size: 20px;" />
@@ -193,7 +197,7 @@
             </div>
             <div class="orderButton">
                 <a onclick="$(this).closest('form').submit()">
-                    <p id="addToCart" class="button"><?= $_data->product->on_sale ? 'Pre Order Now' : 'Add To Bag' ?></p>
+                    <p id="addToCart" class="button"><?= $_data->product->on_sale ? 'Sponsor Now' : 'Add To Bag' ?></p>
                 </a>
             </div>
             <div class="etaDate">*Estimated Shipping Date: <?= $_data->product->commission_to_date ? $_data->product->commission_to_date : ' Immediately' ?></div>

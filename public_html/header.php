@@ -90,7 +90,7 @@
         <a href="/"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
             <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE</a></li>
-            <li><a href="/sponsor"><span class="<?= $self == '/grid.php' || $self == '/spine.php' || $self == '/vote.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>
+            <li><a href="/sponsor"><span class="<?= $self == '/sponsor.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>
             <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
         </ul>
 

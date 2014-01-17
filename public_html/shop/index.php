@@ -24,6 +24,8 @@
     .takeTwo{position: absolute;top: 0px;left: -100%; z-index: 11111;width: 100%;transition: left .25s;-webkit-transition: left .25s; background-color: #fff;height: 100%;}
     .takeTwo img{width: 70%; margin-left: 15%;}
     .product-details:hover .takeTwo{left: 0%;}
+
+    #productPage{position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; background-color: #fff; z-index: 1000; overflow: scroll;}
 </style>
 
 <? if( !empty($user['username']) ): ?>
@@ -36,7 +38,7 @@
 <div id="dahliawolfShop"></div>
 
 <?
-    include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
+    //include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 ?>
 
 <script>
