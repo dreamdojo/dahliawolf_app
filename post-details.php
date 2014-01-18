@@ -12,18 +12,7 @@
 		require $_SERVER['DOCUMENT_ROOT'] . '/includes/php/initial-calls.php';
 	}
 
-    if(isset($_GET['posting_id'])){
-        $params = array(
-            'posting_id' => $_GET['posting_id']
-        );
-    }
-    if (IS_LOGGED_IN) {
-        $params['viewer_user_id'] = $_SESSION['user']['user_id'];
-    }
-    $data = api_call('posting', 'get_post', $params, true);
-    $_data['post'] = $data['data'];
-
-    $url = 'http://www.dahliawolf.com/api/1-0/posting.json?function=get_posting&use_hmac_check=0&posting_id='.$_GET['posting_id'];
+    $url = 'http://www.dahliawolf.com/api/1-0/posting.json?function=get_posting&use_hmac_check=0&posting_id='.$_GET['posting_id'].(isset($_SESSION['user']['user_id']) ? '&viewer_user_id='.$_SESSION['user']['user_id'] : '');
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_POST, 1);
