@@ -163,6 +163,7 @@ shop.prototype.bindFilters = function() {
                 break;
             case 'preorder' :
                 that.$shop.addClass('showPreorder');
+                that.$shop.addClass('showPreorder');
                 break;
             case 'asc' :
                 that.priceSort = $this.data('view');
@@ -312,7 +313,7 @@ shop.prototype.product.prototype.getBuyButton = function() {
 
     if(this.data.status == 'Pre Order' || this.data.status == 'Live' || this.data.status == 'Coming Soon') {
         $(this.$buyButton).on('click', function() {
-            document.location = '/shop/'+_this.data.id_product;
+            document.location = '/sponsor/'+_this.data.id_product;
         });
     }
     return this.$buyButton;

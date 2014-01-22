@@ -73,19 +73,6 @@
     <div class="copyright">Copyright 2014 Dahlia Wolf Inc. Dahlia Wolf logo and related marks are registered trademarks of Dahlia Wolf.</div>
 </div>
 
-<a class="Button WhiteButton Indicator" href="#" id="ScrollToTop" style="display: none;"><img src="/skin/img/gototop.jpg" width="61" height="64"></a>
-<div class="cl"></div>
-<div id="theOverlay"></div>
-<div id="sys-profiler"></div>
-<div id="sysMessageDialog" style="display: none;" title="Message"></div>
-<div id="modal" class="modal"><div id="modal-content"><img id="modal-image" /></div></div>
-
-<div id="sign-up-modal">
-	<div class="sign-up-business">
-    	<a class="fbsignup" href="/social-login.php?social_network=facebook"><img src="/images/fb_pop_blocker.png" width="244" height="49"></a>
-        <a href="/signup"><div class="mailme">or sign up the old school way with email</div></a>
-    </div>
-</div>
 
 <script type="text/javascript">
     var google_tag_params = {

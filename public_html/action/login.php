@@ -105,7 +105,7 @@ else {
         }
         redirect('/');
     } else {
-        echo json_encode(array('success', true));
+        echo json_encode(array('success', true, $_SESSION['user']) );
     }
 }
 die();

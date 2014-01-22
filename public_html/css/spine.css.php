@@ -221,6 +221,7 @@ $Spine->output_css();
 	top: 0;
 	background: #fff;
 	padding: 25px;
+    margin-top: 50px;
 }
 .modal .close {
 	width: 22px;

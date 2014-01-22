@@ -69,7 +69,7 @@ function postUpload(file) {
 
         this.oReq = new XMLHttpRequest();
 
-        if(postBank) {
+        if($('#bankBucket').length) {
             this.oReq.upload.addEventListener("loadstart", function() {
                 _gaq.push(['_trackEvent', 'Inspire', 'Upload Started']);
                 that.$post = $('<div class="postFrame grid loading" style=\'background-image: url("/images/inspireLoader.gif");\'></div>').prependTo(postBank.$bucket);
@@ -91,6 +91,24 @@ function postUpload(file) {
                     alert(that.data.errors);
                 }
 
+            }, false);
+        } else {
+            this.oReq.upload.addEventListener("progress", function(e) {
+                $('#dropUpdate').html(Math.ceil((e.loaded/e.total)*100)+'%');
+            }, false);
+            this.oReq.addEventListener("load", function() {
+                that.data = $.parseJSON(this.responseText);
+                if(that.data.success) {
+                    _gaq.push(['_trackEvent', 'Inspire', 'Upload completed successfully']);
+                    postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+that.data.data.posting_id, that.data.data.new_image_url, that.data.data.posting_id);
+                } else {
+                    _gaq.push(['_trackEvent', 'Inspire', 'Failed back end validation', that.data.errors]);
+                    _gaq.push(['_trackEvent', 'Errors', that.data.errors]);
+                    alert(that.data.errors);
+                }
+                setTimeout(function() {
+                    $('#theDropPad').fadeOut(100);
+                }, 1000)
             }, false);
         }
 
@@ -147,17 +165,28 @@ postBank.limit = 12;
 postBank.isRefillAvailable = true;
 postBank.mode = 'grid';
 
-postBank.init = function() {
+postBank.init = function(feed) {
     postBank.$bucket = $('#bankBucket');
     postBank.$dropBox = $('#dndeezy');
     postBank.$bankOptions = $('#bankOptions');
     postBank.bindScroll();
-    postBank.getImages();
-    $('#importFromPinterest').on('click', postBank.getImagesFromTumblr);
-    $('#importFromInstagram').on('click', postBank.getImagesFromInstagram);
+
     postBank.adjustMargins();
     $(window).resize(postBank.adjustMargins);
     $('#viewToggle').on('click', this.toggleMode);
+    switch(feed.feedType) {
+        case 'dahliawolf' :
+            postBank.getImages();
+            break;
+        case 'tumblr' :
+            postBank.getImagesFromTumblr();
+            break;
+        case 'instagram' :
+            postBank.getImagesFromInstagram();
+            break;
+        case 'website' :
+            break;
+    }
 }
 
 postBank.checkSyncedAccounts = function(url, img_url, id) {

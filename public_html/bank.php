@@ -18,7 +18,7 @@
     #importFromPinterest{ position:relative; overflow:hidden;}
     #thePinterestName{height: 75%;margin-top: 2%;margin-left: 2%;width: 75%;font-size: 14px;text-indent: 3px; float:left;}
     #goPinterestButton{ height:100%; width:20%; float:left; background-image:url(/images/pinterestGo.png); background-size: 86% 80%;background-repeat: no-repeat;background-position: 7%;}
-    #bankBucket{width: 100%;max-width: 960px; margin: 0px auto; height: 100%;padding-top: 57px; padding-bottom: 100px;}
+    #bankBucket{width: 100%;max-width: 960px; margin: 0px auto; height: 100%;padding-top: 10px; padding-bottom: 100px;}
     #bankBucket .postFrame{overflow: hidden; position: relative;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
     #bankBucket .postFrame:hover .postButton{display: block;}
     #bankBucket .grid{float: left; width: 300px;height: 300px; margin: 10px;}
@@ -31,10 +31,10 @@
     .option{display: none;}
     #bankOptions{display: block; position: fixed; background-color: #fff;}
     #viewToggle{background-image: url("/images/inspireToggle_BG.png");background-position: 0%;position: absolute;right: -11px;width: 45px;background-repeat: no-repeat;overflow: hidden; height: 30px;margin-right: 20px;top: 2px; cursor: pointer;}
-    .title-roll{border:#c2c2c2 thin solid; font-size: 22px;width: 97%; max-width: 940px;z-index: 1;font-weight: bold;margin: 0px auto; top: 77px; margin-bottom: 10px;position: relative;text-align: center; height: 35px; background-color: #fff;}
+    .title-roll{font-size: 22px;width: 97%; max-width: 940px;z-index: 1;font-weight: bold;margin: 0px auto; top: 10px; margin-bottom: 10px;position: relative;text-align: center; height: 35px; background-color: #fff;}
     .xDomainStatus{position: absolute;height: 100%;width: 100%;background-color: #c2c2c2;z-index: 111;top: 0px;left: 0px;}
     .xDomainStatus p{width: 1000px;margin: 0px auto;font-size: 27px;text-align: center;line-height: 60px;}
-    #postTitleContent{font-size:15px; line-height: 35px;}
+    #postTitleContent{font-size:15px; line-height: 35px; text-transform: uppercase;}
 
     .postFrame .progressCount{font-size: 20px; color: red;line-height: 150px; text-align: center; width: 100%;}
     .loading{background-size: 70% auto !important;}
@@ -47,7 +47,7 @@
 ?>
 
 
-<div id="bankOptions" class="drop-shadow" style="display: none;">
+<!--<div id="bankOptions" class="drop-shadow" style="display: none;">
     <div id="bankCenter">
         <div class="bankSection">
             <img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
@@ -70,14 +70,14 @@
             <p>Select Images From Your Instagram</p>
         </div>
     </div>
-</div>
+</div>-->
 
-<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent"><span class="preHeader">DAHLIA\WOLF BANK</span><div id="viewToggle"></div></div>
+<div class="title-roll"><div id="inspireBackButton" class="hidden"></div><span id="postTitleContent"><span class="preHeader"><?= $_GET['feed'] ?> BANK</span></div>
 <div id="bankBucket"></div>
 
-<?php include "footer.php" ?>
+<?php //include "footer.php" ?>
 <script>
     $(function() {
-        postBank.init();
+        postBank.init({feedType:'<?= $_GET['feed'] ?>'});
     });
 </script>

@@ -21,11 +21,15 @@ function sendGeoffMessage(msge) {
 //****************************** BINDINGS *********************
 
 $(function() {
-    $('#loginForm').on('submit', {$errorBox : $('#errorBox')}, dahliawolf.login);
     $('#registrationForm').on('submit', {$errorBox : $('#r_errorBox')}, dahliawolf.register);
     $(document).on('click', 'a[rel="message"]', function(e) {
         e.preventDefault();
         dahliaMessenger.newMessage( $(this).attr('href') );
+    });
+
+    $(document).on('click', 'a[rel="pop"]', function(e) {
+        e.preventDefault();
+        dahliawolf.phoPop(this.href, 'test');
     });
 
     $(document).on('mouseenter', '.dahliaHead', function() {

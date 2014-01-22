@@ -51,7 +51,8 @@ User.prototype.login = function(e) {
         var result = $.parseJSON(data);
 
         if(result[0] == 'success') {
-            location.reload();
+            dahliawolf.data = result[2];
+            $('#phoPop').remove();
             _gaq.push(['_trackEvent', 'Login', 'Success']);
         } else {
             e.data.$errorBox.html('*'+result[0]);
@@ -132,6 +133,30 @@ User.prototype.logIntoFacebook = function(callback) {
     }, {scope: 'email'});
 }
 
+User.prototype.phoPop = function(url, title, callback) {
+    var $phoPop;
+
+    if(url) {
+        if( $('#phoPop').length ) {
+            $phoPop = $('#phoPop');
+        } else {
+            $phoPop = $('<div id="phoPop"></div>');
+        }
+        window.history.pushState({}, '', url);
+        window.onpopstate = function(event) {
+            $phoPop.remove();
+        }
+
+        url += '?ajax=true';
+
+        console.log(url);
+        $('body').prepend($phoPop);
+        $phoPop.load(url, callback);
+    } else {
+        holla.log('No URL');
+    }
+}
+
 //****************************************************************** $VIEWS
 
 User.prototype.$post = function(data) {
@@ -178,7 +203,7 @@ User.prototype.$sponsor = function(d) {
     $('<li>SPONSORED AMOUNT</li>').appendTo($sponsorDeets);
     var $spotsLeft = $('<li class="lrgText">'+(TOTAL_SPONSORS_NEEDED - Number(data.total_sales))+'</li>').appendTo($sponsorDeets);
     $('<li>SPOTS LEFT</li>').appendTo($sponsorDeets);
-    $('<a href="/shop/'+data.id_product+'"><li class="greenbutton">SPONSOR $'+Math.floor(data.sale_price).toFixed(2)+'</li></a>').appendTo($sponsorDeets);
+    $('<a href="/sponsor/'+data.id_product+'"><li class="greenbutton">SPONSOR $'+Math.floor(data.sale_price).toFixed(2)+'</li></a>').appendTo($sponsorDeets);
     var $sponsorBottom = $('<div class="sponsorBottom"></div>');
     var $left = $('<ul class="bLeft"></ul>');
     $('<li>Behind the Design <a href="/'+data.username+'" class="dahliaPink">'+data.username+'</a></li>').appendTo($sponsorBottom).appendTo($left);
@@ -551,7 +576,6 @@ Post.prototype.unlove = function(id, callback) {
     this.apiFunction = 'delete_like';
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User unloved a post'];
-    this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1}, callback);
     return this;
 }
@@ -560,9 +584,16 @@ Post.prototype.dislike = function(id, callback) {
     this.apiFunction = 'add_post_dislike';
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'Added dislike'];
-    this.callback = callback;
-    this.callApi();
     this.callApi({user_id: dahliawolf.userId, posting_id : id}, callback);
+    return this;
+}
+
+Post.prototype.repost = function(_posting_id, callback) {
+    this.apiFunction = 'repost';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'Reposted post'];
+    this.callApi({posting_id:_posting_id, repost_user_id:dahliawolf.userId}, callback);
+    return this;
 }
 
 Post.prototype.deleteMe = function(id, callback) {

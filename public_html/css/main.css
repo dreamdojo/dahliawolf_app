@@ -133,7 +133,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #searchBar{width: 100%;position: absolute;height: 60px;left: 0px;background-color: #000;top: 100%; z-index: 123;border-top: #fff thin solid;display: none;}
 #searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center; font-family: futura;}
 .pinkMe{color: #78fff4;}
-.newActivityCountMod{color: #fff;background-color: #78fff4;text-align: center;padding: 3px;line-height: 20px;position: absolute;right: 6px;border-radius: 16px;margin-top: 8px;text-indent: 0px;min-width: 20px;top: 0px;}
+.newActivityCountMod{color: #fff;background-color: #78fff4;text-align: center;padding: 3px;line-height: 20px;position: absolute;right: 6px;border-radius: 16px;margin-top: 2px;text-indent: 0px;min-width: 20px;top: 0px;}
+#phoPop{position: fixed; width: 100%; height: 100%; top: 80px; left: 0px; top: 0px; background-color: #fff; z-index: 1000000;}
 
 #mobNative{float: left;margin-top: 40px;margin-left: 6%;}
 #mobNative li{float: left; width: 115px;}
@@ -268,14 +269,16 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .voteDot:hover{opacity: 1;}
 #voteBucket .unloved{background-color: #000;}
 #voteBucket .loved{background-color: #008caf;}
-.voteAvatar{height: 60px;width: 60px;position: absolute;right: 10px;top: 10px;border: #fff 2px solid;border-radius: 35px;background-size: 100% auto;background-position: 50%;opacity: 0;}
+.voteAvatar{height: 60px;width: 60px;position: absolute;right: 10px;top: 10px;border: #fff 2px solid;border-radius: 35px;background-size: 100% auto;background-position: 50%;}
 .post:hover .showOnHover{opacity: 1;}
 .hypeBar{position: absolute;bottom: 0px;width: 100%;color: #fff;display: inline-block;z-index: 1000;line-height: 40px; opacity: 0;}
 .hypeBar li{float: left;width: 25%;font-size: 14px;}
-.hypeBar li:first-child{margin-left: 7%;}
 .hypeBar .hypes{height: 27px;width: 40px;float: left;background-position: -29px 53px;background-size: 387px; margin-top: 5px;}
+.hypeBar .hyped{background-position: -63px 53px;}
 .hypeBar .hbComments{margin-top:5px; height: 27px;width: 40px;float: left;background-position: -90px 47px;background-size: 346px;}
 .hypeBar .hbShares{height: 27px;width: 40px;float: left;background-position: -161px 48px;background-size: 353px; margin-top: 5px;}
+.hypeBar .hbRepost{margin-top: 5px;height: 27px;width: 40px;float: left;background-position: -37px 132px;background-size: 482px;}
+.hypeBar .reposted{background-position: -80px 132px;}
 #voteBucket .post .showOnHover{transition: .25s; -webkit-transition: .25s;}
 
 /************************ ACTIVITY ****************/
@@ -414,7 +417,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .myLittleSecret{position:absolute; height:100%; right:0px; width:20px; background-color:#fff;}
 .popGridLove{ position: absolute;height: 100px;width: 100px;left: 50%;margin-left: -50px;top: 50%;margin-top: -50px; cursor: pointer;border-radius: 52px;line-height: 100px;text-align: center;color: #fff;font-size: 18px; z-index: 100;}
 .popGridnotLoved{background-color: #000;}
-.popGridisLoved{background-color: #ff2e6e;}
+.popGridisLoved{background-color: #008caf;}
 .linkLayer{position: absolute; width: 100%; height: 100%; z-index: 1;}
 #postGridTitle{font-size: 12px;margin-top: 8px;margin-bottom: 10px;text-align: center; color: #b7b7b7; text-transform: uppercase;}
 #postGridTitle a{color: #b7b7b7;}
@@ -710,7 +713,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 
 /****************************** GOODIES **********************************/
 .goodiesCol{width: 900px; margin: 0px auto; text-align: center; color: #464646; position: relative; z-index: 1;}
-.goodiesCol .goodHead{ width: 100%; margin-top: 100px; font-size: 24px; margin-bottom: 55px;}
+.goodiesCol .goodHead{ width: 100%; margin-top: 129px; font-size: 24px; margin-bottom: 55px;}
 .buttRow{width: auto; display: inline-block; margin: 0px auto;}
 .buttRow li{float: left;}
 .pic1{width: 100%;margin-top: 60px;}
@@ -719,7 +722,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 .goodiesCol h3{text-align: left;}
 .lbeezy{width: 100%; border-bottom: #464646 thin solid;}
 .toolCTA{color: #fff; padding: 10px 40px; margin-top: 36px; margin-left: 50px; text-align: center; background-color: #ed577e;float: left;}
-.goodieGrad{position: absolute;background-image: url("/images/goodieGrad.png");z-index: -1;height: 400px;width: 100%;top: -52px;background-repeat: no-repeat;}
+.goodieGrad{position: absolute;background-image: url("/images/goodieGrad.png");z-index: -1;height: 400px;width: 100%;top: -35px;background-repeat: no-repeat;}
 
 /********************************** THE PAGE ******************************/
 .transCol{width: 900px;margin: 0px auto;text-align: center;color: #464646;position: relative; z-index: 1;}

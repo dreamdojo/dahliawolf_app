@@ -3,15 +3,20 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 $pageTitle = "Login";
-include "head.php";
-include "header.php"; 
+if( !isset($_GET['ajax']) ) {
+    include "head.php";
+    include "header.php";
+}
 ?>
+<style>
+    .auth_text{margin-top: 100px;}
+</style>
 
 <p class="auth_text" style="font-size:24px">Signup using your e-mail address.</p>
 
 <div class="error_block login_error"></div>
 
-<form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="/public_html/action/signup.php">
+<form id="sysForm" method="POST" class="Form FancyForm AuthForm" action="/action/signup.php">
     <ul>
         <li>
         	<input class="input_text" type="text" name="user_username" id="sysForm_user_username" value="" max="30" />
@@ -55,5 +60,3 @@ include "header.php";
      <input type="hidden" name="r" value="" />
      <input type="hidden" name="jsub" value="1" />
 </form>
-
-<?php include "footer.php" ?>

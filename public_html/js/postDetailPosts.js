@@ -101,11 +101,11 @@ postDetailGrid.prototype.toggleLove = function(e) {
 	if(theUser.id) {	
 		if(id && id > 0) {
 			if(loved){
-				$(this).addClass('popGridnotLoved').removeClass('popGridisLoved').html('LOVE');
+				$(this).addClass('popGridnotLoved').removeClass('popGridisLoved').html('HYPE');
 				$(this).data('isloved', 0);
                 dahliawolf.post.love(id);
 			} else {
-				$(this).removeClass('popGridnotLoved').addClass('popGridisLoved').html('LOVED');
+				$(this).removeClass('popGridnotLoved').addClass('popGridisLoved').html('HYPED');
 				$(this).data('isloved', 1);
                 dahliawolf.post.love(id);
 			}
@@ -138,7 +138,7 @@ postDetailGrid.prototype.getPosts = function() {
                     });
                     var $linkLayer = $('<a class="linkLayer" href="/post-details?posting_id='+post.posting_id+'" rel="modal"></a>').appendTo($post);
                     var str = '';
-                    str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'">'+(parseInt(post.is_liked) ? 'LOVED' : 'LOVE')+'</div>';
+                    str += '<div class="popGridLove option '+( parseInt(post.is_liked) ? 'popGridisLoved' : 'popGridnotLoved')+'" data-id="'+post.posting_id+'" data-isLoved="'+parseInt(post.is_liked)+'">'+(parseInt(post.is_liked) ? 'HYPED' : 'HYPE')+'</div>';
                     if(post.user_id == theUser.id) {
                         $('<div data-id="'+post.posting_id+'" class="delButton option">X</div>').appendTo($post).on('click', $this.delPost);
                     }
