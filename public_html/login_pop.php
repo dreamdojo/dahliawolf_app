@@ -81,7 +81,7 @@ margin-top: -29px;
                  <div class="texting">or sign up with email:</div>
                            
                     <div class="form-box">
-                    	<form id="registrationForm" method="POST" class="Form FancyForm AuthForm" action="/public_html/action/signup.php">
+                    	<form id="registrationForm" method="POST" class="Form FancyForm AuthForm" action="/action/signup.php">
                             <input type="hidden" name="ajax" value="true">
                             <ul style="margin-bottom: -3px;">
                             	<li>
@@ -140,7 +140,7 @@ margin-top: -29px;
                            </div>
                            <div class="texting">or login with email/username:</div>
                            <div>
-                               <form id="loginForm" method="POST" class="Form FancyForm AuthForm" action="/public_html/action/login.php">
+                               <form id="loginForm" method="POST" class="Form FancyForm AuthForm" action="/action/login.php">
                                    <input type="hidden" name="ajax" value="true">
                                 <ul>
                                     <li>
@@ -153,7 +153,7 @@ margin-top: -29px;
                                         <span class="fff"></span>
                                     </li>
                                     <li style="text-align: left;">
-                                        <a style="color: #888;font-size: 12px;" href="/public_html/reset-password-link.php">Forgot password?</a>
+                                        <a style="color: #888;font-size: 12px;" href="/reset-password-link.php">Forgot password?</a>
                                     </li>
                                     <li><span class="rememberme">
                                         <input class="checkbox" id="l_remember_me" name="l_remember_me" type="checkbox" value="1">

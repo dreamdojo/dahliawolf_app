@@ -37,7 +37,7 @@ $_data['user'] = $data['data'];
     </div>
 
 <div class="SettingsCol">
-    <form id="profileEdit" class="Form StaticForm" action="/public_html/action/settings.php" method="POST" style="padding-top:20px;" enctype="multipart/form-data">
+    <form id="profileEdit" class="Form StaticForm" action="/action/settings.php" method="POST" style="padding-top:20px;" enctype="multipart/form-data">
     <label for="id_img">Username: </label> <h1><?= $_data['user']['username'] ?></h1>
     <ul>
         <li>

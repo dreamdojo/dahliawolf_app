@@ -37,7 +37,7 @@
 ?>
 
 <style>
-    .shopCol{width: 900px; margin: 0px auto; margin-top: 90px; padding-bottom: 200px;}
+    .shopCol{width: 900px; margin: 0px auto; margin-top: 110px; padding-bottom: 200px;}
     .shopCol a{color: #666;}
     .productDetails{width: 60%; float: left; position: relative;}
     .productCTA{width: 40%; float: left;}

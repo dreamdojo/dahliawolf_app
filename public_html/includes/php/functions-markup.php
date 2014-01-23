@@ -80,9 +80,9 @@ function output_orders($orders) {
 				foreach ($orders as $i => $order) {
 					?>
 					<tr>
-						<td class="order-number"><a href="<?= HEADER_LOCATION_PREFIX ?>/public_html/shop/order-details.php?id_order=<?= $order['id_order'] ?>"><?= $order['id_order'] ?></a></td>
-						<td class="date"><a href="<?= HEADER_LOCATION_PREFIX ?>/public_html/shop/order-details.php?id_order=<?= $order['id_order'] ?>"><?= date('m/d/Y g:i a', strtotime($order['date_add'])) ?></a></td>
-						<td class="amount monetary"><a href="<?= HEADER_LOCATION_PREFIX ?>/public_html/shop/order-details.php?id_order=<?= $order['id_order'] ?>">$<?= number_format($order['total'], 2) ?></a></td>
+						<td class="order-number"><a href="<?= HEADER_LOCATION_PREFIX ?>/shop/order-details.php?id_order=<?= $order['id_order'] ?>"><?= $order['id_order'] ?></a></td>
+						<td class="date"><a href="<?= HEADER_LOCATION_PREFIX ?>/shop/order-details.php?id_order=<?= $order['id_order'] ?>"><?= date('m/d/Y g:i a', strtotime($order['date_add'])) ?></a></td>
+						<td class="amount monetary"><a href="<?= HEADER_LOCATION_PREFIX ?>/shop/order-details.php?id_order=<?= $order['id_order'] ?>">$<?= number_format($order['total'], 2) ?></a></td>
 					</tr>
 					<?
 				}
@@ -160,7 +160,7 @@ function output_order_table($order, $is_return = false) {
                         <img src="<?= $image_url ?>" width="<?= $width ?>" height="<?= $height ?>" alt="<?= $product_name ?>" />
                     </td>
                     <td class="product">
-                        <a href="<?= HEADER_LOCATION_PREFIX ?>/public_html/shop/product.php?id_product=<?= $id_product ?>"><?= $product_name ?></a>
+                        <a href="<?= HEADER_LOCATION_PREFIX ?>/shop/product.php?id_product=<?= $id_product ?>"><?= $product_name ?></a>
                         <?
                         if (!empty($product['attributes'])) {
                             $attributes = explode(chr(0x1D), $product['attributes']);

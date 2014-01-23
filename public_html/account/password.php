@@ -4,7 +4,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 ?>
 <div class="FixedContainer">
-    <form id="profileEdit" class="Form StaticForm" action="/public_html/action/password.php" method="POST" style="padding-top:20px;">
+    <form id="profileEdit" class="Form StaticForm" action="/action/password.php" method="POST" style="padding-top:20px;">
         <h3>Change Password</h3>
         <ul>
             

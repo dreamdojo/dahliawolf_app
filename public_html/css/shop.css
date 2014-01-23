@@ -542,16 +542,16 @@ table.cart a.remove:hover {
 	float: left;
 }
 .checkout .button a:hover {
-	background-color: #f03e62;
+	background-color: #74bf00;
 }
 .checkout .button.checkout a {
-	background: #f03e62;
+	background: #74bf00;
 	color: #fff;
     padding: 15px 50px;
     font-size: 15px;
 }
 .checkout .button.checkout a:hover {
-	background: #c96161;
+	background: #74bf00;
 }
 .checkout-footer {
 	overflow: hidden;

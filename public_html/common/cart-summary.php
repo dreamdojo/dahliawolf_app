@@ -11,7 +11,7 @@
 						foreach ($_data['categories'] as $category) {
 							?>
 							<li>
-								<a href="<?= CR ?>/public_html/shop?id_category=<?= $category['id_category'] ?>"><?= $category['name'] ?></a>
+								<a href="<?= CR ?>/shop?id_category=<?= $category['id_category'] ?>"><?= $category['name'] ?></a>
 							</li>
 							<?
 						}
@@ -42,7 +42,7 @@
 									?>
 									<li>
 										<p class="image"><img src="<?= $image_url ?>" alt="<?= $name ?>" /></p>
-										<p class="name"><a href="<?= CR ?>/public_html/shop/product.php?id_product=<?= $id_product ?>"><?= $name ?></a></p>
+										<p class="name"><a href="<?= CR ?>/shop/product.php?id_product=<?= $id_product ?>"><?= $name ?></a></p>
 										<p class="quantity price"><strong><?= $quantity ?></strong> x $<?= number_format($price, 2) ?></p>
 										
 										<?
@@ -68,7 +68,7 @@
 								?>
 							</ul>
 							
-							<a href="<?= CR ?>/public_html/shop/checkout.php" class="checkout">Checkout</a>
+							<a href="<?= CR ?>/shop/checkout.php" class="checkout">Checkout</a>
 						</div>
 						<?
 					}

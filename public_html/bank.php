@@ -51,7 +51,7 @@
     <div id="bankCenter">
         <div class="bankSection">
             <img class="fork-img" id="uploadButton" src="/images/select-files.png" style="float: right;" />
-            <form id="postUploadForm" action="/public_html/action/post_image.php" method="post" enctype="multipart/form-data">
+            <form id="postUploadForm" action="/action/post_image.php" method="post" enctype="multipart/form-data">
                 <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="new postUpload(this.files[0]);">
                 <input type="hidden" name="takeMeBack" value="takemehome">
             </form>

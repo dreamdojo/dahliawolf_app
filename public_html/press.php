@@ -6,8 +6,8 @@
     $asa[0] = Array('/images/press/01.jpg', '/images/press/A.jpg', 'Mischa Barton', 'Former OC star, Mischa Barton wore the brightly colored <a href="/shop/107">Tropicana Jacket</a> from the DW Collection');
     $asa[1] = Array('/images/press/02.jpg', '/images/press/B.jpg', 'Audrina Partridge', 'Hills star, Audrina Partridge wore the sleek,  <a href="/shop/239">Modern Love Dress</a> from the DW Collection.' );
     $asa[2] = Array('/images/press/03.jpg', '/images/press/C.jpg', 'Mena Suvari', 'Mena Suvari looked stunning in the  <a href="/shop/240">Sahara Dress</a>' );
-    $asa[3] = Array('/images/press/04.jpg', '/images/press/D.jpg', 'Dani Thorne', 'Dani Thorne looked gorgeous showing her love in a  <a href="/public_html/shop">Silver Brocade Dress</a>');
-    $asa[4] = Array('/images/press/05.jpg', '/images/press/E.jpg', 'Jenette McCurdy', 'Carly star, Jennette McCurdy ,wore the chic,  <a href="/public_html/shop">Silver Ties Top</a> from the DW Collection.');
+    $asa[3] = Array('/images/press/04.jpg', '/images/press/D.jpg', 'Dani Thorne', 'Dani Thorne looked gorgeous showing her love in a  <a href="/shop">Silver Brocade Dress</a>');
+    $asa[4] = Array('/images/press/05.jpg', '/images/press/E.jpg', 'Jenette McCurdy', 'Carly star, Jennette McCurdy ,wore the chic,  <a href="/shop">Silver Ties Top</a> from the DW Collection.');
 
     $press = Array();
     $press[0] = Array('/images/press/omg.jpg', 'OMG!', 'Mischa Barton, Audrina Partridge and more attend Dahlia Wolf launch party', 'http://omg.yahoo.com/video/mischa-barton-audrina-patridge-more-220639806.html');

@@ -16,7 +16,7 @@ if( !isset($_GET['ajax']) ) {
     <div class="error_block login_error"></div>
     <a href="/social-login.php?social_network=facebook"><img style="padding: 10px;" src="/skin/img/signinfacebook2.png" width="244" height="49"></a>
 
-    <form id="loginForm" method="POST" class="Form FancyForm AuthForm" action="/public_html/action/login.php">
+    <form id="loginForm" method="POST" class="Form FancyForm AuthForm" action="/action/login.php">
         <input type="hidden" name="ajax" value="true">
         <ul>
             <li>
@@ -34,9 +34,9 @@ if( !isset($_GET['ajax']) ) {
             </li>
         </ul>
         <div class="non_inputs">
-            <input type="submit" value="Log in" class="Button_input" id="sysForm_submit" />
-                    <a href="javascript:loginscreen('signup')" id="urlGetInvite" class="colorless">Sign up now!</a>
-                    <a href="/reset-password-link" id="resetPassword" class="colorless">Forgot your password?</a>
+            <input type="submit" value="Log in" class="Button_input" id="sysForm_submit" style="float: left;" />
+            <a href="/signup" rel="pop" class="colorless">Sign up now!</a>
+            <a href="/reset-password-link" id="resetPassword" class="colorless">Forgot your password?</a>
         </div>
          <input type="hidden" name="r" value="" />
          <input type="hidden" name="sublog" value="1" />

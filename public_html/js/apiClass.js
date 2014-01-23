@@ -189,37 +189,6 @@ User.prototype.$product = function(data) {
     return $product;
 }
 
-User.prototype.$sponsor = function(d) {
-    var data = d;
-    var TOTAL_SPONSORS_NEEDED = 10;
-    var $sponsorItem = $('<div class="sponsorItem"></div>');
-    var $itemImage = $('<div class="imgFrame"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></div>').appendTo($sponsorItem);
-    var $sponsorDeets = $('<ul class="sponsorDetails"></ul>');
-    var $title = $('<li>'+data.product_name+'</li>').appendTo($sponsorDeets);
-    var $inspireBy = $('<li class="inspBy">Inspiration by <a href="/'+data.username+'" style="color: #76bd22">'+data.username+'</a></li>').appendTo($sponsorDeets);
-    var $sponsor = $('<li class="lrgText">'+data.total_sales+'</li>').appendTo($sponsorDeets);
-    $('<li>SPONSORS</li>').appendTo($sponsorDeets);
-    var $total_sales = $('<li class="lrgText">$'+Number(data.total_sales) * Number(data.sale_price)+'</li>').appendTo($sponsorDeets);
-    $('<li>SPONSORED AMOUNT</li>').appendTo($sponsorDeets);
-    var $spotsLeft = $('<li class="lrgText">'+(TOTAL_SPONSORS_NEEDED - Number(data.total_sales))+'</li>').appendTo($sponsorDeets);
-    $('<li>SPOTS LEFT</li>').appendTo($sponsorDeets);
-    $('<a href="/sponsor/'+data.id_product+'"><li class="greenbutton">SPONSOR $'+Math.floor(data.sale_price).toFixed(2)+'</li></a>').appendTo($sponsorDeets);
-    var $sponsorBottom = $('<div class="sponsorBottom"></div>');
-    var $left = $('<ul class="bLeft"></ul>');
-    $('<li>Behind the Design <a href="/'+data.username+'" class="dahliaPink">'+data.username+'</a></li>').appendTo($sponsorBottom).appendTo($left);
-    $('<li class="avatar" style="background-image: url('+data.avatar+');"></li>').appendTo($left);
-    $('<li class="about">'+data.story_behind_design+'</li>').appendTo($left);
-    $('<div class="rtLine"></div>').appendTo($left);
-    var $right = $('<ul class="bRight"></ul>');
-    $('<li>Each sponsor will get:</li>').appendTo($right);
-
-    $sponsorItem.append($sponsorDeets);
-    $sponsorBottom.append($left);
-    $sponsorBottom.append($right);
-    $sponsorItem.append($sponsorBottom);
-    return $sponsorItem;
-}
-
 User.prototype.$product.prototype = {
     get id() {return this.data.id_product;},
     get status() {return this.data.status;},
@@ -234,6 +203,34 @@ User.prototype.$product.prototype = {
     get presalePrice() {return Math.floor(this.data.sale_price).toFixed(2);},
     get price() {return Math.floor(this.data.price).toFixed(2);}
 }
+
+User.prototype.$sponsor = function(d) {
+    var data = d;
+    holla.log(d);
+    var TOTAL_SPONSORS_NEEDED = 10;
+    var $sponsorItem = $('<div class="sponsorItem"></div>');
+
+    var $prodInfo = $('<div class="prodInfo"></div>');
+    $('<ul class="userDeets"><li class="avatar" style="background-image: url(\''+data.avatar+'&width=50\')"></li><li class="prodTitle">'+data.product_name+'</li><li class="inspHead">Inspiration by '+data.username+'</li></ul>').appendTo($prodInfo);
+    $('<ul class="prodPrice"><li>$50.00</li><li>50% OFF</li></ul><ul class="prodPrice"><li>$50.00</li><li>50% OFF</li></ul>').appendTo($prodInfo);
+    $sponsorItem.append($prodInfo);
+
+    var $itemImage = $('<div class="imgFrame"><a href="/sponsor/'+data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></a></div>').appendTo($sponsorItem);
+    var $sponsorDeets = $('<div class="sponsorDetails"></div>');
+    var $toGoal = $('<ul><li>3%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
+    var $left = $('<ul><li>59</li><li>days left</li></ul>').appendTo($sponsorDeets);
+    var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
+    var $goal = $('<ul><li>3%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
+    var $status = $('<div class="statuses"><ul class="status closed"><li>$50.00</li><li>50% OFF</li><li>sold out</li></ul>' +
+        '<ul class="status current"><li>$70.00</li><li>30% OFF</li><li>22 spots left</li> </ul>' +
+        '<ul class="status pending"><li>$80.00</li><li>20% OFF</li><li>22 spots left</li></ul></div>').appendTo($sponsorDeets);
+    var $butt = $('<a href="/sponsor/'+data.id_product+'"><div class="greenbutton">SPONSOR NOW</div></a>').appendTo($sponsorDeets);
+
+
+    $sponsorItem.append($sponsorDeets);
+    return $sponsorItem;
+}
+
 //*********************************************** USER
 User.prototype.$user = function(data) {
 

@@ -209,7 +209,7 @@ shop.prototype.product.prototype.addToShop = function() {
     }
     this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
-    this.$image_view.append( this.getPrice()).append( this.getImage()).wrap( $('<a href="/public_html/shop/'+this.data.id_product+'"></a>') );
+    this.$image_view.append( this.getPrice()).append( this.getImage()).wrap( $('<a href="/shop/'+this.data.id_product+'"></a>') );
     this.$inspiration_view.append( this.getInspiration() );
 }
 
@@ -233,7 +233,7 @@ shop.prototype.product.prototype.getPrice = function() {
 }
 
 shop.prototype.product.prototype.getImage = function() {
-    return '<div class="image-frame"><a href="/public_html/shop/'+this.data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></a></div>';
+    return '<div class="image-frame"><a href="/shop/'+this.data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></a></div>';
 }
 
 shop.prototype.product.prototype.getInspiration = function() {

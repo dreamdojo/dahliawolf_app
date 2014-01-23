@@ -20,56 +20,34 @@
     #shopOwnerHeader img{width: 100%;}
     .shopOwnerTitle{position: absolute;margin-top: 90px;left: 71px;font-size: 30px; text-transform: uppercase; font-weight: bolder !important; width: 528px;text-align: center;overflow: hidden;text-overflow: ellipsis;}
     .shopEmpty{font-size: 20px; text-align: center; margin-top: 15px;}
-    body{text-align: center;}
+    body{text-align: center;  background-color: #ebebeb;}
 
     .sponsorShop{width: 900px;}
     .sponsorShop .sponsorItem:first-child{margin-top: 40px;}
-    .sponsorItem{display: inline-block; width: 100%; margin-top: 100px;}
+    .sponsorItem{display: inline-block; width: 100%; margin-top: 50px; padding-bottom: 50px; border-bottom: #fff thin solid;}
+
+    .sponsorItem .userDeets{float: left;width: 50%;text-align: left;}
+    .sponsorItem .prodInfo{width: 100%;height: 50px; margin-bottom: 10px;}
+    .sponsorItem .prodInfo .avatar{height: 50px;width: 50px;background-size: auto 100%;float: left;border-radius: 25px;background-repeat: no-repeat; background-position: 50%;}
+    .sponsorItem .prodInfo .prodTitle{height: 25px;line-height: 35px;font-size: 16px;text-indent: 10px;}
+    .sponsorItem .prodInfo .inspHead{text-indent: 10px; color: #b7b7b7;}
+    .sponsorItem .prodPrice{float: right; text-align: right; margin-left: 10px;}
+    .sponsorItem .prodPrice li:first-child{font-size: 18px;}
+    .sponsorItem .prodPrice li:last-child{font-size: 11px;}
+    .sponsorItem .sponsorDetails > ul{height: 60px;padding-top: 10px;padding-bottom: 10px;border-bottom: #b7b7b7 thin solid;width: 80%; margin-left: 10%;}
+    .sponsorItem .sponsorDetails > ul li:first-child{font-size: 28px;margin-bottom: -5px;}
+    .sponsorItem .sponsorDetails > ul li:last-child{font-size: 16px; color: #b7b7b7;}
+    .sponsorItem .sponsorDetails .statuses{width: 80%;margin-left: 10%;font-size: 13px;text-align: center;border-bottom: #b2b2b2 thin solid;display: inline-block;padding-top: 10px;padding-bottom: 10px;}
+    .sponsorItem .sponsorDetails .statuses .status{width: 33%;float: left; border-right: #b2b2b2 thin solid;}
+    .sponsorItem .sponsorDetails .statuses ul:last-child{border-right: none;}
+    .sponsorItem .sponsorDetails .statuses .closed{color: #b7b7b7; text-decoration: line-through;}
+    .sponsorItem .sponsorDetails .statuses .current{color: #74bf00;}
+
     .sponsorItem .imgFrame{width: 50%; float: left; min-height: 300px;}
-    .sponsorItem .imgFrame img{width: 80%;}
-    .sponsorItem .sponsorDetails{width: 50%;float: left;font-size: 23px; text-align: left;}
-    .sponsorItem .sponsorDetails li{margin-left: 10%; width: 90%;}
-    .sponsorItem .lrgText{font-size: 65px;}
-    .sponsorItem .greenbutton{color: #fff;
-        background-color: #76bd22;
-        padding: 20px 25px;
-        display: inline-block;
-        margin-top: 25px;
-        width: initial !important;
-    }
-    .sponsorItem .sponsorBottom{width: 100%; float: left;border-top: #c2c2c2 thin solid; border-bottom: #c2c2c2 thin solid; padding-bottom: 40px; margin-top: 40px;}
-    .sponsorBottom .bLeft{width: 50%;float: left;position: relative;}
-    .sponsorItem .bLeft li:first-child{height: 100px;
-        line-height: 100px;
-        font-size: 21px;
-    }
-    .sponsorItem .bRight li:first-child{height: 100px;
-        line-height: 100px;
-        font-size: 21px;
-    }
-    .inspBy{
-        color: #b1b1b1;
-        font-size: 15px;
-    }
-    .sponsorItem .bLeft .avatar{
-        width: 20%;
-        height: 125px;
-        background-size: auto 100%;
-        background-position: 50%;
-        float: left;
-        background-repeat: no-repeat;
-    }
-    .sponsorItem .bLeft .about{
-        font-size: 12px;
-        line-height: 18px;
-        height: 125px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-align: left;
-        float: left;
-        width: 70%;
-        margin-left: 7%;
-    }
+    .sponsorItem .imgFrame img{width: 90%;}
+    .sponsorItem .sponsorDetails{width: 50%;float: left;font-size: 23px; text-align: left;background-color: #fff;padding-bottom: 20px;border-radius: 10px;}
+    .sponsorItem .sponsorDetails li{margin-left: 5%; width: 90%;}
+    .sponsorItem .greenbutton{color: #fff;background-color: #76bd22;padding: 20px 25px;display: inline-block;margin-top: 20px;width: 69%;margin-left: 10%;text-align: center;border-radius: 8px;}
     .sponsorItem .rtLine{position: absolute; height: 80%; border-right: #c2c2c2 thin solid; margin-top: -12%; right: 0px;}
     #viewFilters{display: none;}
 </style>
@@ -81,7 +59,7 @@
     </div>
 <? endif ?>
 
-<div id="dahliawolfShop" class="sponsorShop" style="width: 900px;"></div>
+<div id="dahliawolfShop" class="sponsorShop" style="width: 750px;"></div>
 
 <?
     //include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
@@ -262,7 +240,7 @@ shop.prototype.product.prototype.addToShop = function() {
     }
     this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
-    this.$image_view.append( this.getPrice()).append( this.getImage()).wrap( $('<a href="/public_html/shop/'+this.data.id_product+'"></a>') );
+    this.$image_view.append( this.getPrice()).append( this.getImage()).wrap( $('<a href="/shop/'+this.data.id_product+'"></a>') );
     this.$inspiration_view.append( this.getInspiration() );
 }
 
@@ -286,7 +264,7 @@ shop.prototype.product.prototype.getPrice = function() {
 }
 
 shop.prototype.product.prototype.getImage = function() {
-    return '<div class="image-frame"><a href="/public_html/shop/'+this.data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></a></div>';
+    return '<div class="image-frame"><a href="/shop/'+this.data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></a></div>';
 }
 
 shop.prototype.product.prototype.getInspiration = function() {

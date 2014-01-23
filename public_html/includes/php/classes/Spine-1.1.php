@@ -187,7 +187,7 @@ class Spine {
                                             </div>
                                         <? endif ?>
                                          <? if($post['status'] == 'Coming Soon' || $post['status'] == 'Live' || $post['status'] == 'Pre Order'): ?>
-                                            <a href="/public_html/action/shop/add_item_to_wishlist.php?id_product=<?= $post['product_id'] ?>&ajax=true" rel="addWishlist">
+                                            <a href="/action/shop/add_item_to_wishlist.php?id_product=<?= $post['product_id'] ?>&ajax=true" rel="addWishlist">
                                                 <div class="exp-wl-butt">
                                                     <? if( isset($post['in_wishlist']) && $post['in_wishlist'] ): ?>
                                                         <p class="already-in-wishlist">Added to Wishlist</p>

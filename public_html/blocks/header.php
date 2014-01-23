@@ -3,8 +3,8 @@
 
 <style>
     #headerHeader{height: 28px;  color: #fff; background-color: #cccccc;font-size: 14px;}
-    #headerBody{height: 73px; position: relative; color: #666;}
-    #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .85;}
+    #headerBody{height: 65px; position: relative; color: #666;}
+    #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .95;}
     #headerFooter{height: 30px; background-color: #fff;}
     #headerHeader .native{width: 25px;height: 29px;background-repeat: no-repeat;background-position: 50%; padding: 0px !important;}
     #headerHeader .right{float: right; margin-right: 10px;}
@@ -18,9 +18,9 @@
     #headerHeader .hhDropdown ul li{float: none; color: #666; text-align: left;}
     #headerHeader .hhDropdown ul li:hover{color: #fff;}
     #headerHeader .hhDropdown:hover ul{display: block;}
-    #headerBody #inspireButt{cursor: pointer;float: right;height: 100px;margin-right: 10px;position: relative;line-height: 68px;font-size: 47px;color: #fff;font-family: ariel; width: 65px; text-align: right;}
+    #headerBody #inspireButt{cursor: pointer;float: right;height: 100px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #fff;font-family: ariel; width: 65px; text-align: right;}
     #headerBody #inspireButt:hover #inspireMenu{display: block;}
-    #headerBody #inspireMenu{position: absolute; width: 300px; right: -17px; margin-top: 30px;display: none;}
+    #headerBody #inspireMenu{position: absolute; width: 300px; right: -21px; margin-top: 26px;display: none;}
     #headerBody #inspireMenu li{font-size: 18px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl;}
     #headerBody #inspireMenu .subMenuBG{position: absolute;right: 0px;width: 30px;height: 30px;background-size: 464px;top: 0px;}
     #headerBody #inspireMenu .gtiTool{font-size: 14px; text-align: center;text-indent: 0px;}
@@ -99,7 +99,7 @@
             <ul id="inspireMenu" class="dahliaBGColor">
                 <div class="arrow-up"></div>
                 <li style="padding-right: 42px;">
-                    <form id="postUploadForm" action="/public_html/action/post_image.php" method="post" enctype="multipart/form-data">
+                    <form id="postUploadForm" action="/action/post_image.php" method="post" enctype="multipart/form-data">
                         <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="new postUpload(this.files[0]);">
                         <input type="hidden" name="takeMeBack" value="takemehome">
                     </form>
