@@ -30,24 +30,25 @@
     .sponsorItem .prodInfo{width: 100%;height: 50px; margin-bottom: 10px;}
     .sponsorItem .prodInfo .avatar{height: 50px;width: 50px;background-size: auto 100%;float: left;border-radius: 25px;background-repeat: no-repeat; background-position: 50%;}
     .sponsorItem .prodInfo .prodTitle{height: 25px;line-height: 35px;font-size: 16px;text-indent: 10px;}
-    .sponsorItem .prodInfo .inspHead{text-indent: 10px; color: #b7b7b7;}
+    .sponsorItem .prodInfo .inspHead{text-indent: 10px;font-size: 11px;padding-top: 6px;}
     .sponsorItem .prodPrice{float: right; text-align: right; margin-left: 10px;}
     .sponsorItem .prodPrice li:first-child{font-size: 18px;}
     .sponsorItem .prodPrice li:last-child{font-size: 11px;}
-    .sponsorItem .sponsorDetails > ul{height: 60px;padding-top: 10px;padding-bottom: 10px;border-bottom: #b7b7b7 thin solid;width: 80%; margin-left: 10%;}
+    .sponsorItem .sponsorDetails{width: 50%;float: left;font-size: 23px; text-align: left;background-color: #fff;padding-bottom: 20px; padding-top:10px; border-radius: 10px;}
+    .sponsorItem .sponsorDetails li{margin-left: 5%; width: 90%;}
+    .sponsorItem .sponsorDetails > ul{height: 60px;padding-top: 15px;padding-bottom: 15px;border-bottom: #d1d1d1 thin solid;width: 80%; margin-left: 10%;}
     .sponsorItem .sponsorDetails > ul li:first-child{font-size: 28px;margin-bottom: -5px;}
     .sponsorItem .sponsorDetails > ul li:last-child{font-size: 16px; color: #b7b7b7;}
-    .sponsorItem .sponsorDetails .statuses{width: 80%;margin-left: 10%;font-size: 13px;text-align: center;border-bottom: #b2b2b2 thin solid;display: inline-block;padding-top: 10px;padding-bottom: 10px;}
+    .sponsorItem .sponsorDetails .statuses{width: 80%;margin-left: 10%;font-size: 13px;text-align: center;border-bottom: #d1d1d1 thin solid;display: inline-block;padding-top: 25px;padding-bottom: 25px;}
     .sponsorItem .sponsorDetails .statuses .status{width: 33%;float: left; border-right: #b2b2b2 thin solid;}
     .sponsorItem .sponsorDetails .statuses ul:last-child{border-right: none;}
-    .sponsorItem .sponsorDetails .statuses .closed{color: #b7b7b7; text-decoration: line-through;}
-    .sponsorItem .sponsorDetails .statuses .current{color: #74bf00;}
+    .sponsorItem .sponsorDetails .status li:first-child{font-size: 18px;margin-top: 20px;}
+    .sponsorItem .closed{color: #b7b7b7; text-decoration: line-through;}
+    .sponsorItem .current{color: #74bf00;}
 
     .sponsorItem .imgFrame{width: 50%; float: left; min-height: 300px;}
     .sponsorItem .imgFrame img{width: 90%;}
-    .sponsorItem .sponsorDetails{width: 50%;float: left;font-size: 23px; text-align: left;background-color: #fff;padding-bottom: 20px;border-radius: 10px;}
-    .sponsorItem .sponsorDetails li{margin-left: 5%; width: 90%;}
-    .sponsorItem .greenbutton{color: #fff;background-color: #76bd22;padding: 20px 25px;display: inline-block;margin-top: 20px;width: 69%;margin-left: 10%;text-align: center;border-radius: 8px;}
+    .sponsorItem .greenbutton{color: #fff;background-color: #76bd22;padding: 20px 25px;display: inline-block;margin-top: 20px;width: 67%;margin-left: 10%;text-align: center;border-radius: 8px;}
     .sponsorItem .rtLine{position: absolute; height: 80%; border-right: #c2c2c2 thin solid; margin-top: -12%; right: 0px;}
     #viewFilters{display: none;}
 </style>

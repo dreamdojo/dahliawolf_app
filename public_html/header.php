@@ -43,11 +43,20 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 </script>
-
+<style>
+    #theDropPad{position: fixed; width: 100%; height: 100%; top: 0px; left: 0px;z-index: 1000000; display: none;}
+    #theDropPad .theOverlay{position: absolute; width: 100%; height: 100%; background-color: #000; opacity: .8; left: 0px; top: 0px;}
+    #theDropPad #dropUpdate{font-size: 80px; opacity:.85; width: 100%;margin-top: -50px;text-align: center;height: 100px;top: 50%;position: absolute; color: #fff; z-index: 10;}
+    #theDropPad #actualDropPad{position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 100;}
+</style>
 
 <?php require_once 'blocks/header.php'; ?>
 <a name="top"></a>
-<div id="theDropPad"><div id="dropUpdate">DROP IMAGE AND INSPIRE</div></div>
+<div id="theDropPad">
+    <div id="dropUpdate">DROP IT LIKE ITS HOT</div>
+    <div id="actualDropPad"></div>
+    <div class="theOverlay"></div>
+</div>
 
 
 <style>
@@ -93,17 +102,26 @@
             $(this).toggleClass('showSubs');
         });
 
-
-        $('body').on('dragover', function(e){
+        $('body').on('dragenter', function(e){
             e.preventDefault();
             e.stopPropagation();
-            $('#theDropPad').fadeIn(100);
+            e.stopImmediatePropagation();
+            if(e.target != document.getElementById('actualDropPad') && !$('#theDropPad').is(':visible')) {
+                console.log(e.srcElement);
+                $('#theDropPad').fadeIn(100);
+            }
+        }).on('dragover', function(e){
+            //console.log('daragover');
+            e.preventDefault();
+            e.stopPropagation();
         });
 
         $('#theDropPad').on('dragleave', function(e){
             e.preventDefault();
             e.stopPropagation();
-            $('#theDropPad').fadeOut(100);
+            if(e.target != document.getElementById('theDropPad')) {
+                $('#theDropPad').fadeOut(100);
+            }
         });
 
         $('#theDropPad').on('drop', function(e){
@@ -112,8 +130,9 @@
                     e.preventDefault();
                     e.stopPropagation();
                     new postUpload(e.originalEvent.dataTransfer.files[0]);
+                } else {
+                    $('#theDropPad').fadeOut(100);
                 }
-                //$('#theDropPad').fadeOut(100);
             } else {
                 $('#theDropPad').fadeOut(100);
                 alert('Drag and Drop not supported in your browser');

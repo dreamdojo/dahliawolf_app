@@ -1,15 +1,18 @@
 <style>
-    #footer{height: 333px;background-position: 50% 0px;z-index: 100000;position: relative; font-family: helvetica; width: 100%; color: #fff;}
+    #footer{height: 333px;background-position: 50% 0px;z-index: 100000;position: relative; width: 100%; color: #fff;}
     #footer .contentWrap{max-width: 1000px; width: 100%; margin: 0px auto;padding-top: 25px;}
     #footer .contentWrap ul{width: 150px; float: left; font-size: 15px; color: #fff;}
-    #footer .contentWrap ul li:first-child{font-size: 22px;font-weight: bolder;}
-    #footer .pressBanner{width: 100%;margin: 0px auto;padding-top: 10px;padding-bottom: 10px;background-color: #1ebcca;text-align: center;}
-    #footer .copyright{position: absolute; bottom: 0px; width: 100%; text-align: center;line-height: 30px;font-size: 13px;}
-    #footer .socialRow img{width: 45px;margin-right: 5px;padding-bottom: 5px;}
+    #footer .contentWrap ul li:first-child{font-size: 17px;font-weight: bolder;padding-bottom: 7px;}
+    #footer .contentWrap li{font-size: 13px;font-weight: 100;}
+    #footer .contentWrap li a{color: #fff;}
+    #footer .pressBanner{width: 100%;margin: 0px auto;padding-top: 10px;padding-bottom: 3px;text-align: center; border-bottom: #C5C5C5 thin solid;}
+    #footer .pressBanner img{width: 922px;margin-top: 10px;padding-bottom: 15px;}
+    #footer .copyright{position: absolute; bottom: 7px; width: 100%; text-align: center;line-height: 30px;font-size: 11px;}
+    #footer .socialRow img{width: 33px;margin-right: 5px;padding-bottom: 5px;}
 </style>
 <div id="footer" class="dahliaBGColor">
-    <div class="pressBanner">
-        <a href="/press.php"><img style="width: 1000px;" src="/images/asa_logos.png"></a>
+    <div class="pressBanner dahliaBGColor">
+        <a href="/press.php"><img src="/images/asa_logos.png"></a>
     </div>
     <div class="contentWrap">
         <ul>
@@ -24,50 +27,46 @@
         </ul>
         <ul>
             <li>Help</li>
-            <li>What is Dahlia\Wolf</li>
-            <li>How it works</li>
             <li>Basics</li>
             <li>How to Win</li>
             <li>How to Earn Points</li>
             <li>What is Hype</li>
             <li>What is Sponsoring</li>
+            <li><a href="/help/verified">Verified Accounts</a></li>
+            <li><a href="/help/vip">VIP Accounts</a></li>
         </ul>
         <ul>
             <li>Info</li>
             <li>About</li>
             <li>Shipping & Returns</li>
-            <li>Legal</li>
+            <li><a href="/tos">Legal</a></li>
             <li>Report Abuse</li>
-            <li>DMCA Copyright</li>
-            <li>Verified Accounts</li>
-            <li>VIP Accounts</li>
-            <li>Careers</li>
+            <li><a href="/careers">Careers</a></li>
         </ul>
         <ul>
             <li>More</li>
             <li>Contest</li>
-            <li>Pack Leaders</li>
-            <li>Press / As Seen On</li>
+            <li><a href="/wolf-pack">Pack Leaders</a></li>
+            <li><a href="/press">Press / As Seen On</a></li>
             <li>Testimonials</li>
-            <li>Goodies</li>
-            <li>Apps</li>
-            <li>Widgets</li>
-            <li>Inspire Button</li>
+            <li><a href="/goodies">Apps</a></li>
+            <li><a href="/goodies">Widgets</a></li>
+            <li><a href="/pinit.php">Inspire Button</a></li>
         </ul>
         <ul>
             <li>Contact</li>
             <li>Customer Service</li>
             <li>Collaborations</li>
             <li>Business Opportunities</li>
-            <li>Feedback</li>
+            <li><a href="/feedback">Feedback</a></li>
             <li>Live Chat</li>
-            <li>Contact Us</li>
+            <li><a href="/contact">Contact Us</a></li>
         </ul>
         <ul>
             <li>Find Us On</li>
             <li class="socialRow"><img src="/images/foot_facebook.png"><img src="/images/foot_instagram.png"><img src="/images/foot_twitter.png"></li>
-            <li><img src="/images/foot_apple.png" style="margin-top: 5px;"></li>
-            <li><img src="/images/foot_apple.png" style="margin-top: 10px;"></li>
+            <li><img src="/images/foot_apple.png" style="margin-top: 5px;width: 110px;"></li>
+            <li><img src="/images/foot_google.png" style="margin-top: 10px;width: 110px;"></li>
         </ul>
     </div>
     <div class="copyright">Copyright 2014 Dahlia Wolf Inc. Dahlia Wolf logo and related marks are registered trademarks of Dahlia Wolf.</div>

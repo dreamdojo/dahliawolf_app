@@ -39,10 +39,15 @@
 <style>
     .sponsorItemWrap section{width: 100%; padding-bottom: 70px;}
     .sponsorItemWrap section:nth-child(odd){background-color: #ebebeb;}
-    .sponsorItemWrap .mainCol{width: 900px; margin: 0px auto; color: #7d7d7d;}
-    .sponsorItemWrap .left{width: 45%; float: left;}
+    .sponsorItemWrap .mainCol{width: 850px; margin: 0px auto; color: #7d7d7d;}
+    .sponsorItemWrap .left{width: 50%; float: left; position: relative;}
     .sponsorItemWrap .left .productImagesFrame{width: 100%; position: relative;height: 640px; overflow: hidden;}
     .sponsorItemWrap .left .productImagesFrame img{width: 100%; position: absolute;}
+    .sponsorItemWrap .left #imgMarker{position: absolute;width: 100%;top: 94%;z-index: 111;height: 30px; text-align: center;}
+    .sponsorItemWrap .left #imgMarker ul{display: inline-block; margin: 0px auto;}
+    .sponsorItemWrap .left #imgMarker li{height: 15px; width: 15px; background-color: #f8f7f3; float: left;margin-left: 5px; border-radius: 10px;}
+    .sponsorItemWrap .left #imgMarker .current{background-color: #74bf00;}
+
     .sponsorItemWrap .prodDeets{width: 100%; padding-bottom: 10px;}
     .sponsorItemWrap .prodDeets li{display: inline-block; width: 100%;}
     .sponsorItemWrap p{margin: 0px;}
@@ -54,7 +59,7 @@
     .sponsorItemWrap .prodDeets li:last-child p:last-child{float: right;}
     .sponsorItemWrap .productImagesFrame li{position: relative;}
 
-    .sponsorItemWrap .right{width: 50%; float: left; margin-left: 3%;}
+    .sponsorItemWrap .right{width: 40%; float: left; margin-left: 3%;}
     .sponsorItemWrap .right .shareButton{text-align: right; border: #c2c2c2 thin solid; float: right;padding: 5px 12px;border-radius: 7px;}
     .sponsorItemWrap .right .sponsorDeets{background-color: #fff; border-radius: 9px; margin-top: 16px;}
     .sponsorItemWrap .right .sponsorDeets .shipping{text-align: center; color: #b7b7b7;}
@@ -82,7 +87,7 @@
     .sponsorItemWrap .userInfo{text-align: center; color: #b7b7b7;}
     .sponsorItemWrap .userInfo span{font-style: italic;}
     .sponsorItemWrap .userInfo ul{width: 470px; margin: 0px auto; margin-top: 100px; font-size: 14px;}
-    .sponsorItemWrap .userInfo .avatar{height: 150px; width: 150px; border: #fff 2px solid; background-size: 100% auto; background-position: 50%; border-radius: 85px; margin: 10px auto;}
+    .sponsorItemWrap .userInfo .avatar{height: 150px; width: 150px; border: #fff 2px solid; background-size: 100% auto; background-position: 50%; border-radius: 85px; margin: 10px auto; background-repeat: no-repeat;}
     .sponsorItemWrap .userInfo .desc{line-height: 24px; font-size: 13px; font-style: italic;margin-top: 40px;}
 
     .sponsorItemWrap .productDetails{}
@@ -96,6 +101,7 @@
     .needed{box-shadow: inset 0 0 1em red;}
     .showing{z-index: 5;}
 </style>
+
 <div class="sponsorItemWrap">
     <section>
         <div class="mainCol" style="padding-top: 70px;">
@@ -116,29 +122,38 @@
                         <? endforeach ?>
                     </div>
                 </ul>
+                <div id="imgMarker">
+                    <ul>
+                        <? foreach ($_data->files as $i => $file): ?>
+                            <? if($i < 6): ?>
+                                <li <? if($i == 0): ?>class="current"<? endif ?>></li>
+                            <? endif ?>
+                        <? endforeach ?>
+                    </ul>
+                </div>
             </div>
             <div class="right">
                 <div class="shareButton">SHARE</div>
                 <div style="clear: right;"></div>
                 <ul class="sponsorDeets">
-                    <li><p>13%</p><p>to goal</p></li>
-                    <li><p>17</p><p>days left</p></li>
-                    <li><p>22</p><p>sponsors spots left</p></li>
+                    <li><p><?= round($total_sales/$DISCOUNTS[0]*100) ?>%</p><p>to goal</p></li>
+                    <li><p><?= getDaysLeft($_data->product->commission_from_date) ?></p><p>days left</p></li>
+                    <li><p><?= $DISCOUNTS[0] - $total_sales ?></p><p>sponsors spots left</p></li>
                     <li class="statusus">
-                        <ul class="status closed">
+                        <ul class="status <?= $total_sales > $DISCOUNTS[1] ? 'closed' : '' ?>">
                             <li>$50.00</li>
                             <li>50% OFF</li>
-                            <li>sold out</li>
+                            <li><?= $total_sales < $DISCOUNTS[1] ? $DISCOUNTS[1] - $total_sales.' spots left' : 'sold out' ?></li>
                         </ul>
-                        <ul class="status current">
+                        <ul class="status <?= $total_sales > $DISCOUNTS[2] ? 'closed' : '' ?>">
                             <li>$70.00</li>
                             <li>30% OFF</li>
-                            <li>22 spots left</li>
+                            <li><?= $total_sales < $DISCOUNTS[2] ? $DISCOUNTS[2] - $total_sales.' spots left' : 'sold out' ?></li>
                         </ul>
-                        <ul class="status pending">
+                        <ul class="status <?= $total_sales > $DISCOUNTS[3] ? 'closed' : '' ?>">
                             <li>$80.00</li>
                             <li>20% OFF</li>
-                            <li>22 spots left</li>
+                            <li><?= $total_sales < $DISCOUNTS[3] ? $DISCOUNTS[3] - $total_sales.' spots left' : 'sold out' ?></li>
                         </ul>
                     </li>
                     <li class="sponsors">
@@ -216,6 +231,7 @@
 <script>
     $(function() {
         var data = <?= json_encode( $_data->product ) ?>;
+        console.log(data);
         var lengtho = 200;
         holla.log(data);
 
@@ -223,15 +239,19 @@
 
         $('<div id="leftArrow" class="arrow"></div>').prependTo( $('.productImagesFrame')).on('click', function() {
             var $sel = $('.showing');
+            var $cur = $('.current');
             if($sel.prev().length) {
                 $sel.removeClass('showing').fadeOut(lengtho).prev().addClass('showing').fadeIn(lengtho);
+                $cur.removeClass('current').prev().addClass('current');
             }
         });
 
         $('<div id="rightArrow" class="arrow"></div>').appendTo( $('.productImagesFrame')).on('click', function() {
             var $sel = $('.showing');
+            var $cur = $('.current');
             if($sel.next().length) {
                 $sel.removeClass('showing').fadeOut(lengtho).next().addClass('showing').fadeIn(lengtho);
+                $cur.removeClass('current').next().addClass('current');
             } else {
 
             }
@@ -242,7 +262,7 @@
         $('.sizes').hover(function() {
             var $sizes = $(this).find('li');
             $.each($sizes, function(x, option) {
-                $(option).css('top', ((x*50)+(x*5))+'px').on('click', function() {
+                $(option).css('top', ((x*50)+(x*2))+'px').on('click', function() {
                     $(this).addClass('selected').find('input').attr('checked', 'checked');
                     $sizes.css('top', 0);
                  });

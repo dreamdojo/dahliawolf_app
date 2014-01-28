@@ -47,11 +47,14 @@ User.prototype = {
 
 User.prototype.login = function(e) {
     var formData = $(this).serialize();
+    var prevUrl = document.URL;
     $.post('/action/login', formData, function(data) {
         var result = $.parseJSON(data);
 
         if(result[0] == 'success') {
             dahliawolf.data = result[2];
+            $('#userMenuFrame').load('/blocks/userMenu.php');
+            $('.loginDept').empty();
             $('#phoPop').remove();
             _gaq.push(['_trackEvent', 'Login', 'Success']);
         } else {
@@ -176,7 +179,8 @@ User.prototype.$post.prototype = {
 User.prototype.$product = function(data) {
     this.data = data;
     var $prodInfo = $('<ul class="prodInfo"></ul>');
-    var $product = $('<div class="shop-item '+($('.shop-item').length % 3 === 1 ? 'middle' : '')+' '+this.status+'" id="item-'+this.id+'"></div>');
+    var $product = $('<div class="shop-item '+this.status+'" id="item-'+this.id+'"></div>');
+    var prodDeets = $('<ul class="prodDeets"><li>'+this.price+'</li></ul>').appendTo($product);
     var $imageFrame = $('<ul class="imageFrame"></ul>');
     var $productShot = $('<li class="productShot"></li>').css('background-image', 'url("'+this.productShot+'")').appendTo($imageFrame);
     var $avatar = $('<li class="avatar" style="background-image: url('+data.avatar+'&width=85);"></li>').appendTo($prodInfo);
@@ -211,19 +215,21 @@ User.prototype.$sponsor = function(d) {
     var $sponsorItem = $('<div class="sponsorItem"></div>');
 
     var $prodInfo = $('<div class="prodInfo"></div>');
-    $('<ul class="userDeets"><li class="avatar" style="background-image: url(\''+data.avatar+'&width=50\')"></li><li class="prodTitle">'+data.product_name+'</li><li class="inspHead">Inspiration by '+data.username+'</li></ul>').appendTo($prodInfo);
-    $('<ul class="prodPrice"><li>$50.00</li><li>50% OFF</li></ul><ul class="prodPrice"><li>$50.00</li><li>50% OFF</li></ul>').appendTo($prodInfo);
+    $('<ul class="userDeets"><a href="/'+data.username+'"><li class="avatar" style="background-image: url(\''+data.avatar+'&width=50\')"></li></a><li class="prodTitle">'+data.product_name+'</li><li class="inspHead">Inspiration by <a href="/'+data.username+'">'+data.username+'</a></li></ul>').appendTo($prodInfo);
+    $('<ul class="prodPrice current"><li>$50.00</li><li>50% OFF</li></ul><ul class="prodPrice closed"><li>$50.00</li><li>50% OFF</li></ul>').appendTo($prodInfo);
     $sponsorItem.append($prodInfo);
 
     var $itemImage = $('<div class="imgFrame"><a href="/sponsor/'+data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></a></div>').appendTo($sponsorItem);
     var $sponsorDeets = $('<div class="sponsorDetails"></div>');
     var $toGoal = $('<ul><li>3%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
     var $left = $('<ul><li>59</li><li>days left</li></ul>').appendTo($sponsorDeets);
-    var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
+    //var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
     var $goal = $('<ul><li>3%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
-    var $status = $('<div class="statuses"><ul class="status closed"><li>$50.00</li><li>50% OFF</li><li>sold out</li></ul>' +
-        '<ul class="status current"><li>$70.00</li><li>30% OFF</li><li>22 spots left</li> </ul>' +
-        '<ul class="status pending"><li>$80.00</li><li>20% OFF</li><li>22 spots left</li></ul></div>').appendTo($sponsorDeets);
+    var $status = $('<div class="statuses">' +
+        '<ul class="status closed"><li>50% OFF</li><li>sold out</li></ul>' +
+        '<ul class="status current"><li>30% OFF</li><li>22 spots left</li></ul>' +
+        '<ul class="status pending"><li>20% OFF</li><li>22 spots left</li></ul>' +
+        '</div>').appendTo($sponsorDeets);
     var $butt = $('<a href="/sponsor/'+data.id_product+'"><div class="greenbutton">SPONSOR NOW</div></a>').appendTo($sponsorDeets);
 
 

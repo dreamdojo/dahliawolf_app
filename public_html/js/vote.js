@@ -154,6 +154,18 @@ voteFeed.prototype.get$Post = function(id, index) {
     var post = this.getPostData(id);
     var postDims = {0:[330, 496], 1:[300, 450], 2:[390, 390], 3:[360, 540], 4:[420, 633], 5:[450, 645], 6:[300, 450], 7:[334, 334], 8:[390, 519], 9:[360, 450], 10:[450, 450], 11:[420, 560], 12:[300, 533], 13:[334, 346], 14:[390, 390], 15:[365, 548]};
 
+    function incrementHype() {
+        var num = Number($hypeCount.html());
+        num++;
+        $hypeCount.html(num);
+    }
+
+    function decreaseHype() {
+        var num = Number($hypeCount.html());
+        num--;
+        $hypeCount.html(num);
+    }
+
     var $post = $('<div class="post '+(this.isSpineMode ? 'spineMode' : 'gridMode')+'"></div>');
     $post.append(new voteDot(post, function() {
         var $hypeSprite = $post.find('.hypes');
@@ -163,28 +175,34 @@ voteFeed.prototype.get$Post = function(id, index) {
         if( $hypeSprite.hasClass('hyped') ) {
             tCount--;
             $hypeSprite.removeClass('hyped');
+            decreaseHype();
         } else {
             tCount++;
             $hypeSprite.addClass('hyped');
+            incrementHype();
         }
         $hypeCount.html(tCount);
 
-    }));
+    })).append(new shareBall(post));
     $post.find('.voteDot').addClass('showOnHover');
     var $postAvatar = $('<a href="/'+post.username+'"><div class="voteAvatar showOnHover" style="background-image: url(\''+post.avatar+'&width=60\');"></div></a>').appendTo($post);
-    var $userBar = $('<div class="userBar dahliaBGColor">'+(Number(post.total_likes)+Number(post.comments)+Number(post.total_shares))+' HYPE</div>');
-    var $hypeBar = $('<ul class="hypeBar dahliaBGColor showOnHover"></ul>');
-    $hypeBar.append('<li class="highlight"><div class="spriteBG hypes '+(Number(post.is_liked) ? 'hyped' : '')+'"></div><span class="hypeCount">'+post.total_likes+'</span></li>')
-            .append('<li class="highlight"><div class="spriteBG hbComments"></div>'+post.comments+'</li>')
-            .append('<li class="highlight"><div class="spriteBG hbRepost '+(Number(post.is_repost) ? 'reposted' : '')+'"></div><span class="repostCount">'+post.total_reposts+'</span></li>').on('click', function() {
-                dahliawolf.post.repost(post.posting_id, function() {
-                    var $repostCount = Number($post.find('.repostCount').html());
-                    $repostCount ++;
-                    $post.find('.repostCount').html($repostCount);
-                });
-            })
-            .append('<li class="highlight"><div class="spriteBG hbShares"></div>'+post.total_shares+'</li>')
-        .appendTo($post);
+    var $userBar = $('<div class="userBar"> HYPE</div>');
+    var $hypeCount = $('<span>'+(Number(post.total_likes)+Number(post.comments)+Number(post.total_shares))+'</span>').prependTo($userBar);
+    var $hypeBar = $('<ul class="hypeBar showOnHover"></ul>');
+    $('<li class="highlight"><div class="spriteBG hypes '+(Number(post.is_liked) ? 'hyped' : '')+'"></div><span class="hypeCount">'+post.total_likes+'</span></li>').on('click', function() {
+        holla.log('asd');
+        $post.find('.voteDot').click();
+    }).appendTo($hypeBar);
+    $hypeBar.append('<li class="highlight"><div class="spriteBG hbComments"></div>'+post.comments+'</li>');
+    $('<li class="highlight"><div class="spriteBG hbRepost '+(Number(post.is_repost) ? 'reposted' : '')+'"></div><span class="repostCount">'+post.total_reposts+'</span></li>').on('click', function() {
+        dahliawolf.post.repost(post.posting_id, function() {
+            var $repostCount = Number($post.find('.repostCount').html());
+            $repostCount ++;
+            $post.find('.repostCount').html($repostCount);
+            incrementHype();
+        });
+    }).appendTo($hypeBar);
+    $hypeBar.append('<li class="highlight"><div class="spriteBG hbShares"></div>'+post.total_shares+'</li>').appendTo($post);
     $post.append($userBar);
 
     var video = ( post.image_url.split('.').pop() === 'mp4' );

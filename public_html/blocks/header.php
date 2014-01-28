@@ -2,7 +2,9 @@
 ?>
 
 <style>
-    #headerHeader{height: 28px;  color: #fff; background-color: #cccccc;font-size: 14px;}
+    #headerHeader{height: 28px;  color: #656565; background-color: #cccccc;font-size: 14px;}
+    #headerHeader a{color: #656565;}
+    #headerHeader a:hover{color: #fff;}
     #headerBody{height: 65px; position: relative; color: #666;}
     #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .95;}
     #headerFooter{height: 30px; background-color: #fff;}
@@ -18,21 +20,19 @@
     #headerHeader .hhDropdown ul li{float: none; color: #666; text-align: left;}
     #headerHeader .hhDropdown ul li:hover{color: #fff;}
     #headerHeader .hhDropdown:hover ul{display: block;}
-    #headerBody #inspireButt{cursor: pointer;float: right;height: 100px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #fff;font-family: ariel; width: 65px; text-align: right;}
+    #headerBody #inspireButt{cursor: pointer;float: right;height: 100px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #fff; width: 65px; text-align: right;}
     #headerBody #inspireButt:hover #inspireMenu{display: block;}
-    #headerBody #inspireMenu{position: absolute; width: 300px; right: -21px; margin-top: 26px;display: none;}
-    #headerBody #inspireMenu li{font-size: 18px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl;}
+    #headerBody #inspireButt .inspGraph{border: #CFCFCF thin solid;height: 30px;width: 30px;line-height: 28px;margin-top: 18px;font-size: 32px;border-radius: 4px;text-align: center;float: right;}
+    #headerBody #inspireMenu{position: absolute; width: 300px; right: -1px; margin-top: 65px;display: none; padding-top: 10px; border-top: #B1B1B1 thin solid;}
+    #headerBody #inspireMenu li{font-size: 14px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl; border-bottom: #B1B1B1 thin solid;}
     #headerBody #inspireMenu .subMenuBG{position: absolute;right: 0px;width: 30px;height: 30px;background-size: 464px;top: 0px;}
+    #headerBody #inspireMenu .dda{font-size: 15px;text-align: center;height: 60px;background-color: #61b8cd; padding-top: 5px;}
+    #headerBody #inspireMenu .dda p{margin-top: 9px;width: 76%;border: #fff 2px dotted;margin-left: 10%;height: 30px;line-height: 30px;font-size: 12px;}
     #headerBody #inspireMenu .gtiTool{font-size: 14px; text-align: center;text-indent: 0px;}
     .arrow-up {width: 0;height: 0;border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 25px solid #008caf; position: absolute;bottom: 100%;right: 15px;}
-    #theDropPad{position: fixed; background-color: #000; width: 100%; height: 100%; top: 0px; left: 0px;z-index: 1000000; opacity: .8; display: none;}
-    #theDropPad #dropUpdate{font-size: 80px;width: 100%;margin-top: -50px;text-align: center;height: 100px;top: 50%;position: absolute;}
 </style>
 <div id="dahliaHeader">
     <div id="headerHeader">
-        <ul class="left">
-            <li>SIGN UP TODAY AND GET $10</li>
-        </ul>
         <ul class="right">
             <li><a href="/contests">CONTESTS</a></li>
             <li><a href="/goodies">GOODIES</a></li>
@@ -47,14 +47,16 @@
         <a href="/"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
             <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE</a></li>
-            <li><a href="/sponsor"><span class="<?= $self == '/sponsor.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>
+            <li><a href="/sponsor"><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>
             <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
         </ul>
 
         <div id="rightHandMenu">
-            <div id="shoppingCart" <?= count($_data['cart']['products']) ? 'style="background-image: url(\'/images/shoppingCart_on.png\');"' : '' ?>>
+            <div id="shoppingCart">
                 <?php if(count($_data['cart']['products'])): ?>
-                    <a href="/shop/cart"><div class="cartCount"><?= getTotalProductsInCart($_data['cart']['products']) ?></div></a>
+                    <a href="/shop/cart">
+                        <div class="cartCount spriteBG <?= count($_data['cart']['products']) ? 'fullCart' : 'emptyCart' ?>"><?= getTotalProductsInCart($_data['cart']['products']) ?></div>
+                    </a>
                     <ul id="dahliaCart">
                         <div class="cart_bezier"></div>
                         <?php foreach( $_data['cart']['products'] as $product ): ?>
@@ -69,46 +71,37 @@
                         <a href="/shop/cart"><li class="cta">Edit bag/ Check out</li></a>
                     </ul>
                 <? else: ?>
-                    <a href="/shop/cart"><div class="cartCount"></div></a>
+                    <div class="cartCount spriteBG <?= count($_data['cart']['products']) ? 'fullCart' : 'emptyCart' ?>"><?= getTotalProductsInCart($_data['cart']['products']) ?></div>
                 <? endif ?>
             </div>
-            <div id="searchButton"></div>
-            <? if(IS_LOGGED_IN): ?>
-                <div id="userMenu">
-                    <div class="avatarFrame theUsersAvatar"><a href="/<?= $_SESSION['user']['username'] ?>"><img src="<?= $userConfig['avatar'] ?>&width=100"></a></div>
-                    <div class="userName"><a href="/<?= $_SESSION['user']['username'] ?>" style="color: #fff !important;"><?= $_SESSION['user']['username'] ?></a></div>
-                    <ul id="theDropdown" class="dahliaBGColor">
-                        <div class="arrow-up"></div>
-                        <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
-                        <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
-                        <a href="/activity"><li id="menuActivity">Activity</li></a>
-                        <a href="/invite"><li id="menuClique">Grow My Clique</li></a>
-                        <a href="/account/settings"><li>Settings</li></a>
-                        <a href="/shop/my-orders"><li>Orders</li></a>
-                        <a href="/action/logout"><li>Logout</li></a>
-                    </ul>
-                </div>
-            <? else: ?>
-                <ul class="loginDept">
+            <div id="searchButton" class="spriteBG"></div>
+            <div id="userMenuFrame">
+                <?php if(IS_LOGGED_IN) require_once $_SERVER['DOCUMENT_ROOT'] . '/blocks/userMenu.php'; ?>
+            </div>
+            <ul class="loginDept">
+                <?php if(!IS_LOGGED_IN): ?>
+                    <li><a href="/signup" rel="pop">Join</a></li>
                     <li><a href="/login" rel="pop">Login</a></li>
-                    <li><a href="/signup" rel="pop">Signup</a></li>
-                </ul>
-            <? endif ?>
+                <? endif ?>
+            </ul>
         </div>
-        <div id="inspireButt">+
+        <div id="inspireButt">
+            <div class="inspGraph">+</div>
             <ul id="inspireMenu" class="dahliaBGColor">
-                <div class="arrow-up"></div>
                 <li style="padding-right: 42px;">
                     <form id="postUploadForm" action="/action/post_image.php" method="post" enctype="multipart/form-data">
                         <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="new postUpload(this.files[0]);">
                         <input type="hidden" name="takeMeBack" value="takemehome">
                     </form>
-                    UPLOAD A PICTURE<div class="spriteBG subMenuBG" style="background-position: -43px 305px;"></div></li>
-                <li><a href="/bank/tumblr">TUMBLR<div class="spriteBG subMenuBG" style="background-position: -108px 305px;"></div></a></li>
-                <li><a href="/bank/pinterest">PINTEREST<div class="spriteBG subMenuBG" style="background-position: -237px 305px;"></div></a></li>
-                <li><a href="/bank/instagram">INSTAGRAM<div class="spriteBG subMenuBG" style="background-position: -173px 305px;"></div></a></li>
-                <li><a href="/bank/dahliawolf">D/W IMAGE BANK<div class="spriteBG subMenuBG" style="background-position: -304px 304px;"></div></a></li>
+                    UPLOAD A PICTURE<div class="spriteBG subMenuBG" style="background-position: -46px 419px;"></div></li>
+                <li><a href="/bank/tumblr">TUMBLR<div class="spriteBG subMenuBG" style="background-position: -110px 419px;"></div></a></li>
+                <li><a href="/bank/pinterest">PINTEREST<div class="spriteBG subMenuBG" style="background-position: -240px 419px;"></div></a></li>
+                <li><a href="/bank/instagram">INSTAGRAM<div class="spriteBG subMenuBG" style="background-position: -176px 419px;"></div></a></li>
+                <li><a href="/bank/dahliawolf">D/W IMAGE BANK<div class="spriteBG subMenuBG" style="background-position: -359px 689px;"></div></a></li>
                 <!--<li><a href="/bank/web">ADD FROM WEBSITE<div class="spriteBG subMenuBG" style="background-position: -369px 305px;"></div></a></li>-->
+                <div class="dda">
+                    <p>DRAG AND DROP ANYWHERE</p>
+                </div>
                 <li class="gtiTool"><a href="/pinit">GET THE INSPIRE TOOL</a></li>
             </ul>
         </div>

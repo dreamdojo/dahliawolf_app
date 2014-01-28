@@ -47,16 +47,15 @@ if ($top_dir == 'shop') {
 <link href="/css/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/spine<?= !empty($_data['spine_version']) ? $_data['spine_version'] : '' ?>.css.php" media="screen" rel="stylesheet" type="text/css">
 <link type="text/css" href="/css/shop.css" rel="stylesheet" media="screen" />
-<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>-->
+<!--<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>-->
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic' rel='stylesheet' type='text/css'>
 <!--<script id="facebook-jssdk" src="/js/all.js"></script>-->
 <!--<script src="/js/cb=gapi.loaded_0" async=""></script>-->
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript" src="/js/jquery.url.packed.js"></script>
-<script type="text/javascript" src="/js/jquery.color-2.1.1.min.js"></script>
 <script type="text/javascript" src="/js/jquery-ui.js"></script>
-<script type="text/javascript" src="/js/jquery.caret.1.02.min.js"></script>
 <script type="text/javascript" src="/js/nav.js"></script>
 <script type="text/javascript" src="/js/pin.js"></script>
 <script type="text/javascript" src="/js/pplFinder.js"></script>

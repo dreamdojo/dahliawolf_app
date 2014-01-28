@@ -17,7 +17,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}
 iframe{height:0px;}
 
-body { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size:10px;color:#666; margin-top: 93px;}
+body { font-family: lato, sans-serif, ariel; font-size:10px;color:#666; margin-top: 93px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -31,7 +31,7 @@ h1 {margin: 32px 0 11px; font-size: 3em;}
 h2 {padding: 0 0 8px; font-size: 2.5em;}
 h1, h2 {letter-spacing: -0.0125em; font-weight: bold;overflow: hidden;}
 p {margin: 0 0 .8em; line-height: 1.35em;}
-a {font-weight: 100; color: #666; text-decoration: none !important; outline: none;}
+a {color: #666; text-decoration: none !important; outline: none;}
 a:hover {color: #74bf00; text-decoration: underline;}
 /*textarea, input {padding: 5px; line-height: 1em; color: #8c7e7e; background: #fcf9f9; border: 1px solid; border-color: #ddd #e1dfdf #d1cdcd; box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.75);}
 textarea:focus, input:focus {background-color: #fff; box-shadow: inset 0 1px 1px rgba(34,29,29,0.1); -moz-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1); -webkit-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1);}
@@ -59,7 +59,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .facebook{font-size: 14px;margin-top: 4px; cursor:pointer;}
 .spriteBG{background-image: url("/images/sprites.png");}
 .highlight:hover{color: #74bf00 !important;}
-.dahliaColor{color: #168795 !important;}
+.dahliaColor{color: #008caf !important;}
 .dahliaBGColor{background-color: #008caf !important;}
 
 /*--------------- SORT SECTION ----------------*/
@@ -87,21 +87,21 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 /*************************** HEADER ********************/
 #dahliaHeader{position: fixed; height: 70px; width: 100%; left: 0px; top: 0px;z-index: 1111100; color: #fff;}
 #dahliaHeader a{color: #fff;}
-#dahliaHeader a:hover{color: #b3fc5c !important;}
+#dahliaHeader a:hover{color: #74bf00;}
 .native_head{float: left;display: inline-block;margin-left: 15px;}
 .native_head li{float: left;margin-top: 14px;margin-left: 10px;}
+#tourButton{cursor: pointer;}
 
 /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
 #dahliaHeader #dahliaLogo{width: 205px; height: 65px; background-image: url("/images/logo_no_beta.png");background-size: auto 60%;background-repeat: no-repeat;background-position: 0% 50%;margin-left: 20px;overflow: hidden; float: left; cursor: pointer; position: relative; z-index: 10;transition: width.3s; -webkit-transition: width .3s;}
 #dahliaHeader .logoTransformed{background-position: 99% 50% !important; width: 82px !important;}
 #dahliaHeader #userMenu{float: right; padding-right: 9px; position: relative; height: 90px; margin-top: 10px; margin-right: 4px;}
-#dahliaHeader .avatarFrame{width: 45px;height: 45px;overflow: hidden; margin-top: -2px;border-radius: 30px;float: right;border: #fff 3px solid;}
+#dahliaHeader .avatarFrame{width: 30px;height: 30px;overflow: hidden; margin-top: 6px;border-radius: 30px;float: right;border: #fff 3px solid;}
 #dahliaHeader .avatarFrame img{width: 100%;}
 #dahliaHeader .userName{float: right;color: #fff;font-size: 17px;line-height: 51px; margin-right: 13px;}
-#dahliaHeader #mainMenu{width: 340px; color: #fff; line-height: 65px; font-size: 24px;text-align: center;float: left;}
+#dahliaHeader #mainMenu{width: 340px; color: #fff; line-height: 65px; font-size: 19px;text-align: center;float: left;}
 #dahliaHeader #mainMenu li{float: left; margin: 0px 10px; position: relative;}
-#dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 30px;height: 65px;background-size: 75%; background-repeat: no-repeat; background-position: 5px 8px; margin-top: 10px; position: relative; padding-bottom: 50px;}
-#dahliaHeader #searchButton{ float:right; background-image: url("/images/s_mag.png"); width: 30px; height: 65px; background-size: 94%;background-position: 1px 10px; background-repeat: no-repeat;margin-top: 10px; margin-right: 5px;}
+#dahliaHeader #searchButton{ float:right; width: 30px; height: 65px; background-size: 400px;background-position: -38px -323px; background-repeat: no-repeat;margin-top: 10px; margin-right: 5px;}
 #dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 10px; position: relative;}
 #dahliaMainMenuButton{float: left; height: 48px; width: 50px;  display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 86%; background-repeat: no-repeat;margin-top: 2px;}
 #dahliaMainMenuButton:hover .theMainMenu{display: block;}
@@ -119,20 +119,31 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userMenu li:first-child{}
 #userMenu li:last-child{}
 .loginDept{color: #fff;font-size: 18px;width: 251px;line-height: 65px;}
-.loginDept li{float: left; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 400; letter-spacing: 0.5px; font-family: helvetica;}
-.loginDept li:last-child{background-color: #76bd22; height: 16px; padding: 8px 18px; color: #00818c; line-height: 18px; margin-top: 17px; font-weight: bold;}
+.loginDept li{float: right; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 400; letter-spacing: 0.5px; font-family: helvetica;}
+.loginDept li:first-child{background-color: #76bd22;height: 16px;padding: 6px 18px;color: #00818c;line-height: 16px;margin-top: 19px;border-radius: 4px;}
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
 .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
-.mmBorder{border-right: #666666 thin solid;position: absolute; height: 30px;right: -10px; top: 10px;
-    -webkit-transform: rotate(-22deg);
-    -moz-transform: rotate(-22deg);
-    -o-transform: rotate(-22deg);
-    -ms-transform: rotate(-22deg);
-    transform: rotate(-22deg);}
+
+/*********** THE DROP DOWN CART **************/
+#dahliaCart{position: absolute;top: 70px;right: -10px; width: 270px; border: #ccc thin solid; z-index: 100; background-color: #fff; display: none;}
+#shoppingCart:hover ul{display: block !important;}
+#dahliaHeader #shoppingCart{ float: right; width: 30px;height: 65px; margin-top: 10px; position: relative; padding-bottom: 50px;}
+#dahliaHeader #rightHandMenu .fullCart{background-position: -68px -276px;}
+#dahliaHeader #rightHandMenu .emptyCart{background-position: -38px -276px;}
+#dahliaCart div{float: left;}
+#dahliaCart li:first-child{float: left;}
+#dahliaCart li:first-child img{height: 70px;margin-left: 0px; margin-right: 10px;}
+#dahliaCart ul{height: 85px;border-bottom: #c2c2c2 thin solid;width: 84%;margin: 0px auto;margin-top: 15px;}
+#dahliaCart ul:last-child{border-bottom: none;}
+#dahliaCart ul li{color: #666;font-size: 12px;line-height: 16px; text-align: left;}
+#dahliaCart .cta{background-color: #76bd22;color: #fff;width: 225px;margin: 0px auto;margin-top: 10px;margin-bottom: 25px;text-align: center;padding: 10px 0px;font-size: 15px;text-transform: uppercase;float: none !important;}
+#shoppingCart .cartCount{background-size: 385px; background-repeat: no-repeat; width: 30px;text-align: center;line-height: 37px;font-size: 13px; color: #fff;height: 30px; margin-top: 10px;}
+.cart_bezier{position: absolute;width: 29px;background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
+
 
 #searchBar{width: 100%;position: absolute;height: 60px;left: 0px;background-color: #000;top: 100%; z-index: 123;border-top: #fff thin solid;display: none;}
-#searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center; font-family: futura;}
-.pinkMe{color: #78fff4;}
+#searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center;}
+.pinkMe{color: #82CF26;}
 .newActivityCountMod{color: #fff;background-color: #78fff4;text-align: center;padding: 3px;line-height: 20px;position: absolute;right: 6px;border-radius: 16px;margin-top: 2px;text-indent: 0px;min-width: 20px;top: 0px;}
 #phoPop{position: fixed; width: 100%; height: 100%; top: 80px; left: 0px; top: 0px; background-color: #fff; z-index: 1000000;}
 
@@ -241,7 +252,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 /************************ VOTE ******************/
 #voteBucket{width: 1000px; margin: 0px auto;padding-bottom: 200px;min-height: 1000px;}
 #voteBucket .gridMode{max-width: 300px; overflow: hidden; float: left; margin: 16px 2px;}
-#voteBucket .userBar{bottom: 0; top: auto;position: absolute; width: 100%; z-index: 1; color: #fff; text-align: center; height: 40px;line-height: 40px;font-size: 13px;}
+#voteBucket .userBar{bottom: 0; top: auto;position: absolute; width: 100%; z-index: 1; color: #fff; text-align: center; height: 40px;line-height: 40px;font-size: 13px; background-color: #a8a8a8;}
 .tpVoteCity{position: absolute;left: 0px;top: 0px;height: 100%;width: 100%;z-index: -1;opacity: .8; color: #fff;}
 #voteBucket .spineMode{margin: 10px;}
 .spineMode  .post .innerwrap{position: relative;}
@@ -268,16 +279,16 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     transition: all .2s; -webkit-transition: all .2s; opacity: 0;z-index: 1; font-family: futura;}
 .voteDot:hover{opacity: 1;}
 #voteBucket .unloved{background-color: #000;}
-#voteBucket .loved{background-color: #008caf;}
-.voteAvatar{height: 60px;width: 60px;position: absolute;right: 10px;top: 10px;border: #fff 2px solid;border-radius: 35px;background-size: 100% auto;background-position: 50%;}
+#voteBucket .loved{background-color: #82CF26;}
+.voteAvatar{height: 45px;width: 45px;position: absolute;right: 10px;top: 10px;border: #fff 2px solid;border-radius: 35px;background-size: 100% auto;background-position: 50%;}
 .post:hover .showOnHover{opacity: 1;}
-.hypeBar{position: absolute;bottom: 0px;width: 100%;color: #fff;display: inline-block;z-index: 1000;line-height: 40px; opacity: 0;}
+.hypeBar{position: absolute;bottom: 0px;width: 100%;color: #fff;display: inline-block;z-index: 1000;line-height: 40px; opacity: 0; background-color: #a8a8a8;}
 .hypeBar li{float: left;width: 25%;font-size: 14px;}
-.hypeBar .hypes{height: 27px;width: 40px;float: left;background-position: -29px 53px;background-size: 387px; margin-top: 5px;}
+.hypeBar .hypes{height: 27px;width: 40px;float: left;background-position: -20px 134px;background-size: 350px; margin-top: 5px;}
 .hypeBar .hyped{background-position: -63px 53px;}
-.hypeBar .hbComments{margin-top:5px; height: 27px;width: 40px;float: left;background-position: -90px 47px;background-size: 346px;}
-.hypeBar .hbShares{height: 27px;width: 40px;float: left;background-position: -161px 48px;background-size: 353px; margin-top: 5px;}
-.hypeBar .hbRepost{margin-top: 5px;height: 27px;width: 40px;float: left;background-position: -37px 132px;background-size: 482px;}
+.hypeBar .hbComments{margin-top:5px; height: 27px;width: 40px;float: left;background-position: -91px 132px;background-size: 346px;}
+.hypeBar .hbShares{height: 27px;width: 40px;float: left;background-position: -156px 129px;background-size: 337px; margin-top: 5px;}
+.hypeBar .hbRepost{margin-top: 5px;height: 27px;width: 40px;float: left;background-position: -18px -57px;background-size: 301px;}
 .hypeBar .reposted{background-position: -80px 132px;}
 #voteBucket .post .showOnHover{transition: .25s; -webkit-transition: .25s;}
 
@@ -671,19 +682,6 @@ padding: 20px;}
 .caret-inner {top: 1px;left: 1px;display: inline-block;border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 6px solid #fff;position: absolute;top: 0;left: 0;display: inline-block; margin-left: -1px;}
 
 .winner-tag{ position: absolute; right: 0px;color: #fff;top: 0px;padding: 5px 15px;background-color: #fd7173;bottom: auto !important;font-size: 20px !important;}
-/*********** THE DROP DOWN CART **************/
-#dahliaCart{position: absolute;top: 70px;right: -10px; width: 270px; border: #ccc thin solid; z-index: 100; background-color: #fff; display: none;}
-#shoppingCart:hover ul{display: block !important;}
-#dahliaCart div{float: left;}
-#dahliaCart li:first-child{float: left;}
-#dahliaCart li:first-child img{height: 70px;margin-left: 0px; margin-right: 10px;}
-#dahliaCart ul{height: 85px;border-bottom: #c2c2c2 thin solid;width: 84%;margin: 0px auto;margin-top: 15px;}
-#dahliaCart ul:last-child{border-bottom: none;}
-#dahliaCart ul li{color: #666;font-size: 12px;line-height: 16px; text-align: left;}
-#dahliaCart .cta{background-color: #76bd22;color: #fff;width: 225px;margin: 0px auto;margin-top: 10px;margin-bottom: 25px;text-align: center;padding: 10px 0px;font-size: 15px;text-transform: uppercase;float: none !important;}
-#shoppingCart .cartCount{width: 30px;text-align: center;line-height: 37px;font-size: 13px; color: #fff;height: 30px; margin-top: 10px;}
-.cart_bezier{position: absolute;width: 29px;background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
-
 /********** THE LESSON ************************/
 .lessonBox{height: 230px;margin-bottom: 10px;width: 100%;text-align: center;font-family: Arial, Helvetica, sans-serif;background-color: rgb(218, 218, 218);z-index: 100;position: relative;display: none;
 -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(255,255,255,0.3),0px 1px 6px rgba(248, 248, 248, 0.5);
@@ -2906,14 +2904,13 @@ div.sysPopupAlert {font-size: 16px; text-align: center; padding: 20px; padding-t
     border-right: #dbdbdb thin solid;
     border-left: #dbdbdb thin solid;
 }
-.shop-item{width: 329px;
-    height: 330px;
-    overflow: hidden;
+.shop-item{width: 300px;
+    height: 450px;
     float: left;
     position: relative;
     cursor: pointer;
     text-align: left;
-    border-bottom: #dbdbdb thin solid;
+    margin: 0px 35px;
 }
 .shop-item:hover .prodInfo{display: block;}
 .shop-item .imageFrame{height: 100%; width: 100%; position: relative;overflow: hidden;}
@@ -2927,6 +2924,9 @@ div.sysPopupAlert {font-size: 16px; text-align: center; padding: 20px; padding-t
     color: #fff;
     font-size: 14px;
     text-transform: uppercase;}
+.shop-item .prodDeets{position: absolute;width: 100%;top: 100%;font-size: 13px;}
+.shop-item .prodDeets li:first-child{float: left; width: 50%;}
+.shop-item .prodDeets li:last-child{float: right; width: 50%; text-align: right;}
 .shop-item a{color:#6ba42c;}
 .shop-item a:hover{color:#78fff4;}
 .shop-item .username{width: 100%; text-align: center; color: #6ba42c;font-size: 12px;}
