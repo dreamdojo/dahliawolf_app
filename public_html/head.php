@@ -79,6 +79,7 @@ if ($top_dir == 'shop') {
 <script src="/js/userList.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/js/userList.js') ?>" type="text/javascript"></script>
 <script src="/js/userProfile.js" type="text/javascript"></script>
 <script src="/js/api.js" type="text/javascript"></script>
+<script src="/js/jquery.stellar.min.js" type="text/javascript"></script>
 <script src="/js/vote.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'].'/js/vote.js') ?>" type="text/javascript"></script>
 <script type="text/javascript">
 var theUser = new Object();

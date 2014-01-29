@@ -34,6 +34,7 @@
     $total_sales = $_data->product->total_sales;
     $percentage = round(($total_sales/20)*100);
     $sales_needed = 20 - $total_sales;
+    $total_prod_imgs = 4;
 ?>
 
 <style>
@@ -113,7 +114,7 @@
                 <ul class="productImagesFrame" id="prodImgFrame">
                     <div id="theImages">
                         <? foreach ($_data->files as $i => $file): ?>
-                            <? if($i < 6): ?>
+                            <? if($i < $total_prod_imgs): ?>
                                 <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
                                 <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                                     <img class="small" id="image-<?= $i ?>" src="<?= $image_url ?>" />
@@ -125,7 +126,7 @@
                 <div id="imgMarker">
                     <ul>
                         <? foreach ($_data->files as $i => $file): ?>
-                            <? if($i < 6): ?>
+                            <? if($i < $total_prod_imgs): ?>
                                 <li <? if($i == 0): ?>class="current"<? endif ?>></li>
                             <? endif ?>
                         <? endforeach ?>
@@ -145,12 +146,12 @@
                             <li>50% OFF</li>
                             <li><?= $total_sales < $DISCOUNTS[1] ? $DISCOUNTS[1] - $total_sales.' spots left' : 'sold out' ?></li>
                         </ul>
-                        <ul class="status <?= $total_sales > $DISCOUNTS[2] ? 'closed' : '' ?>">
+                        <ul class="status <?= $total_sales > $DISCOUNTS[2] ? 'closed' : '' ?><?= $total_sales < $DISCOUNTS[3] && $total_sales > $DISCOUNTS[1] ? 'current' : '' ?>">
                             <li>$70.00</li>
                             <li>30% OFF</li>
                             <li><?= $total_sales < $DISCOUNTS[2] ? $DISCOUNTS[2] - $total_sales.' spots left' : 'sold out' ?></li>
                         </ul>
-                        <ul class="status <?= $total_sales > $DISCOUNTS[3] ? 'closed' : '' ?>">
+                        <ul class="status <?= $total_sales > $DISCOUNTS[3] ? 'closed' : '' ?> <?= $total_sales < $DISCOUNTS[0] && $total_sales > $DISCOUNTS[2] ? 'current' : '' ?>">
                             <li>$80.00</li>
                             <li>20% OFF</li>
                             <li><?= $total_sales < $DISCOUNTS[3] ? $DISCOUNTS[3] - $total_sales.' spots left' : 'sold out' ?></li>
@@ -215,7 +216,7 @@
         <div class="mainCol" style="text-align: center;">
             <h1><?= $_data->product->product_name ?></h1>
             <? foreach ($_data->files as $i => $file): ?>
-                <? if($i > 5): ?>
+                <? if($i > 3): ?>
                     <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
                     <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                         <img id="image-<?= $i ?>" src="<?= $image_url ?>" />

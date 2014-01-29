@@ -688,11 +688,11 @@ function getDaysLeft(date) {
     var secondDate = new Date(date);
     var oneDay = 24*60*60*1000;
 
-    var retVal =  Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-    if(retVal > 100 ) {
+    var retVal = firstDate.getTime() - secondDate.getTime();
+    if(retVal > 0)
         retVal = 0;
-    }
-    return retVal;
+
+    return Math.abs(Math.round(retVal/oneDay));
 }
 
 function popShippingFromBilling() {

@@ -17,6 +17,7 @@ function User(userData) {
     this.social = new Social();
     this.bank = new Bank();
     this.userStack = [];
+    this.redirect = null;
 }
 
 User.prototype = {
@@ -52,10 +53,14 @@ User.prototype.login = function(e) {
         var result = $.parseJSON(data);
 
         if(result[0] == 'success') {
-            dahliawolf.data = result[2];
-            $('#userMenuFrame').load('/blocks/userMenu.php');
-            $('.loginDept').empty();
-            $('#phoPop').remove();
+            if(dahliawolf.redirect) {
+                document.location = '/inspire';
+            } else {
+                dahliawolf.data = result[2];
+                $('#userMenuFrame').load('/blocks/userMenu.php');
+                $('.loginDept').empty();
+                $('#phoPop').remove();
+            }
             _gaq.push(['_trackEvent', 'Login', 'Success']);
         } else {
             e.data.$errorBox.html('*'+result[0]);
@@ -146,13 +151,11 @@ User.prototype.phoPop = function(url, title, callback) {
             $phoPop = $('<div id="phoPop"></div>');
         }
         window.history.pushState({}, '', url);
+        _gaq.push(['_trackPageview']);
         window.onpopstate = function(event) {
             $phoPop.remove();
         }
-
         url += '?ajax=true';
-
-        console.log(url);
         $('body').prepend($phoPop);
         $phoPop.load(url, callback);
     } else {
@@ -211,7 +214,7 @@ User.prototype.$product.prototype = {
 User.prototype.$sponsor = function(d) {
     var data = d;
     holla.log(d);
-    var TOTAL_SPONSORS_NEEDED = 10;
+    var DAYS_LEFT = getDaysLeft(data.commission_from_date);
     var $sponsorItem = $('<div class="sponsorItem"></div>');
 
     var $prodInfo = $('<div class="prodInfo"></div>');
@@ -221,8 +224,8 @@ User.prototype.$sponsor = function(d) {
 
     var $itemImage = $('<div class="imgFrame"><a href="/sponsor/'+data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></a></div>').appendTo($sponsorItem);
     var $sponsorDeets = $('<div class="sponsorDetails"></div>');
-    var $toGoal = $('<ul><li>3%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
-    var $left = $('<ul><li>59</li><li>days left</li></ul>').appendTo($sponsorDeets);
+    var $toGoal = $('<ul><li>'+(Number(data.total_sales)/100)*100+'%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
+    var $left = $('<ul><li>'+DAYS_LEFT+'</li><li>'+(DAYS_LEFT  == 1 ? 'day' : 'days')+' left</li></ul>').appendTo($sponsorDeets);
     //var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
     var $goal = $('<ul><li>3%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
     var $status = $('<div class="statuses">' +

@@ -137,8 +137,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #dahliaCart ul:last-child{border-bottom: none;}
 #dahliaCart ul li{color: #666;font-size: 12px;line-height: 16px; text-align: left;}
 #dahliaCart .cta{background-color: #76bd22;color: #fff;width: 225px;margin: 0px auto;margin-top: 10px;margin-bottom: 25px;text-align: center;padding: 10px 0px;font-size: 15px;text-transform: uppercase;float: none !important;}
-#shoppingCart .cartCount{background-size: 385px; background-repeat: no-repeat; width: 30px;text-align: center;line-height: 37px;font-size: 13px; color: #fff;height: 30px; margin-top: 10px;}
-.cart_bezier{position: absolute;width: 29px;background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
+#shoppingCart .cartCount{background-size: 385px; background-repeat: no-repeat; width: 25px; text-align: center;line-height: 37px;font-size: 13px; color: #76bd22;height: 30px; margin-top: 10px;}
+.cart_bezier{position: absolute; width: 29px; background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
 
 
 #searchBar{width: 100%;position: absolute;height: 60px;left: 0px;background-color: #000;top: 100%; z-index: 123;border-top: #fff thin solid;display: none;}
@@ -284,8 +284,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .post:hover .showOnHover{opacity: 1;}
 .hypeBar{position: absolute;bottom: 0px;width: 100%;color: #fff;display: inline-block;z-index: 1000;line-height: 40px; opacity: 0; background-color: #a8a8a8;}
 .hypeBar li{float: left;width: 25%;font-size: 14px;}
-.hypeBar .hypes{height: 27px;width: 40px;float: left;background-position: -20px 134px;background-size: 350px; margin-top: 5px;}
-.hypeBar .hyped{background-position: -63px 53px;}
+.hypeBar .hypes{height: 27px;width: 35px; margin-left:5px;float: left;background-position: -27px 134px;background-size: 350px; margin-top: 5px;}
+.hypeBar .hyped{background-position: -58px -205px;}
 .hypeBar .hbComments{margin-top:5px; height: 27px;width: 40px;float: left;background-position: -91px 132px;background-size: 346px;}
 .hypeBar .hbShares{height: 27px;width: 40px;float: left;background-position: -156px 129px;background-size: 337px; margin-top: 5px;}
 .hypeBar .hbRepost{margin-top: 5px;height: 27px;width: 40px;float: left;background-position: -18px -57px;background-size: 301px;}

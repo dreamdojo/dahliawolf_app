@@ -2,8 +2,8 @@
 ?>
 
 <style>
-    #headerHeader{height: 28px;  color: #656565; background-color: #cccccc;font-size: 14px;}
-    #headerHeader a{color: #656565;}
+    #headerHeader{height: 28px;  color: #fff; background-color: #666;font-size: 14px;}
+    #headerHeader a{color: #fff;}
     #headerHeader a:hover{color: #fff;}
     #headerBody{height: 65px; position: relative; color: #666;}
     #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .95;}

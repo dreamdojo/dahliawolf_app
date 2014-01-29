@@ -34,6 +34,7 @@ $status = $_data->product->status;
 $total_sales = $_data->product->total_sales;
 $percentage = round(($total_sales/20)*100);
 $sales_needed = 20 - $total_sales;
+$total_prod_imgs = 4;
 ?>
 
 <style>
@@ -112,7 +113,7 @@ $sales_needed = 20 - $total_sales;
                 <ul class="productImagesFrame" id="prodImgFrame">
                     <div id="theImages">
                         <? foreach ($_data->files as $i => $file): ?>
-                            <? if($i < 6): ?>
+                            <? if($i < $total_prod_imgs): ?>
                                 <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
                                 <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                                     <img class="small" id="image-<?= $i ?>" src="<?= $image_url ?>" />
@@ -124,7 +125,7 @@ $sales_needed = 20 - $total_sales;
                 <div id="imgMarker">
                     <ul>
                         <? foreach ($_data->files as $i => $file): ?>
-                            <? if($i < 6): ?>
+                            <? if($i < $total_prod_imgs): ?>
                                 <li <? if($i == 0): ?>class="current"<? endif ?>></li>
                             <? endif ?>
                         <? endforeach ?>
@@ -186,7 +187,7 @@ $sales_needed = 20 - $total_sales;
         <div class="mainCol" style="text-align: center;">
             <h1><?= $_data->product->product_name ?></h1>
             <? foreach ($_data->files as $i => $file): ?>
-                <? if($i > 5): ?>
+                <? if($i > 3): ?>
                     <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
                     <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                         <img id="image-<?= $i ?>" src="<?= $image_url ?>" />

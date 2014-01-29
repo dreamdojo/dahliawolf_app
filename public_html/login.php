@@ -68,7 +68,9 @@ if( !isset($_GET['ajax']) ) {
 <?php// include "footer.php" ?>
 <script>
     $(function() {
-        console.log('runnning');
         $('#theLoginForm').on('submit', {$errorBox : $('#loginErrors')}, dahliawolf.login);
+        <? if(!isset($_GET['ajax'])): ?>
+            dahliawolf.redirect = true;
+        <? endif ?>
     });
 </script>
