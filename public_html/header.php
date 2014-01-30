@@ -48,6 +48,10 @@
     #theDropPad .theOverlay{position: absolute; width: 100%; height: 100%; background-color: #000; opacity: .8; left: 0px; top: 0px;}
     #theDropPad #dropUpdate{font-size: 80px; opacity:.85; width: 100%;margin-top: -50px;text-align: center;height: 100px;top: 50%;position: absolute; color: #fff; z-index: 10;}
     #theDropPad #actualDropPad{position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 100;}
+    #theDropPad .postConfirm{position: absolute; overflow:hidden; width: 300px;background-color: #fff; top: 50%;left: 50%;height: 450px;margin-top: -225px; margin-left: -150px; z-index: 10000; display: none;transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;}
+    #theDropPad .closer{position: absolute; right: 6px;top: 0px;font-size: 19px;color: #fff;}
+    #theDropPad .title{background-color: #76bd23;line-height: 55px;height: 55px;text-align: center;color: #fff;font-size: 13px;}
+    #theDropPad .theImage{height: 395px; width:100%; background-size: auto 100%; background-repeat: no-repeat; background-position: 50%;}
 </style>
 
 <?php require_once 'blocks/header.php'; ?>
@@ -155,28 +159,11 @@
 </div>
 
 <script>
-
     $(function(){
         theLesson.init('<?= $self ?>');
         dahliaLoader = new loadingBar();
     });
 </script>
-
-
-<form action="action/post_image.php" id="thePinForm" method="POST" class="Form PinForm" enctype="multipart/form-data">
-
-
-<div id="post-me">
-	<div id="u-clsr" onclick="imgUpload.closeMe()">X</div>
-    <div class="uploader-frame">
-    	<img id="user-uploaded-img" />
-    </div>
-
-        <input type="hidden" name="subpin" value="1">
-        <div style="text-align: center;"><textarea name="description" id="comment">#dahliawolf</textarea></div>
-        <div style="text-align: center;padding-bottom: 25px; margin-top: 10px;"><input name="submit" type="image" src="/images/postitbtn2.png" onclick="$(this).hide()" id="image-sub"></div>
-</div>
-</form>
 
 
 <a class="Button WhiteButton Indicator" href="#" id="ScrollToTop" style="display: none;"><img src="/skin/img/gototop.jpg" width="61" height="64"></a>

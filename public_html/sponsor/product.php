@@ -46,7 +46,7 @@
     .sponsorItemWrap .left .productImagesFrame img{width: 100%; position: absolute;}
     .sponsorItemWrap .left #imgMarker{position: absolute;width: 100%;top: 94%;z-index: 111;height: 30px; text-align: center;}
     .sponsorItemWrap .left #imgMarker ul{display: inline-block; margin: 0px auto;}
-    .sponsorItemWrap .left #imgMarker li{height: 15px; width: 15px; background-color: #f8f7f3; float: left;margin-left: 5px; border-radius: 10px;}
+    .sponsorItemWrap .left #imgMarker li{height: 15px; width: 15px; background-color: #d3d3d3; float: left;margin-left: 5px; border-radius: 10px;}
     .sponsorItemWrap .left #imgMarker .current{background-color: #74bf00;}
 
     .sponsorItemWrap .prodDeets{width: 100%; padding-bottom: 10px;}
@@ -62,7 +62,7 @@
 
     .sponsorItemWrap .right{width: 40%; float: left; margin-left: 3%;}
     .sponsorItemWrap .right .shareButton{text-align: right; border: #c2c2c2 thin solid; float: right;padding: 5px 12px;border-radius: 7px;}
-    .sponsorItemWrap .right .sponsorDeets{background-color: #fff; border-radius: 9px; margin-top: 16px;}
+    .sponsorItemWrap .right .sponsorDeets{background-color: #fff; margin-top: 16px;}
     .sponsorItemWrap .right .sponsorDeets .shipping{text-align: center; color: #b7b7b7;}
     .sponsorItemWrap .right .sponsorDeets .sponsors{text-align: center; color: #b7b7b7;}
     .sponsorItemWrap .right .sponsorDeets .shipping p{font-size: 12px !important;}
@@ -80,7 +80,7 @@
     .sponsorItemWrap .right .sponsorDeets .shipping p:last-child{padding-bottom: 15px;}
     .sponsorItemWrap .right .size-o-matic{margin-top: 15px; height: 50px;}
     .sponsorItemWrap .right .sizes{width: 100%;position: relative;height: 50px;}
-    .sponsorItemWrap .right .sizes li{height: 50px;line-height: 50px;text-indent: 15px;background-color: #fff;border-radius: 10px;position: relative;z-index: 1000;position: absolute;top: 0px; z-index: 0; width: 100%;transition: top .5s; -webkit-transition: top .5s; cursor: pointer;}
+    .sponsorItemWrap .right .sizes li{height: 50px;line-height: 50px;text-indent: 15px;background-color: #fff; position: relative;z-index: 1000;position: absolute;top: 0px; z-index: 0; width: 100%;transition: top .5s; -webkit-transition: top .5s; cursor: pointer;}
     .sponsorItemWrap .right .sizes li:hover{background-color: #cccccc;}
 
     .sponsorItemWrap .right .sizes .selected{z-index: 10;}
@@ -238,7 +238,7 @@
 
         $('#daysLeft').html(getDaysLeft(data.commission_from_date));
 
-        $('<div id="leftArrow" class="arrow"></div>').prependTo( $('.productImagesFrame')).on('click', function() {
+        $('<div id="leftArrow" class="arrow spriteBG"></div>').prependTo( $('.productImagesFrame')).on('click', function() {
             var $sel = $('.showing');
             var $cur = $('.current');
             if($sel.prev().length) {
@@ -247,7 +247,7 @@
             }
         });
 
-        $('<div id="rightArrow" class="arrow"></div>').appendTo( $('.productImagesFrame')).on('click', function() {
+        $('<div id="rightArrow" class="arrow spriteBG"></div>').appendTo( $('.productImagesFrame')).on('click', function() {
             var $sel = $('.showing');
             var $cur = $('.current');
             if($sel.next().length) {
@@ -263,7 +263,7 @@
         $('.sizes').hover(function() {
             var $sizes = $(this).find('li');
             $.each($sizes, function(x, option) {
-                $(option).css('top', ((x*50)+(x*2))+'px').on('click', function() {
+                $(option).css('top', (x*50)+'px').on('click', function() {
                     $(this).addClass('selected').find('input').attr('checked', 'checked');
                     $sizes.css('top', 0);
                  });

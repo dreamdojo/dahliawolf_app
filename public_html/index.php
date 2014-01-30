@@ -12,9 +12,9 @@
     #hpWrapper #movieFrame video{width: 100%;}
     #hpWrapper .top{background-color: #fff; position: relative; z-index: 10; background-position: 50%; height: 430px; min-height: 0px !important;}
     #hpWrapper .top img{width: 100%;}
-    #hpWrapper .infoCol{width: 1000px; margin: 0px auto; padding-top: 65px; padding-bottom: 65px;}
+    #hpWrapper .infoCol{width: 1000px; margin: 0px auto; padding-top: 98px; padding-bottom: 65px;}
     #hpWrapper .infoCol ul{width: 48%; margin-right: 2%; float: left;}
-    #hpWrapper .infoCol .leftCol{padding-top: 119px; font-weight: 900;}
+    #hpWrapper .infoCol .leftCol{padding-top: 119px; font-weight: 900; float: right; width: 37%;}
     #hpWrapper .infoCol .rightCol #hiw-video{width: 450px;}
     #hpWrapper .infoCol .rightCol .sectionIcon{width: 35px; height: 35px;float: left;background-size: 395px;}
     #hpWrapper .infoCol .rightCol .sponsorIcon{background-position: -187px -281px;}
@@ -30,7 +30,7 @@
     #pressBanner{border-bottom: #c2c2c2 thin solid; text-align: center;position: relative;z-index: 108;background-color: #fff;}
     #pressBanner ul{width: 1000px;margin: 0px auto;height: 50px;line-height: 50px;}
     #pressBanner ul li{float: left; width: 20%;}
-    section{min-height: 485px; background-color: #fff; color: #666;}
+    section{min-height: 610px; background-color: #fff; color: #666;}
     section .nextSect{position: absolute;left: 50%;margin-left: -16.5px;bottom: 0px;}
     .expSect{position: relative; z-index: 10;}
 
@@ -61,8 +61,8 @@
         <img style="width: 1000px;" src="/images/asaBar.jpg">
     </div>
     <section id="whatisit" class="expSect">
-        <div class="infoCol">
-            <ul class="leftCol">
+        <div class="infoCol" style="padding-top: 164px;">
+            <ul class="leftCol" style="padding-top: 80px;">
                 <h1>WHAT IS IT?</h1>
                 <h3>Dahlia Wolf is a platform that allows isers to create their own fashion brand.</h3>
             </ul>
@@ -119,7 +119,7 @@
                 <h3>All the designs in out shop are made by the poeple for the people</h3>
             </ul>
             <ul class="rightCol">
-                <li><img style="width: 100%;" src="/images/hp_shop_img.jpg"></li>
+                <li><img style="width: 100%;width: 63%;margin-left: 22%;" src="/images/hp_shop_img.jpg"></li>
             </ul>
             <div style="clear: left;"></div>
         </div>
@@ -148,7 +148,7 @@
                this.play();
         });
         hpresize();
-        $(window).scroll(hpresize).resize(hpresize);
+        $(window).resize(hpresize);
         $('a[href^="#"]').on('click',function (e) {
             e.preventDefault();
 
@@ -156,7 +156,7 @@
                 $target = $(target);
 
             $('html, body').stop().animate({
-                'scrollTop': ($target.offset().top-60)
+                'scrollTop': ($target.offset().top - (window.innerHeight/2)+240)
             }, 900, 'swing', function () {
                 window.location.hash = target;
             });
@@ -181,16 +181,6 @@
     })
 
 function hpresize() {
-    var scrollPos = $(window).scrollTop();
-    //console.log(scrollPos);
-    //$('.paraBG').height(window.innerHeight);
-    //$('.noBG').eq(0).css('background-position', 0+'px -'+($(window).scrollTop() - window.innerHeight)+'px');
-    //$('#bgWrap2').height( $('.expSect').eq(2).offset().top - $(window).scrollTop() );
-    //$('#bgWrap3').height( $('.expSect').eq(3).offset().top - $(window).scrollTop() );
-    /*if(scrollPos > 300 && scrollPos < 2000) {
-     $('#BG1').css('background-position', 50+'%'+' '+-scrollPos *.1+'px');
-     } else if(scrollPos > 2000 && scrollPos < 4000) {
-     $('#BG2').css('background-position', 50+'%'+' '+-scrollPos *.01+'px');
-     }*/
+    $('.noBG').height(window.innerHeight *.75);
 }
 </script>

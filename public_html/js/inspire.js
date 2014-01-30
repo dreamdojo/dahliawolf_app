@@ -54,7 +54,7 @@ function postUpload(file) {
         this.maxSize = 5000000;
         this.minSize = 1000;
         this.file = file;
-        this.action = 'action/post_image.php?ajax=true';
+        this.action = '/action/post_image.php?ajax=true';
 
         if(!this.validateFile()) {
             return 0;
@@ -99,6 +99,10 @@ function postUpload(file) {
             this.oReq.addEventListener("load", function() {
                 that.data = $.parseJSON(this.responseText);
                 if(that.data.success) {
+                    var $verifyPost = $('<ul class="postConfirm"><li class="closer">X</li><li class="title">YOUR IMAGE HAS BEEN POSTED</li><li class="theImage" style="background-image: url('+that.data.data.new_image_url+');"></li></ul>').appendTo($('#theDropPad')).fadeIn(400);
+                    setTimeout(function() {
+                        $verifyPost.css({'left': ($('#userAvatar').offset().left+200)+'px', top:10+'px', width:10+'px', height:10+'px'});
+                    }, 2600);
                     _gaq.push(['_trackEvent', 'Inspire', 'Upload completed successfully']);
                     postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+that.data.data.posting_id, that.data.data.new_image_url, that.data.data.posting_id);
                 } else {
@@ -106,9 +110,13 @@ function postUpload(file) {
                     _gaq.push(['_trackEvent', 'Errors', that.data.errors]);
                     alert(that.data.errors);
                 }
+
                 setTimeout(function() {
-                    $('#theDropPad').fadeOut(100);
-                }, 1000)
+                    $('#theDropPad').fadeOut(100, function() {
+                        $('#dropUpdate').html('DROP IT LIKE ITS HOT');
+                        $verifyPost.remove();
+                    });
+                }, 3000)
             }, false);
         }
 

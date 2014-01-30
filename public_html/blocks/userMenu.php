@@ -11,7 +11,6 @@
         </a>
     </div>
     <ul id="theDropdown" class="dahliaBGColor">
-        <div class="arrow-up"></div>
         <a href="/<?= $_SESSION['user']['username'] ?>"><li style="border-top: none;">Profile</li></a>
         <a href="/<?= $_SESSION['user']['username'] ?>?dashboard=true"><li>Dashboard</li></a>
         <a href="/activity"><li id="menuActivity">Activity</li></a>

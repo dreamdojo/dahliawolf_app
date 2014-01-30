@@ -227,7 +227,7 @@ voteFeed.prototype.get$Post = function(id, index) {
         var $img = $('<img src="'+img_url+'">').appendTo($post);
         $img.wrap('<div class="innerwrap"></div>');
     }
-    $img.wrap('<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+(Math.floor(Math.random() * (6 - 1) + 1))+'" rel="modal"></a>');
+    $img.wrap('<a href="/post/'+post.posting_id+'" class="image color-'+(Math.floor(Math.random() * (6 - 1) + 1))+'" rel="pop"></a>');
 
     return $post;
 }

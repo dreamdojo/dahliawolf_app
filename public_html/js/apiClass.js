@@ -147,6 +147,7 @@ User.prototype.phoPop = function(url, title, callback) {
     if(url) {
         if( $('#phoPop').length ) {
             $phoPop = $('#phoPop');
+            $phoPop.empty();
         } else {
             $phoPop = $('<div id="phoPop"></div>');
         }
@@ -183,7 +184,7 @@ User.prototype.$product = function(data) {
     this.data = data;
     var $prodInfo = $('<ul class="prodInfo"></ul>');
     var $product = $('<div class="shop-item '+this.status+'" id="item-'+this.id+'"></div>');
-    var prodDeets = $('<ul class="prodDeets"><li>'+this.price+'</li></ul>').appendTo($product);
+    var prodDeets = $('<ul class="prodDeets"><li>'+this.name+'</li><li>'+this.price+'</li></ul>').appendTo($product);
     var $imageFrame = $('<ul class="imageFrame"></ul>');
     var $productShot = $('<li class="productShot"></li>').css('background-image', 'url("'+this.productShot+'")').appendTo($imageFrame);
     var $avatar = $('<li class="avatar" style="background-image: url('+data.avatar+'&width=85);"></li>').appendTo($prodInfo);
@@ -227,7 +228,7 @@ User.prototype.$sponsor = function(d) {
     var $toGoal = $('<ul><li>'+(Number(data.total_sales)/100)*100+'%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
     var $left = $('<ul><li>'+DAYS_LEFT+'</li><li>'+(DAYS_LEFT  == 1 ? 'day' : 'days')+' left</li></ul>').appendTo($sponsorDeets);
     //var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
-    var $goal = $('<ul><li>3%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
+    var $goal = $('<ul><li>9</li><li>sponsors spots left at 50% off</li></ul>').appendTo($sponsorDeets);
     var $status = $('<div class="statuses">' +
         '<ul class="status closed"><li>50% OFF</li><li>sold out</li></ul>' +
         '<ul class="status current"><li>30% OFF</li><li>22 spots left</li></ul>' +
@@ -847,7 +848,7 @@ Cart.prototype.update = function(callback) {
         that.set(data);
         that.$setTotal();
         if(data.products.length == 1) {
-            that.$cartContainer.css('background-image', 'url("/images/shoppingCart_on.png")');
+            that.$totalCount.addClass('fullCart').removeClass('emptyCart');
             that.$cart = $('<ul id="dahliaCart"></ul>').appendTo(that.$cartContainer);
         }
         that.$cart.empty().append(that.$bezier.clone());

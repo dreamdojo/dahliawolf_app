@@ -27,7 +27,7 @@
     .sponsorItem{display: inline-block; width: 100%; margin-top: 50px; padding-bottom: 50px; border-bottom: #fff thin solid;}
 
     .sponsorItem .userDeets{float: left;width: 50%;text-align: left;}
-    .sponsorItem .prodInfo{width: 100%;height: 50px; margin-bottom: 10px;}
+    .sponsorItem .prodInfo{width: 97%; height: 50px; margin-bottom: 10px; margin-left: 2%;}
     .sponsorItem .prodInfo .avatar{height: 50px;width: 50px;background-size: auto 100%;float: left;border-radius: 25px;background-repeat: no-repeat; background-position: 50%;}
     .sponsorItem .prodInfo .prodTitle{height: 25px;line-height: 35px;font-size: 16px;text-indent: 10px;}
     .sponsorItem .prodInfo .inspHead{text-indent: 10px;font-size: 11px;padding-top: 6px;}

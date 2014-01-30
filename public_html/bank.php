@@ -24,7 +24,7 @@
     #bankBucket .grid{float: left; width: 300px;height: 300px; margin: 10px;}
     #bankBucket .line{width: 80%; margin: 10px auto;overflow: hidden;margin-bottom: 10px;margin-top: 10px; max-width: 500px;}
     #bankBucket .postFrame img{width: 100%;}
-    #bankBucket .postButton{position: absolute; display:none; right: 50%;top: 50%;background-color: #008caf; width: 90px;height: 90px;border-radius: 50px;text-align: center;line-height: 90px;margin-top: -45px;margin-right: -45px;font-size: 15px;cursor: pointer;font-family: futura;font-weight: bolder;color: #fff;}
+    #bankBucket .postButton{position: absolute; display:none; right: 50%;top: 50%;background-color: #74bf00; width: 90px;height: 90px;border-radius: 50px;text-align: center;line-height: 90px;margin-top: -45px;margin-right: -45px;font-size: 15px;cursor: pointer;font-family: futura;font-weight: bolder;color: #fff;}
     #bankBucket .postButton:hover{opacity: .7;}
     #bankBucket h2{text-align: center;width: 80%;margin: 30px auto;}
     #bankBucket .postSource{position: absolute;bottom: 0px;width: 100%;text-align: center;font-size: 12px;height: 25px;line-height: 25px;background-color: #fff;opacity: .7;color: #000;}

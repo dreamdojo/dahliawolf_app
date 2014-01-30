@@ -2,7 +2,7 @@
 ?>
 
 <style>
-    #headerHeader{height: 28px;  color: #fff; background-color: #666;font-size: 14px;}
+    #headerHeader{height: 28px;  color: #fff; background-color: #666;font-size: 12px;}
     #headerHeader a{color: #fff;}
     #headerHeader a:hover{color: #fff;}
     #headerBody{height: 65px; position: relative; color: #666;}
@@ -20,14 +20,14 @@
     #headerHeader .hhDropdown ul li{float: none; color: #666; text-align: left;}
     #headerHeader .hhDropdown ul li:hover{color: #fff;}
     #headerHeader .hhDropdown:hover ul{display: block;}
-    #headerBody #inspireButt{cursor: pointer;float: right;height: 100px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #fff; width: 65px; text-align: right;}
+    #headerBody #inspireButt{cursor: pointer;float: right;height: 68px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #fff; width: 65px; text-align: right;}
     #headerBody #inspireButt:hover #inspireMenu{display: block;}
     #headerBody #inspireButt .inspGraph{border: #CFCFCF thin solid;height: 30px;width: 30px;line-height: 28px;margin-top: 18px;font-size: 32px;border-radius: 4px;text-align: center;float: right;}
-    #headerBody #inspireMenu{position: absolute; width: 300px; right: -1px; margin-top: 65px;display: none; padding-top: 10px; border-top: #B1B1B1 thin solid;}
+    #headerBody #inspireMenu{position: absolute; width: 225px; right: -1px; margin-top: 65px;display: none; padding-top: 10px;}
     #headerBody #inspireMenu li{font-size: 14px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl; border-bottom: #B1B1B1 thin solid;}
     #headerBody #inspireMenu .subMenuBG{position: absolute;right: 0px;width: 30px;height: 30px;background-size: 464px;top: 0px;}
     #headerBody #inspireMenu .dda{font-size: 15px;text-align: center;height: 60px;background-color: #61b8cd; padding-top: 5px;}
-    #headerBody #inspireMenu .dda p{margin-top: 9px;width: 76%;border: #fff 2px dotted;margin-left: 10%;height: 30px;line-height: 30px;font-size: 12px;}
+    #headerBody #inspireMenu .dda p{margin-top: 9px;width: 84%; border: #fff 2px dotted;margin-left: 8%;height: 30px;line-height: 30px;font-size: 12px;}
     #headerBody #inspireMenu .gtiTool{font-size: 14px; text-align: center;text-indent: 0px;}
     .arrow-up {width: 0;height: 0;border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 25px solid #008caf; position: absolute;bottom: 100%;right: 15px;}
 </style>

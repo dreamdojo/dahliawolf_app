@@ -35,7 +35,7 @@
     </div>
 <? endif ?>
 
-<div id="dahliawolfShop" style="max-width: 740px;"></div>
+<div id="dahliawolfShop" style="max-width: 620px;"></div>
 
 <?
     //include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";

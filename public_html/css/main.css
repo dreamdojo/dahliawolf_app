@@ -108,8 +108,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover #theDropdown{display: block;}
-#userMenu ul{position: absolute;width: 250px; margin-top: 88px; text-align: left; color: #636363; display: none; right: 1px; z-index: 1000000;padding-bottom: 10px; padding-top: 10px;}
-#userMenu li{font-size: 17px;font-family: arial; height: 30px;line-height: 30px;text-indent: 35px;position: relative;direction: rtl;text-align: right;}
+#userMenu ul{position: absolute;width: 186px;margin-top: 55px;text-align: left; color: #636363; display: none; right: 1px; z-index: 1000000;padding-bottom: 10px; padding-top: 10px;}
+#userMenu li{font-family: arial;height: 35px;line-height: 35px;text-indent: 40px;position: relative;direction: rtl;text-align: right;border-top: #c2c2c2 thin solid;text-transform: uppercase;font-size: 13px;}
 #userMenu ul .header-bezier{position: absolute; width: 266px; background-image: url("/images/menu-bezier.png"); background-repeat: no-repeat; background-size: 100%;background-position: 39px 0px;height: 15px;top: -6px;margin-top: 9px;}
 #userMenu .top-menu-footer{ background-color: #2e2e2e; color: #b1b1b1; text-indent: 0px; text-align: center; font-size: 11px;}
 #userMenu .top-menu-footer a{color: #b1b1b1 !important;}
@@ -137,15 +137,15 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #dahliaCart ul:last-child{border-bottom: none;}
 #dahliaCart ul li{color: #666;font-size: 12px;line-height: 16px; text-align: left;}
 #dahliaCart .cta{background-color: #76bd22;color: #fff;width: 225px;margin: 0px auto;margin-top: 10px;margin-bottom: 25px;text-align: center;padding: 10px 0px;font-size: 15px;text-transform: uppercase;float: none !important;}
-#shoppingCart .cartCount{background-size: 385px; background-repeat: no-repeat; width: 25px; text-align: center;line-height: 37px;font-size: 13px; color: #76bd22;height: 30px; margin-top: 10px;}
+#shoppingCart .cartCount{background-size: 385px; background-repeat: no-repeat; width: 30px; text-align: center;line-height: 29px; font-size: 13px; color: #fff; height: 30px; margin-top: 10px;}
 .cart_bezier{position: absolute; width: 29px; background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
 
 
 #searchBar{width: 100%;position: absolute;height: 60px;left: 0px;background-color: #000;top: 100%; z-index: 123;border-top: #fff thin solid;display: none;}
 #searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center;}
 .pinkMe{color: #82CF26;}
-.newActivityCountMod{color: #fff;background-color: #78fff4;text-align: center;padding: 3px;line-height: 20px;position: absolute;right: 6px;border-radius: 16px;margin-top: 2px;text-indent: 0px;min-width: 20px;top: 0px;}
-#phoPop{position: fixed; width: 100%; height: 100%; top: 80px; left: 0px; top: 0px; background-color: #fff; z-index: 1000000;}
+.newActivityCountMod{color: #fff;background-color: #82CF26;text-align: center;padding: 3px;line-height: 13px;position: absolute;right: 6px;border-radius: 9px;margin-top: 8px;text-indent: 0px;min-width: 20px;top: 0px;font-size: 11px;}
+#phoPop{position: fixed; width: 100%; height: 100%; top: 80px; left: 0px; top: 0px; background-color: #fff; z-index: 1000000;overflow: scroll;}
 
 #mobNative{float: left;margin-top: 40px;margin-left: 6%;}
 #mobNative li{float: left; width: 115px;}
@@ -279,7 +279,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     transition: all .2s; -webkit-transition: all .2s; opacity: 0;z-index: 1; font-family: futura;}
 .voteDot:hover{opacity: 1;}
 #voteBucket .unloved{background-color: #000;}
-#voteBucket .loved{background-color: #82CF26;}
+#voteBucket .loved{background-color: #74bf00;}
 .voteAvatar{height: 45px;width: 45px;position: absolute;right: 10px;top: 10px;border: #fff 2px solid;border-radius: 35px;background-size: 100% auto;background-position: 50%;}
 .post:hover .showOnHover{opacity: 1;}
 .hypeBar{position: absolute;bottom: 0px;width: 100%;color: #fff;display: inline-block;z-index: 1000;line-height: 40px; opacity: 0; background-color: #a8a8a8;}
@@ -347,15 +347,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 
 /************************ POST DETAILS AND GRID ***********/
-.post-details-container{width: 1000px;height: 762px;margin-top: 25px; margin: 0px auto;color: #b7b7b7; padding-bottom: 2px;position: relative;}
-#postDetailTopRow{ width: 100%;height: 100px;padding-top: 10px;padding-bottom: 0px;}
-#postDetailTopRow #postShareSection{width: 322px;margin-right: 17px; float: right;}
-#postDetailTopRow #postShareSection li{height: 56px;width: 50px; background-size: auto 100%; background-image: url(/images/postDeetsIcons.png); background-repeat: no-repeat;}
-.postDetailAvatarFrame{height:85px; width:85px; overflow:hidden; float:left; margin-left: 20px;background-size: auto 100%;background-position: 50%;border-radius: 50px; position: relative;}
-.postDetailAvatarFrame img{ width:100%;}
-#postDetailTopRow .deetsList{ height:100%; float:left; text-align: left;margin-left: 10px;font-size: 10px;}
-#postDetailTopRow .deetsList li{ color:#b7b7b7;}
-#postDetailTopRow .postDetailStat a{color:#b7b7b7 !important;}
+.post-details-container{width: 1000px;height: 720px;margin-top: 25px; margin: 0px auto;color: #b7b7b7; padding-bottom: 2px;position: relative;}
 .postDetailFollow{ height:100%; width:115px; float:left; margin-right: 10px;}
 .isFollowing{background-image:url(/images/postDetailIsFollowButton.png);background-repeat:no-repeat; background-size: 60% 50%;background-position: 50% 33%;}
 .notFollowing{background-image:url(/images/postDetailFollowButton.png);background-repeat:no-repeat; background-size: 60% 50%;background-position: 50% 33%;}
@@ -398,30 +390,30 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .shareButts #shareGplus{background-position: -636px;}
 .shareButts #shareGplus:hover{background-position: -586px;}
 #postDetailMainRow{height: 620px;width: 100%;margin-top: 5px;}
-.socialCol{width: 325px;height: 620px; overflow:hidden; float: left;color: #b7b7b7;margin-left: 20px;}
+.socialCol{width: 300px; height: 581px; overflow:hidden; float: left;color: #686868; margin-left: 20px;background-color: #fff;border-radius: 8px; padding: 20px;}
 .commentSectionTitle{width:100%; height:20px; text-align:center;font-size: 12px;background-color: #fff;padding-top: 3px; text-transform: uppercase;}
 .postDetailCommentBox{ height:75px; width:100%; margin-top: 10px; }
-.postCommentAvatarFrame{ height: 75px;overflow: hidden;width: 75px;float: left;border-radius: 40px;background-position: 50%;background-size: auto 100%;}
+.postCommentAvatarFrame{ height: 50px;overflow: hidden;width: 50px; float: left;border-radius: 40px;background-position: 50%;background-size: auto 100%; margin-top: 5px;}
 .postCommentAvatarFrame img{ width: 100%;}
 .name a{ color: #f03d64 !important;}
 .name a:hover{ color: black !important;}
-.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;min-height: 55px; padding: 10px; margin-bottom: 5px; overflow-x: hidden; overflow-y: auto; width: 220px;}
+.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;min-height: 55px; padding: 10px; margin-bottom: 5px; overflow-x: hidden; overflow-y: auto; width: 220px; border-top: #EBEBEB thin solid;}
 .postCommentComment p{ width:215px; text-align: left;}
 .postDetailUsername{margin-top: 0px;font-size: 17px;}
 .postDetailUserLocation{font-size: 13px;color: #000 !important;margin-top: 0px !important;line-height: 10px;}
-.postDetailCommentSection{ width: 325px; max-height: 100%;}
+.postDetailCommentSection{ width: 100%; max-height: 100%; min-height: 50%;}
 .buttonText{font-size: 15px;margin-top: 96%;}
-#postUserCommentBox{height: 49px;width: 228px;background-color: #fff;margin-left: 12px;float: left;border: none;padding: 5px;font-size: 12px;}
+#postUserCommentBox{height: 49px;width: 225px;background-color: #fff;margin-left: 12px;float: left;border: none;padding: 5px;font-size: 12px; border: #c2c2c2 thin solid; border-radius: 5px;}
 #postCommentButton{width: 100%;text-align: right;margin-top: -12px;margin-bottom: 5px;font-size: 13px;margin-left: -1px;cursor: pointer;}
 #postCommentButton:hover{color:#f03d64;}
 #commentContainer{padding-bottom: 10px;overflow: scroll;max-height: 620px;width: 395px;}
 .postOrigin{position: absolute;bottom: 9px;float: left;font-size: 10px; padding-left: 20px; color: #bebebe;width: 620px;text-align: center;}
 .postOrigin a{color: #bebebe !important;}
-.arrow{ position: absolute;top: 275px;height: 60px;width: 60px;margin-top: 17px;background-image: url(/images/prodPagesArrow.png);background-repeat: no-repeat;z-index: 11;overflow: hidden;cursor: pointer;background-size: auto 100%;}
-#leftArrow{background-position: -66px; left: 8px; }
-#rightArrow{right: -10px; background-position:4px; }
-#userPostGrid{ width: 964px; margin-left: 7px; padding-left: 13px; padding-bottom: 25px; display: inline-block;}
-.userGridPostFrame{ float: left;width: 303px; overflow: hidden; height: 315px; border: #FFF 9px solid; position: relative;background-size: 100% auto;background-position: 50%;background-repeat: no-repeat;}
+.arrow{ position: absolute;top: 262px;height: 60px;width: 60px;margin-top: 17px;background-repeat: no-repeat;z-index: 11;overflow: hidden;cursor: pointer; background-size: 400px;}
+#leftArrow{left: 5px; background-position:-367px -280px;}
+#rightArrow{right: -8px; background-position:-319px -280px;}
+#userPostGrid{ width: 964px; margin: 0px auto; padding-left: 13px; padding-bottom: 25px;}
+.userGridPostFrame{ float: left;width: 303px; overflow: hidden; height: 315px; margin: 9px; position: relative;background-size: 100% auto;background-position: 50%;background-repeat: no-repeat;}
 .userGridPostFrame .profFeat{width: 60px;position: absolute;z-index: 12;right: 0px;top: 0px;}
 .userGridPostFrame a{ float:left; height:100%;}
 .userGridPostFrame img{ width:100%;}
@@ -440,7 +432,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .postImageFrame:hover .postTag{display: block;}
 .postTall{background-size: auto 100%;}
 .postWide{background-size: 100% auto;}
-.pdWrap{background-color: #fff;-moz-box-shadow:    0 0 17px 0 #ccc; -webkit-box-shadow: 0 0 17px 0 #ccc; box-shadow: 0 0 17px 0 #ccc; background-color: #f7f7f7;}
+.pdWrap{background-color: #f7f7f7;padding-top: 66px;}
 .post-details-container #activateToggle{position: absolute;right: -18px;bottom: -19px;width: 65px;height: 65px;background-image: url("/images/tags.png");background-size: auto 100%;background-position: -79px;background-repeat: no-repeat;z-index: 100;line-height: 68px;color: #fff;text-align: center;text-indent: 11px;font-size: 8px;}
 .post-details-container .postTag{position: absolute; height: 30px; width: 30px; background-image: url("/images/tags.png"); background-size: auto 100%; background-position: 0px; background-repeat: no-repeat; display: none;}
 .post-details-container .active{background-position: -35px; display: block !important;}
@@ -451,9 +443,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .post-details-container .note .tagImg{width: 50px;height: 50px;float: left; background-image: url("/images/tags.png"); background-size: auto 90%;background-position: 0px;background-repeat: no-repeat;}
 .post-details-container .note .tagImg:hover img{display: block;}
 .post-details-container .note .tagImg img{height: 20px;margin-top: 32px;margin-left: 22px; display: none; cursor: pointer;}
-.post-details-container .note textarea{width: 265px; margin-left:3%; margin-top: 2%;height: 87%;border: none;line-height: 20px; font-size: 11px; color: #b7b7b7;}
+.post-details-container .note textarea{width: 265px; margin-left:3%; margin-top: 2%;height: 87%;border: none;line-height: 20px; font-size: 11px; color: #b7b7b7;padding-top: 7px;border-top: #EBEBEB thin solid;}
 .post-details-container .note .inputWrap{height: 50px; width: 275px;}
-#tagsSection{height: 220px;overflow: scroll; width: 345px;}
+#tagsSection{height: 220px;overflow: scroll; width: 100%;}
 /********************* SHUTTERs **************************/
 .dahliaHeadAva{position: absolute;height: 85px !important; width: 85px;left: 5px; bottom: 30px; border-radius:45px; overflow: hidden; border: #fff 2px solid; display: none; z-index: 100;}
 
@@ -514,7 +506,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .bankshare{font-size: 20px;margin-top: 30px;}
 .bankExplain{position: relative;top: 42%;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
 .banklink{ font-size: 16px;margin-top: 10px;}
-.banklink a{color: #fff;background-color: #ff406d;padding: 4px 32px;margin-top: 0px;}
+.banklink a{color: #fff;background-color: #74bf00;padding: 4px 32px;margin-top: 0px;}
 #thePercentageContainer{position: absolute;height: 100%;top: 0px;background-color: #c2c2c2;left: 0px;width: 100%;}
 #thePercentageBar{position: absolute;height: 100%;background-color: #FA9B9B;width: 100%;top: 0px; width: 0%;}
 #PercentageCounter{position: absolute; width: 100px; left: 50%; margin-left: -50px;font-size: 27px;line-height: 55px;color: #fff; z-index: 1;}
@@ -531,7 +523,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .toggleViewLine{ background-image:url(/images/view_toggle2.png); background-size:100% 100%;}
 #inspireBackButton{ position: absolute;left: 20px;height: 30px;width: 70px;margin-top: -3px;background-image: url(/images/inspireBackButton.png);background-size: 100% 100%;background-repeat: no-repeat; cursor:pointer;}
 #inspireBackButton:hover{ opacity:.7;}
-.bankExplain a{color:#ff406d;}
+.bankExplain a{color:#74bf00;}
 .postPostingWrap{position: absolute;width: 100%;text-align: center;top: 25%;}
 #sparticus{ position: fixed; height: 500px; width: 300px;}
 
@@ -1827,6 +1819,12 @@ width: 174px;
 #userPostGallery{ width:520%; height:350px; position:relative; overflow:hidden; background-color:#000;}
 #userPostGallery img{height:100%; float:left;}
 #userProfileDeets{height:140px; width: 98.5%;margin-left: .75%; position: relative;}
+.postDetailAvatarFrame{overflow: hidden;
+    border-radius: 54px;
+    height: 85px;
+    width: 85px;
+    float: left;
+}
 #userProfileDeetsOverlay{width:100%; height: 100%; bottom:0px; position:absolute;}
 #userProfileMenuBar{ margin-top: 10px;height: 47px;width: 998px; border: #C2C2C2 thin solid;margin-bottom: 10px;}
 #profilePostBin{}
@@ -2910,11 +2908,11 @@ div.sysPopupAlert {font-size: 16px; text-align: center; padding: 20px; padding-t
     position: relative;
     cursor: pointer;
     text-align: left;
-    margin: 0px 35px;
+    margin: 63px 5px;
 }
 .shop-item:hover .prodInfo{display: block;}
 .shop-item .imageFrame{height: 100%; width: 100%; position: relative;overflow: hidden;}
-.shop-item .imageFrame li{position: absolute; height: 100%; width: 100%; background-size: auto 90%; background-repeat: no-repeat; background-position: 50%;}
+.shop-item .imageFrame li{position: absolute; height: 100%; width: 100%; background-size: auto 98%; background-repeat: no-repeat; background-position: 50%;}
 .resWrap{width: 1000px;overflow-x: auto;overflow-y: hidden;}
 .shop-item .prodInfo{position: absolute;width: 100%; bottom: 0px; z-index: 100; background-color: #464646; height: 78px;   display: none;}
 .shop-item .avatar{position: absolute; height: 85px; width: 85px; border: #fff 2px solid;left: 50%;margin-left: -42.5px; bottom: 59px;border-radius: 45px;background-size: auto 100%;background-position: 50%;}
@@ -2924,9 +2922,8 @@ div.sysPopupAlert {font-size: 16px; text-align: center; padding: 20px; padding-t
     color: #fff;
     font-size: 14px;
     text-transform: uppercase;}
-.shop-item .prodDeets{position: absolute;width: 100%;top: 100%;font-size: 13px;}
-.shop-item .prodDeets li:first-child{float: left; width: 50%;}
-.shop-item .prodDeets li:last-child{float: right; width: 50%; text-align: right;}
+.shop-item .prodDeets{position: absolute;width: 100%;top: 105%;font-size: 12px; font-weight: 400;color: #616161;}
+.shop-item .prodDeets li{width: 100%; text-align: center;}
 .shop-item a{color:#6ba42c;}
 .shop-item a:hover{color:#78fff4;}
 .shop-item .username{width: 100%; text-align: center; color: #6ba42c;font-size: 12px;}
