@@ -8,6 +8,7 @@
     #headerBody{height: 65px; position: relative; color: #666;}
     #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .95;}
     #headerFooter{height: 30px; background-color: #fff;}
+    #headerFooter a{color: #74bf00;}
     #headerHeader .native{width: 25px;height: 29px;background-repeat: no-repeat;background-position: 50%; padding: 0px !important;}
     #headerHeader .right{float: right; margin-right: 10px;}
     #headerHeader .right li{float: left; line-height: 28px;padding: 0px 10px;}
@@ -112,8 +113,8 @@
     <div id="headerFooter">
         <ul>
             <li><a href="/inspire">INSPIRE</a></li>
-            <li><a href="/shop">SPONSOR</a></li>
-            <li>SHOP</li>
+            <li><a href="/sponsor">SPONSOR</a></li>
+            <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>
 </div>

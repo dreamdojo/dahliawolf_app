@@ -34,7 +34,7 @@
     .sponsorItem .prodPrice{float: right; text-align: right; margin-left: 10px;}
     .sponsorItem .prodPrice li:first-child{font-size: 18px;}
     .sponsorItem .prodPrice li:last-child{font-size: 11px;}
-    .sponsorItem .sponsorDetails{width: 50%;float: left;font-size: 23px; text-align: left;background-color: #fff;padding-bottom: 20px; padding-top:10px; border-radius: 10px;}
+    .sponsorItem .sponsorDetails{min-width: 375px; width: 50%;float: left;font-size: 23px; text-align: left;background-color: #fff;padding-bottom: 20px; padding-top:10px; border-radius: 10px;}
     .sponsorItem .sponsorDetails li{margin-left: 5%; width: 90%;}
     .sponsorItem .sponsorDetails > ul{height: 60px;padding-top: 15px;padding-bottom: 15px;border-bottom: #d1d1d1 thin solid;width: 80%; margin-left: 10%;}
     .sponsorItem .sponsorDetails > ul li:first-child{font-size: 28px;margin-bottom: -5px;}
@@ -46,7 +46,7 @@
     .sponsorItem .closed{color: #b7b7b7; text-decoration: line-through;}
     .sponsorItem .current{color: #74bf00;}
 
-    .sponsorItem .imgFrame{width: 50%; float: left; min-height: 300px;}
+    .sponsorItem .imgFrame{width: 50%; max-width: 371px; float: left; min-height: 300px;}
     .sponsorItem .imgFrame img{width: 90%;}
     .sponsorItem .greenbutton{color: #fff;background-color: #76bd22;padding: 20px 25px;display: inline-block;margin-top: 20px;width: 67%;margin-left: 10%;text-align: center;border-radius: 8px;}
     .sponsorItem .rtLine{position: absolute; height: 80%; border-right: #c2c2c2 thin solid; margin-top: -12%; right: 0px;}
@@ -60,7 +60,7 @@
     </div>
 <? endif ?>
 
-<div id="dahliawolfShop" class="sponsorShop" style="width: 750px;"></div>
+<div id="dahliawolfShop" class="sponsorShop" style="max-width: 750px; width: 100%;"></div>
 
 <?
     //include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";

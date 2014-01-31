@@ -12,9 +12,9 @@
     #hpWrapper #movieFrame video{width: 100%;}
     #hpWrapper .top{background-color: #fff; position: relative; z-index: 10; background-position: 50%; height: 430px; min-height: 0px !important;}
     #hpWrapper .top img{width: 100%;}
-    #hpWrapper .infoCol{width: 1000px; margin: 0px auto; padding-top: 98px; padding-bottom: 65px;}
+    #hpWrapper .infoCol{width: 100%; max-width: 1000px; margin: 0px auto; padding-top: 98px; padding-bottom: 65px;}
     #hpWrapper .infoCol ul{width: 48%; margin-right: 2%; float: left;}
-    #hpWrapper .infoCol .leftCol{padding-top: 119px; font-weight: 900; float: right; width: 37%;}
+    #hpWrapper .infoCol .leftCol{padding-top: 119px; font-weight: 900; float: left; width: 37%; margin-left: 15px; min-width: 350px; margin-left: 70px;}
     #hpWrapper .infoCol .rightCol #hiw-video{width: 450px;}
     #hpWrapper .infoCol .rightCol .sectionIcon{width: 35px; height: 35px;float: left;background-size: 395px;}
     #hpWrapper .infoCol .rightCol .sponsorIcon{background-position: -187px -281px;}
@@ -47,6 +47,11 @@
     .dahliaCarasoul{position: absolute;width: 100%;height: 100%;overflow: hidden;}
     .dahliaCarasoul li{position: absolute; width: 100%; height: 100%; background-position: 50%; background-size: cover; background-repeat: no-repeat; display: none; z-index: 1;}
     .dahliaCarasoul .activeFrame{z-index: 2; display: block !important;}
+
+    @media screen and (max-width: 700px) {/********************* PHONE *******************/
+        #hpWrapper .infoCol ul {width: 100%;text-align: center;}
+        #hpWrapper .infoCol .leftCol{width: 92%;}
+    }
 </style>
 
 <div id="hpWrapper">
@@ -62,10 +67,6 @@
     </div>
     <section id="whatisit" class="expSect">
         <div class="infoCol" style="padding-top: 164px;">
-            <ul class="leftCol" style="padding-top: 80px;">
-                <h1>WHAT IS IT?</h1>
-                <h3>Dahlia Wolf is a platform that allows isers to create their own fashion brand.</h3>
-            </ul>
             <ul class="rightCol">
                 <li>
                     <video id="hiw-video" poster="/images/poster.png">
@@ -73,6 +74,10 @@
                         <source src="/images/video/HIW.ogv">
                     </video>
                 </li>
+            </ul>
+            <ul class="leftCol" style="padding-top: 80px;">
+                <h1>WHAT IS IT?</h1>
+                <h3>Dahlia Wolf is a platform that allows users to create their own fashion brand.</h3>
             </ul>
             <div style="clear: left;"></div>
         </div>
@@ -82,12 +87,12 @@
     </section>
     <section class="expSect" id="inspire">
         <div class="infoCol" >
+            <ul class="rightCol">
+                <li><img style="width: 100%;" src="/images/hp_inspire_img.jpg"></li>
+            </ul>
             <ul class="leftCol">
                 <h1>INSPIRE</h1>
                 <h3>Inspire new fashion by posting images of clothes you want to bring to life.</h3>
-            </ul>
-            <ul class="rightCol">
-                <li><img style="width: 100%;" src="/images/hp_inspire_img.jpg"></li>
             </ul>
             <div style="clear: left;"></div>
         </div>
@@ -98,12 +103,12 @@
     </section>
     <section class="expSect" id="sponsor">
         <div class="infoCol" >
+            <ul class="rightCol">
+                <li><img style="width: 100%;" src="/images/hp_sponsor_img.jpg"></li>
+            </ul>
             <ul class="leftCol">
                 <h1>SPONSOR</h1>
                 <h3>Sponsor members designs to have them sold in the shop. Earn commission when they sell.</h3>
-            </ul>
-            <ul class="rightCol">
-                <li><img style="width: 100%;" src="/images/hp_sponsor_img.jpg"></li>
             </ul>
             <div style="clear: left;"></div>
         </div>
@@ -114,12 +119,12 @@
     </section>
     <section class="expSect" id="shop">
         <div class="infoCol" >
+            <ul class="rightCol">
+                <li><img style="width: 100%;width: 63%;margin-left: 22%;" src="/images/hp_shop_img.jpg"></li>
+            </ul>
             <ul class="leftCol">
                 <h1>SHOP</h1>
                 <h3>All the designs in out shop are made by the poeple for the people</h3>
-            </ul>
-            <ul class="rightCol">
-                <li><img style="width: 100%;width: 63%;margin-left: 22%;" src="/images/hp_shop_img.jpg"></li>
             </ul>
             <div style="clear: left;"></div>
         </div>

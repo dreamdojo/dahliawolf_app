@@ -677,7 +677,7 @@ Post.prototype.shareOnTwitter = function(URL, id) {
 Post.prototype.shareOnFacebook = function(URL, id) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            var params = {message : 'Love this on #Dahliawolf www.dahliawolf.com/post/'+id, url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
+            var params = {message : 'Create your own fashion on #DAHLIAWOLF #HellsYA www.dahliawolf.com/post/'+id, url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
             _gaq.push(['_trackEvent', 'Social', 'Pushed to Facebook API']);
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
