@@ -126,7 +126,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .menuBarsActive{background-position: -27px 3px !important;}
 #userMenu li:first-child{}
 #userMenu li:last-child{}
-.loginDept{color: #fff;font-size: 18px; width: 480px; line-height: 65px;}
+.loginDept{color: #fff;font-size: 18px; line-height: 65px; float: right;}
 .loginDept li{float: right; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 400; letter-spacing: 0.5px; font-family: helvetica;}
 .loginDept li:first-child{background-color: #88de03;height: 16px;padding: 6px 18px;color: #00818c;line-height: 16px;margin-top: 19px;border-radius: 4px;}
 .loginDept li:first-child a:hover{color: #fff !important;}
@@ -141,7 +141,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     height: 15px;
     position: relative;
     padding-bottom: 50px;
-    border-left: #80c6d7 thin solid;}
+    border-left: #80c6d7 thin solid;border-right: #80c6d7 thin solid;
+    margin-right: 10px;
+    padding-right: 5px;}
 #dahliaHeader #rightHandMenu .fullCart{background-position: -73px -328px;}
 #dahliaHeader #rightHandMenu .emptyCart{background-position: -34px -327px;}
 #dahliaCart div{float: left;}
@@ -1842,7 +1844,7 @@ width: 174px;
 .ProfileLinks a img {margin-top: 5px;}
 .ProfileLinks a:active {box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35); -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35); -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35);}
 .ProfileSidebar .pin {position: static; width: auto; margin-top: 15px; padding: 0; font-size: 13px;}
-#mainProfileColumn{width:1000px; margin:0px auto; margin-top:50px; overflow:hidden; padding-bottom: 10px;}
+#mainProfileColumn{width:1000px; margin:0px auto; margin-top: 93px;overflow:hidden; padding-bottom: 10px;}
 #userPostGallery{ width:520%; height:350px; position:relative; overflow:hidden; background-color:#000;}
 #userPostGallery img{height:100%; float:left;}
 #userProfileDeets{height:140px; width: 98.5%;margin-left: .75%; position: relative;}

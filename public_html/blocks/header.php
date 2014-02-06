@@ -33,7 +33,6 @@
     #headerBody #inspireMenu .dda{font-size: 15px;text-align: center;height: 60px;background-color: #ebebeb; padding-top: 5px; border-bottom: #666 thin solid;}
     #headerBody #inspireMenu .dda p{margin-top: 9px;width: 84%; border: #666 2px dotted;margin-left: 8%;height: 30px;line-height: 30px;font-size: 12px;}
     #headerBody #inspireMenu .gtiTool{font-size: 14px; text-align: center;text-indent: 0px;}
-    #headerBody .logged-in .loginDept{width: 265px;}
     .arrow-up {width: 0;height: 0;border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 25px solid #008caf; position: absolute;bottom: 100%;right: 15px;}
 </style>
 <div id="dahliaHeader">
@@ -57,7 +56,7 @@
         </ul>
 
         <div id="rightHandMenu" class="<?= IS_LOGGED_IN ? 'logged-in' : 'not-logged-in' ?>">
-            <div id="userMenuFrame">
+            <div id="userMenuFrame" style="float: right;">
                 <?php if(IS_LOGGED_IN) require_once $_SERVER['DOCUMENT_ROOT'] . '/blocks/userMenu.php'; ?>
             </div>
             <ul class="loginDept">
