@@ -64,10 +64,10 @@
 
 
 <style>
-    #mobile_Menu{position: fixed; height: 100%; width: 80%;top: 0px; left: -80%; z-index: 100000000; display: none;}
+    #mobile_Menu{position: fixed; background-color: #666; height: 100%; width: 80%;top: 0px; left: -80%; z-index: 100000000; display: none;}
     #mobile_Menu li{height: 50px;line-height: 50px;font-size: 13px;color: #fff;text-indent: 5%; border-bottom: #fff thin solid;}
     #mobile_Menu ul ul{min-height: 50px;line-height: 50px;font-size: 13px;color: #fff;text-indent: 5%; border-bottom: #fff thin solid;}
-    #mobile_Menu .hasSubs{background-color: #c2c2c2; background-image: url("/images/mobileNavChev.jpg");background-repeat: no-repeat;background-size: auto 50px;background-position: 115% 0px;}
+    #mobile_Menu .hasSubs{background-color: #c2c2c2; background-image: url("/images/mobileNavChev.jpg");background-repeat: no-repeat;background-size: auto 50px;background-position: 110% 0px;}
     #mobile_Menu .hasSubs li{display: none;}
     #mobile_Menu .showSubs li{display: block !important; border-bottom: none !important; border-top: #fff thin solid;}
 </style>

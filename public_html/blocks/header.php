@@ -39,9 +39,9 @@
 <div id="dahliaHeader">
     <div id="headerHeader">
         <ul class="right">
-            <li><a href="/contests">CONTESTS</a></li>
+            <!--<li><a href="/contests">CONTESTS</a></li>-->
             <li><a href="/goodies">GOODIES</a></li>
-            <li><a href="/hiw">HOW IT WORKS</a></li>
+            <!--<li><a href="/hiw">HOW IT WORKS</a></li>-->
             <li><a href="/wolf-pack">PACK LEADERS</a></li>
             <li id="tourButton">HELP</li>
         </ul>
