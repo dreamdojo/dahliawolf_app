@@ -145,6 +145,7 @@
         $.stellar({
             horizontalScrolling: false
         });
+        dahliawolf.redirect = true;
         $('#hiw-video').hover(function() {
             $('#hiw-video').attr('controls', true);
         }, function() {

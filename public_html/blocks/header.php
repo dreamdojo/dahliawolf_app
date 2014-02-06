@@ -63,10 +63,8 @@
                 <?php if(!IS_LOGGED_IN): ?>
                     <li><a href="/signup" rel="pop">Join</a></li>
                     <li style="color: #fff;">$10 SIGN UP BONUS!</li>
-                    <li style="border-left: #80c6d7 thin solid;
-border-right: #80c6d7 thin solid;
-padding-right: 10px;
-padding-left: 10px;"><a href="/login" rel="pop">Login</a></li>
+                    <li style="border-right: #80c6d7 thin solid;
+padding-right: 16px;"><a href="/login" rel="pop">Login</a></li>
                 <? endif ?>
             </ul>
             <div id="shoppingCart">
