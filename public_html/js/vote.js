@@ -155,17 +155,22 @@ voteFeed.prototype.get$Post = function(id, index) {
     var postDims = {0:[330, 496], 1:[300, 450], 2:[390, 390], 3:[360, 540], 4:[420, 633], 5:[450, 645], 6:[300, 450], 7:[334, 334], 8:[390, 519], 9:[360, 450], 10:[450, 450], 11:[420, 560], 12:[300, 533], 13:[334, 346], 14:[390, 390], 15:[365, 548]};
 
     function incrementHype() {
-        var num = Number($hypeCount.html());
+        var $thc = thc.find('.totalHypeCount');
+        var num = Number($thc.html());
+
         num++;
-        $hypeCount.html(num);
+        $thc.html(num);
     }
 
     function decreaseHype() {
-        var num = Number($hypeCount.html());
+        var $thc = thc.find('.totalHypeCount');
+        var num = Number($thc.html());
+
         num--;
-        $hypeCount.html(num);
+        $thc.html(num);
     }
 
+    console.log(post);
     var $post = $('<div class="post '+(this.isSpineMode ? 'spineMode' : 'gridMode')+'"></div>');
     $post.append(new shareBall(post));
     $post.find('.voteDot').addClass('showOnHover');
@@ -180,17 +185,17 @@ voteFeed.prototype.get$Post = function(id, index) {
         if( $hypeSprite.hasClass('hyped') ) {
             tCount--;
             $hypeSprite.removeClass('hyped');
-            dahliawolf.post.love(post.posting_id);
+            dahliawolf.post.unlove(post.posting_id);
             decreaseHype();
         } else {
-            dahliawolf.post.unlove(post.posting_id);
+            dahliawolf.post.love(post.posting_id);
             tCount++;
             $hypeSprite.addClass('hyped');
             incrementHype();
         }
         $hypeCount.html(tCount);
     }).appendTo($hypeBar);
-    $('<li class="highlight"><div class="spriteBG hbRepost '+(Number(post.is_repost) ? 'reposted' : '')+'"></div><span class="repostCount">'+post.total_reposts+'</span></li>').on('click', function() {
+    $('<li class="highlight"><div class="spriteBG hbRepost '+(Number(post.is_repost) ? 'reposted' : '')+'"></div><span class="repostCount">'+(post.total_reposts+post.total_likes)+'</span></li>').on('click', function() {
         dahliawolf.post.repost(post.posting_id, function() {
             var $repostCount = Number($post.find('.repostCount').html());
             $repostCount ++;
@@ -198,14 +203,7 @@ voteFeed.prototype.get$Post = function(id, index) {
             incrementHype();
         });
     }).appendTo($hypeBar);
-    $('<li class="highlight"><span class="repostCount">'+post.total_reposts+'</span> HYPES</li>').on('click', function() {
-        dahliawolf.post.repost(post.posting_id, function() {
-            var $repostCount = Number($post.find('.repostCount').html());
-            $repostCount ++;
-            $post.find('.repostCount').html($repostCount);
-            incrementHype();
-        });
-    }).appendTo($hypeBar);
+    var thc = $('<li class="highlight"  style="width: 33%;"><span class="totalHypeCount">'+(Number(post.total_reposts)+Number(post.total_likes))+'</span> HYPES</li>').appendTo($hypeBar);
     $hypeBar.appendTo($post);
 
     var video = ( post.image_url.split('.').pop() === 'mp4' );
