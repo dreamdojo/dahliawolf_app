@@ -140,11 +140,13 @@
         $('.sharebutton').on('click', function() {
             if( $('#voteBucket').length ) {
                 $('#voteBucket').show();
+                dahliawolfFeed.bindScroll();
             }
             window.history.back();
         });
         if( $('#voteBucket').length ) {
             $('#voteBucket').hide();
+            $(window).unbind();
         }
 
         _gaq.push(['_trackEvent', 'Post', 'Viewing as pop up']);
