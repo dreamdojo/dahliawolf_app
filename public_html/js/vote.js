@@ -196,12 +196,9 @@ voteFeed.prototype.get$Post = function(id, index) {
         $hypeCount.html(tCount);
     }).appendTo($hypeBar);
     $('<li class="highlight"><div class="spriteBG hbRepost '+(Number(post.is_repost) ? 'reposted' : '')+'"></div><span class="repostCount">'+(post.total_reposts+post.total_likes)+'</span></li>').on('click', function() {
-        dahliawolf.post.repost(post.posting_id, function() {
-            var $repostCount = Number($post.find('.repostCount').html());
-            $repostCount ++;
-            $post.find('.repostCount').html($repostCount);
-            incrementHype();
-        });
+        dahliawolf.post.repost(post.posting_id);
+        $(this).addClass('reposted');
+        incrementHype();
     }).appendTo($hypeBar);
     var thc = $('<li class="highlight"  style="width: 33%;"><span class="totalHypeCount">'+(Number(post.total_reposts)+Number(post.total_likes))+'</span> HYPES</li>').appendTo($hypeBar);
     $hypeBar.appendTo($post);
