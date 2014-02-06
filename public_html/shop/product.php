@@ -93,7 +93,7 @@ $total_prod_imgs = 4;
     .shopItemWrap .userInfo{text-align: center; color: #b7b7b7;}
     .shopItemWrap .userInfo span{font-style: italic;}
     .shopItemWrap .userInfo ul{width: 470px; margin: 0px auto; margin-top: 100px; font-size: 14px;}
-    .shopItemWrap .userInfo .avatar{height: 150px; width: 150px; border: #fff 2px solid; background-size: 100% auto; background-position: 50%; border-radius: 85px; margin: 10px auto;}
+    .shopItemWrap .userInfo .avatar{height: 150px; width: 150px; border: #fff 2px solid; background-size: auto 100%; background-position: 50%; border-radius: 85px; margin: 10px auto;}
     .shopItemWrap .userInfo .desc{line-height: 24px; font-size: 13px; font-style: italic;margin-top: 40px;}
 
     .shopItemWrap .productDetails{}

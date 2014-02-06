@@ -25,7 +25,6 @@
     .sponsorShop{width: 900px;}
     .sponsorShop .sponsorItem:first-child{margin-top: 40px;}
     .sponsorItem{display: inline-block; width: 100%; margin-top: 50px; padding-bottom: 50px; border-bottom: #fff thin solid;}
-
     .sponsorItem .userDeets{float: left;width: 50%;text-align: left;}
     .sponsorItem .prodInfo{width: 97%; height: 50px; margin-bottom: 10px; margin-left: 2%;}
     .sponsorItem .prodInfo .avatar{height: 50px;width: 50px;background-size: auto 100%;float: left;border-radius: 25px;background-repeat: no-repeat; background-position: 50%;}

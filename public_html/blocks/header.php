@@ -2,9 +2,9 @@
 ?>
 
 <style>
-    #headerHeader{height: 28px;  color: #fff; background-color: #666;font-size: 12px;}
-    #headerHeader a{color: #fff;}
-    #headerHeader a:hover{color: #fff;}
+    #headerHeader{height: 28px;  color: #666; background-color: #ebebeb;font-size: 12px;}
+    #headerHeader a{color: #666;}
+    #headerHeader a:hover{color: #666;}
     #headerBody{height: 65px; position: relative; color: #666;}
     #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .95;}
     #headerFooter{height: 30px; background-color: #fff;}
@@ -21,15 +21,19 @@
     #headerHeader .hhDropdown ul li{float: none; color: #666; text-align: left;}
     #headerHeader .hhDropdown ul li:hover{color: #fff;}
     #headerHeader .hhDropdown:hover ul{display: block;}
-    #headerBody #inspireButt{cursor: pointer;float: right;height: 68px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #fff; width: 65px; text-align: right;}
+    #headerBody #inspireButt{cursor: pointer;float: right;height: 68px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #666; width: 65px; text-align: right;}
     #headerBody #inspireButt:hover #inspireMenu{display: block;}
-    #headerBody #inspireButt .inspGraph{border: #CFCFCF thin solid;height: 30px;width: 30px;line-height: 28px;margin-top: 18px;font-size: 32px;border-radius: 4px;text-align: center;float: right;}
-    #headerBody #inspireMenu{position: absolute; width: 225px; right: -1px; margin-top: 65px;display: none; padding-top: 10px;}
-    #headerBody #inspireMenu li{font-size: 14px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl; border-bottom: #B1B1B1 thin solid;}
+    #headerBody #inspireButt .inspGraph{border: #CFCFCF thin solid; color:#ebebeb; height: 30px;width: 30px;line-height: 28px;margin-top: 18px;font-size: 32px;border-radius: 4px;text-align: center;float: right;}
+    #headerBody #inspireMenu{position: absolute; width: 225px; right: -1px; margin-top: 65px;display: none; background-color: #ebebeb; box-shadow: 2px 3px 13px 1px;}
+    #headerBody #inspireMenu li{font-size: 14px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl; border-bottom: #666 thin solid;}
+    #headerBody #inspireMenu li:hover{background-color:#909090; color: #fff;}
+    #headerBody #inspireMenu li:hover a{color: #fff;}
+    #headerBody #inspireMenu li a{color: #666;}
     #headerBody #inspireMenu .subMenuBG{position: absolute;right: 0px;width: 30px;height: 30px;background-size: 464px;top: 0px;}
-    #headerBody #inspireMenu .dda{font-size: 15px;text-align: center;height: 60px;background-color: #61b8cd; padding-top: 5px;}
-    #headerBody #inspireMenu .dda p{margin-top: 9px;width: 84%; border: #fff 2px dotted;margin-left: 8%;height: 30px;line-height: 30px;font-size: 12px;}
+    #headerBody #inspireMenu .dda{font-size: 15px;text-align: center;height: 60px;background-color: #ebebeb; padding-top: 5px; border-bottom: #666 thin solid;}
+    #headerBody #inspireMenu .dda p{margin-top: 9px;width: 84%; border: #666 2px dotted;margin-left: 8%;height: 30px;line-height: 30px;font-size: 12px;}
     #headerBody #inspireMenu .gtiTool{font-size: 14px; text-align: center;text-indent: 0px;}
+    #headerBody .logged-in .loginDept{width: 265px;}
     .arrow-up {width: 0;height: 0;border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 25px solid #008caf; position: absolute;bottom: 100%;right: 15px;}
 </style>
 <div id="dahliaHeader">
@@ -48,11 +52,24 @@
         <a href="/"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
             <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE</a></li>
-            <li><a href="/sponsor"><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>
+            <!--<li><a href="/sponsor"><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>-->
             <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
         </ul>
 
-        <div id="rightHandMenu">
+        <div id="rightHandMenu" class="<?= IS_LOGGED_IN ? 'logged-in' : 'not-logged-in' ?>">
+            <div id="userMenuFrame">
+                <?php if(IS_LOGGED_IN) require_once $_SERVER['DOCUMENT_ROOT'] . '/blocks/userMenu.php'; ?>
+            </div>
+            <ul class="loginDept">
+                <?php if(!IS_LOGGED_IN): ?>
+                    <li><a href="/signup" rel="pop">Join</a></li>
+                    <li style="color: #fff;">$10 SIGN UP BONUS!</li>
+                    <li style="border-left: #80c6d7 thin solid;
+border-right: #80c6d7 thin solid;
+padding-right: 10px;
+padding-left: 10px;"><a href="/login" rel="pop">Login</a></li>
+                <? endif ?>
+            </ul>
             <div id="shoppingCart">
                 <?php if(count($_data['cart']['products'])): ?>
                     <a href="/shop/cart">
@@ -72,40 +89,33 @@
                         <a href="/shop/cart"><li class="cta">Edit bag/ Check out</li></a>
                     </ul>
                 <? else: ?>
-                    <div class="cartCount spriteBG <?= count($_data['cart']['products']) ? 'fullCart' : 'emptyCart' ?>"><?= getTotalProductsInCart($_data['cart']['products']) ?></div>
+                    <div class="cartCount spriteBG <?= count($_data['cart']['products']) ? 'fullCart' : 'emptyCart' ?>"><?= count($_data['cart']['products']) ? getTotalProductsInCart($_data['cart']['products']) : '' ?></div>
                 <? endif ?>
             </div>
             <div id="searchButton" class="spriteBG"></div>
-            <div id="userMenuFrame">
-                <?php if(IS_LOGGED_IN) require_once $_SERVER['DOCUMENT_ROOT'] . '/blocks/userMenu.php'; ?>
+        </div>
+        <?php if(IS_LOGGED_IN): ?>
+            <div id="inspireButt">
+                <div class="inspGraph">+</div>
+                <ul id="inspireMenu">
+                    <li style="padding-right: 42px;">
+                        <form id="postUploadForm" action="/action/post_image.php" method="post" enctype="multipart/form-data">
+                            <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="new postUpload(this.files[0]);">
+                            <input type="hidden" name="takeMeBack" value="takemehome">
+                        </form>
+                        UPLOAD A PICTURE<div class="spriteBG subMenuBG" style="background-position: -46px 419px;"></div></li>
+                    <li><a href="/bank/tumblr">TUMBLR<div class="spriteBG subMenuBG" style="background-position: -110px 419px;"></div></a></li>
+                    <li><a href="/bank/pinterest">PINTEREST<div class="spriteBG subMenuBG" style="background-position: -240px 419px;"></div></a></li>
+                    <li><a href="/bank/instagram">INSTAGRAM<div class="spriteBG subMenuBG" style="background-position: -176px 419px;"></div></a></li>
+                    <li><a href="/bank/dahliawolf">D/W IMAGE BANK<div class="spriteBG subMenuBG" style="background-position: -359px 689px;"></div></a></li>
+                    <!--<li><a href="/bank/web">ADD FROM WEBSITE<div class="spriteBG subMenuBG" style="background-position: -369px 305px;"></div></a></li>-->
+                    <div class="dda">
+                        <p>DRAG AND DROP ANYWHERE</p>
+                    </div>
+                    <li class="gtiTool"><a href="/pinit">GET THE INSPIRE TOOL</a></li>
+                </ul>
             </div>
-            <ul class="loginDept">
-                <?php if(!IS_LOGGED_IN): ?>
-                    <li><a href="/signup" rel="pop">Join</a></li>
-                    <li><a href="/login" rel="pop">Login</a></li>
-                <? endif ?>
-            </ul>
-        </div>
-        <div id="inspireButt">
-            <div class="inspGraph">+</div>
-            <ul id="inspireMenu" class="dahliaBGColor">
-                <li style="padding-right: 42px;">
-                    <form id="postUploadForm" action="/action/post_image.php" method="post" enctype="multipart/form-data">
-                        <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="new postUpload(this.files[0]);">
-                        <input type="hidden" name="takeMeBack" value="takemehome">
-                    </form>
-                    UPLOAD A PICTURE<div class="spriteBG subMenuBG" style="background-position: -46px 419px;"></div></li>
-                <li><a href="/bank/tumblr">TUMBLR<div class="spriteBG subMenuBG" style="background-position: -110px 419px;"></div></a></li>
-                <li><a href="/bank/pinterest">PINTEREST<div class="spriteBG subMenuBG" style="background-position: -240px 419px;"></div></a></li>
-                <li><a href="/bank/instagram">INSTAGRAM<div class="spriteBG subMenuBG" style="background-position: -176px 419px;"></div></a></li>
-                <li><a href="/bank/dahliawolf">D/W IMAGE BANK<div class="spriteBG subMenuBG" style="background-position: -359px 689px;"></div></a></li>
-                <!--<li><a href="/bank/web">ADD FROM WEBSITE<div class="spriteBG subMenuBG" style="background-position: -369px 305px;"></div></a></li>-->
-                <div class="dda">
-                    <p>DRAG AND DROP ANYWHERE</p>
-                </div>
-                <li class="gtiTool"><a href="/pinit">GET THE INSPIRE TOOL</a></li>
-            </ul>
-        </div>
+        <? endif ?>
         <div id="searchBar">
             <input type="text" placeholder="Start typing to search...">
         </div>
@@ -113,7 +123,7 @@
     <div id="headerFooter">
         <ul>
             <li><a href="/inspire">INSPIRE</a></li>
-            <li><a href="/sponsor">SPONSOR</a></li>
+            <!--<li><a href="/sponsor">SPONSOR</a></li>-->
             <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>

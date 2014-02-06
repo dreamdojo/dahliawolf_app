@@ -100,15 +100,24 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #dahliaHeader .userName{float: right;color: #fff;font-size: 17px;line-height: 51px; margin-right: 13px;}
 #dahliaHeader #mainMenu{width: 340px; color: #fff; line-height: 65px; font-size: 19px;text-align: center;float: left;}
 #dahliaHeader #mainMenu li{float: left; margin: 0px 10px; position: relative;}
-#dahliaHeader #searchButton{ float:right; width: 30px; height: 65px; background-size: 400px;background-position: -38px -323px; background-repeat: no-repeat;margin-top: 10px; margin-right: 5px;}
-#dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 10px; position: relative;}
+#dahliaHeader #searchButton{ float: right;
+    width: 48px;
+    height: 65px;
+    background-size: 420px;
+    background-position: -28px -330px;
+    background-repeat: no-repeat;
+    margin-right: 5px;border-left: #80c6d7 thin solid;}
+#dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 20px; position: relative;}
 #dahliaMainMenuButton{float: left; height: 60px; width: 60px;display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 100%; background-repeat: no-repeat;margin-top: 1px; z-index: 10; position: relative;}
 #dahliaMainMenuButton:hover .theMainMenu{display: block;}
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover #theDropdown{display: block;}
-#userMenu ul{position: absolute;width: 186px;margin-top: 55px;text-align: left; color: #636363; display: none; right: 1px; z-index: 1000000;padding-bottom: 10px; padding-top: 10px;}
-#userMenu li{font-family: arial;height: 35px;line-height: 35px;text-indent: 40px;position: relative;direction: rtl;text-align: right;border-top: #c2c2c2 thin solid;text-transform: uppercase;font-size: 13px;}
+#userMenu ul{position: absolute;width: 186px;margin-top: 55px;text-align: left; box-shadow: 2px 3px 13px 1px; color: #ebebeb; display: none; right: 1px; z-index: 1000000; background-color: #ebebeb;}
+#userMenu li{font-family: arial;height: 35px;line-height: 35px;text-indent: 40px;position: relative;direction: rtl;text-align: right;border-top: #666 thin solid; color:#666; text-transform: uppercase;font-size: 13px;}
+#userMenu li:hover{background-color: #666; color: #fff;}
+#userMenu li:hover a{color: #fff;}
+
 #userMenu ul .header-bezier{position: absolute; width: 266px; background-image: url("/images/menu-bezier.png"); background-repeat: no-repeat; background-size: 100%;background-position: 39px 0px;height: 15px;top: -6px;margin-top: 9px;}
 #userMenu .top-menu-footer{ background-color: #2e2e2e; color: #b1b1b1; text-indent: 0px; text-align: center; font-size: 11px;}
 #userMenu .top-menu-footer a{color: #b1b1b1 !important;}
@@ -117,19 +126,24 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .menuBarsActive{background-position: -27px 3px !important;}
 #userMenu li:first-child{}
 #userMenu li:last-child{}
-.loginDept{color: #fff;font-size: 18px;width: 251px;line-height: 65px;}
+.loginDept{color: #fff;font-size: 18px; width: 480px; line-height: 65px;}
 .loginDept li{float: right; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 400; letter-spacing: 0.5px; font-family: helvetica;}
-.loginDept li:first-child{background-color: #76bd22;height: 16px;padding: 6px 18px;color: #00818c;line-height: 16px;margin-top: 19px;border-radius: 4px;}
+.loginDept li:first-child{background-color: #88de03;height: 16px;padding: 6px 18px;color: #00818c;line-height: 16px;margin-top: 19px;border-radius: 4px;}
 .loginDept li:first-child a:hover{color: #fff !important;}
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
 .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
 
 /*********** THE DROP DOWN CART **************/
-#dahliaCart{position: absolute;top: 70px;right: -10px; width: 270px; border: #ccc thin solid; z-index: 100; background-color: #fff; display: none;}
+#dahliaCart{position: absolute;top: 79px;right: -3px; width: 270px; border: #ccc thin solid; z-index: 100; background-color: #fff; display: none;}
 #shoppingCart:hover ul{display: block !important;}
-#dahliaHeader #shoppingCart{ float: right; width: 30px;height: 65px; margin-top: 10px; position: relative; padding-bottom: 50px;}
-#dahliaHeader #rightHandMenu .fullCart{background-position: -68px -276px;}
-#dahliaHeader #rightHandMenu .emptyCart{background-position: -38px -276px;}
+#dahliaHeader #shoppingCart{float: right;
+    width: 50px;
+    height: 15px;
+    position: relative;
+    padding-bottom: 50px;
+    border-left: #80c6d7 thin solid;}
+#dahliaHeader #rightHandMenu .fullCart{background-position: -73px -328px;}
+#dahliaHeader #rightHandMenu .emptyCart{background-position: -34px -327px;}
 #dahliaCart div{float: left;}
 #dahliaCart li:first-child{float: left;}
 #dahliaCart li:first-child img{height: 70px;margin-left: 0px; margin-right: 10px;}
@@ -137,7 +151,16 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #dahliaCart ul:last-child{border-bottom: none;}
 #dahliaCart ul li{color: #666;font-size: 12px;line-height: 16px; text-align: left;}
 #dahliaCart .cta{background-color: #76bd22;color: #fff;width: 225px;margin: 0px auto;margin-top: 10px;margin-bottom: 25px;text-align: center;padding: 10px 0px;font-size: 15px;text-transform: uppercase;float: none !important;}
-#shoppingCart .cartCount{background-size: 385px; background-repeat: no-repeat; width: 30px; text-align: center;line-height: 29px; font-size: 13px; color: #fff; height: 30px; margin-top: 10px;}
+#shoppingCart .cartCount{background-size: 455px;
+    background-repeat: no-repeat;
+    width: 49px;
+    text-align: center;
+    line-height: 29px;
+    font-size: 13px;
+    color: #fff;
+    height: 30px;
+    margin-top: 18px;
+    margin-left: 4px;}
 .cart_bezier{position: absolute; width: 29px; background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
 
 
@@ -293,6 +316,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .hypeBar .hbRepost{margin-top: 5px;height: 27px;width: 40px;float: left;background-position: -18px -57px;background-size: 301px;}
 .hypeBar .reposted{background-position: -80px 132px;}
 #voteBucket .post .showOnHover{transition: .25s; -webkit-transition: .25s;}
+.hypeBar .repostCount{display: none;}
+.hypeBar .hypeCount{display: none;}
 
 /************************ ACTIVITY ****************/
 #theShaft{width:1000px; margin:0px auto;margin-top: -6px;background-color: #FFF; font-family: futura, arial;position: absolute;left: 50%; margin-left: -493px;position: absolute;height: auto;min-height: 100%;}

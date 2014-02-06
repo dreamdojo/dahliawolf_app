@@ -71,7 +71,7 @@
     #mobile_Menu .hasSubs li{display: none;}
     #mobile_Menu .showSubs li{display: block !important; border-bottom: none !important; border-top: #fff thin solid;}
 </style>
-<div id="mobile_Menu" class="dahliaBGColor">
+<div id="mobile_Menu">
     <ul>
         <li>SEARCH ITEMS & PEOPLE</li>
         <li>LOGIN | SIGNUP</li>

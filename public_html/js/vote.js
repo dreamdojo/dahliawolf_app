@@ -180,8 +180,10 @@ voteFeed.prototype.get$Post = function(id, index) {
         if( $hypeSprite.hasClass('hyped') ) {
             tCount--;
             $hypeSprite.removeClass('hyped');
+            dahliawolf.post.love(post.posting_id);
             decreaseHype();
         } else {
+            dahliawolf.post.unlove(post.posting_id);
             tCount++;
             $hypeSprite.addClass('hyped');
             incrementHype();

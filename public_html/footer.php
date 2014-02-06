@@ -9,7 +9,7 @@
     #footer .pressBanner img{width: 922px;margin-top: 10px;padding-bottom: 15px;}
     #footer .copyright{position: absolute; bottom: 7px; width: 100%; text-align: center;line-height: 30px;font-size: 11px;}
     #footer .socialRow img{width: 33px;margin-right: 5px;padding-bottom: 5px;}
-</style>
+</style><!--
 <div id="footer" class="dahliaBGColor">
     <div class="pressBanner dahliaBGColor">
         <a href="/press.php"><img src="/images/asa_logos.png"></a>
@@ -70,7 +70,7 @@
         </ul>
     </div>
     <div class="copyright">Copyright 2014 Dahlia Wolf Inc. Dahlia Wolf logo and related marks are registered trademarks of Dahlia Wolf.</div>
-</div>
+</div>-->
 
 
 <script type="text/javascript">
