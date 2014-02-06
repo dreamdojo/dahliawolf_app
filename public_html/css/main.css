@@ -113,7 +113,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover #theDropdown{display: block;}
-#userMenu ul{position: absolute;width: 186px;margin-top: 55px;text-align: left; box-shadow: 2px 3px 13px 1px; color: #ebebeb; display: none; right: 1px; z-index: 1000000; background-color: #ebebeb;}
+#userMenu ul{position: absolute;width: 186px;margin-top: 55px;text-align: left; box-shadow: #000 0px 1px 4px 0px; color: #ebebeb; display: none; right: 1px; z-index: 1000000; background-color: #ebebeb;}
 #userMenu li{font-family: arial;height: 35px;line-height: 35px;text-indent: 40px;position: relative;direction: rtl;text-align: right;border-top: #666 thin solid; color:#666; text-transform: uppercase;font-size: 13px;}
 #userMenu li:hover{background-color: #666; color: #fff;}
 #userMenu li:hover a{color: #fff;}

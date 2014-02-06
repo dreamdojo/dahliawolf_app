@@ -24,7 +24,7 @@
     #headerBody #inspireButt{cursor: pointer;float: right;height: 68px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #666; width: 65px; text-align: right;}
     #headerBody #inspireButt:hover #inspireMenu{display: block;}
     #headerBody #inspireButt .inspGraph{border: #CFCFCF thin solid; color:#ebebeb; height: 30px;width: 30px;line-height: 28px;margin-top: 18px;font-size: 32px;border-radius: 4px;text-align: center;float: right;}
-    #headerBody #inspireMenu{position: absolute; width: 225px; right: -1px; margin-top: 65px;display: none; background-color: #ebebeb; box-shadow: 2px 3px 13px 1px;}
+    #headerBody #inspireMenu{position: absolute; width: 225px; right: -1px; margin-top: 65px;display: none; background-color: #ebebeb; box-shadow: #000 0px 1px 4px 0px;}
     #headerBody #inspireMenu li{font-size: 14px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl; border-bottom: #666 thin solid;}
     #headerBody #inspireMenu li:hover{background-color:#909090; color: #fff;}
     #headerBody #inspireMenu li:hover a{color: #fff;}
