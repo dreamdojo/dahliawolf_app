@@ -174,7 +174,10 @@ voteFeed.prototype.get$Post = function(id, index) {
     var $post = $('<div class="post '+(this.isSpineMode ? 'spineMode' : 'gridMode')+'"></div>');
     $post.append(new shareBall(post));
     $post.find('.voteDot').addClass('showOnHover');
-    var $postAvatar = $('<a href="/'+post.username+'"><div class="voteAvatar showOnHover" style="background-image: url(\''+post.avatar+'&width=60\');"></div></a>').appendTo($post);
+    var $postAvatar = $('<a href="/'+post.username+'"><div class="voteAvatar" style="background-image: url(\''+post.avatar+'&width=60\');"></div></a>');
+    $('<div class="whois"><div class="slider">'+post.username+'</div></div>').appendTo($postAvatar.find('.voteAvatar'));
+    $postAvatar.appendTo($post);
+
     var $hypeCount = $('<span>'+(Number(post.total_likes)+Number(post.comments)+Number(post.total_shares))+'</span>');
     var $hypeBar = $('<ul class="hypeBar showOnHover"></ul>');
     $('<li class="highlight"><div class="spriteBG hypes '+(Number(post.is_liked) ? 'hyped' : '')+'"></div><span class="hypeCount">'+post.total_likes+'</span></li>').on('click', function() {
