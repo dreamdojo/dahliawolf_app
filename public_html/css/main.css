@@ -316,12 +316,13 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .hypeBar li{float: left;width: 19%;font-size: 14px;}
 .hypeBar li:first-child{margin-left: 45px;}
 .hypeBar li:last-child{margin-left: 5%;}
-.hypeBar .hypes{height: 27px;width: 35px; margin-left:5px;float: left;background-position: -27px 134px;background-size: 350px; margin-top: 5px;}
+.hypeBar .hypes{height: 35px;width: 35px; margin-left:5px;float: left;background-position: -27px 134px;background-size: 350px; margin-top: 5px;cursor: pointer;}
 .hypeBar .hyped{background-position: -58px -205px;}
 .hypeBar .hbComments{margin-top:5px; height: 27px;width: 40px;float: left;background-position: -91px 132px;background-size: 346px;}
 .hypeBar .hbShares{height: 27px;width: 40px;float: left;background-position: -156px 129px;background-size: 337px; margin-top: 5px;}
-.hypeBar .hbRepost{margin-top: 5px;height: 27px;width: 40px;float: left;background-position: -18px -57px;background-size: 301px;}
+.hypeBar .hbRepost{margin-top: 5px;height: 35px;width: 40px;float: left;background-position: -18px -57px;background-size: 301px; cursor: pointer;}
 .hypeBar .reposted{background-position: -80px 132px;}
+.hypeBar .reposted .hbRepost{background-position: -52px -57px;}
 #voteBucket .post .showOnHover{transition: .25s; -webkit-transition: .25s;}
 .hypeBar .repostCount{display: none;}
 .hypeBar .hypeCount{display: none;}

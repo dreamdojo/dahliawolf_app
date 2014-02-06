@@ -42,6 +42,7 @@
 #postDetailTopRow .avatar{height: 50px;width: 50px;overflow: hidden;border-radius: 38px;background-size: cover;background-position: 50%; float: left;}
 #postDetailTopRow .username{text-align: left;font-size: 19px;text-indent: 10px; color: #76bf00; margin-top: 7px;}
 #postDetailTopRow .location{text-align: left; text-indent: 10px;}
+.sharebutton{cursor: pointer;}
 </style>
 
 <div class="pdWrap">
@@ -53,7 +54,7 @@
            <li class="username"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
            <li class="location"><?= $_data['post']['location'] ?></li>
        </ul>
-        <div class="sharebutton">SHARE</div>
+        <div class="sharebutton">BACK</div>
         <div style="clear: left;"></div>
         <!--<div id="postShareSection">
         	<div class="postShareTitle">SHARE THIS POST</div>
@@ -136,6 +137,15 @@
     $(function() {
         window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
         window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
+        $('.sharebutton').on('click', function() {
+            if( $('#voteBucket').length ) {
+                $('#voteBucket').show();
+            }
+            window.history.back();
+        });
+        if( $('#voteBucket').length ) {
+            $('#voteBucket').hide();
+        }
 
         _gaq.push(['_trackEvent', 'Post', 'Viewing as pop up']);
     });
