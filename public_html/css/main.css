@@ -238,8 +238,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .secret-box{position: relative;overflow: hidden;width: 200px;float: left;}
 .soc-img-frame:hover{border-color:#F00;}
 .voteAvatar:hover .slider{right: 0%;}
-.voteAvatar:hover .whois{right: 53px;}
-.whois{position: absolute;top: 7px;right: 40px;overflow: hidden;transition: right .2; -webkit-transition: right .2s;}
+.voteAvatar:hover .whois{right: 45px;}
+.whois{position: absolute;top: 7px;right: 40px;overflow: hidden;transition: right .2; -webkit-transition: right .2s;padding-right: 6px;}
 .whois .slider:hover{color:#82CF26; }
 .whois .slider{position: relative;color: #fff; background-color: #000;border-radius: 9px;font-size: 18px;padding: 3px 12px;transition: right .2s; -webkit-transition: right .2s;right: -100%;}
 
