@@ -102,7 +102,7 @@ padding-right: 16px;"><a href="/login" rel="pop">Login</a></li>
                         </form>
                         UPLOAD A PICTURE<div class="spriteBG subMenuBG" style="background-position: -46px 419px;"></div></li>
                     <li><a href="/bank/tumblr">TUMBLR<div class="spriteBG subMenuBG" style="background-position: -110px 419px;"></div></a></li>
-                    <li><a href="/bank/pinterest">PINTEREST<div class="spriteBG subMenuBG" style="background-position: -240px 419px;"></div></a></li>
+                    <!--<li><a href="/bank/pinterest">PINTEREST<div class="spriteBG subMenuBG" style="background-position: -240px 419px;"></div></a></li>-->
                     <li><a href="/bank/instagram">INSTAGRAM<div class="spriteBG subMenuBG" style="background-position: -176px 419px;"></div></a></li>
                     <li><a href="/bank/dahliawolf">D/W IMAGE BANK<div class="spriteBG subMenuBG" style="background-position: -359px 689px;"></div></a></li>
                     <!--<li><a href="/bank/web">ADD FROM WEBSITE<div class="spriteBG subMenuBG" style="background-position: -369px 305px;"></div></a></li>-->
