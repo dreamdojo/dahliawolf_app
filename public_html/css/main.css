@@ -636,7 +636,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userListCol .dlUsername a{float: left;}
 #userListCol .toggleFollow{font-size: 14px;padding: 1px 8px;float: left;cursor: pointer;margin-top: 5px;}
 #userListCol .rankBox{position: absolute;height: 40px;width: 40px;font-size: 25px;text-align: center;line-height: 40px;color: #4E4646;font-weight: 700;}
-#userListCol .postDetailAvatarFrame{margin-top: 25px;}
+#userListCol .postDetailAvatarFrame{margin-top: 25px; background-size: auto 100%;}
 /******************** LOADER *************************/
 #loadingView{display:none;width: 100%;position: fixed;bottom: -100px;text-align: center;z-index: 10000000000;height: 65px;}
 #loadingView img{-webkit-transition-duration: 1s; -moz-transition-duration: 1s; position: relative;}
@@ -1864,7 +1864,7 @@ width: 174px;
 #userProfileMenuBar{ margin-top: 10px;height: 47px;width: 998px; border: #C2C2C2 thin solid;margin-bottom: 10px;}
 #profilePostBin{}
 .userProfileAvatarHome{width: 80px;height: 100%;float: left;padding-top: 25px;}
-.userProfileAvatarHome .postDetailAvatarFrame{margin-left: 0px;}
+.userProfileAvatarHome .postDetailAvatarFrame{margin-left: 0px;background-size: auto 100%;}
 .userProfileAvatarFrame{overflow: hidden;border-radius: 110px; margin-top:10px; border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
 .userProfileAvatarFrame img{width:100%;}
 #userProfileDeetsRightCol{float:right; height:100%; width:500px;}

@@ -111,12 +111,7 @@ function postUpload(file) {
                     alert(that.data.errors);
                 }
 
-                setTimeout(function() {
-                    $('#theDropPad').fadeOut(100, function() {
-                        $('#dropUpdate').html('DROP IT LIKE ITS HOT');
-                        $verifyPost.remove();
-                    });
-                }, 3000)
+                setTimeout(that.resetDropPad, 3000)
             }, false);
         }
 
@@ -134,6 +129,12 @@ postUpload.prototype = {
     get getAction() {return this.action;}
 }
 
+postUpload.prototype.resetDropPad = function() {
+    $('#theDropPad').fadeOut(100, function() {
+        $('#dropUpdate').html('DROP IT LIKE ITS HOT');
+    });
+}
+
 postUpload.prototype.$getPost = function(data) {
     data = data.data;
     var $post = $('<div class="tpVoteCity" style="z-index: 0;"></div><div class="postPostingWrap"><div class="bankPosted">' +
@@ -147,19 +148,23 @@ postUpload.prototype.$getPost = function(data) {
 
 postUpload.prototype.validateFile = function() {
     if(this.getExt !== 'jpg' && this.getExt !== 'gif' && this.getExt !== 'png' && this.getExt !== 'jpeg' ) {
-        alert('.'+ext+' is an invalid File Type');
+        alert('.'+this.getExt+' is an invalid File Type');
         _gaq.push(['_trackEvent', 'Inspire', '.'+this.getExt+' is an invalid File Type']);
         _gaq.push(['_trackEvent', 'Errors', '.'+this.getExt+' is an invalid File Type']);
+        this.resetDropPad();
         return false;
     } else if(this.getSize < this.minSize) {
         alert('File is too small');
         _gaq.push(['_trackEvent', 'Inspire', 'File is too small']);
         _gaq.push(['_trackEvent', 'Errors', 'File is too small']);
+        this.resetDropPad();
         return false;
     } else if(this.getSize > this.maxSize) {
         alert('File is too large');
         _gaq.push(['_trackEvent', 'Inspire', 'File is too big']);
         _gaq.push(['_trackEvent', 'Errors', 'File is too big']);
+        return false;
+        this.resetDropPad();
     }
     return true;
 }
