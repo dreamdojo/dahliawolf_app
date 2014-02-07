@@ -23,11 +23,10 @@ if ($top_dir == 'shop') {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0031)http://www.dahliawolf.com/login -->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" class="csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <title><?= isset($pageTitle) ? 'Dahlia\Wolf - '.$pageTitle : 'Dahlia Wolf' ?></title>
-<meta name="description" content="<?= $isset($pageDesc) ? $pageDesc : 'Dahliawolf' ?>">
-<meta name="keywords" content="<?= $isset($pageKey) ? $pageKey : 'Dahlia Wolf' ?>">
 
+<meta name="description" content="Dahlia Wolf - Dahlia Wolf">
+<meta name="keywords" content="Dahlia Wolf,Dahlia Wolf">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <meta property="fb:app_id" content="552515884776900" />
