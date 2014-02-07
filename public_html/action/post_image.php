@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+
 require $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
 
 if (isset($_POST) || isset($_SESSION) || isset($_SESSION['user'])) {
