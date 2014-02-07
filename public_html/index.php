@@ -133,7 +133,7 @@
         <ul class="hp_cta">
             <li>This is your chance to design your own fashion</li>
             <li><h2 style="font-size: 17px;">It all starts with simply posting an image, so what are you are waiting for?</h2></li>
-            <a href="/signup" style="color: #fff;"><li class="gs_button">GET STARTED</li></a>
+            <a href="/<?= IS_LOGGED_IN ? 'inspire' : 'signup' ?>" style="color: #fff;"><li class="gs_button">GET STARTED</li></a>
         </ul>
     </section>
 </div>
