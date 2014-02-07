@@ -1,5 +1,8 @@
 <?
-    $pageTitle = "Shop";
+    $pageTitle = "Shop Dahlia Wolf";
+    $pageDesc = 'Browse the newest member inspired clothes available for purchase at Dahlia Wolf';
+    $pageKey = 'Dahlia Wolf Shop';
+
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 

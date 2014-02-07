@@ -1,5 +1,7 @@
 <?php
     $pageTitle = "Fashion Inspiration Community";
+    $pageDesc = 'Dahlia Wolf is a fashion inspiration community where the top members get to inspired there own collections';
+    $pageKey = 'Dahlia Wolf,Fashion Inspiration Community,Fashion Community,Fashion Inspiration';
     if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
         $_SESSION['user'] = unserialize($_COOKIE["dahliaUser"]);
         $_SESSION['token'] = $_COOKIE["token"];
