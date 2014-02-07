@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="wtf">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/asa_logos.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/dw_hp_foot_temp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/foot_apple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/foot_facebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/foot_google.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/foot_instagram.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/foot_twitter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/images/mobileNavChev.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/blocks/system_messages.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public_html/home1.php" afterPath="$PROJECT_DIR$/public_html/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/images/logo_no_beta.png" afterPath="$PROJECT_DIR$/public_html/images/logo_no_beta.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/images/s_mag.png" afterPath="$PROJECT_DIR$/public_html/images/s_mag.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/images/shoppingCart.png" afterPath="$PROJECT_DIR$/public_html/images/shoppingCart.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/footer.php" afterPath="$PROJECT_DIR$/public_html/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/head.php" afterPath="$PROJECT_DIR$/public_html/head.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/header.php" afterPath="$PROJECT_DIR$/public_html/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/css/main.css" afterPath="$PROJECT_DIR$/public_html/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/js/vote.js" afterPath="$PROJECT_DIR$/public_html/js/vote.js" />
+    <list default="true" id="68574659-e95e-47db-955f-1d677d0ac32e" name="Default" comment="adding query string to rewrites">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/import/import-likes.php" afterPath="$PROJECT_DIR$/public_html/import/import-likes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/import/import-member-avatars.php" afterPath="$PROJECT_DIR$/public_html/import/import-member-avatars.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/action/post_image.php" afterPath="$PROJECT_DIR$/public_html/action/post_image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/reset-password-link.php" afterPath="$PROJECT_DIR$/public_html/reset-password-link.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/reset-password.php" afterPath="$PROJECT_DIR$/public_html/reset-password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/signup.php" afterPath="$PROJECT_DIR$/public_html/signup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/import/update-user-created.php" afterPath="$PROJECT_DIR$/public_html/import/update-user-created.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/nginx/conf.d/www-dahliawolf-com.conf" afterPath="$PROJECT_DIR$/server/nginx/conf.d/www-dahliawolf-com.conf" />
     </list>
     <list id="418d1633-1ce1-4ffd-8a74-5facbca12c0c" name="Failed commit: Default" comment="Merge remote-tracking branch 'remotes/origin/master' into dev&#10;&#10;Conflicts:&#10;&#9;css/main.css&#10;&#9;images&#10;&#9;images/image.php&#10;&#9;import/import-likes.php&#10;&#9;import/import-member-avatars.php&#10;&#9;import/import-posts.php&#10;&#9;import/pics/image.php&#10;&#9;import/update-posting-created.php&#10;&#9;import/update-user-created.php&#10;&#9;includes/php/classes/Spine-1.1.php&#10;&#9;index.php&#10;&#9;js/functions.js&#10;&#9;postings&#10;&#9;themes/header_template.php&#10;&#9;upload&#10;&#9;uploads&#10;" />
     <list id="92a64a04-ccf8-4dbc-a174-50012b3dc64f" name="do_not_commit" comment="" />
@@ -28,52 +18,6 @@
     <ignored path="dahliawolf_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
-    <file path="/Dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389287277138" ignored="false" />
-    <file path="/dummy.txt" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1388443723409" ignored="false" />
-    <file path="/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389304482848" ignored="false" />
-    <file path="/home1.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1388443782388" ignored="false" />
-    <file path="/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389306403002" ignored="false" />
-    <file path="/header.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389397387774" ignored="false" />
-    <file path="/system_messages.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1388507855616" ignored="false" />
-    <file path="/footer.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389317058036" ignored="false" />
-    <file path="$PROJECT_DIR$/../dev_dahliawolf_app/press.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1388770484049" ignored="false" />
-    <file path="/press.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1388770483656" ignored="false" />
-    <file path="$PROJECT_DIR$/../dev_dahliawolf_app/error_pages/50x.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1388715661380" ignored="false" />
-    <file path="$PROJECT_DIR$/../dev_dahliawolf_app/css/main.css" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1388769978270" ignored="false" />
-    <file path="$USER_HOME$/optodash/optdash/snapshot/app.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389113177395" ignored="false" />
-    <file path="/a.dummy" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389303389934" ignored="false" />
-    <file path="$USER_HOME$/optodash/optdash/snapshot/public/usage.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389115335368" ignored="false" />
-    <file path="/usage.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389115335368" ignored="false" />
-    <file path="$USER_HOME$/optodash/optdash/client/app.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389124024517" ignored="false" />
-    <file path="/app.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389145405011" ignored="false" />
-    <file path="$USER_HOME$/optodash/optdash/client/index.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389124271257" ignored="false" />
-    <file path="$USER_HOME$/optodash/optdash/client/index.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389124667666" ignored="false" />
-    <file path="/index.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389145546852" ignored="false" />
-    <file path="$USER_HOME$/optodash/optdash/client/js/app.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389124354323" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/views/layout.jade" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389132399636" ignored="false" />
-    <file path="/layout.jade" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389132399636" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/views/index.jade" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389133001280" ignored="false" />
-    <file path="/index.jade" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389132987105" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/public/app/geoff.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389132769451" ignored="false" />
-    <file path="/geoff.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389144009995" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/routes/index.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389133176616" ignored="false" />
-    <file path="/index.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389133103951" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/app.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389145501229" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/app/index.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389133449788" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/public/app/index.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389145135423" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/public/app/user.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389135709969" ignored="false" />
-    <file path="/user.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389135709969" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/public/app/js/geoff.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389144964086" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/public/javascripts/angular-resource/angular-resource.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389137352794" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/.bowerrc" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389137758346" ignored="false" />
-    <file path="/.bowerrc" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389137758346" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/public/javascripts/angular/angular.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389137875133" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/public/javascripts/angular/angular.min.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389137875451" ignored="false" />
-    <file path="$USER_HOME$/optodash/geoffie/public/index.html" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389145556058" ignored="false" />
-    <file path="/dummy.xml" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389230987995" ignored="false" />
-    <file path="$PROJECT_DIR$/../dev_dahliawolf_app/video_page.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389287268966" ignored="false" />
-    <file path="/video_page.php" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389287184522" ignored="false" />
-    <file path="/vote.js" changelist="68574659-e95e-47db-955f-1d677d0ac32e" time="1389305263389" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,64 +42,89 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="vote.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/js/vote.js">
+      <file leaf-file-name="reset-password-link.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/reset-password-link.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="361" column="1" selection-start="14201" selection-end="14201" vertical-scroll-proportion="-33.307693">
+            <state line="1" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="1254">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reset-password.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/reset-password.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="760">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/signup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="912">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post_image.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/action/post_image.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="1406">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="2" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="1672">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="import-likes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/import/import-likes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1007">
               <folding>
-                <marker date="1389305265000" expanded="false" signature="5706:5727" placeholder="..." />
-                <marker date="1389305265000" expanded="false" signature="6717:6723" placeholder="..." />
-                <marker date="1389305265000" expanded="false" signature="13169:13180" placeholder="..." />
-                <marker date="1389305265000" expanded="false" signature="13655:13666" placeholder="..." />
+                <marker date="1391795371000" expanded="false" signature="998:1010" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public_html/header.php">
+      <file leaf-file-name="import-member-avatars.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/import/import-member-avatars.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="85" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.21877849">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="52" selection-start="7819" selection-end="7819" vertical-scroll-proportion="-38.416668">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="65" selection-start="10137" selection-end="10137" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="28" selection-start="2108" selection-end="2108" vertical-scroll-proportion="1.3333334">
+            <state line="31" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="-21.035715" vertical-offset="0" max-vertical-offset="722">
               <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#li#2;n#ul#5;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#li#3;n#ul#5;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <marker date="1391795413000" expanded="false" signature="748:760" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vote.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/vote.php">
+      <file leaf-file-name="import-posts.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/import/import-posts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="19" selection-start="1033" selection-end="1047" vertical-scroll-proportion="-11.875">
+            <state line="3" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="2.0357144" vertical-offset="114" max-vertical-offset="2679">
+              <folding>
+                <marker date="1373919919000" expanded="false" signature="1574:1586" placeholder="..." />
+                <marker date="1373919919000" expanded="false" signature="3402:3414" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update-user-created.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public_html/import/update-user-created.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="0.07373868" vertical-offset="0" max-vertical-offset="773">
               <folding />
             </state>
           </provider>
@@ -170,6 +139,8 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
+      <command text="rm .DS_Store" />
+      <command text="rm .idea/scopes/scope_settings.xml" />
       <command text=".idea/workspace.xml" />
       <command text="git checkout master " />
       <command text="rm .idea/workspace.xml" />
@@ -189,12 +160,10 @@
       <command text="git pull" />
       <command text="ls" />
       <command text="ls .idea" />
-      <command text="git  reset --hard" />
       <command text="git pull" />
-      <command text="cd ." />
-      <command text="ll" />
-      <command text="ls" />
-      <command text="pwd" />
+      <command text="rm " />
+      <command text="rm .idea/workspace.xml" />
+      <command text="git pull" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -216,31 +185,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/action/settings.php" />
-        <option value="$PROJECT_DIR$/email_content/11082013_download_our_app/download_our_app.html" />
-        <option value="$PROJECT_DIR$/email_content/11082013_start_posting/start_posing_choppedup.html" />
         <option value="$PROJECT_DIR$/action/post_feed_image.php" />
         <option value="$PROJECT_DIR$/index_landing.php" />
         <option value="$PROJECT_DIR$/video_page.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/public_html/home1.php" />
-        <option value="$PROJECT_DIR$/public_html/blocks/system_messages.php" />
-        <option value="$PROJECT_DIR$/public_html/head.php" />
-        <option value="$PROJECT_DIR$/public_html/js/vote.js" />
-        <option value="$PROJECT_DIR$/public_html/index.php" />
-        <option value="$PROJECT_DIR$/public_html/footer.php" />
-        <option value="$PROJECT_DIR$/public_html/css/main.css" />
         <option value="$PROJECT_DIR$/public_html/header.php" />
+        <option value="$PROJECT_DIR$/public_html/account/settings.php" />
+        <option value="$PROJECT_DIR$/public_html/index.php" />
+        <option value="$PROJECT_DIR$/server/nginx/conf.d/www-dahliawolf-com.conf" />
+        <option value="$PROJECT_DIR$/public_html/reset-password-link.php" />
+        <option value="$PROJECT_DIR$/public_html/reset-password.php" />
+        <option value="$PROJECT_DIR$/public_html/signup.php" />
+        <option value="$PROJECT_DIR$/public_html/action/post_image.php" />
+        <option value="$PROJECT_DIR$/public_html/import/import-likes.php" />
+        <option value="$PROJECT_DIR$/public_html/import/import-member-avatars.php" />
+        <option value="$PROJECT_DIR$/public_html/import/update-user-created.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="209" />
-    <option name="y" value="88" />
-    <option name="width" value="1903" />
-    <option name="height" value="1308" />
+    <option name="y" value="22" />
+    <option name="width" value="2560" />
+    <option name="height" value="1414" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -272,27 +240,27 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teal_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teal_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teal_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teal_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teal_dahliawolf_app" />
+              <option name="myItemId" value="dahliawolf_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -313,7 +281,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="429" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="439" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1223" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1221" />
@@ -331,52 +299,143 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="preferences.sourceCode.General" />
+    <property name="options.lastSelected" value="preferences.sourceCode.CSS" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="teal_dahlia" serverId="cdfd3691-179b-4842-b4ee-cbb59a797f6f" createEmptyFolders="true" autoUpload="true">
+  <component name="PublishConfig" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="dev_dahliawolf_app" serverId="f842d144-7736-410c-8123-3744a6b3b9f6" createEmptyFolders="true" autoUpload="true">
     <servers>
-      <server id="357ff2a8-fa79-46d8-8ad5-2deb9159e2e0">
+      <server id="10f6059e-b7ff-418b-8e93-d7ec19895ac9">
         <serverdata />
       </server>
-      <server id="389a584a-bf89-4fd1-9b84-03153e1e5078">
+      <server id="12607245-9c7d-4bf3-9f96-1c24f961f1e0">
+        <serverdata />
+      </server>
+      <server id="12a6cc3f-8f59-4791-b728-ca8022a6a3dc">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/app/core" local="$PROJECT_DIR$/lib/jk07" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="1df94d70-8972-4d20-9dc4-3ef9873fff5d">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="29ce1c17-add5-4c83-9661-48d11dbfb91c">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </server>
-      <server id="39947fdd-8960-459d-8cb8-1e4bfd2e1841">
-        <serverdata />
-      </server>
-      <server id="49ea9755-7541-4577-bae7-5626eff2dfa8">
-        <serverdata />
-      </server>
-      <server id="4f3b0325-5574-4daf-b6a8-c9f23786e413">
-        <serverdata />
-      </server>
-      <server id="666cdfd5-cdf3-4d6a-bc43-f5bef4a92f3c">
-        <serverdata />
-      </server>
-      <server id="72d6f073-8872-4697-9cdd-8a637c0164b7">
-        <serverdata />
-      </server>
-      <server id="8aff326f-19e5-437b-ad47-3c4061b5d4a1">
-        <serverdata />
-      </server>
-      <server id="9412d035-1d04-45ca-97f3-5bcf2a16e1f2">
-        <serverdata />
-      </server>
-      <server id="b9506bd7-4c0b-431c-b75f-4c1e9ee27d02">
-        <serverdata />
-      </server>
-      <server id="cdfd3691-179b-4842-b4ee-cbb59a797f6f">
+      <server id="4188f0f4-5d34-45c2-a7e3-8510c7934c98">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="47556bb6-abf3-43eb-8472-fa7dc2873998">
+        <serverdata />
+      </server>
+      <server id="4fb869a0-58ca-4a17-900d-967d7d67e274">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="598e02cf-9844-490f-aef5-83045be44fab">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="62de779a-6527-42ea-a980-e9b337455ac5">
+        <serverdata />
+      </server>
+      <server id="6e84c6bc-a137-48d4-8a91-12efda91d2db">
+        <serverdata />
+      </server>
+      <server id="71f54bde-ea2e-4f0d-b0cc-b02ee0bca28d">
+        <serverdata />
+      </server>
+      <server id="71ffd2f9-2059-4303-9fca-f01312f2782e">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="81fe9bbc-646d-433f-ad1d-3b7fc3fff2ff">
+        <serverdata />
+      </server>
+      <server id="913ba6bf-699e-436a-b849-a130dfb2aba3">
+        <serverdata />
+      </server>
+      <server id="9206e9f4-0d3e-43d1-a3b7-ed2f36c3ebcd">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="9899e07e-afd1-445a-80b3-048f558a4f5a">
+        <serverdata />
+      </server>
+      <server id="99e6631a-debb-4d98-9ef3-f3f2231380bf">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="9a89caf4-40dd-4897-8fdb-e096649fe6d1">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="a009cdae-1ca7-4a5d-b68f-dfa3af72f1c6">
+        <serverdata />
+      </server>
+      <server id="c35297eb-548d-4751-82b2-3e2564b1d92f">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="c3db5f85-a179-4ce3-9d42-a6365960d919">
+        <serverdata />
+      </server>
+      <server id="cdcc15cb-40f9-4732-9c46-04864e58c9c5">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="e1cad2e2-9e07-4368-a2e9-9937b21d9f30">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="f842d144-7736-410c-8123-3744a6b3b9f6">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/public_html" local="$PROJECT_DIR$/public_html" />
+            <mapping deploy="/server" local="$PROJECT_DIR$/server" />
           </mappings>
         </serverdata>
       </server>
@@ -391,11 +450,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public_html/images" />
       <recent name="$PROJECT_DIR$/public_html" />
       <recent name="$PROJECT_DIR$/images/video" />
       <recent name="$PROJECT_DIR$/images/slider" />
       <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/account" />
     </key>
   </component>
   <component name="RunManager">
@@ -404,6 +463,9 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="13bc4cc8-7c2e-4fb3-a490-9db98243d32b" server_name="Dahlia-DEV">
@@ -889,39 +951,55 @@
       <created>1388111925021</created>
       <updated>1388111925021</updated>
     </task>
-    <task id="LOCAL-00114" summary="wtf">
-      <created>1388443172590</created>
-      <updated>1388443172590</updated>
+    <task id="LOCAL-00114" summary="pushing into teal">
+      <created>1388438983745</created>
+      <updated>1388438983745</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="adding teal nginx config">
+      <created>1388439974614</created>
+      <updated>1388439974614</updated>
+    </task>
+    <task id="LOCAL-00116" summary="remove public html from images urls">
+      <created>1388441794913</created>
+      <updated>1388441794913</updated>
+    </task>
+    <task id="LOCAL-00117" summary="reomove vol log">
+      <created>1388441975043</created>
+      <updated>1388441975043</updated>
+    </task>
+    <task id="LOCAL-00118" summary="adding query string to rewrites">
+      <created>1389919817083</created>
+      <updated>1389919817083</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="209" y="88" width="1903" height="1308" extended-state="0" />
+    <frame x="0" y="22" width="2560" height="1414" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12878788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58466214" sideWeight="0.606603" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12965722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17585693" sideWeight="0.606603" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38226527" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6709887" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2138047" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1987076" sideWeight="0.7861953" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18164062" sideWeight="0.8703428" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5822368" sideWeight="0.39339697" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12965722" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22465532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22503726" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1789976" sideWeight="0.67122245" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23855682" sideWeight="0.7861953" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15078124" sideWeight="0.61773473" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22874807" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24068554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -932,58 +1010,9 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
+      <TodoPanelSettings />
     </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
-    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
-    <option name="LIMIT_HISTORY" value="true" />
-    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
-    <option name="UPDATE_FILTER_SCOPE_NAME" />
-    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
-    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="wtf" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="change speed in homepage slider" />
-    <MESSAGE value="remove height:100% from spine/grid.. images were getting stretched weird" />
-    <MESSAGE value="change width to 101 to fully hide the color background" />
-    <MESSAGE value="remove double jquery script" />
     <MESSAGE value="adding geoffs color taggin script" />
     <MESSAGE value="adding geoffs color taggin script, adding spiral samples" />
     <MESSAGE value="damm bugs bugs bugs.." />
@@ -1004,117 +1033,122 @@
     <MESSAGE value="adding limit per day 5post limit" />
     <MESSAGE value="adding limit per day 5post limit.. move the func call to before the image is get.. should avoid calls" />
     <MESSAGE value="add video vol" />
-    <MESSAGE value="wtf" />
+    <MESSAGE value="pushing into teal" />
+    <MESSAGE value="adding teal nginx config" />
+    <MESSAGE value="remove public html from images urls" />
+    <MESSAGE value="reomove vol log" />
+    <MESSAGE value="adding query string to rewrites" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding query string to rewrites" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public_html/images/logo_120x60.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/images/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/action/viprequest.php">
+    <entry file="file://$PROJECT_DIR$/public_html/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="2" selection-start="281" selection-end="281" vertical-scroll-proportion="0.12486993" />
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.017288445" vertical-offset="19" max-vertical-offset="2945" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/get_feed_from_instagram.php">
+    <entry file="file://$PROJECT_DIR$/public_html/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="66" selection-start="823" selection-end="824" vertical-scroll-proportion="-18.125">
+        <state line="38" column="21" selection-start="960" selection-end="960" vertical-scroll-proportion="0.5614308" vertical-offset="0" max-vertical-offset="3952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/nginx/conf.d/www-dahliawolf-com.conf.bu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3458" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/nginx/conf.d/www-offline-com.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="24" selection-start="33" selection-end="33" vertical-scroll-proportion="0.014459665" vertical-offset="0" max-vertical-offset="2109" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/nginx/conf.d/www-sugarlips-com.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="34" selection-start="59" selection-end="68" vertical-scroll-proportion="0.02891933" vertical-offset="0" max-vertical-offset="3344" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/action/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="27" selection-start="230" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="2223">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/images/logo_60x60.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/server/nginx/conf.d/www-dahliawolf-com.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="9" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.3324125" vertical-offset="1216" max-vertical-offset="9424">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/reset-password-link.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="1254">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/reset-password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="912">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/action/post_image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="1406">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="40" selection-start="590" selection-end="590" vertical-scroll-proportion="0.08890845">
+        <state line="1" column="2" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="1672">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/instagramConnect.php">
+    <entry file="file://$PROJECT_DIR$/public_html/import/import-likes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="41" selection-start="535" selection-end="535" vertical-scroll-proportion="0.19806337">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/images/logo_600x150.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/images/logo_190x190.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="22" selection-start="391" selection-end="392" vertical-scroll-proportion="0.1826809">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/vote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="1033" selection-end="1047" vertical-scroll-proportion="-11.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/js/vote.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="361" column="1" selection-start="14201" selection-end="14201" vertical-scroll-proportion="-33.307693">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1007">
           <folding>
-            <marker date="1389305265000" expanded="false" signature="5706:5727" placeholder="..." />
-            <marker date="1389305265000" expanded="false" signature="6717:6723" placeholder="..." />
-            <marker date="1389305265000" expanded="false" signature="13169:13180" placeholder="..." />
-            <marker date="1389305265000" expanded="false" signature="13655:13666" placeholder="..." />
+            <marker date="1391795371000" expanded="false" signature="998:1010" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/index.php">
+    <entry file="file://$PROJECT_DIR$/public_html/import/import-member-avatars.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="52" selection-start="7819" selection-end="7819" vertical-scroll-proportion="-38.416668">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="28" selection-start="2108" selection-end="2108" vertical-scroll-proportion="1.3333334">
+        <state line="31" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="-21.035715" vertical-offset="0" max-vertical-offset="722">
           <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#li#2;n#ul#5;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#li#3;n#ul#5;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1391795413000" expanded="false" signature="748:760" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/css/main.css">
+    <entry file="file://$PROJECT_DIR$/public_html/import/import-posts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="65" selection-start="10137" selection-end="10137" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="3" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="2.0357144" vertical-offset="114" max-vertical-offset="2679">
+          <folding>
+            <marker date="1373919919000" expanded="false" signature="1574:1586" placeholder="..." />
+            <marker date="1373919919000" expanded="false" signature="3402:3414" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/header.php">
+    <entry file="file://$PROJECT_DIR$/public_html/import/update-user-created.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="85" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.21877849">
+        <state line="3" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="0.07373868" vertical-offset="0" max-vertical-offset="773">
           <folding />
         </state>
       </provider>
