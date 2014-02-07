@@ -1,5 +1,5 @@
 <?php
-    $pageTitle = "Homepage";
+    $pageTitle = "Fashion Inspiration Community";
     if(isset($_COOKIE["dahliaUser"]) && isset($_COOKIE["token"])){
         $_SESSION['user'] = unserialize($_COOKIE["dahliaUser"]);
         $_SESSION['token'] = $_COOKIE["token"];
