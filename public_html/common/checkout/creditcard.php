@@ -26,7 +26,7 @@
     $cc_payment = false;
     $paypal_payment = false;
 ?>
-<form action="/public_html/action/shop/place_order.php" id="place_order_form" class="Form StaticForm payment" method="post">
+<form action="/action/shop/place_order.php" id="place_order_form" class="Form StaticForm payment" method="post">
 <input id="gTotes" type="hidden" name="amount" value="<?= $_data['cart']['cart']['totals']['grand_total'] ?>" />
 <fieldset>
     <h3>Payment Method</h3>

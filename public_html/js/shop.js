@@ -6,8 +6,9 @@ function shop(user) {
     this.sort = null;
     this.priceSort = null;
     this.offset = 0;
-    this.limit = 9;
+    this.limit = 12;
     this.isShopBusy = false;
+    this.page = 1;
 
     $('#sortBar li:not(:first-child)').on('click', this.filterShop);
 
@@ -15,11 +16,24 @@ function shop(user) {
     this.centerShop();
     this.bindFilters();
     $(window).resize($.proxy(this.centerShop, this));
-    $(window).scroll(function() {
-        if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
-            that.loadProducts();
-        }
-    });
+    this.bindScroll();
+
+
+    this.$shop.on('click', 'a[rel="product"]', function(e) {
+        var that = this;
+        e.preventDefault();
+        dahliawolfShop.scrollPos = $(document).scrollTop();
+        $('<div id="productPage"></div>').appendTo('body');
+        $('#productPage').load(this.href+'?ajax=true', function() {
+            dahliawolfShop.unBindScroll();
+            dahliawolfShop.$shop.hide();
+            $(this).appendTo('body');
+            window.history.pushState({}, '', that.href);
+            window.onpopstate = function(event) {
+                dahliawolfShop.reincarnate();
+            }
+        });
+    })
 }
 
 shop.prototype = {
@@ -36,6 +50,25 @@ shop.prototype = {
     },
 
     get hasShopOwner() {return (this.shopOwner.user_id ? true : false);}
+}
+
+shop.prototype.bindScroll = function() {
+    var that = this;
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+            that.loadProducts();
+        }
+    });
+}
+
+shop.prototype.unBindScroll = function() {
+    $(window).unbind('scroll');
+}
+shop.prototype.reincarnate = function() {
+    $('#productPage').remove();
+    this.$shop.show();
+    $(document).scrollTop(this.scrollPos);
+    this.bindScroll();
 }
 
 shop.prototype.resetShop = function() {
@@ -100,6 +133,7 @@ shop.prototype.loadProducts = function() {
         this.isShopBusy = true;
         dahliawolf.loader.show();
         $.getJSON(this.getUrl, function(data) {
+            that.page++;
             that.isShopBusy = false;
             dahliawolf.loader.hide();
             if(data.data.get_products && data.data.get_products.data.length) {
@@ -175,7 +209,7 @@ shop.prototype.product.prototype.addToShop = function() {
     }
     this.$inspiration.appendTo(this.$image_view);
     this.$inspiration_view = $('<div class="product-inspiration"></div>').appendTo(this.$view);
-    this.$image_view.append( this.getPrice()).append( this.getImage()).wrap( $('<a href="/public_html/shop/'+this.data.id_product+'"></a>') );
+    this.$image_view.append( this.getPrice()).append( this.getImage()).wrap( $('<a href="/shop/'+this.data.id_product+'"></a>') );
     this.$inspiration_view.append( this.getInspiration() );
 }
 
@@ -199,7 +233,7 @@ shop.prototype.product.prototype.getPrice = function() {
 }
 
 shop.prototype.product.prototype.getImage = function() {
-    return '<div class="image-frame"><a href="/public_html/shop/'+this.data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></a></div>';
+    return '<div class="image-frame"><a href="/shop/'+this.data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+this.data.product_file_id+'&width=400"></a></div>';
 }
 
 shop.prototype.product.prototype.getInspiration = function() {

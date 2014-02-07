@@ -12,18 +12,7 @@
 		require $_SERVER['DOCUMENT_ROOT'] . '/includes/php/initial-calls.php';
 	}
 
-    if(isset($_GET['posting_id'])){
-        $params = array(
-            'posting_id' => $_GET['posting_id']
-        );
-    }
-    if (IS_LOGGED_IN) {
-        $params['viewer_user_id'] = $_SESSION['user']['user_id'];
-    }
-    $data = api_call('posting', 'get_post', $params, true);
-    $_data['post'] = $data['data'];
-
-    $url = 'http://www.dahliawolf.com/api/1-0/posting.json?function=get_posting&use_hmac_check=0&posting_id='.$_GET['posting_id'];
+    $url = 'http://www.dahliawolf.com/api/1-0/posting.json?function=get_posting&use_hmac_check=0&posting_id='.$_GET['posting_id'].(isset($_SESSION['user']['user_id']) ? '&viewer_user_id='.$_SESSION['user']['user_id'] : '');
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_POST, 1);
@@ -41,52 +30,33 @@
     $result = json_decode(curl_exec ($ch));
     curl_close ($ch);
     $_data['comments'] = $result->data->get_comments;
-	
-	$params = array(
-		'user_id' => $_data['post']['user_id']
-	);
-	if (IS_LOGGED_IN) {
-		$params['viewer_user_id'] = $_SESSION['user']['user_id'];
-	}
-	$posterData = api_call('user', 'get_user', $params, true);
-	$posterData = $posterData['data'];
-	
+
 	$created = explode(' ', $_data['post']['created']);
 ?>
 
 <? //var_dump($_data['post']); ?>
 <style>
-
+.sharebutton{text-align: right;border: #c2c2c2 thin solid;float: right;padding: 5px 12px;border-radius: 7px;position: absolute;right: 0px;bottom: 27%;}
+#postDetailTopRow{height: 60px; position: relative;}
+#postDetailTopRow .userDeets{float: left;width: 300px;}
+#postDetailTopRow .avatar{height: 50px;width: 50px;overflow: hidden;border-radius: 38px;background-size: cover;background-position: 50%; float: left;}
+#postDetailTopRow .username{text-align: left;font-size: 19px;text-indent: 10px; color: #76bf00; margin-top: 7px;}
+#postDetailTopRow .location{text-align: left; text-indent: 10px;}
+.sharebutton{cursor: pointer;}
 </style>
-
-<? if(!isset( $_GET['ajax'] )): ?>
-    <div id="modal-content" style="margin-left: -500px;">
-<? endif ?>
 
 <div class="pdWrap">
 <div class="post-details-container posting-<?= $_data['post']['posting_id'] ?><?= !empty($_data['post']['is_liked']) ? ' liked' : '' ?>" data-posting_id="<?= $_data['post']['posting_id'] ?>">
 
     <div id="postDetailTopRow">
-        <ul class="postDetailAvatarFrame avatarShutters" style='background-image: url("<?= $_data['post']['avatar'] ?>&width=200")'>
-            <li id="postDetailFollowButton"><?= $_data['post']['is_following'] ? 'Following' : 'Follow' ?></li>
-            <li><a href="@<?= $_data['post']['username'] ?>" rel="message">Message</a></li>
-            <li><a href="/<?= $_data['post']['username'] ?>">Profile</a></li>
-        </ul>
-        <ul class="deetsList">
-        	<li class="postDetailUsername name"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
-            <li class="postDetailUserLocation"><?= $posterData['location'] ?></li>
-           <li class="postDetailStat" style="margin-top: 10px;">RANK <?= $posterData['rank'] ?></li>
-            <li class="postDetailStat"><a href="/<?= $_data['post']['username'] ?>/followers">FOLLOWERS</a> <span id="detailFollowingCount"><?= $posterData['followers'] ?></span></li>
-            <li class="postDetailStat"><a href="/<?= $_data['post']['username'] ?>/following">FOLLOWING </a><?= $posterData['following'] ?></li>
-            <li class="postDetailStat"></li>
-        </ul>
-        
-        
-        <div id="postDetailLoveButton" class="postDetailLikes cursor <?= ($_data['post']['is_liked'] ? 'pd-Loved' : 'pd-unLoved') ?>">
-        	<div id="loveCount" class="buttonText"><?= $_data['post']['likes'] ?></div>
-        </div>
-
-        <div id="postShareSection">
+       <ul class="userDeets">
+           <a href="/<?= $_data['post']['username'] ?>"><li class="avatar" style="background-image: url(<?= $_data['post']['avatar'] ?>&width=50)"></li></a>
+           <li class="username"><a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></li>
+           <li class="location"><?= $_data['post']['location'] ?></li>
+       </ul>
+        <div class="sharebutton">BACK</div>
+        <div style="clear: left;"></div>
+        <!--<div id="postShareSection">
         	<div class="postShareTitle">SHARE THIS POST</div>
             <ul class="shareButts">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.dahliawolf.com/post/<?= $_data['post']['posting_id']  ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
@@ -108,7 +78,7 @@
                 	<li id="shareEmail" class="shareButton" data-platform="email"></li>
                 </a>
             </ul>
-        </div>
+        </div>-->
     </div>
     <div id="postDetailMainRow">
         <a id="post_image" class="zoombox" data-url="<?= $_data['post']['image_url'] ?>">
@@ -143,6 +113,7 @@
                         </div>
                     <? endforeach ?>
                 </div>
+            </div>
                 <? if( $_data['post']['total_tags'] || $_data['post']['user_id'] == $_SESSION['user']['user_id'] ): ?>
                     <div class="commentSectionTitle" style="margin-top: 20px;">Notes from <?= $_data['post']['username'] ?></div>
                     <div id="tagsSection"></div>
@@ -150,34 +121,40 @@
             </div>
         </div>
     </div>
-</div>
-<div id="postGridTitle">MORE POSTS BY <a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></div>
-<div id="userPostGrid"></div>
+    <div style="clear: left;"></div>
+    <div id="postGridTitle">MORE POSTS BY <a href="/<?= $_data['post']['username'] ?>"><?= $_data['post']['username'] ?></a></div>
+    <div id="userPostGrid"></div>
 </div>
 
 <? if(!isset( $_GET['ajax'] )): ?>
     </div>
-    <?php include "footer.php" ?>
+    <?php //include "footer.php" ?>
 <? endif ?>
 
 
 
 <script>
-
     $(function() {
         window.thePostDetail = new postDetail(<?= json_encode($_data['post']) ?>);
         window.thePostGrid = new postDetailGrid(thePostDetail.data.user_id, $('#modal-content'), false, 'posts');
+        $('.sharebutton').on('click', function() {
+            if( $('#voteBucket').length ) {
+                $('#voteBucket').show();
+                dahliawolfFeed.bindScroll();
+            }
+            window.history.back();
+        });
+        if( $('#voteBucket').length ) {
+            $('#voteBucket').hide();
+            $(window).unbind();
+        }
 
         _gaq.push(['_trackEvent', 'Post', 'Viewing as pop up']);
-        <? if(isset($_GET['ajax'])): ?>
-        $('body').css('overflow', 'hidden');
-        <? endif ?>;
     });
-
 </script>
 
 <?
 if (!isset($_GET['ajax'])) {
-	include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
+	//include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 }
 ?>

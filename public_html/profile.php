@@ -122,7 +122,7 @@
     <? include "dashboard.php"; ?>
 <? endif ?>
 <?
-    include "footer.php";
+    //include "footer.php";
 ?>
 
 <? if(!isset($_GET['dashboard'])): ?>

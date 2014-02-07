@@ -46,7 +46,7 @@
 	<div style="clear:both"></div>
 </div>
 
-<?php include "footer.php" ?>
+<?php //include "footer.php" ?>
 <script>
 var partyLine = new Object();
 partyLine.getUsers = new Array;

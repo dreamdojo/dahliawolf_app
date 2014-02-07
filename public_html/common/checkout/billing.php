@@ -54,7 +54,7 @@ foreach($_data['countries'] as $country)
 ?>
 
 
-<form id="shippingForm" action="/public_html/action/shop/billing.php" class="Form StaticForm billing" method="post">
+<form id="shippingForm" action="/action/shop/billing.php" class="Form StaticForm billing" method="post">
     <input type="hidden" name="ajax" value="true">
 	<h3>Billing Address</h3>
 	<?

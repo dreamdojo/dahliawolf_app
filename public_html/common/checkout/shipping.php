@@ -2,7 +2,7 @@
 if (empty($_data['cart']['carrier_options'])) {
 	?>
     <h3>Shipping Options</h3>
-    <form id="carrierForm" action="/public_html/action/shop/select_checkout_carrier.php" class="Form StaticForm shipping" method="post">
+    <form id="carrierForm" action="/action/shop/select_checkout_carrier.php" class="Form StaticForm shipping" method="post">
     <div id="alisBeeper"><img src="/images/checkoutLoad.gif"></div>
     <input type="hidden" name="ajax" value="true">
     <select name="id_delivery" id="shippingOptions">
@@ -14,7 +14,7 @@ if (empty($_data['cart']['carrier_options'])) {
 else {
 	?>
 	<h3>Shipping Options</h3>
-    <form id="carrierForm" action="/public_html/action/shop/select_checkout_carrier.php" class="Form StaticForm shipping" method="post">
+    <form id="carrierForm" action="/action/shop/select_checkout_carrier.php" class="Form StaticForm shipping" method="post">
         <div id="alisBeeper"><img src="/images/checkoutLoad.gif"></div>
         <input type="hidden" name="ajax" value="true">
         <select name="id_delivery" id="shippingOptions">

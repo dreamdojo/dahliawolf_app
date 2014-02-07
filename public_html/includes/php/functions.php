@@ -39,6 +39,17 @@ function p_r($array) {
 	echo '</pre>';
 }
 
+function getDaysLeft($date) {
+    $time = strtotime($date);
+    $today = time();
+    $difference = $time - $today;
+    $retVal = $difference/60/60/24;
+    if($retVal < 0) {
+        $retVal = 0;
+    }
+    return floor($retVal);
+}
+
 function unset_action_session_keys() {
 	if (isset($_SESSION)) {
 		if (isset($_SESSION['errors'])) {

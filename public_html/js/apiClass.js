@@ -17,6 +17,7 @@ function User(userData) {
     this.social = new Social();
     this.bank = new Bank();
     this.userStack = [];
+    this.redirect = null;
 }
 
 User.prototype = {
@@ -47,11 +48,19 @@ User.prototype = {
 
 User.prototype.login = function(e) {
     var formData = $(this).serialize();
+    var prevUrl = document.URL;
     $.post('/action/login', formData, function(data) {
         var result = $.parseJSON(data);
 
         if(result[0] == 'success') {
-            location.reload();
+            if(dahliawolf.redirect) {
+                document.location = '/inspire';
+            } else {
+                dahliawolf.data = result[2];
+                $('#userMenuFrame').load('/blocks/userMenu.php');
+                $('.loginDept').empty();
+                $('#phoPop').remove();
+            }
             _gaq.push(['_trackEvent', 'Login', 'Success']);
         } else {
             e.data.$errorBox.html('*'+result[0]);
@@ -132,6 +141,29 @@ User.prototype.logIntoFacebook = function(callback) {
     }, {scope: 'email'});
 }
 
+User.prototype.phoPop = function(url, title, callback) {
+    var $phoPop;
+
+    if(url) {
+        if( $('#phoPop').length ) {
+            $phoPop = $('#phoPop');
+            $phoPop.empty();
+        } else {
+            $phoPop = $('<div id="phoPop"></div>');
+        }
+        window.history.pushState({}, '', url);
+        _gaq.push(['_trackPageview']);
+        window.onpopstate = function(event) {
+            $phoPop.remove();
+        }
+        url += '?ajax=true';
+        $('body').prepend($phoPop);
+        $phoPop.load(url, callback);
+    } else {
+        holla.log('No URL');
+    }
+}
+
 //****************************************************************** $VIEWS
 
 User.prototype.$post = function(data) {
@@ -150,31 +182,17 @@ User.prototype.$post.prototype = {
 //*********************************************** PRODUCT
 User.prototype.$product = function(data) {
     this.data = data;
-
+    var $prodInfo = $('<ul class="prodInfo"></ul>');
     var $product = $('<div class="shop-item '+this.status+'" id="item-'+this.id+'"></div>');
+    var prodDeets = $('<ul class="prodDeets"><li>'+this.name+'</li><li>'+this.price+'</li></ul>').appendTo($product);
     var $imageFrame = $('<ul class="imageFrame"></ul>');
     var $productShot = $('<li class="productShot"></li>').css('background-image', 'url("'+this.productShot+'")').appendTo($imageFrame);
-    var $bloggerShot = $('<li class="bloggerShot"></li>').css('background-image', 'url("'+this.bloggerShot+'")');
-    if(this.isOnSale) {
-        $('<div class="daysEnd"><span class="dahliaPink">'+getDaysLeft(this.data.commission_from_date)+' Days</span> <span style="font-style: italic; color: #000;"> left to pre-order at 30% OFF</span></div>').appendTo($bloggerShot);
-    }
-    $bloggerShot.appendTo($imageFrame);
-    var $inspirationShot = $('<li class="inspirationShot"></li>').css('background-image', 'url("'+this.inspirationImage+'&width=300")').appendTo($imageFrame);
-    $imageFrame.appendTo($product).wrap('<a href="/public_html/shop/'+this.id+'"></a>');
-    var $productDetails = $('<ul class="productDetails"><li class="productName">'+this.name+'</li><li class="productAvatar" style="background-image: url(\''+this.avatar+'&width=25\')"></li><li class="productUsername">'+this.username+'</li></ul>').appendTo($product);
-    var $productPrice = $('<ul class="productPrice"></ul>');
-    $('<li class="preorderPrice"></li>').html( this.isOnSale ? '$'+this.presalePrice+' pre-order price' : ' ').appendTo($productPrice);
-    var $regPrice = $('<li class="regularPrice">$'+this.price+'</li>')
-    if(this.isOnSale) {
-        $regPrice.css('text-decoration', 'line-through');
-    }
-    $regPrice.appendTo($productPrice);
-    $inspirationImage = $('<li class="inspirationButton"><span>VIEW INSPIRATION</span></li>').hover(function() {
-        $inspirationShot.css('left', 0);
-    }, function() {
-        $inspirationShot.css('left', 100+'%');
-    }).appendTo($productPrice).wrap('<a class="zoombox" data-url="'+this.inspirationImage+'"></a>');
-    $productPrice.appendTo($product);
+    var $avatar = $('<li class="avatar" style="background-image: url('+data.avatar+'&width=85);"></li>').appendTo($prodInfo);
+    $('<li class="prodname">'+data.product_name+'</li>').appendTo($prodInfo);
+    $('<li class="username">Inspiration by <a href="/'+data.username+'">'+data.username+'</a></li>').appendTo($prodInfo);
+    $imageFrame.appendTo($product).wrap('<a href="/shop/'+data.id_product+'" rel="product"></a>');
+
+    $product.append($prodInfo);
 
     return $product;
 }
@@ -193,6 +211,36 @@ User.prototype.$product.prototype = {
     get presalePrice() {return Math.floor(this.data.sale_price).toFixed(2);},
     get price() {return Math.floor(this.data.price).toFixed(2);}
 }
+
+User.prototype.$sponsor = function(d) {
+    var data = d;
+    holla.log(d);
+    var DAYS_LEFT = getDaysLeft(data.commission_from_date);
+    var $sponsorItem = $('<div class="sponsorItem"></div>');
+
+    var $prodInfo = $('<div class="prodInfo"></div>');
+    $('<ul class="userDeets"><a href="/'+data.username+'"><li class="avatar" style="background-image: url(\''+data.avatar+'&width=50\')"></li></a><li class="prodTitle">'+data.product_name+'</li><li class="inspHead">Inspiration by <a href="/'+data.username+'">'+data.username+'</a></li></ul>').appendTo($prodInfo);
+    $('<ul class="prodPrice current"><li>$50.00</li><li>50% OFF</li></ul><ul class="prodPrice closed"><li>$50.00</li><li>50% OFF</li></ul>').appendTo($prodInfo);
+    $sponsorItem.append($prodInfo);
+
+    var $itemImage = $('<div class="imgFrame"><a href="/sponsor/'+data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></a></div>').appendTo($sponsorItem);
+    var $sponsorDeets = $('<div class="sponsorDetails"></div>');
+    var $toGoal = $('<ul><li>'+(Number(data.total_sales)/100)*100+'%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
+    var $left = $('<ul><li>'+DAYS_LEFT+'</li><li>'+(DAYS_LEFT  == 1 ? 'day' : 'days')+' left</li></ul>').appendTo($sponsorDeets);
+    //var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
+    var $goal = $('<ul><li>9</li><li>sponsors spots left at 50% off</li></ul>').appendTo($sponsorDeets);
+    var $status = $('<div class="statuses">' +
+        '<ul class="status closed"><li>50% OFF</li><li>sold out</li></ul>' +
+        '<ul class="status current"><li>30% OFF</li><li>22 spots left</li></ul>' +
+        '<ul class="status pending"><li>20% OFF</li><li>22 spots left</li></ul>' +
+        '</div>').appendTo($sponsorDeets);
+    var $butt = $('<a href="/sponsor/'+data.id_product+'"><div class="greenbutton">SPONSOR NOW</div></a>').appendTo($sponsorDeets);
+
+
+    $sponsorItem.append($sponsorDeets);
+    return $sponsorItem;
+}
+
 //*********************************************** USER
 User.prototype.$user = function(data) {
 
@@ -535,7 +583,6 @@ Post.prototype.unlove = function(id, callback) {
     this.apiFunction = 'delete_like';
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'User unloved a post'];
-    this.callback = callback;
     this.callApi({user_id: dahliawolf.userId, posting_id : id, like_type_id:1}, callback);
     return this;
 }
@@ -544,9 +591,16 @@ Post.prototype.dislike = function(id, callback) {
     this.apiFunction = 'add_post_dislike';
     this.loginRequired = true;
     this.analArray = ['_trackEvent', 'Post', 'Added dislike'];
-    this.callback = callback;
-    this.callApi();
     this.callApi({user_id: dahliawolf.userId, posting_id : id}, callback);
+    return this;
+}
+
+Post.prototype.repost = function(_posting_id, callback) {
+    this.apiFunction = 'repost';
+    this.loginRequired = true;
+    this.analArray = ['_trackEvent', 'Post', 'Reposted post'];
+    this.callApi({posting_id:_posting_id, repost_user_id:dahliawolf.userId}, callback);
+    return this;
 }
 
 Post.prototype.deleteMe = function(id, callback) {
@@ -623,7 +677,7 @@ Post.prototype.shareOnTwitter = function(URL, id) {
 Post.prototype.shareOnFacebook = function(URL, id) {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            var params = {message : 'Love this on #Dahliawolf www.dahliawolf.com/post/'+id, url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
+            var params = {message : 'Create your own fashion on #DAHLIAWOLF #HellsYA www.dahliawolf.com/post/'+id, url : URL, access_token : response.authResponse.accessToken, upload_file : true, filename : 'Blop'};
             _gaq.push(['_trackEvent', 'Social', 'Pushed to Facebook API']);
             FB.api('/me/photos', 'post', params, function(response) {
                 if (!response || response.error) {
@@ -794,7 +848,7 @@ Cart.prototype.update = function(callback) {
         that.set(data);
         that.$setTotal();
         if(data.products.length == 1) {
-            that.$cartContainer.css('background-image', 'url("/images/shoppingCart_on.png")');
+            that.$totalCount.addClass('fullCart').removeClass('emptyCart');
             that.$cart = $('<ul id="dahliaCart"></ul>').appendTo(that.$cartContainer);
         }
         that.$cart.empty().append(that.$bezier.clone());

@@ -10,7 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 	<div class="AboutRight">
 		
                 
-        <form id="inviteforms" method="post" action="/public_html/action/invite.php">
+        <form id="inviteforms" method="post" action="/action/invite.php">
         <div id="EmailAddresses" class="Form FancyForm floatLeft" style="width: 62%; margin-left:-42px;">
             <ul>
                 <li>

@@ -13,7 +13,7 @@ $is_review = !empty($is_review) ? true : false;
 	<?
 	if (!$is_review) {
 		?>
-		<form action="/public_html/action/shop/update_cart.php" method="post">
+		<form action="/action/shop/update_cart.php" method="post">
 		<?
 	}
 	?>
@@ -116,7 +116,7 @@ $is_review = !empty($is_review) ? true : false;
 					if (!$is_review) {
 						?>
 						<td class="remove">
-							<a class="remove" href="/public_html/action/shop/remove_item_from_cart.php?id_product=<?= $id_product ?>&id_product_attribute=<?= $id_product_attribute ?>">x</a>
+							<a class="remove" href="/action/shop/remove_item_from_cart.php?id_product=<?= $id_product ?>&id_product_attribute=<?= $id_product_attribute ?>">x</a>
 						</td>
 						<?
 					}
@@ -182,7 +182,7 @@ $is_review = !empty($is_review) ? true : false;
 				?>
 				<div class="commission-redemption redemption">
 					<h4>Commission Redemption</h4>
-					<form class="discount-code" action="/public_html/action/shop/save_cart_commission.php" method="post">
+					<form class="discount-code" action="/action/shop/save_cart_commission.php" method="post">
 						<fieldset>
 							<label for="cart-commission-amount">Enter an amount to redeem:</label>
 							<input type="text" name="amount" id="cart-commission-amount" value="<?= !empty($_data['cart']['cart_commission']) ? $_data['cart']['cart_commission']['amount'] : '0.00' ?>" />
@@ -197,7 +197,7 @@ $is_review = !empty($is_review) ? true : false;
 				?>
 				<div class="store-credit-redemption redemption">
 					<h4>Store Credit Redemption</h4>
-					<form class="discount-code" action="/public_html/action/shop/save_cart_store_credit.php" method="post">
+					<form class="discount-code" action="/action/shop/save_cart_store_credit.php" method="post">
 						<fieldset>
 							<label for="cart-store-credit-amount">Enter an amount to redeem:</label>
 							<input type="text" name="amount" id="cart-store-credit-amount" value="<?= !empty($_data['cart']['cart_store_credit']) ? $_data['cart']['cart_store_credit']['amount'] : '0.00' ?>" />
@@ -296,7 +296,7 @@ $is_review = !empty($is_review) ? true : false;
 		$cc_payment = false;
 		$paypal_payment = false;
 		?>
-        <form action="/public_html/action/shop/place_order.php" id="place_order_form" class="Form StaticForm payment" method="post">
+        <form action="/action/shop/place_order.php" id="place_order_form" class="Form StaticForm payment" method="post">
         <input type="hidden" name="amount" value="<?= $_data['cart']['cart']['totals']['grand_total'] ?>" />
         <fieldset>
             <h3>Payment Method</h3>
@@ -423,7 +423,7 @@ $is_review = !empty($is_review) ? true : false;
 									// Membership level discount is always automatically added, so no reason to show remove link
 									if (empty($discount['membership_level_id'])) {
 										?>
-		                            	<a class="remove" href="/public_html/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
+		                            	<a class="remove" href="/action/shop/remove_discount.php?id_cart_rule=<?= $discount['id_cart_rule'] ?>" title="Remove Discount">x</a>
 		                                <?
 									}
 								}

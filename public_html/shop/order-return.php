@@ -11,7 +11,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
 	<h2>Order #<?= !empty($_data['order']) ? $_data['order']['id_order'] : '' ?> <span style="font-weight: normal;">(<?= $_data['order']['payment_status'] ?>)</span></h2>
 
-	<form action="<?= CR ?>/public_html/action/shop/order_return.php" method="post" class="return">
+	<form action="<?= CR ?>/action/shop/order_return.php" method="post" class="return">
 		<?
 		output_order_table($_data['order'], 1);
 		?>

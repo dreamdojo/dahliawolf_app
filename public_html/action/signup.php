@@ -31,7 +31,7 @@ if (!empty($data['errors'])) {
         echo json_encode(api_errors_to_array($data, NULL));
         unset($_SESSION['errors']);
     } else {
-        redirect('/signup.php');
+        redirect('/signup');
     }
     die();
 }

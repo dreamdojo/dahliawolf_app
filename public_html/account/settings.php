@@ -16,7 +16,7 @@ $_data['user'] = $data['data'];
 ?>
 <style>
     .SettingsCol{width: 1000px;margin: 0px auto;}
-    #syncSocial{display: none;}
+    #syncSocial{display: none; padding-bottom: 300px;}
     .syncSection li:first-child{background-image: url("/images/postDeetsIcons.png"); background-size: auto 100%; background-repeat: no-repeat; width: 75px; height: 75px; float: left;}
     .syncSection li:last-child{font-size: 25px;height: 80px;line-height: 80px; cursor: pointer;}
     .syncFacebook li:first-child{background-position: -191px;}
@@ -37,7 +37,7 @@ $_data['user'] = $data['data'];
     </div>
 
 <div class="SettingsCol">
-    <form id="profileEdit" class="Form StaticForm" action="/public_html/action/settings.php" method="POST" style="padding-top:20px;" enctype="multipart/form-data">
+    <form id="profileEdit" class="Form StaticForm" action="/action/settings.php" method="POST" style="padding-top:20px;" enctype="multipart/form-data">
     <label for="id_img">Username: </label> <h1><?= $_data['user']['username'] ?></h1>
     <ul>
         <li>
@@ -201,6 +201,7 @@ $_data['user'] = $data['data'];
             </p>
         </div>
         <input type="hidden" name="esub" value="1" />
+        <div style="clear: left;"></div>
     </form>
     <div id="syncSocial">
         <div class="socialTitle">Sync Dahlia\Wolf with your social media accounts to share with your friends!</div>

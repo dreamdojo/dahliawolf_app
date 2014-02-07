@@ -1,6 +1,6 @@
 
 
-<form action="/public_html/action/shop/select_payment_method.php" class="Form StaticForm payment" method="post">
+<form action="/action/shop/select_payment_method.php" class="Form StaticForm payment" method="post">
 	<fieldset>
 		<h3>Payment Method</h3>
         <?

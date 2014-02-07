@@ -30,6 +30,8 @@ define('LANG_ID', 1);
 define('SITENAME_PREFIX', 'dh');
 define('DAHLIAWOLF_MOBILE', 'http://'.$_SERVER['SERVER_NAME'].'/mobile/');
 
+$DISCOUNTS = Array(100,10,20,70);
+
 $social_network_map = Array('facebook'=>3, 'twitter'=>6, 'google'=>9, 'instagram'=>12, 'tumblr'=>14);
 
 require $_SERVER['DOCUMENT_ROOT'] . '/lib/php/API.php';

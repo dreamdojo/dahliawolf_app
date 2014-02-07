@@ -21,11 +21,15 @@ function sendGeoffMessage(msge) {
 //****************************** BINDINGS *********************
 
 $(function() {
-    $('#loginForm').on('submit', {$errorBox : $('#errorBox')}, dahliawolf.login);
     $('#registrationForm').on('submit', {$errorBox : $('#r_errorBox')}, dahliawolf.register);
     $(document).on('click', 'a[rel="message"]', function(e) {
         e.preventDefault();
         dahliaMessenger.newMessage( $(this).attr('href') );
+    });
+
+    $(document).on('click', 'a[rel="pop"]', function(e) {
+        e.preventDefault();
+        dahliawolf.phoPop(this.href, 'test');
     });
 
     $(document).on('mouseenter', '.dahliaHead', function() {
@@ -684,11 +688,11 @@ function getDaysLeft(date) {
     var secondDate = new Date(date);
     var oneDay = 24*60*60*1000;
 
-    var retVal =  Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-    if(retVal > 100 ) {
+    var retVal = firstDate.getTime() - secondDate.getTime();
+    if(retVal > 0)
         retVal = 0;
-    }
-    return retVal;
+
+    return Math.abs(Math.round(retVal/oneDay));
 }
 
 function popShippingFromBilling() {

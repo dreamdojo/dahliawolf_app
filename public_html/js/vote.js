@@ -154,18 +154,59 @@ voteFeed.prototype.get$Post = function(id, index) {
     var post = this.getPostData(id);
     var postDims = {0:[330, 496], 1:[300, 450], 2:[390, 390], 3:[360, 540], 4:[420, 633], 5:[450, 645], 6:[300, 450], 7:[334, 334], 8:[390, 519], 9:[360, 450], 10:[450, 450], 11:[420, 560], 12:[300, 533], 13:[334, 346], 14:[390, 390], 15:[365, 548]};
 
+    function incrementHype() {
+        var $thc = thc.find('.totalHypeCount');
+        var num = Number($thc.html());
+
+        num++;
+        $thc.html(num);
+    }
+
+    function decreaseHype() {
+        var $thc = thc.find('.totalHypeCount');
+        var num = Number($thc.html());
+
+        num--;
+        $thc.html(num);
+    }
+
+    console.log(post);
     var $post = $('<div class="post '+(this.isSpineMode ? 'spineMode' : 'gridMode')+'"></div>');
-    $post.append(new voteDot(post, function() {
-        //$post.find('.voteDot').addClass('showOnHover');
-        //console.log($post.find('.voteDot'));
-    }));
+    $post.append(new shareBall(post));
     $post.find('.voteDot').addClass('showOnHover');
-    console.log($post.find('.voteDot'));
-    var $postAvatar = $('<a href="/'+post.username+'"><div class="voteAvatar showOnHover" style="background-image: url(\''+post.avatar+'&width=60\');"></div></a>').appendTo($post);
-    var $userBar = $('<div class="userBar dahliaBGColor">'+(Number(post.total_likes)+Number(post.comments)+Number(post.total_shares))+' HYPE</div>');
-    var $hypeBar = $('<ul class="hypeBar dahliaBGColor showOnHover"></ul>');
-    $hypeBar.append('<li class="highlight"><div class="spriteBG hypes"></div>'+post.total_likes+'</li>').append('<li class="highlight"><div class="spriteBG hbComments"></div>'+post.comments+'</li>').append('<li class="highlight"><div class="spriteBG hbShares"></div>'+post.total_shares+'</li>').appendTo($post);
-    $post.append($userBar);
+    var $postAvatar = $('<a href="/'+post.username+'"><div class="voteAvatar" style="background-image: url(\''+post.avatar+'&width=60\');"></div></a>');
+    $('<div class="whois"><div class="slider">'+post.username+'</div></div>').appendTo($postAvatar.find('.voteAvatar'));
+    $postAvatar.appendTo($post);
+
+    var $hypeCount = $('<span>'+(Number(post.total_likes)+Number(post.comments)+Number(post.total_shares))+'</span>');
+    var $hypeBar = $('<ul class="hypeBar showOnHover"></ul>');
+    $('<li class="highlight"><div class="spriteBG hypes '+(Number(post.is_liked) ? 'hyped' : '')+'"></div><span class="hypeCount">'+post.total_likes+'</span></li>').on('click', function() {
+        var $hypeSprite = $post.find('.hypes');
+        var $hypeCount = $post.find('.hypeCount');
+        var tCount = Number($hypeCount.html());
+
+        if( $hypeSprite.hasClass('hyped') ) {
+            tCount--;
+            $hypeSprite.removeClass('hyped');
+            dahliawolf.post.unlove(post.posting_id);
+            decreaseHype();
+        } else {
+            dahliawolf.post.love(post.posting_id);
+            tCount++;
+            $hypeSprite.addClass('hyped');
+            incrementHype();
+        }
+        $hypeCount.html(tCount);
+    }).appendTo($hypeBar);
+    $('<li class="highlight"><div class="spriteBG hbRepost '+(Number(post.is_repost) ? 'reposted' : '')+'"></div><span class="repostCount">'+(post.total_reposts+post.total_likes)+'</span></li>').on('click', function() {
+        if(!$(this).hasClass('reposted')) {
+            dahliawolf.post.repost(post.posting_id);
+            $(this).addClass('reposted');
+            incrementHype();
+        }
+    }).appendTo($hypeBar);
+    var thc = $('<li class="highlight"  style="width: 33%;"><span class="totalHypeCount">'+(Number(post.total_reposts)+Number(post.total_likes))+'</span> HYPES</li>').appendTo($hypeBar);
+    $hypeBar.appendTo($post);
 
     var video = ( post.image_url.split('.').pop() === 'mp4' );
 
@@ -189,7 +230,7 @@ voteFeed.prototype.get$Post = function(id, index) {
         var $img = $('<img src="'+img_url+'">').appendTo($post);
         $img.wrap('<div class="innerwrap"></div>');
     }
-    $img.wrap('<a href="/post-details?posting_id='+post.posting_id+'" class="image color-'+(Math.floor(Math.random() * (6 - 1) + 1))+'" rel="modal"></a>');
+    $img.wrap('<a href="/post/'+post.posting_id+'" class="image color-'+(Math.floor(Math.random() * (6 - 1) + 1))+'" rel="pop"></a>');
 
     return $post;
 }

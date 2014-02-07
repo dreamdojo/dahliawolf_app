@@ -54,7 +54,7 @@ function postUpload(file) {
         this.maxSize = 5000000;
         this.minSize = 1000;
         this.file = file;
-        this.action = 'action/post_image.php?ajax=true';
+        this.action = '/action/post_image.php?ajax=true';
 
         if(!this.validateFile()) {
             return 0;
@@ -69,7 +69,7 @@ function postUpload(file) {
 
         this.oReq = new XMLHttpRequest();
 
-        if(postBank) {
+        if($('#bankBucket').length) {
             this.oReq.upload.addEventListener("loadstart", function() {
                 _gaq.push(['_trackEvent', 'Inspire', 'Upload Started']);
                 that.$post = $('<div class="postFrame grid loading" style=\'background-image: url("/images/inspireLoader.gif");\'></div>').prependTo(postBank.$bucket);
@@ -92,6 +92,27 @@ function postUpload(file) {
                 }
 
             }, false);
+        } else {
+            this.oReq.upload.addEventListener("progress", function(e) {
+                $('#dropUpdate').html(Math.ceil((e.loaded/e.total)*100)+'%');
+            }, false);
+            this.oReq.addEventListener("load", function() {
+                that.data = $.parseJSON(this.responseText);
+                if(that.data.success) {
+                    var $verifyPost = $('<ul class="postConfirm"><li class="closer">X</li><li class="title">YOUR IMAGE HAS BEEN POSTED</li><li class="theImage" style="background-image: url('+that.data.data.new_image_url+');"></li></ul>').appendTo($('#theDropPad')).fadeIn(400);
+                    setTimeout(function() {
+                        $verifyPost.css({'left': ($('#userAvatar').offset().left+200)+'px', top:10+'px', width:10+'px', height:10+'px'});
+                    }, 2600);
+                    _gaq.push(['_trackEvent', 'Inspire', 'Upload completed successfully']);
+                    postBank.checkSyncedAccounts('http://www.dahliawolf.com/post/'+that.data.data.posting_id, that.data.data.new_image_url, that.data.data.posting_id);
+                } else {
+                    _gaq.push(['_trackEvent', 'Inspire', 'Failed back end validation', that.data.errors]);
+                    _gaq.push(['_trackEvent', 'Errors', that.data.errors]);
+                    alert(that.data.errors);
+                }
+
+                setTimeout(that.resetDropPad, 3000)
+            }, false);
         }
 
         this.oReq.open("POST", this.getAction);
@@ -108,6 +129,12 @@ postUpload.prototype = {
     get getAction() {return this.action;}
 }
 
+postUpload.prototype.resetDropPad = function() {
+    $('#theDropPad').fadeOut(100, function() {
+        $('#dropUpdate').html('DROP IT LIKE ITS HOT');
+    });
+}
+
 postUpload.prototype.$getPost = function(data) {
     data = data.data;
     var $post = $('<div class="tpVoteCity" style="z-index: 0;"></div><div class="postPostingWrap"><div class="bankPosted">' +
@@ -121,19 +148,23 @@ postUpload.prototype.$getPost = function(data) {
 
 postUpload.prototype.validateFile = function() {
     if(this.getExt !== 'jpg' && this.getExt !== 'gif' && this.getExt !== 'png' && this.getExt !== 'jpeg' ) {
-        alert('.'+ext+' is an invalid File Type');
+        alert('.'+this.getExt+' is an invalid File Type');
         _gaq.push(['_trackEvent', 'Inspire', '.'+this.getExt+' is an invalid File Type']);
         _gaq.push(['_trackEvent', 'Errors', '.'+this.getExt+' is an invalid File Type']);
+        this.resetDropPad();
         return false;
     } else if(this.getSize < this.minSize) {
         alert('File is too small');
         _gaq.push(['_trackEvent', 'Inspire', 'File is too small']);
         _gaq.push(['_trackEvent', 'Errors', 'File is too small']);
+        this.resetDropPad();
         return false;
     } else if(this.getSize > this.maxSize) {
         alert('File is too large');
         _gaq.push(['_trackEvent', 'Inspire', 'File is too big']);
         _gaq.push(['_trackEvent', 'Errors', 'File is too big']);
+        return false;
+        this.resetDropPad();
     }
     return true;
 }
@@ -147,17 +178,28 @@ postBank.limit = 12;
 postBank.isRefillAvailable = true;
 postBank.mode = 'grid';
 
-postBank.init = function() {
+postBank.init = function(feed) {
     postBank.$bucket = $('#bankBucket');
     postBank.$dropBox = $('#dndeezy');
     postBank.$bankOptions = $('#bankOptions');
     postBank.bindScroll();
-    postBank.getImages();
-    $('#importFromPinterest').on('click', postBank.getImagesFromTumblr);
-    $('#importFromInstagram').on('click', postBank.getImagesFromInstagram);
+
     postBank.adjustMargins();
     $(window).resize(postBank.adjustMargins);
     $('#viewToggle').on('click', this.toggleMode);
+    switch(feed.feedType) {
+        case 'dahliawolf' :
+            postBank.getImages();
+            break;
+        case 'tumblr' :
+            postBank.getImagesFromTumblr();
+            break;
+        case 'instagram' :
+            postBank.getImagesFromInstagram();
+            break;
+        case 'website' :
+            break;
+    }
 }
 
 postBank.checkSyncedAccounts = function(url, img_url, id) {

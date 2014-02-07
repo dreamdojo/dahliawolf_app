@@ -29,6 +29,7 @@ a {
 	background-repeat: no-repeat;
 	min-height: 39px;
     position: relative;
+    top:6px;
 }
 .header + .user-message {
 	margin-top: 100px;

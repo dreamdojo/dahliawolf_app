@@ -57,7 +57,7 @@ class Product_Listing {
 							
 							if (array_key_exists('is_wishlist', $this->options) && $this->options['is_wishlist'] == true) {
 								?>
-                                <div class="remove"><a href="/public_html/action/shop/remove_item_from_wishlist.php?id_favorite_product=<?= $product['id_favorite_product'] ?>">Remove</a></div>
+                                <div class="remove"><a href="/action/shop/remove_item_from_wishlist.php?id_favorite_product=<?= $product['id_favorite_product'] ?>">Remove</a></div>
                                 <?
 							}
 							

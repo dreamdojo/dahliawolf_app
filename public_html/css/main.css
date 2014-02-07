@@ -17,7 +17,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}
 iframe{height:0px;}
 
-body { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size:10px;color:#666; margin-top: 100px;}
+body { font-family: lato, sans-serif, ariel; font-size:10px;color:#666; margin-top: 93px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -31,7 +31,7 @@ h1 {margin: 32px 0 11px; font-size: 3em;}
 h2 {padding: 0 0 8px; font-size: 2.5em;}
 h1, h2 {letter-spacing: -0.0125em; font-weight: bold;overflow: hidden;}
 p {margin: 0 0 .8em; line-height: 1.35em;}
-a {font-weight: 100; color: #666; text-decoration: none !important; outline: none;}
+a {color: #666; text-decoration: none !important; outline: none;}
 a:hover {color: #74bf00; text-decoration: underline;}
 /*textarea, input {padding: 5px; line-height: 1em; color: #8c7e7e; background: #fcf9f9; border: 1px solid; border-color: #ddd #e1dfdf #d1cdcd; box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.75);}
 textarea:focus, input:focus {background-color: #fff; box-shadow: inset 0 1px 1px rgba(34,29,29,0.1); -moz-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1); -webkit-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1);}
@@ -58,8 +58,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 /*--------------------------------------    GLOBALS   ----------------------------------------------------- */
 .facebook{font-size: 14px;margin-top: 4px; cursor:pointer;}
 .spriteBG{background-image: url("/images/sprites.png");}
-.highlight:hover{color: #74bf00 !important;}
-.dahliaColor{color: #168795 !important;}
+.dahliaColor{color: #008caf !important;}
 .dahliaBGColor{background-color: #008caf !important;}
 
 /*--------------- SORT SECTION ----------------*/
@@ -87,29 +86,38 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 /*************************** HEADER ********************/
 #dahliaHeader{position: fixed; height: 70px; width: 100%; left: 0px; top: 0px;z-index: 1111100; color: #fff;}
 #dahliaHeader a{color: #fff;}
-#dahliaHeader a:hover{color: #b3fc5c !important;}
+#dahliaHeader a:hover{color: #74bf00;}
 .native_head{float: left;display: inline-block;margin-left: 15px;}
 .native_head li{float: left;margin-top: 14px;margin-left: 10px;}
+#tourButton{cursor: pointer;}
 
 /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
-#dahliaHeader #dahliaLogo{width: 280px;height: 73px; background-image: url("/images/logo_no_beta.png");background-size: auto 77%;background-repeat: no-repeat;background-position: 0% 50%;margin-left: 20px;overflow: hidden; float: left; cursor: pointer; position: relative; z-index: 10;transition: width.3s; -webkit-transition: width .3s;}
-#dahliaHeader .logoTransformed{background-position: 94% 50% !important; width: 82px !important;}
-#dahliaHeader #userMenu{float: right; padding-right: 20px; position: relative; height: 90px; margin-top: 10px; margin-right: 4px;}
-#dahliaHeader .avatarFrame{width: 50px;height: 50px;overflow: hidden; margin-top: -2px;border-radius: 30px;float: right;border: #fff 3px solid;}
+#dahliaHeader #dahliaLogo{width: 205px; height: 65px; background-image: url("/images/logo_no_beta.png");background-size: auto 60%;background-repeat: no-repeat;background-position: 0% 50%;margin-left: 20px;overflow: hidden; float: left; cursor: pointer; position: relative; z-index: 10;transition: width.3s; -webkit-transition: width .3s;}
+#dahliaHeader .logoTransformed{background-position: 99% 50% !important; width: 82px !important;}
+#dahliaHeader #userMenu{float: right; padding-right: 9px; position: relative; height: 90px; margin-top: 10px; margin-right: 4px;}
+#dahliaHeader .avatarFrame{width: 30px;height: 30px;overflow: hidden; margin-top: 6px;border-radius: 30px;float: right;border: #fff 3px solid;}
 #dahliaHeader .avatarFrame img{width: 100%;}
 #dahliaHeader .userName{float: right;color: #fff;font-size: 17px;line-height: 51px; margin-right: 13px;}
-#dahliaHeader #mainMenu{width: 340px; color: #fff; line-height: 73px; font-size: 24px;text-align: center;float: left;}
+#dahliaHeader #mainMenu{width: 340px; color: #fff; line-height: 65px; font-size: 19px;text-align: center;float: left;}
 #dahliaHeader #mainMenu li{float: left; margin: 0px 10px; position: relative;}
-#dahliaHeader #shoppingCart{ float: right; background-image: url("/images/shoppingCart.png");width: 30px;height: 73px;background-size: 54%; background-repeat: no-repeat; background-position: 7px 14px; margin-top: 10px; position: relative; padding-bottom: 50px;}
-#dahliaHeader #searchButton{ float:right; background-image: url("/images/s_mag.png"); width: 30px; height: 73px; background-size: 76%;background-position: 3px 15px; background-repeat: no-repeat;margin-top: 10px; margin-right: 0px;}
-#dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 10px; position: relative;}
-#dahliaMainMenuButton{float: left; height: 48px; width: 50px;  display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 86%; background-repeat: no-repeat;margin-top: 2px;}
+#dahliaHeader #searchButton{ float: right;
+    width: 48px;
+    height: 65px;
+    background-size: 420px;
+    background-position: -28px -330px;
+    background-repeat: no-repeat;
+    margin-right: 5px;border-left: #80c6d7 thin solid;}
+#dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 20px; position: relative;}
+#dahliaMainMenuButton{float: left; height: 60px; width: 60px;display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 100%; background-repeat: no-repeat;margin-top: 1px; z-index: 10; position: relative;}
 #dahliaMainMenuButton:hover .theMainMenu{display: block;}
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover #theDropdown{display: block;}
-#userMenu ul{position: absolute;width: 250px; margin-top: 88px; text-align: left; color: #636363; display: none; right: 13.5px; z-index: 1000000;}
-#userMenu li{font-size: 17px;font-family: arial; height: 40px;line-height: 39px;text-indent: 35px;position: relative;direction: rtl;text-align: right;}
+#userMenu ul{position: absolute;width: 186px;margin-top: 55px;text-align: left; box-shadow: #000 0px 1px 4px 0px; color: #ebebeb; display: none; right: 1px; z-index: 1000000; background-color: #ebebeb;}
+#userMenu li{font-family: arial;height: 35px;line-height: 35px;text-indent: 40px;position: relative;direction: rtl;text-align: right;border-top: #666 thin solid; color:#666; text-transform: uppercase;font-size: 13px;}
+#userMenu li:hover{background-color: #666; color: #fff;}
+#userMenu li:hover a{color: #fff;}
+
 #userMenu ul .header-bezier{position: absolute; width: 266px; background-image: url("/images/menu-bezier.png"); background-repeat: no-repeat; background-size: 100%;background-position: 39px 0px;height: 15px;top: -6px;margin-top: 9px;}
 #userMenu .top-menu-footer{ background-color: #2e2e2e; color: #b1b1b1; text-indent: 0px; text-align: center; font-size: 11px;}
 #userMenu .top-menu-footer a{color: #b1b1b1 !important;}
@@ -118,22 +126,51 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .menuBarsActive{background-position: -27px 3px !important;}
 #userMenu li:first-child{}
 #userMenu li:last-child{}
-.loginDept{color: #fff;font-size: 18px;width: 251px;line-height: 73px;}
-.loginDept li{float: left; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 400; letter-spacing: 0.5px; font-family: helvetica;}
-.loginDept li:last-child{background-color: #78fff4; height: 16px; padding: 8px 18px; color: #00818c; line-height: 18px; margin-top: 21px; font-weight: bold;}
+.loginDept{color: #fff;font-size: 18px; line-height: 65px; float: right;}
+.loginDept li{float: right; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 400; letter-spacing: 0.5px; font-family: helvetica;}
+.loginDept li:first-child{background-color: #88de03;height: 16px;padding: 6px 18px;color: #00818c;line-height: 16px;margin-top: 19px;border-radius: 4px;}
+.loginDept li:first-child a:hover{color: #fff !important;}
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
 .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
-.mmBorder{border-right: #666666 thin solid;position: absolute; height: 30px;right: -10px; top: 10px;
-    -webkit-transform: rotate(-22deg);
-    -moz-transform: rotate(-22deg);
-    -o-transform: rotate(-22deg);
-    -ms-transform: rotate(-22deg);
-    transform: rotate(-22deg);}
+
+/*********** THE DROP DOWN CART **************/
+#dahliaCart{position: absolute;top: 79px;right: -3px; width: 270px; border: #ccc thin solid; z-index: 100; background-color: #fff; display: none;}
+#shoppingCart:hover ul{display: block !important;}
+#dahliaHeader #shoppingCart{float: right;
+    width: 50px;
+    height: 15px;
+    position: relative;
+    padding-bottom: 50px;
+    border-left: #80c6d7 thin solid;border-right: #80c6d7 thin solid;
+    margin-right: 10px;
+    padding-right: 5px;}
+#dahliaHeader #rightHandMenu .fullCart{background-position: -73px -328px;}
+#dahliaHeader #rightHandMenu .emptyCart{background-position: -34px -327px;}
+#dahliaCart div{float: left;}
+#dahliaCart li:first-child{float: left;}
+#dahliaCart li:first-child img{height: 70px;margin-left: 0px; margin-right: 10px;}
+#dahliaCart ul{height: 85px;border-bottom: #c2c2c2 thin solid;width: 84%;margin: 0px auto;margin-top: 15px;}
+#dahliaCart ul:last-child{border-bottom: none;}
+#dahliaCart ul li{color: #666;font-size: 12px;line-height: 16px; text-align: left;}
+#dahliaCart .cta{background-color: #76bd22;color: #fff;width: 225px;margin: 0px auto;margin-top: 10px;margin-bottom: 25px;text-align: center;padding: 10px 0px;font-size: 15px;text-transform: uppercase;float: none !important;}
+#shoppingCart .cartCount{background-size: 455px;
+    background-repeat: no-repeat;
+    width: 49px;
+    text-align: center;
+    line-height: 29px;
+    font-size: 13px;
+    color: #fff;
+    height: 30px;
+    margin-top: 18px;
+    margin-left: 4px;}
+.cart_bezier{position: absolute; width: 29px; background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
+
 
 #searchBar{width: 100%;position: absolute;height: 60px;left: 0px;background-color: #000;top: 100%; z-index: 123;border-top: #fff thin solid;display: none;}
-#searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center; font-family: futura;}
-.pinkMe{color: #78fff4;}
-.newActivityCountMod{color: #fff;background-color: #78fff4;text-align: center;padding: 3px;line-height: 20px;position: absolute;right: 6px;border-radius: 16px;margin-top: 8px;text-indent: 0px;min-width: 20px;top: 0px;}
+#searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center;}
+.pinkMe{color: #82CF26;}
+.newActivityCountMod{color: #fff;background-color: #82CF26;text-align: center;padding: 3px;line-height: 13px;position: absolute;right: 6px;border-radius: 9px;margin-top: 8px;text-indent: 0px;min-width: 20px;top: 0px;font-size: 11px;}
+#phoPop{position: fixed; width: 100%; height: 100%; top: 80px; left: 0px; top: 0px; background-color: #fff; z-index: 1000000;overflow: scroll;}
 
 #mobNative{float: left;margin-top: 40px;margin-left: 6%;}
 #mobNative li{float: left; width: 115px;}
@@ -200,6 +237,11 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .soc-img-frame{overflow: hidden; position:relative; width:186px; height: 177px; z-index:100000; float: left; border:3px solid #484848; margin-right: 5px;}
 .secret-box{position: relative;overflow: hidden;width: 200px;float: left;}
 .soc-img-frame:hover{border-color:#F00;}
+.voteAvatar:hover .slider{right: 0%;}
+.voteAvatar:hover .whois{right: 45px;}
+.whois{position: absolute;top: 7px;right: 40px;overflow: hidden;transition: right .2; -webkit-transition: right .2s;padding-right: 6px;}
+.whois .slider:hover{color:#82CF26; }
+.whois .slider{position: relative;color: #fff; background-color: #000;border-radius: 9px;font-size: 18px;padding: 3px 12px;transition: right .2s; -webkit-transition: right .2s;right: -100%;}
 
 /*********** DAHLIA HEADS ******/
 #dahliaHead{width:150px; height:175px; position:absolute; display:none; text-align:center; z-index: 10000;}
@@ -240,7 +282,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 /************************ VOTE ******************/
 #voteBucket{width: 1000px; margin: 0px auto;padding-bottom: 200px;min-height: 1000px;}
 #voteBucket .gridMode{max-width: 300px; overflow: hidden; float: left; margin: 16px 2px;}
-#voteBucket .userBar{bottom: 0; top: auto;position: absolute; width: 100%; z-index: 1; color: #fff; text-align: center; height: 40px;line-height: 40px;font-size: 13px;}
+#voteBucket .userBar{bottom: 0; top: auto;position: absolute; width: 100%; z-index: 1; color: #858585; text-align: center; height: 40px;line-height: 40px;font-size: 13px; background-color: #dadada;}
 .tpVoteCity{position: absolute;left: 0px;top: 0px;height: 100%;width: 100%;z-index: -1;opacity: .8; color: #fff;}
 #voteBucket .spineMode{margin: 10px;}
 .spineMode  .post .innerwrap{position: relative;}
@@ -267,16 +309,23 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     transition: all .2s; -webkit-transition: all .2s; opacity: 0;z-index: 1; font-family: futura;}
 .voteDot:hover{opacity: 1;}
 #voteBucket .unloved{background-color: #000;}
-#voteBucket .loved{background-color: #008caf;}
-.voteAvatar{height: 60px;width: 60px;position: absolute;right: 10px;top: 10px;border: #fff 2px solid;border-radius: 35px;background-size: 100% auto;background-position: 50%;opacity: 0;}
+#voteBucket .loved{background-color: #74bf00;}
+.voteAvatar{height: 45px;width: 45px;position: absolute;right: 10px;top: 10px;border: #fff 2px solid;border-radius: 35px;background-size: 100% auto;background-position: 50%;}
 .post:hover .showOnHover{opacity: 1;}
-.hypeBar{position: absolute;bottom: 0px;width: 100%;color: #fff;display: inline-block;z-index: 1000;line-height: 40px; opacity: 0;}
-.hypeBar li{float: left;width: 25%;font-size: 14px;}
-.hypeBar li:first-child{margin-left: 7%;}
-.hypeBar .hypes{height: 27px;width: 40px;float: left;background-position: -29px 53px;background-size: 387px; margin-top: 5px;}
-.hypeBar .hbComments{margin-top:5px; height: 27px;width: 40px;float: left;background-position: -90px 47px;background-size: 346px;}
-.hypeBar .hbShares{height: 27px;width: 40px;float: left;background-position: -161px 48px;background-size: 353px; margin-top: 5px;}
+.hypeBar{position: absolute;bottom: 0px;width: 100%;color: #858585;display: inline-block;z-index: 1000;line-height: 40px; opacity: 0; background-color: #dadada;}
+.hypeBar li{float: left;width: 19%;font-size: 14px;}
+.hypeBar li:first-child{margin-left: 45px;}
+.hypeBar li:last-child{margin-left: 5%;}
+.hypeBar .hypes{height: 35px;width: 35px; margin-left:5px;float: left;background-position: -27px 134px;background-size: 350px; margin-top: 5px;cursor: pointer;}
+.hypeBar .hyped{background-position: -58px -205px;}
+.hypeBar .hbComments{margin-top:5px; height: 27px;width: 40px;float: left;background-position: -91px 132px;background-size: 346px;}
+.hypeBar .hbShares{height: 27px;width: 40px;float: left;background-position: -156px 129px;background-size: 337px; margin-top: 5px;}
+.hypeBar .hbRepost{margin-top: 5px;height: 35px;width: 40px;float: left;background-position: -18px -57px;background-size: 301px; cursor: pointer;}
+.hypeBar .reposted{background-position: -80px 132px;}
+.hypeBar .reposted .hbRepost{background-position: -52px -57px;}
 #voteBucket .post .showOnHover{transition: .25s; -webkit-transition: .25s;}
+.hypeBar .repostCount{display: none;}
+.hypeBar .hypeCount{display: none;}
 
 /************************ ACTIVITY ****************/
 #theShaft{width:1000px; margin:0px auto;margin-top: -6px;background-color: #FFF; font-family: futura, arial;position: absolute;left: 50%; margin-left: -493px;position: absolute;height: auto;min-height: 100%;}
@@ -333,15 +382,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .getPoints{color: #F03E63; font-size: 16px; position: fixed; transition: left 1s; -webkit-transition: left 1s;}
 
 /************************ POST DETAILS AND GRID ***********/
-.post-details-container{width: 1000px;height: 762px;margin-top: 25px; margin: 0px auto;color: #b7b7b7; padding-bottom: 2px;position: relative;}
-#postDetailTopRow{ width: 100%;height: 100px;padding-top: 10px;padding-bottom: 0px;}
-#postDetailTopRow #postShareSection{width: 322px;margin-right: 17px; float: right;}
-#postDetailTopRow #postShareSection li{height: 56px;width: 50px; background-size: auto 100%; background-image: url(/images/postDeetsIcons.png); background-repeat: no-repeat;}
-.postDetailAvatarFrame{height:85px; width:85px; overflow:hidden; float:left; margin-left: 20px;background-size: auto 100%;background-position: 50%;border-radius: 50px; position: relative;}
-.postDetailAvatarFrame img{ width:100%;}
-#postDetailTopRow .deetsList{ height:100%; float:left; text-align: left;margin-left: 10px;font-size: 10px;}
-#postDetailTopRow .deetsList li{ color:#b7b7b7;}
-#postDetailTopRow .postDetailStat a{color:#b7b7b7 !important;}
+.post-details-container{width: 1000px;height: 720px;margin-top: 25px; margin: 0px auto;color: #b7b7b7; padding-bottom: 2px;position: relative;}
 .postDetailFollow{ height:100%; width:115px; float:left; margin-right: 10px;}
 .isFollowing{background-image:url(/images/postDetailIsFollowButton.png);background-repeat:no-repeat; background-size: 60% 50%;background-position: 50% 33%;}
 .notFollowing{background-image:url(/images/postDetailFollowButton.png);background-repeat:no-repeat; background-size: 60% 50%;background-position: 50% 33%;}
@@ -384,49 +425,49 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .shareButts #shareGplus{background-position: -636px;}
 .shareButts #shareGplus:hover{background-position: -586px;}
 #postDetailMainRow{height: 620px;width: 100%;margin-top: 5px;}
-.socialCol{width: 325px;height: 620px; overflow:hidden; float: left;color: #b7b7b7;margin-left: 20px;}
+.socialCol{width: 300px; height: 581px; overflow:hidden; float: left;color: #686868; margin-left: 20px;background-color: #fff;border-radius: 8px; padding: 20px;}
 .commentSectionTitle{width:100%; height:20px; text-align:center;font-size: 12px;background-color: #fff;padding-top: 3px; text-transform: uppercase;}
 .postDetailCommentBox{ height:75px; width:100%; margin-top: 10px; }
-.postCommentAvatarFrame{ height: 75px;overflow: hidden;width: 75px;float: left;border-radius: 40px;background-position: 50%;background-size: auto 100%;}
+.postCommentAvatarFrame{ height: 50px;overflow: hidden;width: 50px; float: left;border-radius: 40px;background-position: 50%;background-size: auto 100%; margin-top: 5px;}
 .postCommentAvatarFrame img{ width: 100%;}
 .name a{ color: #f03d64 !important;}
 .name a:hover{ color: black !important;}
-.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;min-height: 55px; padding: 10px; margin-bottom: 5px; overflow-x: hidden; overflow-y: auto; width: 220px;}
+.postCommentComment{float: left;margin-left: 10px;font-size: 12px;background-color: #fff;min-height: 55px; padding: 10px; margin-bottom: 5px; overflow-x: hidden; overflow-y: auto; width: 220px; border-top: #EBEBEB thin solid;}
 .postCommentComment p{ width:215px; text-align: left;}
 .postDetailUsername{margin-top: 0px;font-size: 17px;}
 .postDetailUserLocation{font-size: 13px;color: #000 !important;margin-top: 0px !important;line-height: 10px;}
-.postDetailCommentSection{ width: 325px; max-height: 100%;}
+.postDetailCommentSection{ width: 100%; max-height: 100%; min-height: 50%;}
 .buttonText{font-size: 15px;margin-top: 96%;}
-#postUserCommentBox{height: 49px;width: 228px;background-color: #fff;margin-left: 12px;float: left;border: none;padding: 5px;font-size: 12px;}
+#postUserCommentBox{height: 49px;width: 225px;background-color: #fff;margin-left: 12px;float: left;border: none;padding: 5px;font-size: 12px; border: #c2c2c2 thin solid; border-radius: 5px;}
 #postCommentButton{width: 100%;text-align: right;margin-top: -12px;margin-bottom: 5px;font-size: 13px;margin-left: -1px;cursor: pointer;}
 #postCommentButton:hover{color:#f03d64;}
 #commentContainer{padding-bottom: 10px;overflow: scroll;max-height: 620px;width: 395px;}
 .postOrigin{position: absolute;bottom: 9px;float: left;font-size: 10px; padding-left: 20px; color: #bebebe;width: 620px;text-align: center;}
 .postOrigin a{color: #bebebe !important;}
-.arrow{ position: absolute;top: 275px;height: 40px;width: 40px;margin-top: 17px;background-image: url(/images/prodPagesArrow.png);background-repeat: no-repeat;z-index: 1;overflow: hidden;cursor: pointer;background-size: auto 100%;}
-#leftArrow{background-position: -33px; left: 20px; }
-#rightArrow{right: 60px; background-position:4px; }
-#userPostGrid{ width: 964px; margin-left: 7px; padding-left: 13px; padding-bottom: 25px; display: inline-block;}
-.userGridPostFrame{ float: left;width: 303px; overflow: hidden; height: 315px; border: #FFF 9px solid; position: relative;background-size: 100% auto;background-position: 50%;background-repeat: no-repeat;}
+.arrow{ position: absolute;top: 262px;height: 60px;width: 60px;margin-top: 17px;background-repeat: no-repeat;z-index: 11;overflow: hidden;cursor: pointer; background-size: 400px;}
+#leftArrow{left: 5px; background-position:-367px -280px;}
+#rightArrow{right: -8px; background-position:-319px -280px;}
+#userPostGrid{ width: 964px; margin: 0px auto; padding-left: 13px; padding-bottom: 25px;}
+.userGridPostFrame{ float: left;width: 303px; overflow: hidden; height: 315px; margin: 9px; position: relative;background-size: 100% auto;background-position: 50%;background-repeat: no-repeat;}
 .userGridPostFrame .profFeat{width: 60px;position: absolute;z-index: 12;right: 0px;top: 0px;}
 .userGridPostFrame a{ float:left; height:100%;}
 .userGridPostFrame img{ width:100%;}
 .myLittleSecret{position:absolute; height:100%; right:0px; width:20px; background-color:#fff;}
 .popGridLove{ position: absolute;height: 100px;width: 100px;left: 50%;margin-left: -50px;top: 50%;margin-top: -50px; cursor: pointer;border-radius: 52px;line-height: 100px;text-align: center;color: #fff;font-size: 18px; z-index: 100;}
 .popGridnotLoved{background-color: #000;}
-.popGridisLoved{background-color: #ff2e6e;}
+.popGridisLoved{background-color: #008caf;}
 .linkLayer{position: absolute; width: 100%; height: 100%; z-index: 1;}
 #postGridTitle{font-size: 12px;margin-top: 8px;margin-bottom: 10px;text-align: center; color: #b7b7b7; text-transform: uppercase;}
 #postGridTitle a{color: #b7b7b7;}
 .is_winner_box{position: absolute;right: 0px;color: #fff;font-size: 15px;height: 30px;background-color: #fd7173;line-height: 30px;padding: 0px 10px;}
-.dahliaPink{color:#F03E63;}
+.dahliaPink{color:#158795;}
 #userPostGrid .delButton{position: absolute;right: 0px;font-size: 20px;background-color: #FFF; color: #000;padding: 7px 12px; z-index: 1;text-align: center;}
 #userPostGrid .option{display: none; cursor: pointer;}
 .postImageFrame{ width: 620px; height: 620px; float: left; background-color: white;margin-left: 20px; position: relative; background-repeat: no-repeat; background-position: 50%;}
 .postImageFrame:hover .postTag{display: block;}
 .postTall{background-size: auto 100%;}
 .postWide{background-size: 100% auto;}
-.pdWrap{background-color: #fff;-moz-box-shadow:    0 0 17px 0 #ccc; -webkit-box-shadow: 0 0 17px 0 #ccc; box-shadow: 0 0 17px 0 #ccc; background-color: #f7f7f7;}
+.pdWrap{background-color: #f7f7f7;padding-top: 66px;}
 .post-details-container #activateToggle{position: absolute;right: -18px;bottom: -19px;width: 65px;height: 65px;background-image: url("/images/tags.png");background-size: auto 100%;background-position: -79px;background-repeat: no-repeat;z-index: 100;line-height: 68px;color: #fff;text-align: center;text-indent: 11px;font-size: 8px;}
 .post-details-container .postTag{position: absolute; height: 30px; width: 30px; background-image: url("/images/tags.png"); background-size: auto 100%; background-position: 0px; background-repeat: no-repeat; display: none;}
 .post-details-container .active{background-position: -35px; display: block !important;}
@@ -437,9 +478,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .post-details-container .note .tagImg{width: 50px;height: 50px;float: left; background-image: url("/images/tags.png"); background-size: auto 90%;background-position: 0px;background-repeat: no-repeat;}
 .post-details-container .note .tagImg:hover img{display: block;}
 .post-details-container .note .tagImg img{height: 20px;margin-top: 32px;margin-left: 22px; display: none; cursor: pointer;}
-.post-details-container .note textarea{width: 265px; margin-left:3%; margin-top: 2%;height: 87%;border: none;line-height: 20px; font-size: 11px; color: #b7b7b7;}
+.post-details-container .note textarea{width: 265px; margin-left:3%; margin-top: 2%;height: 87%;border: none;line-height: 20px; font-size: 11px; color: #b7b7b7;padding-top: 7px;border-top: #EBEBEB thin solid;}
 .post-details-container .note .inputWrap{height: 50px; width: 275px;}
-#tagsSection{height: 220px;overflow: scroll; width: 345px;}
+#tagsSection{height: 220px;overflow: scroll; width: 100%;}
 /********************* SHUTTERs **************************/
 .dahliaHeadAva{position: absolute;height: 85px !important; width: 85px;left: 5px; bottom: 30px; border-radius:45px; overflow: hidden; border: #fff 2px solid; display: none; z-index: 100;}
 
@@ -500,7 +541,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .bankshare{font-size: 20px;margin-top: 30px;}
 .bankExplain{position: relative;top: 42%;font-size: 14px;width: 230px;left: 50%;margin-left: -103px;}
 .banklink{ font-size: 16px;margin-top: 10px;}
-.banklink a{color: #fff;background-color: #ff406d;padding: 4px 32px;margin-top: 0px;}
+.banklink a{color: #fff;background-color: #74bf00;padding: 4px 32px;margin-top: 0px;}
 #thePercentageContainer{position: absolute;height: 100%;top: 0px;background-color: #c2c2c2;left: 0px;width: 100%;}
 #thePercentageBar{position: absolute;height: 100%;background-color: #FA9B9B;width: 100%;top: 0px; width: 0%;}
 #PercentageCounter{position: absolute; width: 100px; left: 50%; margin-left: -50px;font-size: 27px;line-height: 55px;color: #fff; z-index: 1;}
@@ -517,7 +558,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .toggleViewLine{ background-image:url(/images/view_toggle2.png); background-size:100% 100%;}
 #inspireBackButton{ position: absolute;left: 20px;height: 30px;width: 70px;margin-top: -3px;background-image: url(/images/inspireBackButton.png);background-size: 100% 100%;background-repeat: no-repeat; cursor:pointer;}
 #inspireBackButton:hover{ opacity:.7;}
-.bankExplain a{color:#ff406d;}
+.bankExplain a{color:#74bf00;}
 .postPostingWrap{position: absolute;width: 100%;text-align: center;top: 25%;}
 #sparticus{ position: fixed; height: 500px; width: 300px;}
 
@@ -595,7 +636,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userListCol .dlUsername a{float: left;}
 #userListCol .toggleFollow{font-size: 14px;padding: 1px 8px;float: left;cursor: pointer;margin-top: 5px;}
 #userListCol .rankBox{position: absolute;height: 40px;width: 40px;font-size: 25px;text-align: center;line-height: 40px;color: #4E4646;font-weight: 700;}
-#userListCol .postDetailAvatarFrame{margin-top: 25px;}
+#userListCol .postDetailAvatarFrame{margin-top: 25px; background-size: auto 100%;}
 /******************** LOADER *************************/
 #loadingView{display:none;width: 100%;position: fixed;bottom: -100px;text-align: center;z-index: 10000000000;height: 65px;}
 #loadingView img{-webkit-transition-duration: 1s; -moz-transition-duration: 1s; position: relative;}
@@ -668,19 +709,6 @@ padding: 20px;}
 .caret-inner {top: 1px;left: 1px;display: inline-block;border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 6px solid #fff;position: absolute;top: 0;left: 0;display: inline-block; margin-left: -1px;}
 
 .winner-tag{ position: absolute; right: 0px;color: #fff;top: 0px;padding: 5px 15px;background-color: #fd7173;bottom: auto !important;font-size: 20px !important;}
-/*********** THE DROP DOWN CART **************/
-#dahliaCart{position: absolute;top: 45px;right: -30px;width: 270px; border: #ccc thin solid; z-index: 100; background-color: #fff; display: none;}
-#shoppingCart:hover ul{display: block !important;}
-#dahliaCart div{float: left;}
-#dahliaCart li:first-child{float: left;}
-#dahliaCart li:first-child img{height: 70px;margin-left: 0px; margin-right: 10px;}
-#dahliaCart ul{height: 85px;border-bottom: #c2c2c2 thin solid;width: 84%;margin: 0px auto;margin-top: 15px;}
-#dahliaCart ul:last-child{border-bottom: none;}
-#dahliaCart ul li{color: #666;font-size: 12px;line-height: 16px; text-align: left;}
-#dahliaCart .cta{background-color: #F03E63;color: #fff;width: 225px;margin: 0px auto;margin-top: 10px;margin-bottom: 25px;text-align: center;padding: 10px 0px;font-size: 15px;text-transform: uppercase;float: none !important;}
-#shoppingCart .cartCount{width: 30px;text-align: center;line-height: 37px;font-size: 13px; color: #fff;height: 30px;}
-.cart_bezier{position: absolute;width: 29px;background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 29px;}
-
 /********** THE LESSON ************************/
 .lessonBox{height: 230px;margin-bottom: 10px;width: 100%;text-align: center;font-family: Arial, Helvetica, sans-serif;background-color: rgb(218, 218, 218);z-index: 100;position: relative;display: none;
 -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(255,255,255,0.3),0px 1px 6px rgba(248, 248, 248, 0.5);
@@ -710,7 +738,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 
 /****************************** GOODIES **********************************/
 .goodiesCol{width: 900px; margin: 0px auto; text-align: center; color: #464646; position: relative; z-index: 1;}
-.goodiesCol .goodHead{ width: 100%; margin-top: 100px; font-size: 24px; margin-bottom: 55px;}
+.goodiesCol .goodHead{ width: 100%; margin-top: 129px; font-size: 24px; margin-bottom: 55px;}
 .buttRow{width: auto; display: inline-block; margin: 0px auto;}
 .buttRow li{float: left;}
 .pic1{width: 100%;margin-top: 60px;}
@@ -719,7 +747,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 .goodiesCol h3{text-align: left;}
 .lbeezy{width: 100%; border-bottom: #464646 thin solid;}
 .toolCTA{color: #fff; padding: 10px 40px; margin-top: 36px; margin-left: 50px; text-align: center; background-color: #ed577e;float: left;}
-.goodieGrad{position: absolute;background-image: url("/images/goodieGrad.png");z-index: -1;height: 400px;width: 100%;top: -52px;background-repeat: no-repeat;}
+.goodieGrad{position: absolute;background-image: url("/images/goodieGrad.png");z-index: -1;height: 400px;width: 100%;top: -35px;background-repeat: no-repeat;}
 
 /********************************** THE PAGE ******************************/
 .transCol{width: 900px;margin: 0px auto;text-align: center;color: #464646;position: relative; z-index: 1;}
@@ -1822,15 +1850,21 @@ width: 174px;
 .ProfileLinks a img {margin-top: 5px;}
 .ProfileLinks a:active {box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35); -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35); -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235, 82, 82, 0.35);}
 .ProfileSidebar .pin {position: static; width: auto; margin-top: 15px; padding: 0; font-size: 13px;}
-#mainProfileColumn{width:1000px; margin:0px auto; margin-top:50px; overflow:hidden; padding-bottom: 10px;}
+#mainProfileColumn{width:1000px; margin:0px auto; margin-top: 93px;overflow:hidden; padding-bottom: 10px;}
 #userPostGallery{ width:520%; height:350px; position:relative; overflow:hidden; background-color:#000;}
 #userPostGallery img{height:100%; float:left;}
 #userProfileDeets{height:140px; width: 98.5%;margin-left: .75%; position: relative;}
+.postDetailAvatarFrame{overflow: hidden;
+    border-radius: 54px;
+    height: 85px;
+    width: 85px;
+    float: left;
+}
 #userProfileDeetsOverlay{width:100%; height: 100%; bottom:0px; position:absolute;}
 #userProfileMenuBar{ margin-top: 10px;height: 47px;width: 998px; border: #C2C2C2 thin solid;margin-bottom: 10px;}
 #profilePostBin{}
 .userProfileAvatarHome{width: 80px;height: 100%;float: left;padding-top: 25px;}
-.userProfileAvatarHome .postDetailAvatarFrame{margin-left: 0px;}
+.userProfileAvatarHome .postDetailAvatarFrame{margin-left: 0px;background-size: auto 100%;}
 .userProfileAvatarFrame{overflow: hidden;border-radius: 110px; margin-top:10px; border: 2px solid white;box-shadow: rgb(133, 133, 133) 1px 11px 15px -7px;height: 135px;width: 135px;background-size: auto 100%;background-position: 50%;background-repeat: no-repeat;}
 .userProfileAvatarFrame img{width:100%;}
 #userProfileDeetsRightCol{float:right; height:100%; width:500px;}
@@ -1895,11 +1929,10 @@ width: 174px;
 .selectoBismol{background-image: url("/images/x.png");background-size: 68%;background-position: 50%;background-repeat: no-repeat;}
 
 /* SHOP PAGE ***********************/
-#dahliawolfShop{ width: auto; margin: 0 auto; position: relative; margin-top: 10px;display: inline-block; min-height: 500px; color: #666;}
-#dahliawolfShop{ width: auto; margin: 0 auto; position: relative; margin-top: 10px;display: inline-block; min-height: 500px; color: #666;}
+#dahliawolfShop{ width: auto; margin: 0 auto; position: relative; margin-top: 10px;display: inline-block; min-height: 500px; color: #666; padding-bottom: 100px;}
 .showLive .Order{display: none;}
 .showPreorder .Live{display: none;}
-.view-select{color: #F03E63 !important;}
+.view-select{color: #008caf !important;}
 
 .daysEnd{position: absolute; bottom: 0px;width: 100%;text-align: center;line-height: 30px;background-color: #fff;}
 
@@ -2678,187 +2711,6 @@ div.sysPopupAlert {font-size: 16px; text-align: center; padding: 20px; padding-t
     margin-left: -200px;
 }
 
-/* Pin description
---------------------------------------------------------------------------------------- */
-span.sysPinDescr a {
-    color: #CB2027;
-    text-decoration: underline;
-}
-span.sysPinDescr a:hover {
-    color: #CB2027;
-    text-decoration: none;
-}
-
-#sysPinCreateFormContainer_repin .ImagePicker img {margin-top: 0px;}
-
-
-a.CommentUrlDecorate, a.CommentUrlDecorate:active, a.CommentUrlDecorate:visited {
-    font-weight:normal;
-    text-decoration: underline;
-    color: #635959;
-}
-
-a.CommentUrlDecorate:hover {
-    text-decoration: none;
-}
-
-
-.pincmnt_likes_popup_wrapper {
-	position: absolute; top:100px; left: 300px;
-}
-.pincmnt_likes_popup_wrapper .pincmnt_likes_popup {
-	border-bottom: 4px solid #d1cdce;
-	border-top: 4px solid #d1cdce;
-	border-left: 1px solid #d1cdce;
-	border-right: 1px solid #d1cdce;
-	height: 174px;
-	width:350px;
-	background-color:#fdf9fa;
-	overflow-y: scroll;
-	z-index: 20000;
-	-moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.41);
-	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.41);
-	box-shadow:  1px 1px 3px rgba(0,0,0,0.41);
-	position: relative;
-}
-.pincmnt_likes_popup_wrapper .like_arrow {
-	position: absolute;
-	background: transparent url(/img/like_arrow.png) 0% 0% no-repeat;
-	width: 20px;
-	height: 20px;
-	right: 80px;
-	bottom: -20px;
-	z-index: 21000;
-}
-.pincmnt_likes_popup .user_block {margin: 3px 6px 0px 3px; padding-bottom: 3px; border-bottom: 1px solid #d1cdce;}
-.pincmnt_likes_popup .user_block .userImg {width: 28px; height: 28px; float: left;overflow: hidden; margin-right: 5px;}
-.pincmnt_likes_popup .user_block .user_name {float: left; font-weight: bold; width: 180px; font-size: 12px; margin-top: 5px;}
-.pincmnt_likes_popup .user_block .buttons {float: right;margin-top: 4px;}
-.pincmnt_likes_popup .user_block .buttons .Button {padding: 2px 5px 4px;}
-.pincmnt_likes_popup .user_block .buttons .Button strong {font-size: 9px; font-weight: normal;}
-
-
-/* Pin popup
---------------------------------------------------------------------------------------- */
-
-
-.pinPopup .CloseLayout {position: fixed; top: 0px;right: 0px;height:100%; width:100%; cursor: pointer;}
-.pinPopup .BackLayout div,.pinPopup .CloseLayout div {width: 100%;height: 100%;}
-
-
-.pinPopup .BackLayout div {float: left;}
-.pinPopup .CloseLayout div {float: right;}
-.pinPopup .BackLayout:hover div,.pinPopup .CloseLayout:hover div {background-color: #000000;opacity:.8;}
-
-.pinPopup .BackLayout em {
-	background: transparent url(/img/ico_pinpopup.png) 0% -10px no-repeat;
-	display: inline-block;
-	width: 7px;
-	height: 11px;
-	vertical-align: middle;
-	margin: 0px 5px 2px 0px;
-}
-.pinPopup .CloseLayout em {
-	background: transparent url(/img/ico_pinpopup.png) 0% 0% no-repeat;
-	display: inline-block;
-	width: 10px;
-	height: 10px;
-	vertical-align: middle;
-	margin: 0px 5px 2px 0px;
-}
-
-
-.pinPopup .BackLayout span,.pinPopup .CloseLayout span {color:#000000; font-size: 12px;font-weight: bold; position: absolute; top: 10px; opacity:.6;}
-.pinPopup .BackLayout:hover span,.pinPopup .CloseLayout:hover span {opacity:1;}
-.pinPopup .BackLayout span {left: 30px}
-.pinPopup .CloseLayout span {right: 20px}
-
-
-.pinPopup {max-width: 800px; margin-top: 30px;position: relative;}
-.pinPopup .WhiteContainer {padding: 0px 0px 10px;}
-.pinPopup .PinPinner .Button12 { float: right; margin-top: 12px;}
-.pinPopup .PinPinner { padding: 20px 18px 20px 30px;}
-.pinPopup .SocialShare {position: fixed;top: 162px;left: 50%;margin-left: 360px;padding: 0px;}
-.pinPopup .SocialShare .soc_addthis {margin: 10px 0 5px;}
-.pinPopup .SocialShare .soc_addthis a {display: inline-block;}
-
-.pinPopup .close {position: absolute; right: 10px; top:10px;font-size: 11px;text-decoration: none;}
-
-.pinPopup h4 {font-size: 22px; font-weight: normal;}
-.pinPopup h4 a {font-weight: normal;}
-.pinPopup .PinActivity .CommenterImage {margin: 0px 1px 1px 0px;}
-.pinPopup .PinMoreActivity {font-weight: normal; color: #8c7e7e;font-size: 12px;}
-.pinPopup .PinMoreActivity strong {color:#000000;}
-
-.pinPopup .ZoomRepins .userRepin {width: 300px; float: left;margin: 0 0px 10px 0; color:#8c7e7e;}
-.pinPopup .ZoomRepins .userRepin .CommenterImage {margin: 0px 10px 0px 0px;}
-.pinPopup .ZoomRepins .userRepin a {font-weight: bold;color:#8c7e7e;}
-.pinPopup .ZoomRepins .userRepin .CommenterName {color:#000000;}
-
-.pinPopup .ZoomBoard .Button {float: right;margin-top: 14px;}
-.pinPopup .ZoomBoard p {margin: 0px;}
-.pinPopup .ZoomBoard h4 {width: 480px;}
-
-.pinPopup .ZoomUrl {padding: 0px 30px;}
-.pinPopup .ZoomOrigin {float: left; width: 310px;padding:30px 15px 29px 0px}
-.pinPopup .ZoomUrl p,.pinPopup .ZoomOrigin p {margin: 0px;}
-.pinPopup .ZoomOrigin .Button {float: right;margin-top: 14px;}
-.pinPopup .ZoomOrigin h4,.pinPopup .ZoomUrl h4 {white-space: nowrap;width: 190px; overflow: hidden;}
-.pinPopup .ZoomSource {float: right; width: 259px;padding-right: 25px;border-left: 1px solid #D1CDCD;padding:30px 0px 29px 15px}
-
-.pinPopup .PinActivity .link {text-decoration: none;}
-.pinPopup .PinActivity .link img {margin: 0px 1px 1px 0px;}
-
-#sysRePinSuccessPopup .addthis_buttons {text-align: center;margin: 20px 90px 15px;}
-#sysRePinSuccessPopup .addthis_buttons a {
-	background: transparent url(/img/ico_social_repin.png) 0% 0% no-repeat;
-	display: inline-block;
-	width: 63px;
-	height: 59px;
-	margin-right: 7px;
-}
-#sysRePinSuccessPopup .addthis_buttons a.addthis_button_odnoklassniki_ru {background-position: -73px 0px;}
-#sysRePinSuccessPopup .addthis_buttons a.addthis_button_facebook {background-position: -145px 0px;}
-#sysRePinSuccessPopup .addthis_buttons a.addthis_button_twitter {background-position: -215px 0px;}
-
-#sysRePinSuccessPopup .addthis_buttons a.checked_button {cursor: default;}
-#sysRePinSuccessPopup .addthis_buttons a.checked_button:hover {opacity: 1;}
-#sysRePinSuccessPopup .addthis_buttons a.checked_button.vk {background-position: 0px -58px; box-shadow: none;}
-#sysRePinSuccessPopup .addthis_buttons a.checked_button.odnoklassniki_ru {background-position: -73px -59px;}
-#sysRePinSuccessPopup .addthis_buttons a.checked_button.facebook {background-position: -145px -59px;}
-#sysRePinSuccessPopup .addthis_buttons a.checked_button.twitter {background-position: -215px -59px;}
-
-
-#sysRePinSuccessPopup .addthis_buttons .at15t_vk {background: none}
-#sysRePinSuccessPopup .addthis_buttons .at15t_odnoklassniki_ru {background: none}
-#sysRePinSuccessPopup .addthis_buttons .at15t_facebook {background: none}
-#sysRePinSuccessPopup .addthis_buttons .at15t_twitter {background: none}
-
-
-#sysPinSuccessPopup .addthis_buttons {text-align: center;margin: 20px 90px 15px;}
-#sysPinSuccessPopup .addthis_buttons a {
-	background: transparent url(/img/ico_social_repin.png) 0% 0% no-repeat;
-	display: inline-block;
-	width: 63px;
-	height: 59px;
-	margin-right: 7px;
-}
-#sysPinSuccessPopup .addthis_buttons a.addthis_button_odnoklassniki_ru {background-position: -73px 0px;}
-#sysPinSuccessPopup .addthis_buttons a.addthis_button_facebook {background-position: -145px 0px;}
-#sysPinSuccessPopup .addthis_buttons a.addthis_button_twitter {background-position: -215px 0px;}
-
-#sysPinSuccessPopup .addthis_buttons a.checked_button {cursor: default;}
-#sysPinSuccessPopup .addthis_buttons a.checked_button:hover {opacity: 1;}
-#sysPinSuccessPopup .addthis_buttons a.checked_button.vk {background-position: 0px -58px; box-shadow: none;}
-#sysPinSuccessPopup .addthis_buttons a.checked_button.odnoklassniki_ru {background-position: -73px -59px;}
-#sysPinSuccessPopup .addthis_buttons a.checked_button.facebook {background-position: -145px -59px;}
-#sysPinSuccessPopup .addthis_buttons a.checked_button.twitter {background-position: -215px -59px;}
-
-
-#sysPinSuccessPopup .addthis_buttons .at15t_vk {background: none}
-#sysPinSuccessPopup .addthis_buttons .at15t_odnoklassniki_ru {background: none}
-#sysPinSuccessPopup .addthis_buttons .at15t_facebook {background: none}
-#sysPinSuccessPopup .addthis_buttons .at15t_twitter {background: none}
 
 .big_soc_ok {padding: 5px 0.825em 6px; }
 .big_soc_ok strong {font-size: 14px;line-height: 24px;}
@@ -3081,24 +2933,35 @@ a.CommentUrlDecorate:hover {
 /* Top Designs - end */
 
 /************************************ PRODUCT ****************************************/
-.shop-item{width: 300px;height:425px;float: left;position: relative; margin-left: 15px; margin-right: 15px; margin-bottom: 40px; cursor: pointer; text-align: left;}
-.shop-item .imageFrame{height: 85%; width: 100%; position: relative;overflow: hidden;}
-.shop-item .imageFrame:hover .bloggerShot{left:0px;}
-.shop-item .imageFrame li{position: absolute; height: 100%; width: 100%; background-size: auto 90%; background-repeat: no-repeat; background-position: 50%; transition: left .2s; -webkit-transition: left .2s;}
-.shop-item .bloggerShot{left: -100%; z-index: 1;}
-.shop-item .inspirationShot{left: 100%; z-index: 1;}
-.shop-item .productPrice{padding-top: 10px;border-top: #666 thin solid;width: 50%; float: left;line-height: 18px;font-size: 12px;}
-.shop-item .productDetails{padding-top: 10px;border-top: #666 thin solid; width: 50%;float: left;}
-.shop-item .productAvatar{height: 20px;width: 20px;border-radius: 15px;float: left;}
-.shop-item .productUsername{line-height: 20px;float: left;margin-left: 5px;}
-.shop-item .productName{font-size: 12px;overflow: hidden;word-break: break-all; white-space: nowrap;text-overflow: ellipsis;margin-bottom: 3px;}
-.shop-item .preorderPrice{font-size: 12px;color: #F03E63;height: 18px;}
-.shop-item .regularPrice{margin-top: 2px;}
-.shop-item:hover .inspirationButton{display: block;}
-.shop-item .inspirationButton{margin-top: 10px; display: none;}
-.shop-item .inspirationButton span{background-color: #666;padding: 5px 13px;color: #fff;}
+#dahliawolfShop .middle{
+    border-right: #dbdbdb thin solid;
+    border-left: #dbdbdb thin solid;
+}
+.shop-item{width: 300px;
+    height: 450px;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    margin: 63px 5px;
+}
+.shop-item:hover .prodInfo{display: block;}
+.shop-item .imageFrame{height: 100%; width: 100%; position: relative;overflow: hidden;}
+.shop-item .imageFrame li{position: absolute; height: 100%; width: 100%; background-size: auto 98%; background-repeat: no-repeat; background-position: 50%;}
 .resWrap{width: 1000px;overflow-x: auto;overflow-y: hidden;}
-
+.shop-item .prodInfo{position: absolute;width: 100%; bottom: 0px; z-index: 100; background-color: #464646; height: 78px;   display: none;}
+.shop-item .avatar{position: absolute; height: 85px; width: 85px; border: #fff 2px solid;left: 50%;margin-left: -42.5px; bottom: 59px;border-radius: 45px;background-size: auto 100%;background-position: 50%;}
+.shop-item .prodname{width: 100%;
+    text-align: center;
+    margin-top: 24px;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;}
+.shop-item .prodDeets{position: absolute;width: 100%;top: 105%;font-size: 12px; font-weight: 400;color: #616161;}
+.shop-item .prodDeets li{width: 100%; text-align: center;}
+.shop-item a{color:#6ba42c;}
+.shop-item a:hover{color:#78fff4;}
+.shop-item .username{width: 100%; text-align: center; color: #6ba42c;font-size: 12px;}
 /*Some CSS*/
 * {margin: 0; padding: 0;}
 .magnify {width: 200px; margin: 50px auto; position: relative; cursor: none}

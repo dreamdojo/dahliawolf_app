@@ -6,7 +6,7 @@
 <?php include "blocks/filter.php"; ?>
 
 <div id="voteBucket"></div>
-<?php include "footer.php" ?>
+<?php //include "footer.php" ?>
 <style>
     #memberResults{display: inline-block;max-height: 185px; overflow: hidden;-moz-transition: 1s;-ms-transition: 1s;-o-transition: 1s;-webkit-transition: 1s;transition: 1s; width: 1030px;}
     .loadMore{width: 100%;height: 45px;line-height: 45px;text-align: center;font-size: 14px;border: #c2c2c2 thin solid;border-radius: 8px;width: 962px; cursor: pointer;}
