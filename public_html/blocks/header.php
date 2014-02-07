@@ -48,7 +48,7 @@
     <div id="headerBody">
         <div class="hBG dahliaBGColor"></div>
         <div id="dahliaMainMenuButton"></div>
-        <a href="/inspire"><div id="dahliaLogo"></div></a>
+        <a href="/<?= IS_LOGGED_IN ? 'inspire' : '' ?>"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
             <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE</a></li>
             <!--<li><a href="/sponsor"><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>-->
