@@ -26,7 +26,7 @@
     #hpWrapper .infoCol .rightCol{text-align: center; padding-top: 0px;}
     #hpWrapper .infoCol .rightCol li{margin-left: 25px; text-align: left;}
     #hpWrapper .infoCol .rightCol .subHead{padding-top: 15px;}
-    #hpWrapper .infoCol .leftCol h1{font-size: 53px;font-weight: 800; line-height: 53px; text-indent: 0px;}
+    #hpWrapper .infoCol .leftCol h1{font-size: 39px;font-weight: 800; line-height: 53px; text-indent: 0px;}
     #hpWrapper .infoCol .leftCol h3{font-size: 20px;font-weight: 300;line-height: 30px;margin-top: 10px;}
 
     #pressBanner{border-bottom: #c2c2c2 thin solid; text-align: center;position: relative;z-index: 108;background-color: #fff;}
@@ -47,7 +47,7 @@
     .hp_cta li:first-child{font-size: 30px;padding-top: 20px;padding-bottom: 7px;font-weight: bold;}
     .hp_cta .gs_button{background-color: #74bf00;color: #fff;width: 200px;height: 50px;line-height: 50px;border-radius: 12px;margin: 35px auto; font-size: 16px;font-size: 16px !important;padding-bottom: 0px !important; padding-top: 0px !important;}
     .dahliaCarasoul{position: absolute;width: 100%;height: 100%;overflow: hidden;}
-    .dahliaCarasoul li{position: absolute; width: 100%; height: 100%; background-position: 50%; background-size: cover; background-repeat: no-repeat; display: none; z-index: 1;}
+    .dahliaCarasoul li{position: absolute; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; display: none; z-index: 1; cursor: pointer;}
     .dahliaCarasoul .activeFrame{z-index: 2; display: block !important;}
 
     @media screen and (max-width: 700px) {/********************* PHONE *******************/
@@ -56,12 +56,12 @@
     }
 </style>
 
-<div id="hpWrapper">
+<div id="hpWrapper" style="margin-top:-22px;">
     <section class="top">
         <ul class="dahliaCarasoul">
-            <li style="background-image: url('/images/heroBanner1.jpg');" class="activeFrame firstFrame"></li>
-            <li style="background-image: url('/images/heroBanner2.jpg')"></li>
-            <li style="background-image: url('/images/heroBanner3.jpg')"></li>
+            <li style="background-image: url('/images/heroBanner1.jpg');" class="activeFrame firstFrame" onclick="document.location='/signup';"></li>
+            <li style="background-image: url('/images/heroBanner2.jpg')" onclick="document.location='/goodies';"></li>
+            <li style="background-image: url('/images/heroBanner3.jpg')" onclick="document.location='http://youtu.be/W-Qi0pp-YWw';"></li>
         </ul>
     </section>
     <div id="pressBanner">
@@ -78,8 +78,8 @@
                 </li>
             </ul>
             <ul class="leftCol" style="padding-top: 80px;">
-                <h1>WHAT IS IT?</h1>
-                <h3>Dahlia Wolf is a platform that allows users to create their own fashion brand.</h3>
+                <h1>What is Dahlia Wolf?</h1>
+                <h3>Dahlia Wolf is a fashion community where people come together to inspire fashion.</h3>
             </ul>
             <div style="clear: left;"></div>
         </div>
@@ -93,8 +93,8 @@
                 <li><img style="width: 100%;" src="/images/hp_inspire_img.jpg"></li>
             </ul>
             <ul class="leftCol">
-                <h1>INSPIRE</h1>
-                <h3>Inspire new fashion by posting images of clothes you want to bring to life.</h3>
+                <h1>Inspire fashion</h1>
+                <h3>Post and HYPE your favorite fashion images. <a href="/inspire"/>Discover new fashion</a></h3>
             </ul>
             <div style="clear: left;"></div>
         </div>
@@ -109,8 +109,8 @@
                 <li><img style="width: 100%;" src="/images/hp_sponsor_img.jpg"></li>
             </ul>
             <ul class="leftCol">
-                <h1>SPONSOR</h1>
-                <h3>Sponsor members designs to have them sold in the shop. Earn commission when they sell.</h3>
+                <h1>Sponsor collections</h1>
+                <h3>Sponsor new styles by ordering them & receive discounts for early support.</h3>
             </ul>
             <div style="clear: left;"></div>
         </div>
@@ -125,8 +125,8 @@
                 <li><img style="width: 100%;width: 63%;margin-left: 22%;" src="/images/hp_shop_img.jpg"></li>
             </ul>
             <ul class="leftCol">
-                <h1>SHOP</h1>
-                <h3>All the designs in out shop are made by the poeple for the people</h3>
+                <h1>Shop</h1>
+                <h3>All the designs in our shop are member inspired and shipped for free!</h3>
             </ul>
             <div style="clear: left;"></div>
         </div>

@@ -1,6 +1,6 @@
 <?
     $pageTitle = "Sponsor Members Collections";
-    $pageDesc = 'Dahlia Wolf is a fashion community where people come together to inspire fashion.';
+    $pageDesc = 'Newly created ';
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 

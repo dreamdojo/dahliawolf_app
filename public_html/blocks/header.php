@@ -2,8 +2,8 @@
 ?>
 
 <style>
-    #headerHeader{height: 38px;  color: #666; background-color: #ebebeb;font-size: 12px;}
-    #headerHeader a{color: #666;}
+    #headerHeader{height: 38px;  color: #333; background-color: #ebebeb;font-size: 12px;}
+    #headerHeader a{color: #333;}
     #headerHeader a:hover{color: #74bf00;}
     #headerBody{height: 60px; position: relative; color: #666;}
     #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .95;}
@@ -52,7 +52,7 @@
         text-align: left;
         direction: rtl;
         border-bottom: #cacaca thin solid;
-        color: #666;
+        color: #333;
         letter-spacing: .5px;
         padding-left: 20px;
         font-weight: 100;}
@@ -69,15 +69,16 @@
     <div id="headerHeader">
         <ul class="right">
             <li><a href="/wolf-pack">PACK LEADERS</a></li>
-            <li><a href="/contests">CONTESTS</a></li>
+            <!--<li><a href="/contests">CONTESTS</a></li>-->
             <li><a href="/goodies">GOODIES</a></li>
+            <li><a href="/press">PRESS</a></li>
             <li><a href="/faqs">FAQS</a></li>
             <li><a href="/tos">LEGAL</a></li>
-            <li><a href="/collabs">COLLABS</a></li>
+            <!--<li><a href="/collabs">COLLABS</a></li>-->
             <li><a href="/contact">CONTACT</a></li>
-            <li><a href="/about">ABOUT</a></li>
+            <!--<li><a href="/about">ABOUT</a></li>-->
             <!--<li><a href="/hiw">HOW IT WORKS</a></li>-->
-            <li id="tourButton">HELP</li>
+            <!--<li id="tourButton">HELP</li>-->
         </ul>
     </div>
     <div id="headerBody">
@@ -85,9 +86,9 @@
         <div id="dahliaMainMenuButton"></div>
         <a href="/<?= IS_LOGGED_IN ? 'inspire' : '' ?>"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
-            <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">DISCOVER</a></li>
-            <li><a href="/sponsor"><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>
-            <li style="border-right: #6EB2C2 thin solid;"><a href="/shop"><span  class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
+            <a href="/inspire"><li><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">DISCOVER</li></a>
+            <!--<a href="/sponsor"><li><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</li></a>-->
+            <a href="/shop"><li style="border-right: #6EB2C2 thin solid;"><span  class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</li></a>
         </ul>
 
         <div id="rightHandMenu" class="<?= IS_LOGGED_IN ? 'logged-in' : 'not-logged-in' ?>">
@@ -154,7 +155,7 @@
     <div id="headerFooter">
         <ul>
             <li><a href="/inspire">DISCOVER</a></li>
-            <li><a href="/sponsor">SPONSOR</a></li>
+            <!--<li><a href="/sponsor">SPONSOR</a></li>-->
             <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>
