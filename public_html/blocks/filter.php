@@ -21,7 +21,7 @@
             </span>
         <? endif ?>
         <?php if(empty($_GET['q'])): ?>
-            <span style="float: right;width: 150px;margin-right: -3px;">View: <span class=""><a id="selectSpine" class="sort-option" href="/vote">two</a></span> /
+            <span style="float: right;width: 140px;margin-right: -3px;">View: <span class=""><a id="selectSpine" class="sort-option" href="/vote">two</a></span> /
             <span class=""><a id="selectGrid" class="sort-option filter-select" href="/vote"> three</a></span>
             </span>
         <? endif ?>

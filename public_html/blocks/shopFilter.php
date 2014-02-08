@@ -19,7 +19,7 @@
             <? endforeach ?>
         </span>
 
-        <span id="viewFilters" style="float: right;width: 320px;margin-right: -3px;">View:
+        <span id="viewFilters" style="float: right;width: 165px;margin-right: -3px;">View:
             <!--<span class=""><a data-view="all" class="view-option view-select" href="/vote">All</a></span> /-->
             <!--<span class=""><a data-view="preorder" class="view-option" href="/vote"> Pre Order</a></span> /-->
             <!--<span class=""><a data-view="available" class="view-option" href="/vote"> Available</a></span> /-->

@@ -62,6 +62,15 @@ if( !isset($_GET['ajax']) ) {
                 <label for="sysForm_user_password">PASSWORD</label>
                 <span class="fff"></span>
             </li>
+        <?
+        /*
+        <li>
+        	<input class="input_text" type="password" name="user_password2" id="sysForm_user_password2" value="" />
+        	<label for="sysForm_user_password2">Confirm Password</label>
+        	<span class="fff"></span>
+        </li> 
+		*/
+		?>
 
         </ul>
         <div class="non_inputs">

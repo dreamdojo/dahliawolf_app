@@ -1,5 +1,6 @@
 <?
-    $pageTitle = "Sponsor";
+    $pageTitle = "Sponsor Members Collections";
+    $pageDesc = 'Dahlia Wolf is a fashion community where people come together to inspire fashion.';
     include $_SERVER['DOCUMENT_ROOT'] . "/head.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/header.php";
 
@@ -20,20 +21,39 @@
     #shopOwnerHeader img{width: 100%;}
     .shopOwnerTitle{position: absolute;margin-top: 90px;left: 71px;font-size: 30px; text-transform: uppercase; font-weight: bolder !important; width: 528px;text-align: center;overflow: hidden;text-overflow: ellipsis;}
     .shopEmpty{font-size: 20px; text-align: center; margin-top: 15px;}
-    body{text-align: center;  background-color: #ebebeb;}
+    body{text-align: center;  }
 
     .sponsorShop{width: 900px;}
-    .sponsorShop .sponsorItem:first-child{margin-top: 40px;}
-    .sponsorItem{display: inline-block; width: 100%; margin-top: 50px; padding-bottom: 50px; border-bottom: #fff thin solid;}
+    .sponsorShop .sponsorItem:first-child{margin-top: 30px;}
+    .sponsorItem{display: inline-block;
+        width: 100%;
+        margin-top: 50px;
+        padding: 0px 10px 0px 10px;
+      }
     .sponsorItem .userDeets{float: left;width: 50%;text-align: left;}
-    .sponsorItem .prodInfo{width: 97%; height: 50px; margin-bottom: 10px; margin-left: 2%;}
-    .sponsorItem .prodInfo .avatar{height: 50px;width: 50px;background-size: auto 100%;float: left;border-radius: 25px;background-repeat: no-repeat; background-position: 50%;}
+    .sponsorItem .prodInfo{width: 99%;
+        height: 50px;
+        margin-bottom: 2px;
+        background-color: white;
+        padding: 10px 4px 10px 4px;
+        border-bottom: 1px solid rgb(214, 214, 214);
+        }
+    .sponsorItem .prodInfo .avatar{margin-top: 8px;height: 40px;width: 40px;background-size: auto 100%;float: left;border-radius: 25px;background-repeat: no-repeat; background-position: 50%;}
     .sponsorItem .prodInfo .prodTitle{height: 25px;line-height: 35px;font-size: 16px;text-indent: 10px;}
     .sponsorItem .prodInfo .inspHead{text-indent: 10px;font-size: 11px;padding-top: 6px;}
     .sponsorItem .prodPrice{float: right; text-align: right; margin-left: 10px;}
-    .sponsorItem .prodPrice li:first-child{font-size: 18px;}
+    .sponsorItem .prodPrice li:first-child{font-size: 18px;margin-top: 17px}
     .sponsorItem .prodPrice li:last-child{font-size: 11px;}
-    .sponsorItem .sponsorDetails{min-width: 375px; width: 50%;float: left;font-size: 23px; text-align: left;background-color: #fff;padding-bottom: 20px; padding-top:10px; border-radius: 10px;}
+    .sponsorItem .sponsorDetails{min-width: 378px;
+        width: 50%;
+        height: 446px;
+        float: left;
+        font-size: 23px;
+        text-align: left;
+        background-color: #fff;
+        padding-bottom: 27px;
+        padding-top: 10px;
+        border-left: 1px solid rgb(214, 214, 214)}
     .sponsorItem .sponsorDetails li{margin-left: 5%; width: 90%;}
     .sponsorItem .sponsorDetails > ul{height: 60px;padding-top: 15px;padding-bottom: 15px;border-bottom: #d1d1d1 thin solid;width: 80%; margin-left: 10%;}
     .sponsorItem .sponsorDetails > ul li:first-child{font-size: 28px;margin-bottom: -5px;}
@@ -45,8 +65,14 @@
     .sponsorItem .closed{color: #b7b7b7; text-decoration: line-through;}
     .sponsorItem .current{color: #74bf00;}
 
-    .sponsorItem .imgFrame{width: 50%; max-width: 371px; float: left; min-height: 300px;}
-    .sponsorItem .imgFrame img{width: 90%;}
+    .sponsorItem .imgFrame{width: 50%;
+        max-width: 373px;
+        float: left;
+        min-height: 300px;
+        margin-left: -3px;}
+    .sponsorItem .imgFrame img{width: 76%;
+        padding: 42px;
+        background-color: white;}
     .sponsorItem .greenbutton{color: #fff;background-color: #76bd22;padding: 20px 25px;display: inline-block;margin-top: 20px;width: 67%;margin-left: 10%;text-align: center;border-radius: 8px;}
     .sponsorItem .rtLine{position: absolute; height: 80%; border-right: #c2c2c2 thin solid; margin-top: -12%; right: 0px;}
     #viewFilters{display: none;}
@@ -59,7 +85,7 @@
     </div>
 <? endif ?>
 
-<div id="dahliawolfShop" class="sponsorShop" style="max-width: 750px; width: 100%;"></div>
+<div id="dahliawolfShop" class="sponsorShop" style="max-width: 750px; width: 100%;margin-left: -8%;"></div>
 
 <?
     //include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";

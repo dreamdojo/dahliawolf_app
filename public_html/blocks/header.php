@@ -2,18 +2,18 @@
 ?>
 
 <style>
-    #headerHeader{height: 28px;  color: #666; background-color: #ebebeb;font-size: 12px;}
+    #headerHeader{height: 38px;  color: #666; background-color: #ebebeb;font-size: 12px;}
     #headerHeader a{color: #666;}
-    #headerHeader a:hover{color: #666;}
-    #headerBody{height: 65px; position: relative; color: #666;}
+    #headerHeader a:hover{color: #74bf00;}
+    #headerBody{height: 60px; position: relative; color: #666;}
     #headerBody .hBG{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;opacity: .95;}
     #headerFooter{height: 30px; background-color: #fff;}
     #headerFooter a{color: #74bf00;}
-    #headerHeader .native{width: 25px;height: 29px;background-repeat: no-repeat;background-position: 50%; padding: 0px !important;}
+    #headerHeader .native{width: 25px;height: 38px;background-repeat: no-repeat;background-position: 50%; padding: 0px !important;}
     #headerHeader .right{float: right; margin-right: 10px;}
-    #headerHeader .right li{float: left; line-height: 28px;padding: 0px 10px;}
+    #headerHeader .right li{float: left; line-height: 38px;padding: 0px 10px;}
     #headerHeader .left{float: left; width: 300px;}
-    #headerHeader .left li{float: left; line-height: 28px; padding: 0px 10px;}
+    #headerHeader .left li{float: left; line-height: 38px; padding: 0px 10px;}
     #headerHeader .nativeWrap{margin-left: 20px;margin-right: 10px;}
     #headerHeader .hhDropdown{height: 30px;float: left;line-height: 30px;text-indent: 10px; cursor: pointer;}
     #headerHeader .hhDropdown:hover{color: #fff;}
@@ -21,11 +21,41 @@
     #headerHeader .hhDropdown ul li{float: none; color: #666; text-align: left;}
     #headerHeader .hhDropdown ul li:hover{color: #fff;}
     #headerHeader .hhDropdown:hover ul{display: block;}
-    #headerBody #inspireButt{cursor: pointer;float: right;height: 68px;margin-right: 10px;position: relative;line-height: 65px;font-size: 47px;color: #666; width: 65px; text-align: right;}
+    #headerBody #inspireButt{cursor: pointer;
+        float: right;
+        height: 60px;
+        margin-right: 13px;
+        border-left: #6EB2C2 thin solid;
+        position: relative;
+        line-height: 65px;
+        font-size: 47px;
+        color: #666;
+        width: 46px;
+        text-align: right;}
     #headerBody #inspireButt:hover #inspireMenu{display: block;}
-    #headerBody #inspireButt .inspGraph{border: #CFCFCF thin solid; color:#ebebeb; height: 30px;width: 30px;line-height: 28px;margin-top: 18px;font-size: 32px;border-radius: 4px;text-align: center;float: right;}
-    #headerBody #inspireMenu{position: absolute; width: 225px; right: -1px; margin-top: 65px;display: none; background-color: #ebebeb; box-shadow: #000 0px 1px 4px 0px;}
-    #headerBody #inspireMenu li{font-size: 14px;text-indent: 45px; line-height: 35px; position: relative;text-align: right;direction: rtl; border-bottom: #666 thin solid;}
+    #headerBody #inspireButt .inspGraph{color: #FCFCFC;;
+        height: 30px;
+        width: 30px;
+        line-height: 25px;
+        margin-top: 18px;
+        font-size: 44px;
+        border-radius: 4px;
+        text-align: center;
+        float: right;}
+    #headerBody #inspireButt .inspGraph:hover{color:#74bf00;}
+    #headerBody #inspireMenu{position: absolute; width: 225px; right: -14px; margin-top: 60px;display: none; background-color: #ebebeb; box-shadow: #000 0px 1px 4px 0px;}
+    #headerBody #inspireMenu li{font-family: helvetica;
+        font-size: 13px;
+        text-indent: 40px;
+        line-height: 35px;
+        position: relative;
+        text-align: left;
+        direction: rtl;
+        border-bottom: #cacaca thin solid;
+        color: #666;
+        letter-spacing: .5px;
+        padding-left: 20px;
+        font-weight: 100;}
     #headerBody #inspireMenu li:hover{background-color:#909090; color: #fff;}
     #headerBody #inspireMenu li:hover a{color: #fff;}
     #headerBody #inspireMenu li a{color: #666;}
@@ -38,10 +68,15 @@
 <div id="dahliaHeader">
     <div id="headerHeader">
         <ul class="right">
-            <!--<li><a href="/contests">CONTESTS</a></li>-->
-            <li><a href="/goodies">GOODIES</a></li>
-            <!--<li><a href="/hiw">HOW IT WORKS</a></li>-->
             <li><a href="/wolf-pack">PACK LEADERS</a></li>
+            <li><a href="/contests">CONTESTS</a></li>
+            <li><a href="/goodies">GOODIES</a></li>
+            <li><a href="/faqs">FAQS</a></li>
+            <li><a href="/tos">LEGAL</a></li>
+            <li><a href="/collabs">COLLABS</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <!--<li><a href="/hiw">HOW IT WORKS</a></li>-->
             <li id="tourButton">HELP</li>
         </ul>
     </div>
@@ -50,9 +85,9 @@
         <div id="dahliaMainMenuButton"></div>
         <a href="/<?= IS_LOGGED_IN ? 'inspire' : '' ?>"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
-            <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">INSPIRE</a></li>
-            <!--<li><a href="/sponsor"><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>-->
-            <li><a href="/shop"><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
+            <li><a href="/inspire"><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">DISCOVER</a></li>
+            <li><a href="/sponsor"><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</a></li>
+            <li style="border-right: #6EB2C2 thin solid;"><a href="/shop"><span  class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</a></li>
         </ul>
 
         <div id="rightHandMenu" class="<?= IS_LOGGED_IN ? 'logged-in' : 'not-logged-in' ?>">
@@ -61,10 +96,9 @@
             </div>
             <ul class="loginDept">
                 <?php if(!IS_LOGGED_IN): ?>
-                    <li><a href="/signup" rel="pop">Join</a></li>
-                    <li style="color: #fff;">$10 SIGN UP BONUS!</li>
-                    <li style="border-right: #80c6d7 thin solid;
-padding-right: 16px;"><a href="/login" rel="pop">Login</a></li>
+                    <li><a href="/signup" rel="pop">JOIN</a></li>
+                    <li style="margin-top: 2px;color: #fff;font-size: 13px;font-family: helvetica;"><a href="/signup" rel="pop">$10 SIGN UP BONUS!</a></li>
+                    <li style="border-right: #6EB2C2 thin solid;padding-right: 16px;padding-top: 3px;height: 57px;"><a href="/login" rel="pop">SIGN IN</a></li>
                 <? endif ?>
             </ul>
             <div id="shoppingCart">
@@ -100,16 +134,16 @@ padding-right: 16px;"><a href="/login" rel="pop">Login</a></li>
                             <input type="file" src="/images/btn/my-images-butt.jpg" name="iurl" id="file" onChange="new postUpload(this.files[0]);">
                             <input type="hidden" name="takeMeBack" value="takemehome">
                         </form>
-                        UPLOAD A PICTURE<div class="spriteBG subMenuBG" style="background-position: -46px 419px;"></div></li>
-                    <li><a href="/bank/tumblr">TUMBLR<div class="spriteBG subMenuBG" style="background-position: -110px 419px;"></div></a></li>
+                        Upload picture<div class="spriteBG subMenuBG" style="background-position: -46px 419px;"></div></li>
+                    <li><a href="/bank/tumblr">Add from Tumblr<div class="spriteBG subMenuBG" style="background-position: -110px 419px;"></div></a></li>
                     <!--<li><a href="/bank/pinterest">PINTEREST<div class="spriteBG subMenuBG" style="background-position: -240px 419px;"></div></a></li>-->
-                    <li><a href="/bank/instagram">INSTAGRAM<div class="spriteBG subMenuBG" style="background-position: -176px 419px;"></div></a></li>
-                    <li><a href="/bank/dahliawolf">D/W IMAGE BANK<div class="spriteBG subMenuBG" style="background-position: -359px 689px;"></div></a></li>
+                    <li><a href="/bank/instagram">Add from Instagram<div class="spriteBG subMenuBG" style="background-position: -176px 419px;"></div></a></li>
+                    <li><a href="/bank/dahliawolf">Add from image bank<div class="spriteBG subMenuBG" style="background-position: -359px 689px;"></div></a></li>
                     <!--<li><a href="/bank/web">ADD FROM WEBSITE<div class="spriteBG subMenuBG" style="background-position: -369px 305px;"></div></a></li>-->
                     <div class="dda">
-                        <p>DRAG AND DROP ANYWHERE</p>
+                        <p>Drag and drop anywhere</p>
                     </div>
-                    <li class="gtiTool"><a href="/pinit">GET THE INSPIRE TOOL</a></li>
+                    <li class="gtiTool"><a href="/pinit">Get the Inspire tool</a></li>
                 </ul>
             </div>
         <? endif ?>
@@ -119,8 +153,8 @@ padding-right: 16px;"><a href="/login" rel="pop">Login</a></li>
     </div>
     <div id="headerFooter">
         <ul>
-            <li><a href="/inspire">INSPIRE</a></li>
-            <!--<li><a href="/sponsor">SPONSOR</a></li>-->
+            <li><a href="/inspire">DISCOVER</a></li>
+            <li><a href="/sponsor">SPONSOR</a></li>
             <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>

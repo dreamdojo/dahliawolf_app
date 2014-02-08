@@ -23,19 +23,23 @@ include "header.php";
 
     <ul>
         <li class="question">HOW DO MY INSPIRATIONS BECOME CLOTHING?</li>
-        <li class="answer">The winning inspiration images are given to our design team, where they first create a mood board around your inspiration image and then use that and only instructions you have to create a completely new style.</li>
+        <li class="answer">The top members on Dahlia Wolf get to inspire there own collections. Also win Dahlia Wolf contest to get a peice created</li>
     </ul>
     <ul>
-        <li class="question">HOW DO MY IMAGES GET PICKED TO INSPIRE NEW CLOTHES?</li>
-        <li class="answer">Get 1,000 LOVES on your inspiration image and we will use it to create a completely new and original design. Also if your inspiration catches the eye of the community leaders or our design team, we will pick your image to inspire a new design.</li>
+        <li class="question">HOW DO I BECOME A TOP MEMBER?</li>
+        <li class="answer">Earn 1,000,000 HYPE and you will reach DESIGNER status and then you will be able to inspire new styles.</li>
     </ul>
     <ul>
-        <li class="question">WHAT DO POINTS DO?</li>
-        <li class="answer">Points determine your rank on Dahlia\Wolf. The higher the membership level, the more discounts you get in the shop</li>
+        <li class="question">WHAT IS HYPE?</li>
+        <li class="answer">HYPE determines your rank on Dahlia\Wolf. Reach DESIGNER level and you will be able to inspire your owh collection. Earn HYPE by getting loves, repost, shares, followers, etc.</li>
     </ul>
+        <ul>
+            <li class="question">WHAT IS SPONSORING?</li>
+            <li class="answer">Newly created collections are created and put up for sponsoring. When an item receives enough sponsors it will be produced and sold in the shop.</li>
+        </ul>
     <ul>
         <li class="question">HOW DO I EARN COMMISSION?</li>
-        <li class="answer">If your inspiration image inspires a new design, you will earn a 5% commission on all items sold in the shop.</li>
+        <li class="answer">When you inspires a new design, you will earn a 10% commission on all items sold in the shop.</li>
     </ul>
 </div>
 
@@ -161,22 +165,23 @@ Dahlia Wolf would like to encourage you to use your real name so that you can de
 <li><a name="34"> ► What are the Dahlia Points?</a></br>
 On Dalia Wolf, you earn points for everything you do. We give these virtual points out for fun, and at the same time you can benefit from them! The more Dahlia Points you earn, the higher membership status you get.</li></br>
 
-<li><a name="35"> ► How do I earn points?</a></br>
-You can earn points for practically everything you do on Dahlia Wolf!</br></br>
-The following is a list of ways to earn points:</br>
-*Receive a "Love" on your posts: 1 points</br>
-*Click 'Love' on the items you like: 1 points</br>
-*Post a comment: 2 points</br>
-*Post inspiration images: 50 points</br>
-*Share on social network 20 points </br>
-*Open a new account: 100 points</br>
-*Complete your profile: 500 points</br>
-*Be the winning inspiration for a new design: 1000 points (plus free one of a kind sample of the design for you)</br>
-*Be the supporting winning inspiration for a new design: 1000 points</br>
-*Have your style sold in the shop: 5000 points (plus 5% commission on all sales)</br>
+<li><a name="35"> ► How do I earn HYPE?</a></br>
+You can earn HYPE for practically everything you do on Dahlia Wolf!</br></br>
+The following is a list of ways to earn HYPE:</br>
+*Receive a "LOVE" on your posts: 5 HYPE</br>
+*Click 'LOVE' on other posts: 1 HYPE</br>
+*Post a comment: 10 HYPE</br>
+*Post an inspiration images: 50 HYPE</br>
+*Share on social network 20 HYPE</br>
+*Open a new account: 500 HYPE</br>
+*Complete your profile: 1000 HYPE</br>
+*Gain a follower: 10 HYPE</br>
+*Follower someone: 1 HYPE</br>
+*Have your style sold in the shop: 5000 points (plus 10% commission on all sales)</br>
 *Purchasing:  Get 10 points for every $1 you spend at our shop</li></br>
 
-<li><a name="36"> ► What can I do with all the points I earn on Dahlia Wolf?</a></br></li></br>
+<li><a name="36"> ► What can I do with all the HYPE I earn on Dahlia Wolf?</a></br>
+Get 1,000,000 HYPE and you will reach DESIGNER status and be able to inspire your own clothes</li></br>
 
 <li><a name="37"> ► What is the purpose of the unique membership status?</a></br>
 It is our way of thanking you for actively participating in a step further to revolutionize fashion. Your active contribution to our site gets us one step closer to opening doors to the world of fashion never travelled in. In addition, we wanted you to feel special by labeling you into a certain status! What's more?You get to enjoy special rates and prices when shopping at the store. </li></br>
@@ -184,14 +189,14 @@ It is our way of thanking you for actively participating in a step further to re
 <li><a name="38"> ► Does my member status expire?</a></br>
 Your member status never expires! Once you reach a certain status, you are a member of that category for life (except with the exception that you move on to a higher membership status)!</li></br>
 
-<li><a name="39"> ► Where can I see how much points I've earned?</a></br>
-You will find a diamond icon on the upper right hand corner, right next to your username. Either click on the diamond or hover over it and you will see your points appear.</li></br>
+<li><a name="39"> ► Where can I see how much HYPE I've earned?</a></br>
+Visit your profile or your dashboard to see your your current HYEP</li></br>
 
-<li><a name="40"> ► Can Dahlia Points be taken away? </a></br>
+<li><a name="40"> ► Can Dahlia HYPE be taken away? </a></br>
 You never lose points on Dahlia Wolf. We would like to encourage you to actively participate in our fashion community, so you can only gain points by interacting with us.</li></br>
 
 <li><a name="41"> ► What is a wolf pack? </a></br>
-A Wolf Pack is the group name we made for all of our members. Therefore, all members of Dahlia Wolf are now part of the wolf pack. There is a 'wolf pack' link if you scroll down your username. This section has a list of all the members in the wolf pack and shows how many points they earned and what rank they are placed!</li></br>
+A Wolf Pack is the group name we made for all of our members. Therefore, all members of Dahlia Wolf are now part of the wolf pack. There is a 'wolf pack' link if you scroll down your username. This section has a list of all the members in the wolf pack and shows how many HYPE they earned and what rank they are placed!</li></br>
 </ul>
 <br />
 <h3><u>INSPIRATIONS → VOTING → PRODUCTION → SHOP</u></h3>
@@ -200,50 +205,30 @@ A Wolf Pack is the group name we made for all of our members. Therefore, all mem
 <li><a name="42"> ► What do you do with the inspirational images we post up?</a></br>
 Initially, all the images posted by you and other members are available on our social media for members to interact, comment, and connect with each other. However, if a particular image is wildly popular with our pack members, and if our team decides that we would like to see this member inspired image recreated into a sample, we will invent a new captivating design, and cut that piece into a sample.</li></br>
 
-<li><a name="43"> ► How do you decide which style is made into a sample product?</a></br>
-Every week, our Dahlia Wolf team will be monitoring the fabulous images that are posted on our site. Under our special discretion, we will choose a limited number of inspirational posts to be re-made into samples. One of the most important factors in deciding this will be how much popularity it receives with the 'love's.</li></br>
-
-<li><a name="44"> ► How do the Loves I receive affect me?</a></br>
- (1)	Every time another member clicks the 'love' button on your post, you get points. </br>
- (2)	If the style that you have posted earns a popular status with many "love" clicks, our Dahlia Wolf team will decide to cut and design your inspirational piece. </br>
- (3)	A sample will be made from the image you posted!</br>
- (4)	There's more frosting to the cake, since you inspired the piece, you get a free sample in the mail! </li></br>
-
 <li><a name="45"> ► How do you decide which style goes into the shop?</a></br>
-Once samples are made, all members will have the opportunity to vote on their favorite ones. The style with the most votes will make its way to the shop!</li></br>
-
-<li><a name="46"> ► How do I vote for a style that I adore?</a></br>
-We will have a special voting section within the ship where all the samples made will be available for you to vote on.</li></br>
+Once samples are made, all members will have the opportunity to sponsor their favorite ones. The style with enough sponsors will make its way to the shop!</li></br>
 
 <li><a name="47"> ► How much time will be given to vote on the samples?</a></br>
-Dahlia Wolf pack members will be given a period of 1 month to vote on their favorite styles. </li></br>
+Dahlia Wolf pack members will be given a period of 60 days to sponsor on their favorite styles. </li></br>
 
 <li><a name="48"> ► If the style I inspired has the most votes, what happens?</a></br>
 Congratulations! The piece you have inspired will make its way to the shop and be made available to all consumers to buy! The best part? You earn 5% commission off the total sales!!</li></br>
 
 <li><a name="49"> ► Are there any benefits for me if my inspired image is made into a sample?</a></br>
-Of course there is! Dahlia Wolf would never leave you hanging…if your inspiring post is selected to be made into a sample, we will give you 1 free sample of your inspired design. Plus, free shipping on us, so absolutely free!</li></br>
-
-<li><a name="50"> ► If my post is made into a sample, I understand I get a free sample. How long will it take to get the free sample in my hands?</a></br>
-We know how excited you are to receive the free sample made from your inspirational post, and we are excited to get them to you as well. Once your sample is put on our voting page, it will be there for 1 month for the voting process. We estimate that you will be able to get your free sample approximately 1 month later from when the sample enters the voting page.</br>
-
-However, if your sample wins its way to the shop, it will undergo production and take a longer time to get into your hands. Then, you will receive your free sample approximately 2 weeks after the pre-sale ends.</li></br>
+Of course there is! Dahlia Wolf would never leave you hanging…if your inspire a sample, we will give you 1 free sample of your inspired design. Plus, free shipping on us, so absolutely free!</li></br>
 
 <li><a name="51"> ► How will I know whether or not my sample has been selected for the shop?</a></br>
 Leave your worries aside, our Dahlia Wolf team will contact you via email if your sample has been selected to enter our shop, and with all other information regarding what you will have to do next!  Exciting isn't it??</li></br>
 
 <li><a name="52"> ► What if my sample doesn't get voted into the shop?</a></br>
-We are sorry to hear that your sample didn't make it into the shop. However, we hope you had a phenomenal experience through the making of the sample and the voting process. Feel challenged? Post up more inspirational images and pave your way into the shop!</li></br>
+We are sorry to hear that your sample didn't make it into the shop. However, we hope you had a phenomenal experience through the making of the sample and sponsoring process. Feel challenged? Post up more inspirational images and pave your way into the shop!</li></br>
 
 <li><a name="53"> ► I'm so excited, my sample has made its way into the Dahlia Wolf's store, what happens now?</a></br>
 Congratulations! Now you have the opportunity to make some money!</li></br>
 
-<li><a name="54"> ► How does the pre-sale work and who is it for?</a></br>
-Dahlia Wolf allows a pre-sale on the item that has been voted to go into the shop.  For a limited time, members have the opportunity to purchase the pre-sale item for 50% off. Yes, we said 50% off, so don't miss your chance. Pay attention because all pre-sales will be available for a certain period of time only. </li></br>
-
 <li><a name="55"> ► So it says that I earn commission every time my inspired product is sold in the shop, how does that work?</a></br>
-Dahlia Wolf shares 5% of all revenue brought in by direct sales from your inspired product.
-To help make sense of this, here's an example: Let's say we start selling your inspired piece at the store for $100 a piece. Our shop sold 100 pieces of your inspired piece. We made 100 pieces x $100= $10,000. You make 5% of the total which is $5000 in commission! Are you on cloud nine yet? </li></br>
+Dahlia Wolf shares 10% of all revenue brought in by direct sales from your inspired product.
+To help make sense of this, here's an example: Let's say we start selling your inspired piece at the store for $100 a piece. Our shop sold 100 pieces of your inspired piece. We made 100 pieces x $100= $10,000. You make 10% of the total which is $10,000 in commission! Are you on cloud nine yet? </li></br>
 
 <li><a name="56"> ► How long will my inspired piece be made available for in the shop?</a></br>
 We leave our pieces in the shop for about 6 months. After the 6 months, it will be removed from the shop and not available for sale. </li></br>

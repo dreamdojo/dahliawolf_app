@@ -23,15 +23,14 @@ if ($top_dir == 'shop') {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0031)http://www.dahliawolf.com/login -->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" class="csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><?= isset($pageTitle) ? 'Dahlia\Wolf - '.$pageTitle : 'Dahlia Wolf' ?></title>
-
-<meta name="description" content="Dahlia Wolf - Dahlia Wolf">
-<meta name="keywords" content="Dahlia Wolf,Dahlia Wolf">
+<title><?= isset($pageTitle) ? ''.$pageTitle : 'Dahlia Wolf' ?></title>
+<meta name="description" content="Dahlia Wolf is a fashion community where people come together to inspire fashion.">
+<meta name="keywords" content="Dahlia Wolf,Fashion Inspiration Community,Fashion Community,Fashion Inspiration">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <meta name = "viewport" content = "width = 1100, initial-scale=.7, maximum-scale=.7">
 <meta property="fb:app_id" content="552515884776900" />
 <meta property="og:site_name" content="Dahlia Wolf">
-<meta property="og:description" content="Post fashion images. Dahlia Wolf will turn them into clothing." />
+<meta property="og:description" content="Dahlia Wolf is a community where people come together to inspire fashion." />
 <? if( !empty($_GET['posting_id']) ): ?>
 	<meta property="og:image" content="<?= $_data['post']['image_url'] ?>" />
 <? elseif( !empty($_GET['id_product']) ): ?>

@@ -19,7 +19,7 @@ include "header.php";
 
 <div style="background-color:rgb(230, 230, 230);; text-align:center; width:700px;margin:20px; padding:20px;">
 
-<h3>*CHANGES TO SITE AND TERMS (BETA VERSION)</h3></br>
+<h3>*CHANGES TO SITE AND TERMS</h3></br>
 
 <p>Dahlia Wolf may add to, change, or remove any part of the Site, including, without limitation, any Site Content, at any time without prior notice to you. Dahlia Wolf also reserves the right to modify these Terms at any time. When we make changes to the Terms, we may notify you of the changes through the Site or by sending out an email. We encourage all users to review these Terms whenever you visit the Site. By continuing to access and use the Site after any changes have been posted, you are indicating your acceptance of such changes, even if you have not reviewed the changes.</p>
 

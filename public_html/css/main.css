@@ -17,7 +17,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}
 iframe{height:0px;}
 
-body { font-family: lato, sans-serif, ariel; font-size:10px;color:#666; margin-top: 93px;}
+body { font-family: lato, sans-serif, ariel; font-size:10px;color:#666; margin-top: 120px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -62,11 +62,20 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .dahliaBGColor{background-color: #008caf !important;}
 
 /*--------------- SORT SECTION ----------------*/
-.filter-wrap{max-width: 1000px;margin: 0px auto;width: 100%; text-indent: 2px; color: #ACACAC; font-family: futura; text-transform: lowercase;text-align: left;}
-#sort-bar{ width:100%;border-bottom: #DBDBDB thin dotted; margin: 0px auto;padding: 3px 0px;font-size: 12px; margin-top: 53px; padding-bottom: 5px;line-height: 25px; }
+.filter-wrap{max-width: 1000px;
+    margin: -12px auto 5px;
+    width: 100%;
+    text-indent: 2px;
+    color: #8F8F8F;
+    font-family: helvetica;
+    text-transform: lowercase;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-align: left;}
+#sort-bar{ width:100%;border-bottom: #9B9B9B thin dotted; margin: 0px auto;padding: 3px 0px;font-size: 12px; padding-bottom: 5px;line-height: 25px; }
 .bold{ font-weight:bold !important; }
-.sort-option{ font-weight:normal;color: #ACACAC  }
-.filter-select{color: #168795 !important;}
+.sort-option{ font-weight:normal;color: #636363;  }
+.filter-select{color: #90CE46 !important;}
 .light{color: #E0E0E0;}
 
 /*---------------- Home Banner --------------*/
@@ -85,36 +94,65 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 
 /*************************** HEADER ********************/
 #dahliaHeader{position: fixed; height: 70px; width: 100%; left: 0px; top: 0px;z-index: 1111100; color: #fff;}
-#dahliaHeader a{color: #fff;}
+#dahliaHeader a{color: #fff;margin-top:2px;}
 #dahliaHeader a:hover{color: #74bf00;}
 .native_head{float: left;display: inline-block;margin-left: 15px;}
 .native_head li{float: left;margin-top: 14px;margin-left: 10px;}
 #tourButton{cursor: pointer;}
 
 /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
-#dahliaHeader #dahliaLogo{width: 205px; height: 65px; background-image: url("/images/logo_no_beta.png");background-size: auto 60%;background-repeat: no-repeat;background-position: 0% 50%;margin-left: 20px;overflow: hidden; float: left; cursor: pointer; position: relative; z-index: 10;transition: width.3s; -webkit-transition: width .3s;}
+#dahliaHeader #dahliaLogo{width: 208px; height: 65px; background-image: url("/images/logo_no_beta.png");background-size: auto 60%;background-repeat: no-repeat;background-position: 0% 50%;margin-left: 20px;overflow: hidden; float: left; cursor: pointer; position: relative; z-index: 10;transition: width.3s; -webkit-transition: width .3s;}
 #dahliaHeader .logoTransformed{background-position: 99% 50% !important; width: 82px !important;}
 #dahliaHeader #userMenu{float: right; padding-right: 9px; position: relative; height: 90px; margin-top: 10px; margin-right: 4px;}
-#dahliaHeader .avatarFrame{width: 30px;height: 30px;overflow: hidden; margin-top: 6px;border-radius: 30px;float: right;border: #fff 3px solid;}
+#dahliaHeader .avatarFrame{width: 30px;height: 30px;overflow: hidden; margin-top: 3px;border-radius: 30px;float: right;border: #fff 3px solid;}
 #dahliaHeader .avatarFrame img{width: 100%;}
-#dahliaHeader .userName{float: right;color: #fff;font-size: 17px;line-height: 51px; margin-right: 13px;}
-#dahliaHeader #mainMenu{width: 340px; color: #fff; line-height: 65px; font-size: 19px;text-align: center;float: left;}
-#dahliaHeader #mainMenu li{float: left; margin: 0px 10px; position: relative;}
+#dahliaHeader .userName{float: right; margin-right: 13px;    color: #fff;
+    font-size: 15px;
+    font-family: helvetica;
+    font-weight: 100;
+    line-height: 46px;
+    letter-spacing: .5px;
+
+}
+#dahliaHeader #mainMenu{width: 340px; letter-spacing: .8px; color: #fff; line-height: 65px; font-size: 15px;text-align: center;float: left;}
+#dahliaHeader #mainMenu li{height: 60px;float: left; padding: 0px 15px; position: relative;border-left: #6EB2C2 thin solid;}
 #dahliaHeader #searchButton{ float: right;
     width: 48px;
-    height: 65px;
+    height: 59px;
     background-size: 420px;
-    background-position: -28px -330px;
+    background-position: -27px -332px;
     background-repeat: no-repeat;
-    margin-right: 5px;border-left: #80c6d7 thin solid;}
+    margin-right: 5px;
+    border-left: #6EB2C2 thin solid;}
 #dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 20px; position: relative;}
 #dahliaMainMenuButton{float: left; height: 60px; width: 60px;display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 100%; background-repeat: no-repeat;margin-top: 1px; z-index: 10; position: relative;}
 #dahliaMainMenuButton:hover .theMainMenu{display: block;}
 .theMainMenu {position: absolute;margin-top: 48px;left: 0;background-color: #000;color: #fff;font-size: 18px; display: none;}
 .theMainMenu li{padding: 7px;width: 100px;text-align: center; position: relative;}
 #dahliaHeader #userMenu:hover #theDropdown{display: block;}
-#userMenu ul{position: absolute;width: 186px;margin-top: 55px;text-align: left; box-shadow: #000 0px 1px 4px 0px; color: #ebebeb; display: none; right: 1px; z-index: 1000000; background-color: #ebebeb;}
-#userMenu li{font-family: arial;height: 35px;line-height: 35px;text-indent: 40px;position: relative;direction: rtl;text-align: right;border-top: #666 thin solid; color:#666; text-transform: uppercase;font-size: 13px;}
+#userMenu ul{position: absolute;
+    width: 176px;
+    margin-top: 50px;
+    text-align: left;
+    box-shadow: #6B6B6B 0px 0px 4px 0px;;
+    color: #ebebeb;
+    display: none;
+    right: 1px;
+    z-index: 1000000;
+    background-color: #ebebeb;}
+#userMenu li{font-family: helvetica;
+    height: 35px;
+    line-height: 35px;
+    text-indent: 40px;
+    position: relative;
+    direction: rtl;
+    text-align: left;
+    border-top: #CACACA thin solid;
+    color: #666;
+    letter-spacing: .5px;
+    font-size: 13px;
+    padding-left: 20px;
+    font-weight: 100;}
 #userMenu li:hover{background-color: #666; color: #fff;}
 #userMenu li:hover a{color: #fff;}
 
@@ -126,9 +164,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .menuBarsActive{background-position: -27px 3px !important;}
 #userMenu li:first-child{}
 #userMenu li:last-child{}
-.loginDept{color: #fff;font-size: 18px; line-height: 65px; float: right;}
-.loginDept li{float: right; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 400; letter-spacing: 0.5px; font-family: helvetica;}
-.loginDept li:first-child{background-color: #88de03;height: 16px;padding: 6px 18px;color: #00818c;line-height: 16px;margin-top: 19px;border-radius: 4px;}
+.loginDept{color: #fff;font-size: 13px; line-height: 60px; float: right;}
+.loginDept li{float: right; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 100; letter-spacing: 0.8px; font-family: helvetica;}
+.loginDept li:first-child{background-color: #88de03;height: 16px;padding: 6px 18px;color: #00818c;line-height: 18px;margin-top: 17px;border-radius: 4px;}
 .loginDept li:first-child a:hover{color: #fff !important;}
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
 .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
@@ -138,10 +176,10 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #shoppingCart:hover ul{display: block !important;}
 #dahliaHeader #shoppingCart{float: right;
     width: 50px;
-    height: 15px;
+    height: 10px;
     position: relative;
     padding-bottom: 50px;
-    border-left: #80c6d7 thin solid;border-right: #80c6d7 thin solid;
+    border-left: #6EB2C2 thin solid;border-right: #6EB2C2 thin solid;
     margin-right: 10px;
     padding-right: 5px;}
 #dahliaHeader #rightHandMenu .fullCart{background-position: -73px -328px;}
@@ -161,8 +199,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     font-size: 13px;
     color: #fff;
     height: 30px;
-    margin-top: 18px;
-    margin-left: 4px;}
+    margin-top: 16px;
+    margin-left: 3px;}
 .cart_bezier{position: absolute; width: 29px; background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
 
 
@@ -751,7 +789,7 @@ box-shadow: 0 3px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(192, 192, 192, 0.3)
 
 /********************************** THE PAGE ******************************/
 .transCol{width: 900px;margin: 0px auto;text-align: center;color: #464646;position: relative; z-index: 1;}
-.transCol h1{width: 100%;margin-top: 100px;font-size: 24px;margin-bottom: 55px;}
+.transCol h1{width: 100%;margin-top: 130px;font-size: 24px;margin-bottom: 55px;}
 .transCol h2{width: 100%;margin-top: 55px;font-size: 20px;margin-bottom: 55px;}
 .transCol h3{width: 100%;margin-top: 55px;font-size: 18px;margin-bottom: 55px;}
 .transCol .steppingStone{width: 700px;border: #c2c2c2 thin solid;margin: 0px auto;display: inline-block;padding: 30px 0px;}
@@ -1941,7 +1979,7 @@ width: 174px;
 #sortBar{width: 100%;max-width: 1000px;height: 30px;margin: 0px auto;text-indent: 12px;line-height: 30px; color: #ACACAC;}
 #sortBar li:not(:first-child){ cursor: pointer;}
 #sortBar li{float: left;font-size: 12px;}
-#viewFilters a{color: #ACACAC;}
+#viewFilters a{color: #636363;}
 
 
 /* LOGIN PAGE
@@ -2943,7 +2981,7 @@ div.sysPopupAlert {font-size: 16px; text-align: center; padding: 20px; padding-t
     position: relative;
     cursor: pointer;
     text-align: left;
-    margin: 63px 5px;
+    margin: 40px 15px;
 }
 .shop-item:hover .prodInfo{display: block;}
 .shop-item .imageFrame{height: 100%; width: 100%; position: relative;overflow: hidden;}
@@ -2957,7 +2995,7 @@ div.sysPopupAlert {font-size: 16px; text-align: center; padding: 20px; padding-t
     color: #fff;
     font-size: 14px;
     text-transform: uppercase;}
-.shop-item .prodDeets{position: absolute;width: 100%;top: 105%;font-size: 12px; font-weight: 400;color: #616161;}
+.shop-item .prodDeets{position: absolute;width: 100%;top: 103%;font-size: 12px; font-weight: 400;color: #616161;}
 .shop-item .prodDeets li{width: 100%; text-align: center;}
 .shop-item a{color:#6ba42c;}
 .shop-item a:hover{color:#78fff4;}

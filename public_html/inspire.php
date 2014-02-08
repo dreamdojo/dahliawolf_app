@@ -1,5 +1,6 @@
 <?
-    $pageTitle = "Vote";
+    $pageTitle = "Discover New Fashion + HYPE";
+    $pageDesc = 'Exploser some of our most popular posts on Dahlia Wolf';
     include "head.php";
     include "header.php";
 ?>
