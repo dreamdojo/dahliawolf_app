@@ -53,9 +53,9 @@ include "header.php";
     <div style="clear: left;"></div>
     <div class="row2">
         <ul style="margin-right: 9%;">
-            <li><h1>POINTS</h1></li>
-            <li><p>Points explaination and tips on how to earn points</p></li>
-            <a href="/faqs"><li>LEARN ABOUT POINTS</li></a>
+            <li><h1>HYPE</h1></li>
+            <li><p>Hype explaination and tips on how to earn hype</p></li>
+            <a href="/faqs"><li>LEARN ABOUT HYPE</li></a>
         </ul>
         <ul>
             <li><h1>SHIPPING & RETURNS</h1></li>

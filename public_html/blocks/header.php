@@ -68,16 +68,20 @@
 <div id="dahliaHeader">
     <div id="headerHeader">
         <ul class="right">
+            <a target="blank" href="https://www.facebook.com/dahlia.wolf.fashion"/><li class="spriteBG facebooksprite" ></li></a>
+            <a target="blank" href="https://twitter.com/DahliaWolf"><li class="spriteBG twittersprite" ></li></a>
+            <a target="blank" href="http://instagram.com/dahlia_wolf"><li class="spriteBG instagramsprite" ></li></a>
             <li><a href="/wolf-pack">PACK LEADERS</a></li>
             <!--<li><a href="/contests">CONTESTS</a></li>-->
             <li><a href="/goodies">GOODIES</a></li>
             <li><a href="/press">PRESS</a></li>
             <li><a href="/faqs">FAQS</a></li>
+            <!--<li><a href="/hiw">HOW IT WORKS</a></li>-->
             <li><a href="/tos">LEGAL</a></li>
             <!--<li><a href="/collabs">COLLABS</a></li>-->
+            <li><a href="http://blog.dahliawolf.com/">BLOG</a></li>
             <li><a href="/contact">CONTACT</a></li>
             <!--<li><a href="/about">ABOUT</a></li>-->
-            <!--<li><a href="/hiw">HOW IT WORKS</a></li>-->
             <!--<li id="tourButton">HELP</li>-->
         </ul>
     </div>
@@ -97,9 +101,9 @@
             </div>
             <ul class="loginDept">
                 <?php if(!IS_LOGGED_IN): ?>
-                    <li><a href="/signup" rel="pop">JOIN</a></li>
-                    <li style="margin-top: 2px;color: #fff;font-size: 13px;font-family: helvetica;"><a href="/signup" rel="pop">$10 SIGN UP BONUS!</a></li>
-                    <li style="border-right: #6EB2C2 thin solid;padding-right: 16px;padding-top: 3px;height: 57px;"><a href="/login" rel="pop">SIGN IN</a></li>
+                    <a href="/signup" rel="pop"><li>JOIN</li></a>
+                    <!--<li style="margin-top: 2px;color: #fff;font-size: 13px;font-family: helvetica;"><a href="/signup" rel="pop">$10 SIGN UP BONUS!</a></li>-->
+                    <li style="border-right: #6EB2C2 thin solid;padding-right: 20px;padding-left: 20px;padding-top: 3px;height: 57px;"><a href="/login" rel="pop">SIGN IN</a></li>
                 <? endif ?>
             </ul>
             <div id="shoppingCart">

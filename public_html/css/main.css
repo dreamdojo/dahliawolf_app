@@ -17,7 +17,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}
 iframe{height:0px;}
 
-body { font-family: lato, sans-serif, ariel; font-size:10px;color:#666; margin-top: 120px;}
+body { font-family: lato, helvetica, sans-serif, ariel; font-size:10px;color:#666; margin-top: 120px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -95,10 +95,11 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 /*************************** HEADER ********************/
 #dahliaHeader{position: fixed; height: 70px; width: 100%; left: 0px; top: 0px;z-index: 1111100; color: #fff;}
 #dahliaHeader a{color: #fff;margin-top:2px;}
-#dahliaHeader a:hover{color: #74bf00;}
+#dahliaHeader a:hover{color: #74bf00; back}
 .native_head{float: left;display: inline-block;margin-left: 15px;}
 .native_head li{float: left;margin-top: 14px;margin-left: 10px;}
 #tourButton{cursor: pointer;}
+#tourButton :hover{color:#82CF26;}
 
 /*#dahliaHeader a:hover{color: #eb1d5d !important;}*/
 #dahliaHeader #dahliaLogo{width: 208px; height: 65px; background-image: url("/images/logo_no_beta.png");background-size: auto 60%;background-repeat: no-repeat;background-position: 0% 50%;margin-left: 20px;overflow: hidden; float: left; cursor: pointer; position: relative; z-index: 10;transition: width.3s; -webkit-transition: width .3s;}
@@ -116,18 +117,20 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 }
 #dahliaHeader #mainMenu{width: 340px; letter-spacing: .8px; color: #fff; line-height: 65px; font-size: 15px;text-align: center;float: left;}
 #dahliaHeader #mainMenu li{height: 60px;float: left; padding: 0px 15px; position: relative;border-left: #6EB2C2 thin solid;}
-#dahliaHeader #mainMenu li:hover{background-color: #c2c2c2; box-shadow: inset #999 0px 0px 3px 0px;}
-#dahliaHeader #mainMenu li:hover{color: #333 !important;}
-#dahliaHeader #mainMenu li:hover .pinkMe{color: #333 !important;}
+#dahliaHeader #mainMenu li:hover{background-color: #01728e; box-shadow: inset #999 0px 0px 3px 0px;}
+#dahliaHeader #mainMenu li:hover{color: #fff !important;}
+#dahliaHeader #mainMenu li:hover .pinkMe{color: #82CF26 !important;}
 #dahliaHeader #searchButton{ float: right;
-    width: 48px;
+    width: 53px;
     height: 59px;
     background-size: 420px;
     background-position: -27px -332px;
     background-repeat: no-repeat;
-    margin-right: 5px;
-    border-left: #6EB2C2 thin solid;}
-#dahliaHeader #searchButton:hover{background-position: -67px -332px;}
+        border-left: #6EB2C2 thin solid;}
+
+#dahliaHeader #searchButton a{background-position: -67px -332px;}
+#dahliaHeader #searchButton:hover {background-color:#01728e;}
+
 #dahliaHeader #rightHandMenu { cursor:pointer; float: right; height: 100%;margin-right: 20px; position: relative;}
 #dahliaMainMenuButton{float: left; height: 60px; width: 60px;display: none; margin-left: 10px;background-image: url("/images/barMenu.png");background-size: 100%; background-repeat: no-repeat;margin-top: 1px; z-index: 10; position: relative;}
 #dahliaMainMenuButton:hover .theMainMenu{display: block;}
@@ -142,7 +145,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     box-shadow: #6B6B6B 0px 0px 4px 0px;;
     color: #ebebeb;
     display: none;
-    right: 1px;
+    right: -9px;
     z-index: 1000000;
     background-color: #ebebeb;}
 #userMenu li{font-family: helvetica;
@@ -171,9 +174,20 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #userMenu li:first-child{}
 #userMenu li:last-child{}
 .loginDept{color: #fff;font-size: 13px; line-height: 60px; float: right;}
-.loginDept li{float: right; margin-right: 6px; position: relative; margin-left: 7px; font-weight: 100; letter-spacing: 0.8px; font-family: helvetica;}
-.loginDept li:first-child{background-color: #88de03;height: 16px;padding: 6px 18px;color: #00818c;line-height: 18px;margin-top: 17px;border-radius: 4px;}
-.loginDept li:first-child a:hover{color: #fff !important;}
+.loginDept a {color: #fff !important;}
+.loginDept li{float: right; position: relative; font-weight: 100; letter-spacing: 0.8px; font-family: helvetica;border-right: #6EB2C2 thin solid;padding-right: 20px;padding-left: 20px;padding-top: 3px;height: 57px;}
+
+.loginDept li:first-child {background-color: #88de03;
+    height: 16px;
+    padding: 6px 18px;
+    color: #ffffff;
+    line-height: 18px;
+    margin-top: 17px;
+    margin-left: 20px;
+    border-radius: 4px;}
+.loginDept li:first-child:hover{background-color: #fff; color:#88de03 !important;}
+.loginDept li:hover{background-color: #01728e; box-shadow: inset #999 0px 0px 3px 0px;color: #fff !important;}
+
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
 .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
 
@@ -186,7 +200,6 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     position: relative;
     padding-bottom: 50px;
     border-left: #6EB2C2 thin solid;border-right: #6EB2C2 thin solid;
-    margin-right: 10px;
     padding-right: 5px;}
 #dahliaHeader #rightHandMenu .fullCart{background-position: -73px -328px;}
 #dahliaHeader #rightHandMenu .emptyCart{background-position: -34px -327px;}
@@ -209,6 +222,12 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     margin-left: 3px;}
 .cart_bezier{position: absolute; width: 29px; background-image: url("/images/cart-menu-bezier.png");background-repeat: no-repeat;background-size: 100%;background-position: 0px 0px;height: 15px;top: -15px;margin-top: 0px; right: 8px;}
 
+.facebooksprite {width: 12px;height: 30px;background-size: 400px;background-position: -230px -175px;}
+.facebooksprite:hover {background-position: -262px -176px;}
+.twittersprite {width: 12px;height: 30px;background-size: 400px;background-position: -163px -175px;}
+.twittersprite:hover {background-position: -198px -176px;}
+.instagramsprite {width: 12px;height: 30px;background-size: 400px;background-position: -139px -23px;}
+.instagramsprite:hover {background-position: -168px -23px;}
 
 #searchBar{width: 100%;position: absolute;height: 60px;left: 0px;background-color: #000;top: 100%; z-index: 123;border-top: #fff thin solid;display: none;}
 #searchBar input{height: 59px;width: 100%;background-color: #FFF;border: none;color: #C7C7C7; font-size: 28px; text-indent: 15px;text-align: center;}
@@ -245,6 +264,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     .title-roll .preHeader{display: none;}
     .bankSection img:not(.fork-img){left: 50%;position: relative;margin-left: -19px;}
     #tourButton{display: none;}
+    #tourButton :hover{color:#82CF26 !important}
 }
 
 

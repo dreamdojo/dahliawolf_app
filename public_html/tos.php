@@ -7,7 +7,7 @@ include "header.php";
 ?>
 
 <div class="AboutContent">
-	<div style="font-family:Futura, Arial, Helvetica, sans-serif; font-size:15px !important; color: rgb(92, 92, 92);">
+	<div style="font-family:Helvetica, sans-serif; font-size:15px !important; color: rgb(92, 92, 92);">
 
 		<h1>TERMS OF USE / PRIVACY POLICY</h1>
 		        
