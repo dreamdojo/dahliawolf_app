@@ -214,25 +214,48 @@ User.prototype.$product.prototype = {
 
 User.prototype.$sponsor = function(d) {
     var data = d;
+    var counts = [10, 25, 65];
+    var discounts = [50, 30, 20];
     holla.log(d);
+
+    var getPrice = function() {
+        return Math.floor(d.price).toFixed(2);
+    }
+
+    var getSalePrice = function() {
+        return Math.floor(d.sale_price).toFixed(2);
+    }
+
+    var getMode = function() {
+        if(d.total_sales < counts[0]) {
+            return 0;
+        } else if(d.total_sales < counts[1]) {
+            return 1;
+        } else if(d.total_sales < counts[2]) {
+            return 2;
+        } else {
+            return 3;
+        }
+    }
+
     var DAYS_LEFT = getDaysLeft(data.commission_from_date);
     var $sponsorItem = $('<div class="sponsorItem"></div>');
 
     var $prodInfo = $('<div class="prodInfo"></div>');
     $('<ul class="userDeets"><a href="/'+data.username+'"><li class="avatar" style="background-image: url(\''+data.avatar+'&width=50\')"></li></a><li class="prodTitle">'+data.product_name+'</li><li class="inspHead">Inspiration by <a href="/'+data.username+'">'+data.username+'</a></li></ul>').appendTo($prodInfo);
-    $('<ul class="prodPrice current"><li>$50.00</li><li>50% OFF</li></ul><ul class="prodPrice closed"><li>$50.00</li><li>50% OFF</li></ul>').appendTo($prodInfo);
+    $('<ul class="prodPrice current"><li>$'+getSalePrice()+'</li><li>50% OFF</li></ul><ul class="prodPrice closed"><li>$'+getPrice()+'</li><li>50% OFF</li></ul>').appendTo($prodInfo);
     $sponsorItem.append($prodInfo);
 
     var $itemImage = $('<div class="imgFrame"><a href="/sponsor/'+data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></a></div>').appendTo($sponsorItem);
     var $sponsorDeets = $('<div class="sponsorDetails"></div>');
-    var $toGoal = $('<ul><li>'+(Number(data.total_sales)/100)*100+'%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
+    var $toGoal = $('<ul><li>'+(Math.floor((Number(data.total_sales)/100)*100))+'%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
     var $left = $('<ul><li>'+DAYS_LEFT+'</li><li>'+(DAYS_LEFT  == 1 ? 'day' : 'days')+' left</li></ul>').appendTo($sponsorDeets);
     //var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
-    var $goal = $('<ul><li>9</li><li>sponsors spots left at 50% off</li></ul>').appendTo($sponsorDeets);
+    var $goal = $('<ul><li>'+(counts[getMode()] - (d.total_sales - (getMode() > 0 ? counts[(getMode() - 1)] : 0)))+'</li><li>sponsors spots left at '+discounts[getMode()]+'% off</li></ul>').appendTo($sponsorDeets);
     var $status = $('<div class="statuses">' +
-        '<ul class="status closed"><li>50% OFF</li><li>sold out</li></ul>' +
-        '<ul class="status current"><li>30% OFF</li><li>22 spots left</li></ul>' +
-        '<ul class="status pending"><li>20% OFF</li><li>22 spots left</li></ul>' +
+        '<ul class="status '+(getMode() == 0 ? 'current' : 'closed')+'"><li>'+discounts[0]+'% OFF</li><li class="sLeft">'+(counts[0] - Number(d.total_sales))+' Spots left</li></ul>' +
+        '<ul class="status '+(getMode() == 1 ? 'current' : 'closed')+'"><li>'+discounts[1]+'% OFF</li><li class="sLeft">'+(counts[1] - (Number(d.total_sales) - counts[0]))+' Spots left</li></ul>' +
+        '<ul class="status '+(getMode() == 2 ? 'current' : 'closed')+'"><li>'+discounts[2]+'% OFF</li><li class="sLeft">'+(counts[2] - (Number(d.total_sales) - counts[1]))+' Spots left</li></ul>' +
         '</div>').appendTo($sponsorDeets);
     var $butt = $('<a href="/sponsor/'+data.id_product+'"><div class="greenbutton">SPONSOR NOW</div></a>').appendTo($sponsorDeets);
 

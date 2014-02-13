@@ -76,6 +76,7 @@
     .sponsorItem .greenbutton{color: #fff;background-color: #76bd22;padding: 20px 25px;display: inline-block;margin-top: 20px;width: 67%;margin-left: 10%;text-align: center;border-radius: 8px;}
     .sponsorItem .rtLine{position: absolute; height: 80%; border-right: #c2c2c2 thin solid; margin-top: -12%; right: 0px;}
     #viewFilters{display: none;}
+    .sponsorItem .closed .sLeft{display: none;}
 </style>
 
 <? if( !empty($user['username']) ): ?>
