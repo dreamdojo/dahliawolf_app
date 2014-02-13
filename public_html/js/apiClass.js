@@ -243,7 +243,7 @@ User.prototype.$sponsor = function(d) {
 
     var $prodInfo = $('<div class="prodInfo"></div>');
     $('<ul class="userDeets"><a href="/'+data.username+'"><li class="avatar" style="background-image: url(\''+data.avatar+'&width=50\')"></li></a><li class="prodTitle">'+data.product_name+'</li><li class="inspHead">Inspiration by <a href="/'+data.username+'">'+data.username+'</a></li></ul>').appendTo($prodInfo);
-    $('<ul class="prodPrice current"><li>$'+getSalePrice()+'</li><li>50% OFF</li></ul><ul class="prodPrice closed"><li>$'+getPrice()+'</li><li>50% OFF</li></ul>').appendTo($prodInfo);
+    $('<ul class="prodPrice current"><li>$'+getSalePrice()+'</li><li>'+discounts[getMode()]+'% OFF</li></ul><ul class="prodPrice closed"><li>$'+getPrice()+'</li><li>Regular price</li></ul>').appendTo($prodInfo);
     $sponsorItem.append($prodInfo);
 
     var $itemImage = $('<div class="imgFrame"><a href="/sponsor/'+data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></a></div>').appendTo($sponsorItem);
