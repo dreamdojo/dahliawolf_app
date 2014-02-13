@@ -72,7 +72,7 @@
             <a target="blank" href="https://twitter.com/DahliaWolf"><li class="spriteBG twittersprite" ></li></a>
             <a target="blank" href="http://instagram.com/dahlia_wolf"><li class="spriteBG instagramsprite" ></li></a>
             <li><a href="/wolf-pack">PACK LEADERS</a></li>
-            <!--<li><a href="/contests">CONTESTS</a></li>-->
+            <li><a href="/contests">CONTESTS</a></li>
             <li><a href="/goodies">GOODIES</a></li>
             <li><a href="/press">PRESS</a></li>
             <li><a href="/faqs">FAQS</a></li>
@@ -80,9 +80,10 @@
             <li><a href="/tos">LEGAL</a></li>
             <!--<li><a href="/collabs">COLLABS</a></li>-->
             <li><a href="http://blog.dahliawolf.com/">BLOG</a></li>
+            <li><a href="/careers">CAREERS</a></li>
             <li><a href="/contact">CONTACT</a></li>
-            <!--<li><a href="/about">ABOUT</a></li>-->
-            <!--<li id="tourButton">HELP</li>-->
+            <li><a href="/about">ABOUT</a></li>
+            <li id="tourButton">HELP</li>
         </ul>
     </div>
     <div id="headerBody">
@@ -91,7 +92,7 @@
         <a href="/<?= IS_LOGGED_IN ? 'inspire' : '' ?>"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
             <a href="/inspire"><li><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">DISCOVER</li></a>
-            <!--<a href="/sponsor"><li><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</li></a>-->
+            <a href="/sponsor"><li><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">SPONSOR</li></a>
             <a href="/shop"><li style="border-right: #6EB2C2 thin solid;"><span  class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</li></a>
         </ul>
 
@@ -159,7 +160,7 @@
     <div id="headerFooter">
         <ul>
             <li><a href="/inspire">DISCOVER</a></li>
-            <!--<li><a href="/sponsor">SPONSOR</a></li>-->
+            <li><a href="/sponsor">SPONSOR</a></li>
             <li><a href="/shop">SHOP</a></li>
         </ul>
     </div>

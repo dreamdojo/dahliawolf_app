@@ -226,7 +226,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .facebooksprite:hover {background-position: -262px -176px;}
 .twittersprite {width: 12px;height: 30px;background-size: 400px;background-position: -163px -175px;}
 .twittersprite:hover {background-position: -198px -176px;}
-.instagramsprite {width: 12px;height: 30px;background-size: 400px;background-position: -139px -23px;}
+.instagramsprite {width: 23px;height: 30px;background-size: 400px;background-position: -139px -23px;}
 .instagramsprite:hover {background-position: -168px -23px;}
 
 #searchBar{width: 100%;position: absolute;height: 60px;left: 0px;background-color: #000;top: 100%; z-index: 123;border-top: #fff thin solid;display: none;}
