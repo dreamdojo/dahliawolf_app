@@ -35,6 +35,24 @@
     $percentage = round(($total_sales/20)*100);
     $sales_needed = 20 - $total_sales;
     $total_prod_imgs = 4;
+    $counts = Array(10, 25, 65);
+    $discounts = Array(50, 30, 20);
+
+
+    function getMode($ts) {
+        $total_sales = $ts;
+        $counts = Array(10, 25, 65);
+
+        if($total_sales < $counts[0]) {
+            return 0;
+        } else if($total_sales < $counts[1]) {
+            return 1;
+        } else if($total_sales < $counts[2]) {
+            return 2;
+        } else {
+            return 3;
+        }
+    }
 ?>
 
 <style>
@@ -108,8 +126,8 @@
         <div class="mainCol" style="padding-top: 70px;">
             <div class="left">
                 <ul class="prodDeets">
-                    <li><p><?= $_data->product->product_name ?></p><p>$<?= number_format((float)$_data->product->price, 2, '.', '') ?></p></li>
-                    <li><p>Iinspiration by <a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></p><p>Regular Price</p></li>
+                    <li><p><?= $_data->product->product_name ?></p><p style="text-decoration: line-through;">$<?= number_format((float)$_data->product->price, 2, '.', '') ?></p></li>
+                    <li><p>Iinspiration by <a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></p><p style="text-decoration: line-through;">Regular Price</p></li>
                 </ul>
                 <ul class="productImagesFrame" id="prodImgFrame">
                     <div id="theImages">
@@ -141,20 +159,20 @@
                     <li><p><?= getDaysLeft($_data->product->commission_from_date) ?></p><p>days left</p></li>
                     <li><p><?= $DISCOUNTS[0] - $total_sales ?></p><p>sponsors spots left</p></li>
                     <li class="statusus">
-                        <ul class="status <?= $total_sales > $DISCOUNTS[1] ? 'closed' : '' ?>">
-                            <li>$50.00</li>
-                            <li>50% OFF</li>
+                        <ul class="status <?= getMode($total_sales) != 0 ? 'closed' : 'current' ?>">
+                            <li>$<?= number_format((float)$_data->product->price*($discounts[0]/100), 2, '.', '') ?></li>
+                            <li><?= $discounts[0] ?>% OFF</li>
                             <li><?= $total_sales < $DISCOUNTS[1] ? $DISCOUNTS[1] - $total_sales.' spots left' : 'sold out' ?></li>
                         </ul>
-                        <ul class="status <?= $total_sales > $DISCOUNTS[2] ? 'closed' : '' ?><?= $total_sales < $DISCOUNTS[3] && $total_sales > $DISCOUNTS[1] ? 'current' : '' ?>">
-                            <li>$70.00</li>
-                            <li>30% OFF</li>
-                            <li><?= $total_sales < $DISCOUNTS[2] ? $DISCOUNTS[2] - $total_sales.' spots left' : 'sold out' ?></li>
+                        <ul class="status <?= getMode($total_sales) != 1 ? 'closed' : 'current' ?> ">
+                            <li>$<?= number_format((float)$_data->product->price*($discounts[1]/100), 2, '.', '') ?></li>
+                            <li><?= $discounts[1] ?>% OFF</li>
+                            <li><?= $total_sales < $DISCOUNTS[2] ? $DISCOUNTS[1] - ($total_sales - $counts[1]).' spots left' : 'sold out' ?></li>
                         </ul>
-                        <ul class="status <?= $total_sales > $DISCOUNTS[3] ? 'closed' : '' ?> <?= $total_sales < $DISCOUNTS[0] && $total_sales > $DISCOUNTS[2] ? 'current' : '' ?>">
-                            <li>$80.00</li>
-                            <li>20% OFF</li>
-                            <li><?= $total_sales < $DISCOUNTS[3] ? $DISCOUNTS[3] - $total_sales.' spots left' : 'sold out' ?></li>
+                        <ul class="status <?= getMode($total_sales) != 2 ? 'closed' : 'current' ?>">
+                            <li>$<?= number_format((float)$_data->product->price*($discounts[2]/100), 2, '.', '') ?></li>
+                            <li><?= $discounts[2] ?>% OFF</li>
+                            <li><?= $total_sales < $DISCOUNTS[3] ? $DISCOUNTS[2] - ($total_sales - $counts[2]).' spots left' : 'sold out' ?></li>
                         </ul>
                     </li>
                     <li class="sponsors">
