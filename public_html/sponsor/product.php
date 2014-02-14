@@ -157,7 +157,7 @@
                 <ul class="sponsorDeets">
                     <li><p><?= round($total_sales/$DISCOUNTS[0]*100) ?>%</p><p>to goal</p></li>
                     <li><p><?= getDaysLeft($_data->product->commission_from_date) ?></p><p>days left</p></li>
-                    <li><p><?= $DISCOUNTS[0] - $total_sales ?></p><p>sponsors spots left</p></li>
+                    <li><p><?= $counts[getMode($total_sales)] - ($total_sales - $counts[getMode($total_sales)-1]) ?></p><p>Spots left at <?= $discounts[getMode($total_sales)] ?>% off</p></li>
                     <li class="statusus">
                         <ul class="status <?= getMode($total_sales) != 0 ? 'closed' : 'current' ?>">
                             <li>$<?= number_format((float)$_data->product->price*($discounts[0]/100), 2, '.', '') ?></li>
