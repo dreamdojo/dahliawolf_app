@@ -165,12 +165,12 @@
                             <li><?= $total_sales < $DISCOUNTS[1] ? $DISCOUNTS[1] - $total_sales.' spots left' : 'sold out' ?></li>
                         </ul>
                         <ul class="status <?= getMode($total_sales) != 1 ? 'closed' : 'current' ?> ">
-                            <li>$<?= number_format((float)$_data->product->price*($discounts[1]/100), 2, '.', '') ?></li>
+                            <li>$<?= number_format((float)$_data->product->price*(1-($discounts[1]/100)), 2, '.', '') ?></li>
                             <li><?= $discounts[1] ?>% OFF</li>
                             <li><?= $total_sales < $DISCOUNTS[2] ? $DISCOUNTS[1] - ($total_sales - $counts[1]).' spots left' : 'sold out' ?></li>
                         </ul>
                         <ul class="status <?= getMode($total_sales) != 2 ? 'closed' : 'current' ?>">
-                            <li>$<?= number_format((float)$_data->product->price*($discounts[2]/100), 2, '.', '') ?></li>
+                            <li>$<?= number_format((float)$_data->product->price*(1-($discounts[2]/100)), 2, '.', '') ?></li>
                             <li><?= $discounts[2] ?>% OFF</li>
                             <li><?= $total_sales < $DISCOUNTS[3] ? $DISCOUNTS[2] - ($total_sales - $counts[2]).' spots left' : 'sold out' ?></li>
                         </ul>
