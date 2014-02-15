@@ -115,7 +115,7 @@ $total_prod_imgs = 4;
                     <div id="theImages">
                         <? foreach ($_data->files as $i => $file): ?>
                             <? if($i < $total_prod_imgs): ?>
-                                <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
+                                <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 850; ?>
                                 <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                                     <img class="small" id="image-<?= $i ?>" src="<?= $image_url ?>" />
                                 </li>
@@ -148,7 +148,7 @@ $total_prod_imgs = 4;
                     </ul>
                     <ul class="prodShipping">
                         <li><h3>Shipping</h3></li>
-                        <li>14 Days after purchase</li>
+                        <li>Free domestic shipping (USA & Canada). Ships within 24 hours.</li>
                     </ul>
                 </div>
                 <form id="addItemToCartForm" action="/action/shop/add_item_to_cart.php" method="post">
@@ -189,7 +189,7 @@ $total_prod_imgs = 4;
             <h1><?= $_data->product->product_name ?></h1>
             <? foreach ($_data->files as $i => $file): ?>
                 <? if($i > 3): ?>
-                    <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
+                    <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 850; ?>
                     <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                         <img id="image-<?= $i ?>" src="<?= $image_url ?>" />
                     </li>

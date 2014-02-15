@@ -72,7 +72,7 @@
             <a target="blank" href="https://twitter.com/DahliaWolf"><li class="spriteBG twittersprite" ></li></a>
             <a target="blank" href="http://instagram.com/dahlia_wolf"><li class="spriteBG instagramsprite" ></li></a>
             <li><a href="/wolf-pack">PACK LEADERS</a></li>
-            <li><a href="/contests">CONTESTS</a></li>
+            <!--<li><a href="/contests">CONTESTS</a></li>-->
             <li><a href="/goodies">GOODIES</a></li>
             <li><a href="/press">PRESS</a></li>
             <li><a href="/faqs">FAQS</a></li>
@@ -80,10 +80,10 @@
             <li><a href="/tos">LEGAL</a></li>
             <!--<li><a href="/collabs">COLLABS</a></li>-->
             <li><a href="http://blog.dahliawolf.com/">BLOG</a></li>
-            <li><a href="/careers">CAREERS</a></li>
+            <!--<li><a href="/careers">CAREERS</a></li>-->
             <li><a href="/contact">CONTACT</a></li>
-            <li><a href="/about">ABOUT</a></li>
-            <li id="tourButton">HELP</li>
+            <!--<li><a href="/about">ABOUT</a></li>-->
+            <!--<li id="tourButton">HELP</li>-->
         </ul>
     </div>
     <div id="headerBody">

@@ -17,7 +17,7 @@
     <h1>Current Openings</h1>
     <section>
         <h2>SENIOR WEB DEVEOLOPER</h2>
-        <p>DreamDojo is currently seeking a Senior Web Software Engineer to join our team and help lead our online development. A passion for clean fast technology and an aspiration to take on a significant leadership role, guiding the technical vision for the company is important.</p>
+        <p>Dahlia Wolf is currently seeking a Senior Web Software Engineer to join our team and help lead our online development. A passion for clean fast technology and an aspiration to take on a significant leadership role, guiding the technical vision for the company is important.</p>
         <p>The right candidate will have an entrepreneurial spirit, the drive to break new ground, the vision to define new products in an emerging market, and the technical ability to be hands-on in the coding process. If you have the organizational skills to manage and grow an engineering team, that’s is a huge plus.</p>
         <p>Develop and execute on a technical vision for the company.<br>
             Work closely with product management and the business development teams on distilling functional requirements into technical designs that result in highly scalable and high-end quality products.<br>
@@ -28,14 +28,14 @@
             Java-script<br>
             HTML and CSS<br>
             Magneto<br>
-            To apply please send your resume along with a short description on why you would be the perfect fit for the position to <a href="mailto:resume@thedreamdojo.com">resume@thedreamdojo.com</a>.
+            To apply please send your resume along with a short description on why you would be the perfect fit for the position to <a href="mailto:resume@dahliawolf.com">resume@dahliawolf.com</a>.
         </p>
     </section>
 
     <section>
         <h2>IOS APP DEVELOPER</h2>
-        <p>DreamDojo is currently seeking an experienced iOS developer to help us build and launch our Apps.</p>
-        <p>Are you an iOS developer with a solid grasp of client/server communications that thrives in a dynamic, startup-like environment? Do you have a passion for coming up with simple solutions to difficult problems? Do you pride yourself in writing elegant, readable and well-documented code while using your keen eye to identify/solve security issues? If this describes you, then DreamDojo may be a good next step in your exciting career.</p>
+        <p>Dahlia Wolf is currently seeking an experienced iOS developer to help us build and launch our Apps.</p>
+        <p>Are you an iOS developer with a solid grasp of client/server communications that thrives in a dynamic, startup-like environment? Do you have a passion for coming up with simple solutions to difficult problems? Do you pride yourself in writing elegant, readable and well-documented code while using your keen eye to identify/solve security issues? If this describes you, then Dahlia Wolf may be a good next step in your exciting career.</p>
         <p>2+ years of iOS experience with one or more apps that deal with server communication and/or security.
             <p>
             5+ years of general software development experience in architecting security and client/server connectivity components of large-scale production applications.<br>
@@ -49,30 +49,22 @@
             On server experience with Java and/or Ruby.<br>
             Familiarity with iterative software development approaches (i.e. Agile).<br>
             Experience with CoreAnimation and CoreGraphics APIs.<br>
-            To apply please send your resume along with a short description on why you would be the perfect fit for the postion to <a href="mailto:resume@thedreamdojo.com">resume@thedreamdojo.com</a>.</p>
+            To apply please send your resume along with a short description on why you would be the perfect fit for the postion to <a href="mailto:resume@dahliawolf.com">resume@dahliawolf.com</a>.</p>
     </section>
     <section>
-        <h2>FRONT END DEVELOPER</h2>
-        <p>To apply please send your resume along with a short description on why you would be the perfect fit for the postion to <a href="mailto:resume@thedreamdojo.com">resume@thedreamdojo.com</a>.</p>
-    </section>
-    <section>
-        <h2>FASHION CONTENT WRITER</h2>
-        <p>To apply please send your resume along with a short description on why you would be the perfect fit for the postion to <a href="mailto:resume@thedreamdojo.com">resume@thedreamdojo.com</a>.</p>
-    </section>
-    <section>
-        <h2>FASHION PR INTERN</h2>
-        <p>To apply please send your resume along with a short description on why you would be the perfect fit for the postion to <a href="mailto:resume@thedreamdojo.com">resume@thedreamdojo.com</a>.</p>
+        <h2>Junior Developer (Entry Level)</h2>
+        <p>To apply please send your resume along with a short description on why you would be the perfect fit for the postion to <a href="mailto:resume@dahliawolf.com">resume@dahliawolf.com</a>.</p>
     </section>
     <section style="border-bottom: none;">
-        <h2>ONLINE FASHION PRODUCT MERCHANDISER</h2>
-        <p>DreamDojo is currently seeking an experienced Online product merchandiser to help manage and improve the Online content management of Sugarlips and Dahlia Wolf.</p>
+        <h2>ONLINE MARKETING MANAGER</h2>
+        <p>Dahlia Wolf is currently seeking an experienced Online marketing manager to help manage and improve the Online content management of Dahlia Wolf.</p>
         <p>Manage the product inventory status of our Online brands.<br>
             Develop and manage a merchandising calendar.<br>
             Monitor the product selection, pricing on and positioning of our products as well as competitors products to better improver our competitive advantage.<br>
             Minimum 3 years experience in commerce content management.<br>
             Strong written and verbal communications skills.<br>
             Strong understanding of the online fashion market.<br>
-            To apply please send your resume along with a short description on why you would be the perfect fit for the potion to <a href="mailto:resume@thedreamdojo.com">resume@thedreamdojo.com</a>.</p>
+            To apply please send your resume along with a short description on why you would be the perfect fit for the potion to <a href="mailto:resume@dahliawolf.com">resume@dahliawolf.com</a>.</p>
     </section>
 </div>
 

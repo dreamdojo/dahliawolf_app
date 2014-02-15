@@ -11,13 +11,13 @@
 <div id="sort-bar">
     <div class="filter-wrap">
         Sort Products By:
-        <span id="sortFilters">
+        <!--<span id="sortFilters">
             <?php foreach($result->data->get_categories as $category): ?>
                 <span class="">
-                    <a class="sort-option" data-sort="<?= $category->category_id ?>" href="/"><?= $category->name ?></a>
+                   <a class="sort-option" data-sort="<?= $category->category_id ?>" href="/"><?= $category->name ?></a>
                 </span> /
             <? endforeach ?>
-        </span>
+        </span>-->
 
         <span id="viewFilters" style="float: right;width: 165px;margin-right: -3px;">View:
             <!--<span class=""><a data-view="all" class="view-option view-select" href="/vote">All</a></span> /-->

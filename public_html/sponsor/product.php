@@ -133,7 +133,7 @@
                     <div id="theImages">
                         <? foreach ($_data->files as $i => $file): ?>
                             <? if($i < $total_prod_imgs): ?>
-                                <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
+                                <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 850; ?>
                                 <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                                     <img class="small" id="image-<?= $i ?>" src="<?= $image_url ?>" />
                                 </li>
@@ -235,7 +235,7 @@
             <h1><?= $_data->product->product_name ?></h1>
             <? foreach ($_data->files as $i => $file): ?>
                 <? if($i > 3): ?>
-                    <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id . '&width=' . 500; ?>
+                    <? $image_url = CDN_IMAGE_SCRIPT . $file->product_file_id  .'&width=' . 850; ?>
                     <li <?= $i == 0 ? 'class="showing"' : '' ?> >
                         <img id="image-<?= $i ?>" src="<?= $image_url ?>" />
                     </li>

@@ -11,7 +11,7 @@
         $data = api_call('user', 'get_user', $user_params, true);
         $user = $data['data'];
     }
-    include $_SERVER['DOCUMENT_ROOT'] . "/blocks/shopFilter.php";
+    /*include $_SERVER['DOCUMENT_ROOT'] . "/blocks/shopFilter.php";*/
 ?>
 
 <style>
