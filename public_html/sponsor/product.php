@@ -127,7 +127,7 @@
             <div class="left">
                 <ul class="prodDeets">
                     <li><p><?= $_data->product->product_name ?></p><p style="text-decoration: line-through;">$<?= number_format((float)$_data->product->price, 2, '.', '') ?></p></li>
-                    <li><p>Iinspiration by <a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></p><p style="text-decoration: line-through;">Regular Price</p></li>
+                    <li><p>Iinspiration by <a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></p><p ">Regular Price</p></li>
                 </ul>
                 <ul class="productImagesFrame" id="prodImgFrame">
                     <div id="theImages">
