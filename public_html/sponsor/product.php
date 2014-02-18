@@ -92,7 +92,7 @@
     .sponsorItemWrap .right .sponsorDeets .statusus ul{width: 33%;height: 46px;margin-top: 5%;float: left;border-right: #cccccc thin solid;text-align: center; font-size: 17px;}
     .sponsorItemWrap .right .sponsorDeets .statusus ul:last-child{border: none;}
     .sponsorItemWrap .right .sponsorDeets .statusus .current{color: #74bf00;}
-    .sponsorItemWrap .right .sponsorDeets .statusus .closed{color: #b7b7b7; text-decoration: line-through;}
+    .sponsorItemWrap .right .sponsorDeets .statusus .closed{color: #e6e6e6; /*text-decoration: line-through;*/}
     .sponsorItemWrap .right .sponsorDeets .statusus .closed li:last-child{display: none;}
     .sponsorItemWrap .right .sponsorDeets .status li:first-child{margin-top: -6px;}
     .sponsorItemWrap .right .sponsorDeets .status li:last-child{font-size: 11px;}
@@ -158,7 +158,7 @@
                 <ul class="sponsorDeets">
                     <li><p><?= round(($total_sales/30)*100) ?>%</p><p>to goal</p></li>
                     <li><p><?= getDaysLeft($_data->product->commission_from_date) ?></p><p>days left</p></li>
-                    <li><p><?= $counts[getMode($total_sales)] - ($total_sales - $counts[getMode($total_sales)-1]) ?></p><p>Spots left at <?= $discounts[getMode($total_sales)] ?>% off</p></li>
+                    <li><p><?= $counts[getMode($total_sales)] - ($total_sales - $counts[getMode($total_sales)-1]) ?></p><p>Sponsor spots left at <?= $discounts[getMode($total_sales)] ?>% off</p></li>
                     <li class="statusus">
                         <ul class="status <?= getMode($total_sales) != 0 ? 'closed' : 'current' ?>">
                             <li>$<?= number_format((float)$_data->product->price*($discounts[0]/100), 2, '.', '') ?></li>
@@ -181,7 +181,7 @@
                     </li>
                     <li class="shipping">
                         <h3>Shipping</h3>
-                        <p>If this product gets fully funded, it'll ship in mid May.</br>We also off FREE UPS domestic shipping.</p>
+                        <p>This item will ship 2 weeks after it has been fully sponsored.</br>Free domestic shipping (USA & Canada)</p>
                     </li>
                 </ul>
                 <form id="addItemToCartForm" action="/action/shop/add_item_to_cart.php" method="post">

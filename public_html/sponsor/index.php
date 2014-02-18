@@ -62,7 +62,7 @@
     .sponsorItem .sponsorDetails .statuses .status{width: 33%;float: left; border-right: #b2b2b2 thin solid;}
     .sponsorItem .sponsorDetails .statuses ul:last-child{border-right: none;}
     .sponsorItem .sponsorDetails .status li:first-child{font-size: 18px;margin-top: 20px;}
-    .sponsorItem .closed{color: #b7b7b7; text-decoration: line-through;}
+    .sponsorItem .closed{color: #e6e6e6; /*text-decoration: line-through;*/}
     .sponsorItem .current{color: #74bf00;}
 
     .sponsorItem .imgFrame{width: 50%;
