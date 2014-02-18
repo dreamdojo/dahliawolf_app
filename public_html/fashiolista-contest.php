@@ -47,8 +47,8 @@ include "header.php";
     <a href="/camillaglamgerous" style="font-size: 16px;"><span>Camilla Sentuti</span>
         <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@camillaglamgerous</h3>
         <h3 style="line-height: 20px;margin-top:0px;margin-bottom:30px; color: #B6B6B6;">glamgerous.com</h3></a>
-    <a href="/jessicaricks" style="font-size: 16px;"><span>Jessica Ricks</span>
-        <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@jessicaricks</h3>
+    <a href="jessberry" style="font-size: 16px;"><span>Jessica Ricks</span>
+        <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@jessberry</h3>
         <h3 style="line-height: 20px;margin-top:0px;margin-bottom:30px; color: #B6B6B6;">hapatime.com</h3></a>
 
 
