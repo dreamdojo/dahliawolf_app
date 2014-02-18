@@ -35,7 +35,7 @@
     $percentage = round(($total_sales/20)*100);
     $sales_needed = 20 - $total_sales;
     $total_prod_imgs = 4;
-    $counts = Array(10, 25, 65);
+    $counts = Array(10, 10, 10);
     $discounts = Array(50, 30, 20);
 
 
@@ -93,6 +93,7 @@
     .sponsorItemWrap .right .sponsorDeets .statusus ul:last-child{border: none;}
     .sponsorItemWrap .right .sponsorDeets .statusus .current{color: #74bf00;}
     .sponsorItemWrap .right .sponsorDeets .statusus .closed{color: #b7b7b7; text-decoration: line-through;}
+    .sponsorItemWrap .right .sponsorDeets .statusus .closed li:last-child{display: none;}
     .sponsorItemWrap .right .sponsorDeets .status li:first-child{margin-top: -6px;}
     .sponsorItemWrap .right .sponsorDeets .status li:last-child{font-size: 11px;}
     .sponsorItemWrap .right .sponsorDeets .shipping p:last-child{padding-bottom: 15px;}
@@ -155,7 +156,7 @@
                 <div class="shareButton">SHARE</div>
                 <div style="clear: right;"></div>
                 <ul class="sponsorDeets">
-                    <li><p><?= round($total_sales/$DISCOUNTS[0]*100) ?>%</p><p>to goal</p></li>
+                    <li><p><?= round(($total_sales/30)*100) ?>%</p><p>to goal</p></li>
                     <li><p><?= getDaysLeft($_data->product->commission_from_date) ?></p><p>days left</p></li>
                     <li><p><?= $counts[getMode($total_sales)] - ($total_sales - $counts[getMode($total_sales)-1]) ?></p><p>Spots left at <?= $discounts[getMode($total_sales)] ?>% off</p></li>
                     <li class="statusus">
