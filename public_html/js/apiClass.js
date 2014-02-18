@@ -223,7 +223,7 @@ User.prototype.$sponsor = function(d) {
     }
 
     var getSalePrice = function() {
-        return Math.floor(d.sale_price).toFixed(2);
+        return Number(d.sale_price).toFixed(2);
     }
 
     var getMode = function() {
