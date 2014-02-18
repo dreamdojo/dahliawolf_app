@@ -23,8 +23,9 @@ include "header.php";
     <img style="margin-bottom: 30px;" width="850px" src="/images/fashiolista-contest.jpg">
     <h2 style="margin:0px;">Fashiolista Bloggers Battle</h2>
     <h3 style="margin-bottom: 50px;">1) Vote on your favorite bloggers look to decide who will win a Dahlia Wolf collection. <br>2) Post your own inspiration to win a 5 piece collection of your own!<br>2) Email <a href="mailto:contests@dahliawolf.com"/>contests@dahliawolf.com</a> with your full name and Dahlia Wolf username</h3>
-
+    <a href="http://www.fashiolista.com/iframe_contest/dahlia-wolf-contest/"><h3>Visit the Fashiolista x Dahlia Wolf contest page.</h3></a>
     <h2 style="margin-bottom:20px">BLOGGER LIST...</h2>
+
     <a href="/danithorne" style="line-height: 20px; margin-bottom: 10px; font-size: 16px;"><span>Dani Thorne</span>
     <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@danithorne</h3>
     <h3 style="line-height: 20px;margin-top:0px;margin-bottom:30px; color: #B6B6B6;">danithornesworld.com</h3></a>
@@ -46,8 +47,8 @@ include "header.php";
     <a href="/camillaglamgerous" style="font-size: 16px;"><span>Camilla Sentuti</span>
         <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@camillaglamgerous</h3>
         <h3 style="line-height: 20px;margin-top:0px;margin-bottom:30px; color: #B6B6B6;">glamgerous.com</h3></a>
-    <a href="/hapatime" style="font-size: 16px;"><span>Jessica</span>
-        <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@hapatime</h3>
+    <a href="/hapatime" style="font-size: 16px;"><span>Jessica Ricks</span>
+        <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@Jessica Ricks</h3>
         <h3 style="line-height: 20px;margin-top:0px;margin-bottom:30px; color: #B6B6B6;">hapatime.com</h3></a>
 
 

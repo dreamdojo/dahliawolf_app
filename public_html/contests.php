@@ -28,7 +28,7 @@ include "header.php";
     <h3 style="color: #B6B6B6;">STARTS FEB.25TH 2014</h3>
     <img style="margin-bottom: 60px; margin-top: 80px;" width="850px" src="/images/fidm-contest.jpg">
     <h2 style="margin:0px;">FIDM Design Contest</h2>
-    <h3 style="margin-bottom: 50px;">FOR FIDM STUDENTS ONLY. Submit on origional design and the most HYPED style will be created and sold in the shop.<br>
+    <h3 style="margin-bottom: 50px;">FOR FIDM STUDENTS ONLY. Submit on original design and the most HYPED style will be created and sold in the shop.<br>
         The winning student will also earn 1.000,000 HYPE points and earn instant designer status</h3>
     <a href="#" style="background-color:#cecece; margin-top;40px;padding: 20px 40px 20px 40px; color:white; font-weight: bold; font-size: 16px;"><span>COMING SOON</span></a>
     <h3 style="color: #B6B6B6;">STARTS MAR.30TH 2014</h3>
