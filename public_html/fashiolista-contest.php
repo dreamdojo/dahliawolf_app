@@ -22,7 +22,7 @@ include "header.php";
     <div class="goodieGrad"></div>
     <img style="margin-bottom: 30px;" width="850px" src="/images/fashiolista-contest.jpg">
     <h2 style="margin:0px;">Fashiolista Bloggers Battle</h2>
-    <h3 style="margin-bottom: 50px;">1) Vote on your favorite bloggers look to decide who will win a Dahlia Wolf collection. <br>2) Post your own inspiration to win a 5 piece collection of your own!<br>2) Email <a href="mailto:contests@dahliawolf.com"/>contests@dahliawolf.com</a> with your full name and Dahlia Wolf username</h3>
+    <h3 style="margin-bottom: 50px;">1) Visit Fashiolista.com and vote on your favorite bloggers look to decide who will win a Dahlia Wolf collection. <br>2) Post your own inspiration on Dahlia Wolf to win a 5 piece collection of your own!<br>2) Email <a href="mailto:contests@dahliawolf.com"/>contests@dahliawolf.com</a> with your full name and Dahlia Wolf username</h3>
     <a href="http://www.fashiolista.com/iframe_contest/dahlia-wolf-contest/"><h3>Visit the Fashiolista x Dahlia Wolf contest page.<br>CONTEST STARTS FEB. 25TH 2014</h3></a>
     <h2 style="margin-bottom:20px">BLOGGER LIST...</h2>
 
