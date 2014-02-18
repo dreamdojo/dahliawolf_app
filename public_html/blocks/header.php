@@ -72,7 +72,7 @@
             <a target="blank" href="https://twitter.com/DahliaWolf"><li class="spriteBG twittersprite" ></li></a>
             <a target="blank" href="http://instagram.com/dahlia_wolf"><li class="spriteBG instagramsprite" ></li></a>
             <li><a href="/wolf-pack">PACK LEADERS</a></li>
-            <!--<li><a href="/contests">CONTESTS</a></li>-->
+            <li><a href="/contests">CONTESTS</a></li>
             <li><a href="/goodies">GOODIES</a></li>
             <li><a href="/press">PRESS</a></li>
             <li><a href="/faqs">FAQS</a></li>

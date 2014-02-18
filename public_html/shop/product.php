@@ -111,6 +111,10 @@ $total_prod_imgs = 4;
     <section>
         <div class="mainCol" style="padding-top: 70px;">
             <div class="left">
+                <ul class="prodDeets">
+                    <li><p><?= $_data->product->product_name ?></p><p></p></li>
+                    <li><p>Iinspiration by <a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></p><p style=""></p></li>
+                </ul>
                 <ul class="productImagesFrame" id="prodImgFrame">
                     <div id="theImages">
                         <? foreach ($_data->files as $i => $file): ?>
@@ -158,7 +162,7 @@ $total_prod_imgs = 4;
 
                     <ul class="sponsorDeets size-o-matic">
                         <ul class="sizes">
-                            <li style="z-index: 10;">SIZE</li>
+                            <li style="z-index: 10;">CHOOSE SIZE</li>
                             <? foreach($_data->combinations as $i => $combination): ?>
                                 <li>
                                     <input style="display: none;" type="radio" name="id_product_attribute" id="id_product_attribute-<?= $i ?>" value="<?= $combination->id_product_attribute ?>"<?= ($combination->default_on == 1) ? ' checked="checked"' : '' ?>>
@@ -179,13 +183,12 @@ $total_prod_imgs = 4;
     <section class="userInfo">
         <ul>
             <li><span>Inspired by</span> <a href="/<?= $_data->product->username ?>"><?= $_data->product->username ?></a></li>
-            <li><?= $_data->product->location ?></li>
             <li class="avatar avatarShadow" style="background-image: url('<?= $_data->product->posts[0]->avatar ?>');"></li>
             <li class="desc"><?= $_data->product->story_behind_design ?></li>
         </ul>
     </section>
-    <section>
-        <div class="mainCol" style="text-align: center;">
+    <section style="background-color:white !important; border-top:10px solid #ebebeb; ">
+        <div class="mainCol" style="background-color:white !important; text-align: center;">
             <h1><?= $_data->product->product_name ?></h1>
             <? foreach ($_data->files as $i => $file): ?>
                 <? if($i > 3): ?>
