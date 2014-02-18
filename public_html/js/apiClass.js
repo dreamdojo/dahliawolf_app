@@ -214,7 +214,7 @@ User.prototype.$product.prototype = {
 
 User.prototype.$sponsor = function(d) {
     var data = d;
-    var counts = [10, 25, 65];
+    var counts = [10, 10, 10];
     var discounts = [50, 30, 20];
     holla.log(d);
 
@@ -248,7 +248,7 @@ User.prototype.$sponsor = function(d) {
 
     var $itemImage = $('<div class="imgFrame"><a href="/sponsor/'+data.id_product+'"><img src="http://content.dahliawolf.com/shop/product/image.php?file_id='+data.product_images[0].product_file_id+'&width=500"></a></div>').appendTo($sponsorItem);
     var $sponsorDeets = $('<div class="sponsorDetails"></div>');
-    var $toGoal = $('<ul><li>'+(Math.floor((Number(data.total_sales)/100)*100))+'%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
+    var $toGoal = $('<ul><li>'+(Math.floor((Number(data.total_sales)/30)*100))+'%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
     var $left = $('<ul><li>'+DAYS_LEFT+'</li><li>'+(DAYS_LEFT  == 1 ? 'day' : 'days')+' left</li></ul>').appendTo($sponsorDeets);
     //var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
     var $goal = $('<ul><li>'+(counts[getMode()] - (d.total_sales - (getMode() > 0 ? counts[(getMode() - 1)] : 0)))+'</li><li>sponsors spots left at '+discounts[getMode()]+'% off</li></ul>').appendTo($sponsorDeets);
