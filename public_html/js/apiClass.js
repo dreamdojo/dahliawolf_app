@@ -214,7 +214,7 @@ User.prototype.$product.prototype = {
 
 User.prototype.$sponsor = function(d) {
     var data = d;
-    var counts = [10, 10, 10];
+    var counts = [10, 20, 30];
     var discounts = [50, 30, 20];
     holla.log(d);
 
@@ -251,7 +251,10 @@ User.prototype.$sponsor = function(d) {
     var $toGoal = $('<ul><li>'+(Math.floor((Number(data.total_sales)/30)*100))+'%</li><li>to goal</li></ul>').appendTo($sponsorDeets);
     var $left = $('<ul><li>'+DAYS_LEFT+'</li><li>'+(DAYS_LEFT  == 1 ? 'day' : 'days')+' left</li></ul>').appendTo($sponsorDeets);
     //var $spots = $('<ul><li>9</li><li>sponsors spot left at 50% off</li></ul>').appendTo($sponsorDeets);
-    var $goal = $('<ul><li>'+(counts[getMode()] - (d.total_sales - (getMode() > 0 ? counts[(getMode() - 1)] : 0)))+'</li><li>sponsors spots left at '+discounts[getMode()]+'% off</li></ul>').appendTo($sponsorDeets);
+    console.log((counts[getMode()] - (d.total_sales - (getMode() > 0 ? counts[(getMode() - 1)] : 0))));
+    console.log((counts[(getMode() - 1)] > 0 ? (counts[(getMode() - 1)]) : 0));
+    console.log();
+    var $goal = $('<ul><li>'+((counts[getMode()] - (d.total_sales - (getMode() > 0 ? counts[(getMode() - 1)] : 0))) - (counts[(getMode() - 1)] > 0 ? (counts[(getMode() - 1)]) : 0))+'</li><li>sponsors spots left at '+discounts[getMode()]+'% off</li></ul>').appendTo($sponsorDeets);
     var $status = $('<div class="statuses">' +
         '<ul class="status '+(getMode() == 0 ? 'current' : 'closed')+'"><li>'+discounts[0]+'% OFF</li><li class="sLeft">'+(counts[0] - Number(d.total_sales))+' Spots left</li></ul>' +
         '<ul class="status '+(getMode() == 1 ? 'current' : 'closed')+'"><li>'+discounts[1]+'% OFF</li><li class="sLeft">'+(counts[1] - (Number(d.total_sales) - counts[0]))+' Spots left</li></ul>' +

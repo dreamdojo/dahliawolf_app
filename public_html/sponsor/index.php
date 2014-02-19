@@ -77,6 +77,7 @@
     .sponsorItem .rtLine{position: absolute; height: 80%; border-right: #c2c2c2 thin solid; margin-top: -12%; right: 0px;}
     #viewFilters{display: none;}
     .sponsorItem .closed .sLeft{display: none;}
+    .sponsorItem .closed li:first-child{text-decoration: line-through;}
 </style>
 
 <? if( !empty($user['username']) ): ?>
