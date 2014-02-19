@@ -78,17 +78,17 @@
     .sponsorItemWrap .prodDeets li:last-child p:last-child{float: right;}
     .sponsorItemWrap .productImagesFrame li{position: relative;}
 
-    .sponsorItemWrap .right{width: 40%; float: left; margin-left: 3%;}
+    .sponsorItemWrap .right{width: 40%; float: left; margin-left: 8%;}
     .sponsorItemWrap .right .shareButton{text-align: right; border: #c2c2c2 thin solid; float: right;padding: 5px 12px;border-radius: 7px;}
-    .sponsorItemWrap .right .sponsorDeets{background-color: #fff; margin-top: 16px;}
-    .sponsorItemWrap .right .sponsorDeets .shipping{text-align: center; color: #b7b7b7;}
-    .sponsorItemWrap .right .sponsorDeets .sponsors{text-align: center; color: #b7b7b7;}
-    .sponsorItemWrap .right .sponsorDeets .shipping p{font-size: 12px !important;}
+    .sponsorItemWrap .right .sponsorDeets{background-color: #fff; margin-top: 47px;}
+    .sponsorItemWrap .right .sponsorDeets .shipping{text-align: center; color: #7d7d7d;}
+    .sponsorItemWrap .right .sponsorDeets .sponsors{text-align: center; color: #7d7d7d;}
+    .sponsorItemWrap .right .sponsorDeets .shipping p{font-size: 11px !important;}
     .sponsorItemWrap .right .sponsorDeets h3{padding:10px 0px; text-align: center;}
-    .sponsorItemWrap .right .sponsorDeets > li{min-height: 80px; width: 90%; margin-left: 5%; border-bottom: #ebebeb 1px solid;}
+    .sponsorItemWrap .right .sponsorDeets > li{min-height: 80px; width: 90%; margin-left: 5%; border-bottom: #D6D6D6 1px solid;}
     .sponsorItemWrap .right .sponsorDeets > li:last-child{border-bottom: none;}
     .sponsorItemWrap .right .sponsorDeets > li p:first-child{font-size: 28px;padding-top: 18px;}
-    .sponsorItemWrap .right .sponsorDeets > li p:last-child{font-size: 14px; color: #b7b7b7;}
+    .sponsorItemWrap .right .sponsorDeets > li p:last-child{font-size: 14px; color: #A3A3A3;}
     .sponsorItemWrap .right .sponsorDeets .statusus ul{width: 33%;height: 46px;margin-top: 5%;float: left;border-right: #cccccc thin solid;text-align: center; font-size: 17px;}
     .sponsorItemWrap .right .sponsorDeets .statusus ul:last-child{border: none;}
     .sponsorItemWrap .right .sponsorDeets .statusus .current{color: #74bf00;}
@@ -112,7 +112,7 @@
 
     .sponsorItemWrap .productDetails{}
     .sponsorItemWrap .mainCol h1{padding-top: 35px; margin-bottom: 35px; text-align: center; font-size: 21px;}
-    .sponsorItemWrap .productDetails .left{width: 40%; float: left;}
+    .sponsorItemWrap .productDetails .left{width: 90%; float: left;}
     .sponsorItemWrap .productDetails .right{width: 56%; float: left;}
     .sponsorItemWrap .productDetails img{width: 100%;}
     .sponsorItemWrap .productDetails .mainCol .right p{line-height: 35px;margin-bottom: 25px; color: #9e9e9e;}
@@ -124,7 +124,7 @@
 
 <div class="sponsorItemWrap">
     <section>
-        <div class="mainCol" style="padding-top: 70px;">
+        <div class="mainCol" style="padding-top: 40px;">
             <div class="left">
                 <ul class="prodDeets">
                     <li><p><?= $_data->product->product_name ?></p><p style="text-decoration: line-through;">$<?= number_format((float)$_data->product->price, 2, '.', '') ?></p></li>
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <div class="right">
-                <div class="shareButton">SHARE</div>
+                <!--<div class="shareButton">SHARE</div>-->
                 <div style="clear: right;"></div>
                 <ul class="sponsorDeets">
                     <li><p><?= round(($total_sales/30)*100) ?>%</p><p>to goal</p></li>
@@ -176,8 +176,12 @@
                             <li><?= $total_sales < $DISCOUNTS[3] ? $DISCOUNTS[2] - ($total_sales - $counts[2]).' spots left' : 'sold out' ?></li>
                         </ul>
                     </li>
-                    <li class="sponsors">
+                    <!--<li class="sponsors">
                         <h3>Sponsors</h3>
+                    </li>-->
+                    <li class="shipping">
+                        <h3>Payments</h3>
+                        <p>Order this product before its sponsor deadline and you'll get a discount for early support. <br><br>You will be charged at the time of purchase. If the item doesn't get enough sponsors you will be refunded the full amount.</p>
                     </li>
                     <li class="shipping">
                         <h3>Shipping</h3>
@@ -221,9 +225,9 @@
     <section class="productDetails">
         <div class="mainCol">
             <h1>Product Details</h1>
-            <div class="left">
+            <!--<div class="left">
                 <img src="<?= $_data->product->inspiration_image_url ?>">
-            </div>
+            </div>-->
             <div class="right">
                 <p><?= $_data->product->design_description ?></p>
                 <img src="/images/teal_chart.png">

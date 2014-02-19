@@ -17,7 +17,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}
 iframe{height:0px;}
 
-body { font-family: lato, helvetica, sans-serif, ariel; font-size:10px;color:#666; margin-top: 120px;}
+body { font-family: lato, helvetica, sans-serif, ariel; font-size:10px;color:#666; margin-top: 98px;}
 table{font-size:inherit;}
 pre,code,kbd,samp,tt{font-family:monospace;line-height:100%;}
 em{font-style:italic;}
@@ -72,7 +72,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     font-weight: 500;
     letter-spacing: 0.2px;
     text-align: left;}
-#sort-bar{ width:100%;border-bottom: #9B9B9B thin dotted; margin: 0px auto;padding: 3px 0px;font-size: 12px; padding-bottom: 5px;line-height: 25px; }
+#sort-bar{ width:100%;border-bottom: #9B9B9B thin dotted; margin: 0px auto;padding: 26px 0px;font-size: 12px; padding-bottom: 5px;line-height: 25px; }
 .bold{ font-weight:bold !important; }
 .sort-option{ font-weight:normal;color: #636363;  }
 .filter-select{color: #90CE46 !important;}

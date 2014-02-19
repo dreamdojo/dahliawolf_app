@@ -60,7 +60,7 @@ $total_prod_imgs = 4;
     .shopItemWrap .prodDeets li:last-child p:last-child{float: right;}
     .shopItemWrap .productImagesFrame li{position: relative;}
 
-    .shopItemWrap .right{width: 40%; float: left; margin-left: 3%;position: relative;background-color: #fff;padding: 15px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;}
+    .shopItemWrap .right{width: 40%; float: left; margin-left: 3%;position: relative;background-color: #fff;padding: 15px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;margin-top: 48px;}
     .shopItemWrap .right .shareButton{text-align: right; border: #c2c2c2 thin solid; float: right;padding: 5px 12px;border-radius: 7px;position: absolute;right: 0px;bottom: 102%;}
     .shopItemWrap .right .theDeets{border-bottom: #c2c2c2 thin solid;padding: 15px 0px;}
     .shopItemWrap .right .theDeets .prodName{font-size: 18px;}
@@ -109,7 +109,7 @@ $total_prod_imgs = 4;
 </style>
 <div class="shopItemWrap" <?= isset($_GET['ajax']) ? 'style="padding-top: 93px;"' : '' ?>>
     <section>
-        <div class="mainCol" style="padding-top: 70px;">
+        <div class="mainCol" style="padding-top: 40px;">
             <div class="left">
                 <ul class="prodDeets">
                     <li><p><?= $_data->product->product_name ?></p><p></p></li>
@@ -138,7 +138,7 @@ $total_prod_imgs = 4;
                 </div>
             </div>
             <div class="right">
-                <div class="shareButton">SHARE</div>
+               <!-- <div class="shareButton">SHARE</div>-->
                 <div style="clear: right;"></div>
                 <div id="prodDeets">
                     <ul class="theDeets">
