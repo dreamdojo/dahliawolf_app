@@ -257,8 +257,8 @@ User.prototype.$sponsor = function(d) {
     var $goal = $('<ul><li>'+((counts[getMode()] - (d.total_sales - (getMode() > 0 ? counts[(getMode() - 1)] : 0))) - (counts[(getMode() - 1)] > 0 ? (counts[(getMode() - 1)]) : 0))+'</li><li>sponsors spots left at '+discounts[getMode()]+'% off</li></ul>').appendTo($sponsorDeets);
     var $status = $('<div class="statuses">' +
         '<ul class="status '+(getMode() == 0 ? 'current' : 'closed')+'"><li>'+discounts[0]+'% OFF</li><li class="sLeft">'+(counts[0] - Number(d.total_sales))+' Spots left</li></ul>' +
-        '<ul class="status '+(getMode() == 1 ? 'current' : 'closed')+'"><li>'+discounts[1]+'% OFF</li><li class="sLeft">'+(counts[1] - (Number(d.total_sales) - counts[0]))+' Spots left</li></ul>' +
-        '<ul class="status '+(getMode() == 2 ? 'current' : 'closed')+'"><li>'+discounts[2]+'% OFF</li><li class="sLeft">'+(counts[2] - (Number(d.total_sales) - counts[1]))+' Spots left</li></ul>' +
+        '<ul class="status '+(getMode() == 1 ? 'current' : 'closed')+'"><li>'+discounts[1]+'% OFF</li><li class="sLeft">'+(counts[1] - Number(d.total_sales))+' Spots left</li></ul>' +
+        '<ul class="status '+(getMode() == 2 ? 'current' : 'closed')+'"><li>'+discounts[2]+'% OFF</li><li class="sLeft">'+(counts[2] - Number(d.total_sales))+' Spots left</li></ul>' +
         '</div>').appendTo($sponsorDeets);
     var $butt = $('<a href="/sponsor/'+data.id_product+'"><div class="greenbutton">SPONSOR NOW</div></a>').appendTo($sponsorDeets);
 
