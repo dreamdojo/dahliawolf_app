@@ -59,7 +59,7 @@
     .sponsorItemWrap section{width: 100%; padding-bottom: 70px;}
     .sponsorItemWrap section:nth-child(odd){background-color: #ebebeb;}
     .sponsorItemWrap .mainCol{width: 850px; margin: 0px auto; color: #7d7d7d;}
-    .sponsorItemWrap .left{width: 50%; float: left; position: relative;}
+    .sponsorItemWrap .left{width: 50%; float: left; position: relative;margin-right:30px;}
     .sponsorItemWrap .left .productImagesFrame{width: 100%; position: relative;height: 640px; overflow: hidden;}
     .sponsorItemWrap .left .productImagesFrame img{width: 100%; position: absolute;}
     .sponsorItemWrap .left #imgMarker{position: absolute;width: 100%;top: 94%;z-index: 111;height: 30px; text-align: center;}
@@ -78,7 +78,7 @@
     .sponsorItemWrap .prodDeets li:last-child p:last-child{float: right;}
     .sponsorItemWrap .productImagesFrame li{position: relative;}
 
-    .sponsorItemWrap .right{width: 40%; float: left; margin-left: 8%;}
+    .sponsorItemWrap .right{width: 40%; float: left; /*margin-left: 8%;*/}
     .sponsorItemWrap .right .shareButton{text-align: right; border: #c2c2c2 thin solid; float: right;padding: 5px 12px;border-radius: 7px;}
     .sponsorItemWrap .right .sponsorDeets{background-color: #fff; margin-top: 47px;}
     .sponsorItemWrap .right .sponsorDeets .shipping{text-align: center; color: #7d7d7d;}
@@ -113,9 +113,9 @@
     .sponsorItemWrap .productDetails{}
     .sponsorItemWrap .mainCol h1{padding-top: 35px; margin-bottom: 35px; text-align: center; font-size: 21px;}
     .sponsorItemWrap .productDetails .left{width: 90%; float: left;}
-    .sponsorItemWrap .productDetails .right{width: 56%; float: left;}
+    .sponsorItemWrap .productDetails .right{width: 100%; float: left; text-align:center;}
     .sponsorItemWrap .productDetails img{width: 100%;}
-    .sponsorItemWrap .productDetails .mainCol .right p{line-height: 35px;margin-bottom: 25px; color: #9e9e9e;}
+    .sponsorItemWrap .productDetails .mainCol .right p{line-height: 25px;margin-bottom: 25px; color: #9e9e9e;}
 
     .greenButton{color: #fff;background-color: #74bf00;text-align: center;padding: 20px; font-size:22px; border-radius: 8px;margin-top: 15px;}
     .needed{box-shadow: inset 0 0 1em red;}
@@ -181,7 +181,7 @@
                     </li>-->
                     <li class="shipping">
                         <h3>Payments</h3>
-                        <p>Order this product before its sponsor deadline and you'll get a discount for early support. <br><br>You will be charged at the time of purchase. If the item doesn't get enough sponsors you will be refunded the full amount.</p>
+                        <p>Help fund the development of this design by becoming a sponsor. <br><br>All sponsors are sent the <?= $_data->product->product_name ?> plus a discount for early support. <br><br>You will be charged at the time of purchase. If the design doesn't reach its funding goal you will be issued a full refund.</p>
                     </li>
                     <li class="shipping">
                         <h3>Shipping</h3>
@@ -230,7 +230,7 @@
             </div>-->
             <div class="right">
                 <p><?= $_data->product->design_description ?></p>
-                <img src="/images/teal_chart.png">
+                <img style="width:550px;" src="/images/teal_chart.png">
             </div>
             <div style="clear: left;"></div>
         </div>
