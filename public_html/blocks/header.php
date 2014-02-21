@@ -92,8 +92,8 @@
         <a href="/<?= IS_LOGGED_IN ? 'inspire' : '' ?>"><div id="dahliaLogo"></div></a>
         <ul id="mainMenu">
             <a href="/inspire"><li><span class="<?= $self == '/inspire.php' ? 'pinkMe' : '' ?>">DISCOVER</li></a>
-            <a href="/sponsor"><li><span class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">DESIGNS</li></a>
-            <a href="/shop"><li style="border-right: #6EB2C2 thin solid;"><span  class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</li></a>
+            <a href="/shop"><li><span class="<?= $self == '/shop/index.php' ? 'pinkMe' : '' ?>">SHOP</li></a>
+            <a href="/sponsor"><li style="border-right: #6EB2C2 thin solid;"><span  class="<?= $self == '/sponsor/index.php' ? 'pinkMe' : '' ?>">DESIGNS</li></a>
         </ul>
 
         <div id="rightHandMenu" class="<?= IS_LOGGED_IN ? 'logged-in' : 'not-logged-in' ?>">
