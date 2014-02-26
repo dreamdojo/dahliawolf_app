@@ -57,7 +57,7 @@ $(function() {
         $('#searchBar input').unbind('keydown').bind('keydown', function(e){
             if(e.keyCode == 13) {
                 var s_key = $(this).val();
-                document.location = '/vote?q='+s_key;
+                document.location = '/inspire?q='+s_key;
                 $('#searchBar').slideUp(200, function() {
                     if(!$(this).is(':visible')) {
                         $('#searchBar input').blur();
