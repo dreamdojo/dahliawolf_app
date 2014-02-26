@@ -24,9 +24,9 @@ include "header.php";
     <h2 style="margin:0px;">Fashiolista Bloggers Battle</h2>
     <a href="http://www.fashiolista.com/iframe_contest/dahlia-wolf-contest/"><h3>Visit the Fashiolista x Dahlia Wolf contest page.<br>CONTEST STARTS FEB. 25TH 2014</h3></a>
     <h3 style="margin-top: 50px;"><b>Contest Details</b></h3>
-    <h3 style="margin-bottom: 50px;">1) Decide which blogger will win a Dahlia Wolf collection - Visit Fashiolista.com and vote for your favorite bloggers look.  <br>2) To win a 5 piece collection of your own! - Post 5 inspiration images on Dahlia Wolf using hashtag <a href="http://www.dahliawolf.com/vote?q=fashiolista"/>#fashiolista</a> <br>2) Email <a href="mailto:contests@dahliawolf.com"/>contests@dahliawolf.com</a> with your full name and Dahlia Wolf username</h3>
+    <h3 style="margin-bottom: 50px;">1) Visit Fashiolista.com and vote on your favorite bloggers look to decide who will win a Dahlia Wolf collection. <br>2) Post your own inspiration on Dahlia Wolf to win a 5 piece collection of your own!<br>2) Email <a href="mailto:contests@dahliawolf.com"/>contests@dahliawolf.com</a> with your full name and Dahlia Wolf username</h3>
     <h3><b>Prizes</b></h3>
-    <h3>3 bloggers and 1 members will win a chance to design there own one of a kind 5 piece Dahlia Wolf collection
+    <h3>3 bloggers and 1 members will win a chance to design a one of a kind 5 piece Dahlia Wolf collection
 
     <br><b>Grand Prize:</b> The top blogger and member will win a round trip ticket and 1 night stay to come to Los Angeles, CA to work with the Dahlia Wolf team to create there new 5 piece collecion.</h3>
 
@@ -42,9 +42,6 @@ include "header.php";
     <a href="/struble.bethany" style="font-size: 16px;"><span>Bethany Struble</span>
         <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@struble.bethany</h3>
         <h3 style="line-height: 20px;margin-top:0px;margin-bottom:30px; color: #B6B6B6;">bethanystruble.com</h3></a>
-    <a href="/jaglever" style="font-size: 16px;"><span>Rachel Wochezki</span>
-        <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@jaglever</h3>
-        <h3 style="line-height: 20px;margin-top:0px;margin-bottom:30px; color: #B6B6B6;">jaglever.com</h3></a>
     <a href="/ellemay" style="font-size: 16px;"><span>Elle May</span>
         <h3 style="line-height: 20px;margin-top:0px; margin-bottom:0px;color: #B6B6B6;">@ellemay</h3>
         <h3 style="line-height: 20px;margin-top:0px;margin-bottom:30px; color: #B6B6B6;">elle-may.tumblr.com</h3></a>
