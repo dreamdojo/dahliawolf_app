@@ -41,7 +41,7 @@ shop.prototype = {
         var str = '/api/commerce/product.json?';
         str += 'function='+(this.sort ? 'get_category_products&id_category='+this.sort : 'get_products');
         str += (dahliawolf.isLoggedIn ? '&viewer_user_id='+dahliawolf.userId : '');
-        str += (this.hasShopOwner ? '&user_id='+this.shopOwner.user_id : '');
+        str += (this.hasShopOwner ? '&user_id='+this.shopOwner.user_id+'&filter_status=0&filter_active=0' : '');
         str += '&use_hmac_check=0&id_shop=3&id_lang=1';
         str += (this.priceSort ? '&sort=price-'+this.priceSort : '');
         str += '&limit='+this.limit;
@@ -144,11 +144,10 @@ shop.prototype.loadProducts = function() {
                 that.offset += data.data.get_category_products.data.length;
                 that.data = data.data.get_category_products.data;
                 that.fillShop();
-            } else if(that.shopOwner.username && _this.shopOwner.username != '') {
+            } else if(that.shopOwner.username && that.shopOwner.username != '' && !$('.shop-item').length) {
                 that.fillEmptyShop();
             } else {
                 $(window).unbind('scroll');
-                //that.$shop.html('<h2>Our shop is temporarily out of service</h2>');
             }
         });
     }
