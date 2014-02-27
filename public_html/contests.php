@@ -25,7 +25,7 @@ include "header.php";
     <h2 style="margin:0px;">Fashiolista Bloggers Battle</h2>
     <h3 style="margin-bottom: 50px;">Vote on your favorite bloggers look to decide who will win a Dahlia Wolf collection. Post your own inspiration to win a 5 piece <br>collection for you and the winning blogger.</h3>
     <a href="/fashiolista-contest" style="background-color:#74bf00; margin-top;40px;padding: 20px 40px 20px 40px; color:white; font-weight: bold; font-size: 16px;"><span>VIEW DETAILS</span></a>
-    <h3 style="color: #B6B6B6;">STARTS FEB.25TH 2014</h3>
+    <h3 style="color: #B6B6B6;">STARTS FEB.26TH 2014</h3>
     <img style="margin-bottom: 60px; margin-top: 80px;" width="850px" src="/images/fidm-contest.jpg">
     <h2 style="margin:0px;">FIDM Design Contest</h2>
     <h3 style="margin-bottom: 50px;">FOR FIDM STUDENTS ONLY. Submit on original design and the most HYPED style will be created and sold in the shop.<br>
