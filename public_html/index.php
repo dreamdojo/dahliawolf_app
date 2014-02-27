@@ -59,8 +59,8 @@
 <div id="hpWrapper" style="margin-top:-22px;">
     <section class="top">
         <ul class="dahliaCarasoul">
-            <li style="background-image: url('/images/heroBanner1.jpg');" class="activeFrame firstFrame" onclick="document.location='/signup';"></li>
-            <li style="background-image: url('/images/heroBanner2.jpg')" onclick="document.location='/goodies';"></li>
+            <li style="background-image: url('/images/hpcontestBanner.jpg');" class="activeFrame firstFrame" onclick="document.location='/fashiolista-contest';"></li>
+          <!--  <li style="background-image: url('/images/heroBanner2.jpg')" onclick="document.location='/goodies';"></li>-->
             <li style="background-image: url('/images/heroBanner3.jpg')" onclick="document.location='http://youtu.be/W-Qi0pp-YWw';"></li>
         </ul>
     </section>
