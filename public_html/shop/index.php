@@ -33,12 +33,12 @@
 
 <? if( !empty($user['username']) ): ?>
     <div id="shopOwnerHeader">
-        <div class="shopOwnerTitle"><a href="/<?= $user['username'] ?>"><?= $user['username'] ?>'s</a> designs </div>
+        <div class="shopOwnerTitle"><a href="/<?= $user['username'] ?>"><?= $user['username'] ?>'s</a> collection </div>
         <img src="/images/emptyShopBanner.jpg">
 
     </div>
 <? endif ?>
-<!-- This version of the embed code is no longer supported. Learn more: https://vimeo.com/s/tnm --> <object width="990" height="478" style="margin-top: 25px;margin-bottom:-15px;"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=80430372&amp;force_embed=1&amp;server=vimeo.com&amp;color=ffffff&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=80430372&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=ffffff&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="990" height="556"></embed></object>
+<!-- This version of the embed code is no longer supported. Learn more: https://vimeo.com/s/tnm  <object width="990" height="478" style="margin-top: 25px;margin-bottom:-15px;"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=80430372&amp;force_embed=1&amp;server=vimeo.com&amp;color=ffffff&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=80430372&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=ffffff&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="990" height="556"></embed></object>-->
 <div id="dahliawolfShop" style="max-width: 990px;"></div>
 
 <?

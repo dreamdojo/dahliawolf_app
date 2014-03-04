@@ -41,7 +41,7 @@ shop.prototype = {
         var str = '/api/commerce/product.json?';
         str += 'function='+(this.sort ? 'get_category_products&id_category='+this.sort : 'get_products');
         str += (dahliawolf.isLoggedIn ? '&viewer_user_id='+dahliawolf.userId : '');
-        str += (this.hasShopOwner ? '&user_id='+this.shopOwner.user_id+'&filter_status=0&filter_active=0' : '');
+        str += (this.hasShopOwner ? '&user_id='+this.shopOwner.user_id+'&filter_status=0&filter_active=1' : '');
         str += '&use_hmac_check=0&id_shop=3&id_lang=1';
         str += (this.priceSort ? '&sort=price-'+this.priceSort : '');
         str += '&limit='+this.limit;
