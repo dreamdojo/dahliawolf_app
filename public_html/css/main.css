@@ -191,6 +191,14 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 .sector{border-top: #fff thin solid; border-bottom: #fff thin solid;}
 .rtBorder{border-right: #666666 thin solid; position: absolute; height: 30px; right: 0px;}
 
+.aliModule{background-color: #ebebeb; margin-top: 50px;width: 240px; text-align: center;}
+.aliModule .title{padding: 20px 0px;font-size: 15px;}
+.aliModule .grnButton{display: inline-block;padding: 10px 20px;color: #fff;margin: 25px 0px;font-size: 11px;border-radius: 5px;}
+.aliModule .explanation{width: 85%;margin-left: 7.5%;font-size: 13px;}
+
+.btn-success{background-color: #76bd22;border: 0px;color: #fff;font-size: 14px; cursor: pointer;}
+.dahliaGreenBG{background-color: #74bf00;}
+
 /*********** THE DROP DOWN CART **************/
 #dahliaCart{position: absolute;top: 79px;right: -3px; width: 270px; border: #ccc thin solid; z-index: 100; background-color: #fff; display: none;}
 #shoppingCart:hover ul{display: block !important;}
@@ -244,7 +252,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
 #headerFooter ul{background-color: #fff;max-width: 400px; width:100%; margin: 0px auto;}
 #headerFooter ul li{background-color: #fff;font-size: 18px;line-height: 30px;width: 33%;float: left;text-align: center;}
 
-@media screen and (max-width: 1100px) { /******************* IPAD *******************/*
+@media screen and (max-width: 980px) { /******************* IPAD *******************/*
     #dahliaHeader .userName{display: none;}
     #mobNative{display: none;}
     #searchButton{display: none;}
@@ -256,6 +264,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset,0 1px 0 rgba(49, 49, 49, 0.3),0p
     #dahliaHeader #mainMenu{display: none;}
     #headerHeader{display: none;}
     #dahliaHeader #dahliaLogo{float: none;position: absolute;left: 50%;margin-left: -80px;}
+    #headerHeader .right{display: none;}
+    .logoTransformed{background-position: 0% 50% !important; width: 208px !important;}
 }
 
 @media screen and (max-width: 700px) {/********************* PHONE *******************/

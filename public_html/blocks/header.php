@@ -82,6 +82,7 @@
             <li><a href="http://blog.dahliawolf.com/">BLOG</a></li>
             <!--<li><a href="/careers">CAREERS</a></li>-->
             <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/hiw">HOW IT WORKS</a></li>
             <!--<li><a href="/about">ABOUT</a></li>-->
             <!--<li id="tourButton">HELP</li>-->
         </ul>
@@ -157,13 +158,6 @@
             <input type="text" placeholder="Start typing to search...">
         </div>
     </div>
-    <div id="headerFooter">
-        <ul>
-            <li><a href="/inspire">DISCOVER</a></li>
-            <li><a href="/sponsor">SPONSOR</a></li>
-            <li><a href="/shop">SHOP</a></li>
-        </ul>
-    </div>
 </div>
 
 <script>
@@ -173,7 +167,7 @@
             var $header = $('#dahliaHeader');
             var $dahliaLogo = $('#dahliaLogo');
 
-            if( $(window).scrollTop() > 20 && $headerHeader.is(':visible') && !$headerHeader.is(':animated') ) {
+            if( $(window).scrollTop() > 20 && $headerHeader.is(':visible') && !$headerHeader.is(':animated') && window.innerWidth > 980 ) {
                 $headerHeader.slideUp(200);
                 $dahliaLogo.addClass('logoTransformed');
             }

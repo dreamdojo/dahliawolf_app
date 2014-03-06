@@ -39,7 +39,7 @@
     .bgWrap{position: fixed;overflow: hidden;height: 100%;width: 100%;z-index: -1;top: 0px;left: 0px;}
     .paraBG{background-size: cover; position: absolute; top:0px; left: 0px; z-index: -1; background-repeat: no-repeat; height: 100%;width: 100%; background-position: 50% 0px;}
 
-    .noBG{height: 1000px; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+    .noBG{height: 1000px; background-size: auto 100%; background-repeat: no-repeat; background-attachment: fixed;}
     #hpWrapper .smallIcon{width: 25px; float: left;}
     #hpWrapper h1{margin: 0px;line-height: 30px;text-indent: 10px; font-size: 23px;}
     .explanation{font-size: 16px; color: #a5a5a5; margin-top: 10px;}
@@ -144,9 +144,12 @@
 
 <script>
     $(function() {
-        $.stellar({
-            horizontalScrolling: false
-        });
+        console.log(navigator.userAgent.match(/iPad/i) == null);
+        if(navigator.userAgent.match(/iPad/i) == null) {
+            $.stellar({
+                horizontalScrolling: false
+            });
+        }
         dahliawolf.redirect = true;
         $('#hiw-video').hover(function() {
             $('#hiw-video').attr('controls', true);

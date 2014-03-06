@@ -55,6 +55,7 @@
         dahliawolfFeed = new voteFeed({mode:'spine' <? !empty($_GET['sort']) ? ', filter: "'.$_GET['sort'].'"' : '' ?> <? !empty($_GET['q']) ? ', search: "'.$_GET['q'].'"' : '' ?>});
     });
 
+alert('poop');
     $(function() {
        var $head = $('#dahliaHeader');
        $(window).scroll(function() {

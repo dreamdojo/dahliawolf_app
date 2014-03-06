@@ -71,3 +71,7 @@
 <?
     include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 ?>
+<script>
+    console.log(<?= json_encode($_data); ?>);
+    console.log(<?= json_encode($_SESSION); ?>);
+</script>

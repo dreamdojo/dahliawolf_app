@@ -73,20 +73,19 @@
 </style>
 <div id="mobile_Menu">
     <ul>
-        <li>SEARCH ITEMS & PEOPLE</li>
-        <li>LOGIN | SIGNUP</li>
-        <li>CONTESTS</li>
-        <li>GOODIES</li>
-        <li>HOW IT WORKS</li>
-        <li>CONNECT</li>
+        <a href="/discover"><li>DISCOVER</li></a>
+        <a href="/sponsor"><li>SPONSOR</li></a>
+        <a href="/shop"><li>SHOP</li></a>
+        <a href="/contests"><li>CONTESTS</li></a>
+        <a href="/goodies"><li>GOODIES</li></a>
+        <a href="/hiw"><li>HOW IT WORKS</li></a>
+        <a href="/contact"><li>CONTACT</li></a>
         <ul class="hasSubs">FAQ
-                <li>BLOAH</li>
-                <li>POOTY</li>
+            <li>BLOAH</li>
+            <li>POOTY</li>
         </ul>
-        <li>INFO</li>
-        <li>LEGAL</li>
-        <li>ABOUT</li>
-        <li>PRESS</li>
+        <a href="/legal"><li>LEGAL</li></a>
+        <a href="/press"><li>PRESS</li></a>
     </ul>
 </div>
 <script>
